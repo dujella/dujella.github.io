@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Eliptičke krivulje u kriptografiji</title>
+
+<meta name="author" content="Andrej Dujella i Filip Najman">
+<meta name="description" content="Elipticke krivulje u kriptografiji, 
+PMF - Matematicki odsjek, Zagreb">
+<meta name="keywords" content="elipticke krivulje, kriptografija, faktorizacija, 
+prosti brojevi">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+</head>
+
+<body bgcolor="#FAEBD7">
+
+<p align=right><a href="ellcrypt.html">English</a></p>
+
+<h1>Eliptičke krivulje u kriptografiji</h1>
+Izborni kolegij na Diplomskom sveučilišnom studiju Teorijska matematika i 
+Diplomskom sveučilišnom studiju Računarstvo i matematika   
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 0+0 &nbsp  2+1 <br>
+
+<h3>Program sastavili: <a href="http://web.math.pmf.unizg.hr/~duje/">Andrej Dujella</a> i 
+<a href="http://web.math.pmf.unizg.hr/~fnajman/">Filip Najman</a> </h3>
+<p>
+U akademskoj godini 2013/2014, predavanja iz kolegija <i>Eliptičke krivulje u kriptografiji</i> 
+drži Filip Najman</a>. 
+
+<hr size=2 noshade>
+
+Cilj ovog kolegija je upoznati studente s osnovnim pojmovima, 
+činjenicama i algoritmima vezanim uz eliptičke krivulje nad poljem 
+racionalnih brojeva i konačnim poljima, te
+njihovim primjenama u kriptografiji i algoritamskoj teoriji brojeva. 
+<p>
+Kolegij nema formalnih kolegija prethodnika. Za uspješno praćenje kolegija,  
+poželjno je da je položen kolegij Teorija brojeva s preddiplomskog studija matematike, 
+te jedan od kolegija Algebarske krivulje (smjer teorijska matematika) 
+ili Kriptografija i sigurnost mreža (smjer računarstvo i matematika).
+
+<hr size=2 noshade>
+
+<h3> Sadržaj kolegija</h3>
+<p>
+<em>Eliptičke krivulje nad poljem racionalnih brojeva.</em> 
+Zbrajanje točaka na eliptičkoj krivulji. 
+Mordell-Weilova grupa eliptičke krivulje nad poljem racionalnih brojeva. 
+Algoritmi za računanje torzijske grupe i ranga.
+<p>
+<em>Eliptičke krivulje nad konačnim poljima.</em> 
+Efikasna implementacija osnovnih operacija na eliptičkih krivuljama. 
+Eliptičke krivulje nad poljima karakteristike 2. 
+Algoritmi za određivanje reda grupe točaka na eliptičkoj krivulji. 
+<p>
+<em>Kriptografija javnog ključa.</em> 
+Ideja javnog ključa. 
+Kriptosustavi zasnovani na problemu faktorizacije i problemu diskretnog logaritma u konačnoj grupi. 
+Digitalni potpis.
+<p>
+<em>Kriptosustavi koji koriste eliptičke krivulje.</em> 
+Analogoni El-Gamalovog i DSA kriptosustava. 
+Usporedba s ostalim kriptosustavima javnog ključa. 
+Problem diskretnog logaritma za eliptičke krivulje. Izbor parametara kriptosustava. 
+<p>
+<em>Ostale primjene eliptičkih krivulja.</em> 
+Lenstrina metoda faktorizacije. Dokazivanje prostosti pomoću eliptičkih krivulja. 
+<p>
+
+<hr size=2 noshade>
+
+
+<h3>Osnovna literatura</h3>
+
+<p>
+<ol>
+<li> A. Dujella, M. Maretić: <em><a href="kript/kriptoknjiga.html">Kriptografija</a></em>, 
+Element, Zagreb, 2007.
+<p>
+<li> N. Koblitz: <em> A Course in Number Theory and Cryptography</em>, 
+Springer-Verlag, New York, 1994. 
+<p>
+</ol>
+
+<h3>Dodatna literatura</h3>
+
+<p>
+<ol>
+
+<li> I. Blake, G. Seroussi, N. Smart: <em>Elliptic Curves in Cryptography</em>, 
+Cambridge University Press, Cambridge, 1999.
+<p>
+<li> D. Hankerson, A. Menezes, S. Vanstone: <em>Guide to Elliptic Curve Cryptography</em>, 
+Springer-Verlag, New York, 2004.
+<p>
+<li>J. H. Silverman, J. Tate: <em>Rational Points on Elliptic Curves</em>, 
+Springer-Verlag, Berlin, 1992.
+<p>  
+<li>L. C. Washington: <em><a href="http://www2.math.umd.edu/~lcw/ec.html">Elliptic Curves: 
+Number Theory and Cryptography</a></em>, 
+CRC Press, Boca Raton, 2008.
+ 
+<p>
+
+</ol>
+
+<hr size=2 noshade>
+<p>
+<a href="elkript/elkripto2.pdf"><b>Eliptičke krivulje u kriptografiji, skripta</b> </a> <br> 
+(u <em>pdf</em> formatu)
+<p>
+
+
+
+<hr size=2 noshade>
+
+<h3>Način polaganja ispita:</h3>
+
+<b>Domaće zadaće:</b> Bit će četiri domaće zadaće (koje će se bodovati). 
+Rok za predaju zadaće će biti u pravilu dva tjedna. 
+Maksimalan broj bodova na svakoj zadaći je 15.
+<br>
+<b>Aktivnost na nastavi:</b> Na nastavi će se zadavati zadaci za samostalno rješavanje. Studenti koji budu najuspješniji 
+u rješavanju tih zadataka, dobit će u pravilu za svaki zadatak po 5 bodova.
+Maksimalan broj bodova koji će se moći sakupiti u ovoj komponenti je 20. 
+<br>
+<b>Kolokviji i završni ispit:</b> Neće biti kolokvija. Završni ispit je pismeni. 
+Zadaci će biti iz onih poglavlja koja nisu bila 
+obuhvaćena domaćim zadaćama. 
+Nema uvjeta za pristup završnom ispitu. 
+Završni ispit će se održati u redovitom terminu nastave iz ovog kolegija 
+(vjerojatno jedan od zadnja dva tjedna nastave).  
+Maksimalan broj bodova koji je moguće dobiti na završnom ispitu je 40. <br>
+Bit će jedan termin za <b>popravak završnog ispita</b> za studente koji nisu izašli 
+za završni ispit ili su nezadovoljni rezultatom završnog ispita. <br>
+<b>Zaključivanje ocjene:</b> Zbrojit će se bodovi iz domaćih zadaća (max. 60), 
+aktivnosti na nastavi (max. 20) i završnog ispita (max. 40). <br>
+<b>Ocjene:</b> &nbsp; &ge; 85 bodova - ocjena 5; &nbsp; &ge; 70 bodova - ocjena 4; 
+&nbsp; &ge; 55 bodova - ocjena 3; &nbsp; &ge; 40 bodova - ocjena 2; &nbsp; &lt; 40  bodova - ocjena 1. 
+
+<p>
+<hr size=2 noshade>
+
+<p>
+
+<a href="http://degiorgi.math.hr/forum/viewtopic.php?t=18803"><font size="+1">Obavijesti na web forumu</font></a> kolegija "Kriptografija" 
+<p>
+
+<a href="kriptsig.html"><b>Kriptografija i sigurnost mreža</b></a> - kolegij na diplomskom studiju računarstva
+<p>
+
+<a href="kript.html"><b>Kriptografija</b></a> 
+- stari izborni kolegij 
+<p>
+
+<a href="utb.html"><b>Teorija brojeva</b></a> 
+- kolegij na preddiplomskom studiju
+<p>
+
+<a href="utbprof.html"><b>Elementarna teorija brojeva</b></a> 
+- kolegij na preddiplomskom studiju
+<p>
+
+<a href="algelip.html"><b>Algoritmi za eliptičke krivulje</b></a> - poslijediplomski kolegij (2008/2009) 
+<p>
+
+<a href="tbkript.html"><b>Teorija brojeva 
+u kriptografiji</b></a> - poslijediplomski kolegij (2003/2004) 
+<p>
+
+<a href="ecc/eccseminar.html"><b>Studentski seminar - Eliptičke krivulje i njihova primjena u 
+kriptografiji</b></a> (2002/2003)
+<p>
+
+<a href="literatura.html">Popis dostupne literature iz teorije brojeva</a> 
+<p>
+
+<a href="http://www.warwick.ac.uk/~masgaj/packages.html">Software packages of interest to number theory</a> 
+<p>
+
+<a href="http://pari.math.u-bordeaux.fr/">
+PARI/GP home page</a> 
+<p>
+
+<a href="http://klein.math.okstate.edu/PARI/NumberTheoryandPARI/">
+Number Theory and PARI/GP</a>
+<p>
+
+<a href="http://www.sagenb.org/">
+The Sage Notebook</a>
+<p>
+
+<a href="http://magma.maths.usyd.edu.au/calc/">MAGMA Calculator</a> 
+<p>
+
+<hr size=2 noshade>
+
+
+<a href="index.html"><em>Andrej Dujella</em> home page</a>
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+
+
+</body>
+</html>

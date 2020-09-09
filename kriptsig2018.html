@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Kriptografija i sigurnost mreža</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Kriptografija i sigurnost mreza, 
+PMF - Matematicki odjel, Zagreb">
+<meta name="keywords" content="kriptografija, kriptologija, 
+cryptography, sifriranje, DES, AES, Rijndael, RSA, faktorizacija, 
+prosti brojevi, course">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+</head>
+
+<body bgcolor="#FAEBD7">
+
+
+<h1>Kriptografija i sigurnost mreža</h1>
+Obavezni kolegij na drugoj godini Diplomskog sveučilišnog studija Računarstvo i matematika  
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 3+0 &nbsp  0+0 <br>
+Izborni kolegij na drugoj godini Diplomskog sveučilišnog studija Matematika i informatika; smjer: nastavnički
+ 
+ 
+<h3>Predavanja: 
+<a href="index.html">Andrej Dujella</a> </h3> 
+
+<hr size=2 noshade>
+
+<b>Raspored:</b> <br>
+utorak 17-20 &nbsp; (004) 
+
+<hr size=2 noshade>
+
+<b>Obavijest:</b> <b>Završni ispit</b> će se održati u utorak 22.1.2019. u 17 sati u predavaonici 004. <br>
+<b><a href="kript/Kriptografija-kolokvij-2018-web.pdf">Rezultati svih zadaća i završnog ispita</a></b> <br>
+Zadaće se mogu pogledati u srijedu, 30.1.2019. u 13 sati. <br>
+U istom terminu je i upis ocjena te dogovor o terminu popravnog završnog ispita. <br>
+<b>Popravni ispit</b> će se održati u četvrtak 7.2.2019. u 12 sati u predavaonici br. 109. <br>
+To je ujedno i dodatni termin za upis ocjena. <br>
+Sljedeći termin za upis ocjena je srijeda 20.2.2019. u 10 sati. <br>
+
+
+<hr size=2 noshade>
+
+Prva zadaća može se predići od 9.10.2018. do 16.10.2018. <br>
+Rok za predaju rješenja prve zadaće je 23.10.2018. <br>
+<a href="http://degiorgi.math.hr/forum/viewtopic.php?p=193995#193995">
+Rezultati prve zadaće</a> <br>
+Druga zadaća može se predići od 23.10.2018. do 30.10.2018. <br>
+Rok za predaju rješenja druge zadaće je 6.11.2018. <br>
+<a href="http://degiorgi.math.hr/forum/viewtopic.php?p=194014#194014">
+Rezultati druge zadaće</a> <br>
+Treća zadaća može se predići od 6.11.2018. do 13.11.2018. <br>
+Rok za predaju rješenja treće zadaće je 4.12.2018. <br>
+<a href="http://degiorgi.math.hr/forum/viewtopic.php?p=194024#194024">
+Rezultati treće zadaće</a> <br>
+Četvrta zadaća može se predići od 4.12.2018. do 11.12.2018. <br>
+Rok za predaju rješenja četvrte zadaće je 18.12.2018. <br>
+<a href="http://degiorgi.math.hr/forum/viewtopic.php?p=194030#194030">
+Rezultati četvrte zadaće</a> <br>
+
+<hr size=2 noshade>
+
+<h3> Sadržaj kolegija</h3>
+<p>
+<em>Klasična kriptografija.</em> Osnovni pojmovi. Supstitucijske šifre, 
+Vigen&egrave;reova, Playfairova i Hillova šifra. Transpozicijske šifre. 
+Naprave za šifriranje (Enigma).  
+<p>
+<em>Moderni simetrični blokovni kriptosustavi.</em> Data Encryption 
+Standard (DES). Kriptoanaliza DES-a. Advanced Encryption Standard 
+(AES). 
+<p>
+<em>Kriptosustavi s javnim ključem.</em> Ideja javnog ključa. 
+RSA kriptosustav. Kriptoanaliza RSA. Ostali 
+kriptosustavi s javnim ključem.
+<p>
+<em>Testovi prostosti i metode faktorizacije.</em> Pseudoprosti 
+brojevi. Soloway-Strassenov i Miller-Rabinov test prostosti. 
+Faktorizacija. Faktorske baze. Metoda kvadratnog sita.
+<p>
+<em>Sigurnost mreža.</em> Hash funkcije. Digitalni potpisi. 
+Sigurnost elektronske pošte. Sigurnost internetskih protokola. 
+<p>
+
+<hr size=2 noshade>
+
+
+<h3>Predavanja (po poglavljima):</h3>
+<p>
+<font size="+1">
+&nbsp; &nbsp; 1. Klasi&#269;na kriptografija<br></font>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.1. 
+<a href="kript/osnovni.html">Osnovni pojmovi</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.2. 
+<a href="kript/supst.html">Supstitucijske &#353;ifre</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.3. 
+<a href="kript/vigener.html">Vigen&egrave;reova &#353;ifra</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.4. 
+<a  href="kript/playfair.html">Playfairova &#353;ifra</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.5. 
+<a href="kript/hill.html">Hillova &#353;ifra</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.6. 
+<a href="kript/otp.html">Jednokratna bilje&#382;nica</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.7. 
+<a href="kript/transp.html">Transpozicijske &#353;ifre</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.8. 
+<a href="kript/naprave.html">Naprave za &#353;ifriranje</a><br><br>
+<font size="+1">
+&nbsp; &nbsp; 2. Moderni simetri&#269;ni blokovni  
+kriptosustavi<br></font>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.1. 
+<a href="kript/deshist.html">Povijest DES-a</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.2. 
+<a href="kript/des.html">Opis algoritma DES-a</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.3. 
+<a href="kript/desprop.html">Svojstva DES-a</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.4. 
+<a href="kript/modovi.html">Na&#269;ini djelovanja</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.5. 
+<a href="kript/desan.html">Kriptoanaliza DES-a</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.6. 
+<a href="kript/josblok.html">Jo&#353; neki moderni blokovni kriptosustavi</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.7. 
+<a href="kript/aes.html">Advanced Encryption Standard</a><br><br>
+<font size="+1">
+&nbsp; &nbsp; 3. Kriptosustavi s 
+javnim klju&#269;em<br></font>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.1. 
+<a href="kript/idejajavni.html">Ideja javnog klju&#269;a</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.2. 
+<a href="kript/rsa.html">RSA kriptosustav</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.3. 
+<a href="kript/rsaan.html">Kriptoanaliza RSA kriptosustava</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.4. 
+<a href="kript/josjavni.html">Ostali kriptosustavi s javnim 
+klju&#269;em</a><br><br>
+<font size="+1">
+&nbsp; &nbsp; 4. Testovi prostosti 
+i metode faktorizacije<br></font>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.1. 
+<a href="kript/pseudoprosti.html">Pseudoprosti brojevi</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.2. 
+<a href="kript/solstras.html">Solovay-Strassenov test</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.3. 
+<a href="kript/miller.html">Miller-Rabinov test</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.4. 
+<a href="kript/faktor.html">Faktorizacija</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.5. 
+<a href="kript/fbaze.html">Faktorske baze</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.6. 
+<a href="kript/verizni.html">Metoda veri&#382;nog razlomka</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.7. 
+<a href="kript/sito.html">Metoda kvadratnog sita</a><br><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+<font size="+1"><a href="kript/kriptoref.html">Popis dostupne literature iz kriptografije</a></font><br><br>
+
+<p>
+
+<hr size=2 noshade>
+
+
+<h3>Osnovna literatura</h3>
+
+<p>
+<ol>
+<li> A. Dujella, M. Mareti&#263;: <em><a href="kript/kriptoknjiga.html">Kriptografija</a></em>, 
+Element, Zagreb, 2007.
+<p>
+<li> D. R. Stinson: <em> 
+Cryptography. Theory and Practice</em>, 
+CRC Press, Boca Raton, 1996 <a href="http://www.cacr.math.uwaterloo.ca/~dstinson/CTAP.html">(first edition)</a>, 
+2002 <a href="http://www.cacr.math.uwaterloo.ca/~dstinson/CTAP2/CTAP2.html">(second edition)</a>, 
+2005 <a href="http://www.cacr.math.uwaterloo.ca/~dstinson/CTAP3/CTAP3.html">(third edition)</a>. 
+<p>
+<li> W. Stallings: <em><a href="http://williamstallings.com/Security2e.html">
+Cryptography and Network Security. Principles and Practice</a></em>, 
+Prentice Hall, Upper Sadle River, 2005. 
+<p>
+</ol>
+
+<h3>Dodatna literatura</h3>
+
+<p>
+<ol>
+
+<li> M. W. Baldoni, C. Ciliberto, G. M. Piacentini Cattaneo: 
+<em>Elementary Number Theory, Cryptography and Codes</em>, Springer-Verlag, Berlin, 2009. 
+<p>
+<li> F. L. Bauer: <em> Decrypted Secrets. Methods and Maxims of 
+Cryptology</em>, Springer-Verlag, Berlin, 2000. 
+<p>
+<li> J. Buchmann: <em> Introduction to Cryptography</em>, Springer-Verlag, New York, 2000.
+<p>
+<li> R. Crandall, C. Pomerance: <em> Prime Numbers: A Computational Perspective</em>, Springer-Verlag, New York, 2001. 
+<p>
+<li> J. Daemen, V. Rijmen: <em> The Design of Rijndael. AES - The 
+Advanced Encryption Standard</em>, Springer-Verlag, Berlin, 2002. 
+<p>
+<li> J. Hoffstein, J. Pipher, J. H. Silverman: 
+<em><a href="http://www.math.brown.edu/~jhs/MathCryptoHome.html">An Introduction to Mathematical Cryptography</a></em>, 
+Springer, New York, 2008. 
+<p>
+<li> B. Ibrahimpašić: <em>Kriptografija kroz primjere</em>, Pedagoški fakultet Bihać, 2011.
+<p>
+<li> D. Kahn: <em> The Codebreakers. The Story of Secret Writing</em>, 
+Scribner, New York, 1996. 
+(hrvatski prijevod: <em>&#352;ifranti protiv &#353;pijuna</em>, 
+Centar za informacije i publicitet, Zagreb, 1979)
+<p>
+<li> J. Katz, Y. Lindell: <em>Introduction to Modern Cryptography</em>, CRC Press, Boca Raton, 2007. 
+<p>
+<li> N. Koblitz: <em> A Course in Number Theory and Cryptography</em>, 
+Springer-Verlag, New York, 1994. 
+<p> 
+<li> A. J. Menezes, P. C. Oorschot, S. A. Vanstone: <em> 
+<a href="http://www.cacr.math.uwaterloo.ca/hac/">
+Handbook of Applied Cryptography</a></em>, CRC Press, Boca Raton, 1996. 
+<p>
+<li> R. A. Mollin: <em><a href="http://math.ucalgary.ca/~ramollin/cryptopref.html"> 
+An Introduction to Cryptography</a></em>, Chapman & Hall/CRC Press, 
+Boca Raton, 2001. 
+<p>
+<li> A. Salomaa: <em> Public-Key Cryptography</em>, 
+Springer-Verlag, Berlin, 1996. 
+<p>
+<li> B. Schneier: <em><a href="http://www.schneier.com/book-applied.html">Applied Cryptography</a></em>, 
+John Wiley, New York, 1995. 
+<p>
+<li> S. Singh: <em> The Code Book</em>, Fourth Estate, London, 1999. 
+(hrvatski prijevod: <em>&#352;ifre. Kratka povijest kriptografije</em>, 
+Mozaik knjiga, Zagreb, 2003)
+<p>
+<li> N. Smart: <em> <a href="http://www.cs.bris.ac.uk/~nigel/Crypto_Book/">
+Cryptography. An Introduction</a></em>, 
+McGraw-Hill, New York, 2002.
+<p>
+<li> W. Trappe, L. C. Washington: <em><a href="http://www-users.math.umd.edu/~lcw/book.html">Introduction to 
+Cryptography with Coding Theory</a></em>,  Prentice Hall, Upper Sadle 
+River, 2002.
+<p>
+<li> S. Vaudenay: <em><a href="http://www.vaudenay.ch/crypto/">
+A Classical Introduction to Cryptography. Applications for Communication Security</a></em>, 
+Springer, New York, 2006.
+<p>
+<li> M. Welschenbach: <em>Cryptography in C and C++</em>, Apress, 
+Berkeley, 2001.
+<p>
+<li> S. Y. Yan: <em> Number Theory for Computing</em>, Springer-Verlag, Berlin, 2002. 
+<p>
+
+</ol>
+
+
+<hr size=2 noshade>
+
+<h3>Način polaganja ispita:</h3>
+
+<b>Domaće zadaće:</b> Bit će četiri domaće zadaće (koje će se bodovati). 
+Rok za predaju zadaće će biti u pravilu dva tjedna. 
+Maksimalan broj bodova na svakoj zadaći je 15.
+<br>
+<b>Aktivnost na nastavi:</b> Na nastavi će se zadavati zadaci za samostalno rješavanje. Studenti koji budu najuspješniji 
+u rješavanju tih zadataka, dobit će u pravilu za svaki zadatak po 5 bodova.
+Maksimalan broj bodova koji će se moći sakupiti u ovoj komponenti je 20. 
+<br>
+<b>Kolokviji i završni ispit:</b> Neće biti kolokvija. Završni ispit je pismeni. 
+Zadaci će biti iz onih poglavlja koja nisu bila 
+obuhvaćena domaćim zadaćama. 
+Nema uvjeta za pristup završnom ispitu. 
+Završni ispit će se održati u redovitom terminu nastave iz ovog kolegija 
+(vjerojatno jedan od zadnja dva tjedna nastave).  
+Maksimalan broj bodova koji je moguće dobiti na završnom ispitu je 40. <br>
+Bit će jedan termin za <b>popravak završnog ispita</b> za studente koji nisu izašli 
+za završni ispit ili su nezadovoljni rezultatom završnog ispita. <br>
+<b>Zaključivanje ocjene:</b> Zbrojit će se bodovi iz domaćih zadaća (max. 60), 
+aktivnosti na nastavi (max. 20) i završnog ispita (max. 40). <br>
+<b>Ocjene:</b> &nbsp; &ge; 85 bodova - ocjena 5; &nbsp; &ge; 70 bodova - ocjena 4; 
+&nbsp; &ge; 55 bodova - ocjena 3; &nbsp; &ge; 40 bodova - ocjena 2; &nbsp; &lt; 40  bodova - ocjena 1. 
+
+<p>
+<hr size=2 noshade>
+
+<p>
+
+<a href="http://degiorgi.math.hr/forum/viewforum.php?f=31"><font size="+1">Web forum</font></a> kolegija "Kriptografija" 
+<p>
+
+<a href="http://web.math.hr/~fran/kripto.html"><b>Zrinka Franušić: Kriptografija i sigurnost mreža</b></a> (2010/2011) 
+<p>
+
+<a href="kript.html"><b>Kriptografija</b></a> 
+- stari izborni kolegij 
+<p>
+
+<a href="utb.html"><b>Teorija brojeva</b></a> 
+- kolegij na preddiplomskom studiju
+<p>
+
+<a href="utbprof.html"><b>Elementarna teorija brojeva</b></a> 
+- kolegij na preddiplomskom studiju
+<p>
+
+<a href="tbkript.html"><b>Teorija brojeva 
+u kriptografiji</b></a> - poslijediplomski kolegij (2003/2004) 
+<p>
+
+<a href="ecc/eccseminar.html"><b>Studentski seminar - Eliptičke krivulje i njihova primjena u 
+kriptografiji</b></a> (2002/2003)
+<p>
+
+<hr size=2 noshade>
+<p>
+
+<h4>Domaće zadaće i završni ispiti:</h4>
+<p>
+2009/2010:
+<a href="kript/zad200901.pdf">zad1</a>,
+<a href="kript/zad200902.pdf">zad2</a>,
+<a href="kript/zad200903.pdf">zad3</a>,
+<a href="kript/zad200904.pdf">zad4</a>, 
+<a href="kript/kriptsig09.pdf">završni</a>
+<p>
+2011/2012:
+<a href="kript/zad201101.pdf">zad1</a>,
+<a href="kript/zad201102.pdf">zad2</a>,
+<a href="kript/zad201103.pdf">zad3</a>,
+<a href="kript/zad201104.pdf">zad4</a>, 
+<a href="kript/kriptsig11.pdf">završni</a>
+<p>
+2012/2013:
+<a href="kript/zad201201.pdf">zad1</a>,
+<a href="kript/zad201202.pdf">zad2</a>,
+<a href="kript/zad201203.pdf">zad3</a>,
+<a href="kript/zad201204.pdf">zad4</a>, 
+<a href="kript/kriptsig12.pdf">završni</a>
+<p>
+2013/2014:
+<a href="kript/kriptsig13.pdf">završni</a>
+<p>
+2014/2015:
+<a href="kript/kriptsig14.pdf">završni</a>
+<p>
+2015/2016:
+<a href="kript/kriptsig15.pdf">završni</a>
+<p>
+2016/2017:
+<a href="kript/kriptsig16.pdf">završni</a>
+<p>
+2017/2018:
+<a href="kript/kriptsig17.pdf">završni</a>
+<p>
+
+<p>
+<hr size=2 noshade>
+<p>
+
+
+<h4>Primjeri domaćih zadaća iz starog kolegija Kriptografija:</h4>
+<p>
+1999/2000: 
+<a href="kript/ZAD101.pdf">zad1</a> 
+<a href="kript/ZAD201.pdf">zad2</a>
+<a href="kript/ZAD301.pdf">zad3</a>
+<a href="kript/ZAD401.pdf">zad4</a>
+<a href="kript/ZAD501.pdf">zad5</a>
+<a href="kript/ZAD601.pdf">zad6</a>
+<p>
+2000/2001:
+<a href="kript/ZAD103.pdf">zad1</a>
+<a href="kript/ZAD203.pdf">zad2</a>
+<a href="kript/ZAD303.pdf">zad3</a>
+<a href="kript/ZAD403.pdf">zad4</a>
+<a href="kript/ZAD503.pdf">zad5</a>
+<p>
+2001/2002:
+<a href="kript/ZAD105.pdf">zad1</a>
+<a href="kript/ZAD205.pdf">zad2</a>
+<a href="kript/ZAD305.pdf">zad3</a>
+<a href="kript/ZAD405.pdf">zad4</a>
+<a href="kript/ZAD505.pdf">zad5</a>
+<a href="kript/ZAD605.pdf">zad6</a> 
+<p>
+2002/2003:
+<a href="kript/zad200301.pdf">zad1</a>
+<a href="kript/zad200302.pdf">zad2</a>
+<a href="kript/zad200303.pdf">zad3</a>
+<a href="kript/zad200304.pdf">zad4</a>
+<a href="kript/zad200305.pdf">zad5</a> 
+<p>
+2003/2004:
+<a href="kript/zad200401.pdf">zad1</a>
+<a href="kript/zad200402.pdf">zad2</a>
+<a href="kript/zad200403.pdf">zad3</a>
+<a href="kript/zad200404.pdf">zad4</a>
+<a href="kript/zad200405.pdf">zad5</a> 
+<p>
+2004/2005:
+<a href="kript/zad200501.pdf">zad1</a>
+<a href="kript/zad200502.pdf">zad2</a>
+<a href="kript/zad200503.pdf">zad3</a>
+<a href="kript/zad200504.pdf">zad4</a>
+<a href="kript/zad200505.pdf">zad5</a> 
+<p>
+2005/2006:
+<a href="kript/zad200601.pdf">zad1</a>
+<a href="kript/zad200602.pdf">zad2</a>
+<a href="kript/zad200603.pdf">zad3</a>
+<a href="kript/zad200604.pdf">zad4</a> 
+<p>
+2006/2007:
+<a href="kript/zad200701.pdf">zad1</a>
+<a href="kript/zad200702.pdf">zad2</a>
+<a href="kript/zad200703.pdf">zad3</a>
+<a href="kript/zad200704.pdf">zad4</a> 
+<a href="kript/zad200705.pdf">zad5</a> 
+<p>
+<hr size=2 noshade>
+
+
+<a href="index.html"><em>Andrej Dujella</em> home page</a>
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+
+
+</body>
+</html>

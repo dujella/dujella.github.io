@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Diophantine m-tuples - Introduction</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Diophantine m-tuples - Introduction">
+<meta name="keywords" content="Diophantine equations, 
+number theory, open problems, Diophantus, Fermat, Euler">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+</head>
+
+<body bgcolor="CCEECC">
+
+<h2 align=center><font face="Times New Roman">1. Introduction</font></h2>
+<p><br>
+
+
+The Greek mathematician Diophantus of Alexandria first studied 
+the problem of finding four numbers
+such that the product of any two of them increased by unity is a
+perfect square. He found a set of four positive rationals with the
+this property: 
+
+<p align=center> 
+{1/16, 33/16, 17/4, 105/16}. </p>
+However, the first set of four positive integers with the above 
+property,   
+
+<p align=center>
+{1, 3, 8, 120}, </p>
+was found by Fermat. Indeed, we have 
+
+<p align=center>
+1 &middot 3 + 1 = 2<sup>2</sup>, &nbsp &nbsp &nbsp &nbsp 
+1 &middot 120 + 1 = 11<sup>2</sup>, <br>
+1 &middot 8 + 1 = 3<sup>2</sup>, &nbsp &nbsp &nbsp &nbsp    
+3 &middot 120 + 1 = 19<sup>2</sup>, <br>
+3 &middot 8 + 1 = 5<sup>2</sup>, &nbsp &nbsp &nbsp &nbsp    
+8 &middot 120 + 1 = 31<sup>2</sup>.
+</p>
+
+Euler found the infinite family of such sets: 
+
+<p align=center>
+{<i>a</i>, <i>b</i>, 
+<i>a</i> + <i>b</i> + 2<i>r</i>, 
+4<i>r</i>(<i>r + a</i>)(<i>r + b</i>) }, </p>
+
+where <i>ab</i> + 1 = <i>r</i><sup>2</sup>.  
+He was also able to add the fifth positive rational, 
+
+<p align=center>
+777480 / 8288641, </p>
+
+to the Fermat's set (see <a href="refclas.html">Classical 
+references</a>). In 2017, Stoll [<a href="ref.html#372">372</a>] proved that extension 
+of Fermat's set to a rational quintuple with the same property is unique.    
+
+<p>
+In January 1999, the first example  
+of a set of six positive rationals
+with the property of Diophantus and Fermat was found by Gibbs [<a href="ref.html#144">144</a>, <a href="ref.html#80">80</a>]:  
+
+<p align=center>
+{11/192, 35/192, 155/27, 512/27, 1235/48, 
+180873/16}. </p>
+
+These examples motivate the following definitions. 
+  
+<p>
+<table align=center border=2 width="100%" cellpadding=10> 
+<tr>
+<td bgcolor="FFFFBB">
+<font size=3 face="Arial,Helvetica,sans-serif">
+<b>Definition 1.1:</b> A set of <i>m</i> positive integers 
+{<i>a</i><sub>1</sub>, 
+<i>a</i><sub>2</sub>, ... , 
+<i>a</i><sub><i>m</i></sub>}   
+is called <b>a Diophantine <i>m</i>-tuple</b> if 
+<nobr><i>a</i><sub><i>i</i></sub> &middot <i>a</i><sub><i>j</i></sub> + 1</nobr> 
+is a perfect square for all 
+<nobr>1 &le; <i>i</i> &lt; <i>j</i> &le; <i>m</i>.</nobr>  
+</font> </td> </tr></table>  
+<p>
+
+<table align=center border=2 width="100%" cellpadding=10>
+<tr>
+<td bgcolor="FFFFBB">
+<font size=3 face="Arial,Helvetica,sans-serif">
+<b>Definition 1.2:</b> A set of <i>m</i> non-zero rationals  
+{<i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>, ... , 
+<i>a</i><sub><i>m</i></sub>} 
+is called <b>a rational Diophantine <i>m</i>-tuple</b> if 
+<nobr><i>a</i><sub><i>i</i></sub> &middot <i>a</i><sub><i>j</i></sub> + 1</nobr> 
+is a perfect square for all 
+<nobr>1 &le; <i>i</i> &lt; <i>j</i> &le; <i>m</i>.</nobr>  
+</font> </td> </tr></table>
+<p>
+
+It is natural to ask how large these sets, i.e. (rational) 
+Diophantine tuples, can be. This question was recently almost  
+completely solved in the integer case (see 
+Chapter <a href="quint.html">2</a>). 
+On the other hand,  
+it seems that in the rational case we do not have even a 
+widely accepted conjecture. In particular, no absolute upper 
+bound for the size of rational Diophantine <i>m</i>-tuples 
+is known.  
+
+<p>
+
+In the integer case we have the following folklore &quot;Diophantine 
+quintuple conjecture&quot;. 
+
+<p>
+<a name="cnj1.1"></a>
+<table align=center border=2 width="100%" cellpadding=10>
+<tr>
+<td bgcolor="#F7DDC2">
+<font size=3 face="Arial,Helvetica,sans-serif">
+<b>Conjecture 1.1:</b> 
+There does not exist a Diophantine quintuple.
+</font></td> </tr></table>
+<p>
+
+The first important result concerning this conjecture was proved
+in 1969 by Baker and Davenport [<a href="ref.html#3">3</a>]. Using 
+Baker's theory on linear forms in logarithms of algebraic numbers 
+and a reduction method based on continued fractions, 
+they proved that if <i>d</i>
+is a positive integer such that <nobr>{1, 3, 8, <i>d</i>}</nobr> forms a
+Diophantine quadruple, then <nobr><i>d</i> = 120.</nobr> It implies that  
+the Fermat's set <nobr>{1, 3, 8, 120}</nobr> cannot be extended to a 
+Diophantine quintuple. 
+This problem was stated in 1967 by Gardner [<a href="ref.html#1">1</a>] 
+and in 1968 by van Lint [<a href="ref.html#2">2</a>]. The same result
+was proved later, with different methods, 
+by Kanagasabapathy &amp; Ponnudurai 
+[<a href="ref.html#4">4</a>], Sansone [<a href="ref.html#6">6</a>] and
+Grinstead [<a href="ref.html#11">11</a>]. 
+
+<p>
+
+<hr size=2 noshade>
+<p>
+<blockquote>
+2. <a href="quint.html">Diophantine quintuple conjecture</a> <br>
+3. <a href="dn.html">Sets with the property <i>D</i>(<i>n</i>)</a> <br>
+4. <a href="fib.html">Connections with Fibonacci numbers</a> <br>
+5. <a href="ratio.html">Rational Diophantine <i>m</i>-tuples</a> <br> 
+6. <a href="coell.html">Connections with elliptic curves</a> <br>
+7. <a href="gener.html">Various generalizations</a> <br>
+8. <a href="ref.html">References</a> 
+</blockquote>
+<p>
+<hr size=2 noshade>
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<font face="Times New Roman">
+<a href="dtuples.html">Diophantine <i>m</i>-tuples page</a> 
+</font>
+</td>
+
+<td align="right">
+<font face="Times New Roman">
+<a href="index.html"><em>Andrej Dujella</em> home page</a>
+</font>
+</td>
+</tr>
+</table>
+
+<!-- Start eXTReMe Non Public Tracker Code
+Login:    duje
+Page ID:  dintro
+Page URL: http://www.math.hr/~duje/intro.html
+Help:     http://www.extremetracking.com/  -->
+<script type="text/javascript" language="javascript1.2"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;//-->
+</script><script type="text/javascript"><!--
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+EXd.write("<img src=http://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;pid=dintro&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXd.referrer)+" height=1 width=1>");//-->
+</script><noscript><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;pid=dintro&amp;j=n&amp;jv=n"/>
+</noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Connections with Fibonacci numbers</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Diophantine m-tuples - 
+Connections with Fibonacci numbers">
+<meta name="keywords" content="Fibonacci numbers, 
+Diophantine equations, sequences, Pell equation">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+</head>
+
+<body bgcolor="CCEECC"> 
+
+<h2 align=center><font face="Times New Roman">4. Connections with 
+Fibonacci numbers</font></h2>
+<p><br>
+
+
+<h3 align=center><font face="Times New Roman">4.1. Hoggatt-Bergum 
+conjecture</font></h3>
+
+
+There are many formulas for Diophantine quadruples 
+with elements represented in terms of Fibonacci 
+numbers. The most popular such quadruple was found in 1977 by 
+Hoggatt &amp; Bergum [<a href="ref.html#8">8</a>]: 
+
+<p align=center> 
+{<i>F</i><sub>2<i>k</i></sub>, <i>F</i><sub>2<i>k</i>+2</sub>, 
+<i>F</i><sub>2<i>k</i>+4</sub>, 
+4<i>F</i><sub>2<i>k</i>+1</sub>
+<i>F</i><sub>2<i>k</i>+2</sub><i>F</i><sub>2<i>k</i>+3</sub>}. 
+</p> 
+
+Hoggatt and Bergum conjectured that the fourth element 
+in the above set is unique. The conjecture was proved by Dujella 
+[<a href="ref.html#77">77</a>] in 1999, 
+and this result also implies that if   
+<nobr>{<i>F</i><sub>2<i>k</i></sub>, <i>F</i><sub>2<i>k</i>+2</sub>, 
+<i>F</i><sub>2<i>k</i>+4</sub>, <i>d</i>}</nobr> 
+is a Diophantine quadruple, then <i>d</i> cannot be a Fibonacci 
+number. 
+
+<p>
+The main step in the proof of Hoggatt-Bergum conjecture 
+is a comparison of the 
+upper bounds for solutions obtained from a theorem of Baker 
+and W&uuml;stholz with the lower bounds obtained from the 
+congruence conditions modulo <nobr>2<i>F</i><sub>2<i>k</i></sub>
+<i>F</i><sub>2<i>k</i>+2</sub>.</nobr> This comparison finishes 
+the proof for <nobr><i>k</i> &gt; 48.</nobr> The statement for 
+<nobr>2 &le; <i>k</i> &le; 48</nobr> 
+was proved by a version of the reduction procedure due to  
+Baker &amp; Davenport [<a href="ref.html#3">3</a>]. 
+
+<p>
+There are many papers devoted to various generalizations 
+of the result of Hoggatt & Bergum. Let us mention some of the authors: 
+Morgado [<a href="ref.html#19">19</a>, <a href="ref.html#27">27</a>, 
+<a href="ref.html#39">39</a>, <a href="ref.html#50">50</a>], 
+Horadam [<a href="ref.html#26">26</a>], 
+Long &amp; Bergum [<a href="ref.html#31">31</a>],
+Shannon [<a href="ref.html#32">32</a>], 
+Dujella [<a href="ref.html#36">36</a>, <a href="ref.html#44">44</a>, 
+<a href="ref.html#48">48</a>, <a href="ref.html#55">55</a>, 
+<a href="ref.html#68">68</a>, <a href="ref.html#124">124</a>],   
+Deshpande &amp; Bergum [<a href="ref.html#54">54</a>],
+Udrea [<a href="ref.html#59">59</a>, <a href="ref.html#93">93</a>], 
+Beardon &amp; Deshpande [<a href="ref.html#103">103</a>], 
+Deshpande &amp; Dujella [<a href="ref.html#106">106</a>], 
+Dujella &amp; Ramasamy [<a href="ref.html#133">133</a>], 
+Ramasamy [<a href="ref.html#158">158</a>],  
+Fujita [<a href="ref.html#169">169</a>].
+
+
+<p>
+Let the sequence (<i>g</i><sub><i>n</i></sub>) be defined by
+
+<p align=center> 
+<i>g</i><sub>0</sub> = 0, &nbsp 
+<i>g</i><sub>1</sub> = 1, &nbsp 
+<i>g</i><sub><i>n</i></sub> = 
+<i>p</i><i>g</i><sub><i>n</i>-1</sub> 
+- <i>g</i><sub><i>n</i>-2</sub>, </p>
+
+where <nobr><i>p</i> &ge; 2</nobr> 
+is an integer. 
+In [<a href="ref.html#55">55</a>], it was proved that the sets 
+
+<p align=center>
+{<i>g</i><sub><i>n</i></sub>, <i>g</i><sub><i>n</i>+2</sub>, 
+(<i>p</i> 
+<img src="symbols/pm.gif" alt="+-" ALIGN=MIDDLE> 2)<i>g</i><sub><i>n</i>+1</sub>, 
+4<i>g</i><sub><i>n</i>+1</sub>((<i>p</i> 
+<img src="symbols/pm.gif" alt="+-" ALIGN=MIDDLE> 2)
+<i>g</i><sub><i>n</i>+1</sub><sup>2</sup> 
+<img src="symbols/mp.gif" alt="-+" ALIGN=MIDDLE> 1))} </p>
+
+are Diophantine quadruples. For <nobr><i>p</i> = 3</nobr> we obtain the 
+Hoggatt-Bergum set, and for <nobr><i>p</i> = 2</nobr> we obtain a well known  
+polynomial Diophantine quadruple 
+
+<p align=center>
+{<i>n</i>, <i>n</i> + 2, 4<i>n</i> + 4, 
+4(<i>n</i> + 1)(2<i>n</i> + 1)(2<i>n</i> + 3)}. </p>
+
+
+<h3 align=center><font face="Times New Roman">4.2. Diophantine 
+quadruples for squares of Fibonacci and Lucas numbers</font></h3>
+
+
+It was proved in [<a href="ref.html#44">44</a>] that for any integer 
+<i>n</i> and any set <nobr>{<i>a, b</i>}</nobr> with the property 
+<i>D</i>(<i>n<sup>2</sup></i>), 
+where <i>ab</i> is not a perfect square, there exist  
+infinitely many sets of the form <nobr>{<i>a, b, c, d</i>}</nobr> with 
+the property <i>D</i>(<i>n</i><sup>2</sup>). 
+
+<p>
+The proof of this result is bases on the construction of a
+double sequence <i>x<sub>i,j</sub></i>. In the construction, 
+solutions of Pell equation 
+<i>s</i><sup>2</sup> - <i>ab t</i><sup>2</sup> = 1 were used. 
+
+<p>
+If we have a pair of identities of the form: 
+<nobr><i>ab + n</i><sup>2</sup> = <i>m</i><sup>2</sup></nobr> and 
+<nobr><i>s</i><sup>2</sup> - <i>ab t</i><sup>2</sup> = 1,</nobr> 
+then we can construct the sequence <i>x<sub>i,j</sub></i> 
+and obtain infinitely many Diophantine quadruples with the property 
+<i>D</i>(<i>n</i><sup>2</sup>). There are several pairs of identities 
+for Fibonacci and Lucas numbers, which have the above form. 
+For example,  
+
+<p align=center> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+4<i>F</i><sub><i>k</i> - 1</sub><i>F</i><sub><i>k</i>+1</sub> +  <i>F</i><sub><i>k</i></sub><sup>2</sup> =   <i>L</i><sub><i>k</i></sub><sup>2</sup>, <br>
+ (<i>F</i><sub><i>k</i></sub><sup>2</sup> + <i>F</i><sub><i>k</i>-1</sub><i>
+F</i><sub><i>k</i>+1</sub>)<sup>2</sup> - 4<i>F</i><sub><i>k</i>-1</sub>F<sub><i>k</i>+1</sub> <i>F</i><sub><i>k</i></sub><sup>2</sup> = 1 </p>
+
+and
+
+<p align=center> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp;                  4<i>F</i><sub><i>k</i>-2</sub><i>F</i><sub><i>k</i>+2</sub> + <i>L</i><sub><i>k</i></sub><sup>2</sup> = 9<i>F</i><sub><i>k</i></sub><sup>2</sup>, <br>
+ (<i>F</i><sub><i>k</i></sub><sup>2</sup> + <i>F</i><sub><i>k</i>-2</sub><i>F</i><sub><i>k</i>+2</sub>)<sup>2</sup> - 4<i>F</i><sub><i>k</i>-2</sub><i>F</i><sub><i>k</i>+2</sub> <i>F</i><sub><i>k</i></sub><sup>2</sup> = 1. </p>
+
+Applying the construction from [<a href="ref.html#44">44</a>] 
+to these pairs of identities, 
+we get e.g. the set
+ 
+<p align=center> 
+{2<i>F</i><sub><i>k</i>-1</sub>, 2<i>F</i><sub><i>k</i>+1</sub>,  2<i>F</i><sub><i>k</i></sub><sup>3</sup>
+<i>F</i><sub><i>k</i>+1</sub>F<sub><i>k</i>+2</sub>, 
+2<i>F</i><sub><i>k</i>+1</sub><i>F</i><sub><i>k</i>+2</sub>
+<i>F</i><sub><i>k</i>+3</sub>(2<i>F</i><sub><i>k</i>+1</sub>
+<sup>2</sup> - <i>F</i><sub><i>k</i></sub><sup>2</sup>)} </p>
+
+with the property <i>D</i>(<i>F</i><sub><i>k</i></sub><sup>2</sup>)  
+and the set 
+
+<p align=center> 
+{2<i>F</i><sub><i>k</i>-2</sub>, 2<i>F</i><sub><i>k</i>+2</sub>, 2<i>F</i><sub><i>k</i>-1</sub>
+<i>F</i><sub><i>k</i></sub><i>L</i><sub><i>k</i></sub><sup>2</sup>
+<i>L</i><sub><i>k</i>+1</sub>, 2<i>L</i><sub><i>k</i>-1</sub>
+<i>F</i><sub><i>k</i></sub>
+<i>L</i><sub><i>k</i></sub><sup>2</sup>
+<i>L</i><sub><i>k</i>+1</sub>} </p>
+
+with the property 
+<i>D</i>(<i>L</i><sub><i>k</i></sub><sup>2</sup>) 
+(see [<a href="ref.html#48">48</a>]). 
+In the same paper, several quadruples were obtained using <b>Morgado 
+identity</b>: 
+
+<p align=center>
+<i>F</i><sub><i>k</i>-3</sub><i>F</i><sub><i>k</i>-2</sub>
+<i>F</i><sub><i>k</i>-1</sub><i>F</i><sub><i>k</i>+1</sub>
+<i>F</i><sub><i>k</i>+2</sub><i>F</i><sub><i>k</i>+3</sub> + 
+<i>L</i><sub><i>k</i></sub><sup>2</sup> = 
+(<i>F</i><sub><i>k</i></sub>(2<i>F</i><sub><i>k</i>-1</sub>
+<i>F</i><sub><i>k</i>+1</sub> - 
+<i>F</i><sub><i>k</i></sub><sup>2</sup>))<sup>2</sup>. </p>
+
+E.g. the set 
+<p align=center> 
+{<i>F</i><sub><i>k</i>-3</sub><i>F</i><sub><i>k</i>-2</sub>
+<i>F</i><sub><i>k</i>+1</sub>, <i>F</i><sub><i>k</i>-1</sub>
+<i>F</i><sub><i>k</i>+2</sub><i>F</i><sub><i>k</i>+3</sub>, 
+<i>F</i><sub><i>k</i></sub><i>L</i><sub><i>k</i></sub><sup>2</sup>, 
+4<i>F</i><sub><i>k</i>-1</sub><sup>2</sup><i>F</i><sub><i>k</i></sub>
+<i>F</i><sub><i>k</i>+1</sub><sup>2</sup>
+(2<i>F</i><sub><i>k</i>-1</sub><i>F</i><sub><i>k</i>+1</sub> - 
+<i>F</i><sub><i>k</i></sub><sup>2</sup>)} </p>
+
+has the property <i>D</i>(<i>L</i><sub><i>k</i></sub><sup>2</sup>).  
+
+<p>
+
+<hr size=2 noshade>
+<p>
+<blockquote>
+1. <a href="intro.html">Introduction</a> <br>
+2. <a href="quint.html">Diophantine quintuple conjecture</a>  <br>
+3. <a href="dn.html">Sets with the property <i>D</i>(<i>n</i>)</a> <br> 
+5. <a href="ratio.html">Rational Diophantine <i>m</i>-tuples</a>  <br>
+6. <a href="coell.html">Connections with elliptic curves</a> <br>
+7. <a href="gener.html">Various generalizations</a> <br>
+8. <a href="ref.html">References</a> 
+</blockquote>
+<p>
+
+
+<hr size=2 noshade>
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<font face="Times New Roman">
+<a href="dtuples.html">Diophantine <i>m</i>-tuples page</a> 
+</font>
+</td>
+
+<td align="right">
+<font face="Times New Roman">
+<a href="index.html"><em>Andrej Dujella</em> home page</a>
+</font>
+</td>
+</tr>
+</table>
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+</body>
+</html>
