@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>A. Dujella, M. Maretic: Kriptografija</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Kriptografija">
+<meta name="keywords" content="kriptografija, cryptography, knjiga, book, 
+Element, Marcel Maretic, Andrej Dujella">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<style type="text/css">
+hr.ir {color: rgb(205,92,92);
+       height:2px}
+</style>
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFE4B5">
+
+
+<h2 align=center><a href="http://web.math.hr/~duje/">Andrej Dujella</a>, 
+<a href="http://www.fsb.hr/matematika/index.php?ulaz=marcel">Marcel Maretić</a>:</h2>
+<p>
+<h1 align=center>Kriptografija</h1>
+<p>
+<h3 align=center>Udžbenik <a href="http://www.unizg.hr/">Sveučilišta u Zagrebu</a> <br>
+Nakladnik: <a href="http://www.element.hr/">Element</a>, Zagreb, 2007 <br>
+ISBN: 978-953-197-565-0<br>
+270 stranica, 17 &times 24 cm</h3>
+<hr class="ir" noshade>
+
+<p align=center>
+<img src="slike/ovitak.jpg" alt="ovitak knjige Kriptografija">
+</p>
+<hr class="ir" noshade>
+
+Knjiga se može naručiti preko 
+<a href="http://element.hr/artikli/286/kriptografija">Elementove web stranice</a>.
+
+<hr class="ir" noshade>
+
+<p>
+Ljudi su od davnina željeli sigurno komunicirati, ali bili su svjesni da njihove poruke
+često putuju nesigurnim komunikacijskim kanalima. Iako su se kroz stoljeća
+načini prenošenja poruka uvelike promijenili, osnovni problem zapravo je ostao
+isti, a to je kako onemogućiti onoga tko može nadzirati kanal, kojim se prenosi
+poruka, da dozna njezin sadržaj. Načinima rješavanja ovog problema bavi se znanstvena
+disciplina koja se naziva <em>kriptografija</em>.
+<p>
+Metode, koje su se najčešće tijekom povijesti koristile za
+šifriranje poruka, bile su zamjena (supstitucija) i premještanje
+(transpozicija) osnovnih elemenata teksta (slova, blokova slova,
+bitova). Kombinaciju ovih dviju metoda susrećemo i danas u
+najmodernijim simetričnim kriptosustavima. Asimetrični
+kriptosustavi ili kriptosustavi s javnim ključem pojavili su se
+tek 70-tih godina 20. stoljeća. Kod njih se za šifriranje koriste
+funkcije koje su &quot;jednosmjerne&quot; (one se računaju lako, ali
+njihov inverz vrlo teško). To znači da funkcija za šifriranje može
+biti javna, dok samo funkcija za dešifriranje mora biti tajna. U
+konstrukciji jednosmjernih funkcija koriste se &quot;teški&quot;
+matematički problemi, kao što su faktorizacija velikih prirodnih
+brojeva, te logaritmiranje u konačnim grupama.
+<p>
+Ova je knjiga nastala na osnovi <a href="../kript/kriptografija.html">on-line 
+skripte</a> iz kolegija 
+<a href="../kript.html">Kriptografija</a>
+koji se od akademske godine 1999/2000. predaje
+kao izborni kolegij na <a href="http://www.math.hr/">PMF-Matematičkom odjelu</a>.
+Knjiga je prvenstveno namijenjena studentima matematike. No, vjerujemo
+da će imati znatno šire čitateljstvo. Imajući to u vidu, knjiga je koncipirana 
+tako da se što veći dio njezinog sadržaja može pratiti uz minimalno matematičko predznanje. 
+Naravno, osnovni pojmovi iz teorije brojeva su nužni za razumijevanje kriptosustava 
+s javnim ključem. Stoga su oni uvedeni najprije nešto neformalnije na mjestima gdje se za njima 
+prvi put ukazala potreba, a sustavno su obrađeni u posljednjem poglavlju pod naslovom 
+<em>Algoritamska teorija brojeva</em>.
+<p>
+<hr class="ir" noshade>
+
+<h2>Sadržaj</h2>
+<p>
+<font size="+1">
+&nbsp; &nbsp; Predgovor</font><br><br>
+<font size="+1">
+&nbsp; &nbsp; 1. Klasična kriptografija<br></font>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.1. Osnovni pojmovi<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.2. Supstitucijske šifre<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.3. Vigen&egrave;reova šifra<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.4. Playfairova šifra<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.5. Hillova šifra<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.6. Jednokratna bilježnica<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.7. Transpozicijske šifre<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.8. Naprave za šifriranje<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+1.8.1 Jeffersonov kotač za šifriranje<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
+1.8.2 Hebernov električni stroj za kodiranje<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+1.8.3 ENIGMA<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+1.8.4 Hagelinov stroj M-209<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.9. Zadatci<br><br>
+<font size="+1">
+&nbsp; &nbsp; 2. Moderni simetrični blokovni  
+kriptosustavi<br></font>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.1. Data Encryption Standard (DES)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+2.1.1 Opis algoritma DES-a<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+2.1.2 Svojstva DES-a<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.2. Načini djelovanja blokovnih šifri<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.3. Kriptoanaliza DES-a<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+2.3.1 Diferencijalna kriptoanaliza<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+2.3.2 Linearna kriptoanaliza<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.4. Neke zamjene za DES<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+2.4.1 Trostruki DES<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+2.4.2 IDEA<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+2.4.3 CAST-128<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+2.4.4 RC5<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.5. Advanced Encryption Standard<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.6. Zadatci<br><br>
+<font size="+1">
+&nbsp; &nbsp; 3. Kriptografija javnog ključa<br></font>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.1. Ideja javnog ključa<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.2. Kriptosustavi zasnovani na problemu faktorizacije<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+3.2.1 RSA kriptosustav<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+3.2.2 Kriptoanaliza RSA kriptosustava<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+3.2.3 Rabinov kriptosustav<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.3. Kriptosustavi zasnovani na problemu faktorizacije<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+3.3.1 Diffie-Hellmanov protokol za razmjenu ključeva<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+3.3.2 ElGamalov kriptosustav<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+3.3.3 Index calculus metoda<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+3.3.4 Primjena eliptičkih krivulja u kriptografiji<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+3.3.5 Hipereliptičke krivulje<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.4. Ostali kriptosustavi s javnim ključem<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+3.4.1 Problem ruksaka<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+3.4.2 McElieceov kriptosustav<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+3.4.3 NTRU kriptosustav<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.5. Zadatci<br><br>
+<font size="+1">
+&nbsp; &nbsp; 4. Kriptografija u praksi<br></font>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.1. Kriptografske hash funkcije<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+4.1.1 Secure Hash Algorithm<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+4.1.2 MAC kodovi<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.2. Generatori slučajnih brojeva<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+4.2.1 Izvori slučajnih bitova<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+4.2.2 Generatori pseudoslučajnih brojeva<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+4.2.3 Analiza sigurnosti generatora<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.3. Digitalni potpis<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+4.3.1 Digital Signature Algorithm<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+4.3.2 Elliptic Curve Digital Signature Algorithm<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+4.3.3 Napad zasnovan na paradoksu rođendana<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.4. Problem identiteta<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.5. Primjer hibridnog kriptosustava: PGP<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.6. Zadatci<br><br>
+<font size="+1">
+&nbsp; &nbsp; 5. Algoritamska teorija brojeva<br></font>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5.1. Osnovni algoritmi iz teorije brojeva<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.1.1 Složenost algoritama<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.1.2 Množenje prirodnih brojeva<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.1.3 Modularno množenje i potenciranje<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.1.4 Euklidov algoritam<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.1.5 Kineski teorem o ostatcima<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.1.6 Verižni razlomci<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.1.7 Kvadratne kongruencije<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.1.8 Kvadrati i kvadratni korijeni<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5.2. Eliptičke krivulje<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.2.1 Grupovni zakon<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.2.2 Eliptičke krivulje nad <b>Q</b><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.2.3 Eliptičke krivulje nad konačnim poljima<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.2.4 Određivanje reda grupe <i>E</i>(<b>F</b><sub><i>q</i></sub>)<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5.3. Testiranje i dokazivanje prostosti<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.3.1 Distribucija prostih brojeva<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.3.2 Pseudoprosti brojevi<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.3.3 Dokazivanje prostosti pomoću eliptičkih krivulja<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.3.4 Polinomijalni AKS algoritam za dokazivanje prostosti<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5.4. Metode faktorizacije<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.4.1 Pollardova &rho; metoda<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.4.2 Pollardova <i>p</i> - 1 metoda<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.4.3 Faktorizacija pomoću eliptičkih krivulja<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.4.4 Metoda verižnog razlomka<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+5.4.5 Metoda kvadratnog sita<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5.5. Zadatci<br><br>
+<font size="+1">
+&nbsp; &nbsp; Bibliografija</font><br><br>
+<font size="+1">
+&nbsp; &nbsp; Indeks</font><br>
+
+<p>
+<hr class="ir" noshade>
+<p>
+Komentare, primjedbe i sugestije u vezi knjige možete poslati na e-mail adresu <tt>duje&#064;math.hr</tt>. 
+Posebno ćemo biti zahvalni svima koji nam ukažu na nedostatke ili moguće 
+pogrješke u knjizi. 
+<p>
+<a href="https://www.dropbox.com/s/kjd8518ls1o4vtm/kriptografija-errata.pdf">Popis korekcija (errata)</a>   
+<p>
+<hr class="ir" noshade>
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../kript.html">Web stranica kolegija <em>Kriptografija</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" >
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+
+
+
+</body>
+</html>
