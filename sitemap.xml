@@ -1,0 +1,1898 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>http://web.math.hr/~duje/</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sitemap.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/vita.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/zivotopis3.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/papers1.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/dtuples.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/tors.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/generic.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rankhist.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utbeng.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/utblink.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kripteng.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/kriptografija.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/matstrukture.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utbprof.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/eccseminar.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/dipl.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/mentor.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/diofantske.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/diophantine.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/dioph/dioph.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/debrecen.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tbkript.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tbkripteng.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tbkript/tbkriptlink.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/graz.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/daprox.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/seminar.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/semeng.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/literatura.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/phdmaster.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/mentorphd.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/alllinks.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/index.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/papers.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/confer.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/invited.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/recen.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/citati.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/radst.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/intro.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/quint.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/dn.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/fib.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ratio.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/coell.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/gener.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ref.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/refclas.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ddlinks.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z1.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z2.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z2old141517.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z3.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z3old89101112.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z4.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z4old91011.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z5.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z6.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z6old6.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z7.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z8.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z8old5.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z9.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z10.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z10old3.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z12.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z2z2.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z2z2old1011.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z2z4.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z2z4old67.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z2z6.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z2z6old5.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z2z8.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/conductor.txt</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/discriminant.txt</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk3.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk4.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk6.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk7.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk8.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk9.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk12.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk14.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk15.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk17.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk19.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk20.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk21.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk22.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk23.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk24.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rk28.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rkeq10.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rkeq11.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rkeq14.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rkeq15.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rkeq17.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/rkeq18.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/osnovni.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/supst.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/vigener.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/tablice/vigkva.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/tablice/coincid3.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/playfair.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/hill.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/otp.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/transp.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/naprave.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/deshist.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/des.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/tablice/destablice.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/desprop.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/modovi.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/desan.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/tablice/inputs.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/tablice/jtablice.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/josblok.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/aes.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/tablice/aessbox.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/idejajavni.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/rsa.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/rsaan.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/josjavni.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/pseudoprosti.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/solstras.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/miller.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/faktor.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/fbaze.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/verizni.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/sito.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/kriptoref.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/elipdef.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/elipime.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/kongruentni.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/taxi.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/mtorke.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/elipQ.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/rang.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/dlp.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/elgamal.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/indcal.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/konpolja.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/hasse.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/elimplem.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/menezes.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/ecdsa.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/ecdlp.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/izbor.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/usporedba.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ecc/ellref.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/dioph/diofsem.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tbkript/tbksem.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/daprox/daproxsem.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sem06.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sem05.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sem04.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sem03.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sem02.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sem01.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sem00.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sem06e.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sem05e.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sem04e.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sem03e.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sem02e.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sem01e.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sem00e.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ntcen.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/mathdept.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/ntjour.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/publishers.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/slike/marta/marta.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/slike/dominik/dominik.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/slike/jelena/jelena.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/slike/obitelj/obiteljdujella.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/strong3.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/arithpellsub.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/pvpdpp3.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/numberlast.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/dujeivica2c.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/k1ksub.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/esdmqc-aa2.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/mwdioph2.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/diffsqurev.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/dluca.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/dmtflpIIc.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/gusicd2a.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/DujellaGusicTichy.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/dulu.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/duram.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/dujevinko.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/dioeul2.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/rsa.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/pondi.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/mn2rev.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/polquad4.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/finit.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/dubor1.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/dfuchs.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/budu.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/dft.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/rk15.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/ddesh.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/eul2.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/size.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/thue5.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/dutichy.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/ja99.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/bound.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/newton.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/dp2.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/irr.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/paramaa.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/param.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/quin3a.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/rank7.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/euler.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/pams.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/discr.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/qq4.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/ost.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/qjm.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/pdeb2.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/eger.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/fcon2.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/fcon1.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/osijek.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/pdeb1.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/glas1.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/acta2.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/graz1.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/fib1.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/port1.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pdf/acta1.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/genericold2006.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/Uvodutbr07.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/kol07_rjesenja.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/kol99.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/kol00.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/kol01.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/kol02.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/kol03.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/kolutb03.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/kol04.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/kol04b.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/kolutb04.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/kol05.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/kol05b.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/utb_kolokvij05.htm</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/kol06.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/kol06b.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/utb_b.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/kol07a.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/kol07b.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD101.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD201.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD301.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD401.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD501.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD601.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD103.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD203.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD303.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD403.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD503.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD105.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD205.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD305.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD405.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD505.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/ZAD605.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/studenti02.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200301.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200302.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200303.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200304.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200305.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200401.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200402.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200403.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200404.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200405.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200501.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200502.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200503.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200504.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200505.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200601.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200602.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200603.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200604.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200701.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200702.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200703.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200704.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/kript/zad200705.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/matstruk/KOL196.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/matstruk/KOL296.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/matstruk/KOL197.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/matstruk/KOL297.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/matstruk/KOL199.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/matstruk/KOL299.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/matstruk/KOL105.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/matstruk/KOL205.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utbprof/kolutbprof061.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utbprof/kolutbprof062.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/natjzados.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utb/natjzadsr.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utbprof/kol061a.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utbprof/kol061b.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utbprof/kol062a.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/utbprof/kol062b.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/dioph/zad1.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/dioph/zad2.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/dioph/zad3.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/dioph/zad4.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/dioph/zad5.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/dioph/zad6.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/debrecen.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tbkript/zad1.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tbkript/zad2.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tbkript/zad3.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tbkript/zad4.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tbkript/zad5.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sem07.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/Uvoduelkriv2007.doc</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/UAG.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/UATB.doc</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/teme.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/pojmIva.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/PojmJer.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/sem07e.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/tors/z1old.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2007-10-08T19:40:50+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/dioph/mord1.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/dioph/mord2.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/dioph/mord3.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/dioph/rib1.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://web.math.hr/~duje/dioph/mord4.pdf</loc>
+  <priority>0.5</priority>
+  <changefreq>daily</changefreq>
+</url>
+</urlset>

@@ -1,0 +1,382 @@
+
+
+
+\documentclass [11pt] {article}
+
+\usepackage{amsmath,amssymb}
+
+\newtheorem{theorem}{Theorem}
+  \newtheorem{lemma}{Lemma}
+  \newtheorem{proposition}{Proposition}
+  \newtheorem{corollary}{Corollary}
+  \newtheorem{definition}{Definition}
+  \newtheorem{remark}{Remark}
+  \newtheorem{example}{Example}
+
+ \renewcommand{\arraystretch}{1.5}
+
+  \newcommand {\pf}  {\mbox{\sc Proof. \,\,}}
+
+  \newcommand {\qed} {\null \hfill \rule{2mm}{2mm}}
+  \def\rank {\mathop{\mathrm{rank}}\nolimits}
+
+
+\begin{document}
+
+\title{{\Large{\bf Rational Diophantine sextuples with mixed signs}}}
+
+\author{Andrej Dujella}
+
+
+\date{}
+\maketitle
+
+
+\begin{abstract}
+A rational Diophantine $m$-tuple is a set of $m$ nonzero rationals
+such that the product of any two of them is one less than a perfect
+square. Recently Gibbs constructed several examples of rational
+Diophantine sextuples with positive elements. In this note, we
+construct examples of rational Diophantine sextuples with mixed
+signs. Indeed, we show that such examples exist for all possible
+combinations of signs.
+\end{abstract}
+
+\footnotetext{
+2000 Mathematics Subject Classification: 11D09, 11G05, 11Y50.
+
+Key words: Diophantine sextuples, elliptic curve. }
+
+\section{Introduction}
+A set of $m$ nonzero rationals $\{a_1,a_2,\ldots,a_m\}$ is called
+{\em a (rational) Diophantine $m$-tuple} if $a_ia_j+1$ is a
+perfect square for all $1\leq i<j\leq m$ (see \cite{D-acta2}).
+
+The principal question is how large a rational Diophantine tuple can be.
+In case of integer Diophantine tuples, the corresponding question
+is almost completely answered. Namely, it is well-known and easy to prove that
+there exist infinitely many integer Diophantine quadruples (e.g. $\{k-1,k+1,4k,16k^3-4k\}$
+for $k\geq 2$), while it was proved
+in \cite{D-crelle} that there does not exist an integer Diophantine sextuple
+and there are only finitely many such quintuples (see also \cite{Fuj-reg}).
+However, in the case of rational Diophantine tuples, no absolute upper
+bound for the size of such sets is known (the existence of a such bound
+follows from the Lang conjecture on varieties of general type).
+The first example of a rational Diophantine quadruple was the set
+$\{\frac{1}{16},\, \frac{33}{16},\, \frac{17}{4},\, \frac{105}{16}\}$
+found by Diophantus (see \cite{Dio}).
+Euler found infinitely many rational Diophantine quintuples (see \cite{Hea}). E.g.
+$$ \left\{ 1, 3, 8, 120, \frac{777480}{8288641} \right\}. $$
+Since 1999, several examples of rational Diophantine sextuples were found by Gibbs \cite{Gibbs1,Gibbs2}.
+The first example was
+$$ \left\{ \frac{11}{192}, \frac{35}{192}, \frac{155}{27}, \frac{512}{27}, \frac{1235}{48},
+\frac{180873}{16} \right\} . $$
+No example of a rational Diophantine septuple is known.
+
+If $\{a_1,a_2,a_3,a_4,a_5\}$ is a rational Diophantine quintuple, we may consider the hyperelliptic curve
+$$ y^2=(a_1x+n)(a_2x+n)(a_3x+n)(a_4x+n)(a_5x+n) $$
+of genus $g=2$. Caporaso, Harris and Mazur \cite{C-H-M} proved that
+the Lang conjecture on varieties of general type implies that for $g\geq 2$
+the number $B(g,\mathbb{K})=\max_{C} |C(\mathbb{K})|$ is finite. Here $C$ runs over all
+curves of genus $g$ over a number field $\mathbb{K}$, and $C(\mathbb{K})$ denotes the set of
+all $\mathbb{K}$-rational points on $C$. Therefore, the number of elements in a rational
+Diophantine tuple should be bounded by $5+B(2,\mathbb{Q})$
+(and also by $4+B(4,\mathbb{Q})$, see \cite{P-H-Z}).
+
+\medskip
+
+It can be noted that all Gibbs' examples of sextuples contain six positive rationals.
+Thus, it makes sense to ask if there exist such sextuples with mixed signs. Since
+$\{a_1, \ldots, a_6\}$ is a Diophantine sextuple if and only if $\{-a_1, \ldots, -a_6\}$ has
+the same property, it suffices to find sextuples with exactly one, two and three negative elements.
+
+
+\section{The constructions}
+
+In the constructions of rational Diophantine sextuples, we use several
+techniques. Most of them can be explained in terms of elliptic curves.
+
+If $\{a,b\}$ is a rational Diophantine pair,
+then $\{a,b,a+b\pm 2\sqrt{ab+1}\}$ is a rational Diophantine triple.
+Such triples are called \emph{regular}.
+
+Let $\{a,b,c\}$ be a (rational) Diophantine triple. In order to extend
+this triple to a quadruple, we have to solve the system
+\begin{equation} \label{2e}
+ax+1=\Box,\qquad bx+1=\Box,\qquad cx+1=\Box.
+\end{equation}
+It is a natural idea to assign to the system (\ref{2e}) the elliptic curve
+\begin{equation} \label{3e}
+ \mathcal{E}: \qquad y^2=(ax+1)(bx+1)(cx+1).
+\end{equation}
+There are three rational points on $E$ of order $2$, and also other obvious rational points
+$$ P=[0,1], \quad S=[1, \sqrt{(ab+1)(ac+1)(bc+1)} ]. $$
+The $x$-coordinate of a point $T\in E(\mathbb{Q})$ satisfies (\ref{2e}) if and only if
+$T-P\in 2\mathcal{E}(\mathbb{Q})$ (see \cite{D-rim}).
+It can be verified that $S\in 2\mathcal{E}(\mathbb{Q})$.
+This implies that
+the numbers $x(P\pm S)$ satisfy the system (\ref{2e}).
+These numbers are exactly the numbers
+$$ d_{+,-}=a+b+c+2abc\pm 2 \sqrt{(ab+1)(ac+1)(bc+1)} $$
+obtained by
+Arkin, Hoggatt and Strauss \cite{A-H-S}. They proved that $\{a,b,c,d_{+}\}$ and $\{a,b,c,d_{-}\}$ are
+rational Diophantine quadruples (if their elements are distinct and nonzero).
+Quadruples of this form are called \emph{regular}. The conjecture is that
+all integer Diophantine quadruples are regular.
+Note that if $\{a,b,c\}$ is a regular triple, then $d_{+}d_{-}=0$.
+
+Let $\{a,b,c,d\}$ be a rational Diophantine quadruple such that $abcd\neq 1$
+and let
+\begin{footnotesize}
+\[ e_{+,-}=\frac{(a\!+\!b\!+\!c\!+\!d)(abcd+1)+2abc+2abd+2acd+2bcd\pm
+2\sqrt{(ab\!+\!1)(ac\!+\!1)(ad\!+\!1)(bc\!+\!1)
+(bd\!+\!1)(cd\!+\!1)}} {(abcd-1)^2} \,.\]
+\end{footnotesize}
+In \cite{D-acta2} we proved that $\{a,b,c,d,e_{+}\}$ and $\{a,b,c,d,e_{-}\}$
+are rational Diophantine quintuples (if their elements are distinct and nonzero).
+Note that if $\{a,b,c,d\}$ is a regular quadruple, then $e_{+}e_{-}=0$
+(see \cite[Proposition 2]{D-acta2}).
+A rational Diophantine quintuple $\{a,b,c,d,e\}$ is called {\em regular} if it is
+obtained by the construction from \cite{D-acta2} or, equivalently, if
+$$ (abcde+2abc+a+b+c-d-e)^2= 4(ab+1)(ac+1)(bc+1)(de+1) \,. $$
+This construction can be explained also in the terms of elliptic curve $E$.
+Namely, let $D$ be the point on $\mathcal{E}$ with the $x$-coordinate $d$.
+Then the numbers $e_{+}$ and $e_{-}$ are exactly the $x$-coordinates of the
+points $D\pm S$ on $\mathcal{E}$.
+(See \cite{D-irr} for the characterization
+of regular quadruples and quintuples in terms of the elliptic curve
+$y^2= (ax+1)(bx+1)(cx+1)(dx+1)$.)
+
+\medskip
+
+Now we describe briefly three techniques for contruction of
+rational Diophantine sextuples.
+
+
+\begin{itemize}
+
+\item Let $ab+1=r^2$ and $c=a+b+2r$, i.e. take $\{a,b,c\}$ to be a regular rational
+Diophantine triple. Consider the elliptic curve $\mathcal{E}$ given by (\ref{3e}).
+This construction uses rational points of relatively small height on $\mathcal{E}$.
+For example, if $\rank(E(\mathbb{Q}))=2$ and $X_1,X_2$ are generators
+of $E(\mathbb{Q})/E(\mathbb{Q})_{tors}$, we consider the points of the form
+$T=m_1X_1+m_2X_2$, for $|m_i| \in \{0,1,2,3 \}$.
+If $D=P+2T=[d,d']$, then $\{a,b,c,d\}$ is a rational Diophantine quadruple
+(at least some of these quadruples are irregular; this is why we prefere to avoid
+curves with rank $1$).
+Define the points $E=D+S=[e,e']$ and $E=D-S=[f,f']$.
+Then $\{a,b,c,d,e\}$ and $\{a,b,c,d,f\}$ are rational Diophantine quintuples
+(and if $\{a,b,c,d\}$ was irregular, then $ef\neq 0$).
+If $ef+1$ is a perfect square, then $\{a,b,c,d,e,f\}$ is a rational Diophantine sextuple
+(assuming that all its elements are distinct and nonzero).
+
+In that way, we find e.g. the sextuple $\{ \frac{5}{36}, \frac{5}{4}, \frac{32}{9},
+\frac{189}{4}, \frac{665}{1521}, \frac{3213}{676} \}$ with positive elements
+(found already by Gibbs \cite{Gibbs2}), but also several sextuples with mixed signs, e.g.
+$ \{ \frac{5}{14}, \frac{7}{2}, \frac{48}{7}, \frac{1680}{361}, -\frac{2310}{19321}, \frac{93840}{71407} \}$.
+
+\item Take again the regular triple $\{a,b,c\}$, where $c=a+b+2r$, and apply
+the same construction to obtain a regular triple $\{b,c,d\}$. We find that $d=a+4b+4r$.
+The only remaining condition in order that $\{a,b,c,d\}$ be a Diophantine quadruple
+is that $ad+1$ is a perfect square. This condition leads to $(a+2r)^2-3 = \Box$,
+and it is satisfied if we take $r=\frac{u-a}{2}$, where $u=\frac{\alpha^2+3}{2\alpha}$
+for $\alpha \in \mathbb{Q}$.
+
+Applying the construction from \cite{D-acta2} to the quadruple $\{a,b,c,d\}$,
+we obtain the quintuples $\{a,b,c,d,e_{+}\}$ and $\{a,b,c,d,e_{-}\}$.
+If $e_{+}e_{-}+1$ is a perfect square, then $\{a,b,c,d,e_{+},e_{-}\}$ is a rational Diophantine sextuple
+(assuming that all its elements are distinct and nonzero). As an example of a sextuple obtained
+with this construction, we give $\{ \frac{27}{35}, -\frac{35}{36},
+\frac{1007}{1260}, -\frac{352}{315}, \frac{72765}{106276}, -\frac{5600}{4489} \}$.
+
+\item Let $\{a,b\}$ be a rational Diophantine pair. For a rational number $t$, define
+$c=-\frac{4t(-1+t)(bt-a)}{(-a+bt^2)^2}$. It is easy to check that $ac+1$ and $bc+1$ are
+perfect squares, and therefore $\{a,b,c\}$ is a rational Diophantine triple.
+We can extend this triple to an (irregular) quadruple by
+$d=\frac{8(c-a-b)(a+c-b)(b+c-a)}{(a^2+b^2+c^2-2ab-2ac-2bc)^2}$ (see \cite[Proposition 3]{D-acta2}).
+This number is the $x$-coordinate of the point $3P$ on $\mathcal{E}$.
+Again, we can apply the construction from \cite{D-acta2} to the quadruple $\{a,b,c,d\}$,
+to obtain $e_{+}$ and $e_{-}$, and if $e_{+}e_{-}+1$ is a perfect square,
+then we get a rational Diophantine sextuple $\{a,b,c,d,e_{+},e_{-}\}$
+(provided that all its elements are distinct and nonzero).
+The reason why in this construction we use irregular triples $\{a,b,c\}$ is that for regular
+triples, we have $d=d_{+}$, so the resulted quadruple is regular and gives $e_{+}e_{-}=0$.
+With this construction we find e.g. the sextuple
+$ \{ -\frac{5}{9}, \frac{32}{45}, \frac{27}{20}, \frac{216032}{937445},
+-\frac{185232905}{263802564}, \frac{175578975}{136095556} \}$.
+\end{itemize}
+
+The described algorithms are implemented in PARI/GP \cite{pari},
+and for computing the ranks we use MWRANK \cite{mwrank}.
+
+\section{Examples}
+
+We give the list of $26$ rational Diophantine sextuples with mixed signs
+obtained by the constructions described in the previous section (and their slight variations):
+
+{\footnotesize
+
+$$ \Big\{ \frac{19}{12}, \frac{33}{4}, \frac{52}{3}, \frac{60}{2209},
+-\frac{495}{24964}, \frac{595}{12} \Big\}, \,\,
+ \Big\{ \frac{31}{84}, \frac{9}{7}, \frac{49}{12}, \frac{160}{21},
+-\frac{455}{3468}, \frac{7200}{2023} \Big\}, $$
+$$ \Big\{ \frac{5}{14}, \frac{7}{2}, \frac{48}{7}, \frac{1680}{361},
+-\frac{2310}{19321}, \frac{93840}{71407} \Big\}, \,\,
+ \Big\{ \frac{147}{20}, \frac{25}{28}, \frac{96}{35},
+-\frac{11}{140}, \frac{30723}{3380}, \frac{165}{1183} \Big\}, $$
+$$ \Big\{ -\frac{9}{380}, \frac{253}{1140}, \frac{247}{60},
+\frac{125}{57}, \frac{6688}{375}, \frac{2016}{95} \Big\}, \,\,
+ \Big\{ \frac{7}{40}, -\frac{75}{56}, \frac{41}{70},
+-\frac{5376}{4805}, -\frac{300288}{241115}, \frac{165}{224} \Big\}, $$
+$$ \Big\{ \frac{1}{6}, \frac{27}{8}, \frac{385}{96}, \frac{1280}{243},
+\frac{250705}{44376}, -\frac{25415}{161376} \Big\}, \,\,
+ \Big\{ \frac{27}{35}, -\frac{35}{36}, \frac{1007}{1260},
+-\frac{352}{315}, \frac{72765}{106276}, -\frac{5600}{4489} \Big\}, $$
+$$ \Big\{ \frac{5}{24}, -\frac{64}{15}, -\frac{407}{120},
+-\frac{1530}{361}, \frac{2088}{9245}, \frac{399245}{2889816} \Big\}, \,\,
+ \Big\{ -\frac{8}{17}, \frac{85}{72}, -\frac{763}{1224},
+\frac{18360}{11449}, \frac{4914}{8993}, \frac{332605}{496008} \Big\}, $$
+$$ \Big\{ -\frac{5}{33}, \frac{121}{60}, \frac{131}{660},
+\frac{171360}{30899}, \frac{51978528}{54014455}, \frac{8041}{1500} \Big\}, $$
+$$ \Big\{ \frac{8}{23}, \frac{161}{72}, \frac{8695}{1656},
+\frac{54648}{22201}, -\frac{11270}{62001}, \frac{46288935}{9481336} \Big\}, $$
+$$ \Big\{ \frac{27}{14}, \frac{49}{18}, -\frac{16}{63}, \frac{269654}{113569},
+\frac{11572496}{19969047}, -\frac{15578784}{44488087} \Big\}, $$
+$$ \Big\{ \frac{24}{35}, -\frac{75}{56}, \frac{77}{120}, -\frac{846600}{634207},
+\frac{5629624}{7540215}, -\frac{4456963}{3346680}  \Big\}, $$
+$$ \Big\{ \frac{5}{9}, -\frac{27}{20}, -\frac{55}{36}, \frac{96305}{158404},
+\frac{23144992}{59202405}, -\frac{31157568}{20220605} \Big\}, $$
+$$ \Big\{ \frac{5}{9}, -\frac{27}{20}, \frac{13}{20}, -\frac{304083}{212180},
+\frac{20055200}{31573161}, -\frac{79520320}{67125249} \Big\}, $$
+$$ \Big\{ -\frac{5}{9}, \frac{27}{20}, \frac{32}{45}, \frac{216032}{937445},
+-\frac{185232905}{263802564}, \frac{175578975}{136095556} \Big\}, $$
+$$ \Big\{ \frac{27}{11}, \frac{77}{36}, -\frac{32}{99}, -\frac{43424}{2297339},
+\frac{811864053}{368716804}, -\frac{808311427}{2102956164} \Big\}, $$
+$$ \Big\{ \frac{21}{22}, \frac{33}{56}, -\frac{64}{77},
+-\frac{3340352}{3625853}, \frac{1092049959}{1018087688}, -\frac{778578801}{1587999368} \Big\}, $$
+$$  \Big\{ \frac{27}{35}, -\frac{35}{36}, \frac{161}{180},
+-\frac{4771879}{4287380}, \frac{917801280}{4823805007}, -\frac{2117588000}{6213359943} \Big\}, $$
+$$ \Big\{ \frac{5}{28}, -\frac{27}{35}, \frac{35}{36}, \frac{3838005}{64606108},
+\frac{324705510976}{300303876645}, -\frac{329539009184}{358699363245} \Big\}, $$
+$$ \Big\{ \frac{7}{26}, -\frac{221}{72}, -\frac{297}{104},
+\frac{226791}{1867424}, \frac{18453763328}{60529284729}, -\frac{19040799232}{6576074649} \Big\}, $$
+$$ \Big\{ -\frac{14}{45}, \frac{135}{56}, -\frac{185}{504}, \frac{25432135}{14622776},
+\frac{11585718144}{50291423405}, \frac{314271141184}{117352732005} \Big\}, $$
+$$ \Big\{ \frac{14}{45}, -\frac{135}{56}, -\frac{832}{315}, \frac{21739328}{125951315},
+\frac{197932494375}{570623898632}, -\frac{207609892105}{76457704968} \Big\}, $$
+$$ \Big\{ -\frac{14}{45}, \frac{77}{40}, \frac{135}{56}, \frac{203687253}{361681960},
+-\frac{5323853454400}{12959750399967}, \frac{4826209930880}{3371383988343} \Big\}, $$
+$$ \Big\{ -\frac{7}{17}, -\frac{425}{1008}, \frac{2432}{1071},
+\frac{80888528768}{50503742919}, \frac{1661966668042065}{1421147949949456},
+\frac{13748985346416705}{5799449383741456} \Big\}. $$
+
+}
+
+\section{Curves with the rank $8$}
+
+The examples of rational Diophantine sextuples found by Gibbs were used in
+\cite{D-irr} and \cite{D-mw} to find examples of elliptic curves
+of the form
+\begin{equation} \label{81}
+y^2= (ax+1)(bx+1)(cx+1)(dx+1),
+\end{equation}
+where $\{a,b,c,d\}$ is a Diophantine quadruple,
+and
+\begin{equation} \label{82}
+y^2= (ax+1)(bx+1)(cx+1),
+\end{equation}
+where $\{a,b,c\}$ is a Diophantine triple, with relatively large rank.
+In both cases, examples with rank equal to $8$
+were found. Using the examples from the previous section, i.e. taking
+$\{a,b,c,d\}$ and $\{a,b,c\}$ to be subquadruples and subtriples of Diophantine
+sextuples, we can find more examples
+with the same property. Indeed, we have found by MWRANK that the curve (\ref{81}) has rank $8$ for
+$$ \{a,b,c,d\} = \left\{\frac{385}{96}, \frac{1280}{243},
+\frac{250705}{44376}, -\frac{25415}{161376} \right\}, $$
+while the curve (\ref{82}) has rank $8$ for $\{a,b,c\}$ equal to
+$$ \left\{ -\frac{1530}{361}, \frac{2088}{9245}, \frac{399245}{2889816} \right\},  \,\,\,\,
+ \left\{ \frac{8695}{1656}, \frac{54648}{22201}, \frac{46288935}{9481336} \right\}, $$
+$$ \left\{ \frac{8695}{1656}, -\frac{11270}{62001}, \frac{46288935}{9481336} \right\}, \,\,\,\,
+ \left\{ \frac{21}{22}, \frac{1092049959}{1018087688}, -\frac{778578801}{1587999368} \right\}, $$
+$$ \left\{ \frac{96305}{158404}, \frac{23144992}{59202405}, -\frac{31157568}{20220605} \right\}, \,\,\,\,
+ \left\{ \frac{269654}{113569}, \frac{11572496}{19969047}, -\frac{15578784}{44488087} \right\}. $$
+The ranks have been computed unconditionally, except for the last two curves where MWRANK gives
+that the rank is equal to $7$ or $8$, while the Parity Conjeture gives that the rank is even.
+
+\begin{thebibliography}{99}
+
+\small{
+\bibitem{A-H-S}
+J. Arkin, V. E. Hoggatt and E. G. Strauss,
+On Euler's solution of a problem of Diophantus, Fibonacci Quart.
+{\bf 17} (1979), 333--339.
+
+\bibitem{pari}
+C. Batut, D. Bernardi, H. Cohen and M. Olivier, GP/PARI, Universit\'e
+Bordeaux I, 1994.
+
+\bibitem{C-H-M}
+L. Caporaso, J. Harris and B. Mazur, Uniformity of
+rational points, J. Amer. Math. Soc. {\bf 10} (1997), 1--35.
+
+\bibitem{mwrank}
+J. E. Cremona, Algorithms for Modular Elliptic Curves,
+Cambridge Univ. Press, 1997.
+
+\bibitem{Dio}
+Diophantus of Alexandria, Arithmetics and the Book of
+Polygonal Numbers, (I. G. Bashmakova, Ed.),
+Nauka, Moscow, 1974 (in Russian).
+
+\bibitem{D-acta2}
+A. Dujella, On Diophantine quintuples, Acta Arith. {\bf 81} (1997),
+69--79.
+
+\bibitem{D-rim}
+A. Dujella, Diophantine m-tuples and elliptic curves,
+J. Th\'eor. Nombres Bordeaux {\bf 13} (2001), 111--124.
+
+\bibitem{D-irr}
+A. Dujella, Irregular Diophantine m-tuples and high-rank elliptic curves,
+Proc. Japan Acad. Ser. A Math. Sci. {\bf 76} (2000), 66--67.
+
+\bibitem{D-crelle}
+A. Dujella, There are only finitely many Diophantine quintuples, J. Reine Angew. Math.
+{\bf 566} (2004), 183--214.
+
+\bibitem{D-mw}
+A. Dujella, On Mordell-Weil groups of elliptic curves induced by Diophantine
+triples, Glas. Mat. Ser. III {\bf 42} (2007), 3--18.
+
+\bibitem{Fuj-reg}
+Y. Fujita, Any Diophantine quintuple contains a regular Diophantine quadruple, preprint.
+
+\bibitem{Gibbs1}
+P. Gibbs, Some rational Diophantine sextuples,
+Glas. Mat. Ser. III {\bf 41} (2006), 195--203.
+
+\bibitem{Gibbs2}
+P. Gibbs, A generalised Stern-Brocot tree from regular Diophantine
+quadruples, preprint, {\tt math.NT/9903035}.
+
+\bibitem{Hea}
+T. L. Heath, Diophantus of Alexandria. A Study in the History of Greek Algebra.
+Powell's Bookstore, Chicago; Martino Publishing, Mansfield Center, 2003.
+
+\bibitem{P-H-Z}
+E. Herrmann, A. Peth\H{o} and H. G. Zimmer,
+On Fermat's qudruple equations, Abh. Math. Sem. Univ. Hamburg {\bf 69} (1999), 283--291.
+
+}
+\end{thebibliography}
+
+\medskip
+
+{\footnotesize
+Department of Mathematics, University of Zagreb,
+
+ Bijeni\v{c}ka cesta 30, 10000 Zagreb, Croatia
+
+{\em E-mail address}: {\tt duje@math.hr} }
+
+\end{document}

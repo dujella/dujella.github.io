@@ -1,0 +1,478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Rational Diophantine m-tuples</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Diophantine m-tuples - 
+Rational Diophantine m-tuples">
+<meta name="keywords" content="rational numbers, 
+Diophantine equations, Diophantus, Euler">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+</head>
+
+<body bgcolor="CCEECC"> 
+
+<h2 align=center><font face="Times New Roman">5. Rational Diophantine 
+<i>m</i>-tuples </font></h2> 
+<p><br>
+
+<a name="5.1"></a>
+<h3 align=center><font face="Times New Roman">5.1. Regular Diophantine 
+quintuples</font></h3>
+
+
+Euler proved that arbitrary rational Diophantine pair can be extended 
+to a rational Diophantine quintuple. Euler's construction was 
+generalized to rational Diophantine triples by Arkin, Hoggatt 
+&amp; Strauss [<a href="ref.html#14">14</a>] and to Diophantine quadruples 
+by Dujella [<a href="ref.html#62">62</a>]. 
+
+<p>   
+
+Let {<i>a, b, c, d</i>} be a rational Diophantine quadruple, i.e. 
+
+<p align=center>
+<i>ab</i> + 1 = <i>r</i><sub>1</sub><sup>2</sup>, &nbsp
+<i>ac</i> + 1 = <i>r</i><sub>2</sub><sup>2</sup>, &nbsp
+<i>ad</i> + 1 = <i>r</i><sub>3</sub><sup>2</sup>,
+</p>
+<p align=center>
+<i>bc</i> + 1 = <i>r</i><sub>4</sub><sup>2</sup>, &nbsp
+<i>bd</i> + 1 = <i>r</i><sub>5</sub><sup>2</sup>, &nbsp
+<i>cd</i> + 1 = <i>r</i><sub>6</sub><sup>2</sup>. &nbsp
+</p>
+
+Assume that 
+<i>abcd</i> &ne; 1 and define
+  
+<p align=center>
+<i>e</i> = ((<i>a</i>+<i>b</i>+<i>c</i>+<i>d</i>)(<i>abcd</i>+1) 
++ 2<i>abc</i> + 2<i>abd</i> + 2<i>acd</i>+2<i>bcd</i> &#177; 
+2<i>r</i><sub>1</sub><i>r</i><sub>2</sub><i>r</i><sub>3</sub><i>r</i><sub>4</sub><i>r</i><sub>5</sub>
+<i>r</i><sub>6</sub>) / (<i>abcd</i> - 1)<sup>2</sup>.
+</p>
+
+In [<a href="ref.html#62">62</a>] it was proved that <i>ae</i> + 1, 
+<i>be</i> + 1, <i>ce</i> +1 and <i>de</i> +1 are perfect squares. 
+E.g. 
+
+<p align=center>
+<i>ae</i> + 1 = (<i>a</i><i>r</i><sub>4</sub><i>r</i><sub>5</sub><i>r</i><sub>6</sub> 
+&#177; <i>r</i><sub>1</sub><i>r</i><sub>2</sub><i>r</i><sub>3</sub>)<sup>2</sup> 
+/ (<i>abcd</i> - 1)<sup>2</sup>.
+</p>
+ 
+A rational Diophantine quintuple {<i>a, b, c, d, e</i>} 
+obtained by this 
+construction is called <b>regular</b>. For characterization of 
+regular Diophantine quintuples in the terms of 
+elliptic curves see Chapter <a href="coell.html#6.3">6.3</a>. 
+
+<p>
+
+For example, if we apply this construction to Diophantus'  
+original set {1/16, 33/16, 17/4, 105/16}, we obtain   
+
+<p align=center>
+<i>e</i><sub>1</sub> = 549120 / 10201, &nbsp; 
+<i>e</i><sub>2</sub> = -26880 / 177241. 
+</p>
+
+<a name="5.2"></a>
+<h3 align=center><font face="Times New Roman">5.2. Rational Diophantine sextuples</font></h3>
+
+
+Although it was known already to Euler that there exist 
+infinitely many rational Diophantine quintuples, until recently it was not  
+known whether there exist infinitely many rational Diophantine 
+sextuples, and it is still not known whether there exist any rational 
+Diophantine septuple (7-tuple). Gibbs [<a href="ref.html#144">144</a>, <a href="ref.html#80">80</a>] found 45 examples of 
+rational Diophantine sextuples (they can be seen  
+<a href="http://web.archive.org/web/20041122092231/http://www.weburbia.demon.co.uk/pg/diophant.htm">here</a>). 
+<p>    
+In these examples all elements are positive. There exist Diophantine sextuples with mixed signs 
+(see [<a href="ref.html#187">187</a>]). E.g. 
+<p align=center>
+{19/12, 33/4, 52/3, 60/2209, -495/24964, 595/12}, <br>
+{31/84, 9/7, 49/12, 160/21, -455/3468, 7200/2023}, <br>
+{7/40, -75/56, 41/70, -5376/4805, -300288/241115, 165/224}, <br>
+{27/35, -35/36, 1007/1260, -352/315, 72765/106276, -5600/4489}, <br>
+{-8/17, 85/72, -763/1224, 18360/11449, 4914/8993, 332605/496008}. 
+<p>
+
+Moreover, there are infinitely many rational Diophantine sextuples 
+contaning the triple {15/14, -16/21, 7/6}. Some of them are 
+<p align=center>
+{15/14, -16/21, 7/6, -1680/3481, -910/1083, 624/847}, <br>
+{15/14, -16/21, 7/6, -2925534221610/3772144724401, 269287270560/208966922641, -288918935136/401994662167}, <br>
+{15/14, -16/21, 7/6, 201715143251025578282013360/191025652605458897388287161, -682169558073146933103328560/833143872544491452774840761, -28016255787642946981919458/45679215332619641097811101}.<p>
+The same result holds also for some other triples with mixed signs, e.g. {48/17, -35/102, 17/6}, 
+{56/69, -165/184, 23/24}, but also to the triple 
+{36534805866201747/2323780774755404, 1065197767305747/13609226201091404, 
+3802080647508196/6238332600753747} with positive elements. <p>
+
+In 2017, Dujella, Kazalicki, Mikic &amp; Szikszai [<a href="ref.html#323">323</a>] proved that there exist 
+infinitely many rational Diophantine sextuples parametrized by a rational parameter <i>t</i>: 
+<p align=center>
+<i>a</i> = 18<i>t</i>(<i>t</i><sup>2</sup>-1) / ((<i>t</i><sup>2</sup>-6<i>t</i>+1)(<i>t</i><sup>2</sup>+6<i>t</i>+1)), <br>
+<i>b</i> = (<i>t</i>-1)(<i>t</i><sup>2</sup>+6<i>t</i>+1)<sup>2</sup> / (6<i>t</i>(<i>t</i>+1)(<i>t</i><sup>2</sup>-6<i>t</i>+1)), <br>
+
+<i>c</i> = (<i>t</i>+1)(<i>t</i><sup>2</sup>-6<i>t</i>+1)<sup>2</sup> / (6<i>t</i>(<i>t</i>-1)(<i>t</i><sup>2</sup>+6<i>t</i>+1)), <br>
+<i>d</i> = <i>d</i><sub>1</sub> / <i>d</i><sub>2</sub>, where <br>
+<i>d</i><sub>1</sub> = 6(<i>t</i>+1)(<i>t</i>-1)(<i>t</i><sup>2</sup>+6<i>t</i>+1)(<i>t</i><sup>2</sup>-6<i>t</i>+1)(8<i>t</i><sup>6</sup>+27<i>t</i><sup>5</sup>+24<i>t</i><sup>4</sup>-54<i>t</i><sup>3</sup>+24<i>t</i><sup>2</sup>+27<i>t</i>+8)(8<i>t</i><sup>6</sup>-27<i>t</i><sup>5</sup>+24<i>t</i><sup>4</sup>+54<i>t</i><sup>3</sup>+24<i>t</i><sup>2</sup>-
+27<i>t</i>+8)(<i>t</i><sup>8</sup>+22<i>t</i><sup>6</sup>-174<i>t</i><sup>4</sup>+22<i>t</i><sup>2</sup>+1), <br>
+
+<i>d</i><sub>2</sub> = <i>t</i>(37<i>t</i><sup>12</sup>-885<i>t</i><sup>10</sup>+9735<i>t</i><sup>8</sup>-13678<i>t</i><sup>6</sup>+9735<i>t</i><sup>4</sup>-885<i>t</i><sup>2</sup>+37)<sup>2</sup>, <br>
+<i>e</i> = <i>e</i><sub>1</sub> / <i>e</i><sub>2</sub>, where <br>
+<i>e</i><sub>1</sub> = 
+-2<i>t</i>(4<i>t</i><sup>6</sup>-111<i>t</i><sup>4</sup>+18<i>t</i><sup>2</sup>+25)(3<i>t</i><sup>7</sup>+14<i>t</i><sup>6</sup>-42<i>t</i><sup>5</sup>+30<i>t</i><sup>4</sup>+51<i>t</i><sup>3</sup>+18<i>t</i><sup>2</sup>-12<i>t</i>+2)(3<i>t</i><sup>7</sup>-14<i>t</i><sup>6</sup>-42<i>t</i><sup>5</sup>-
+30<i>t</i><sup>4</sup>+51<i>t</i><sup>3</sup>-18<i>t</i><sup>2</sup>-12<i>t</i>-2)(<i>t</i><sup>2</sup>+3<i>t</i>-2)(<i>t</i><sup>2</sup>-3<i>t</i>-2)(2<i>t</i><sup>2</sup>+3<i>t</i>-1)(2<i>t</i><sup>2</sup>-3<i>t</i>-1)(<i>t</i><sup>2</sup>+7)(7<i>t</i><sup>2</sup>+1), <br>
+
+<i>e</i><sub>2</sub> = 
+3(<i>t</i>+1)(<i>t</i><sup>2</sup>-6<i>t</i>+1)(<i>t</i>-1)(<i>t</i><sup>2</sup>+6<i>t</i>+1)(16<i>t</i><sup>14</sup>+141<i>t</i><sup>12</sup>-1500<i>t</i><sup>10</sup>+7586<i>t</i><sup>8</sup>-2724<i>t</i><sup>6</sup>+165<i>t</i><sup>4</sup>+424<i>t</i><sup>2</sup>-12)<sup>2</sup>, <br>
+<i>f</i> = <i>f</i><sub>1</sub> / <i>f</i><sub>2</sub>, where <br>
+<i>f</i><sub>1</sub> = 
+2<i>t</i>(25<i>t</i><sup>6</sup>+18<i>t</i><sup>4</sup>-111<i>t</i><sup>2</sup>+4)(2<i>t</i><sup>7</sup>-12<i>t</i><sup>6</sup>+18<i>t</i><sup>5</sup>+51<i>t</i><sup>4</sup>+30<i>t</i><sup>3</sup>-42<i>t</i><sup>2</sup>+14<i>t</i>+3)(2<i>t</i><sup>7</sup>+12<i>t</i><sup>6</sup>+18<i>t</i><sup>5</sup>-
+51<i>t</i><sup>4</sup>+30<i>t</i><sup>3</sup>+42<i>t</i><sup>2</sup>+14<i>t</i>-3)(2<i>t</i><sup>2</sup>+3<i>t</i>-1)(2<i>t</i><sup>2</sup>-3<i>t</i>-1)(<i>t</i><sup>2</sup>-3<i>t</i>-2)(<i>t</i><sup>2</sup>+3<i>t</i>-2)(<i>t</i><sup>2</sup>+7)(7<i>t</i><sup>2</sup>+1), <br>
+
+<i>f</i><sub>2</sub> = 
+3(<i>t</i>+1)(<i>t</i><sup>2</sup>-6<i>t</i>+1)(<i>t</i>-1)(<i>t</i><sup>2</sup>+6<i>t</i>+1)(12<i>t</i><sup>14</sup>-424<i>t</i><sup>12</sup>-165<i>t</i><sup>10</sup>+2724<i>t</i><sup>8</sup>-7586<i>t</i><sup>6</sup>+1500<i>t</i><sup>4</sup>-141<i>t</i><sup>2</sup>-16)<sup>2</sup>.
+</p>
+Note that for 5.83 < <i>t</i> < 6.86 all six numbers <i>a,b,c,d,e,f</i> are positive. 
+<p>
+
+<p>
+<a name="th5.1"></a>
+<table align=center border=2 width="100%" cellpadding=10>
+<tr>
+<td bgcolor="FFFFBB">
+<font size=3 face="Arial,Helvetica,sans-serif">
+<b>Theorem 5.1:</b> 
+There exist infinitely many rational Diophantine sextuples. 
+Moreover, 
+there exist infinitely many rational Diophantine sextuples with positive elements, 
+
+and also with any combination of signs.
+</font></td> </tr></table>
+<p>
+In fact, it was proved in [<a href="ref.html#323">323</a>] that there exist infinitely many 
+rational Diophantine triples each of which can be extended to rational Diophantine 
+sextuples on infinitely many ways.  
+<p>
+In 2016, Piezas (see <a href="http://mathoverflow.net/questions/233538/extending-rational-diophantine-triples-to-sextuples/">here</a> 
+and [<a href="ref.html#341">341</a>]) 
+found a simpler parametric formula for rational Diophantine sextuples:
+<p align=center>
+<i>a</i> = (<i>t</i><sup>2</sup>-2<i>t</i>-1)(<i>t</i><sup>2</sup>+2<i>t</i>+3)(3<i>t</i><sup>2</sup>-2<i>t</i>+1) / (4<i>t</i>(<i>t</i><sup>2</sup>-1)(<i>t</i><sup>2</sup>+2<i>t</i>-1)), <br>
+<i>b</i> = 4<i>t</i>(<i>t</i><sup>2</sup>-1)(<i>t</i><sup>2</sup>-2<i>t</i>-1) / ((<i>t</i><sup>2</sup>+2<i>t</i>-1)<sup>3</sup>), <br>
+<i>c</i> = 4<i>t</i>(<i>t</i><sup>2</sup>-1)(<i>t</i><sup>2</sup>+2<i>t</i>-1) / ((<i>t</i><sup>2</sup>-2<i>t</i>-1)<sup>3</sup>), <br>
+<i>d</i> = (<i>t</i><sup>2</sup>+2<i>t</i>-1)(<i>t</i><sup>2</sup>-2<i>t</i>+3)(3<i>t</i><sup>2</sup>+2<i>t</i>+1) / (4<i>t</i>(<i>t</i><sup>2</sup>-1)(<i>t</i><sup>2</sup>-2<i>t</i>-1)), <br>
+<i>e</i> = (-<i>t</i><sup>5</sup>+14<i>t</i><sup>3</sup>-<i>t</i>) / (<i>t</i><sup>6</sup>-7<i>t</i><sup>4</sup>+7<i>t</i><sup>2</sup>-1), <br>
+<i>f</i> = (3<i>t</i><sup>6</sup>-13<i>t</i><sup>4</sup>+13<i>t</i><sup>2</sup>-3) / (4<i>t</i>(<i>t</i><sup>4</sup>-6<i>t</i><sup>2</sup>+1)). <br>
+</p> 
+
+Dujella, Kazalicki &amp; Petricevic [<a href="ref.html#406">406</a>] proved that 
+there are infinitely many rational Diophantine sextuples such that denominators
+of all the elements (in the lowest terms) in the sextuples are perfect squares. 
+In [<a href="ref.html#409">409</a>], they proved that there are infinitely many 
+rational Diophantine sextuples which contain one regular Diophantine quintuple 
+and two regular Diophantine quadruples.
+
+<p>
+In 2016, Gibbs [<a href="ref.html#349">349</a>] found examples of "almost" septuples, 
+namely, rational Diophantine quintuples 
+which can be extended to rational Diophantine sextuples on two different ways, so that only one condition is missing that   
+these seven numbers form a rational Diophantine septuple: 
+<p align=center>
+{243/560, 1147/5040, 1100/63, 7820/567, 95/112} can be extended with 38269/6480 or 196/45;  <br> 
+{7657/420, 480/91, 441/260, 425/1092, 191840/273} can be extended with 13/105 or 43953/39605; <br> 
+{518/45, 7344/185, 4004/1665, 25900/690561, 216/185} can be extended with 100/333 or 166600/37.  
+</p>
+In 2018, Dujella, Kazalicki &amp; Petricevic found many examples with mixed signs, e.g.
+<p align=center>
+{-8415/2366, 1575/6728, -256/105, 943/3360, 1085/4056} can be extended with -531/280 or -242515/80736; <br>
+{-7119/9280, -1131/1280, 164/145, 1925/1856, 2100/24389} can be extended with -18444/22445 or 1532244/1584845; <br>
+{13/3, 2223/3136, 4048/1911, 4851/832, 7696/147} can be extended with -47/2496 or 23616/148837; <br>
+{-629/3828, 108/319, 1276/243, 2457/1276, 15776/3993} can be extended with -13156/73167 or 102641/28188; <br> 
+{15200/59643, -21413/13824, -27375/8192, -424/675, 3441/12800} can be extended with -46008/16129 or -3198/1225; <br>
+{154275/2376416, 1617/2720, -1950/1309, 2737/5280, 13144/19635} can be extended with -55352/37905 or -18176/19635; <br>
+{215061/322580, 15200/24843, 493/1140, -960/931, -9295/11172} can be extended with -23904/16055 or 31119/64220; <br>
+{-2255/13524, 24480/12397, 14773/3381, 272320/195657, 207/44} can be extended with -589/3036 or 1047179/1606044; <br>
+{-91/180, 3895/4032, 512/315, -2135/3844, -1053/2240} can be extended with 9855/5488 or 68425/46656; <br>
+{7084/765, 15903/2380, 833/180, 260/119, -1548/14875} can be extended with -10115/191844 or 109395/221788; <br>
+{8075/1452, 544/135, 475/204, 189/340, -10597664/64708935} can be extended with -37/255 or -1357/30855; <br>
+{-119/864, -62/459, 77112/52441, 2849/1632, 697/96} can be extended with 232/51 or 20736/2873; <br>
+</p>
+and also three examples with positive elements:
+<p align=center>
+{14212/15435, 6768/665, 2392/5985, 2044/95, 270/133} can be extended with 146300/31329 or 26600/114921; <br>
+{3/70, 51987/280, 12103/4320, 2560/1701, 134589/1024000} can be extended with 3025715/864 or 105/8; <br>
+{19908/65, 6204/455, 2275/192, 1300/7581, 3536/5145} can be extended with 48351/29120 or 34397/87360. 
+</p>
+They also found an example of rational Diophantine quadruple  
+which can be extended to rational Diophantine sextuples on three different ways: 
+<p align=center> 
+{11825/2016, 51200/693, 9163/92160, 497/990} can be extended with {10989/280, 551/3080}, {10989/280, 19035/9856} 
+or {551/3080, 17577/1760}. 
+</p>
+
+Herrmann, Pethoe &amp; Zimmer [<a href="ref.html#81">81</a>] proved 
+in 1999 that a rational Diophantine quadruple has only finitely 
+many extensions to a rational Diophantine 
+quintuple. They proved that the conditions on the fifth element of 
+the quintuple lead to a curve of genus 4, and then they applied 
+Faltings' theorem.   
+<p>
+Gibbs [<a href="ref.html#349">349</a>] found two rational Diophantine quadruples which can be
+extended to quintuples in six different ways: <br>
+the quadruple {81/1400, 5696/4725, 2875/168, 4928/3} 
+can be extended to a quintuple using any one of these rationals: 
+<p align=center> 98/27, 104/525, 96849/350, 1549429/1376646, 3714303488/6103383075, 7694337252154322/1857424629984075; </p>
+while the quadruple {152/357, 2665/2856, 3906/17, 1224/12943} can be extended with any of <br>
+<p align=center> 1519/408, 4505/168, 1959335/7824984, 13303605/1077512, 73026883629/17054089928, 515358540182255/7116911275416. </p>
+
+<p>
+
+<a name="5.3"></a>
+<h3 align=center><font face="Times New Roman">5.3. Rational 
+<i>D</i>(<i>q</i>)-<i>m</i>-tuples </font></h3>
+
+
+Let <i>q</i> be a rational number. A set of <i>m</i> non-zero rationals 
+<nobr>{<i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>, ... , 
+<i>a</i><sub><i>m</i></sub>}</nobr> is called <b>a rational 
+<i>D</i>(<i>q</i>)-<i>m</i>-tuple</b> if 
+<nobr><i>a</i><sub><i>i</i></sub> <i>a</i><sub><i>j</i></sub> + <i>q</i></nobr> 
+is a square of a 
+rational number for all 
+<nobr>1 &le; <i>i</i> &lt; <i>j</i> &le; <i>m</i>.</nobr> 
+
+<p>
+
+It follows easily from Theorem <a href="dn.html#th3.2">3.2</a> 
+that for every rational number <i>q</i> there exist infinitely 
+many rational <i>D</i>(<i>q</i>)-quadruples. This motivates 
+the following question: 
+
+<p>
+
+<em>For which rational numbers 
+<i>q</i> there exist infinitely 
+many rational <i>D</i>(<i>q</i>)-quintuples? </em>
+
+<p>
+
+An affirmative answer to this question is known for rationals 
+of the forms <nobr><i>q</i> = <i>r</i><sup>2</sup></nobr> (see 
+Chapter <a href="#5.1">5.1</a>),  
+<nobr><i>q</i> = -<i>r</i><sup>2</sup></nobr> 
+([<a href="ref.html#108">108</a>], 
+see Chapter <a href="#5.4">5.4</a>) and 
+<nobr><i>q</i> = -3<i>r</i><sup>2</sup></nobr> 
+(using that fact that the elliptic curve 
+
+<p align=center>
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 42<i>x</i><sup>2</sup> + 
+432<i>x</i> + 1296 
+</p>
+has positive rank, see [<a href="ref.html#88">88</a>]).    
+
+<p>
+
+In 2012, Dujella &amp; Fuchs [<a href="ref.html#238">238</a>] obtained much more general result by proving 
+that for infinitely many square-free numbers <i>q</i> there are infinitely many rational <i>D</i>(<i>q</i>)-quintuples, 
+by considering twists of the elliptic curve 
+<p align=center>
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 86<i>x</i><sup>2</sup> + 825<i>x</i>
+</p>
+with positive rank. The construction uses "almost Diophantine quintuple" 
+<nobr>{<i>x</i>, 9<i>x</i> + 8, 25<i>x</i> + 20, 4<i>x</i> + 2, 16<i>x</i> + 14}</nobr>, 
+i.e. quintuple of linear polynomials containing two polynomial <i>D</i>(10<i>x</i> + 9)-quadruples 
+(see also [<a href="ref.html#140">140</a>]).  
+  
+<p>
+
+
+<a name="5.4"></a>
+<h3 align=center><font face="Times New Roman">5.4. A problem of 
+Diophantus and Euler </font></h3>
+
+
+Diophantus found three rationals 3/10, 21/5, 7/10 with the property 
+that the product of any two of them increased by the sum of those two 
+gives a perfect square. Euler found four rationals 
+5/2, 9/56, 65/224, 9/224 with the same property 
+and asked if there is an integer solution of this problem. 
+In 2005, Dujella &amp; Fuchs [<a href="ref.html#131">131</a>] 
+proved that there does not exist a set of four positive integers 
+with the same property.  
+
+<p>  
+On the other hand, in [<a href="ref.html#78">78</a>] a 
+rational quintuple  
+
+<p align=center>
+9, 17/8, 27/10, -27/40, 493/40 </p>
+
+with the same property was found, 
+and the question arised whether there exists  
+such quintuple consisting of positive rationals. 
+The answer was given in [<a href="ref.html#108">108</a>] 
+where it was proved that there exist infinitely many such quintuples. 
+The "simplest" among them is 
+
+<center>
+<pre>
+  12253738824071768160902809331272805381 / 13356284738726537361337339615814680856, <br> 
+        40228062558134597846809398333 / 2027377666049252712575626072, <br>
+        90410203607675775632231738735 / 2640165528414654368852526998, <br> 
+1459249660815833141719920182753327588589 / 13356284738726537361337339615814680856, <br>
+     16463478877068761615 / 200378051669604563.
+</pre></center>  
+
+A smaller example has been found by Petricevic: 
+<p align=center>
+29/24, 71/54, 79/675, 1637/216, 2911/200. </p>
+
+It is clear that a set 
+<nobr>{<i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>, ... , 
+<i>x</i><sub><i>m</i></sub>}</nobr> of <i>m</i> rationals 
+has the property that 
+<nobr><i>x</i><sub><i>i</i></sub><i>x</i><sub><i>j</i></sub> + 
+<i>x</i><sub><i>i</i></sub> 
++ <i>x</i><sub><i>j</i></sub></nobr> is a perfect square 
+for all 
+<nobr>1 &le; <i>i</i> &lt; <i>j</i> &le; <i>m</i></nobr> if and only if  
+<nobr>{<i>x</i><sub>1</sub>+1, <i>x</i><sub>2</sub>+1, ... , 
+<i>x</i><sub><i>m</i></sub>+1}</nobr> 
+is a rational <i>D</i>(-1)-<i>m</i>-tuple. Therefore, the above 
+mentioned result from [<a href="ref.html#108">108</a>] shows 
+that there exist infinitely many rational <i>D</i>(-1)-quintuples, 
+and consequently there exist infinitely many 
+rational <i>D</i>(-<i>q</i><sup>2</sup>)-quintuples for 
+every rational number <i>q</i>.  
+
+<p>
+
+<a name="5.5"></a>
+<h3 align=center><font face="Times New Roman">5.5. Strong Diophantine triples</font></h3>
+
+Note that in the definition of (rational) Diophantine <i>m</i>-tuples we excluded 
+<nobr><i>i</i> = <i>j</i>,</nobr> i.e. the condition that 
+<nobr><i>a<sub>i</sub></i><sup>2</sup> + 1</nobr> is a perfect square. 
+It is obvious that for integers such
+condition has no sense. But for rationals there is no obvious reason why the
+sets which satisfy these stronger conditions would not exist. 
+
+<p>
+<table align=center border=2 width="100%" cellpadding=10> 
+<tr>
+<td bgcolor="FFFFBB">
+<font size=3 face="Arial,Helvetica,sans-serif">
+<b>Definition 5.1:</b> A set of <i>m</i> nonzero rationals  
+{<i>a</i><sub>1</sub>, 
+<i>a</i><sub>2</sub>, ... , 
+<i>a</i><sub><i>m</i></sub>}   
+is called <b>a strong Diophantine <i>m</i>-tuple</b> if 
+<nobr><i>a</i><sub><i>i</i></sub> &middot <i>a</i><sub><i>j</i></sub> + 1</nobr> 
+is a perfect square for all 
+<nobr><i>i</i>, <i>j</i> = 1, 2, ..., <i>m</i>.</nobr>  
+</font> </td> </tr></table>  
+<p>
+
+An example of a strong Diophantine triple is 
+<p align=center>
+{1976/5607, 3780/1691, 14596/1197}
+</p>
+In 2008, Dujella &amp; Petricevic [<a href="ref.html#162">162</a>] proved that 
+there exist infinitely many strong Diophantine triples. Also, there exist 
+inifitely many such triples consisting of positive rationals. 
+<p>
+They found an example of an &quot;almost&quot; strong Diophantine quadruple:
+<p align=center>
+{140/51, 2223/30464, 278817/33856. 3182740/17661},
+</p>
+which satisfies almost all conditions for a strong Diophantine quadruple. 
+The only missing condition is that 
+<p align=center> 
+278817/33856 &middot; 3182740/17661 + 1
+</p>
+is not a perfect square. However, no example of a strong Diophantine
+quadruple is known.
+
+<p>
+In 2018, Dujella, Gusic, Petricevic &amp; Tadic [<a href="ref.html#381">381</a>] 
+considered <b>strong Eulerian triples</b> and proved that there exist infinitely many rationals 
+<i>a</i>, <i>b</i>, <i>c</i> with
+the property that <i>a</i><sup>2</sup> - 1, <i>b</i><sup>2</sup> - 1, <i>c</i><sup>2</sup> - 1, 
+<i>ab</i> - 1, <i>ac</i> - 1 and <i>bc</i> - 1 are all perfect squares.
+<p>
+In 2020, Dujella, Paganin &amp; Sadek [<a href="ref.html#429">429</a>] 
+proved that for infinitely many square-free integers <i>q</i> 
+(e.g. for <i>q</i> = -19, -17, -11, -7, -6, -5, 2, 6, 10, 13, 15, 17) 
+there exist infinitely many rationals <i>a</i>, <i>b</i>, <i>c</i> with
+the property that <i>a</i><sup>2</sup> + <i>q</i>, <i>b</i><sup>2</sup> + <i>q</i>, <i>c</i><sup>2</sup> + <i>q</i>, 
+<i>ab</i> + <i>q</i>, <i>ac</i> + <i>q</i> and <i>bc</i> + <i>q</i> are all perfect squares. 
+
+<p>
+
+<hr size=2 noshade>
+<p>
+<blockquote>
+1. <a href="intro.html">Introduction</a> <br>
+2. <a href="quint.html">Diophantine quintuple conjecture</a> <br> 
+3. <a href="dn.html">Sets with the property <i>D</i>(<i>n</i>)</a> <br> 
+4. <a href="fib.html">Connections with Fibonacci numbers</a> <br> 
+6. <a href="coell.html">Connections with elliptic curves</a> <br>
+7. <a href="gener.html">Various generalizations</a> <br>
+8. <a href="ref.html">References</a> 
+</blockquote>
+<p>
+
+<hr size=2 noshade>
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<font face="Times New Roman">
+<a href="dtuples.html">Diophantine <i>m</i>-tuples page</a> 
+</font>
+</td>
+
+<td align="right">
+<font face="Times New Roman">
+<a href="index.html"><em>Andrej Dujella</em> home page</a>
+</font>
+</td>
+</tr>
+</table>
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+
+</body>
+</html>
