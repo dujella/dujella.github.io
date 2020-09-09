@@ -1,0 +1,579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Connections with elliptic curves</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Diophantine m-tuples - 
+Connections with elliptic curves">
+<meta name="keywords" content="Diophantine equations, 
+elliptic curves, rank, torsion group">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+</head>
+
+
+<body bgcolor="CCEECC"> 
+
+<h2 align=center><font face="Times New Roman">6. Connections with 
+elliptic curves </font></h2>
+<p><br>
+
+<h3 align=center><font face="Times New Roman">6.1. Diophantine triples 
+and elliptic curves </font></h3>
+
+
+Let {<i>a, b, c</i>} be a (rational) Diophantine triple, i.e.
+
+<p align=center>
+<i>ab</i> + 1 = <i>r</i><sup>2</sup>, &nbsp &nbsp  <i>ac</i> + 1 = <i>s</i><sup>2</sup>, &nbsp &nbsp 
+<i>bc</i> + 1 = <i>t</i><sup>2</sup>. </p>
+
+In order to extend this triple to a quadruple, we have to solve 
+the system 
+
+<p>
+<a name="(6.1)"></a>
+<table border="0" width="100%"><tr><td>
+<table align=center><tr><td align="center">
+<font size=3 face="Arial,Helvetica,sans-serif">
+<i>ax</i> + 1 = &nbsp&#9633;, &nbsp &nbsp &nbsp 
+<i>bx</i> + 1 = &nbsp&#9633;, &nbsp &nbsp &nbsp 
+<i>cx</i> + 1 = &nbsp&#9633;. </font></td></tr></table>
+</td><td width="1%">(6.1)</td></tr></table>
+<p>
+
+It is natural idea to assign to this system the elliptic curve
+
+<p>
+<a name="(6.2)"></a>
+<table border="0" width="100%"><tr><td>
+<table align=center><tr><td align="center">
+<font size=3 face="Arial,Helvetica,sans-serif">
+<i>E</i> : &nbsp &nbsp &nbsp 
+<i>y</i><sup>2</sup> = (<i>ax</i> + 1)(<i>bx</i> + 1)(<i>cx</i> + 1). 
+</font></td></tr></table>
+</td><td width="1%">(6.2)</td></tr></table>
+<p>
+
+There are three rational points on <i>E</i> of order 2: 
+
+<p align=center> 
+<i>A</i> = (-1/<i>a</i>, 0), &nbsp &nbsp &nbsp  
+<i>B</i> = (-1/<i>b</i>, 0), &nbsp &nbsp &nbsp
+<i>C</i> = (-1/<i>c</i>, 0), </p>
+
+and also obvious rational points
+
+<p align=center> 
+<i>P</i> = (0, 1), &nbsp &nbsp &nbsp  
+<i>S</i> = (1/<i>abc</i>, <i>rst</i>/<i>abc</i>). </p>
+
+It is not so obvious, but it is easy to verify that 
+<i>S</i> = 2<i>R</i>, where 
+
+<p align=center> 
+<i>R</i> = ((<i>rs</i> + <i>rt</i> + <i>st</i> + 1) / <i>abc</i>, 
+(<i>r</i> + <i>s</i>)(<i>r</i> + <i>t</i>)(<i>s</i> + <i>t</i>) / <i>abc</i>). </p>
+
+It is clear that every rational solution of the original system 
+<a href="#(6.1)">(6.1)</a>
+induce a rational point on <i>E</i>. The question is which rational 
+points on <i>E</i> induce a rational solution of 
+<a href="#(6.1)">(6.1)</a>. The answer is 
+given in the following theorem (see [<a href="ref.html#97">97</a>] 
+and [<a href="ref.html#37">37</a>, Anwendung 1]).
+
+<p>
+<table align=center border=2 width="100%" cellpadding=10>
+<tr>
+<td bgcolor="FFFFBB">
+<font size=3 face="Arial,Helvetica,sans-serif">
+<b>Theorem 6.1:</b> The <i>x</i>-coordinate of the point 
+<i>T</i>  <img src="symbols/in.gif" alt="in" ALIGN=TOP>
+<i>E</i>(<b>Q</b>) satisfies 
+<a href="#(6.1)">(6.1)</a> if and only if  <nobr><i>T</i> 
+<img src="symbols/minus.gif" alt="-" ALIGN=TOP> <i>P</i> 
+<img src="symbols/in.gif" alt="in" ALIGN=TOP>
+2<i>E</i>(<b>Q</b>).</nobr>
+</font> </td> </tr></table>
+<p>
+
+By Theorem 6.1 and the relation 
+<nobr><i>S</i> = 2<i>R</i>,</nobr> it follows that 
+the numbers <i>x</i>(<i>P</i> + <i>S</i>) and 
+<i>x</i>(<i>P</i> - <i>S</i>) satisfy the system <a href="#(6.1)">(6.1)</a>. 
+It is easy to check that 
+
+<p align=center>
+<i>x</i>(<i>P</i> + <i>S</i>) = <i>d</i>_, 
+&nbsp &nbsp &nbsp &nbsp  
+<i>x</i>(<i>P</i> - <i>S</i>) = <i>d</i><sub>+</sub>, </p>
+
+where <i>d</i>_ and <i>d</i><sub>+</sub> are defined 
+in Chapter <a href="quint.html">2</a>. 
+
+<p>
+The addition and subtraction of the point <i>S</i> has another 
+interesting property (see [<a href="ref.html#62">62</a>, 
+<a href="ref.html#97">97</a>]): 
+
+<p>
+<table align=center border=2 width="100%" cellpadding=10>
+<tr>
+<td bgcolor="FFFFBB"> 
+<font size=3 face="Arial,Helvetica,sans-serif">
+<b>Theorem 6.2:</b> If <i>x</i>-coordinate of the point 
+<i>T</i> <img src="symbols/in.gif" alt="in" ALIGN=TOP> 
+<i>E</i>(<b>Q</b>) satisfies 
+<a href="#(6.1)">(6.1)</a>, then for the points 
+<nobr><i>T</i> &#177;  <i>S</i> = (<i>u</i>,<i>v</i>)</nobr> it holds that 
+<nobr><i>xu</i> + 1</nobr> is a square.
+</font> </td> </tr></table>
+<p>
+ 
+<p>
+<table align=center border=2 width="100%" cellpadding=10>
+<tr>
+<td bgcolor="FFFFBB"> 
+<font size=3 face="Arial,Helvetica,sans-serif">
+<b>Corollary 6.1:</b> Every Diophantine quadruple 
+<nobr>{<i>a, b, c, d</i>}</nobr> can be extended to a rational Diophantine 
+quintuple <nobr>{<i>a, b, c, d, e</i>}.</nobr> 
+</font> </td> </tr></table>
+<p>
+
+In [<a href="ref.html#62">62</a>], it was shown that if the number <i>e</i> in Corollary 6.1 
+is obtained by construction from Theorem 6.2, then <nobr><i>e</i> &lt; 1,</nobr> 
+and therefore <i>e</i> is not a positive integer. 
+
+<p>
+
+The next question is what can be said about torsion group and rank 
+of <i>E</i>. In [<a href="ref.html#97">97</a>], it was proved that 
+if <i>a</i>, <i>b</i>, <i>c</i> are positive integers, then  
+<nobr><i>E</i>(<b>Q</b>)<sub>tors</sub></nobr> = 
+<nobr><b>Z</b>/2<b>Z</b> &times; 
+<b>Z</b>/2<b>Z</b></nobr> or 
+<nobr><b>Z</b>/2<b>Z</b> &times;  
+<b>Z</b>/6<b>Z</b>,</nobr> 
+and <nobr>rank <i>E</i>(<b>Q</b>) 
+&ge; 1.</nobr> 
+<br>
+In general, we may expect that the points <i>P</i> and <i>S</i> 
+are two independent points of infinite orders, and therefore that 
+<nobr>rank <i>E</i>
+(<b>Q</b>) &ge; 2.</nobr> However, if <i>c</i> is the smallest 
+possible (greater than <i>a</i> and <i>b</i>), i.e. 
+<nobr><i>c</i> = <i>a</i> + <i>b</i> + 2<i>r</i>,</nobr> 
+then we have <nobr><i>S</i> = -2<i>P</i>.</nobr> 
+
+<p>
+
+<h3 align=center><font face="Times New Roman">6.2. Integer points on 
+some elliptic curves </font></h3>
+
+
+Let us consider now the problem of finding all integer points on 
+the elliptic curve 
+
+<p align=center>
+<i>E</i> : &nbsp; &nbsp; &nbsp; 
+<i>y</i><sup>2</sup> = (<i>ax</i> + 1)(<i>bx</i> + 1)(<i>cx</i> + 1)
+</p>
+
+We have always the following integer points: 
+<p align=center> 
+(0, &#177;1), &nbsp; &nbsp; 
+(<i>d</i><sub>+</sub>, &#177;(<i>at + rs</i>)(<i>bs + rt</i>)
+(<i>cr + st</i>)), &nbsp; &nbsp;
+(<i>d</i>_, &#177;(<i>at - rs</i>)(<i>bs - rt</i>)(<i>cr - st</i>)),
+</p>
+
+and also (-1,0) if 1 
+<img src="symbols/in.gif" alt="in" ALIGN=TOP> {<i>a, b, c</i>}. 
+For some families of Diophantine triples it is possible to prove that 
+there are no other integer points on <i>E</i>. 
+
+This was proved in [<a href="ref.html#89">89</a>] for elliptic curves  
+
+<p align=center>
+<i>E</i><sub><i>k</i></sub>: &nbsp; &nbsp; &nbsp; <i>y</i><sup>2</sup> = ((<i>k</i> - 1)<i>x</i> + 1)
+((<i>k</i> + 1)<i>x</i> + 1)(4<i>kx</i> + 1), </p>
+
+under assumption that <nobr>rank <i>E</i><sub><i>k</i></sub>
+(<b>Q</b>) = 1.</nobr> 
+The same result was proved also for two subfamilies of rank 2 and 
+one subfamily of rank 3. 
+The statement is also verified for all <i>k</i> such that 
+<nobr>3 &le; <i>k</i> &le; 1000.</nobr>
+The condition
+<nobr>rank <i>E</i><sub><i>k</i></sub>
+(<b>Q</b>) = 1</nobr> is not 
+unrealistic since the generic rank, 
+<nobr>rank <i>E</i>
+(<b>Q</b>(<i>k</i>)),</nobr> 
+is equal to 1.
+In the range 
+<nobr>2 
+&le; <i>k</i> &le; 100</nobr> 
+we have the following distribution 
+of ranks (found using MWRANK and SIMATH):
+41 cases of rank 1, 49 cases of rank 2 and 9 cases of rank 3.
+
+<p>
+Analogous result was proved in [<a href="ref.html#97">97</a>] 
+for the family 
+
+<p align=center>  
+<i>y</i><sup>2</sup> = (<i>F</i><sub>2<i>k</i></sub><i>x</i> + 1)
+(<i>F</i><sub>2<i>k</i>+2</sub><i>x</i> + 1)
+(<i>F</i><sub>2<i>k</i>+4</sub><i>x</i> + 1) </p>
+
+under assumption that rank is equal to 1. 
+
+<p>
+In [<a href="ref.html#91">91</a>], Dujella &amp; Pethoe considered 
+the family 
+
+<p align=center>
+<i>C</i><sub><i>k</i></sub>: &nbsp; &nbsp; &nbsp; <i>y</i><sup>2</sup>=(<i>x</i> + 1)(3<i>x</i> + 1)
+(<i>c</i><sub><i>k</i></sub><i>x</i> + 1), </p>
+
+where the sequence (<i>c</i><sub>k</sub>) is given by 
+
+<p align=center>
+<i>c</i><sub>1</sub> = 8, &nbsp; 
+<i>c</i><sub>2</sub> = 120, &nbsp; 
+<i>c</i><sub><i>k</i>+2</sub> = 
+14<i>c</i><sub><i>k</i>+1</sub> - <i>c</i><sub><i>k</i></sub> + 8, 
+</p>
+
+i.e. {1, 3, <i>c</i><sub><i>k</i></sub>} is a Diophantine triple. 
+They proved that if 
+<nobr>rank <i>C</i><sub><i>k</i></sub>
+(<b>Q</b>) = 2</nobr> or 
+<nobr><i>k</i> &le; 40,</nobr>  
+with the possible exceptions of <i>k</i> = 23 or 37, then all 
+the integer points on 
+<i>C</i><sub><i>k</i></sub> are given by    
+
+<p align=center>
+x <img src="symbols/in.gif" alt="in" ALIGN=TOP> 
+{-1, 0, <i>c</i><sub><i>k</i>-1</sub>,   
+<i>c</i><sub><i>k</i>+1</sub>}.
+</p>
+
+Jacobson &amp; Williams [<a href="ref.html#112">112</a>] showed that 
+the same result is unconditionally true for all 
+<nobr><i>k</i> 
+&le; 100,</nobr>   
+with the possible exception of 
+<nobr><i>k</i> = 37,</nobr> for which the result 
+holds under the assumption of the Extended Riemann Hypothesis 
+(see also [<a href="ref.html#147">147</a>]).  
+
+<p>
+
+In [<a href="ref.html#81">81</a>], Herrmann, Pethoe &amp; Zimmer 
+computed all <i>S</i>-integral points on some elliptic curves 
+associated with the <i>D</i>(256)-quintuple <nobr>{1, 33, 105, 320, 18240}.</nobr> 
+They proved  that if <i>x</i> and <i>z</i> are integers such that 
+gcd(<i>x</i>,<i>z</i>) = 1, <i>z</i> is at most divisible by the 
+primes from the set <i>S</i> = <nobr>{2, 3, 5, 11, 19, 29, 1621},</nobr>  
+and <nobr><i>x</i> + <i>z</i><sup>2</sup>,</nobr> 
+<nobr>33<i>x</i> + <i>z</i><sup>2</sup>,</nobr> 
+<nobr>320<i>x</i> + <i>z</i><sup>2</sup></nobr> 
+and <nobr>18240<i>x</i> + <i>z</i><sup>2</sup></nobr> are perfect squares, then 
+<nobr>(<i>x</i>,|<i>z</i>|) <img src="symbols/in.gif" alt="in" ALIGN=MIDDLE> 
+{(0, 1), (105, 2<sup>4</sup>), (117, 2 &middot; 29), 
+(42315, 1621)}.</nobr>
+
+<p>
+
+In the proof, they considered the elliptic curve <i>E'</i> given by 
+
+<p align=center>
+<i>E'</i> : &nbsp; &nbsp; &nbsp;  
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> 
+- 9494304273243<i>x</i> + 11224300076670688758.
+</p>
+
+This curve has rank 4 and possesses an exceptionally large number of 
+integral points. Namely, 
+<nobr>|<i>E</i>(<b>Z</b>)| = 
+<a href="http://loge.math.uni-sb.de/herrmann/ht/index.html">208</a>.</nobr>
+ 
+<p>
+
+
+<a name="6.3"></a>
+<h3 align=center><font face="Times New Roman">6.3. High-rank elliptic 
+curves </font></h3>
+
+
+Let <i>T</i> be an admissible torsion group for an elliptic curve over the rationals. Define 
+
+<p align=center>
+<i>B</i>(<i>T</i>) = sup { rank (<i>E</i>
+(<b>Q</b>)) : 
+torsion group of <i>E</i> is <i>T</i> }. </p>
+
+The conjecture is that <i>B</i>(<i>T</i>) is unbounded for all 
+<i>T</i>.
+
+<p>
+In [<a href="ref.html#87">87</a>], an example was constructed 
+which shows that <nobr><i>B</i>
+(<b>Z</b>/2<b>Z</b> &times; 
+<b>Z</b>/2<b>Z</b>) &ge; 7.</nobr> 
+
+<p>
+The construction starts with a rational Diophantine triple 
+{<i>a, b, c</i>}. Assume that <i>d</i><sub>+</sub>d_ + 1 is a perfect 
+square. Then we my expect that the elliptic curve 
+
+<p align=center> 
+<i>y</i><sup>2</sup> = (<i>bx</i> 
++ 1)(<i>d</i><sub>+</sub><i>x</i> + 1)(<i>d</i>_<i>x</i> + 1) </p>
+
+has at least four independent points of infinite order, namely, 
+points with <i>x</i>-coordinates 
+
+<p align=center> 
+0, &nbsp; &nbsp; <i>a</i>, &nbsp; &nbsp; <i>c</i>, &nbsp; &nbsp;  
+1 / (<i>bd</i><sub>+</sub>d_). </p>
+
+In [<a href="ref.html#87">87</a>], one-parametric solution of the 
+equation <i>d</i><sub>+</sub><i>d</i>_ + 1 = <i>w</i><sup>2</sup> was found. 
+In that way, an elliptic curve over 
+<b>Q</b>(<i>t</i>) with rank 
+<nobr>&ge; 4</nobr> was
+obtained. By specialization of parameter <i>t</i>, using 
+MWRANK, a curve with <nobr>rank = 7</nobr> is found.    
+
+<p>
+
+This result was improved in [<a href="ref.html#90">90</a>] 
+using different construction. 
+Let {<i>a, b, c, d</i>} be a rational Diophantine quadruple. 
+We may assign to this quadruple the elliptic curve 
+
+<p align=center>
+<i>y</i><sup>2</sup> = (<i>ax</i> + 1)(<i>bx</i> 
++ 1)(<i>cx</i> + 1)(<i>dx</i> + 1). </p>
+
+By the substitution 
+
+<p align=center>
+<i>t</i> = <i>y</i>(<i>d - a</i>)(<i>d 
+- b</i>)(<i>d - c</i>) / (<i>dx</i> + 1)<sup>2</sup>, &nbsp &nbsp &nbsp 
+<i>s</i> = (<i>ax</i> + 1)(<i>d - b</i>)(<i>d 
+- c</i>) / (<i>dx</i> + 1), </p>
+
+we obtain the following elliptic curve 
+
+<p align=center>
+<i>E</i>*: &nbsp; &nbsp; &nbsp; 
+<i>t</i><sup>2</sup> = <i>s</i>(<i>s</i> + (<i>b - a</i>)(<i>d 
+- c</i>))(<i>s</i> + (<i>c - a</i>)(<i>d - b</i>)). </p>
+
+We have three non-trivial rational 2-torsion points on 
+<i>E</i><sup>*</sup>, 
+and another two obvious rational points: 
+
+<p align=left> 
+<i>P</i> = ( (<i>b - a</i>)(<i>c - a</i>), 
+(<i>b - a</i>)(<i>c - a</i>)(<i>d - a</i>) ), <br>
+<i>Q</i> = ( (<i>ad</i> + 1)(<i>bc</i> + 1), 
+<img src="symbols/surd.gif" alt="sqrt"><span style="text-decoration: overline">(<i>ab</i> + 1)(<i>ac</i> + 1)
+(<i>ad</i> + 1)(<i>bc</i> + 1)(<i>bd</i> + 1)(<i>cd</i> + 1)</span> ). </p>
+
+Assume that the Diophantine quadruple <nobr>{<i>a, b, c, d</i>}</nobr> can be
+extended to the Diophantine quintuple <nobr>{<i>a, b, c, d, e</i>}.</nobr> 
+Then we have on <i>E</i>* another rational point 
+<i>R</i> with <i>x</i>-coordinate 
+
+<p align=center> 
+(<i>de</i> + 1)(<i>b - a</i>)(<i>c - a</i>) / (<i>ae</i> + 1). </p>
+
+The following characterizations of the notions of regular 
+Diophantine 
+quadruples and quintuples are given in [<a href="ref.html#90">90</a>]: 
+
+<p>
+<blockquote>
+The rational Diophantine quadruple <nobr>{<i>a, b, c, d</i>}</nobr> is regular iff 
+<nobr>2<i>P</i> = &#177; <i>Q</i>;</nobr> <br> 
+The rational Diophantine quintuple <nobr>{<i>a, b, c, d, e</i>}</nobr> is regular 
+iff <nobr><i>R</i> &#177; <i>P</i> = &#177; <i>Q</i>.</nobr> 
+</blockquote>
+<p>
+
+These characterizations suggest that if an irregular 
+rational Diophantine quadruple <nobr>{<i>a, b, c, d</i>}</nobr> 
+is contained in an irregular rational Diophantine quintuple, 
+then we may expect that the rank of the corresponding elliptic 
+curve <i>E</i>* over 
+<b>Q</b> is 
+<nobr>&ge; 3.</nobr>  
+In [<a href="ref.html#90">90</a>], this idea was applied on quadruples 
+which are subsets of Gibbs' examples of Diophantine sextuples 
+from [<a href="ref.html#144">144</a>, <a href="ref.html#80">80</a>] 
+and several elliptic curves were obtained with rank equal to 8, 
+corresponding to the quadruples 
+
+<p align=center> 
+{17 / 448, 2145 / 448, 23460 / 7, 2352 / 7921}, </p>
+<p align=center>
+{32 / 91, 60 / 91, 1878240 / 1324801, 15345900 / 12215287}, </p> 
+<p align=center>
+{252 / 115, 559 / 1380, 24264935 / 2979076, 16454108 / 1703535}, </p>
+<p align=center>
+{81 / 1400, 2875 / 168, 4928 / 3, 5696 / 4725}, </p>
+<p align=center>
+{805 / 1404, 1105 / 108, 21280 / 351, 41067 / 128164}, </p>
+<p align=center>
+{12 / 119, 620 / 357, 39984 / 18769, 1125176416 / 1493609907}, </p>
+<p align=center>
+{559 / 1380, 252 / 115, 24364935 / 2979076, 16454108 / 1703535}. </p>          
+
+
+Let us mention that these results were improved, with different 
+methods, by Kulesz &amp; Stahlke 
+and Dujella &amp; Kulesz. They found several examples of elliptic 
+curves with torsion group 
+<nobr><b>Z</b>/2<b>Z</b> &times; 
+<b>Z</b>/2<b>Z</b></nobr> 
+and rank equal to 10 or 11, while Elkies found an example which shows that 
+<nobr><i>B</i>(<b>Z</b>/2<b>Z</b> &times; 
+<b>Z</b>/2<b>Z</b>) &ge; 15.</nobr> 
+
+<p>
+It is possible to construct rational Diophantine triples 
+{<i>a</i>, <i>b</i>, <i>c</i>} such that the elliptic curve 
+
+<p align=center>
+<i>y</i><sup>2</sup> = (<i>ax</i> + 1)(<i>bx</i> + 1)(<i>cx</i> + 1)
+</p>
+
+has larger torsion group and relatively high rank. Let us 
+mention three examples (see [<a href="ref.html#149">149</a>]): 
+
+<p align=center>
+{-22552 / 5129, 5129 / 22552, -52463190 / 14458651}, 
+</p>
+<p align=center>
+{39123 / 96976, 12947200 / 418209, 42427 / 1104}, 
+</p>
+<p align=center>
+{145 / 408, -408 / 145, -145439 / 59160}, 
+</p>
+
+which show that 
+<nobr><i>B</i>(<b>Z</b>/2<b>Z</b> &times; 
+<b>Z</b>/4<b>Z</b>) 
+&ge; 7,</nobr> 
+<nobr><i>B</i>(<b>Z</b>/2<b>Z</b> &times; 
+<b>Z</b>/6<b>Z</b>) &ge; 4</nobr>  
+and 
+<nobr><i>B</i>(<b>Z</b>/2<b>Z</b> &times; 
+<b>Z</b>/8<b>Z</b>) &ge; 3,</nobr> respectively.  
+Connections of Diophantine triples and elliptic curves 
+with torsion group 
+<nobr>
+<b>Z</b>/2<b>Z</b> &times; 
+<b>Z</b>/8<b>Z</b></nobr> 
+are also discussed in [<a href="ref.html#171">171</a>]. 
+<p>
+Furthermore, the triples
+<p align=center>
+{1270 / 2323, 5916 / 2323, 664593861324 / 12535672267},
+</p>
+<p align=center>
+{3164 / 491, 10692 / 491, 302996685420 / 118370771}
+</p>
+induce the elliptic curves with the torsion group  
+<nobr><b>Z</b>/2<b>Z</b> &times; 
+<b>Z</b>/2<b>Z</b></nobr>  
+and the rank equal to 9 (see [<a href="ref.html#149">149</a>]), 
+the triple 
+<p align=center>
+{1235 / 69, 5146848 / 69277, 91544915 / 19120452} 
+</p>
+gives a curve with rank equal to 10, while the triple 
+<p align=center>
+{795025 / 3128544, -22247424 / 7791245, 24807390285149 / 97501011189120} 
+</p>
+gives a curve with rank equal to 11 (Aguirre, Dujella &amp; Peral [<a href="ref.html#209">209</a>]).
+<p>
+Dujella & Peral found the triple 
+<p align=center>
+{301273 / 556614, -556614 / 301273, -535707232 / 290125899} 
+</p>
+which induces the elliptic curve with the torsion group <nobr><b>Z</b>/2<b>Z</b> &times; 
+<b>Z</b>/4<b>Z</b></nobr> and the rank equal to 9, what is the current record for this torsion group.
+<p>
+The information about current records for all 
+torsion groups may be found in this 
+<a href="tors/tors.html">table</a>. 
+
+<p>
+
+<hr size=2 noshade>
+<p>
+<blockquote>
+1. <a href="intro.html">Introduction</a> <br>
+2. <a href="quint.html">Diophantine quintuple conjecture</a>  <br>
+3. <a href="dn.html">Sets with the property <i>D</i>(<i>n</i>)</a> <br> 
+4. <a href="fib.html">Connections with Fibonacci numbers</a>  <br>
+5. <a href="ratio.html">Rational Diophantine <i>m</i>-tuples</a> <br>
+7. <a href="gener.html">Various generalizations</a> <br>
+8. <a href="ref.html">References</a> 
+</blockquote>
+<p>
+
+<hr size=2 noshade>
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<font face="Times New Roman">
+<a href="dtuples.html">Diophantine <i>m</i>-tuples page</a> 
+</font>
+</td>
+
+<td align="right">
+<font face="Times New Roman">
+<a href="index.html"><em>Andrej Dujella</em> home page</a>
+</font>
+</td>
+</tr>
+</table>
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+</body> 
+</html>

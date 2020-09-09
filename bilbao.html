@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Applications of elliptic curves in public key
+cryptography</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Applications of elliptic curves in public key cryptography - Graduate course">
+<meta name="keywords" content="elliptic curves, 
+elipticke krivulje, cryptography, kriptografija, 
+elliptic curve cryptosystems, public key cryptography, rank, 
+high rank, torsion group, graduate course, references, links">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+</head>
+
+<body bgcolor=FFFFFF>
+
+<h3>Andrej Dujella:</h3>
+<p>
+<h1>Applications of Elliptic Curves in Public Key Cryptography</h1>
+<p>
+<hr size=2 noshade><br>
+<h4>Basque Center for Applied Mathematics and Universidad del Pais Vasco / Euskal Herriko Unibertsitatea, Bilbao, May 2011</h4>
+<hr size=2 noshade>
+
+<h4>Abstract:</h4>
+
+The most popular public key
+cryptosystems are based on the problem of factorization of large
+integers and discrete logarithm problem in finite groups, in
+particular in the multiplicative group of finite field and the
+group of points on elliptic curve over finite field. Elliptic curves
+are of special interest since they at present alow much shorter keys,
+for the same level of security, compared with cryptosystems based
+on factorization or discrete logarithm problem in finite fields.
+<p>
+In this course we will briefly mentioned basic properties of
+elliptic curves over the rationals, and then concentrate on important algorithms
+for elliptic curves over finite fields. We will discuss efficient implementation
+of point addition and multiplication (in different coordinates),
+with special emphasis on fields of characteristic 2, which are important for applications in cryptography.
+Algorithms for point counting and elliptic curve discrete logarithm problem will be described.
+We intend to show how to use programs and program packages specialized for work with elliptic curves.
+<p>
+Factorization and primality testing and proving are very important topics
+for security of public key cryptosystems. Namely, the starting point in the construction
+of almost all public key cryptosystems is the choice of one or more large (secret or public) prime numbers.
+We will describe algorithms for factorization and primality proving which use elliptic curves.
+
+<hr size=2 noshade>
+
+<h4>Program:</h4>
+
+<ol>
+<li> Public Key Cryptography
+
+<li> Elliptic curves over the rationals
+
+<li> Elliptic curves over finite fields
+
+<li> Implementation of operations
+
+<li> Algorithms for determining the group order
+
+<li> Elliptic Curve Cryptosystems
+
+<li> Comparing elliptic curve with other types of cryptography
+
+<li> Elliptic curve discrete logarithm problem
+
+<li> Lenstra's elliptic curve factoring method
+
+<li> Elliptic curve primality proving algorithm
+</ol>
+
+
+<hr size=2 noshade>
+<p>
+<a href="http://web.math.hr/~duje/pdf/bilbaocourse.pdf"><b>Lecture Notes</b></a> (working version)
+<p>
+<hr size=2 noshade>
+
+<h3>References</h3>
+
+<p>
+<ol>
+
+<li> I. Blake, G. Seroussi, N. Smart: <em><a href="http://www.cs.bris.ac.uk/~nigel/ECC/">
+Elliptic Curves in Cryptography</a></em>, Cambridge University Press, 1999. 
+<p>
+<li> I. Blake, G. Seroussi, N. Smart (Eds): <em><a href="http://www.cs.bris.ac.uk/~nigel/ECC/">
+Advances in Elliptic Curve Cryptography</a></em>, Cambridge University Press, 2005. 
+<p>
+<li> H. Cohen, G. Frey (Eds): <em><a href="http://www.hyperelliptic.org/HEHCC/">
+Handbook of Elliptic and Hyperelliptic Curve Cryptography</a></em>, CRC Press, 2005. 
+<p>
+<li> R. Crandall, C. Pomerance: <em>Prime Numbers. A Computational
+Perspective</em>, Springer, New York, 2001. 
+<p>
+<li>D. Hankerson, A. Menezes, S. Vanstone: 
+<em><a href="http://www.cacr.math.uwaterloo.ca/ecc/">Guide to Elliptic Curve Cryptography</a></em>, 
+Springer-Verlag, New York, 2004.
+<p>
+<li> N. Koblitz: <em>A Course in Number Theory and Cryptography</em>, 
+Springer-Verlag, Berlin, 1994. 
+<p>
+<li> M. Rosing: <em> <a href="http://www.manning.com/rosing/">
+Implementing Elliptic Curve Cryptography</a></em>, 
+Manning, Greenwich, 1999.
+<p>
+<li> J. H. Silverman: <em>Elliptic curves and cryptography</em>, 
+in: P. Garrett, D. Lieman (Eds.): <em>Public-Key Cryptography</em>, 
+American Mathematical Society, Providence, 2005, pp.91-112.
+<p>
+<li> J. H. Silverman, J. Tate: <em><a href="http://www.math.brown.edu/~jhs/RPECHome.html">
+Rational Points on Elliptic Curves</a></em>, Springer-Verlag, Berlin, 1992.
+<p>
+<li> N. Smart: <em><a href="http://www.cs.bris.ac.uk/~nigel/Crypto_Book/">
+Cryptography. An Introduction</a></em>, McGraw-Hill, 2002. 
+<p>
+<li> D.R. Stinson: <em><a href="http://www.cacr.math.uwaterloo.ca/~dstinson/CTAP3/CTAP3.html">
+Cryptography. Theory and Practice</a></em>, CRC Press, 2005. 
+<p>
+<li>L.C. Washington: <em><a href="http://www.math.umd.edu/~lcw/ec.html">
+Elliptic Curves: Number Theory and Cryptography</a></em>, CRC Press, Boca Raton, 2008.
+
+</ol>
+
+<hr size=2 noshade>
+
+<h3> Some useful links</h3>
+
+<p>
+<ul>
+<li><a href="tors/tors.html">High rank elliptic curves with prescribed 
+torsion</a>
+<li><a href="tors/generic.html">Infinite 
+families of elliptic curves with high rank and prescribed torsion</a> 
+<li><a href="tors/rankhist.html">History of elliptic curves rank records</a> 
+<li><a href="http://www.warwick.ac.uk/~masgaj/">
+John Cremona's home page</a>
+<ul>
+<li><a href="http://www.warwick.ac.uk/~masgaj/ftp/progs/">
+mwrank and related programs</a>
+<li><a href="http://www.warwick.ac.uk/~masgaj/packages.html">
+Software packages of interest to number theory</a>
+<li><a href="http://www.warwick.ac.uk/~masgaj/ecsoft.html">      
+Elliptic curve database and software</a>
+</ul>
+<li><a href="http://www.math.mcgill.ca/connell/public/apecs/">
+Ian Connell's APECS</a>
+<li><a href="http://pari.math.u-bordeaux.fr/">
+PARI/GP home page</a>
+<li><a href="http://www.sagenb.org/">SAGE Notebook</a> 
+<li><a href="http://www.math.tu-berlin.de/~kant/calc/">
+KASH calculator</a>
+<li><a href="http://magma.maths.usyd.edu.au/calc/">MAGMA Calculator</a> 
+
+<li><a href="http://www.math.harvard.edu/~elkies/compnt.html">
+Algorithmic Number Theory: Tables and Links</a> (Noam Elkies)
+<li><a href="http://www.math.brown.edu/~jhs/">
+Joseph Silverman's home page</a>
+<li><a href="http://www.math.jussieu.fr/~mestre/pub.html">
+Jean-Francois Mestre's publications</a>
+<li><a href="http://cgi.di.uoa.gr/~halatsis/Crypto/Bibliografia/Elliptic/biblio_ell.html"> 
+Elliptic Curves and Cryptology</a> (people, books, theses, software)
+<li><a href="http://www.rzuser.uni-heidelberg.de/~hb3/ellc.html">
+Elliptic Curves</a> (links by Franz Lemmermeyer)
+<li><a href="http://www.certicom.com/index.php/ecc-tutorial">Certicom ECC Online 
+Tutorial</a> 
+<li><a href="http://www.numbertheory.org/ntw/">
+Number Theory Web</a> 
+<li><a href="literatura.html">Recommended readings 
+for graduate students in number theory 
+</a>
+
+</ul>
+
+<p>
+<hr size=2 noshade>
+
+<h3>Web pages of some courses on elliptic curves</h3>
+
+<ol>
+<li><a href="http://web.math.hr/~duje/algelipeng.html">
+Algorithms for Elliptic Curves</a> (Andrej Dujella)
+<p>
+<li><a href="http://w3.impa.br/~hossein/courses/ellipticmodular08.html">
+Arithmetic of Elliptic Curves and Modular Forms</a> (Hossein Movasati) 
+<p>
+<li><a href="http://homepage.mac.com/ehgoins/ma598/">
+Elliptic Curves</a> (Edray Goins)
+<p>
+<li><a href="http://www.jmilne.org/math/">
+Elliptic Curves</a> (Jim Milne)
+<p>
+<li><a href="http://www.maths.warwick.ac.uk/~miles/MA426/">
+Elliptic Curves</a> (Miles Reid)
+<p>
+<li><a href="http://www.math.lsu.edu/~verrill/teaching/math7280/">
+Elliptic Curves</a> (Helena Verrill)
+<p>
+<li><a href="http://www.math.ucalgary.ca/~aksilves/courses/pmat60346/">
+Elliptic Curves and Cryptography</a> (Alan Silvester)
+<p>
+<li><a href="http://www.rzuser.uni-heidelberg.de/~hb3/ellc.html">
+Elliptische Kurven</a> (Franz Lemmermeyer)
+<p>
+<li><a href="http://isis.ku.dk/kurser/index.aspx?kursusid=23232&xslt=simple6&param8=false&param1=70002">
+Introduction to Elliptic Curves</a> (Ian Kiming)
+<p>
+<li><a href="http://www.math.rug.nl/~top/NCC.html">
+Number Theory of Cubic Curves</a> (Jaap Top)
+<p>
+<li><a href="http://ocw.mit.edu/courses/mathematics/18-704-seminar-in-algebra-and-number-theory-rational-points-on-elliptic-curves-fall-2004/">
+Rational Points on Elliptic Curves</a> (Daniel Rogalski) 
+<p>
+<li><a href="http://www.math.rutgers.edu/~tunnell/math574.html">
+Selected Topics in Number Theory</a> (Jerrold Tunnell)
+<p>
+<li><a href="http://www.mi.uni-erlangen.de/~ruppert/vorlws99.html">
+Vorlesung uber Elliptische Kurven und Kryptographie</a> 
+(Wolfgang Ruppert)
+<p>
+
+</ol>
+
+<hr size=2 noshade>
+
+<a href="index.html"><em>Andrej Dujella</em> home page</a>
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+
+
+</body>
+</html>
