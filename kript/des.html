@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Blokovni kriptosustavi - Opis algoritma DES-a</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Blokovni kriptosustavi - Opis algoritma DES-a">
+<meta name="keywords" content="kriptografija, DES, Data Encryption 
+Standard">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="deshist.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="desprop.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<a name="2.2"></a>
+<h2 align=center style="color: rgb(128,0,0)">2.2. Opis algoritma DES-a</h2>
+
+
+DES šifrira otvoreni tekst duljine 64 bita, koristeći ključ 
+<i>K</i> duljine 56 bitova. Tako se dobiva šifrat koji ponovo 
+ima 64 bita. Algoritam se sastoji od 3 etape: 
+<ol>
+<li>Za dani otvoreni tekst <i>x</i>, permutiranjem pomoću 
+fiksne inicijalne permutacije 
+<a href="tablice/destablice.html#IP" target="_blank">IP</a> dobije se <i>x</i><sub>0</sub>. 
+Zapišemo <nobr><i>x</i><sub>0</sub> = IP(<i>x</i>)</nobr> u obliku 
+<nobr><i>x</i><sub>0</sub> = <i>L</i><sub>0</sub><i>R</i><sub>0</sub>,</nobr>  
+gdje <i>L</i><sub>0</sub> sadrži prva (lijeva) 32 bita, a 
+<i>R</i><sub>0</sub> zadnja (desna) 32 bita od <i>x</i><sub>0</sub>.
+<li>Određena funkcija se 16 puta iterira. Računamo 
+<nobr><i>L</i><sub><i>i</i></sub> <i>R</i><sub><i>i</i></sub>,</nobr> 
+<nobr>1 &le; <i>i</i> 
+&le; 16,</nobr> po sljedećem pravilu: 
+
+<p align=center>
+<i>L</i><sub><i>i</i></sub> = <i>R</i><sub><i>i</i> -1</sub> <br>
+<i>R</i><sub><i>i</i></sub> = <i>L</i><sub><i>i</i> -1</sub> 
+&oplus; <i>f</i> (<i>R</i><sub><i>i</i> -1</sub>, 
+<i>K</i><sub><i>i</i></sub>), 
+</p>
+gdje &oplus;> označava operaciju 
+"ekskluzivno ili" (XOR). Funkciju <i>f</i> ćemo opisati kasnije, 
+a <i>K</i><sub>1</sub>, <i>K</i><sub>2</sub>, ... , 
+<i>K</i><sub>16</sub> su nizovi bitova duljine 48, koji se 
+dobivaju kao permutacije nekih bitova iz <i>K</i>. 
+ 
+<li>Primijenimo 
+<a href="tablice/destablice.html#IPinv" target="_blank">inverznu permutaciju</a> 
+IP<sup>-1</sup> na <i>R</i><sub>16</sub><i>L</i><sub>16</sub> i tako 
+dobivamo šifrat <i>y</i>. Dakle, 
+<nobr><i>y</i> = IP<sup>-1</sup>(<i>R</i><sub>16</sub><i>L</i><sub>16</sub>).</nobr> 
+Uočimo inverzni poredak od <i>L</i><sub>16</sub> i 
+<i>R</i><sub>16</sub>. 
+</ol>   
+<p>
+
+<img src="slike/round_DES.gif" alt="DES runda">
+
+<p>
+Funkcija <i>f</i> za prvi argument ima niz bitova <i>A</i> duljine 
+32, a za drugi argument ima niz bitova <i>J</i> duljine 48. 
+Kao rezultat se dobiva niz bitova duljine 32. Funkcija se 
+računa u sljedeća 4 koraka:
+<ol>
+<li>Prvi argument <i>A</i> se "proširi" do niza duljine 48 u 
+skladu s fiksnom <em>funkcijom proširenja</em> 
+<a href="tablice/destablice.html#E" target="_blank">E</a>. 
+Niz E(<i>A</i>) se sastoji od 32 bita iz <i>A</i>, 
+permutiranih na određeni način, s time da se 16 bitova 
+pojavi dvaput. 
+
+<li>Izračunamo E(<i>A</i>) 
+&oplus; <i>J</i> i rezultat 
+zapišemo kao spoj od osam 6-bitnih nizova 
+<p align=center>
+<i>B</i> = <i>B</i><sub>1</sub><i>B</i><sub>2</sub><i>B</i><sub>3</sub><i>B</i><sub>4</sub><i>B</i><sub>5</sub><i>B</i><sub>6</sub><i>B</i><sub>7</sub><i>B</i><sub>8</sub>. </p>
+
+<li>Sljedeći korak koristi 8 tzv. 
+<a href="slike/s-box.gif" target="_blank"><em>S-kutija</em></a>  
+(supstitucijskih kutija) S<sub>1</sub>, ... , 
+S<sub>8</sub>. Svaki S<sub><i>i</i></sub> je fiksna 
+<nobr>4 &times; 16</nobr> matrica čiji su elementi cijeli brojevi između 
+0 i 15. Za dani niz bitova 
+duljine 6, recimo <i>B</i><sub><i>j</i></sub> = 
+<nobr><i>b</i><sub>1</sub><i>b</i><sub>2</sub><i>b</i><sub>3</sub><i>b</i><sub>4</sub><i>b</i><sub>5</sub><i>b</i><sub>6</sub>,</nobr> 
+računamo 
+<nobr>S<sub><i>j</i></sub> (<i>B</i><sub><i>j</i></sub>)</nobr> na sljedeći način. 
+Dva bita <nobr><i>b</i><sub>1</sub><i>b</i><sub>6</sub></nobr> 
+određuju binarni zapis retka <i>r</i> od S<sub><i>j</i></sub> (<i>r</i> = 0,1,2,3), 
+a četiri bita <nobr><i>b</i><sub>2</sub><i>b</i><sub>3</sub><i>b</i><sub>4</sub><i>b</i><sub>5</sub></nobr> 
+određuju binarni zapis stupca <i>c</i> od S<sub><i>j</i></sub> 
+(<i>c</i> = 0,1,2,...,15). Sada je 
+<nobr>S<sub><i>j</i></sub> (<i>B</i><sub><i>j</i></sub>)</nobr> po 
+definiciji jednako <nobr>S<sub><i>j</i></sub> (<i>r</i>,<i>c</i>),</nobr> 
+zapisano kao binarni broj duljine 4. Na ovaj način izračunamo 
+<i>C</i><sub><i>j</i></sub> = <nobr>S<sub><i>j</i></sub> (<i>B</i><sub><i>j</i></sub>),</nobr>  
+<i>j</i> = 1,2,...,8. 
+
+<li>Niz bitova 
+<i>C</i><sub>1</sub><i>C</i><sub>2</sub><i>C</i><sub>3</sub><i>C</i><sub>4</sub><i>C</i><sub>5</sub><i>C</i><sub>6</sub><i>C</i><sub>7</sub><i>C</i><sub>8</sub> 
+duljine 32 se permutira pomoću fiksne <em>završne permutacije</em> 
+<a href="tablice/destablice.html#P" target="_blank">P</a>. 
+Tako se dobije <nobr>P(<i>C</i>),</nobr> što je po definiciji 
+upravo <nobr><i>f</i>(<i>A</i>,<i>J</i>).</nobr>
+</ol>
+
+<p>
+<img src="slike/function_DES.gif" alt="DES funkcija">
+<p>
+
+Konačno, trebamo opisati računanje tablice ključeva 
+<i>K</i><sub>1</sub>, <i>K</i><sub>2</sub>, ... , <i>K</i><sub>16</sub> 
+iz ključa <i>K</i>. Ključ <i>K</i> se sastoji od 64 bita, od 
+kojih 56 predstavlja ključ, a preostalih 8 bitova služe za testiranje 
+pariteta. Bitovi na pozicijama 8, 16, ... , 64 su definirani tako da 
+svaki bajt (8 bitova) sadrži neparan broj jedinica. Ovi bitovi se 
+ignoriraju kod računanja tablice ključeva.
+
+<ol>
+<li>Za dani 64-bitni ključ <i>K</i>, ignoriramo paritetne bitove,  
+te permutiramo preostale bitove pomoću fiksne permutacije 
+<a href="tablice/destablice.html#PC1" target="_blank">PC1</a>. 
+Zapišemo PC1(<i>K</i>) = <nobr><i>C</i><sub>0</sub><i>D</i><sub>0</sub>,</nobr> 
+gdje <i>C</i><sub>0</sub> sadrži prvih 28, a <i>D</i><sub>0</sub> 
+zadnjih 28 bitova od <nobr>PC1(<i>K</i>).</nobr> 
+
+<li>Za <i>i</i> = 1, 2, ... , 16 računamo: 
+<p align=center>  <i>C</i><sub><i>i</i></sub> = 
+LS<sub><i>i</i></sub> (<i>C</i><sub><i>i</i> -1</sub>), <br>
+<i>D</i><sub><i>i</i></sub> = 
+LS<sub><i>i</i></sub> (<i>D</i><sub><i>i</i> -1</sub>), <br>
+<i>K</i><sub><i>i</i></sub> = PC2(<i>C</i><sub><i>i</i></sub> <i>D</i><sub><i>i</i></sub>). </p>
+
+LS<sub><i>i</i></sub> predstavlja ciklički pomak ulijevo za 1 ili 2 
+pozicije, u ovisnosti od <i>i</i>. Ako je <i>i</i> = 1, 2, 9 ili 16, 
+onda je pomak za jednu poziciju, a inače je pomak za dvije pozicije. 
+<a href="tablice/destablice.html#PC2" target="_blank">PC2</a> je još jedna fiksna permutacija.
+</ol>
+
+<p>
+
+Ovim je u potpunosti opisan postupak šifriranja. 
+<p>
+Dešifriranje koristi isti algoritam kao šifriranje. Krenemo od šifrata 
+<i>y</i>, ali koristimo tablicu ključeva u obrnutom redoslijedu: 
+<i>K</i><sub>16</sub>, <i>K</i><sub>15</sub>, ... , <i>K</i><sub>1</sub>. 
+Kao rezultat dobivamo otvoreni tekst <i>x</i>. 
+<p>
+Uvjerimo se da ovako definirana funkcija dešifriranja <i>d<sub>K</sub></i> zaista ima
+traženo svojstvo da je <nobr><i>d<sub>K</sub></i>(<i>y</i>) = <i>x</i>.</nobr> 
+Podsjetimo se da smo <i>y</i> dobili kao
+<nobr><i>y</i> = IP<sup>-1</sup>(<i>R</i><sub>16</sub><i>L</i><sub>16</sub>).</nobr> 
+Stoga se primjenom inicijalne permutacije na <i>y</i> dobije
+<nobr><i>y</i><sub>0</sub> = <i>R</i><sub>16</sub><i>L</i><sub>16</sub>.</nobr> 
+Nakon prve runde dešifriranja, lijeva polovica
+postaje <nobr><i>L</i><sub>16</sub> = <i>R</i><sub>15</sub>,</nobr> 
+a desna <nobr><i>R</i><sub>16</sub> &oplus;  
+<i>f</i>(<i>L</i><sub>16</sub>,<i>K</i><sub>16</sub>).</nobr>
+No, iz zadnje runde šifriranja znamo da vrijedi
+<p align=center>
+<i>R</i><sub>16</sub> = <i>L</i><sub>15</sub> &oplus;  
+<i>f</i>(<i>R</i><sub>15</sub>,<i>K</i><sub>16</sub>) = <i>L</i><sub>15</sub>  
+&oplus; <i>f</i>(<i>L</i><sub>16</sub>,<i>K</i><sub>16</sub>). 
+</p>
+Zato je <nobr><i>R</i><sub>16</sub> 
+&oplus; <i>f</i>(<i>L</i><sub>16</sub>,<i>K</i><sub>16</sub>) = 
+<i>L</i><sub>15</sub>.</nobr>  
+Znači, nakon jedne runde
+dešifriranja dobivamo <nobr><i>R</i><sub>15</sub><i>L</i><sub>15</sub>.</nobr> 
+Nastavljajući taj postupak,
+nakon svake sljedeće rudne dešifriranja dobivat ćemo redom:
+<nobr><i>R</i><sub>14</sub><i>L</i><sub>14</sub>,</nobr> 
+<nobr><i>R</i><sub>13</sub><i>L</i><sub>13</sub></nobr> ..., 
+<nobr><i>R</i><sub>1</sub><i>L</i><sub>1</sub></nobr> i nakon zadnje runde
+<nobr><i>R</i><sub>0</sub><i>L</i><sub>0</sub>.</nobr> 
+Preostaje zamijeniti poredak lijeve i desne polovice i
+primijeniti <nobr>IP<sup>-1</sup>.</nobr> 
+Dakle, na kraju postupka dešifriranja dobivamo
+<nobr>IP<sup>-1</sup>(<i>L</i><sub>0</sub><i>R</i><sub>0</sub>),</nobr> 
+a to je upravo otvoreni tekst <i>x</i>, što je i trebalo dokazati.
+<p>
+Vidimo da razlog za zamjenu lijeve i desne polovice prije primjene permutacije
+<nobr>IP<sup>-1</sup></nobr> leži upravo u želji da se za dešifriranje može koristiti isti
+algoritam kao za šifriranje.
+
+
+<p>
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="deshist.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="desprop.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../kript.html">Web stranica kolegija <em>Kriptografija</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+
+</body>
+</html>
+
+
+
