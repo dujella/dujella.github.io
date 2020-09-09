@@ -7,7 +7,7 @@
 <meta name="description" content="Advanced Encryption Standard 
 (Rijndael)">
 <meta name="keywords" content="kriptografija, AES, 
-Advanced Encryption Standard, Rijndael, konačna polja, 
+Advanced Encryption Standard, Rijndael, kona&#269;na polja, 
 MARS, RC6, SERPENT, TWOFISH">
 
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
@@ -24,8 +24,8 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="josblok.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="idejajavni.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="idejajavni.html">[Sljede&#263;e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadr&#382;aj]</a>
 </font></b>
 
 <hr size=2 noshade>
@@ -37,14 +37,14 @@ Standard</h2>
 
 
 Godine 1997. National Institute of Standards and Technology (NIST) 
-objavio je natječaj za kriptosustav koji bi trebao kao opće prihvaćeni 
-standard zamijeniti DES. Pobjednik natječaja dobio bi ime 
-<em>Advanced Encryption Standard</em> (AES). NIST je postavio sljedeće 
+objavio je natje&#269;aj za kriptosustav koji bi trebao kao op&#263;e prihva&#263;eni 
+standard zamijeniti DES. Pobjednik natje&#269;aja dobio bi ime 
+<em>Advanced Encryption Standard</em> (AES). NIST je postavio sljede&#263;e 
 zahtjeve na kriptosustav: 
 <ol>
-<li>mora biti simetričan <p>
+<li>mora biti simetri&#269;an <p>
 <li>mora biti blokovni <p>
-<li>treba raditi sa 128-bitnim blokovima i ključevima s tri duljine: 
+<li>treba raditi sa 128-bitnim blokovima i klju&#269;evima s tri duljine: 
 128, 192 i 256 bitova.
 </ol>
 
@@ -56,58 +56,58 @@ vjerojatno dovoljno 32 runde.
 posebno za digitalne video podatke.
 <li>64-bitni blokovi nisu najefikasniji u nekim primjenama.
 </ul>
-No, svakako je veliki značaj 3DES-a što je pružio zadovoljavajući 
+No, svakako je veliki zna&#269;aj 3DES-a &#353;to je pru&#382;io zadovoljavaju&#263;i 
 privremeni nadomjestak za DES, do izbora novog standarda. 
 <p>
 
-Natječaj je zaključen 15.6.1998. Od 21 pristigle prijave, 15 ih je 
+Natje&#269;aj je zaklju&#269;en 15.6.1998. Od 21 pristigle prijave, 15 ih je 
 zadovoljilo NIST-ove kriterije. U kolovozu 1999. NIST je objavio 
 5 finalista: MARS, RC6, RIJNDAEL, SERPENT i TWOFISH. 
-Recimo nekoliko riječi o ovih 5 finalista.
+Recimo nekoliko rije&#269;i o ovih 5 finalista.
 <p>
 
 MARS (IBM), RC6 (RSA Security Inc.) i TWOFISH (Counterpane Systems) 
-spadaju u Feistelove šifre. Podsjetimo se da je Feistelova šifra 
-blokovna šifra u kojoj u <i>i</i>-toj rundi koriste formule 
+spadaju u Feistelove &#353;ifre. Podsjetimo se da je Feistelova &#353;ifra 
+blokovna &#353;ifra u kojoj u <i>i</i>-toj rundi koriste formule 
 <i>L<sub>i</sub></i> = <i>R</i><sub><i>i</i> -1</sub>, 
 <i>R</i><sub><i>i</i></sub> = <i>L</i><sub><i>i</i> -1</sub> 
 &oplus; <i>f</i> (<i>R</i><sub><i>i</i> -1</sub>, 
 <i>K</i><sub><i>i</i></sub>) (dakle, isto kao kod DES-a). 
-MARS spada u nebalansirane Feistelove šifre jer se blokovi ne dijele
-na 2, već na 4 dijela. MARS ima 32 runde, RC6 ima 20 rundi, dok TWOFISH 
-ima 16 rundi. Specifičnost kriptosustava RC6 (koji je dosta sličan RC5) 
-su korištenje funkcije <i>f</i>(<i>x</i>) = <i>x</i>(2<i>x</i>+1), 
+MARS spada u nebalansirane Feistelove &#353;ifre jer se blokovi ne dijele
+na 2, ve&#263; na 4 dijela. MARS ima 32 runde, RC6 ima 20 rundi, dok TWOFISH 
+ima 16 rundi. Specifi&#269;nost kriptosustava RC6 (koji je dosta sli&#269;an RC5) 
+su kori&#353;tenje funkcije <i>f</i>(<i>x</i>) = <i>x</i>(2<i>x</i>+1), 
 koja daje difuziju, te rotacija ovisnih o podacima, koje daju 
 otpornost na diferencijalnu i linearnu kriptoanalizu. 
-Specifičnost TWOFISH-a je da se S-kutije dinamički mijenjaju u 
-ovisnosti o ključu, što komplicira diferencijalnu i linearnu 
+Specifi&#269;nost TWOFISH-a je da se S-kutije dinami&#269;ki mijenjaju u 
+ovisnosti o klju&#269;u, &#353;to komplicira diferencijalnu i linearnu 
 kriptoanalizu. 
 <p>
 SERPENT su konstruirali kriptografi iz Engleske, Izraela i Danske.  
-Spada u supstitucijsko-permutacijske šifre. Ima 32 runde i, što je 
-za njega specifično, u svakoj rundi paralelno koristi 32 identične 
+Spada u supstitucijsko-permutacijske &#353;ifre. Ima 32 runde i, &#353;to je 
+za njega specifi&#269;no, u svakoj rundi paralelno koristi 32 identi&#269;ne 
 S-kutije. 
 <p>
 RIJNDAEL su razvili belgijski kriptografi. Razlikuje se od ostalih 
-finalista po tome što se u konstrukciji S-kutija koriste 
-operacije u konačnom polju GF(2<sup>8</sup>). 
+finalista po tome &#353;to se u konstrukciji S-kutija koriste 
+operacije u kona&#269;nom polju GF(2<sup>8</sup>). 
 <p><br>
 
-Konačno, 2.8.2000. objavljeno je da je pobjednik natječaja za AES
-RIJNDAEL (čitaj: rejn dol). 
+Kona&#269;no, 2.8.2000. objavljeno je da je pobjednik natje&#269;aja za AES
+RIJNDAEL (&#269;itaj: rejn dol). 
 RIJNDAEL su razvili belgijski kriptografi 
 <font color=009900>Joan Daemen</font> i <font color=009900>Vincent 
-Rijmen</font> s Katoličkog sveučilišta Leuven, po kojima je i dobio ime. 
+Rijmen</font> s Katoli&#269;kog sveu&#269;ili&#353;ta Leuven, po kojima je i dobio ime. 
 <p>
-Kako smo već napomenuli, jedna od njegovih specifičnosti je korištenje 
-konačnog polja GF(2<sup>8</sup>) 
+Kako smo ve&#263; napomenuli, jedna od njegovih specifi&#269;nosti je kori&#353;tenje 
+kona&#269;nog polja GF(2<sup>8</sup>) 
 (alternativna oznaka je <b>F</b><sub>2<sup><small>8</small></sup></sub>). 
 Preciznije, elementi od GF(2<sup>8</sup>) 
 su polinomi oblika <i>a</i><sub>7</sub><i>x</i><sup>7</sup> + 
 <i>a</i><sub>6</sub><i>x</i><sup>6</sup> + ... + 
 <i>a</i><sub>1</sub><i>x</i> + <i>a</i><sub>0</sub>, 
 <i>a</i><sub><i>i</i></sub> &isin;  
-{0, 1}, a operacije su zbrajanje i množenje polinoma iz 
+{0, 1}, a operacije su zbrajanje i mno&#382;enje polinoma iz 
 <b>Z</b><sub>2</sub>[X] 
 modulo fiksni ireducibilni polinom 
 <i>g</i>(<i>x</i>) = <i>x</i><sup>8</sup> + <i>x</i><sup>4</sup> 
@@ -115,20 +115,20 @@ modulo fiksni ireducibilni polinom
 GF(2<sup>8</sup>) = 
 <b>Z</b><sub>2</sub>[X] 
 / (<i>g</i>(<i>x</i>)).  
-Elemente od GF(2<sup>8</sup>) možemo prikazati i kao bajtove 
+Elemente od GF(2<sup>8</sup>) mo&#382;emo prikazati i kao bajtove 
 (nizove od 8 bitova). Npr. polinomu 
 <i>x</i><sup>6</sup> + <i>x</i><sup>4</sup> 
 + <i>x</i><sup>2</sup> + <i>x</i> + 1 odgovara bajt 01010111 ili 
 57 u heksadecimalnom zapisu. 
 <p>
 
-<b>Primjer 7: </b> <em>Pomnožiti polinome</em> 
+<b>Primjer 7: </b> <em>Pomno&#382;iti polinome</em> 
 <i>x</i><sup>6</sup> + <i>x</i><sup>4</sup> 
 + <i>x</i><sup>2</sup> + <i>x</i> + 1 <em>i</em> 
 <i>x</i><sup>7</sup> + <i>x</i> + 1 <em>iz 
 polja</em> GF(2<sup>8</sup>). 
 <p>
-Najprije pomnožimo ova dva polinoma u prstenu 
+Najprije pomno&#382;imo ova dva polinoma u prstenu 
 <b>Z</b><sub>2</sub>[X]: 
 <p align=center>
 (<i>x</i><sup>6</sup> + <i>x</i><sup>4</sup> 
@@ -139,32 +139,32 @@ Najprije pomnožimo ova dva polinoma u prstenu
 + <i>x</i><sup>5</sup> + <i>x</i><sup>4</sup> + <i>x</i><sup>3</sup>
 + 1. 
 </p>
-Potom izračunamo ostatak pri dijeljenju ovog polinoma s  
+Potom izra&#269;unamo ostatak pri dijeljenju ovog polinoma s  
 <i>g</i>(<i>x</i>). Tako dobijemo rezultat  
 <i>x</i><sup>7</sup> + <i>x</i><sup>6</sup> + 1. 
-Heksadecimalno to možemo zapisati kao: 57 <b>&middot;</b> 83 = C1. 
+Heksadecimalno to mo&#382;emo zapisati kao: 57 <b>&middot;</b> 83 = C1. 
 <p>
 
-U RIJNDAEL-u se također koriste i operacije na polinomima s 
+U RIJNDAEL-u se tako&#273;er koriste i operacije na polinomima s 
 koeficijentima iz GF(2<sup>8</sup>) stupnja manjeg od 4. 
-Svaki takav polinom možemo reprezentirati kao 4-bajtni vektor. 
+Svaki takav polinom mo&#382;emo reprezentirati kao 4-bajtni vektor. 
 Zbrajanje takvih polinoma se svodi na zbrajanje koeficijenta uz 
-iste potencije (zbrajanje u GF(2<sup>8</sup>) smo već definirali). 
-Da bi kod množenja dobili kao rezultat polinom stupnja manjeg 
-od 4, moramo produkt reducirati modulo neki polinom četvrtog 
+iste potencije (zbrajanje u GF(2<sup>8</sup>) smo ve&#263; definirali). 
+Da bi kod mno&#382;enja dobili kao rezultat polinom stupnja manjeg 
+od 4, moramo produkt reducirati modulo neki polinom &#269;etvrtog 
 stupnja. U RIJNDAEL-u je za to izabran polinom 
 <i>x</i><sup>4</sup> + 1. 
-Polinom <nobr><i>x</i><sup>4</sup> + 1</nobr> je izabran da bi množenje
-bilo što jednostavnije za implementirati. Pritom
+Polinom <nobr><i>x</i><sup>4</sup> + 1</nobr> je izabran da bi mno&#382;enje
+bilo &#353;to jednostavnije za implementirati. Pritom
 polinom <i>x</i><sup>4</sup> + 1 nije ireducibilan nad <b>Z</b><sub>2</sub>[X], jer u
 <b>Z</b><sub>2</sub>[X] vrijedi: <i>x</i><sup>4</sup>+1=(<i>x</i>+1)<sup>4</sup>. 
-Stoga neće svi
-polinomi imati inverz. No, to ovdje nije ni nužno.
-Zapravo, vidjet ćemo da se postojanje inverza zahtijeva
-samo za jedan konkretan polinom, za kojeg ćemo postojanje
-inverza provjeriti u sljedećem primjeru.
-Uz ovaj izbor, množenje polinoma 
-se može matrično zapisati ovako: 
+Stoga ne&#263;e svi
+polinomi imati inverz. No, to ovdje nije ni nu&#382;no.
+Zapravo, vidjet &#263;emo da se postojanje inverza zahtijeva
+samo za jedan konkretan polinom, za kojeg &#263;emo postojanje
+inverza provjeriti u sljede&#263;em primjeru.
+Uz ovaj izbor, mno&#382;enje polinoma 
+se mo&#382;e matri&#269;no zapisati ovako: 
 <p>
 
 <table align=center>
@@ -206,7 +206,7 @@ Ovdje je polinom <i>d</i>(<i>x</i>) =
 <i>d</i><sub>3</sub><i>x</i><sup>3</sup> +  
 <i>d</i><sub>2</sub><i>x</i><sup>2</sup> +
 <i>d</i><sub>1</sub><i>x</i>+ <i>d</i><sub>0</sub> rezultat 
-množenja polinoma 
+mno&#382;enja polinoma 
 <i>a</i>(<i>x</i>) = 
 <i>a</i><sub>3</sub><i>x</i><sup>3</sup> +  
 <i>a</i><sub>2</sub><i>x</i><sup>2</sup> +
@@ -220,13 +220,13 @@ množenja polinoma
 <i>b</i>(<i>x</i>). 
 <p><br>
 
-<b>Primjer 8: </b> <em>Izračunati</em>: 
+<b>Primjer 8: </b> <em>Izra&#269;unati</em>: 
 <p align=center>
 (03 <i>x</i><sup>3</sup> + 01 <i>x</i><sup>2</sup> + 01 <i>x</i> + 02) 
 &otimes;  
 (0B <i>x</i><sup>3</sup> + 0D <i>x</i><sup>2</sup> + 09 <i>x</i> + 0E).
 </p>
-Označimo rezultat s <i>d</i>(<i>x</i>) = 
+Ozna&#269;imo rezultat s <i>d</i>(<i>x</i>) = 
 <i>d</i><sub>3</sub><i>x</i><sup>3</sup> +  
 <i>d</i><sub>2</sub><i>x</i><sup>2</sup> +
 <i>d</i><sub>1</sub><i>x</i>+ <i>d</i><sub>0</sub>. Najprije imamo:
@@ -237,7 +237,7 @@ Označimo rezultat s <i>d</i>(<i>x</i>) =
 01 <b>&middot;</b> 0D +
 02 <b>&middot;</b> 0B.
 </p>
-Računamo: 
+Ra&#269;unamo: 
 <p align=center>
 03 <b>&middot;</b> 0E = 
 (<i>x</i> + 1) 
@@ -259,7 +259,7 @@ Računamo:
 (<i>x</i><sup>3</sup> + <i>x</i><sup>2</sup> + 1) + 
 (<i>x</i><sup>4</sup> + <i>x</i><sup>2</sup> + <i>x</i>) = 00.
 </p> 
-Na isti način se izračuna   
+Na isti na&#269;in se izra&#269;una   
 <i>d</i><sub>2</sub> = 00, <i>d</i><sub>1</sub> = 00, 
 <i>d</i><sub>0</sub> = 01. Stoga je <i>d</i>(<i>x</i>) = 01, 
 tj. polinom <i>b</i>(<i>x</i>) je inverz polinoma 
@@ -268,18 +268,18 @@ tj. polinom <i>b</i>(<i>x</i>) je inverz polinoma
 
 <p><br>
 
-RIJNDAEL šifrira blokove od 128 bitova = 16 bajtova. Svaki takav 
-blok se može shvatiti kao 16 elemenata 
-polja, koji se reprezentiraju pomoću 4 &times 4 matrice s elementima 
-iz GF(2<sup>8</sup>). Tu matricu ćemo zvati aes-blok. 
-Ključ također ima 128 bitova (postoje i 
+RIJNDAEL &#353;ifrira blokove od 128 bitova = 16 bajtova. Svaki takav 
+blok se mo&#382;e shvatiti kao 16 elemenata 
+polja, koji se reprezentiraju pomo&#263;u 4 &times 4 matrice s elementima 
+iz GF(2<sup>8</sup>). Tu matricu &#263;emo zvati aes-blok. 
+Klju&#269; tako&#273;er ima 128 bitova (postoje i 
 varijante sa 192 i 256 bitova). RIJNDAEL ima 10 rundi (uz 128-bitni 
-ključ). Svaka runda se sastoji od 4 operacije: <p>
+klju&#269;). Svaka runda se sastoji od 4 operacije: <p>
 &nbsp; &nbsp; &nbsp; &nbsp; <b>SubBytes</b><br>
 &nbsp; &nbsp; &nbsp; &nbsp; <b>ShiftRows</b><br>
 &nbsp; &nbsp; &nbsp; &nbsp; <b>MixColumns</b><br>
 &nbsp; &nbsp; &nbsp; &nbsp; <b>AddRoundKey</b><p>
-Prije prve runde vrši se inicijalno dodavanje ključa (AddRoundKey), 
+Prije prve runde vr&#353;i se inicijalno dodavanje klju&#269;a (AddRoundKey), 
 a u posljednjoj rundi se izostavlja transformacija MixColumns.
 Jedna runda AES-a ilustrirana je na slici (prema [Savard: <i>A Cryptographic Compendium</i>]).
 
@@ -305,14 +305,14 @@ Ova transformacija ima 2 koraka:
 </p>
 gdje je <i>c</i> = 01100011.
 </ol>
-Ovu transformaciju možemo prikazati pomoću 
+Ovu transformaciju mo&#382;emo prikazati pomo&#263;u 
 <a href="tablice/aessbox.html" target="_blank">S-kutije</a>. 
-Svaki element aes-bloka zapišemo heksadecimalno. Prvom broju u tom zapisu pridružimo redak, 
+Svaki element aes-bloka zapi&#353;emo heksadecimalno. Prvom broju u tom zapisu pridru&#382;imo redak, 
 a drugom broju stupac
 S-kutije. Na presjeku tog retka i stupca nalazi se heksadecimalni zapis 
 transformata promatranog elementa aes-bloka.
 <p>
-<em>ShiftRows</em> - ciklički pomiče elemente <i>i</i>-tog retka 
+<em>ShiftRows</em> - cikli&#269;ki pomi&#269;e elemente <i>i</i>-tog retka 
 aes-bloka za <i>i</i> mjesta ulijevo (<i>i</i> = 0,1,2,3). 
 <p>
 
@@ -324,43 +324,43 @@ se shvati kao
 polinom <i>a</i><sub>3<i>i</i></sub><i>x</i><sup>3</sup> + 
 <i>a</i><sub>2<i>i</i></sub><i>x</i><sup>2</sup> + 
 <i>a</i><sub>1<i>i</i></sub><i>x</i> + <i>a</i><sub>0<i>i</i></sub>. 
-Sada se ti polinomi pomnože s polinomom   
+Sada se ti polinomi pomno&#382;e s polinomom   
 03 <i>x</i><sup>3</sup> + 
 01 <i>x</i><sup>2</sup> + 
 01 <i>x</i> + 02 (u skladu s ranije definiranim operacijama nad 
-polinomima, rezultat se računa modulo <i>x</i><sup>4</sup> + 1). 
+polinomima, rezultat se ra&#269;una modulo <i>x</i><sup>4</sup> + 1). 
 <p>
-<em>AddRoundKey</em> je XOR aes-bloka s međuključem koji odgovara 
+<em>AddRoundKey</em> je XOR aes-bloka s me&#273;uklju&#269;em koji odgovara 
 trenutnoj rundi. 
 <p>
 S-kutije (operacija ByteSub) su dizajnirane tako da bi kriptosustav bio 
-što otporniji na diferencijalnu i linearnu kriptoanalizu, dok su 
-ShiftRow i MixColumn zaslužni za difuziju. 
+&#353;to otporniji na diferencijalnu i linearnu kriptoanalizu, dok su 
+ShiftRow i MixColumn zaslu&#382;ni za difuziju. 
 <p>
-U konstrukciji međuključeva se najprije ključ proširi korištenjem 
-XOR-a i cikličkog pomaka. Prošireni ključ se sastoji od 
-44 riječi (4-bajtnih vektora). Međuključevi se biraju iz proširenog 
-ključa tako da se prvi međuključ sastoji od prve četiri riječi, 
-drugi od sljedeće četiri, itd. 
+U konstrukciji me&#273;uklju&#269;eva se najprije klju&#269; pro&#353;iri kori&#353;tenjem 
+XOR-a i cikli&#269;kog pomaka. Pro&#353;ireni klju&#269; se sastoji od 
+44 rije&#269;i (4-bajtnih vektora). Me&#273;uklju&#269;evi se biraju iz pro&#353;irenog 
+klju&#269;a tako da se prvi me&#273;uklju&#269; sastoji od prve &#269;etiri rije&#269;i, 
+drugi od sljede&#263;e &#269;etiri, itd. 
 <p>
-Preostalo je još opisati malo detaljnije postupak proširivanja ključa. 
-Prve 4 riječi proširenog ključa predstavlja zadani ključ. 
-Svaku sljedeću riječ <i>r</i><sub><i>i</i></sub> dobijemo iz 
-prethodne riječi <i>r</i><sub><i>i</i> -1</sub> tako da primijenimo 
-XOR s <i>r</i><sub><i>i</i> -4</sub>. Ako je <i>i</i> višekratnik 
-od 4, onda prije operacije XOR izvršimo operacije <em>RotWord</em> 
-(rotira riječ jedno mjesto ulijevo, tj. 
-[<i>r</i><sub>0</sub><i>r</i><sub>1</sub><i>r</i><sub>2</sub><i>r</i><sub>3</sub>] promijeni u  [<i>r</i><sub>1</sub><i>r</i><sub>2</sub><i>r</i><sub>3</sub><i>r</i><sub>0</sub>]), <em>SubWord</em> (uzima jedan po jedan bajt iz riječi i 
-na svakog od njih primjeni S-kutiju), te XOR s riječi 
+Preostalo je jo&#353; opisati malo detaljnije postupak pro&#353;irivanja klju&#269;a. 
+Prve 4 rije&#269;i pro&#353;irenog klju&#269;a predstavlja zadani klju&#269;. 
+Svaku sljede&#263;u rije&#269; <i>r</i><sub><i>i</i></sub> dobijemo iz 
+prethodne rije&#269;i <i>r</i><sub><i>i</i> -1</sub> tako da primijenimo 
+XOR s <i>r</i><sub><i>i</i> -4</sub>. Ako je <i>i</i> vi&#353;ekratnik 
+od 4, onda prije operacije XOR izvr&#353;imo operacije <em>RotWord</em> 
+(rotira rije&#269; jedno mjesto ulijevo, tj. 
+[<i>r</i><sub>0</sub><i>r</i><sub>1</sub><i>r</i><sub>2</sub><i>r</i><sub>3</sub>] promijeni u  [<i>r</i><sub>1</sub><i>r</i><sub>2</sub><i>r</i><sub>3</sub><i>r</i><sub>0</sub>]), <em>SubWord</em> (uzima jedan po jedan bajt iz rije&#269;i i 
+na svakog od njih primjeni S-kutiju), te XOR s rije&#269;i 
 [02<sup>(<i>i</i> -4)/4</sup>,00,00,00].
 <p>
-Dešifriranje se odvija po istom algoritmu kao i šifriranje, 
-osim što se umjesto transformacija   
+De&#353;ifriranje se odvija po istom algoritmu kao i &#353;ifriranje, 
+osim &#353;to se umjesto transformacija   
 ByteSub, ShiftRow i MixColumn koriste njihovi inverzi. 
 Primijetimo da smo u Primjeru 8 dokazali da polinom
 <nobr>03 <i>x</i><sup>3</sup> + 01 <i>x</i><sup>2</sup> + 01 <i>x</i> + 02</nobr> ima inverz
 <nobr>0B <i>x</i><sup>3</sup> + 0D <i>x</i><sup>2</sup> + 09 <i>x</i> + 0E</nobr> 
-(svi ostali dijelovi algoritma za šifriranje su očito invertibilni).
+(svi ostali dijelovi algoritma za &#353;ifriranje su o&#269;ito invertibilni).
 
 <p>
 
@@ -368,8 +368,8 @@ Primijetimo da smo u Primjeru 8 dokazali da polinom
 
 <b><font size="-1" face="Verdana">
 <a href="josblok.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="idejajavni.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="idejajavni.html">[Sljede&#263;e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadr&#382;aj]</a>
 </font></b>
 
 <hr size=2 noshade>
