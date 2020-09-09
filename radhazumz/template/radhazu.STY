@@ -1,0 +1,189 @@
+
+% radhazu page definitions.
+\textwidth    11.8cm %
+\textheight   = 43\baselineskip  % za 10 pt font ili 20 cm
+\oddsidemargin  0cm
+\evensidemargin 0cm
+\marginparwidth 0cm
+\marginparsep   0.0cm
+%\marginparpush  0.4cm
+\topskip        36pt   % prije 1
+\topmargin     -26pt  % regulira udaljenost ruba papira od \heading-a
+\headheight    12pt     % visina \heading
+\headsep       14pt    % 10pt
+\footskip      20pt    % od donjeg ruba teksta do \footing
+%\headrulewidth 0pt
+
+
+% --- shapes of fonts -----------
+\let\cal\mathcal
+
+
+% ------------za QED------------------
+\def\Box{\hskip1ex\vbox{\hrule height0.6pt\hbox{%
+   \vrule height1.3ex width0.6pt\hskip0.8ex
+   \vrule width0.6pt}\hrule height0.6pt
+  }}
+\def\qed{\null\hfill\ \Box}
+\def\qedInEq#1{\setbox0=\hbox to#1{\hfill\qed} \wd0=0pt}
+% ---------adrese i slicno --------
+\let\CurrentAddress\curraddr
+
+% ------ newarticle -------------
+\def\n@authors{\let\shortauthors\@empty \let\authors\@empty
+    \let\addresses\@empty   \let\thankses\@empty  }
+\def\SetC@ountersTo@{\setcounter{section}{0} \setcounter{theorem}{0}
+\setcounter{equation}{0} \setcounter{table}{0} \setcounter{figure}{0}\bgroup\n@authors }
+
+\newcount\ArticleNo %\ArticleNo=0
+\newcount\@ne \@ne=1
+\def\BegArtRef{\csname ArtBeg\the\ArticleNo\endcsname}
+\def\BegArtLabel{\BegArtRef{ArtBeg:\the\ArticleNo}}
+\def\EndArtRef{\csname ArtEnd\the\ArticleNo\endcsname}
+\def\EndArtLabel{\EndArtRef{ArtEnd:\the\ArticleNo}}
+
+\newcommand{\textoverline}[1]{$\overline{\mbox{#1}}$}
+
+\newbox\InfoBox
+\def\MakeInfo{\setbox\InfoBox=\vbox{%
+  \hbox{\scriptsize \sc RAD HAZU. MATEMATI\v{C}KE ZNANOSTI}\kern -.5ex
+  \hbox{\scriptsize Vol. \CurrentVolume\,\CurrentYear: \pageref{\BegArtLabel}-\pageref{\EndArtLabel} \,\,}}%
+  \ht\InfoBox=35pt \wd\InfoBox=20pt
+  \box\InfoBox
+} % end \MakeInfo
+
+
+\def\newarticle{%
+\cleardoublepage%\thispagestyle{plain}
+\SetC@ountersTo@
+\global\advance\ArticleNo by\@ne
+\message{^^J^^J -----------------------------------^^J
+ \jobname:  Article %[\the\ArticleNo] \thisfile.tex
+  ^^J -----------------------------------^^J^^J}
+\def\BegArtRef##1{##1}\def\EndArtRef##1{##1}
+\label{\BegArtLabel}  % definira labelu prve stranice clanka
+}
+
+\def\endarticle{%
+\label{\EndArtLabel}%   definira labelu zadnje stranice clanka
+\enddoc@text
+\thispagestyle{headings}
+\egroup
+\markboth{}{\scshape\uppercasenonmath\shorttitle\shorttitle} % zato da
+% potrebno za automatsko generiranje ps-fileova
+}
+
+
+% ---------- theorem environment --
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{axiom}{Axiom}[section]
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{problem}{Problem}[section]
+\newtheorem{definition}[theorem]{Definition}
+%\newenvironment{case}[1]{\begin{trivlist}
+%\item[\hspace{\labelsep}{\indent\sc #1}]}{\end{trivlist}}
+
+
+{\theoremstyle{example}\newtheorem{example}[theorem]{Example}}
+{\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}}
+
+% ------- Razni Counteri -----------
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\renewcommand{\thetheorem}{\thesection.\arabic{theorem}}
+
+
+%%% ---------- NAPOMENAAAAAAAAA ---------
+%% Svaki section resetira countere za thm isl. na nulu.
+%% Ako zelis isti tip countera za cijeli clanak npr.
+%% Remmark 1,Remmark 2,Remmark 3 umjesto
+%% Remmark 1.1,Remmark 1.2,Remmark 3.1
+%% onda uvedi novi counter s prefiksom autora
+%%
+%% Ako zelis da jednadzbe u svakon sectionu startaju s
+%% jedinicom stavi sljedecu naredbu na pocetak clanka
+%%\def\SectionNumberingEquation{\setcounter{equation}{0}}
+
+
+
+% --------- neke naredbe za matematicki slog ---------
+\newcommand{\const}{{\rm const}}
+\let\Cal\mathcal
+\let\precurlyeq\curlyeqprec
+%\def\Sb#1\endSb{_#1}
+\let\Bbb\mathbb
+\let\goth\mathfrak
+%\let\demo\proof
+\def\Acknowledgements{\smallskip\textsc{Acknowledgements.}
+    \newline\indent}
+
+% -------------  environments ----------------
+\newenvironment{demo}[1][]{\par \normalfont
+  \topsep6\p@\@plus6\p@ \trivlist \itemindent\normalparindent
+  \item[\hskip\labelsep\scshape\proofname#1\@addpunct{.}]
+  \ignorespaces}{\endtrivlist}
+
+\newenvironment{note}[1][]{\par \normalfont
+  \topsep6\p@\@plus6\p@ \trivlist \itemindent\normalparindent
+  \item[\hskip\labelsep\scshape#1\@addpunct{.}]
+  \ignorespaces}{\endtrivlist}
+
+\def\Remark{\vskip1pt{\scshape Remark.\ }}
+
+\def\labelenumi{\theenumi}  %%ovako je sada
+
+
+% -------- Declarations  -----------
+\DeclareMathSymbol{\upharpoonright} {\mathrel}{AMSa}{"16}
+\DeclareMathSymbol{\fallingdotseq}{\mathrel}{AMSa}{"3B}
+\DeclareMathAccent{\Circ}{\mathalpha}{operators}{"17}
+
+%-------- Ref -----
+\newcommand\Ref[1]{{\upshape(\ref{#1})}}
+
+\renewcommand{\descriptionlabel}[1]{\hspace\labelsep \upshape #1}
+\renewcommand\theenumi{\arabic{enumi}.}
+
+% -------------  bibliografija ----------------
+
+\def\Author#1{#1, }
+\def\Paper#1{\emph{#1}, }
+\def\Year#1{(#1), }
+\def\Issue#1{{ no. #1}}
+\let\issue\Issue
+\def\Vol#1{\textbf{#1}}
+\def\Number#1{ No.~#1}
+\def\Journal #1{{#1}, }
+\def\Jour #1{{#1}, }
+\def\Pages#1{#1.}
+\def\Urednici#1{Urednici: #1}
+\def\Urednik#1{Urednik: #1}
+\def\Editors#1{Editors: #1}
+\def\Book#1{#1, }
+\def\Inbook#1{\emph{#1}, }
+\let\inbook\Inbook
+\def\Publ#1{#1, }
+\def\Publisher#1{#1, }
+\def\Lang#1{#1}
+\def\Napomena#1{[#1]}
+\def\Note#1{#1}
+\def\ToAppear{\upshape{ to appear}}
+\let\toappear\ToAppear
+%% --------- Table of contents ----------
+\def\contentsline#1#2#3{\tabskip=0.2in
+   \noindent\halign{##&##\hfil\cr
+   \hbox to3.5ex{\hfil#3}&{\itshape\bfseries#1}\cr
+   &\vtop{\hsize=350pt\noindent#2}\cr}\vskip1.1ex}
+   %%\vskip2ex stari
+
+%% ------------  Pomocne naredbe -----------
+\def\NapomenaAutoru#1{\relax}
+
+
+
+
+
+\endinput
