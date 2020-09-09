@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>RSA kriptosustav</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Javni ključ - RSA kriptosustav">
+<meta name="keywords" content="kriptografija, RSA, javni ključ, 
+faktorizacija, Eulerova funkcija">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="idejajavni.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="rsaan.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<a name="3.2"></a>
+<h2 align=center style="color: rgb(128,0,0)">3.2. RSA kriptosustav</h2>
+
+
+Prvi, a ujedno i najpopularniji i najšire korišteni kriptosustav 
+s javnim ključem je RSA kriptosustav koji su izumili 
+<font color=009900>Ron Rivest</font>, 
+<font color=009900>Adi Shamir</font> i 
+<font color=009900>Len Adleman</font> 1977. godine. 
+Njegova sigurnost je zasnovana na teškoći faktorizacije velikih 
+prirodnih brojeva. Slijedi precizna definicija RSA kriptosustava.
+<p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+Neka je <i>n</i> = <i>p</i> <b>&middot;</b> <i>q</i>, 
+gdje su <i>p</i> i <i>q</i> prosti brojevi. Neka je 
+<font face="Brush Script MT,Script,Times New Roman">P</font> = 
+<font face="Brush Script MT,Script,Times New Roman">C</font> = 
+<b>Z</b><sub><i>n</i></sub>, te 
+<p align=center>
+<font face="Brush Script MT,Script,Times New Roman">K</font> = 
+{ (<i>n</i>, <i>p</i>, <i>q</i>, <i>d</i>, <i>e</i>) : 
+<i>n</i> = <i>pq</i>, <i>p</i>, <i>q</i> prosti, 
+<i>de</i> &equiv; 1 
+(mod &phi;(<i>n</i>)) }. 
+</p>
+Za <i>K</i> = (<i>n</i>, <i>p</i>, <i>q</i>, <i>d</i>, <i>e</i>) 
+&isin;  
+<font face="Brush Script MT,Script,Times New Roman">K</font> definiramo 
+<p align=center>
+<i>e<sub>K</sub></i>(<i>x</i>) = <i>x</i><sup><i>e</i></sup> 
+mod <i>n</i> &nbsp; i &nbsp;  
+<i>d<sub>K</sub></i>(<i>y</i>) = <i>y</i><sup><i>d</i></sup> 
+mod <i>n</i>, &nbsp; <i>x</i>, <i>y</i> 
+&isin; 
+<b>Z</b><sub><i>n</i></sub>. 
+</p>
+Vrijednosti <i>n</i> i <i>e</i> su javne, a vrijednosti 
+<i>p</i>, <i>q</i> i <i>d</i> su tajne.
+
+</font></td></tr></table>
+<p> 
+
+Ovdje je &phi;(<i>n</i>) 
+<em>Eulerova funkcija</em>, tj. broj brojeva u nizu 1, 2, ... , 
+<i>n</i> koji su relativno prosti s <i>n</i>. U našem 
+konkretnom slučaju 
+je <nobr>&phi;(<i>n</i>) = 
+&phi;(<i>pq</i>) = 
+(<i>p</i> - 1)(<i>q</i> - 1).</nobr> 
+<p>
+Uvjerimo se da su funkcije <i>e<sub>K</sub></i> i <i>d<sub>K</sub></i> 
+jedna drugoj inverzne. 
+<p>
+Imamo: <i>d<sub>K</sub></i>(<i>e<sub>K</sub></i>(<i>x</i>))  
+&equiv;  
+<i>x</i><sup><i>de</i></sup> (mod <i>n</i>). Iz <i>de</i> 
+&equiv; 1 (mod 
+&phi;(<i>n</i>)) 
+slijedi da postoji prirodan broj <i>t</i> takav da je 
+<i>de</i> = <i>t</i> 
+&phi;(<i>n</i>) + 1. 
+Sada je 
+<p align=center>
+<i>x</i><sup><i>de</i></sup> = 
+<i>x</i><sup><i>t</i> 
+&phi;(<i>n</i>)+1</sup> 
+= [<i>x</i><sup>&phi;(<i>n</i>)</sup>]<sup><i>t</i></sup> <sup><b>.</b></sup> 
+<i>x</i> 
+&equiv; <i>x</i> (mod <i>n</i>) 
+</p>
+ako je (<i>n</i>, <i>x</i>) = 1 (prema Eulerovom teoremu). <br>
+Ako je (<i>n</i>, <i>x</i>) = <i>n</i>, onda je 
+<i>x</i><sup><i>de</i></sup> 
+&equiv; <i>x</i> 
+&equiv; 0 (mod <i>n</i>); 
+ako je (<i>n</i>, <i>x</i>) = <i>p</i>, onda je 
+<i>x</i><sup><i>de</i></sup> 
+&equiv; <i>x</i> 
+&equiv; 0 (mod <i>p</i>) i 
+<i>x</i><sup><i>de</i></sup> = 
+[<i>x</i><sup><i>q</i>-1</sup>]<sup>(<i>p</i>-1)<i>t</i></sup> <sup><b>.</b></sup> <i>x</i> 
+&equiv; <i>x</i> (mod <i>q</i>), 
+pa je <i>x</i><sup><i>de</i></sup> 
+&equiv; <i>x</i> (mod <i>n</i>); 
+slučaj (<i>n</i>, <i>x</i>) = <i>q</i> je potpuno analogan. 
+Prema tome, zaista je 
+<i>x</i><sup><i>de</i></sup> 
+&equiv; <i>x</i> (mod <i>n</i>), 
+što znači da je <i>d<sub>K</sub></i>(<i>e<sub>K</sub></i>(<i>x</i>)) 
+= <i>x</i>. 
+<p>
+
+<b>Primjer 3.1: </b> Uzmimo <i>p</i> = 3 i <i>q</i> = 11. 
+Tada je <i>n</i> = 33 i &phi;(<i>n</i>) = 20. 
+Eksponent <i>e</i> mora biti relativno prost s 20, pa recimo da je 
+<i>e</i> = 7. Tada je <i>d</i> = 3. Sada je 
+(<i>n</i>, <i>e</i>) = (33, 7) naš javni ključ. Pretpostavimo da nam 
+netko želi poslati poruku <i>x</i> = 
+<font color=990000>17</font>. To znači da treba izračunati 
+<i>e<sub>K</sub></i>(<i>x</i>) = 17<sup>7</sup> mod 33: 
+<p align=center>
+17<sup>7</sup> = 17 <sup><b>.</b></sup> 17<sup>2</sup> 
+<sup><b>.</b></sup> 17<sup>4</sup> 
+&equiv;  
+17 <sup><b>.</b></sup> 25 <sup><b>.</b></sup> (-2) 
+&equiv;  
+-25 &equiv; 8 (mod 33). 
+</p>
+Dakle, šifrat je <i>y</i> = <i>e<sub>K</sub></i>(<i>x</i>) = 
+<font color=<000099>8</font>. 
+Kad primimo ovaj šifrat, dešifriramo ga pomoću tajnog ključa <i>d</i>: 
+<p align=center> 
+<i>x</i> = <i>d<sub>K</sub></i>(<i>y</i>) = 8<sup>3</sup> = 
+8 <sup><b>.</b></sup> 8<sup>2</sup> 
+&equiv; 8 <sup><b>.</b></sup> 
+(-2) &equiv; 17 (mod 33). 
+</p>
+Dakle, <i>x</i> = <font color=990000>17</font>. 
+<p><br>
+
+Sigurnost RSA leži u pretpostavci da je funkcija 
+<i>e<sub>K</sub></i>(<i>x</i>) = <i>x</i><sup><i>e</i></sup> 
+mod <i>n</i> jednosmjerna. Dodatni podatak (trapdoor) koji 
+omogućava dešifriranje je poznavanje faktorizacije <i>n</i> = 
+<i>pq</i>, jer je tada lako izračunati 
+&phi;(<i>n</i>) = 
+&phi;(<i>pq</i>) = 
+(<i>p</i> - 1)(<i>q</i> - 1), 
+te dobiti eksponent <i>d</i> iz <i>de</i> 
+&equiv; 1 
+(mod &phi;(<i>n</i>)),  
+pomoću <em>Euklidovog algoritma</em>. 
+<p>
+
+Opišimo sada postupak kojim korisnik izabire parametre u RSA 
+kriptosustavu malo detaljnije. 
+<ol>
+<li>Izabiremo <u>tajno</u> dva velika prosta broja <i>p</i> i <i>q</i> 
+od oko 100 znamenaka, tako da <i>q</i> ima nekoliko znamenaka 
+više od <i>p</i>. To radimo tako da pomoću nekog generatora 
+slučajnih brojeva generiramo prirodan broj <i>m</i> s traženim 
+brojem znamenaka, a zatim korištenjem nekog testa za testiranje 
+prostosti (opisat ćemo ih u sljedećem poglavlju) tražimo prvi 
+prosti broj veći ili jednak <i>m</i>. Po teoremu o distribuciji 
+prostih brojeva, možemo očekivati da ćemo trebati testirati 
+O(log <i>m</i>) brojeva dok ne nađemo prvi prosti broj. <p>  
+
+<li>Izračunamo <i>n</i> = <i>pq</i> i 
+&phi;(<i>n</i>) = 
+(<i>p</i> - 1)(<i>q</i> - 1) = <i>n</i> + 1 - <i>p</i> - <i>q</i>. 
+(Za to nam treba O(log<sup>2</sup> <i>n</i>) operacija.) <p>
+
+<li>Izaberemo na slučajan način broj <i>e</i> takav da je 
+<i>e</i> &lt; 
+&phi;(<i>n</i>) i 
+(&phi;(<i>n</i>), 
+<i>e</i>) = 1. To se može napraviti slično kao pod 1. 
+Nakon toga <u>tajno</u> izračunamo <i>d</i> tako da je 
+<nobr><i>de</i> &equiv; 1 
+(mod &phi;(<i>n</i>)),</nobr>  
+tj. <nobr>d &equiv;  
+<i>e</i><sup>-1</sup> 
+(mod &phi;(<i>n</i>)).</nobr> 
+To se radi pomoću Euklidovog algoritma i za to nam treba 
+O(log<sup>3</sup> <i>n</i>) operacija. <p>
+
+<li>Stavimo ključ za šifriranje (<i>n</i>, <i>e</i>) u javni 
+direktorij. 
+</ol>
+<p>
+
+Za efikasnost RSA kriptosustava, važna je činjenica da se 
+modularno potenciranje može izvesti vrlo efikasno. 
+Podsjetimo se kako se efikasno računa 
+<nobr><i>e</i><sub><i>K</i></sub>(<i>x</i>) = <i>x</i><sup><i>e</i></sup> 
+mod <i>n</i>.</nobr> To se radi tzv. metodom &quot;kvadriraj i množi&quot;. 
+Najprije <i>e</i> prikažemo u bazi 2: 
+<p align=center>
+<i>e</i> = <i>e</i><sub>0</sub> + 2 <sup><b>.</b></sup> 
+<i>e</i><sub>1</sub> + ... + 2<sup><i>s</i> -1</sup> <sup><b>.</b></sup> 
+<i>e</i><sub><i>s</i> -1</sub>, 
+</p>
+a potom primijenimo sljedeći algoritam: 
+<p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+&nbsp; &nbsp; <i>y</i> = 1 <br>
+&nbsp; &nbsp; za <i>i</i> = <i>s</i> -1, ... , 1, 0 <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+<i>y</i> = <i>y</i><sup>2</sup> mod <i>n</i> <br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
+ako je <i>e<sub>i</sub></i> = 1, onda <i>y</i> = <i>y</i> <b>&middot;</b>  
+<i>x</i> mod n
+
+</font></td></tr></table>
+
+<p>
+Očito je ukupan broj množenja 
+&le; 2<i>s</i>, 
+pa je ukupan broj operacija O(log <i>e</i> <b>&middot;</b>  
+log<sup>2</sup> <i>n</i>). To znači da je ovaj algoritam 
+polinomijalan. 
+<p>
+Općenito, za algoritam koji kao ulazne podatke ima prirodne brojeve 
+<i>x</i><sub>1</sub>, ... , <i>x</i><sub><i>m</i></sub> s redom 
+<i>k</i><sub>1</sub>, ... , <i>k</i><sub><i>m</i></sub> bitova 
+kažemo da je <em>polinomijalan</em> ako mu je broj operacija 
+<nobr>O(<i>k</i><sub>1</sub><sup><i>d</i><font size=-1>1</font></sup> <b>&middot;</b> ... <b>&middot;</b>  
+<i>k</i><sub><i>m</i></sub><sup><i>d</i><font size=-1><i>m</i></font></sup>),</nobr> tj. 
+<nobr>O((log <i>x</i><sub>1</sub>)<sup><i>d</i><font size=-1>1</font></sup> <b>&middot;</b> ... <b>&middot;</b>  
+log(<i>x</i><sub><i>m</i></sub>)<sup><i>d</i><font size=-1><i>m</i></font></sup>)</nobr> za neke 
+cijele brojeve <i>d</i><sub>1</sub>, ... , <i>d</i><sub><i>m</i></sub>.
+
+<p>
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="idejajavni.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="rsaan.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../kript.html">Web stranica kolegija <em>Kriptografija</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+</body>
+</html>
+
+
+ 
+

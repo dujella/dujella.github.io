@@ -1,0 +1,578 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Naprave za šifriranje</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Kriptografija - Naprave za 
+sifriranje">
+<meta name="keywords" content="kriptografija, Jeffersonov kotač, 
+wheel, Hebern, ENIGMA, Hagelin, Kerckhoffs">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="transp.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="deshist.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+<a name="1.8"></a>
+<h2 align=center style="color: rgb(128,0,0)">1.8. Naprave 
+za šifriranje</h2>
+
+Kriptosustavi koje smo do sada promatrali mogu se načiniti 
+kompliciranijima, a time i sigurnijima, uporabom 
+<em>naprava za šifriranje</em>. Takve naprave čine procese 
+šifriranja i dešifriranja puno bržim, a također omogućavaju 
+uporabu velikih prostora ključeva.
+<p>
+Najstariju takvu praktičnu napravu,  
+<em>Jeffersonov kotač za šifriranje</em>, izumio je američki 
+državnik <font color=009900>Thomas Jefferson</font> krajem 18. 
+stoljeća. Naprava je bila toliko ispred svog vremena, da ju je 
+američka vojska počela koristiti tek 1922. godine. 
+<p>
+Jeffersonov kotač  
+se sastoji od drvenog cilindra s rupom u sredini kroz koju je 
+provučena željezna os. Cilindar je presječen na 26 manjih 
+cilindara (<em>diskova</em>) jednakih širina. Ovi diskovi se mogu  neovisno jedan od drugoga okretati oko zajedničke osi. 
+Na vanjštini svakog diska nalazi se 26 jednakih kvadratića. 
+Tih 26 kvadratića se na proizvoljan način popunjava s 26 
+slova engleskog alfabeta, 
+različito od diska do diska.
+<p align=center>
+<img src="slike/jeffwheel.jpg" alt="Jeffersonov kotac">
+</p>
+
+Pošiljalac i primalac imaju dva identična kotača.
+Da bi šifrirao otvoreni tekst, pošiljalac podijeli tekst na blokove 
+od po 26 slova. Blok se šifrira tako da se rotiranjem diskova 
+u jednom od 26 redaka dobije otvoreni tekst. Tada za šifrat 
+možemo izabrati bilo koji od preostalih 25 redaka. Npr. 
+koristeći kotač sa slike, otvoreni tekst 
+<p align=center>
+<font color=990000>THOMASJEFFERSONWHEELCHIPER</font>
+</p>
+bi se mogao šifrirati kao 
+<p align=center>
+<font color=000099>VSJGHLZHWPOMEUBVSLZWQVRPIT</font>.
+</p>
+Primalac dešifrira šifrat tako da rotiranjem diskova u jednom 
+retku dobije šifrat. Sada među preostalih 25 redaka potraži 
+onaj koji sadrži neki smisleni tekst i taj redak predstavlja otvoreni 
+tekst. 
+<p>
+Osnovna ideja Jeffersonovog kotača jest kreiranje polialfabetskog 
+kriptosustava korištenjem diskova koji se rotiraju više ili manje 
+neovisno. Ova ideja je bila osnovna i kod mehaničkih i 
+elektromehaničkih naprava koje su izmišljene kasnije. Tako 
+dobiveni kriptosustavi se mogu shvatiti kao šifre 
+Vigen&egrave;reovog tipa s ključnom riječi ogromne duljine 
+(obično više od 10<sup>10</sup>). Stoga su kod njih napadi Kasiskijevom metodom  
+i metodom indeksa koincidencije praktički neprimjenjivi. 
+<p><br>
+
+Spomenimo najznačajnije takve naprave i njihove izumitelje.
+<p><br>
+Amerikanac <font color=009900>Edward Hugh Hebern</font> izumio je 1915. 
+godine uređaj koji je nazvao 
+<em>električni stroj za kodiranje</em></a>. 
+<p align=center>
+<img src="slike/Hebern2.jpg" alt="Hebernov elektricni stroj za kodiranje">
+</p>
+To je bio električni uređaj kojim 
+su se dva električna pisača stoja spajala pomoću 26 žica, ali s 
+razbacanim rasporedom, pa kad bi se udarila tipka na pisaćem stroju 
+za otvoreni tekst, drugi bi stroj automatski otipkao šifarski 
+ekvivalent tog slova. Dvije godine kasnije, u uređaj je ugradio 
+5 tzv. "rotora". Rotori su na svakoj strani imali po 26 
+električnih kontakata. Svaki kontakt na jednoj strani nasumce je 
+spojen žicom s nekim kontaktom na drugoj strani. To zapravo 
+predstavlja jednu monoalfabetsku supstituciju. No, rotiranjem rotora 
+i to tako da najprije prvi napravi cijeli krug, pa se zatim drugi 
+pomakne za jedno mjesto, itd.,  dobivamo polialfabetsku supstituciju 
+s periodom 26<sup>5</sup> 
+&asymp; 10<sup>7</sup>. 
+<p><br>
+
+Njemački pronalazač <font color=009900>Artur Scherbius</font> je 1918. 
+godine izumio rotorsku napravu koju je nazvao 
+<em>ENIGMA</em>. Razlikovala 
+se od drugih rotorskih naprava po tome što su pomacima rotora 
+upravljali zupčanici, pa se moglo postići da ti pomaci imaju 
+nepravilan slijed. 
+<p align=center>
+<img src="slike/enigma.jpg" alt="ENIGMA">
+</p>
+Do masovne uporabe ENIGME došlo je neposredno prije i za vrijeme 
+Drugog svjetskog rata. Razbijanje njezine šifre (kombinacijom 
+kriptoanalize i klasične špijunaže) imalo je važnu ulogu za tijek 
+i ishod drugog svjetskog rata. Postojale su različite (vojne i komercijalne) 
+inačice ENIGME. Posebno je bila poznata japanska inačica ENIGME, 
+koju su Amerikanci nazivali <em>PURPLE</em>. 
+<p>
+
+ENIGMA je bila elektromehanička naprava koja se sastojala od tipkovnice s 26 tipki poput 
+pisaćeg stroja,
+zaslona s 26 žaruljica za prikaz šifriranog izlaza, tri mehanička <em>rotora</em> 
+(<em>šifrarnika</em>) i električne prespojne ploče.
+Pritiskom na tipku kroz mrežu kontakata rotora i prespojne ploče zatvorio 
+bi se strujni krug i upalila bi se
+odgovarajuća žaruljica koja označava šifrirano slovo.
+Mehanički rotori sastojali su se od diskova s 26 kontakata. Svaki kontakt na jednoj 
+strani diska bio je povezan s
+nekim drugim kontaktom na suprotnoj strani. Većina modela ENIGME sastojala se od tri 
+rotora koji su smješteni u ležište
+tako da se kontakti susjednih stranica međusobno dodiruju, tj. "izlaz" jednog rotora 
+predstavljao je "ulaz" drugog.
+Izlaz trećeg (zadnjeg) rotora bio je povezan na <em>reflektor</em> - 
+statičan mehanički disk sličan rotoru,
+s međusobno prespojenim električnim kontaktima samo na jednoj strani.
+Njegova je zadaća bila da električni signal šalje natrag kroz rotore, no drugim putem.
+Prvi se rotor nakon svakog šifriranog slova okretao za jedan kontakt, a kad bi učinio potpun krug,
+mehanička je poluga okretala sljedeći rotor za jedan kontakt.
+<p>
+Tri ožičena rotora s 26 kontakata daju 26<sup>3</sup> = 17 576 mogućih kombinacija. 
+To nije dovoljno velik broj da bi dao zadovoljavajuću sigurnost.
+Scherbius je povećao sigurnost ENIGME povećavajući broj mogućih početnih postavki 
+na dva različita načina: izmjenjivim rotorima i prespojnom pločom.
+Budući da su rotori mehanički gotovo identični, a njihovi električni spojni putevi različiti, 
+njihovom međusobnom zamjenom mijenja
+se i način šifriranja samog stroja. Broj mogućih permutacija triju rotora je 6.
+Znatno veći doprinos sigurnosti donosi prespojna ploča,
+koja korisniku omogućuje da doda kablove, koji imaju efekt zamjene nekih slova 
+prije ulaska u prvi rotor.
+Na primjer, kabel se može koristiti za zamjenu slova A i D, 
+tako da kad korisnik pritisne tipku A, električni signal zapravo slijedi
+put kroz rotore koji bi bez prespojne ploče bio put slova D, i obrnuto.
+Od 1939. godine standardizirano je korištenje 10 prespojnih kabela, 
+što je davalo 150 738 274 937 250 mogućih kombinacija.
+te je napad ispitivanjem svih mogućih kombinacija postao nemoguć.
+<p>
+Pa ipak, dvije grupe matematičara-kriptoanalitičara uspjele su pronaći način za dekriptiranje ENIGME.
+Bile su to poljska grupa, koju je predvodio <font color=009900>Marian Rejewski</font>, 
+te britanska grupa,
+koju je predvodio <font color=009900>Alan Turing</font>.
+<p>
+
+Prvi napredak u kriptoanalizi ENIGME ostvaren je 1931. godine akcijom francuske obavještajne službe, 
+koja je stupila u vezu s bratom načelnika sektora veze njemačke vojske,
+Hansom-Thilom Schmidtom, koji je uz naknadu od 10 000 tadašnjih njemačkih maraka  
+Francuzima dostavio upute za uporabu ENIGME.
+Budući da su Francuzi i Poljaci po završetku Prvog svjetskog rata potpisali ugovor o vojnoj suradnji,
+ti su dokumenti dostavljeni poljskom uredu za kriptografiju <em>Biuro Szyfr&oacute;v</em>.
+Dokumenti su opisivali i proceduru mjesečne distribucije knjiga s ključevima 
+koje sadrže postavke uređaja potrebne za šifriranje ili dešifriranje poruke.
+Svaki mjesec, operateri ENIGME bi dobili novu knjigu s ključevima koja je specificirala 
+koji ključ se rabi koji dan.
+Što se tiče orijentacije rotora, svaki rotor je imao alfabet ugraviran na vanjskom omotaču, pa bi
+operater rotirao rotor sve dok se na vrhu ne bi pojavila slova specificirana u dnevnom ključu.
+Svaki dan vrijedila je druga šifra, no, budući da su se dnevno šifrirale ogromne količine poruka,
+bilo je potrebno nekako postići da se sve te poruke ne šifriraju doslovno istim ključem,
+jer bi to znatno smanjilo sigurnost.
+Stoga su Nijemci uveli distribuciju "ključa za poruku" pomoću dnevnog ključa.
+Ključ za poruku je imao iste postavke na prespojnoj ploči i isti raspored rotora kao dnevni ključ,
+ali različitu orijentaciju rotora. Budući da ta orijentacija rotora nije bila u knjizi s ključevima,
+trebalo ju je sigurno poslati zajedno s porukom. To se radilo na sljedeći način.
+Pošiljalac bi postavljao svoj stroj prema dogovorenom dnevnom ključu, 
+koji ima orijentaciju šifrarnika npr. CXL.
+Zatim bi nasumično odabirao novu orijentaciju rotora za ključ za poruke, npr. YAQ 
+i šifrirao YAQ pomoću dnevnog ključa
+(i to dvaput, da bi primatelj bio siguran da je primio dobar ključ za poruke). Na primjer,
+pošiljalac je mogao YAQYAQ šifrirati kao MIVWJE. Primijetimo da su dva niza slova 
+YAQ šifrirana različito (prvi kao MIV, a drugi kao WJE)
+jer se rotori ENIGME rotiraju nakon šifriranja svakog slova.
+Pošiljalac tada mijenja orijentaciju rotora u YAQ i šifrira ostatak poruke prema ovom ključu za poruke.
+Kod primatelja je stroj na početku bio postavljen prema dnevnoj orijentaciji CXL.
+Nakon što se unese prvih 6 slova dobivenog šifrata, MIVWJE, dobiva se YAQYAQ. 
+Primatelj sada zna da treba podesiti orijentaciju šifrarnika na YAQ,
+koji je ključ za poruke, i onda dešifrirati preostali šifrat da bi dobio originalnu poruku.
+<p>
+
+Poljski su kriptoanalitičari predvođeni Rejewskim iskoristili ovo ponavljanje za kriptoanalitički napad.
+Znajući da prvo i četvrto slovo u šifratu odgovaraju istom slovu ključa za poruke, oni su
+istraživali veze među tim slovima unutar svih poruka dobivenih pomoću istog dnevnog ključa. Imajući na
+raspolaganju velik broj poruka, mogli su za svako slovo alfabeta naći s njim na ovaj način povezano slovo.
+Tako bi dobili jednu permutaciju alfabeta A, B, ... , Z. Važno svojstvo permutacija je
+da se one mogu rastaviti na produkt ciklusa (lanaca). 
+Rejewski je uočio da broj elemenata u ciklusima ovisi isključivo o rotorima, a ne o prespojnoj ploči.
+Ukupan broj postavki rotora je 105456, što je velik broj, ali ne i ogroman. 
+Zahvaljući Schmidtovoj špijunaži,
+Poljaci su bili u stanju napraviti repliku ENIGME, te katalogizirati koje postavke rotora daju
+kakve rastave na produkte ciklusa (za to im je trebala godina dana). Nakon toga, dešifriranje je bilo
+dosta lako. Trebalo je još odrediti veze na prespojnoj ploči. 
+Ako se krene u dešifriranje s prespojnom pločom
+bez ikakvih veza, dobit će se uglavnom nerazumljiv tekst. No, vjerojatno će se naići i na djelove teksta
+koji su "skoro čitljivi", tj. u kojima je dosta jasno koja slova treba zamijeniti da bi se dobio
+otvoreni tekst. I tako se otkrivaju slova koja su povezana kablovima na prespojnoj ploči.
+Na ovaj su način Poljaci nekoliko godina uspijevali redovito dešifrirati njemačke poruke,
+sve dok 1939. godine Nijemci nisu značajno povećali broj mogućih ključeva,
+uvođenjem većeg broja rotora.
+
+<p>
+
+Neposredno prije početka Drugog svjetskog rata, sva je dokumetacija rada Rejewskog poslana Britancima.
+Oni su u to vrijeme bili oformili veliku grupu kriptoanalitičara različitih profila
+u <em>Bletchley Parku</em>. Kako je ova grupa bila veća, a imala je i znatno veći proračun
+od poljskog <em>Biuroa Szyfr&oacute;v</em>, uspjeli su konstruirati vrlo snažne strojeve (tzv. bombe)
+pomoću kojih su pokušavali dekriptirati poruke šifrirane ENIGMOM. Nakon što su svladali
+tehniku koju su koristili Poljaci, grupa iz Bletchley Parka, predvođena Alanom Turingom,
+izmislila je još neke nove tehnike. Jedna od slabosti, ne same ENIGME, već njezina korištenja u praksi,
+bilo je korištenje "predvidljiivih ključeva" (tzv. cilija). Tako su operateri često
+za ključ za poruku koristili tri susjedna slova na tipkovnici. Pored toga, 
+Turing je pronašao efikasan način
+za dešifriranje ENIGME korištenjem metode vjerojatne riječi.
+Sve aktivnosti unutar Bletchley Parka su bile prekrivene velom tajnosti punih 30 godina.
+Tek je 1974. godine britanska vlada dozvolila objavljivanje prvih informacija vezanih
+uz britansko razbijanje ENIGME. 
+
+
+<p><br>
+Šveđanin ruskog podrijekla <font color=009900>Boris Hagelin</font> 
+tvorac je niza naprava za šifriranje koje su u širokoj uporabi bile 
+sredinom 20. stoljeća. On je prvi čovjek koji je postao dolarski 
+milijunaš zahvaljujući kriptologiji. Vjerojatno najpoznatiji njegov 
+izum je stroj C-36 iz 1936. godine, koji je u američkoj vojsci 
+imao naziv <em>M-209</em>. 
+<p align=center>
+<img src="slike/M209.jpg" alt="M-209">
+</p>
+Osnovne komponente ovog stroja bile su 
+6 rotora s po 17, 19, 21, 23, 25 i 26 slova, te "kavez" koji 
+je imao 27 šipki montiranih u obliku vodoravnog cilindra koji se 
+okreće. Opisat ćemo matematičkim terminima princip rada stroja 
+M-209. 
+<p>
+
+Neka je <i>M</i> matrica dimenzija 
+6 &times; 27 čiji su elementi 
+0 ili 1, takva da niti jedan stupac od <i>M</i> nema više od dvije 
+jedinice. Jedna takva matrica je ova: 
+
+<p>
+<table align=center><tr><td><i>M</i> = </td>
+<td><table cellpadding=5 cellspacing=0 frame=vsides rules=none>
+<tr><td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>1</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>1</td><td align=center>0</td>
+<td align=center>1</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>1</td><td align=center>1</td>
+<td align=center>1</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>1</td></tr>
+<tr><td align=center>1</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>1</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>1</td><td align=center>0</td>
+<td align=center>0</td><td align=center>1</td>
+<td align=center>1</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>1</td><td align=center>0</td>
+<td align=center>0</td><td align=center>1</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>1</td><td align=center>0</td>
+<td align=center>1</td><td align=center>0</td>
+<td align=center>0</td></tr>
+<tr><td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td></tr>
+<tr><td align=center>0</td><td align=center>0</td>
+<td align=center>1</td><td align=center>1</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>1</td>
+<td align=center>0</td><td align=center>1</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>1</td><td align=center>0</td>
+<td align=center>0</td><td align=center>1</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>1</td>
+<td align=center>1</td><td align=center>1</td>
+<td align=center>1</td><td align=center>1</td>
+<td align=center>1</td></tr>
+<tr><td align=center>0</td><td align=center>0</td>
+<td align=center>1</td><td align=center>0</td>
+<td align=center>1</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>1</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>1</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>1</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td></tr>
+<tr><td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>1</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>1</td><td align=center>0</td>
+<td align=center>0</td><td align=center>1</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>1</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td><td align=center>1</td>
+<td align=center>0</td><td align=center>0</td>
+<td align=center>0</td></tr>
+</table></td>
+</tr></table>   
+<p>
+  
+Ako je sada <i>v</i> 6-dimenzionalni vektor redak s komponentama iz 
+{0,1}, onda je <i>vM</i> 27-dimenzionalni vektor redak s 
+komponentama iz {0,1,2}. Npr. za <i>v</i> = (1,0,1,1,0,0) dobivamo<br>
+<i>vM</i> = (0,0,1,2,0,0,0,1,1,1,1,0,0,0,2,1,1,1,0,0,0,1,1,1,1,1,2).<br>
+Broj pozitivnih komponenti od <i>vM</i> se zove <em>broj bodova</em> 
+od <i>v</i>. U našem primjeru je taj broj jednak 16. Općenito je 
+to neki broj između 0 i 27.
+<p>
+<em>Step figura</em> se konstruira na sljedeći način. Složimo 
+6 nizova brojeva iz {0,1} jedan na drugi. Nizovi imaju duljine 
+redom 17, 19, 21, 23, 25 i 26. Evo primjera jedne step 
+figure:  
+<pre><font size=2>
+  <span style="background-color: #CCCCCC">0 1 1 0 0 0 1 0 0 0 0 0 0 0 1 1 0</span>
+  <span style="background-color: #CCCCCC">0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+  <span style="background-color: #CCCCCC">0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0</span>
+  <span style="background-color: #CCCCCC">0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1</span>
+  <span style="background-color: #CCCCCC">1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span> 
+  <span style="background-color: #CCCCCC">1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 1</span> 
+</font></pre>
+
+
+Za razliku od matrica, ovdje nema nikakvih ograničenja vezanih 
+za broj jedinica. Step figura generira beskonačan niz 6-dimenzionalnih 
+vektora koje dobivamo iz njezinih stupaca, s time da kad se neki redak 
+završi, on kreće iz početka. Tako su prva dva vektora u našem 
+primjeru (0,0,0,0,1,1) i (1,1,0,0,0,1), dok su 18., 19. i 20. vektor 
+(0,0,0,0,0,0), (1,0,0,1,0,1) i (1,0,0,0,0,0). 
+<p>
+
+Sada možemo opisati postupak šifriranja. Neka je <i>x<sub>i</sub></i> 
+numerička vrijednost <i>i</i>-tog slova u otvorenom tekstu, te 
+<i>h<sub>i</sub></i> broj bodova <i>i</i>-tog vektora generiranog 
+step figurom. Tada je šifrat <i>y<sub>i</sub></i> jednak 
+
+<a name="(*)"></a>
+<table border="0" width="100%"><tr><td>
+<table align=center><tr><td align="center">
+<font size=3 face=Arial,Helvetica,sans-serif>
+<i>y<sub>i</sub></i> = <i>h<sub>i</sub></i> 
+- <i>x<sub>i</sub></i> - 1.
+</font></td></tr></table>
+</td><td width="1%">(*)</td></tr></table>
+<p>
+U stroju M-209 rotori odgovaraju step figuri, a kavez matrici <i>M</i>. 
+Tako matrica i step figura predstavljaju ključ za šifriranje 
+pomoću M-209. 
+<p>
+Uočimo da se jednakost (*) može zapisati i kao 
+<p align=center>
+<i>x<sub>i</sub></i> = <i>h<sub>i</sub></i> - 
+<i>y<sub>i</sub></i> - 1.</p>
+to znači da se isti ključ koristi za šifriranje i dešifriranje. 
+To je razlog zašto u formuli (*) imamo oduzimanje, 
+a ne zbrajanje. Važno je uočiti da su duljine redaka step figure 
+u parovima relativno prosti brojevi. To povlači da je period 
+niza generiranog step figurom jednak 
+<p align=center>
+17<b><sup>.</sup></b>19<b><sup>.</sup></b>21<b><sup>.</sup></b>23<b><sup>.</sup></b>25<b><sup>.</sup></b>26 
+&asymp; 10<sup>8</sup>. 
+<p>
+Ipak, u nekim specijalnim slučajevima period može biti puno kraći. 
+Na primjer ako u step figuri nema nula, onda je (1,1,1,1,1,1) 
+jedini generirani vektor, pa je period jednak 1. Općenito, period će 
+biti kratak ako imamo malo jedinica u matrici <i>M</i> ili malo 
+nula ili malo jedinica u step figuri, pa takve ključeve treba 
+izbjegavati. 
+<p><br>
+
+<b>Primjer 1.14: </b> Zadan je otvoreni tekst  
+<p align=center><font color=990000>
+KRALJEVSTVO KRALJEVSTVU NE PROPISUJE ZAKONE
+</font></p> 
+te matrica <i>M</i> i step figura kao gore. Otvoreni tekst ima 
+duljinu 39, a numerički ekvivalenti slova su redom 
+<pre><font size=3>10, 17, 0, 11, 9, 4, 21, 18, 19, 21, 14, 10, 17, 0, 
+11, 9, 4, 21, 18, 19, 21, 20, 13, 4, 15, 17, 14, 15, 
+8, 18, 20, 9, 4, 25, 0, 10, 14, 13, 4.
+</font></pre>  
+Brojevi bodova vektora generiranih step figurom su redom 
+<pre><font size=3>10, 17, 16, 9, 9, 9, 7, 0, 0, 0, 0, 12, 0, 0, 18, 7, 
+0, 0, 18, 7, 9, 9, 19, 14, 9, 10, 5, 10, 0, 0, 0, 7, 
+7, 0, 12, 0, 9, 17, 19, 9, 9, 5, 12, 0.
+</font></pre>
+Sada primjenom formule <a href="#(*)">(*)</a> dobivamo šifrat
+<p align=center><font color=000099>
+ZZPXZ ELHGE LBIZG XVEZN NOFJT SQURH FXCAL WSYV
+</font></p>
+Uočimo da su se dva pojavljivanja niza slova 
+<font color=990000">KRALJEVSTV</font> u otvorenom 
+tekstu šifrirala jednom kao 
+<font color=000099>ZZPXZELHGE</font>, a grugi put kao
+<font color=000099>BIZGXVEZNN</font>. 
+<p><br><br>
+
+Kao što smo već ranije napomenuli, ključna riječ kod šifriranja 
+strojem M-209 i ostalim sličnim napravama je ogromna (oko 
+10<sup>8</sup>). Stoga primjena metode Kasiskog ne dolazi u 
+obzir. Ipak, dekriptiranje je moguće ukoliko kriptoanalitičar 
+posjeduje dva ili više šifrata dobivenih šifriranjem različitih 
+otvorenih tekstova jednakim ključevima za šifriranje, ili 
+ključevima koji su "bliski", tako da se ključne riječi dobivene 
+pomoću njih podudaraju na nekim segmentima. U tom slučaju može se 
+primijeniti tzv. <em>Kerckhoffsova metoda superpozicije</em>. 
+Pomoću nje možemo odrediti odgovarajući segment ključne riječi, a 
+potom koristeći razne tehnike u ovisnosti o kojem je stroju riječ, 
+to se može iskoristiti za rekonstrukciju čitavog ključa. 
+<p>
+Prikažimo ukratko Kerckhoffsovu metodu. Pretpostavimo da su 
+otvoreni tekst <i>x</i><sub>1</sub><i>x</i><sub>2</sub>... i 
+šifrat <i>y</i><sub>1</sub><i>y</i><sub>2</sub>... povezani relacijama 
+<p align=center>
+<i>y<sub>i</sub></i> = <i>x<sub>i</sub></i> + 
+<i>k<sub>i</sub></i> mod 26 &nbsp; &nbsp; ili &nbsp; &nbsp; 
+<i>y<sub>i</sub></i> = <i>k<sub>i</sub></i> -  
+<i>x<sub>i</sub></i> mod 26.</p>
+Tada iz dva šifrata dobivena istim ključem možemo eliminirati ključ: 
+<p align=center>
+<i>y<sub>i</sub></i> - <i>y'<sub>i</sub></i> =  
+<i>x<sub>i</sub></i> - <i>x'<sub>i</sub></i> mod 26 &nbsp; &nbsp; ili &nbsp; &nbsp; 
+<i>y<sub>i</sub></i> - <i>y'<sub>i</sub></i> =  
+<i>x'<sub>i</sub></i> - <i>x<sub>i</sub></i> mod 26.</p>
+Sada svaku hipotezu o otvorenom tekstu 
+<i>x</i><sub>1</sub><i>x</i><sub>2</sub>... možemo testirati na 
+otvorenom tekstu <i>x'</i><sub>1</sub><i>x'</i><sub>2</sub>..., 
+te tako hipotezu prihvatiti ili odbaciti. Jasno, metoda je još 
+efikasnija ukoliko imamo više od dva šifrata dobivena istim ključem. 
+<p><br>
+
+<b>Primjer 1.15: </b> <em>Pretpostavimo da su šifrati</em> 
+<pre><font size=4 color=000099>&nbsp; &nbsp; &nbsp; &nbsp; C R U D L H G C A S
+&nbsp; &nbsp; &nbsp; &nbsp; X V X D U X K U I A
+</font></pre>
+<em>dobiveni istim ključem po pravilu</em> <i>y<sub>i</sub></i> = 
+<i>x<sub>i</sub></i> + <i>k<sub>i</sub></i> mod 26. 
+<p>
+Primijenimo na njih Kerckhoffsovu metodu. Na samom početku mogu nam 
+koristiti neka saznanja o vjerojatnim početcima poruka, a također 
+i podatci o najčešćim prvim slovima u riječima 
+(u hrvatskom: S, P, N, D, I, O), drugim slovima (u hrvatskom: 
+A, E, O, R, I, U) i slično. 
+<p>
+Pretpostavimo da prvi otvoreni tekst počinje sa SA. Tada iz 
+X - C + S = 23 - 2 +18 = 13 = N, te 
+V - R + A = 4 = E, zaključujemo da drugi otvoreni tekst počinje sa NE. 
+Sada možemo u nekom rječniku pogledati koji su najčešći nastavci 
+riječi koje započinju sa SA, odnosno NE. Dobivamo: za SA to su 
+M, V, N, a za NE to su P, O, D. Pogledajmo sada što pretpostavka 
+da je <i>x</i><sub>3</sub> = M, V ili N daje za <i>x'</i><sub>3</sub>. 
+Dobivamo: <i>x'</i><sub>3</sub> = P, Y ili Q. Ovo prilično jasno 
+sugerira da prvi tekst počinje sa SAM, a drugi sa NEP. 
+Četvrto slovo bi trebalo biti jednako u oba otvorena teksta 
+i tu se kao najvjerojatnija nameću slova O i A, s time da je O 
+ipak vjerojatnije. Dakle, imamo: SAMO i NEPO. Sada za vjerojatne 
+nastavke prve riječi u rječniku nalazimo (abecednim redom): 
+B, H, K, O, P, S, T, U, koji za <i>x'</i><sub>5</sub> daju redom 
+K, Q, T, X, Y, B, C, D, dok su vjerojatni nastavci za drugu riječ 
+B, D, K, M, P, R, S, V. Tu još možemo koristiti najfrekventnije 
+bigrame koji počinju sa O, a to su: OS, OD, OV, OJ. 
+Sve u svemu, kao najvjerojatnije nameću se dvije mogućnosti:
+<pre><font size=4 color=990000>&nbsp; &nbsp; S A M O U             S A M O S      
+&nbsp; &nbsp; N E P O D             N E P O B
+</font></pre>
+U prvom slučaju, vjerojatni nastavci prve riječi su B, P, V, 
+što za <i>x'</i><sub>6</sub> daje R, F, L, dok za nastavke 
+druge riječi imamo M, N, O. Stoga ovu mogućnost možemo barem privremeno 
+odbaciti. U drugom slučaju, vjerojatni nastavak prve riječi je T, a 
+druge I ili J. Budući da <i>x</i><sub>6</sub> = T povlači 
+<i>x'</i><sub>6</sub> = J, čini se vrlo vjerojatnom kombinacija
+<pre><font size=4 color=990000>&nbsp; &nbsp; &nbsp; &nbsp; S A M O S T
+&nbsp; &nbsp; &nbsp; &nbsp; N E P O B J
+</font></pre> 
+Sada je već jasno da je druga riječ 
+<font color=990000>NEPOBJEDIV</font>, što za prvu riječ 
+daje <font color=990000>SAMOSTALAN</font>. 
+
+<p>
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="transp.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="deshist.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../kript.html">Web stranica kolegija <em>Kriptografija</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+
+</body>
+</html>

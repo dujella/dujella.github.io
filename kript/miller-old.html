@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Miller-Rabinov test</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Testovi prostosti i metode 
+faktorizacije - Miller-Rabinov test">
+<meta name="keywords" content="prosti brojevi, test prostosti, 
+prim broj, primalitet, Miller, Rabin">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.8">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="solstras.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="faktor.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<a name="4.3"></a>
+<h2 align=center style="color: rgb(128,0,0)">4.3. Miller-Rabinov 
+test</h2>
+
+
+Neka je <i>n</i> neparan prirodan broj, (<i>b</i>,<i>n</i>) = 1, te 
+<i>b</i><sup><i>n</i> -1</sup> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 1 (mod <i>n</i>).  
+Budući da je <i>n</i> -1 paran, možemo
+pokušati &quot;vaditi drugi korijen&quot; iz ove kongruencije, tj.
+dizati <i>b</i> na potencije (<i>n</i>-1)/2, (<i>n</i>-1)/4, ... , 
+(<i>n</i>-1)/2<sup><i>s</i></sup> (gdje je 
+<i>t</i> = (<i>n</i>-1)/2<sup><i>s</i></sup> neparan broj).
+Pretpostavimo da u <i>i</i>-tom koraku prvi put dobijemo na desnoj
+strani nešto različito od 1, recimo 
+<i>b</i><sup>(<i>n</i>-1)/2<img src="symbols/supi.gif" alt="i" ALIGN=TOP></sup>
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> <i>a</i> 
+(mod <i>n</i>). 
+Tada ako je <i>n</i> prost, onda mora biti <i>a</i> = -1 jer
+je <i>b</i><sup>(<i>n</i>-1)/2<img src="symbols/supi.gif" alt="i" ALIGN=TOP><img src="symbols/supminus.gif" alt="-" ALIGN=TOP><img src="symbols/sup1.gif" alt="1" ALIGN=TOP></sup> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 1  
+(mod <i>n</i>), a jedina rješenja
+kongruencije <nobr><i>x</i><sup>2</sup> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 1 (mod <i>p</i>)</nobr> su 
+<nobr><i>x</i> <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 
+&plusmn; 1 (mod <i>p</i>).</nobr>
+Ova činjenica motivira sljedeću definiciju.
+<p><br>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Definicija:</b> Neka je <i>n</i> neparan složen broj, te neka je
+<i>n</i> - 1 = 2<sup><i>s</i></sup> <sup><b>.</b></sup> <i>t</i>, 
+gdje je <i>t</i> neparan broj. Neka je <i>b</i> 
+cijeli broj takav da je (<i>b</i>,<i>n</i>) = 1. Ako vrijedi 
+<p align=center> 
+<i>b</i><sup><i>t</i></sup>  
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 1 (mod <i>n</i>), ili 
+postoji <i>r</i>, 0 &le;  
+<i>r</i> < <i>s</i>, takav da je 
+<i>b</i><sup>2<img src="symbols/supr.gif" alt="r" ALIGN=TOP><i>t</i></sup>  
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> -1 (mod <i>n</i>),
+&nbsp; &nbsp; &nbsp; (***)
+</p>
+onda kažemo da je <i>n</i> <em>jaki pseudoprosti broj u bazi <i>b</i></em> 
+(ili spsp(<i>b</i>)).
+
+</font></td></tr></table>
+<p> 
+
+
+Očito je svaki spsp(<i>b</i>) ujedno i psp(<i>b</i>). 
+Može se pokazati da je svaki spsp(<i>b</i>) ujedno i epsp(<i>b</i>). 
+Obrat ne vrijedi. Npr. <i>n</i> =561 je epsp(2) jer je 
+2<sup>280</sup> <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 
+(2/561) <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 1 (mod 561), 
+ali <i>n</i> nije spsp(2) jer 
+je 2<sup>280</sup> <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 
+1 (mod 561), 
+a 2<sup>140</sup> <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 
+67 (mod 561).
+<p><br>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Teorem 4.3:</b>  Ako je <i>n</i> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 3 (mod 4), onda je 
+<i>n</i> spsp(<i>b</i>) ako i samo ako je <i>n</i> 
+epsp(<i>b</i>).
+
+</font></td></tr></table>
+<p> 
+
+<b>Dokaz:</b> U ovom slučaju je <i>s</i> = 1, <i>t</i> = 
+(n-1)/2. Ako je <i>n</i> epsp(<i>b</i>), onda je 
+<p align=center>
+<i>b</i><sup><i>t</i></sup> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 
+<i>b</i><sup>(<i>n</i> -1)/2</sup> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 
+<img src="slike/lagnbig.gif" alt="(b/n)" ALIGN=TOP>
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 
+&plusmn;1 mod (<i>n</i>), 
+</p>
+pa je <i>n</i> spsp(<i>b</i>).
+<p>
+
+Neka je sada <i>n</i> spsp(<i>b</i>). To znači da je 
+<i>b</i><sup>(<i>n</i> -1)/2</sup>
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 
+&plusmn;1 (mod <i>n</i>). 
+Budući da je <i>n</i> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 3 (mod 4), to je 
+(&plusmn;1/<i>n</i>) =  
+&plusmn;1, pa je 
+
+<p align=center><img src="slike/mil1.gif" 
+alt="(b/n)=b^((n-1)/2) (mod n)" ALIGN=TOP> </p>
+
+<img align=right src="symbols/blacksquare.gif" alt="QED" ALIGN=TOP> 
+<p><br><br>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Teorem 4.4:</b> Neka je <i>n</i> neparan složen broj. Tada
+je <i>n</i> jaki pseudoprosti broj u bazi <i>b</i> za najviše 
+25% baza <i>b</i>, 0 &lt; <i>b</i> &lt; <i>n</i>. 
+
+</font></td></tr></table>
+<p> 
+
+<b>Dokaz:</b> <br>
+
+<b>1. slučaj:</b> <i>n</i> nije kvadratno slobodan <br>
+
+Neka je <i>n</i> = <i>p</i><sup>2</sup><i>q</i>, gdje je <i>p</i> 
+prost. Ako je <i>n</i> spsp(<i>b</i>), onda
+je <i>n</i> i psp(<i>b</i>). Pretpostavimo da je 
+<i>b</i><sup><i>n</i> -1</sup> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 1 (mod <i>n</i>). 
+Tada je i 
+<i>b</i><sup><i>n</i> -1</sup> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 1 
+(mod <i>p</i><sup>2</sup>). Po
+Lemi 4.1, ova kongruencija ima <i>d</i> = 
+(<i>p</i>(<i>p</i> -1), <i>n</i> -1) rješenja.
+Budući da <i>p</i>|<i>n</i>, to 
+<i>p</i><img src="symbols/nmid.gif" alt="not|" ALIGN=TOP>(<i>n</i> -1), 
+pa <i>p</i><img src="symbols/nmid.gif" alt="not|" ALIGN=TOP><i>d</i>. 
+Zato je <i>d</i> &le;  
+<i>p</i> -1. Stoga je broj baza <i>b</i> za koje je 
+<i>n</i> psp(<i>b</i>)
+<p align=center> 
+&le;  
+<i>dq</i> &le;  
+(<i>p</i> -1)<i>q</i> = 
+(<i>p</i><sup>2</sup> -1)<i>q</i>/(<i>p</i>+1) &lt; <i>n</i>/4.
+</p>
+
+<b>2. slučaj:</b> <i>n</i> = <i>pq</i>, gdje su <i>p</i> i <i>q</i> 
+različiti prosti brojevi <br>
+
+Neka je <i>p</i> - 1 = 2<sup><i>u</i></sup> <i>v</i>, <i>q</i> - 1 = 
+2<sup><i>w</i></sup> <i>z</i>, gdje su <i>v</i> i <i>z</i> 
+neparni, te <i>u</i> 
+&le; <i>w</i>. 
+Pretpostavimo da je <i>b</i><sup><i>t</i></sup> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 1 (mod <i>n</i>). 
+Po Lemi 4.1, takvih baza ima (<i>t</i>,<i>v</i>) &middot;  
+(<i>t</i>,<i>z</i>) &le; 
+<i>vz</i>. <br>
+Pretpostavimo sada da je 
+<i>b</i><sup>2<img src="symbols/supr.gif" alt="r" ALIGN=TOP><i>t</i></sup> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> -1 (mod <i>p</i>) za neki
+<i>r</i>, 0 &le;  
+<i>r</i> &lt; <i>s</i>. Po Lemi 4.1, ova kongruencija ima rješenja
+ako i samo ako je <i>r</i> < <i>u</i>, a broj rješenja je 
+<nobr>2<sup><i>r</i></sup> (<i>t</i>,<i>v</i>) &middot;  
+2<sup><i>r</i></sup> (<i>t</i>,<i>z</i>) 
+&le;  
+4<sup><i>r</i></sup> <i>vz</i>.</nobr> Budući da je <i>n</i> -1 &gt; &phi;(<i>n</i>) = 
+2<sup><i>u+w</i></sup> <i>vz</i>, slijedi da prirodnih brojeva 
+<i>b</i>, 0 < <i>b</i> < <i>n</i>, za koje je <i>n</i> 
+spsp(<i>b</i>) ima najviše
+
+<p align=center><img src="slike/mil2.gif" alt="vz+" ALIGN=TOP> </p>
+
+Ako je <i>u</i> &lt; <i>w</i>, onda je desna strana od (4.3)
+
+<p align=center><img src="slike/mil3.gif" alt="< n/4" ALIGN=TOP> </p>
+
+Ako je <i>u</i> = <i>w</i>, onda barem jedna od nejednakosti 
+(<i>t</i>,<i>v</i>) &le;  
+<i>v</i>, (<i>t</i>,<i>z</i>) 
+&le; <i>z</i> mora biti 
+stroga, jer bi inače imali 
+0 <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 
+2<sup><i>s</i></sup> <i>t</i> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> <i>pq</i> -1 
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> <i>q</i> - 1 
+(mod <i>v</i>), pa bi iz <nobr><i>v</i>|(<i>q</i> - 1) = 
+2<sup><i>w</i></sup> <i>z</i></nobr> slijedilo da <i>v</i>|<i>z</i>. 
+Analogno bi dobili da <i>z</i>|<i>v</i>, što bi značilo da je 
+<i>v</i> = <i>z</i> i <i>p</i> = <i>q</i>, što je kontradikcija. <br>
+
+Dakle, u gornjim ocjenama možemo zamijeniti <i>vz</i> sa 
+<i>vz</i>/3. To dovodi do sljedeće ocjene za broj baza <i>b</i> za
+koje je <i>n</i> spsp(<i>b</i>):
+
+<p align=center><img src="slike/mil4.gif" alt="< n/4" ALIGN=TOP> </p>
+
+<b>3. slučaj:</b> <i>n</i> = 
+<i>p</i><sub>1</sub><i>p</i><sub>2</sub> &middot; &middot; &middot;  
+<i>p</i><sub><i>k</i></sub>, gdje je 
+<i>k</i> &ge; 3, 
+a <i>p</i><sub><i>i</i></sub>-ovi su različiti prosti brojevi <br>
+
+Neka je <i>p</i><sub><i>j</i></sub> - 1 = 
+2<sup><i>s</i></sup><img src="symbols/subj.gif" alt="j" ALIGN=TOP>
+<i>t</i><sub><i>j</i></sub>, 
+<i>t</i><sub><i>j</i></sub> neparan. Postupimo kao u 2.
+slučaju. Možemo pretpostaviti da je <i>s</i><sub>1</sub> 
+&ge; <i>s</i><sub><i>j</i></sub>, za sve <i>j</i>. Dobivamo sljedeću 
+ocjenu za broj baza <i>b</i> takvih da je <i>n</i> spsp(<i>b</i>): 
+
+<p align=center><img src="slike/mil5.gif" alt="< n/4" ALIGN=TOP> </p>
+
+<img align=right src="symbols/blacksquare.gif" alt="QED" ALIGN=TOP> 
+<p><br><br>
+
+<h3 align=center>Miller-Rabinov test prostosti:</h3>
+Neka je <i>n</i> neparan broj za kojeg želimo ustanoviti da li je prost 
+ili složen. Neka je <i>n</i> - 1 = 
+2<sup><i>s</i></sup> <sup><b>.</b></sup> <i>t</i>, gdje je <i>t</i>  neparan broj . Na slučajan način izaberemo <i>b</i>, 
+<nobr>0 &lt; <i>b</i> &lt; <i>n</i>.</nobr> Izračunamo <i>b</i><sup><i>t</i></sup> 
+mod <i>n</i>. Ako dobijemo 
+&plusmn;1, zaključujemo 
+da je <i>n</i> prošao test (***), te biramo sljedeći <i>b</i>. 
+U protivnom, uzastopno kvadriramo <i>b</i><sup><i>t</i></sup> modulo 
+<i>n</i> sve dok ne dobijemo rezultat -1. Ako dobijemo -1, onda je 
+<i>n</i> prošao test (***). Ako nikad ne dobijemo -1, tj. ako dobijemo 
+da je <nobr><i>b</i><sup>2<img src="symbols/supr.gif" alt="r" ALIGN=TOP><img src="symbols/supplus.gif" alt="+" ALIGN=TOP><img src="symbols/sup1.gif" alt="1" ALIGN=TOP><i>t</i></sup> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 1 (mod <i>n</i>),</nobr> 
+ali <nobr><i>b</i><sup>2<img src="symbols/supr.gif" alt="r" ALIGN=TOP><i>t</i></sup> 
+<img src="symbols/notequiv.gif" alt="<>" ALIGN=MIDDLE> -1 (mod <i>n</i>),</nobr> 
+onda znamo da je sigurno <i>n</i> složen. Ako <i>n</i> prođe test (***)
+za <i>k</i> različitih <i>b</i>-ova, onda je vjerojatnost da je 
+<i>n</i> složen <nobr>&le; 1/4<sup><i>k</i></sup>.</nobr> 
+
+<p>
+
+<b>Napomena:</b> Uz pretpostavku da vrijedi tzv. generalizirana
+Riemannova hipoteza (GRH), Miller-Rabinov test postaje
+polinomijalni deterministički test. Naime, može se
+pokazati da ako je GRH točna i ako je <i>n</i> složen broj,
+onda mora postojati barem jedna baza 
+<nobr><i>b</i> &lt; 2 ln<sup>2</sup> <i>n</i></nobr> za koju ne vrijedi (***). 
+
+<p>
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="solstras.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="faktor.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../kript.html">Web stranica kolegija <em>Kriptografija</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+</body>
+</html>
+
+

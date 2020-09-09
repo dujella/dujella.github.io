@@ -1,0 +1,460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Kriptoanaliza RSA</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Javni ključ - Kriptoanaliza 
+RSA kriptosustava">
+<meta name="keywords" content="kriptografija, kriptoanaliza, RSA, 
+javni ključ, tajni ključ, vjerojatnosni algoritam, 
+verižni razlomak, sigurnost kriptosustava">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="rsa.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="josjavni.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<a name="3.3"></a>
+<h2 align=center style="color: rgb(128,0,0)">3.3. Kriptoanaliza RSA 
+kriptosustava</h2>
+
+
+Jedan očit napad na RSA je faktorizacija od <i>n</i>. Ako 
+napadač faktorizira <i>n</i>, onda može naći 
+&phi;(<i>n</i>) i 
+<i>d</i>. Metodama faktorizacije ćemo se detaljno pozabaviti 
+u sljedećem poglavlju, a za sada recimo samo da trenutno najbrži 
+algoritmi za faktorizaciju trebaju 
+<p align=center>
+exp(O((log <i>n</i>)<sup>1/3</sup> (log log <i>n</i>)<sup>2/3</sup>)) 
+</p>
+operacija, tako da su brojevi od preko 200 znamenaka za sada sigurni 
+od ovog napada. Dakle, nije poznat niti jedan polinomijalni 
+algoritam za faktorizaciju. Ovdje ipak treba reći da je u nekim 
+slučajevima <i>n</i> puno lakše faktorizirati, pa takve <i>n</i>-ove  treba izbjegavati. Takav je slučaj npr. ako su <i>p</i> i <i>q</i> 
+jako blizu jedan drugoga ili ako <i>p</i> -1 i <i>q</i> -1 imaju 
+samo male proste faktore. 
+<p>
+
+Važno je napomenuti da ako napadač otkrije tajni eksponent <i>d</i>, 
+onda nije dovoljno promijeniti samo eksponent <i>e</i>, 
+već moramo promijeniti i <i>n</i>. <br>
+
+Zaista, ako je poznat broj <i>d</i> takav da je 
+<i>a<sup>ed</sup></i> &equiv;  
+<i>a</i> (mod <i>n</i>) za sve <i>a</i>, (<i>a</i>,<i>n</i>) = 1, 
+onda za broj <i>m</i> = <i>ed</i> - 1 vrijedi 
+<i>a<sup>m</sup></i> &equiv;  
+1 (mod <i>n</i>) za sve <i>a</i>, (<i>a</i>,<i>n</i>) = 1. Kako je 
+grupa svih reduciranih ostataka modulo <i>p</i> ciklička, 
+ovo je ekvivalentno tome da je <i>m</i> zajednički višekratnik od 
+<i>p</i> - 1 i <i>q</i> - 1. Dakle, poznavanje broja <i>m</i> je 
+slabije od poznavanja broja &phi;(<i>n</i>) = (<i>p</i> - 1)(<i>q</i> - 1). 
+Pokazat ćemo kako pomoću <i>m</i> možemo (s velikom vjerojatnošću) 
+faktorizirati <i>n</i>. 
+<p>
+
+Uvrštavanjem <i>a</i> = -1 vidimo da je <i>m</i> paran. Provjerimo 
+da li <i>m</i>/2 zadovoljava isto svojstvo kao <i>m</i>. Ako postoji 
+<i>a</i> za koji nije  <i>a</i><sup><i>m</i>/2</sup>  
+&equiv; 1 (mod <i>n</i>), (<i>a</i>,<i>n</i>) = 1, onda takvih <i>a</i>-ova ima 
+barem 50%. Zaista, svakom broju <i>b</i> koji zadovoljava 
+kongruenciju <i>b</i><sup><i>m</i>/2</sup>  
+&equiv; 1 (mod <i>n</i>), 
+odgovara broj <i>ab</i> koji tu kongruenciju ne zadovoljava. 
+Stoga, ako testiramo 
+nekoliko desetaka <i>a</i>-ova i ako svi oni zadovoljavaju 
+<i>a</i><sup><i>m</i>/2</sup>  
+&equiv; 1 (mod <i>n</i>), 
+onda s velikom vjerojatnošću možemo <i>m</i> zamijeniti s 
+<i>m</i>/2. Nastavljamo ovo dijeljenje s 2 dokle god je to moguće. 
+Na kraju imamo dvije mogućnosti: 
+<p>
+1) <i>m</i>/2 je višekratnik od <i>p</i> - 1, a nije od <i>q</i> - 1
+(ili obrnuto). Tada je 
+<i>a</i><sup><i>m</i>/2</sup>  
+&equiv; 1 (mod <i>p</i>) uvijek, 
+ali je <i>a</i><sup><i>m</i>/2</sup>  
+&equiv; -1 (mod <i>q</i>) u 
+50% slučajeva (ako je <i>c</i> generator cikličke grupe 
+<b>F</b><sub><i>q</i></sub>*, 
+onda je <i>a</i><sup><i>m</i>/2</sup>  
+&equiv; 1 (mod <i>q</i>) za 
+<i>a</i> = <i>c</i><sup>2<i>k</i></sup>, dok je 
+<i>a</i><sup><i>m</i>/2</sup>  
+&equiv; -1 (mod <i>q</i>) 
+za <i>a</i> = <i>c</i><sup>2<i>k</i>+1</sup>);
+<p>
+2) <i>m</i>/2 nije višekratnik ni od <i>p</i> - 1 ni od <i>q</i> -1. 
+Tada je 
+<i>a</i><sup><i>m</i>/2</sup>  
+&equiv;  
+&plusmn; 1 (mod <i>p</i>), 
+<i>a</i><sup><i>m</i>/2</sup>  
+&equiv;  
+&plusmn; 1 (mod <i>q</i>) i 
+svaka od četiri mogućnosti nastupa u 25% slučajeva. 
+<p>
+Dakle, za proizvoljan <i>a</i> s vjerojatnošću 50% imamo da je 
+<i>a</i><sup><i>m</i>/2</sup> - 1 djeljiv s jednim od brojeva <i>p</i> 
+i <i>q</i>, a nije djeljiv s drugim. Uzimajući slučajno nekoliko 
+desetaka <i>a</i>-va, možemo s vrlo velikom vjerojatnošću očekivati 
+da ćemo pronaći <i>a</i> s gornjim svojstvom. Recimo da je 
+<i>a</i><sup><i>m</i>/2</sup> - 1 djeljiv s <i>p</i>, a nije s <i>q</i>. Tada je (<i>n</i>, <i>a</i><sup><i>m</i>/2</sup> - 1) = 
+<i>p</i> i mi smo uspjeli faktorizirati <i>n</i>. 
+<p>
+Upravo opisani algoritam za faktorizaciju je primjer tzv. 
+<em>vjerojatnosnog algoritma</em>. 
+<p><br>
+
+Na prvi pogled ne čini se lošom ideja da izbjegnemo generiranje 
+različitih modula <i>n</i> = <i>pq</i>, već da izaberemo jedan 
+"dobar" <i>n</i> jednom za svagda. Taj <i>n</i> bi koristili svi 
+korisnici, a iz jednog povjerljivog centra bi se korisnicima 
+distribuirali parovi <i>e<sub>K</sub></i>, <i>d<sub>K</sub></i> 
+iz kojih bi oni onda formirali svoje javne 
+(<i>n</i>,<i>e<sub>K</sub></i>) i tajne 
+(<i>n</i>, <i>d<sub>K</sub></i>) ključeve. 
+Međutim, ideja je loša jer bi rezultirala nesigurnim sustavom i to 
+upravo zbog gore opisanog vjerojatnosnog algoritma. Naime, korisnik 
+A bi pomoću tog algoritma te njegovih eksponenata 
+<i>e<sub>A</sub></i> i <i>d<sub>A</sub></i> mogao faktorizirati 
+<i>n</i>. Nakon toga bi A lako, poznavajući faktore od <i>n</i> i javni 
+ključ <i>e<sub>B</sub></i>, mogao izračunati tajni ključ <i>d<sub>B</sub></i> bilo kojeg drugog korisnika. <br>
+Ova primjedba pokazuje da jedan RSA modul ne bi smjelo koristiti 
+više korisnika. 
+<p><br>
+
+Sljedeća, također samo na prvi pogled dobra, ideja je da pokušamo 
+izabrati mali <i>d</i>. Budući da je broj operacija za modularno 
+potenciranje linearan u log <i>d</i>, to bi moglo smanjiti vrijeme 
+potrebno za dešifriranje. Međutim, sljedeći teorem 
+<font color=009900>M. Wienera</font> iz 1990. 
+godine pokazuje da izbor malog <i>d</i> dovodi do lakog razbijanja 
+šifre. 
+<p>
+
+
+<table align=center border=1 width="95%" cellpadding=10>
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Teorem 1: </b> Neka je <i>n</i> = <i>pq</i> i 
+<i>p</i> &lt; <i>q</i> < 2<i>p</i>, te neka je <i>d</i> &lt;  
+1/3 <i>n</i><sup>0.25</sup>. Tada postoji polinomijalni algoritam 
+koji iz poznavanja <i>n</i> i <i>e</i> izračunava <i>d</i>.     
+
+</font> </td></tr> </table>
+<p>
+
+<b>Dokaz:</b> Iz <i>ed</i> 
+&equiv; 1 
+(mod &phi;(<i>n</i>)) 
+slijedi da postoji prirodan broj <i>k</i> takav da je 
+<i>ed</i> - 
+<i>k</i>&phi;(<i>n</i>) = 1. 
+Odavde je 
+<pre>
+           e          k         1
+       | -----   -   --- | = ------- .
+          &phi;(<i>n</i>)        d      d &phi;(<i>n</i>)  
+</pre> 
+Dakle, <i>k</i>/<i>d</i> je dobra aproksimacija od 
+<i>e</i>/&phi;(<i>n</i>). 
+Međutim, mi ne znamo &phi;(<i>n</i>). 
+Stoga ćemo &phi;(<i>n</i>) 
+zamijeniti s <i>n</i>. Iz <nobr>&phi;(<i>n</i>) 
+= <i>n</i> - <i>p</i> - <i>q</i> + 1<nobr> i <nobr><i>p</i> + <i>q</i> - 1
+&lt; 3 &radic;<i>n</i><nobr> slijedi 
+<nobr>|<i>n</i> - &phi;(<i>n</i>)| 
+&lt; 3 &radic;<i>n</i>.</nobr> 
+Zamijenimo &phi;(<i>n</i>) 
+s <i>n</i>, pa dobivamo: 
+<pre>
+    e     k        ed-k&phi;(<i>n</i>)-kn+k&phi;(<i>n</i>)       1-k(n-&phi;(<i>n</i>))       3k&radic;<i>n</i>      3k 
+ | --- - --- | = | ------------------ | = | ----------- | &le; ------ = ----- .
+    n     d               nd                    nd            nd      d&radic;<i>n</i>
+</pre> 
+Sada je <i>k</i>&phi;(<i>n</i>) = <i>ed</i> - 1 < <i>ed</i>, pa iz <i>e</i> &lt; 
+&phi;(<i>n</i>), 
+što je zadovoljeno u standardnoj verziji RSA kriptosustava, slijedi 
+<i>k</i> &lt; <i>d</i> &lt; 1/3 <i>n</i><sup>0.25</sup>, te dobivamo 
+<pre>
+
+    e     k        1       1
+ | --- - --- | &le; ------ &lt; --- .                   (1)
+    n     d      d n<sup>0.25</sup>   2d<sup>2</sup>
+</pre>
+Iz teorije diofantskih aproksimacija slijedi da relacija (1) povlači 
+da je <i>k</i>/<i>d</i> neka konvergenta razvoja u verižni 
+razlomak od <i>e</i>/<i>n</i>.
+Podsjetimo se da <em>razvoj u verižni razlomak</em> racionalnog broja 
+<i>b</i>/<i>c</i> izgleda ovako 
+<pre>
+  b                 1 
+ --- = a<sub>0</sub> + ----------------- = [a<sub>0</sub>, a<sub>1</sub>, ... , a<sub>j</sub>],
+  c          a<sub>1</sub> + 
+                  .
+                    .
+                      .    1
+                        + --- 
+                           a<sub>j</sub>
+</pre>
+gdje su <i>a</i><sub>0</sub>, ... , <i>a</i><sub><i>j</i></sub> kvocijenti iz 
+Euklidovog algoritma primijenjenog na <i>b</i> i <i>c</i>.   
+Razlomke oblika <i>p<sub>k</sub></i>/<i>q<sub>k</sub></i> = 
+[<i>a</i><sub>0</sub>, <i>a</i><sub>1</sub>, ... , <i>a<sub>k</sub></i>] 
+za <i>k</i> &le; <i>j</i> 
+nazivamo <em>konvergente verižnog razlomka</em>. Vrijedi 
+<p align=center>
+<i>p</i><sub>0</sub> = <i>a</i><sub>0</sub>, &nbsp;
+<i>q</i><sub>0</sub> = 1, &nbsp; <i>p</i><sub>1</sub> = 
+<i>a</i><sub>0</sub><i>a</i><sub>1</sub> + 1, &nbsp;
+<i>q</i><sub>1</sub> = <i>a</i><sub>1</sub>, <br>
+<i>p</i><sub><i>k</i></sub> =
+<i>a</i><sub><i>k</i></sub><i>p</i><sub><i>k</i> -1</sub> + 
+<i>p</i><sub><i>k</i> -2</sub> , &nbsp; 
+<i>q</i><sub><i>k</i></sub> =
+<i>a</i><sub><i>k</i></sub><i>q</i><sub><i>k</i> -1</sub> + 
+<i>q</i><sub><i>k</i> -2</sub>. 
+</p>
+Odavde odmah slijedi da je <i>q</i><sub><i>k</i></sub> 
+&ge;  
+<i>F</i><sub><i>k</i></sub>, gdje je <i>F</i><sub><i>k</i></sub> 
+<i>k</i>-ti <em>Fibonaccijev broj</em>. To znači da nazivnici 
+konvergenti rastu eksponencijano. <br>
+U našem slučaju to povlači da ima O(log <i>n</i>) konvergenti 
+od <i>e</i>/<i>n</i>. Jedna od njih je <i>k</i>/<i>d</i>. 
+Dakle, izračunamo sve konvergente od <i>e</i>/<i>n</i> i 
+testiramo koja od njih zadovoljava 
+(<i>x</i><sup><i>e</i></sup>)<sup><i>d</i></sup> 
+&equiv; <i>x</i> 
+(mod <i>n</i>) za slučajno odabran broj <i>x</i>. 
+To daje polinomijalni algoritam za otkrivanje tajnog ključa <i>d</i>. 
+<p align=right> &#9632;</p> 
+<p><br>
+
+Drugi način za testiranje pretpostavke da je neka konkretna konvergenta 
+jednaka <i>k</i>/<i>d</i>, jest da se, uz tu pretpostavku, izračuna 
+<nobr>&phi;(<i>n</i>) = (<i>p</i> - 1)(<i>q</i> - 1) = (<i>ed</i> - 1)/<i>k</i>.</nobr> 
+Tada se može izračunati <nobr>(<i>p</i> + <i>q</i>)/2</nobr> iz identiteta 
+<p align=center>
+(<i>pq</i> - (<i>p</i> - 1)(<i>q</i> - 1) + 1)/2 = (<i>p</i> + <i>q</i>)/2 ,
+</p>
+te <nobr>(<i>q</i> - <i>p</i>)/2</nobr> iz identiteta 
+<nobr>((<i>p</i> + <i>q</i>)/2)^2 - <i>pq</i> = ((<i>q</i> - <i>p</i>)/2)^2.</nobr> 
+Ako se na ovaj način dobije da su brojevi <nobr>(<i>p</i> + <i>q</i>)/2</nobr> 
+i <nobr>(<i>q</i> - <i>p</i>)/2</nobr> cijeli, onda zaključujemo da je promatrana 
+konvergenta stvarno jednaka <i>k</i>/<i>d</i>. Tada se iz <nobr>(<i>p</i> + <i>q</i>)/2</nobr> 
+i <nobr>(<i>q</i> - <i>p</i>)/2</nobr> možemo lako dobiti i faktorizaciju modula 
+<i>n</i> = <i>pq</i>. 
+<p><br>
+
+<b>Primjer 3.2:</b> Pretpostavimo da je u RSA kriptosustavu 
+modul <i>n</i> = 7978886869909, javni eksponent <i>e</i> = 
+3594320245477, te da je poznato da tajni eksponent <i>d</i> 
+zadovoljava <i>d</i> &lt; 1/3 <i>n</i><sup>0.25</sup> &lt; 561. 
+Da bi primijenili Wienerov napad, računamo razvoj  
+broja <i>e</i> / <i>n</i> u verižni razlomak. Dobivamo: 
+<p align=center>
+[0, 2, 4, 1, 1, 4, 1, 2, 31, 21, 1, 3, 1, ... ]. </p>
+Potom računamo pripadne konvergente:
+<p align=center> 
+0, 1/2, 4/9, 5/11, 9/20, 41/91, 50/111, 141/313, 4421/9814, ... .
+</p>
+Konačno, provjeravamo koji od nazivnika 2, 9, 11, 20, 91, 111, 313 
+zadovoljava kongruenciju 
+(<i>x</i><sup><i>e</i></sup>)<sup><i>d</i></sup> 
+&equiv; <i>x</i> 
+(mod <i>n</i>) za npr. <i>x</i> = 2. Tako dobivamo da je 
+tajni eksponent <i>d</i> = 313. 
+<p>
+Drugom metodom provjere dobivamo najprije da je 
+<nobr>(<i>p</i> - 1)(<i>q</i> - 1) = (<i>ed</i> - 1)/<i>k</i> = 7978881112300</nobr>, 
+zatim <nobr>(<i>p</i> + <i>q</i>)/2 = (<i>n</i> - (<i>p</i> - 1)(<i>q</i> - 1) + 1)/2 = 2878805</nobr>, 
+te <nobr>(<i>p</i> - <i>q</i>)/2 = 555546.</nobr> Ovime smo ponovno provjerili da je 
+tajni eksponent <i>d</i> = 313, a dobili smo i faktore od <i>n</i>: to su 
+<nobr><i>p</i> = 2878805 - 555546 = 2323259</nobr> i 
+<nobr><i>q</i> = 2878805 + 555546 = 3434351.</nobr>
+
+<p><br>
+Postoje i nešto jači rezultati od Teorema 1. <font color=009900>Dujella</font> 
+je primjenom rezultata o karakterizaciji dobrih racionalnih aproksimacija 
+pomoću vezižnih razlomaka Wienerov napad proširio do <i>d</i> 
+&le; 2<sup>30</sup><i>n</i><sup>0.25</sup>, dok su  
+<font color=009900>Boneh</font> i <font color=009900>Durfee</font> 
+pomoću LLL-algoritma proširili Wienerov napad do slučaja kada je <i>d</i> 
+&le; <i>n</i><sup>0.292</sup>. Čini se da bi trebalo 
+izbjegavati slučaj kada je <i>d</i> &lt; &radic;<i>n</i> da bi bili 
+sigurni od napada koji koriste rezultate i algoritme iz diofantskih aproksimacija. <p><br>
+
+Također postoje i napadi na RSA uz pretpostavku da je eksponent 
+<i>e</i> mali, pa bi i to trebalo izbjegavati. U ranijim 
+implementacijama RSA kriptosustava, često se uzimalo 
+<i>e</i> = 3, da bi se minimiziralo vrijeme potrebno za 
+šifriranje. Pokazat ćemo zašto taj izbor za <i>e</i> nije dobar. 
+<p>
+Pretpostavimo da imamo tri korisnika s različitim vrijednostima 
+javnog modula <i>n</i><sub>1</sub>, <i>n</i><sub>2</sub>, 
+<i>n</i><sub>3</sub>, te pretpostavimo da svi oni koriste 
+isti javni eksponent <i>e</i> = 3. Nadalje, pretpostavimo da im 
+netko želi poslati identičnu poruku <i>m</i>. Tada njihov 
+protivnik može doznati sljedeće šifrate: 
+<p align=center> 
+<i>c</i><sub>1</sub> &equiv; 
+<i>m</i><sup>3</sup> (mod <i>n</i><sub>1</sub>), 
+&nbsp; 
+<i>c</i><sub>2</sub> &equiv; 
+<i>m</i><sup>3</sup> (mod <i>n</i><sub>2</sub>), 
+&nbsp; 
+<i>c</i><sub>3</sub> &equiv; 
+<i>m</i><sup>3</sup> (mod <i>n</i><sub>3</sub>).
+</p>
+Nakon toga, on može, koristeći Kineski teorem o ostatcima, 
+naći rješenje sustava linearnih kongruencija 
+<p align=center> 
+<i>x</i> &equiv; 
+ <i>c</i><sub>1</sub> (mod <i>n</i><sub>1</sub>), 
+&nbsp; 
+<i>x</i> &equiv; 
+ <i>c</i><sub>2</sub> (mod <i>n</i><sub>2</sub>), 
+&nbsp; 
+<i>x</i> &equiv; 
+ <i>c</i><sub>3</sub> (mod <i>n</i><sub>3</sub>).
+</p>
+Na taj način, dobit će broj <i>x</i> sa svojstvom 
+<i>x</i> &equiv; 
+ <i>m</i><sup>3</sup> (mod 
+<i>n</i><sub>1</sub><i>n</i><sub>2</sub><i>n</i><sub>3</sub>). 
+No, kako je <i>m</i><sup>3</sup> 
+&lt; <i>n</i><sub>1</sub><i>n</i><sub>2</sub><i>n</i><sub>3</sub>, 
+to zapravo vrijedi <i>x</i> = <i>m</i><sup>3</sup>, 
+pa protivnik može izračunati originalnu poruku <i>m</i> 
+vadeći treći korijen iz <i>x</i>. 
+<p><br>
+
+<b>Primjer 3.3:</b> Za ilustraciju ovog napada, pretpostavimo da je 
+<i>n</i><sub>1</sub> = 329, 
+<i>n</i><sub>2</sub> = 341, 
+<i>n</i><sub>3</sub> = 377. Pretpostavimo da je protivnik saznao 
+šifrate <i>c</i><sub>1</sub> = 43, 
+<i>c</i><sub>2</sub> = 30, <i>c</i><sub>3</sub> = 372, 
+te želi saznati zajednički otvoreni tekst <i>m</i>.  
+Rješavanjem sustava
+<p align=center> 
+<i>x</i> &equiv; 
+ 43 (mod 329), 
+&nbsp; 
+<i>x</i> &equiv; 
+ 30 (mod 341), 
+&nbsp; 
+<i>x</i> &equiv; 
+ 372 (mod 377),
+</p>
+pomoću Kineskog teorema o ostatcima, 
+dobiva se da je 
+<p align=center>
+<i>x</i> &equiv;  
+341 <b>&middot;</b>   
+377 <b>&middot;</b> 
+172 + 
+329 <b>&middot;</b> 
+377 <b>&middot;</b> 
+232 + 
+329 <b>&middot;</b> 
+341 <b>&middot;</b> 
+317 &equiv;  
+86451373 &equiv; 1860867 
+(mod 329 <b>&middot;</b>  
+341 <b>&middot;</b> 377).  
+</p>
+To znači da je <i>x</i> = 1860867 i 
+<i>m</i> = <i>x</i><sup>1/3</sup> = 123. 
+<p><br>
+
+Upravo opisani napad može se izbjeći tako da se porukama prije 
+šifriranja doda neki "slučajni dodatak". Na taj način, nikad 
+nećemo različitim primateljima slati potpuno identične poruke. 
+No, postoje napadi koji pokazuju da ni u tom slučaju  
+RSA kriptosustav s vrlo malim eksponentom <i>e</i> nije siguran. 
+Može se preporučiti uporaba eksponenta <i>e</i> = 65537, 
+koji je dovoljno velik da bi onemogućio sve poznate napade na 
+RSA s malim eksponentom, a ima prednost da je šifriranje s njim 
+vrlo brzo jer ima malo "jedinica" u binarnom zapisu. Naime, 
+65537 = 2<sup>16</sup> + 1.  
+<p><br>
+
+Možemo zaključiti da i nakon više od dva desetljeća intenzivnog 
+proučavanja, još uvijek nije pronađena metoda koja bi razbila 
+RSA kriptosustav. Svi poznati napadi na RSA zapravo samo 
+pokazuju na što treba paziti i što treba izbjegavati kod 
+izbora parametara i implementacije RSA. Za sada se uz korektnu 
+implementaciju RSA može smatrati sigurnim kriptosustavom. 
+
+<p>
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="rsa.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="josjavni.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../kript.html">Web stranica kolegija <em>Kriptografija</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+
+</body>
+</html>
+
+
+ 

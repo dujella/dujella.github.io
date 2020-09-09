@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>DES - Načini djelovanja</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="DES - Nacini djelovanja">
+<meta name="keywords" content="kriptografija, DES, 
+modes of operation, ECB, Electronic Codebook, CBC, Cipher Block 
+Chaining, CFB, Cipher Feedback, OFB, Output Feedback">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="desprop.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="desan.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<a name="2.4"></a>
+<h2 align=center style="color: rgb(128,0,0)">2.4. Načini djelovanja</h2>
+
+
+Iako je sam opis DES-a dosta dug, on se može vrlo efikasno 
+implementirati, i hardverski i softverski. Spomenimo da je do 1991. 
+godine u NBS-u registrirano 45 hardverskih implementacija DES-a. 
+Godine 1992. proizveden je čip s 50000 tranzistora koji može šifrirati 
+10<sup>9</sup> bita (tj. 16 milijuna blokova) po sekundi (čip je koštao 
+300 dolara). 
+<p>
+Jedna važna primjena DES-a je u bankarskim transakcijama. Tako se, 
+između ostalog, DES koristio za šifriranje PIN-ova (personal 
+identification numbers), te transakcija preko bankomata. 
+DES je također do nedavno bio u širokoj uporabi u civilnim 
+satelitskim komunikacijama. 
+<p><br>
+Mi smo do sada opisali kako radi DES na jednom bloku od 64 bita. 
+U realnim situacijama, u kojima su poruke znatno duže, poznata  
+su 4 <em>načina djelovanja</em> (modes of operation) DES-a. Ti 
+<em>modovi</em> pokrivaju sve moguće primjene DES-a, a također su 
+primjenjivi na bilo koju simetričnu blokovnu šifru. 
+<p>
+Najjednostavniji mod je ECB (Electronic Codebook) u kojem se svaki 
+blok otvorenog teksta šifrira s istim ključem. Dakle, poruka se 
+razbije na blokove od po 64 bita (zadnji blok se nadopuni ako je 
+nužno), te se šifrira jedan po jedan blok koristeći uvijek jedan te 
+isti ključ. 
+<p align=center>
+<img src="slike/ecbmode.gif" alt="ecb mode">
+</p>
+
+ECB mod je idealan za kratke poruke, pa se često koristi za razmjenu 
+ključeva za šifriranje. Kod dugih poruka sigurnost ECB moda se 
+smanjuje, budući da identični blokovi u otvorenom tekstu daju 
+identične šifrate. 
+<p>
+Da bi povećali sigurnost, želimo postići da identičnim blokovima u 
+otvorenom tekstu odgovaraju različiti šifrati. Relativno jednostavan 
+način da se to postigne je korištenje CBC (Cipher Block Chaining) moda. 
+Na trenutni blok otvorenog teksta se primjeni operacija XOR sa 
+šifratom prethodnog bloka, a tek potom se šifrira pomoću ključa 
+<i>K</i>. 
+Dakle, <nobr><i>y<sub>i</sub></i> = 
+<i>e<sub>K</sub></i>(<i>y</i><sub><i>i</i> -1</sub> 
+&oplus;  
+<i>x<sub>i</sub></i>)</nobr> za <nobr><i>i</i> &ge; 1.</nobr>   
+Na startu uzimamo da je <i>y</i><sub>0</sub> = IV, gdje je IV 
+tzv. inicijalizirajući vektor, koji mora biti poznat i primaocu i 
+pošiljaocu. To se može postići npr. tako da ga se pošalje ECB modom. 
+Za dešifriranje koristimo relaciju 
+<nobr><i>x<sub>i</sub></i> = 
+<i>y</i><sub><i>i</i> -1</sub> 
+&oplus;  
+<i>d<sub>K</sub></i>(<i>y<sub>i</sub></i>).</nobr>  
+
+<p align=center>
+<img src="slike/cbcmode.gif" alt="cbc mode">
+</p>
+
+U prethodna dva moda DES funkcionira kao blokovna šifra. No, od DES-a 
+se može napraviti i protočna (stream) šifra. Prvi način je pomoću 
+CFB (Cipher Feedback) moda. Kod protočnih šifri nema potrebe za 
+proširivanjem poruke da bi se dobio cijeli broj blokova. To znači da će 
+šifrat biti iste duljine kao otvoreni tekst. Obrađuje se odjednom 
+<i>j</i> bitova 
+(1 &le; <i>j</i> &le; 64). 
+Najčešće je <i>j</i> = 1 ili <i>j</i> = 8. Ako je <i>j</i> = 8, 
+to znači da se šifrira slovo po slovo (jednom slovu odgovara 8 
+bitova po ASCII standardu). 
+<p>
+U šifriranje krećemo šifriranjem 64 bitnog inicijalizirajućeg 
+vektora IV. Na <i>j</i> najlijevijih bitova 
+izlaznog podatka primijenimo 
+XOR sa <i>x</i><sub>1</sub> i tako dobijemo <i>y</i><sub>1</sub>. 
+Ulazni podatak za sljedeći korak šifriranja se dobije tako da se 
+prethodni ulazni podatak pomakne za <i>j</i> mjesta ulijevo, a 
+na desni kraj se stavi <i>y</i><sub>1</sub>. Postupak se nastavlja 
+sve dok se sve jedinice otvorenog teksta ne šifriraju. 
+<p align=center>
+<img src="slike/cfbmode.gif" alt="cfb mode">
+</p>
+
+Kod dešifriranja se koristi ista shema, osim što se na 
+odgovarajući šifrat primjeni XOR s izlaznim podatkom funkcije šifriranja 
+<i>e<sub>K</sub></i> da bi se dobio otvoreni tekst. Uočimo da se ponovo 
+koristi funkcija <i>e<sub>K</sub></i>, a ne <i>d<sub>K</sub></i>. 
+Naime, ovdje je funkcija 
+šifriranja zapravo XOR, a on je sam sebi inverz.
+Zapravo, ovaj modus možemo shvatiti kao svojevrsnu realizaciju 
+&quot;jednokratne bilježnice&quot;, 
+u kojoj nam <i>e<sub>K</sub></i> ne služi za šifriranje, već za generiranje 
+&quot;pseudoslučajnog&quot; 
+ključa za jednokratnu bilježnicu. Ovo pokazuje da inicijalni vektor IV mora biti 
+&quot;svjež&quot;, 
+tj. ne bi se dvaput smio koristiti isti inicijalni vektor.
+<p>
+
+OFB (Output Feedback) mod je vrlo sličan kao CFB. Jedina razlika 
+je da se ulazni podatak za funkciju <i>e<sub>K</sub></i> 
+u idućem koraku šalje odmah nakon primjene <i>e<sub>K</sub></i> 
+u prethodnom koraku (prije primjene XOR-a). Jedna od prednosti 
+OFB moda je da se greške u transmisiji ne propagiraju. Npr. 
+greška u <i>y</i><sub>1</sub> utječe samo na <i>x</i><sub>1</sub>. 
+Ovaj mod se često koristi u šifriranje poruka sa satelita. 
+No, ovo svojstvo može biti i nedostatak. Stoga se modovi CBC i CFB 
+koriste za ustanovljavanje vjerodostojnosti poruke. 
+   
+<p align=center>
+<img src="slike/ofbmode.gif" alt="ofb mode">
+</p> 
+<p>
+
+Pored ova četiri (klasična) načina djelovanja, u posljednje je vrijeme sve
+popularniji CTR (Counter) mod. U njemu se koristi niz brojača (countera)
+<nobr><i>c</i><sub>1</sub>, <i>c</i><sub>2</sub>, ... .</nobr> 
+Niz blokova šifrata dobiva se po sljedećem pravilu:
+<p align=center>
+ <i>y<sub>i</sub></i> = <i>x<sub>i</sub></i> 
+&oplus; <i>e<sub>K</sub></i>(<i>c<sub>i</sub></i>). 
+</p>
+Brojači moraju biti u parovima različiti. Obično se to postiže tako da se brojaču 
+<i>c</i><sub>1</sub>
+pridruži neka inicijalna vrijednost, a potom se ostali brojači povećavaju za 1: 
+<nobr><i>c<sub>i</sub></i> = <i>c</i><sub>1</sub> + (<i>i</i> - 1)</nobr> 
+(zbrajanje je modulo 2<sup><i>b</i></sup>, gdje je <i>b</i> duljina bloka; 
+kod DES-a je <i>b</i> = 64).
+<p>
+
+Za razliku od prethodna tri &quot;ulančana&quot; (chaining) moda, 
+u CTR modu se šifriranje (i dešifriranje)
+može lako paralelizirati. Kod ulančanih modusa je to bio problem, jer je
+algoritam morao završiti obradu jednog bloka, da bi prešao na naredni. To pokazuje
+još jednu prednost CTR modusa, a to je mogućnost dešifriranja samo jednog određenog bloka,
+što može biti interesanstno za neke aplikacije. Slično kao kod CFB i OFB modusa,
+i ovdje se u dešifiranju ponovo koristi funkcija <i>e<sub>K</sub></i> 
+(a ne <i>d<sub>K</sub></i>). Ovo nije neka
+posebna prednost kod DES-a, ali može biti relevantno kod blokovnih kriptosustava
+kod kojih algoritam dešifriranja nije doslovno isti kao algoritam šifriranja
+(npr. AES).
+
+<p align=center>
+<img src="slike/ctrmode.gif" alt="ctr mode">
+</p> 
+<p>
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="desprop.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="desan.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../kript.html">Web stranica kolegija <em>Kriptografija</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+</body>
+</html>
+
+
+
+
+
+
+
