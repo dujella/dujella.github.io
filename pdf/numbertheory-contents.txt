@@ -1,0 +1,152 @@
+
+Andrej Dujella: NUMBER THEORY
+
+
+Preface
+
+1 Introduction
+1.1 Peano's axioms 
+1.2 Principle of mathematical induction
+1.3 Fibonacci numbers
+1.4 Exercises 
+
+2 Divisibility
+2.1 Greatest common divisor 
+2.2 Euclid’s algorithm 
+2.3 Primes 
+2.4 Exercises 
+
+3 Congruences
+3.1 Definition and properties of congruences
+3.2 Tests of divisibility 
+3.3 Linear congruences 
+3.4 Chinese remainder theorem 
+3.5 Reduced residue system 
+3.6 Congruences with a prime modulus 
+3.7 Primitive roots and indices 
+3.8 Representations of rational numbers by decimals 
+3.9 Pseudoprimes 
+3.10 Exercises 
+
+4 Quadratic residues
+4.1 Legendre’s symbol 
+4.2 Law of quadratic reciprocity 
+4.3 Computing square roots modulo p 
+4.4 Jacobi’s symbol 
+4.5 Divisibility of Fibonacci numbers 
+4.6 Exercises 
+
+5 Quadratic forms
+5.1 Sums of two squares 
+5.2 Positive definite binary quadratic forms 
+5.3 Sums of four squares 
+5.4 Sums of three squares 
+5.5 Exercises 
+
+6 Arithmetical functions
+6.1 Greatest integer function 
+6.2 Multiplicative functions 
+6.3 Asymptotic estimates for arithmetic functions 
+6.4 Dirichlet product 
+6.5 Exercises 
+
+7 Distribution of primes
+7.1 Elementary estimates for the function pi(x) 
+7.2 Chebyshev functions 
+7.3 The Riemann zeta-function 
+7.4 Dirichlet characters 
+7.5 Primes in arithmetical progressions 
+7.6 Exercises 
+
+8 Diophantine approximation
+8.1 Dirichlet’s theorem 
+8.2 Farey sequences 
+8.3 Continued fractions 
+8.4 Continued fraction and approximations to irrational numbers 
+8.5 Equivalent numbers 
+8.6 Periodic continued fractions 
+8.7 Newton's approximants 
+8.8 Simultaneous approximations 
+8.9 LLL algorithm 
+8.10 Exercises 
+
+9 Applications of diophantine approximation to cryptography
+9.1 Very short introduction to cryptography 
+9.2 RSA cryptosystem 
+9.3 Wiener's attack on RSA 
+9.4 Attacks on RSA using LLL algorithm 
+9.5 Coppersmith's theorem 
+9.6 Exercises 
+
+10 Diophantine equations I 
+10.1 Linear Diophantine equations 
+10.2 Pythagorean triangles 
+10.3 Pell's equation
+10.4 Continued fractions and Pell's equation 
+10.5 Pellian equation 
+10.6 Squares in the Fibonacci sequence
+10.7 Ternary quadratic forms 
+10.8 Local-global principle 
+10.9 Exercises 
+
+11 Polynomials
+11.1 Divisibility of polynomials 
+11.2 Polynomial roots
+11.3 Irreducibility of polynomials 
+11.4 Polynomial decomposition 
+11.5 Symmetric polynomials 
+11.6 Exercises 
+
+12 Algebraic numbers 
+12.1 Quadratic fields 
+12.2 Algebraic number fields 
+12.3 Algebraic integers 
+12.4 Ideals 
+12.5 Units and ideal classes 
+12.6 Exercises 
+
+13 Approximation of algebraic numbers
+13.1 Liouville's theorem 
+13.2 Roth's theorem 
+13.3 Hypergeometric method 
+13.4 Approximation by quadratic irrationals 
+13.5 Polynomial root separation 
+13.6 Exercises 
+
+14 Diophantine equations II 
+14.1 Thue's equation 
+14.2 Tzanakis' method 
+14.3 Linear forms in logarithms 
+14.4 Baker-Davenport reduction 
+14.5 LLL reduction 
+14.6 Diophantine m-tuples
+14.7 Exercises 
+
+15 Elliptic curves
+15.1 Introduction to elliptic curves 
+15.2 Equations of elliptic curves 
+15.3 Torsion group 
+15.4 Canonical height and Mordell-Weil theorem 
+15.5 Rank of elliptic curves
+15.6 Finite fields 
+15.7 Elliptic curves over finite fields 
+15.8 Applications of elliptic curves in cryptography 
+15.9 Primality proving using elliptic curves
+15.10 Elliptic curve factorization method
+15.11 Exercises 
+
+16 Diophantine problems and elliptic curves 
+16.1 Congruent numbers
+16.2 Mordell's equation 
+16.3 Applications of factorization in quadratic fields 
+16.4 Transformation of an elliptic curve to Thue equations 
+16.5 Algorithm for solving Thue equations 
+16.6 abc-conjecture 
+16.7 Diophantine m-tuples and elliptic curves 
+16.8 Exercises 
+
+References
+
+Notation 
+
+Index 
