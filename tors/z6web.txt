@@ -1,0 +1,76 @@
+
+/* A. Dujella, J. C. Peral and P. Tadic, Elliptic curves with torsion group Z/6Z */
+
+read("/home/duje/ellselrank3.gp")
+read("/home/duje/ellselrank33.gp")
+read("/home/duje/ellrank.gp")
+
+N1=523
+N2=1979
+
+aa=vector(N2);
+logp=vector(N2);
+forprime(p=2,N2,\
+logp[p]=log(p);\
+aa[p]=vector(p);\
+for(C=1,p,\
+aa[p][C]==0;\
+ee=ellinit([0,-1,0,-C,0]); \
+f=ellglobalred(ee)[2];  g=ellchangecurve(ee,f); \
+aa[p][C]=ellap(g,p) ));
+print("****");
+
+for(w=1,500,\
+if(w%10==0,print(w));\
+for(u=1,w,\
+if(gcd(u,w)==1,\
+for(z=1,min(w,25),\
+for(v=1,2*z,\
+if(gcd(v,z)==1,\
+for(i=1,2,\
+v=-v;\
+for(j=1,2,\
+u=-u;\
+A= -( -10*v^4*u*w^7*z^4-20*u^3*v^2*w^5*z^6-20*u^2*v^3*w^6*z^5-6*u*v*w^7*z^7-9*u^2*v^2*w^6*z^6+2*u^3*v*w^5*z^7+2*v^3*u*w^7*z^5+12*v*u^2*w^6*z^7+12*v^2*u*w^7*z^6+4*u^5*v^6*w^3*z^2-24*u^5*v^4*w^3*z^4+4*u^6*v^5*w^2*z^3+36*u^3*v^5*w^5*z^3+21*u^2*v^6*w^6*z^2-18*u^5*v^5*w^3*z^3-24*u^4*v^5*w^4*z^3-10*u^4*v*w^4*z^7-2*u^5*v^2*w^3*z^6-14*u^6*v^3*w^2*z^5+8*u^5*v*w^3*z^7-14*u^3*v^6*w^5*z^2+2*u^4*v^7*w^4*z-2*u^2*v^5*w^6*z^3+8*v^5*u*w^7*z^3-6*u^6*v*w^2*z^7-6*u^7*v^2*w*z^6+2*u^7*v^4*w*z^4+21*u^6*v^2*w^2*z^6-9*u^6*v^4*w^2*z^4+2*v^7*u^3*w^5*z+v^8*u^4*w^4+2*u^5*v^7*w^3*z+3*u^6*v^6*w^2*z^2+2*u^7*v^5*w*z^3+2*u^7*v^3*w*z^5+u^8*v^4*z^4-6*v^6*u*w^7*z^2-6*v^7*u^2*w^6*z+36*u^4*v^4*w^4*z^4-9*u^4*v^6*w^4*z^2+3*v^4*u^2*w^6*z^4-12*u^3*v^3*w^5*z^5+3*u^4*v^2*w^4*z^6+36*u^5*v^3*w^3*z^5+7*v^4*w^8*z^4-6*v^5*w^8*z^3-6*u^5*w^3*z^8+7*u^4*w^4*z^8-3*v^6*w^8*z^2+6*u^3*w^5*z^8+6*v^3*w^8*z^5-3*u^6*w^2*z^8-3*u^2*w^6*z^8-3*v^2*w^8*z^6 );\
+B=-( 16*(v-z)^3*(v+z)^3*(w-u)^3*(w+u)^3*(u^4*v^2*z^2+w^3*u*z^3*v-2*w^3*u*v^2*z^2+w^3*u*z*v^3+w^2*u^2*z^4-2*w^2*u^2*z^3*v-2*w^2*u^2*z*v^3+w*u^3*z^3*v-2*w*u^3*v^2*z^2+w*u^3*z*v^3+v^2*z^2*w^4+w^2*u^2*v^4)*(w*v+u*z)^3*w^3*z^3 );\
+if(B*(A^2+4*B)!=0,\
+forprime(p=2,101,\
+while(A%p^2==0 && B%p^4==0,\
+A=A/p^2; B=B/p^4));\
+ s=0.0; forprime(p=2,N1, \
+a2=0;\
+if(A%p !=0,\
+C=component(Mod(B,p)/A^2,2);\
+if(C==0, C=p);\
+a2=aa[p][C];\
+if(kronecker(A,p)==-1,a2=-a2));\
+s=s+(-a2+2)/(p+1-a2)*logp[p]);  \
+if(s>19.0, \
+s1=s;\
+forprime(p=N1+1,N2,\
+a2=0;\
+if(A%p !=0,\
+C=component(Mod(B,p)/A^2,2);\
+if(C==0, C=p);\
+a2=aa[p][C];\
+if(kronecker(A,p)==-1,a2=-a2));\
+s=s+(-a2+2)/(p+1-a2)*logp[p]);  \
+ if (s>28.0, \
+ ee=ellinit([0,-A,0,-B,0]);\
+f1=ellglobalred(ee); ff=f1[2]; g=ellchangecurve(ee,ff); \
+ro1=ellrootno(g);\
+if(ro1<=1,\
+sel=ellselrank3(g);\
+if(sel>=9, \
+sel2=ellselrank33(g);\
+if(sel2>=8, \
+print(u/w,"  ",v/z,"  ",s1," ",s, "  ",sel," ",sel2); \
+rang=ellrank(g);\
+if(rang[1][1]>3,\
+print(u/w,"  ",v/z,"  ",s1," ",s, "  ",sel," ",sel2); \
+print(g.a1," ",g.a2,"  ",g.a3,"  ",g.a4,"  ",g.a6); \
+print(rang); \
+print(log(abs(g.disc)));\
+)))))) )) )))))))
+
+
