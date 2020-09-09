@@ -1,0 +1,101 @@
+<html>
+<head>
+	<title>Šifriranje Vigenereovom šifrom</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+</head>
+
+<body bgcolor=#FFFFCC text=#000000>
+
+<script>
+function Vigenere (plain, key)
+{
+	if (key == null)
+		key = "";
+	var alphabet =   "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	               + "abcdefghijklmnopqrstuvwxyz";
+
+	key = key.toUpperCase();
+	var keylen = key.length;
+	var i;
+	var adjkey = "";
+	for (i = 0; i < keylen; i ++)
+	{
+		var keych = alphabet.indexOf(key.charAt(i));
+		if (keych >= 0)
+			adjkey += alphabet.charAt(keych);
+	}
+	key = adjkey;
+	keylen = key.length;
+	if (keylen == 0)
+	{	key = "a";
+		keylen = 1;
+	}
+
+	var plainlen = plain.length;
+	var cipher = "";
+	var keyind = 0;
+	for (i = 0; i < plainlen; i ++)
+	{
+		var plainch = plain.charAt(i);
+		var plainvalue = alphabet.indexOf(plainch);
+		if (plainvalue >= 0)
+		{  
+                var lowercase = plainvalue >= 26 ? true : false;
+		plainvalue += alphabet.indexOf(key.charAt(keyind));
+		plainvalue += 26;
+		if (lowercase)
+			plainvalue = plainvalue % 26 + 26;
+		else
+			plainvalue %= 26;
+		cipher += alphabet.charAt(plainvalue);
+		keyind = (keyind + 1) % keylen;
+                }
+	}
+	return cipher;
+}
+
+function vigcipher()
+{
+	document.form.cipher.value = Vigenere(document.form.plain.value, document.form.key.value);
+}
+</script>
+
+<h2 align=center>Šifriranje Vigen&egrave;reovom šifrom</h2>
+
+<form name=form>
+	<table border=0 cellspacing=12>
+		<tr><td align=center>
+				<b><font color=990000>Otvoreni tekst:</b>
+			</td><td>
+				<textarea name=plain rows=10 cols=60>
+				</textarea>
+			</td>
+		</tr>
+		<tr><td align=center>
+				<b><font color=990099>Ključ:</font></b>
+			</td><td>
+				<textarea name=key rows=2 cols=60>
+				</textarea>
+			</td>
+		</tr>
+		<tr>
+			<td></td><td align=center>
+			<input type=button value="šifriraj" onClick="vigcipher();"> 
+			</td>
+		</tr>
+		<tr><td align=center>
+			<b><font color=000099>Šifrat:</font></b>
+		</td>
+		<td>
+			<textarea name=cipher rows=10 cols=60>
+			</textarea>
+		</td>
+	</table>
+</form>
+
+
+</body>
+</html>

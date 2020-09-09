@@ -1,0 +1,872 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Supstitucijske šifre</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Kriptografija - Supstitucijske 
+šifre">
+<meta name="keywords" content="kriptografija, Cezar, sifra, šifra, 
+supstitucija">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="osnovni.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="vigener.html">[Sljedeće poglavlje]</a> &nbsp; 
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+
+<a name="1.2"></a>
+<h2 align=center style="color: rgb(128,0,0)">1.2. Supstitucijske 
+šifre</h2>
+
+
+Znameniti rimski vojskovođa i državnik 
+<font color=009900>Gaj Julije Cezar</font> u 
+komunikaciji sa svojim prijateljima koristio se šifrom u kojoj 
+su se slova otvorenog teksta zamjenjivala slovima što su se 
+nalazila tri mjesta dalje od njih u alfabetu 
+<nobr>(A &#8614; D,</nobr> 
+<nobr>B &#8614; E,</nobr> itd.). 
+Pretpostavljamo da se alfabet ciklički nastavlja, tj. da nakon zadnjeg 
+slova Z, ponovo dolaze A, B, C. 
+Ako bi smo upotrijebili današnji engleski alfabet od 26 slova, onda 
+bi poznata Cezarova izreka 
+<p align=center><font color=990000>VENI VIDI 
+VICI</font> </p>bila šifrirana ovako: 
+<p align=center><font color=000099>YHQL YLGL 
+YLFL</font>. </p>
+
+
+Cezarovu šifru možemo pregledno zapisati na sljedeći način: 
+
+<pre><font size="+1">otvoreni tekst    <font color=990000>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</font> 
+
+    šifrat        <font color=000099>D E F G H I J K L M N O P Q R S T U V W X Y Z A B C</font> 
+</font></pre>
+
+U daljnjim primjerima koristit ćemo se engleskim 
+(međunarodnim) alfabetom od 26 slova. Ukoliko ćemo raditi s 
+otvorenim tekstom na hrvatskom jeziku, onda ćemo Č i Ć 
+zamijeniti s C, a Đ, Dž, Lj, Nj, Š, Ž redom s  
+DJ, DZ, LJ, NJ, S, Z. 
+<p>
+Danas se Cezarovom šifrom nazivaju i šifre (tj. kriptosustavi) istog oblika s 
+pomakom različitim od 3. Da bismo Cezarovu šifru precizno definirali u smislu Definicije 1.1, 
+uvest ćemo prirodnu korespodenciju između slova alfabeta (A - Z) i cijelih brojeva 
+(0 - 25). 
+<p>
+Skup {0,1,2,...,25} označavat ćemo sa <b>Z</b><sub>26</sub> i pretpostavljat ćemo 
+da su na njemu definirane operacije zbrajanja, oduzimanja i množenja na isti način kao 
+u skupu cijelih brojeva, ali tako da se rezultat (ukoliko nije iz skupa 
+<nobr>{0,1,2,...,25}</nobr>) na kraju zamijeni s njegovih ostatkom pri 
+dijeljenju s 26. Koristit ćemo oznake <nobr><i>a</i> +<sub>26</sub> <i>b</i></nobr> ili 
+<nobr>(<i>a</i> + <i>b</i>) mod 26,</nobr> te analogno za oduzimanje i množenje. 
+Skup <b>Z</b><sub>26</sub>, uz operacije <nobr>+<sub>26</sub></nobr> i 
+<nobr><b>&middot;</b><sub>26</sub></nobr> čini <em>prsten</em>. Potpuno analogno se definira 
+skup <nobr><b>Z</b><sub><i>m</i></sub></nobr> i operacije na njemu za proizvoljan 
+prirodan broj <i>m</i>. 
+<p>
+Primijetimo da na ovom mjestu zamjena slova brojevima još nije bila nužna 
+(mogli bismo sve definirati u terminima zamjena slova i njihovog pomicanja unutar 
+alfabeta, te pojasniti što se događa kad "preskočimo" zadnje slovo), no uskoro 
+će korištenje ovog matematičkog rječnika postati nužno. 
+<p>
+Dakle, <em>Cezarovu šifru</em> 
+možemo definirati na sljedeći način: 
+<p>
+
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+Neka je <font face="Brush Script MT,Script,Times New Roman">P</font> = 
+<font face="Brush Script MT,Script,Times New Roman">C</font> = 
+<font face="Brush Script MT,Script,Times New Roman">K</font> = 
+<b>Z</b><sub>26</sub>. 
+Za <nobr>0 &le; <i>K</i> &le; 25</nobr> definiramo 
+<p align=center>
+<i>e<sub>K</sub></i>(<i>x</i>) = <i>x + K</i> mod 26, &nbsp; 
+<i>d<sub>K</sub></i>(<i>y</i>) = <i>y - K</i> mod 26. </p>
+</font></td></tr></table>
+<p>
+
+
+Šifra je definirana nad 
+<b>Z</b><sub>26</sub>  
+budući da koristimo 26 
+slova, pa imamo sljedeću korespondenciju, koja za svako slovo alfabeta 
+daje njegov "numerički ekvivalent": 
+<pre><font size="+1" color=993333>
+A B C D E F G H I J K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z 
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 
+</font></pre>
+U Cezarovoj šifri su osnovni elementi (simboli) otvorenog teksta slova 
+(odnosno njihovi numerički ekvivalenti), a ključ <i>K</i> određuje 
+za koliko mjesta udesno ćemo pomicati slova pri šifriranju.  
+Očito je <i>d<sub>K</sub></i>(<i>e<sub>K</sub></i>(<i>x</i>)) = 
+<i>x</i>, kao što se zahtjeva u definiciji 
+kriptosustava. Za <i>K</i> = 3 dobiva se originalna Cezarova šifra. 
+Postoje naznake da je Cezarov nećak, prvi rimski car August, 
+koristio najjednostavniju verziju ove šifre, pomičući slova samo za 
+jedno mjesto u alfabetu, tj. uzimajući da je <nobr><i>K</i> = 1.</nobr>
+<p>
+
+<b>Primjer 1.1: </b> <em>Dekriptirati šifrat</em> &nbsp;  
+<font color=000099>PWNUYTLWFKNOF</font> &nbsp; 
+<em>dobiven Cezarovom šifrom.</em> <p> 
+
+<i>Rješenje</i>. 
+Budući da je prostor ključeva jako mali (ima ih 26) zadatak 
+možemo riješiti "grubom silom", tj. tako da ispitamo 
+sve moguće ključeve, sve dok ne dođemo do nekog smislenog 
+teksta. Za <i>d</i><sub>0</sub>, <i>d</i><sub>1</sub>, <i>d</i><sub>2</sub>, ... 
+dobivamo redom: 
+<pre><font size="+2" color=990000>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; P W N U Y T L W F K N O F
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; O V M T X S K V E J M N E
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; N U L S W R J U D I L M D
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; M T K R V Q I T C H K L C
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; L S J Q U P H S B G J K B
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; K R I P T O G R A F I J A
+</font></pre>
+Dakle, ključ je <i>K</i> = <font color=990099>5</font>, 
+a otvoreni tekst je 
+<font color=990000>KRIPTOGRAFIJA</font>. 
+
+<p>
+<br>
+
+Da bismo dobili barem malo sigurniju šifru, možemo promatrati 
+funkcije za šifriranje koje će uključivati više od jednog parametra. 
+Najjednostavnija takva funkcija je afina funkcija 
+<nobr><i>e</i>(<i>x</i>) = <i>ax + b</i></nobr>. No, tu se pojavljuje 
+jedan novi problem jer takva funkcija na skupu <b>Z</b><sub>26</sub> 
+ne mora imati inverz (ne mora biti injekcija). 
+Zato parametar <i>a</i> ne može biti proizvoljan, već mora biti 
+relativno prost s modulom 26.
+<p>
+<em>Afina šifra</em> definira se na sljedeći način: 
+<p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+Neka je <font face="Brush Script MT,Script,Times New Roman">P</font> = 
+<font face="Brush Script MT,Script,Times New Roman">C</font> = 
+<b>Z</b><sub>26</sub>,  
+te neka je <font face="Brush Script MT,Script,Times New Roman">K</font> = 
+{ (<i>a,b</i>) &isin;  
+<b>Z</b><sub>26</sub> &times;  
+<b>Z</b><sub>26</sub> : (<i>a</i>, 26) = 1 }. 
+Za <i>K</i> = (<i>a,b</i>) &isin;  
+<font face="Brush Script MT,Script,Times New Roman">K</font> 
+definiramo 
+<p align=center>
+<i>e<sub>K</sub></i>(<i>x</i>) = <i>ax + b</i> mod 26, 
+<i>d<sub>K</sub></i>(<i>y</i>) = 
+<i>a</i><sup>-1</sup>(<i>y - b</i>) 
+mod 26. </p>
+</font></td></tr></table>
+<p>
+Ova šifra se zove afinom zato što su funkcije šifriranja 
+afine. Provjerimo je li uvjet 
+<i>d<sub>K</sub></i>(<i>e<sub>K</sub></i>(<i>x</i>)) = <i>x</i> 
+zadovoljen. Zaista, 
+<p align=center> 
+<i>d<sub>K</sub></i>(<i>e<sub>K</sub></i>(<i>x</i>)) = 
+<i>d<sub>K</sub></i>(<i>ax + b</i>) = 
+<i>a</i><sup>-1</sup>
+(<i>ax + b - b</i>) = <i>x</i>. 
+</p>
+Ovdje <i>a</i><sup>-1</sup> označava multiplikativni inverz broja 
+<i>a</i> u prstenu 
+<b>Z</b><sub>26</sub>. 
+Budući da broj 26 nije prost, nemaju svi elementi iz <b>Z</b><sub>26</sub> 
+multiplikativni inverz, već ih imaju upravo brojevi koji su relativno prosti s 26, 
+tj. za koje 
+vrijedi da je najveći zajednički djelitelje od <i>a</i> i 26 jednak 1 
+(to pišemo: (<i>a</i>, 26) = 1). 
+Prikažimo te brojeve zajedno s njihovim inverzima: 
+<p>
+
+<table border="1" align="center">
+  <tr>
+    <td width="35" height="22" align="center"><b><i>a</i></b></td>
+    <td width="30" height="22" align="center">1</td>
+<td width="30" height="22" align="center">3</td>
+<td width="30" height="22" align="center">5</td>
+<td width="30" height="22" align="center">7</td>
+    <td width="30" height="22" align="center">9</td>
+<td width="30" height="22" align="center">11</td>
+<td width="30" height="22" align="center">15</td>
+<td width="30" height="22" align="center">17</td>
+    <td width="30" height="22" align="center">19</td>
+<td width="30" height="22" align="center">21</td>
+<td width="30" height="22" align="center">23</td>
+<td width="30" height="22" align="center">25</td>
+  </tr>
+  <tr>
+    <td width="35" height="22" align="center">
+     <b><i>a</i><sup>-1</sup></b></td>
+    <td width="30" height="22" align="center">1</td>
+<td width="30" height="22" align="center">9</td>
+<td width="30" height="22" align="center">21</td>
+<td width="30" height="22" align="center">15</td>
+    <td width="30" height="22" align="center">3</td>
+<td width="30" height="22" align="center">19</td>
+<td width="30" height="22" align="center">7</td>
+<td width="30" height="22" align="center">23</td>
+    <td width="30" height="22" align="center">11</td>
+<td width="30" height="22" align="center">5</td>
+<td width="30" height="22" align="center">17</td>
+<td width="30" height="22" align="center">25</td>
+</tr>
+</table>
+
+
+<p><br>
+<b>Primjer 1.2: </b> <em>Neka je</em> <i>K</i> = (7, 3). 
+<em>Šifrirati otvoreni tekst</em> &nbsp; 
+<font color=990000>ZADAR</font>. 
+<p>
+<i>Rješenje</i>. Koristeći ranije navedenu tablicu, slova otvorenog teksta 
+poistovjećujemo s njihovim numeričkim ekvivalentima. 
+Imamo:  
+<center>
+<pre><font size="+2">
+ 25 <b>&middot;</b> 7 + 3 &equiv; 22 (mod 26), 
+ 0 <b>&middot;</b> 7 + 3 &equiv; 3 (mod 26), 
+  3 <b>&middot;</b> 7 + 3 &equiv; 24 (mod 26), 
+ 17 <b>&middot;</b> 7 + 3 &equiv; 18 (mod 26), 
+</font></pre>
+</center>
+pa je šifrat &nbsp; <font color=000099>WDYDS</font>. 
+<p>
+
+<b>Primjer 1.3: </b> <em>Dekriptirati šifrat</em>  
+<p align=center><font color=000099>
+OZWHRYEZCVWFCTPCUWRCFPYHWI
+</font></p>
+<em>dobiven afinom šifrom</em>. 
+<p>
+<i>Rješenje</i>. 
+Imamo &phi;(26) 
+<b>&middot;</b> 26 = 12 
+<b>&middot;</b> 26 = 312 mogućih ključeva. 
+To je još uvijek premalo, pa bi uz pomoć računala sigurno 
+mogli primijeniti "grubu silu", kao u Primjeru 1.1. 
+<p>
+No, postoji i elegantniji način ukoliko znamo kojim je jezikom 
+pisan otvoreni tekst. Recimo da nam je poznato da je u ovom 
+slučaju otvoreni tekst pisan hrvatskim jezikom. 
+Frekvencijom slova u hrvatskom, a i nekim drugim jezicima, 
+detaljnije ćemo se pozabaviti malo kasnije. Za sada nam je 
+potrebna samo činjenica da su najfrekventnija slova u hrvatskom 
+jeziku A, I, O, E, N, i to upravo u tom redoslijedu. U našem 
+šifratu uočavamo da su najfrekventnija slova <font color=000099>C</font> i 
+<font color=000099>W</font>,  
+koja se javljaju po 4 puta. Iako je naš šifrat prekratak, 
+možemo ipak očekivati da su ova dva slova šifrati od 
+A, I, O, E ili N. Pa pogledajmo kakve smo sreće. 
+<p>
+Imamo <i>e<sub>K</sub></i>(A) = <i>a</i> 
+<b>&middot;</b> 0 + <i>b</i> = 
+<i>b</i>, <i>e<sub>K</sub></i>(I) = 8<i>a</i> + <i>b</i>. 
+Pretpostavimo da je 
+<i>e<sub>K</sub></i>(A) = C i <i>e<sub>K</sub></i>(I) = W. 
+Dobivamo da je <i>b</i> = 2 i 
+8<i>a</i> + <i>b</i> 
+&equiv; 22 (mod 26), 
+odakle je <i>a</i> = 9. 
+(Općenito se linearne kongruencije rješavaju pomoću (proširenog) 
+Euklidovog algoritma, no u slučaju malog modula, kao što je naš 
+modul 26, dovoljno je uvrstiti sve dopustive (invertibilne) <i>a</i>-ove, 
+te provjeriti koji zadovoljava kongruenciju.) 
+Dakle, dobili smo da je 
+<nobr><i>e<sub>K</sub></i>(<i>x</i>) = (9<i>x</i> + 2) mod 26.</nobr> 
+Tada je <nobr><i>d<sub>K</sub></i>(<i>y</i>) = 3(<i>y</i> - 2) mod 26.</nobr>   
+Primijenimo li funkciju <i>d<sub>K</sub></i> na naš šifrat, dobivamo 
+otvoreni tekst (s umetnutim razmacima i "kvačicama"): 
+<p align=center><font color=990000>
+KRIPTOGRAFIJA ZNAČI TAJNOPIS.
+</font></p>
+
+<p><br>
+
+Cezarova i afina šifra su specijalni slučajevi 
+<em>supstitucijske šifre</em>, koja je definirana na sljedeći način: 
+<p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr>
+<td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+Neka je <font face="Brush Script MT,Script,Times New Roman">P</font> = 
+<font face="Brush Script MT,Script,Times New Roman">C</font> = 
+<b>Z</b><sub>26</sub>. 
+Prostor ključeva <font face="Brush Script MT,Script,Times New Roman">K</font> se sastoji 
+od svih permutacija skupa <nobr>{0, 1, 2, ... , 25}.</nobr>  
+Za svaku permutaciju <nobr>&pi;  
+&isin;  
+<font face="Brush Script MT,Script,Times New Roman">K</font></nobr> definiramo 
+<nobr><i>e</i><sub>&pi;</sub>(<i>x</i>) = 
+&pi;(<i>x</i>),</nobr> 
+<nobr><i>d</i><sub>&pi;</sub>(<i>y</i>) = &pi;<sup>-1</sup>(<i>y</i>),</nobr>  
+gdje je <nobr>&pi;<sup>-1</sup></nobr> 
+inverzna permutacija od &pi;. 
+</font></td></tr></table>
+<p>
+
+Ovdje imamo čak 26! &asymp; 4 
+<b>&middot;</b> 10<sup>26</sup> mogućih ključeva, 
+tako da je napad ispitivanjem svih mogućih ključeva 
+praktički nemoguć, čak i uz pomoć računala. 
+Međutim, supstitucijsku šifru je moguće lako dekriptirati 
+koristeći statistička svojstva jezika na kojem je pisan 
+otvoreni tekst. Osnovna metoda je <em>analiza frekvencije slova</em>. 
+Broji se pojavljivanje svakog slova u šifratu, te se distribucija 
+slova u šifratu uspoređuje s poznatim podatcima o distribuciji 
+slova u jeziku na kojem pretpostavljamo da je napisan otvoreni tekst. 
+Vrlo je vjerojatno da najfrekventnija 
+slova šifrata odgovaraju najfrekventnijim slovima jezika. 
+Ta vjerojatnost je to veća što je dulji šifrat. Također, korisni mogu 
+biti i podatci o najčešćim <em>bigramima</em> (parovima slova) i 
+<em>trigramima</em> (nizovima od tri slova) u jeziku. 
+Kod nizova od četiri ili više slova, frekvencije već uvelike ovise 
+o sadržaju teksta, i najfrekventniji nizovi obično dolaze od jedne 
+riječi koja se često ponavlja u tekstu (npr. osobnog imena). 
+<p>
+Začetci analize frekvencija se mogu naći u 14. stoljeću u djelu 
+arapskog autora 
+<font color=009900>Ibn ad-Duraihima</font>. 
+Njegova zapažanja su objavljena u odjeljku posvećenom kriptologiji u velikoj 
+enciklopediji u četrnaest svezaka čiji je autor <font color=009900>Qalqashandi</font>. 
+Odjeljak ima naslov "O skrivanju tajnih poruka u pismima". Nedavno pronađeni 
+rukopisi sugeriraju međutim da su arapski lingvisti tu metodu poznavali 
+možda i pet stoljeća ranije. Čini se da su u europskoj kriptografiji 
+metodu analize frekvencija u kriptoanalizi prvi počeli koristiti 
+talijanski kriptografi u 15. stoljeću. Naime, poznato je da su svoje 
+poruke šifrirali na način da su najfrekventnija slova zamjenjivali 
+s više različitih simbola, pa na osnovu toga možemo zaključiti da im je 
+bilo poznato kako analiza frekvencija slova može dovesti do razbijanja 
+supstitucijske šifre. Za razliku od znanstvenika ad-Duraihima, oni svoja saznanja 
+nisu javno objavljivali, već su ih nastojali što bolje unovčiti. 
+Naime, mnoge su tadašnje talijanske kneževine imale ljude plaćene za razbijanje 
+šifriranih poruka (jedan od najpoznatijih je venecijanski "tajnik za šifre" 
+<font color=009900>Giovanni Soro</font>), i taj se posao često prenosio 
+unutar obitelji. Ovakvu situaciju u kojoj praktički istovremeno 
+do otkrića značajnih za kriptografiju dođu znastvenici koji žele što prije 
+objaviti svoje rezultate i dobiti za njih priznanje, te ljudi iz 
+obavještajnih ili komercijalnih institucija koji ne žele ili ne smiju 
+odmah objaviti svoje rezultate, susrećemo često u povijesti kriptografije 
+sve do današnjih dana (npr. pitanje prvenstva kod otkrića diferencijalne 
+kriptoanalize ili kriptosustava s javnim ključem).  
+<p>
+
+Navest ćemo osnovne podatke o frekvenciji slova, bigrama i trigrama 
+za hrvatski, engleski i njemački jezik. 
+Pritom smatramo da u tekstu nema interpunkcijskih znakova ni 
+razmaka između riječi (u protivnom bi kriptoanaliza bila puno 
+lakša), te da su slova Č, Ć, Đ, Dž, Lj, Nj, Š, Ž iz hrvatske abecede 
+zamijenjena na prije opisani način slovima iz međunarodnog alfabeta. 
+Podatci za hrvatski jezik su dobiveni analizom tekstova iz dnevnog tiska, 
+dok su podatci za engleski i njemački jezik preuzeti iz literature 
+[Bauer, Stinson]. 
+<p>
+
+<a name="frek"></a>
+
+<table align=center bgcolor=FFFFCC border=0 cellpadding=2>
+    <tr valign=middle>
+    <td align=center colSpan=8 height=44><font color=800000 size="+1"><B>FREKVENCIJA SLOVA</B> (u promilima)
+</font></td></tr>
+<tr valign=middle>
+ <td align=center colSpan=2 height=33>
+<font color=800000><B>HRVATSKI</B></font></td>
+<td align=center>&nbsp;</td>
+<td align=center colSpan=2 height=33>
+<font color=800000><B>ENGLESKI</B></font></td>
+<td align=center>&nbsp;</td>
+<td align=center colSpan=2 height=33>
+<font color=800000><B>NJEMAČKI</B></font></td>
+</tr>
+
+  <tr valign=bottom>
+<td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+    <td align=center>&nbsp;</td>
+    <td align=center>&nbsp;</td>
+    <td align=center>&nbsp;</td>
+    <td align=center>&nbsp;</td>
+    <td align=center>&nbsp;</td>
+    <td align=center>&nbsp;</td></tr>
+  <tr valign=bottom>
+    <td align=center>A</td>
+    <td align=center>115</td>
+<td align=center>&nbsp;</td>
+    <td align=center>E</td>
+    <td align=center>127</td>
+<td align=center>&nbsp;</td>
+    <td align=center>E</td>
+    <td align=center>175</td></tr>
+  <tr valign=bottom>
+    <td align=center>I</td>
+    <td align=center>98</td>
+<td align=center>&nbsp;</td>
+    <td align=center>T</td>
+    <td align=center>91</td>
+<td align=center>&nbsp;</td>
+    <td align=center>N</td>
+    <td align=center>98</td></tr>
+  <tr valign=bottom>
+    <td align=center>O</td>
+    <td align=center>90</td>
+<td align=center>&nbsp;</td>
+    <td align=center>A</td>
+    <td align=center>82</td>
+<td align=center>&nbsp;</td>
+    <td align=center>I</td>
+    <td align=center>77</td></tr>
+  <tr valign=bottom>
+    <td align=center>E</td>
+    <td align=center>84</td>
+<td align=center>&nbsp;</td>
+    <td align=center>O</td>
+    <td align=center>75</td>
+<td align=center>&nbsp;</td>
+    <td align=center>R</td>
+    <td align=center>75</td></tr>
+  <tr valign=bottom>
+    <td align=center>N</td>
+    <td align=center>66</td>
+<td align=center>&nbsp;</td>
+    <td align=center>I</td>
+    <td align=center>70</td>
+<td align=center>&nbsp;</td>
+    <td align=center>S</td>
+    <td align=center>68</td></tr>
+  <tr valign=bottom>
+    <td align=center>S</td>
+    <td align=center>56</td>
+<td align=center>&nbsp;</td>
+    <td align=center>N</td>
+    <td align=center>67</td>
+<td align=center>&nbsp;</td>
+    <td align=center>A</td>
+    <td align=center>65</td></tr>
+  <tr valign=bottom>
+    <td align=center>R</td>
+    <td align=center>54</td>
+<td align=center>&nbsp;</td>
+    <td align=center>S</td>
+    <td align=center>63</td>
+<td align=center>&nbsp;</td>
+    <td align=center>T</td>
+    <td align=center>61</td></tr>
+  <tr valign=bottom>
+    <td align=center>J</td>
+    <td align=center>51</td>
+<td align=center>&nbsp;</td>
+    <td align=center>H</td>
+    <td align=center>61</td>
+<td align=center>&nbsp;</td>
+    <td align=center>D</td>
+    <td align=center>48</td></tr>
+  <tr valign=bottom>
+    <td align=center>T</td>
+    <td align=center>48</td>
+<td align=center>&nbsp;</td>
+    <td align=center>R</td>
+    <td align=center>60</td>
+<td align=center>&nbsp;</td>
+    <td align=center>H</td>
+    <td align=center>42</td></tr>
+  <tr valign=bottom>
+    <td align=center>U</td>
+    <td align=center>43</td>
+<td align=center>&nbsp;</td>
+    <td align=center>D</td>
+    <td align=center>43</td>
+<td align=center>&nbsp;</td>
+    <td align=center>U</td>
+    <td align=center>42</td></tr>
+  <tr valign=bottom>
+    <td align=center>D</td>
+    <td align=center>37</td>
+<td align=center>&nbsp;</td>
+    <td align=center>L</td>
+    <td align=center>40</td>
+<td align=center>&nbsp;</td>
+    <td align=center>L</td>
+    <td align=center>35</td></tr>
+  <tr valign=bottom>
+    <td align=center>K</td>
+    <td align=center>36</td>
+<td align=center>&nbsp;</td>
+    <td align=center>C</td>
+    <td align=center>28</td>
+<td align=center>&nbsp;</td>
+    <td align=center>G</td>
+    <td align=center>31</td></tr>
+  <tr valign=bottom>
+    <td align=center>V</td>
+    <td align=center>35</td>
+<td align=center>&nbsp;</td>
+    <td align=center>U</td>
+    <td align=center>28</td>
+<td align=center>&nbsp;</td>
+    <td align=center>O</td>
+    <td align=center>30</td></tr>
+  <tr valign=bottom>
+    <td align=center>L</td>
+    <td align=center>33</td>
+<td align=center>&nbsp;</td>
+    <td align=center>M</td>
+    <td align=center>24</td>
+<td align=center>&nbsp;</td>
+    <td align=center>C</td>
+    <td align=center>27</td></tr>
+  <tr valign=bottom>
+    <td align=center>M</td>
+    <td align=center>31</td>
+<td align=center>&nbsp;</td>
+    <td align=center>W</td>
+    <td align=center>23</td>
+<td align=center>&nbsp;</td>
+    <td align=center>M</td>
+    <td align=center>26</td></tr>
+  <tr valign=bottom>
+    <td align=center>P</td>
+    <td align=center>29</td>
+<td align=center>&nbsp;</td>
+    <td align=center>F</td>
+    <td align=center>22</td>
+<td align=center>&nbsp;</td>
+    <td align=center>B</td>
+    <td align=center>19</td></tr>
+  <tr valign=bottom>
+    <td align=center>C</td>
+    <td align=center>28</td>
+<td align=center>&nbsp;</td>
+    <td align=center>G</td>
+    <td align=center>20</td>
+<td align=center>&nbsp;</td>
+    <td align=center>F</td>
+    <td align=center>17</td></tr>
+  <tr valign=bottom>
+    <td align=center>Z</td>
+    <td align=center>23</td>
+<td align=center>&nbsp;</td>
+    <td align=center>Y</td>
+    <td align=center>20</td>
+<td align=center>&nbsp;</td>
+    <td align=center>W</td>
+    <td align=center>15</td></tr>
+  <tr valign=bottom>
+    <td align=center>G</td>
+    <td align=center>16</td>
+<td align=center>&nbsp;</td>
+    <td align=center>P</td>
+    <td align=center>19</td>
+<td align=center>&nbsp;</td>
+    <td align=center>K</td>
+    <td align=center>15</td></tr>
+  <tr valign=bottom>
+    <td align=center>B</td>
+    <td align=center>15</td>
+<td align=center>&nbsp;</td>
+    <td align=center>B</td>
+    <td align=center>15</td>
+<td align=center>&nbsp;</td>
+    <td align=center>Z</td>
+    <td align=center>11</td></tr>
+  <tr valign=bottom>
+    <td align=center>H</td>
+    <td align=center>8</td>
+<td align=center>&nbsp;</td>
+    <td align=center>V</td>
+    <td align=center>10</td>
+<td align=center>&nbsp;</td>
+    <td align=center>P</td>
+    <td align=center>10</td></tr>
+  <tr valign=bottom>
+    <td align=center>F</td>
+    <td align=center>3</td>
+<td align=center>&nbsp;</td>
+    <td align=center>K</td>
+    <td align=center>8</td>
+<td align=center>&nbsp;</td>
+    <td align=center>V</td>
+    <td align=center>9</td></tr>
+  <tr valign=bottom>
+    <td align=center>&nbsp;</td>
+    <td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+    <td align=center>J</td>
+    <td align=center>2</td>
+<td align=center>&nbsp;</td>
+    <td align=center>J</td>
+    <td align=center>3</td></tr>
+  <tr valign=bottom>
+    <td align=center>&nbsp;</td>
+    <td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+    <td align=center>Q</td>
+    <td align=center>1</td>
+<td align=center>&nbsp;</td>
+    <td align=center>Y</td>
+    <td align=center>1</td></tr>
+  <tr valign=bottom>
+    <td align=center>&nbsp;</td>
+    <td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+    <td align=center>X</td>
+    <td align=center>1</td>
+<td align=center>&nbsp;</td>
+    <td align=center>X</td>
+    <td align=center>0</td></tr>
+  <tr valign=bottom>
+    <td align=center>&nbsp;</td>
+    <td align=center>&nbsp;</td>
+<td align=center>&nbsp;</td>
+    <td align=center>Z</td>
+    <td align=center>1</td>
+<td align=center>&nbsp;</td>
+    <td align=center>Q</td>
+    <td align=center>0</td></tr>
+
+</table>
+<p>
+
+Najfrekventniji bigrami u hrvatskom jeziku su:
+<p align=center>
+JE (2.7 %), NA (1.5 %), RA (1.5 %), ST, AN, NI, KO, OS, TI, IJ, NO, 
+EN, PR (1.0 %). 
+</p>
+Ovdje je važno uočiti na je JE najfrekventniji bigram, iako J nije 
+među najfrekventnijim slovima. Više od pola pojavljivanja slova J 
+otpada na bigram JE. Druga zanimljivost je da su svi 
+najfrekventniji bigrami oblika suglasnik-samoglasnik ili 
+samoglasnik-suglasnik, osim bigrama ST i PR. Konačno, najfrekventniji 
+<em>recipročni bigrami</em> su NA i AN (1.5 % + 1.4 %), te NI i IN 
+(1.3 % + 0.9 %). Jedino kod ovih dvaju parova su frekvencije 
+obaju bigrama veće od 0.9 %.
+<p>
+Daleko najfrekventniji trigram u hrvatskom jeziku je IJE (0.6 %). 
+Slijede (s frekvencijama između 0.3 % i 0.4 %): STA, OST, JED, KOJ, 
+OJE, JEN.
+<p>
+
+U engleskom jeziku najfrekventniji bigrami su 
+<p align=center>
+TH (3.2 %), HE (2.5 %), AN, IN, ER, RE, ON, ES, TI, AT (1.2 %), 
+</p>
+a trigrami THE (3.5 %), ING (1.1 %), AND (1.0 %), 
+ION, TIO, ENT, ERE, HER (0.7 %). 
+<p>
+
+U njemačkom	 jeziku najfrekventniji bigrami su 
+<p align=center>
+ER (4.1 %), EN (4.0 %), CH (2.4%), DE, EI, ND, TE, IN, IE, GE (1.5 %), 
+</p>
+a trigrami EIN (1.2 %), ICH (1.1 %), NDE (0.9 %), 
+DIE, UND, DER, CHE, END (0.8 %). 
+<p>
+<br>
+
+<b>Primjer 1.4: </b> <em>Dekriptirati šifrat</em>
+<pre><font size="+2" color=000099>TQCWT QCKIQ RWNOQ OBCEW OQVKB UKAPK
+
+OQOQB CQPQA JGDUQ EQORW TSJGR WEQKY
+
+WGTWC JKRBI KZGVO GBQ
+</font></pre>
+<em>dobiven supstitucijskom šifrom, ako je poznato da je otvoreni 
+tekst na hrvatskom jeziku</em>.
+<p>
+(Zbog preglednosti se kod duljih šifrata obično stavlja razmak nakon svakog 
+petog slova - to naravno nema nikakve veze s razmacima u otvorenom tekstu, 
+za koje smo se dogovorili da ćemo ih zanemarivati kod šifriranja.)
+<p>
+<i>Rješenje</i>. 
+Napravit ćemo (istovremeno) analizu frekvencija slova i bigrama tako da 
+za svako slovo u alfabetu napišemo sve njegove sljedbenike u 
+šifratu (za zadnje slovo u šifratu stavljamo *). Dobivamo sljedeću tablicu: 
+<pre><font size="+1">
+A |   P, J                      
+B |   C, U, C, I, Q                  
+C |   W, K, E, Q, J                 
+D |   U                 
+E |   W, Q, Q                 
+F |                                         
+G |   D, R, T, V, B                 
+H |                    
+I |   Q, K                  
+J |   G, G, K                  
+K |   I, B, A, O, Y, R, Z
+L |   
+M |
+N |   O
+O |   Q, B, Q, Q, Q, R, G
+P |   K, Q
+Q |   C, C, R, O, V, O, B, P, A,  E, O, K, *
+R |   W, W, W, B
+S |   J
+T |   Q, Q, S, W
+U |   K, Q
+V |   K, O
+W |   T, N, O, T, E, G, C
+X |   
+Y |   W
+Z |   G
+</font></pre> 
+
+Iz tablice iščitavamo da su najfrekventnija slova: 
+<p align=center>
+Q (13), K (7), O(7), W(7), B, C, G, R, T, E, J,
+</p>
+a najfrekventniji bigrami:
+<p align=center>
+OQ (4), QO (3), RW (3), BC, EQ, JG, QC, TQ, WT.
+</p>
+Logično je pretpostaviti da je <i>e</i>(A) = Q. Uočavamo također 
+recipročne bigrame OQ i QO, što nas navodi na <i>e</i>(N) = O. 
+Nadalje, većina pojavljivanja slova R vezana je uz bigram RW, te 
+da je W jedno od najfrekventnijih slova. To nas vodi na 
+pretpostavku da je <i>e</i>(J) = R i <i>e</i>(E) = W. 
+Pokušajmo otkriti šifrat čestog bigrama ST (najčešćeg od neotkrivenih). 
+Najozbiljniji kandidati su BC i JG. Možemo uzeti neki od njih, pa 
+vidjeti što ćemo dobiti. Mi ćemo krenuti s BC, jer frekvencije 
+od B i C odgovaraju očekivanim frekvencijama od S i T. Dakle, 
+uzmimo da je <i>e</i>(S) = B i <i>e</i>(T) = C. Od najfrekventnijih slova 
+u hrvatskom jeziku, još nismo odgonetnuli šifrate od I i O. 
+Glavni kandidati su K i G, i to upravo tim redoslijedom. Pa uzmimo 
+da je <i>e</i>(I) = K i <i>e</i>(O) = G.
+Rezimirajmo ono što smo do sada pretpostavili:
+<pre><font size="+1">
+otvoreni tekst   <font color=990000>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</font>  
+    šifrat       <font color=000099>q       w       k r       o g       b c</font>  
+</font></pre>
+
+Ubacimo ove pretpostavke u polazni šifrat: 
+
+<pre><font size="+2">
+<font color=000099>TQCWT QCKIQ RWNOQ OBCEW OQVKB UKAPK</font>
+<font color=990000> ate  ati a je na nst e na is  i  i</font> 
+
+<font color=000099>OQOQB CQPQA JGDUQ EQORW TSJGR WEQKY</font>
+<font color=990000>nanas ta a   o  a  anje    oj e ai </font>  
+
+<font color=000099>WGTWC JKRBI KZGVO GBQ</font>
+<font color=990000>eo et  ijs  i o n osa</font>
+</font></pre>
+
+Sada već imamo dovoljno elemenata otvorenog teksta da možemo postupno 
+odgonetavati čitave riječi (npr. prva riječ: 
+<font color=990000>matematika</font>, zadnja 
+riječ: <font color=990000>odnosa</font>). 
+Konačno dobivamo otvoreni tekst
+
+<pre><font size="+2">
+<font color=990000>Matematika je znanstvena disciplina nastala 
+proučavanjem brojeva i geometrijskih odnosa.</font>
+</font></pre>
+
+Alfabet šifrata izgleda ovako: 
+<pre><font size="+2" color=000099>q s u v w x y z k r i p t o g a f j b c d e h l m n
+</font></pre>
+Uočavamo pojavljivanje riječi "kriptografija" unutar alfabeta 
+šifrata. Radi se o varijanti supstitucijske šifre koja se naziva 
+<em>Cezarova šifra s ključnom riječi</em>. U njoj ključ predstavlja 
+ključna riječ (u ovom slučaju 
+<font color=990099>KRIPTOGRAFIJA</font>), te broj (u ovom 
+slučaju <font color=990099>8</font>) koji označava poziciju 
+na kojoj počinjemo pisati 
+ključnu riječ (bez ponavljanja slova). Naravno, da smo znali da je 
+riječ upravo o ovoj varijanti, dekriptiranje bi nam bilo još lakše, 
+no i bez toga nismo imali puno problema. 
+
+<br><p>
+
+Možemo zaključiti da je usprkos velikom prostoru ključeva, supstitucijska šifra 
+vrlo laka za kriptoanalizu. To je bilo poznato već početkom 
+15. stoljeća, kada je u Italiji počela uporaba <em>homofona</em>, 
+tj. šifriranje najfrekventnijih slova s više različitih simbola. 
+Tu se ne zamjenjuje slovo za slovo, već npr. slovo za dvoznamenkasti broj, 
+tako da je moguće šifrirati najfrekventnija slova na nekoliko različitih načina, 
+dok će ona niskofrekventna i dalje imati samo jednu zamjenu. 
+To svakako povećava sigurnost šifre, ali i dalje analiza frekvencija 
+bigrama i trigrama može dovesti do rješenja. Također se može 
+iskoristiti djelomično ponavljanje. Primjerice, ako kod šifriranja 
+slova pomoću dvoznamenkastih brojeva naiđemo na nizove 
+<center><pre><font size="+1">
+12 17 37 23 57    i    12 17 42 23 57,
+</font></pre></center>
+onda je prilično izvjesno da 37 i 42 predstavljaju isto slovo 
+otvorenog teksta, pa ih možemo "spojiti" u analizi frekvencija.
+<p>
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="osnovni.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="vigener.html">[Sljedeće poglavlje]</a> &nbsp; 
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td style="font-size:100%">
+<a href="../kript.html">Web stranica kolegija <em>Kriptografija</em></a>
+</td>
+
+<td align="right" style="font-size:100%">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+</body>
+</html>
+

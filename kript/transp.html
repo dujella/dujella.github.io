@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Transpozicijske šifre</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Kriptografija - 
+Transpozicijske sifre">
+<meta name="keywords" content="kriptografija, transpozicijske šifre, 
+transpozicija, anagramiranje">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="otp.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="naprave.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<a name="1.7"></a>
+<h2 align=center style="color: rgb(128,0,0)">1.7. Transpozicijske šifre</h2>
+
+
+Svi kriptosustavi koje smo do sada promatrali su uključivali 
+supstituciju: elementi otvorenog teksta zamjenjivani su različitim 
+elementima šifrata. Ideja <em>transpozicijske šifre</em> je da se 
+elementi otvorenog teksta ostave nepromijenjeni, ali da se promjeni 
+njihov međusobni položaj. Spomenimo da je podjelu šifri na 
+supstitucijske i transpozicijske uveo u 16. stoljeću 
+<font color=009900>Giovanni Porta</font>. Formalna definicija 
+transpozicijske šifre je sljedeća:
+<p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+Neka je <i>m</i> fiksan prirodan broj. Neka je 
+<font face="Brush Script MT,Script,Times New Roman">P</font> = 
+<font face="Brush Script MT,Script,Times New Roman">C</font> = 
+(<b>Z</b><sub>26</sub>)<sup><i>m</i></sup>, te neka se 
+<font face="Brush Script MT,Script,Times New Roman">K</font> sastoji od svih 
+permutacija skupa <nobr>{1, 2, ... , <i>m</i>}.</nobr> Za 
+<nobr>&pi; &isin;  
+<font face="Brush Script MT,Script,Times New Roman">K</font></nobr> definiramo 
+<p align=center>
+<i>e</i><sub>&pi;</sub> (<i>x</i><sub>1</sub>, ... , 
+<i>x<sub>m</sub></i>) = 
+(<i>x</i><sub>&pi;(1)</sub>, 
+... , 
+<i>x</i><sub>&pi;(<i>m</i>)</sub>), <br>
+<i>d</i><sub>&pi;</sub>(<i>y</i><sub>1</sub>, ... , 
+<i>y<sub>m</sub></i>) = 
+(<i>y</i><sub>&pi;<sup><small>-1</small></sup>(1)</sub>, 
+... , 
+<i>y</i><sub>&pi;<sup><small>-1</small></sup>(<i>m</i>)</sub>).
+</font> </td></tr> </table>  
+<p>
+
+Postavlja se ponovo pitanje praktične realizacije ove opće ideje. 
+U praksi najupotrebljavanija transpozicijska šifra bila je 
+<em>stupčana transpozicija</em>. Kod nje se otvoreni tekst upisuje 
+u pravokutnik po redcima, a zatim se poruka čita po stupcima, ali s promijenjenim 
+poretkom stupaca. Ako se posljednji redak ne ispuni do kraja, 
+onda se prazna mjesta popune proizvoljnim slovima (<em>nulama</em>) 
+koja ne mijenjaju sadržaj poruke. (Koristili su se i nepotpuni pravokutnici, 
+no mi ih ovdje nećemo analizirati.)
+<p>
+
+<b>Primjer 1.12: </b> <em>Šifrirati otvoreni tekst</em> &nbsp; 
+<font color=990000>KRIPTOGRAFIJA I KRIPTOANALIZA</font>  
+&nbsp; <em>stupčanom transpozicijom s 
+ključem</em> &nbsp; <font color=990099>4 3 1 2 5 7 6</font>. 	  
+<p>
+<i>Rješenje</i>. 
+<pre><font size=3> 
+     ključ         <font color=990099>4  3  1  2  5  7  6</font>
+
+
+                   <font color=990000>K  R  I  P  T  O  G
+
+                   R  A  F  I  J  A  I</font> 
+otvoreni tekst
+                   <font color=990000>K  R  I  P  T  O  A 
+
+                   N  A  L  I  Z  A  X</font>
+
+
+
+    šifrat         <font color=000099>IFILPIPIRARAKRKNTJTZGIAXOAOA</font>
+</font></pre>
+<p>
+
+Prepoznavanje da se radi o transpozicijskoj šifri je 
+vrlo jednostavno jer kod nje slova imaju iste frekvencije 
+kao u otvorenom tekstu. U kriptoanalizi stupčane transpozicije, 
+prvi korak je određivanje dimenzije pravokutnika. To se radi 
+tako da se broj slova u šifratu faktorizira. Ukoliko time 
+dobijemo više mogućnosti, upišemo slova šifrata po stupcima u 
+pravokutnike pretpostavljenih dimenzija, te promatramo odnos 
+samoglasnika i suglasnika u svakom retku. Ukoliko je pretpostavka 
+o dimenziji točna, taj odnos ne bi smio puno odstupati od 
+njihovog odnosa u jeziku otvorenog teksta (u hrvatskom 43% : 57%). 
+Nakon što odredimo dimenzije, moramo još odrediti poredak stupaca. 
+Ako je broj stupaca relativno mali, to će nam obično poći za rukom 
+običnim anagramiranjem. Izrežemo vrpce koje sadrže stupce pravokutnika 
+i premještamo ih dok ne dobijemo smisleni sadržaj u redcima. 
+Dodatnu pomoć nam mogu dati podatci o frekvencijama bigrama. 
+<p>
+
+<b>Primjer 1.13: </b> <em>Dekriptirati šifrat</em>
+<pre><font size=3 color=990000>&nbsp; &nbsp; &nbsp; AAOSA JRTIE EAAAU SCEAE IANPI
+&nbsp; &nbsp; &nbsp; JAJJN FVSOI RZVPH NIONA RNZIJ
+&nbsp; &nbsp; &nbsp; INUSS NTRZU TIC
+</font></pre>
+<em>dobiven stupčanom transpozicijom</em>
+<p>
+
+<i>Rješenje</i>. U šifratu imamo 63 slova, pa nam se kao najvjerojatnije nameću 
+dimenzije 7 &times; 9 i 9 &times; 7 (razumno je pretpostaviti da ni broj 
+stupaca ni broj redaka nisu jako mali - u prvom slučaju bi anagramiranje 
+bilo trivijalno za obaviti, a u drugom duljina ključa 
+ne bi bila bitno kraća od duljine otvorenog teksta). Upišemo li šifrat u pravokutnike tih 
+dimenzija, dobivamo: 
+<pre><font size=2>
+A E A J Z I S   3:4              A T U A J R O J T   4:5
+A E E J V N N   3:4              A I S N N Z N I R   3:6
+O A I N P Z T   3:4              O E C P F V A N Z   3:6
+S A A F H I R   3:4              S E E I V P I U U   5:4
+A A N V N J Z   2:5              A A A J S H N S T   3:6
+J U P S I I U   3:4              J A E A O N Z S I   5:4
+R S I O O N T   3:4              R A I J I I I N C   5:4
+T C J I N U I   3:4
+I E A R A S C   4:3
+</font></pre>
+Odnos samoglasnika i suglasnika sugerira da je prvi izbor dimenzija 
+vjerojatniji. Sada ovih 7 stupaca možemo pokušati "anagramirati" 
+tako da dobijemo smisleni tekst. Tu nam (barem na početku) može 
+pomoći frekvencija bigrama. Bigrami koji u hrvatskom jeziku imaju 
+frekvenciju veću od 0.8% su (abecednim redom): 
+<pre><font size=3>
+AK, AN, AS, AT, AV, CI, DA, ED, EN, IC, IJ, IN, 
+IS, JA, JE, KA, KO, LI, NA, NE, NI, NO, OD, OJ,
+OS, OV, PO, PR, RA, RE, RI, ST, TA, TI, VA, ZA. 
+</font></pre>
+Za svaki od parova redaka, pogledajmo koliko se od tako dobivenih 9 
+bigrama nalazi među ovih 36 najfrekventnijih. Tako se dobije sljedeća tablica: 
+<pre>
+      |  1   2   3   4   5   6   7
+  ----------------------------------
+   1  |      0   2   2   2   2   4
+      |
+   2  |  1       1   3   1   1   4
+      | 
+   3  |  2   2       1   0   3   2
+      |
+   4  |  5   6   5       2   0   0   
+      |
+   5  |  4   2   1   2       1   1 
+      |
+   6  |  5   4   2   2   1       0
+      |
+   7  |  3   5   4   0   1   1
+</pre>
+
+Uočavamo da je broj 6 najveći od svih brojeva u tablici. 
+Stoga krenimo od pretpostavke da stupci 
+<font color=000099>4 2</font> dolaze jedan do drugoga (u tom poretku). 
+Vjerojatno je već ovo dovoljno da pogodimo rješenje, ali 
+možemo još iskoristiti tablicu. Eliminirajmo sve parove s 
+frekvencijama bigrama 0 ili 1, te one koji su u kontradikciji 
+s izborom <font color=000099>4 2</font>, tj. par <font color=000099>2 4</font> 
+i parove kojima je 4 na prvom ili 2 na drugom mjestu. 
+Uočavamo kao vjerojatne parove (najbolji u retku 
+i stupcu) <font color=000099>7 3</font>  i  
+<font color=000099>6 1</font>. Također je vrlo vjerojatan par 
+<font color=000099>2 7</font> (najbolji u retku). 
+Čini se da bi <font color=000099>4 2 7 3</font> mogao biti 
+dio ključa. 
+Iz preostalih vrijednosti u tablici, kao najvjerojatniji 
+ključevi se nameću 
+<p align=center>
+<font color=000099>4 2 7 3 6 1 5</font>, &nbsp; &nbsp; &nbsp; <font color=000099>5 1 6 4 2 7 3</font>, &nbsp; &nbsp; &nbsp; <font color=000099>6 1 5 4 2 7 3</font>.
+</p>
+Sada se lako provjeri da jedino drugi izbor daje suvisli tekst: 
+<pre><font size=3 color=990000>ZA RJEŠAVANJE NEPOZNATIH ŠIFARA NAJVAŽNIJI 
+SU UPORNOST, INTUICIJA I SREĆA.</font><font size=2> 
+
+             (Parker Hitt: Udžbenik za rješavanje vojnih šifara)
+</font></pre>
+<p>
+
+Napomenimo da se sigurnost transpozicijskih šifara može znatno povećati 
+korištenjem više koraka transpozicije. Većina njemačkih šifri tijekom 
+prvog svjetskog rata su bile dvostruke transpozicijske šifre. Ove šifre 
+su vrlo sigurne, ali njihovo dekriptiranje postaje relativno jednostavno 
+ako kriptoanalitičar raspolaže s nekoliko jednako dugih šifrata 
+šifriranih istim ključem. Tada se dva šifrata ispišu jedan ispod drugog 
+na dugim trakama papira, pa se trake okomito razrežu tako da po dva 
+slova (jedno iz svakog šifrata) dođu na isti papirić. Ti se papirići 
+sada slažu jedan uz drugog, sve dok se gore i dolje ne pojavi nešto nalik na 
+otvoreni tekst. 
+
+<p>
+
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="otp.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="naprave.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../kript.html">Web stranica kolegija <em>Kriptografija</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+</body>
+</html>
+
