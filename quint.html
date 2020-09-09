@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Diophantine quintuple conjecture</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Diophantine m-tuples - 
+Diophantine quintuple conjecture">
+<meta name="keywords" content="Diophantine equations, 
+open problems, conjecture, linear form in logarithms, 
+Diophantine approximations">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+</head>
+
+<body bgcolor="CCEECC">
+
+
+<h2 align=center><font face="Times New Roman">2. Diophantine quintuple conjecture</font></h2>
+<p><br>
+
+
+In 1979 Arkin, Hoggatt and Strauss 
+[<a href="ref.html#14">14</a>] proved that
+every Diophantine triple can be extended to a Diophantine
+quadruple. More precisely, let {<i>a, b, c</i>} be a Diophantine triple and 
+
+<p align=center>
+<i>ab</i> + 1 = <i>r</i><sup>2</sup>, &nbsp &nbsp  <i>ac</i> + 1 = <i>s</i><sup>2</sup>, &nbsp &nbsp 
+<i>bc</i> + 1 = <i>t</i><sup>2</sup>, </p>
+where <i>r,s,t</i> are positive
+integers. Define
+
+<p align=center> 
+<i>d</i><sub>+</sub> = <i>a</i> + <i>b</i> + <i>c</i> + 
+2<i>abc</i> + 2<i>rst</i>. </p>
+Then {<i>a, b, c, d<sub>+</sub></i>} is a Diophantine quadruple. Indeed,
+
+<p align=center> 
+<i>ad</i><sub>+</sub> + 1 = (<i>at + rs</i>)<sup>2</sup>, &nbsp &nbsp  
+<i>bd</i><sub>+</sub> + 1 = (<i>bs + rt</i>)<sup>2</sup>, &nbsp &nbsp 
+<i>cd</i><sub>+</sub> + 1 = (<i>cr + st</i>)<sup>2</sup>. </p>
+
+Now we can give a stronger version of the Diophantine quintuple  conjecture.
+
+<p>
+<a name="cnj2.1"></a>
+<table align=center border=2 width="100%" cellpadding=10>
+<tr>
+<td bgcolor="F7DDC2">
+<font size=3 face="Arial,Helvetica,sans-serif">
+<b>Conjecture 2.1:</b> 
+If {<i>a, b, c, d</i>} is a Diophantine quadruple and 
+<i>d</i> &gt max {<i>a, b, c</i>}, then <i>d</i> = <i>d</i><sub>+</sub>.
+</font></td> </tr></table>
+<p>
+
+It is clear that Conjecture 2.1 implies that there does not exist a 
+Diophantine quintuple. 
+
+<p>
+As we mentioned in Chapter <a href="intro.html">1</a>, Baker &amp; Davenport 
+[<a href="ref.html#3">3</a>] verified Conjecture 
+2.1 for the Diophantine triple <nobr>{1, 3, 8}.</nobr> 
+Veluppillai [<a href="ref.html#18">18</a>] 
+verified the conjecture for the triple 
+<nobr>{2, 4, 12}</nobr> and Kedlaya [<a href="ref.html#75">75</a>] 
+for the triples <nobr>{1, 3, 120},</nobr> <nobr>{1, 8, 120},</nobr> <nobr>{1, 8, 15},</nobr> 
+<nobr>{1, 15, 35},</nobr> <nobr>{1, 24, 35}</nobr> and <nobr>{2, 12, 24}.</nobr> 
+In [<a href="ref.html#64">64</a>] and 
+[<a href="ref.html#77">77</a>], the conjecture was 
+verified for all triples of the form 
+<nobr>{<i>k</i> - 1, <i>k</i> + 1, 4<i>k</i>}</nobr> and 
+<nobr>{<i>F</i><sub>2<i>k</i></sub>, <i>F</i><sub>2<i>k</i>+2</sub>, 
+<i>F</i><sub>2<i>k</i>+4</sub>},</nobr> respectively.
+Furthemore, in    
+[<a href="ref.html#73">73</a>], Dujella &amp; Peth&#337; proved that
+the pair <nobr>{1, 3}</nobr> cannot be extended to a Diophantine quintuple. 
+In 2008, Fujita [<a href="ref.html#168">168</a>] (see also [<a href="ref.html#148">148</a>]) 
+proved that for <i>k</i> &ge; 2, the Diophantine pair <nobr>{<i>k</i> - 1, <i>k</i> + 1}</nobr> 
+cannot be extended to a Diophantine quintuple.
+
+<p>
+
+A Diophantine quadruple <i>D</i> = {<i>a, b, c, d</i>}, 
+where <i>a</i> &lt <i>b</i> &lt <i>c</i> &lt <i>d</i>, 
+is called <b>regular</b> if <i>d</i> = <i>d</i><sub>+</sub>. 
+Equivalently, <i>D</i> is regular iff 
+
+<p align=center>
+(<i>a + b - c - d</i>)<sup>2</sup> = 
+4(<i>ab</i> + 1)(<i>cd</i> + 1) </p>
+
+(see [<a href="ref.html#80">80</a>]). This equation is a quadratic 
+equation in <i>d</i>. One root of this equation is <i>d<sub>+</sub></i>, and the other root is
+
+<p align=center>
+<i>d</i>_ = <i>a</i> + <i>b</i> + <i>c</i> + 
+2<i>abc</i> - 2<i>rst</i>. </p> 
+It is easy to check that all "small" Diophantine quadruples are
+regular. E.g. there are exactly 207 quadruples with
+<nobr>max {<i>a, b, c, d</i>}</nobr> &lt; 10<sup>6</sup> and all of them are regular.
+
+<p>
+
+Since the number of integer points on an elliptic curve
+
+<p align=center> 
+<i>y</i><sup>2</sup> = (<i>ax</i> + 1)(<i>bx</i> 
++ 1)(<i>cx</i> + 1) </p>
+is finite, it follows that there does not exist an infinite set of
+positive integers with the property of Diophantus and Fermat. 
+However, bounds for the size and for the number of solutions 
+depend on <i>a,b,c</i> and, accordingly, they do not immediately 
+yield an absolute bound for the size of such set. 
+The first absolute bound (<i>m</i> &le; 8) for the size of Diophantine 
+<i>m</i>-tuples was given in 2001 by Dujella 
+(see [<a href="ref.html#96">96</a>]). In 2004, this result was  
+significantly improved in [<a href="ref.html#122">122</a>]. 
+The main results of [<a href="ref.html#122">122</a>] are the following 
+two theorems. 
+
+<p>
+<a name="th2.1"></a>
+<table align=center border=2 width="100%" cellpadding=10>
+<tr>
+<td bgcolor="FFFFBB">
+<font size=3 face="Arial,Helvetica,sans-serif">
+<b>Theorem 2.1:</b> 
+There does not exist a Diophantine sextuple.
+</font></td> </tr></table>
+<p>
+
+<p>
+<a name="th2.2"></a>
+<table align=center border=2 width="100%" cellpadding=10>
+<tr>
+<td bgcolor="FFFFBB">
+<font size=3 face="Arial,Helvetica,sans-serif">
+<b>Theorem 2.2:</b> 
+There are only finitely many Diophantine quintuples.
+</font></td> </tr></table>
+<p>
+
+Moreover, the result from Theorem 2.2 is effective. 
+Namely, it was proved in [<a href="ref.html#122">122</a>] that all
+Diophantine quintuples <i>Q</i> satisfy 
+max <i>Q</i> &lt 10<sup>10<img src="symbols/sup2.gif" alt="26"><img src="symbols/sup6.gif" alt=""></sup>. 
+This implies that there are at most 10<sup>1930</sup> Diophantine quintuples
+(see [<a href="ref.html#160">160</a>]). This bound was significantly improved by Fujita 
+in [<a href="ref.html#173">173</a>] by showing that there exist at most 
+10<sup>276</sup> Diophantine quintuples. Furthermore, 
+Filipin &amp; Fujita [<a href="ref.html#235">235</a>] obtained the bound 10<sup>96</sup>, 
+Elsholtz, Filipin &amp; Fujita [<a href="ref.html#271">271</a>] the bound <nobr>6.8 &middot 10<sup>32</sup>,</nobr> 
+Cipu [<a href="ref.html#312">312</a>] the bound 10<sup>31</sup>, 
+Trudgian [<a href="ref.html#314">314</a>] the bound <nobr>2.3 &middot 10<sup>29</sup>,</nobr> 
+and Cipu &amp; Trudgian [<a href="ref.html#325">325</a>] the bound <nobr>1.18 &middot 10<sup>27</sup></nobr> 
+
+
+<p>
+
+Theorems 2.1 and 2.2 improve results from 
+[<a href="ref.html#96">96</a>] 
+where it is proved that there does not exist a Diophantine 9-tuple
+and that there are only finitely many Diophantine 8-tuples.
+
+<p>
+
+As in [<a href="ref.html#96">96</a>], the main idea was to prove 
+Conjecture <a href="#cnj2.1">2.1</a> for a wide class of Diophantine triples, namely, for 
+triples satisfying some gap conditions. However, in [<a href="ref.html#122">122</a>] these gap conditions 
+are much weaker then in 
+[<a href="ref.html#96">96</a>].
+Thus, the class of Diophantine triples for which Conjecture 
+<a href="#cnj2.1">2.1</a> can be 
+proved is now so wide that in an arbitrary Diophantine quadruple 
+(with sufficiently large elements), we may find a sub-triple
+belonging to that class. And this is just what is needed in order to 
+prove Theorem <a href="#th2.2">2.2</a>. 
+
+<p>
+
+In the proof of Conjecture <a href="#cnj2.1">2.1</a> for a triple {<i>a, b, c</i>},   
+the problem is first transformed into 
+solving systems of simultaneous Pellian equations. This reduces to
+finding intersection of binary recursive sequences.
+Next step is the determination of initial terms of
+these sequences, under assumption that they have nonempty intersection
+which induces a solution of the original problem. This part is
+considerable improvement of the corresponding part of 
+[<a href="ref.html#96">96</a>]. This improvement is due to new 
+"gap principles".  
+
+<p>
+
+Applying some congruence relations modulo <i>c</i><sup>2</sup>, 
+lower bounds for solutions are obtained.
+In obtaining these bounds, it is necessary to assume 
+that our triple satisfies
+some gap conditions, e.g. <nobr><i>b</i> &gt; 4<i>a</i></nobr> and 
+<nobr><i>c</i> &gt <i>b</i><sup>2.5</sup>.</nobr> 
+Let us note that these
+conditions are much weaker then conditions used in 
+[<a href="ref.html#96">96</a>],
+and this is due to more precise determination of the initial terms.
+The comparison of these lower bounds with upper bounds obtained from
+the Baker's theory on linear forms in logarithms of algebraic numbers 
+(the theorem of Baker and W&uuml;stholz, or more recent theorem 
+of Matveev)  yields Theorem 
+<a href="#th2.2">2.2</a>, 
+and the comparison with upper bounds obtained
+from a theorem of Bennett on simultaneous approximations
+of algebraic numbers yields Theorem <a href="#th2.1">2.1</a>. 
+
+<p>
+
+Let us note that in order 
+to apply Bennett's theorem, it is necessary to assume that there is 
+a large gap between <i>b</i> and <i>c</i> (something like 
+<nobr><i>c</i> &gt <i>b</i><sup>5</sup>).</nobr> 
+This is the reason why this approach doesn't give explicit information about the number of 
+Diophantine quintuples. But, when these gap conditions are satisfied, 
+upper bounds for solutions obtained by Bennett's theorem (i.e.  
+by hypergeometric method) are much 
+better than those obtained using linear forms in logarithms, and it 
+makes possible to do all necessary computations and to prove that there 
+is no Diophantine sextuple.    
+
+<p>
+We also mention a result by Fujita [<a href="ref.html#172">172</a>], 
+who proved that any Diophantine quintuple contains a regular
+Diophantine quadruple, i.e. if <nobr>{<i>a</i>, <i>b</i>, <i>c</i>, <i>d</i>, <i>e</i>}</nobr> 
+is a Diophantine quintuple and 
+<nobr><i>a</i> &lt; <i>b</i> &lt; <i>c</i> &lt; <i>d</i> &lt; <i>e</i></nobr>, then 
+<nobr><i>d</i> = <i>d</i><sub>+</sub>.</nobr>
+<p>
+
+From the results of [<a href="ref.html#271">271</a>] and [<a href="ref.html#312">312</a>] 
+(see also [<a href="ref.html#325">325</a>]), it follows 
+that any quintuple <nobr>{<i>a</i>, <i>b</i>, <i>c</i>, <i>d</i>, <i>e</i>}</nobr> 
+with <nobr><i>a</i> &lt; <i>b</i> &lt; <i>c</i> &lt; <i>d</i> &lt; <i>e</i></nobr> 
+must be of one of the following types: <br>
+<ul>
+<li>4<i>a</i> &lt; <i>b</i> &nbsp; and &nbsp; 4<i>ab</i> + <i>a</i> + <i>b</i> &lt; <i>c</i> &lt; <i>b</i><sup>3/2</sup>,  
+<li>4<i>a</i> &lt; <i>b</i> &nbsp; and &nbsp; <i>c</i> = <i>a</i> + <i>b</i> + 2&radic;<i>ab</i>+1,
+<li>4<i>a</i> &lt; <i>b</i> &nbsp; and &nbsp; <i>c</i> &gt; <i>b</i><sup>3/2</sup>, 
+<li><i>b</i> &lt; 4<i>a</i> &nbsp; and &nbsp; <i>c</i> = <i>a</i> + <i>b</i> + 2&radic;<i>ab</i>+1.
+</ul>
+
+Finally, in the paper announced in 2016 and published in 2019, 
+He, Togb&eacute; and Ziegler [<a href="ref.html#350">350</a>] gave the proof 
+of the Diophantine quintuple conjecture (Conjecture <a href="intro.html#cnj1.1">1.1</a>).  
+
+<p>
+<a name="th2.3"></a>
+<table align=center border=2 width="100%" cellpadding=10>
+<tr>
+<td bgcolor="FFFFBB">
+<font size=3 face="Arial,Helvetica,sans-serif">
+<b>Theorem 2.3:</b> 
+There does not exist a Diophantine quintuple.
+</font></td> </tr></table>
+<p>
+
+
+The three new key arguments that lead to the proof are:
+<ul>
+<li> the definition of an operator on Diophantine triples and their classification;
+<li> the use of sharp lower bounds for linear forms in three logarithms obtained
+by applying a result due to Mignotte;
+<li> the use of new congruences in the case of Euler quadruples 
+{a, b, a+b+2r, 4r(r+a)(r+b)}.
+</ul>
+<p>
+
+Bliznac Trebjesanin and Filipin [<a href="ref.html#361">361</a>] extended 
+Theorem <a href="intro.html#th2.3">2.3</a> and showed 
+that there does not exist a <i>D</i>(4)-quintuple. 
+<p>
+
+Conjecture <a href="intro.html#cnj2.1">2.1</a> still remains open. 
+In that direction, Fujita and Miyazaki [<a href="ref.html#328">328</a>] proved  
+that any fixed Diophantine triple can be extended to a Diophantine quadruple 
+in at most 11 ways by joining a fourth element exceeding
+the maximal element in the triple, while Cipu, Fujita and Miyazaki [<a href="ref.html#370">370</a>] 
+improved that result by replacing 11 with 8. 
+
+<p>
+
+<hr size=2 noshade>
+<p>
+<blockquote>
+1. <a href="intro.html">Introduction</a> <br>
+3. <a href="dn.html">Sets with the property <i>D</i>(<i>n</i>)</a> <br>
+4. <a href="fib.html">Connections with Fibonacci numbers</a> <br>
+5. <a href="ratio.html">Rational Diophantine <i>m</i>-tuples</a> <br> 
+6. <a href="coell.html">Connections with elliptic curves</a> <br>
+7. <a href="gener.html">Various generalizations</a> <br>
+8. <a href="ref.html">References</a> 
+</blockquote>
+<p>
+
+
+<hr size=2 noshade>
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<font face="Times New Roman">
+<a href="dtuples.html">Diophantine <i>m</i>-tuples page</a> 
+</font>
+</td>
+
+<td align="right">
+<font face="Times New Roman">
+<a href="index.html"><em>Andrej Dujella</em> home 
+page</a>
+</font>
+</td>
+</tr>
+</table>
+
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+</body>
+</html>
