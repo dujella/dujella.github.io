@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Grupa E(F_q)</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Eliptičke krivulje nad konačnim 
+poljima">
+<meta name="keywords" content="eliptičke krivulje, Hasseov teorem, 
+konačna polja">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="konpolja.html">[Prethodna tema]</a> &nbsp; 
+<a href="elimplem.html">[Sljedeća tema]</a> 
+</font></b>
+
+<hr size=2 noshade>
+
+
+<h2 align=center style="color: rgb(128,0,0)">5.2. 
+Grupa <i>E</i>(<b>F</b><sub><i>q</i></sub>)</h2>
+
+Sada ćemo reći nešto o najvažnijim svojstvima 
+eliptičkih krivulja definiranih nad konačnim poljima. 
+Krenimo s jednim primjerom. 
+<p>
+
+<b>Primjer:</b> <em>Promotrimo eliptičku krivulju</em> 
+<p align=center> 
+<i>E</i> : &nbsp; &nbsp; <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + <i>x</i> + 3
+</p>
+<em>nad poljem</em> 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>7</sub>. <br>
+
+Odredimo elemente grupe 
+<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>7</sub>). Uočimo da su 0, 1, 2 i 4 svi kvadrati u polju 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>7</sub>. 
+Uvrštavamo <i>x</i> = 0, 1, 2, 3, 4, 5, 6 u jednadžbu 
+krivulje <i>E</i>, te dobivamo redom jednadžbe <i>y</i><sup>2</sup> = 
+3, 5, 6, 5, 1, 0, 1 u <img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>7</sub>. 
+Zaključujemo da samo za <i>x</i> = 4, 5 i 6 pripadne jednadžbe  
+imaju rješenja. Konačno dobivamo da je    
+<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>7</sub>) = 
+{<img src="symbols/calo.gif" alt="O" ALIGN=TOP>, 
+(4,1), (4,6), (5,0), (6,1), (6,6)}. <br>
+Odredimo sada strukturu grupe 
+<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>7</sub>). 
+Uzmimo točku <i>P</i> = (4,1) i izračunajmo njezine višekratnike. 
+Imamo: 
+<p align=center>
+x([2] <i>P</i>) = 0 - 8 = 6, &nbsp; &nbsp; 
+y([2] <i>P</i>) = - 1 + 0 = 6, <br>
+x([3] <i>P</i>) = ((6 - 1)/(6 - 4))<sup>2</sup> - 4 - 6  = 
+(5 <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> 4)<sup>2</sup> 
+- 10 = 5, <br> 
+y([3] <i>P</i>) = - 1 + (4 - 5)(6 - 1)/(6 - 4) = 0, <br>
+[4] <i>P</i> = (6,1), &nbsp; &nbsp; 
+[5] <i>P</i> = (4,6), &nbsp; &nbsp; 
+[6] <i>P</i> = <img src="symbols/calo.gif" alt="O" ALIGN=TOP>.
+</p>
+Dakle, <i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>7</sub>) 
+je ciklička grupa reda 6, a točka <i>P</i> joj je generator. 
+
+<p><br>
+
+Neka je <i>E</i> eliptička krivulja nad konačnim poljem 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>. 
+Postavlja se pitanje što se općenito može reći o grupi 
+<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>). 
+Jasno je da za broj elementa na eliptičkoj krivulji vrijedi 
+#<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>) 
+<img src="symbols/leqslant.gif" alt="<=" ALIGN=TOP> 2<i>q</i> + 1. 
+Naime, imamo jednu točku u beskonačnosti, a pored toga svakom 
+od <i>q</i> mogućih <i>x</i>-eva odgovaraju najviše dva <i>y</i>-a. 
+No, samo pola elemenata od <img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP> 
+imaju kvadratni korijen (to su točno oni elementi koju su oblika 
+<i>g</i><sup>2<i>n</i></sup>, gdje je <i>g</i> 
+generator grupe 
+<img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><img src="symbols/subq.gif" alt="q" ALIGN=MIDDLE><sup>*</sup>), pa možemo očekivati da će 
+broj #<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><img src="symbols/subq.gif" alt="q" ALIGN=MIDDLE>) 
+biti približno jednak <i>q</i> + 1. Ovo razmatranje je 
+precizirano u sljedećem važnom teoremu.   
+
+<p>
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Teorem:</b> (<font color="009900">Hasse</font>) 
+<p align=center> 
+|<i>q</i> + 1 - #<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>)| 
+<img src="symbols/leqslant.gif" alt="<=" ALIGN=TOP> 
+2 <img src="symbols/surd.gif" alt="korijen" ALIGN=TOP><i>q</i>
+</p>
+
+</font></td></tr></table>
+<p> 
+
+Veličina <i>t</i> definirana sa 
+#<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>) 
+= <i>q</i> + 1 - <i>t</i> naziva se <em>Frobeniusov trag</em> 
+od <i>E</i> u <i>q</i>. Prema Hasseovom teoremu je 
+|<i>t</i>| <img src="symbols/leqslant.gif" alt="<=" ALIGN=TOP> 
+2 <img src="symbols/surd.gif" alt="korijen" ALIGN=TOP><i>q</i>. 
+<p>
+
+Za eliptičke krivulje nad 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP> 
+tvrdnja Hasseovog teorema je najbolja moguća, u smislu da 
+za svaki prirodan broj <i>n</i> iz intervala 
+(<i>p</i> + 1 - 2 
+<img src="symbols/surd.gif" alt="korijen" ALIGN=TOP><i>p</i>, 
+<i>p</i> + 1 + 2 
+<img src="symbols/surd.gif" alt="korijen" ALIGN=TOP><i>p</i>) 
+postoji eliptička krivulja reda <i>n</i>. Štoviše, 
+unutar manjeg intervala 
+(<i>p</i> + 1 - 
+<img src="symbols/surd.gif" alt="korijen" ALIGN=TOP><i>p</i>, 
+<i>p</i> + 1 +  
+<img src="symbols/surd.gif" alt="korijen" ALIGN=TOP><i>p</i>) 
+redovi su gotovo uniformno distribuirani. Ova činjenica je 
+jako važna za neke od primjena eliptičkih krivulja, kao što 
+faktorizacija velikih prirodnih brojeva, te dokazivanje 
+prostosti. 
+<p>
+
+Napomenimo da računanje reda grupe 
+<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>)  
+za velike brojeve <i>q</i> nije sasvim jednostavan problem. 
+Prvi polinomijalni algoritam za računanje 
+#<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>)   
+dao je <font color=009900>Schoof</font> 1995. godine. 
+Broj operacija u tom algoritmu je bio O(log<sup>8</sup><i>q</i>). 
+Kasnije su <font color=009900>Atkin</font> i 
+<font color=009900>Elkies</font> poboljšali Schoofov algoritam, 
+tako da se danas broj 
+#<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>)   
+može efikasno izračunati za brojeve <i>q</i> s do 500 znamenaka.
+
+<p>
+Pretpostavimo sada da imamo eliptičku krivulju <i>E</i> 
+zadanu nad <img src="symbols/bbq.gif" alt="Q" 
+ALIGN=TOP>. 
+Bez smanjenja općinosti možemo pretpostaviti da su joj 
+koeficijenti cjelobrojni. Stoga za svaki prosti broj <i>p</i> 
+možemo promatrati ostatke tih koeficijenata pri djeljenju 
+s <i>p</i>. Na taj način ćemo dobiti krivulju 
+nad <img src="symbols/bbf.gif" alt="F" 
+ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP> 
+koja će biti eliptička ukoliko je nesingularna, a to će biti 
+ukoliko <i>p</i> ne dijeli diskriminantu <i>D</i> od <i>E</i>.  
+Podsjetimo se da je jedno od važnih pitanja vezanih uz 
+eliptičke krivulje nad <img src="symbols/bbq.gif" alt="Q" 
+ALIGN=TOP> određivanje njihovog ranga. Jedna od najpoznatijih 
+i najvažnijih slutnji u matematici jest 
+<em><font color=009900>Birch</font> - 
+<font color=009900>Swinnerton-Dyerova</font></em> slutnja 
+koja povezuje rang eliptičke krivulje nad 
+<img src="symbols/bbq.gif" alt="Q" 
+ALIGN=TOP> s brojem točaka na toj istoj krivulji kad se ona 
+promatra nad konačnim poljem <img src="symbols/bbf.gif" alt="F" 
+ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP>. 
+Ugrubo rečeno, za eliptičku krivulju velikog ranga bi brojevi 
+#<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP>) 
+trebali biti relativno veliki za mnogo prostih brojeva <i>p</i>. 
+Preciznije,  <img src="symbols/prod.gif" alt="produkt" ALIGN=TOP>
+(#<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP>) / <i>p</i>), 
+gdje se produkt uzima po svim prostim brojevima <i>p</i> 
+koji ne dijele diskriminantu, a manji su od realnog broja <i>X</i>, 
+je proporcionalan sa (log <i>X</i>)<sup><i>r</i></sup>, 
+gdje je <i>r</i> upravo rang krivulje <i>E</i>.  
+Još preciznija formulacija Birch - Swinnerton-Dyerove slutnje  
+je preko tzv. L-funkcija, te kaže da je rang jednak redu 
+nultočke jedne analitičke funkcije koja se definira pomoću 
+brojeva #<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP>). 
+
+<p>
+Za razliku od slučaja eliptičkih krivulja nad 
+<img src="symbols/bbq.gif" alt="Q" ALIGN=TOP>, 
+gdje je otvoreno pitanje koji su sve rangovi mogući, 
+u slučaju polja <img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP> poznato je 
+da je pripadna grupa ili ciklička ili produkt dvije cikličke grupe. 
+Preciznije, vrijedi 
+<p align=center>
+<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>) 
+<img src="symbols/cong.gif" alt="=" ALIGN=TOP>
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><sub><i>d</i></sub> 
+&times 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><sub><i>e</i></sub>, 
+</p>
+gdje <i>d</i> | <i>e</i> i 
+<i>d</i> | <i>q</i> - 1 (što uključuje i mogućnost 
+da je <i>d</i> = 1).   
+
+<p><br>
+
+U dosadašnjim razmatranjima, mi smo se uglavnom ograničili na 
+eliptičke krivulje nad poljima karakteristike različite od 2 i 3. 
+Međutim, kako su za primjene u kriptografiji od velike važnosti 
+eliptičke krivulje nad konačnim poljima karakteristike jednake 2, 
+sada ćemo reći nešto o njima. 
+<p>
+Svaka eliptička krivulja nad poljem 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>, 
+gdje je <i>q</i> = 2<sup><i>m</i></sup>, može se 
+transformirati u jedan od sljedeća dva oblika   
+<i>y</i><sup>2</sup> + <i>cy</i> = <i>x</i><sup>3</sup> + 
+<i>ax</i> + <i>b</i> ili 
+<i>y</i><sup>2</sup> + <i>xy</i> = <i>x</i><sup>3</sup> + 
+<i>ax</i><sup>2</sup> + <i>b</i>.  
+Međutim, krivulje prvog oblika su tzv. supersingularne krivulje, 
+koje nisu, iz razloga koje ćemo kasnije objasniti, 
+od interesa kod primjene u kriptografiji. Stoga se možemo 
+usredotočiti na krivulje drugog oblika. Pritom je 
+<i>b</i> proizvoljan ne-nul element iz 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>, 
+dok za <i>a</i> imamo samo dvije bitno različite (koje daju 
+neizomorfne krivulje) mogućnosti: <i>a</i> = 0 ili 
+<i>a</i> = <img src="symbols/gamma.gif" alt="gama" ALIGN=TOP>, 
+gdje je <img src="symbols/gamma.gif" alt="gama" ALIGN=TOP> 
+neki fiksirani element iz   
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP> 
+sa svojstvom da je Tr(<img src="symbols/gamma.gif" alt="gama" ALIGN=TOP>) = 
+<img src="symbols/gamma.gif" alt="gama" ALIGN=TOP> + 
+<img src="symbols/gamma.gif" alt="gama" ALIGN=TOP><sup>2</sup> + 
+<img src="symbols/gamma.gif" alt="gama" ALIGN=TOP><sup>4</sup> + 
+... + 
+<img src="symbols/gamma.gif" alt="gama" ALIGN=TOP><sup>2<img src="symbols/supm.gif" alt="m-1" ALIGN=TOP><img src="symbols/supminus.gif" alt=" " ALIGN=TOP><img src="symbols/sup1.gif" alt=" " ALIGN=TOP></sup> 
+= 1. 
+Ako je <i>m</i> neparan, onda možemo uzeti da je 
+<img src="symbols/gamma.gif" alt="gama" ALIGN=TOP> = 1.
+<p>
+Navedimo još formule za zbrajanje točaka na eliptičkoj 
+krivulji zadanoj jednadžbom     
+<i>y</i><sup>2</sup> + <i>xy</i> = <i>x</i><sup>3</sup> + 
+<i>ax</i><sup>2</sup> + <i>b</i> 
+nad poljem karakteristike 2. 
+
+Ako je <i>P</i> = (<i>x</i><sub>1</sub>, <i>y</i><sub>1</sub>) i 
+<i>Q</i> = (<i>x</i><sub>2</sub>, <i>y</i><sub>2</sub>),  
+onda je 
+<p align=center>
+-<i>P</i> = (<i>x</i><sub>1</sub>, <i>x</i><sub>1</sub> +  
+<i>y</i><sub>1</sub>), <br>
+  <i>x</i>(<i>P</i> + <i>Q</i>) = ((<i>y</i><sub>2</sub> + 
+<i>y</i><sub>1</sub>) / 
+(<i>x</i><sub>2</sub> + <i>x</i><sub>1</sub>))<sup>2</sup> 
++ (<i>y</i><sub>2</sub> + 
+<i>y</i><sub>1</sub>) / 
+(<i>x</i><sub>2</sub> + <i>x</i><sub>1</sub>) 
++ <i>a</i> + <i>x</i><sub>1</sub> + <i>x</i><sub>2</sub>, <br>
+<i>y</i>(<i>P</i> + <i>Q</i>) = <i>y</i><sub>1</sub> + 
+<i>x</i>(<i>P</i> + <i>Q</i>) +  
+(<i>x</i><sub>1</sub> + <i>x</i>(<i>P</i> + <i>Q</i>))
+(<i>y</i><sub>2</sub> + 
+<i>y</i><sub>1</sub>) / (<i>x</i><sub>2</sub> + <i>x</i><sub>1</sub>),
+</p>
+<p align=center>
+  <i>x</i>([2]<i>P</i>) = 
+((<i>x</i><sub>1</sub><sup>2</sup> + <i>y</i><sub>1</sub>) / 
+(<i>x</i><sub>1</sub>))<sup>2</sup> + 
+(<i>x</i><sub>1</sub><sup>2</sup> + <i>y</i><sub>1</sub>) / 
+(<i>x</i><sub>1</sub>) + <i>a</i>, <br>
+<i>y</i>([2]<i>P</i>) = <i>y</i><sub>1</sub> + 
+<i>x</i>([2]<i>P</i>) + 
+(<i>x</i><sub>1</sub> + <i>x</i>([2]<i>P</i>))
+(<i>x</i><sub>1</sub><sup>2</sup> + <i>y</i><sub>1</sub>) / 
+(<i>x</i><sub>1</sub>).
+</p>
+ 
+
+  
+
+<p>
+ 
+
+ 
+<p>
+<hr size=2 noshade>
+
+<h4 style="color: rgb(128,0,0)">Zadatci:</h4>
+
+<ol>
+
+<li> Neka je eliptička krivulja <i>E</i> zadana jednadžbom 
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> - <i>x</i>. 
+Odredite #<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><img src="symbols/subq.gif" alt="q" ALIGN=MIDDLE>) 
+za <i>q</i> = 3, 5, 7, 9, 11. 
+<p>
+<li> Prema Hasseovom teoremu, red grupe eliptičke krivulje nad poljem 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>5</sub> 
+je jedan od brojeva <i>n</i> = 2, 3, ... , 10. 
+Za svaki od mogućih <i>n</i>-ova, pronađite jednu eliptičku 
+krivulju nad 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>5</sub> 
+čiji je red upravo jednak <i>n</i>.
+<p>
+
+
+</ol>
+<p>
+
+ 
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="konpolja.html">[Prethodna tema]</a> &nbsp; 
+<a href="elimplem.html">[Sljedeća tema]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../ecc/eccseminar.html">Web stranica seminara</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>
+
+
+
+ 
+

@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Index calculus metoda</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Index calculus metoda">
+<meta name="keywords" content="diskretni logaritam, konačna polja, 
+prosti brojevi, faktorska baza">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="elgamal.html">[Prethodna tema]</a> &nbsp; 
+<a href="konpolja.html">[Sljedeća tema]</a>  
+</font></b>
+
+<hr size=2 noshade>
+
+
+<h2 align=center style="color: rgb(128,0,0)">4.3. Index calculus 
+metoda</h2>
+
+Najefikasniji poznati algoritmi za problem diskretnog algoritma 
+u grupi 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup>
+zasnovani su na tzv. index calculus metodi. Sama metoda se 
+može definirati za proizvoljnu grupu <i>G</i>, no 
+njezina efikasnost bitno ovisi o svojstvima te grupe. 
+Ponajprije, moramo biti u stanju izabrati relativno mali 
+podskup <i>F</i> grupe <i>G</i> (tzv. <em>faktorsku bazu</em>) 
+koji ima svojstvo za se velik broj elemenata iz <i>G</i> 
+može efikasno prikazati kao produkt elemenata iz <i>S</i>.  
+<p>
+Za efikasnost ove metode u grupi
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup>
+presudna su svojstva distribucije prostih brojeva, 
+ponajprije činjenica da ih ima beskonačno mnogo. 
+Preciznije, broj prostih brojeva koji su manji od realnog broja 
+<i>x</i> asimptotski je jednak <i>x</i> / ln <i>x</i>.  
+Činjenica da je vrlo teško naći eliptičku krivulju velikog 
+ranga, najvažniji je ograničavajući faktor za primjenu 
+ove metode na grupe eliptičkih krivulja nad konačnim poljem.  
+Ovo je upravo i predstavljalo motivaciju za uvođenje 
+eliptičkih krivulja u kriptografiju.
+<p>
+Opisat ćemo sada algoritam koji za cikličku grupu <i>G</i> reda 
+<i>n</i> s generatorom <i>g</i>, računa diskretni logaritam 
+log<sub><i>g</i></sub> <i>h</i> proizvoljnog elementa <i>h</i>  
+grupe <i>G</i>.
+<p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Algoritam index calculus:</b> <p>
+
+<b>1. Izbor faktorske baze</b> <br>
+Izaberemo podskup <i>F</i> = {<i>p</i><sub>1</sub>, 
+<i>p</i><sub>2</sub>, ... , <i>p</i><sub><i>m</i></sub>} 
+od <i>G</i> sa svojstvom da se relativno velik broj elemenata  
+iz <i>G</i> može prikazati kao produkt elemenata iz <i>F</i>. 
+<p>
+
+<b>2. Linearne relacije u logaritmima</b> <br>
+Za slučajan broj <i>k</i>, 0 
+<img src="symbols/leqslant.gif" alt="<=" ALIGN=TOP> <i>k</i> 
+<img src="symbols/leqslant.gif" alt="<=" ALIGN=TOP> <i>n</i> - 1, 
+izračunamo <i>g</i><sup><i>k</i></sup>, te ga pokušamo 
+prikazati kao produkt elemenata iz <i>F</i>: 
+<p align=center>
+<i>g</i><sup><i>k</i></sup> = 
+<img src="symbols/prod.gif" alt="prod" ALIGN=TOP> 
+<i>p</i><sub><i>i</i></sub> <sup><i>c</i></sup><img src="symbols/subi.gif" alt="i" ALIGN=TOP>, 
+&nbsp; <i>c</i><sub>i</sub> 
+<img src="symbols/geqslant.gif" alt=">=" ALIGN=TOP> 0.
+</p>
+Ukoliko smo u tome uspjeli, logaritmiramo dobivenu relaciju, 
+te tako prikažemo <i>k</i> mod <i>n</i> kao linearnu kombinaciju 
+logaritama: 
+<p align=center>
+<i>k</i> <img src="symbols/equiv.gif" alt="=" ALIGN=TOP>
+<img src="symbols/sum.gif" alt="suma" ALIGN=TOP> 
+<i>c</i><sub>i</sub> log<sub><i>g</i></sub> <i>p</i><sub>i</sub> 
+(mod <i>n</i>). <br>
+Ponavljamo ovaj postupak sve dok ne dobijemo 
+barem <i>m</i> takvih relacija. 
+Obično se zadovoljavamo s <i>m</i> + 10 
+relacija, jer tada s velikom vjerojatnošću pripadni sustav 
+od <i>m</i> + 10 jednadžbi s <i>m</i> nepoznanica ima jednstveno 
+rješenje.
+<p>
+
+<b>3. Rješavanje sustava</b>: <br>
+Rješimo linearni sustav od, recimo,  <i>m</i> + 10 jednadžbi 
+s <i>m</i> nepoznanica, te tako dobijemo vrijednosti 
+log<sub><i>g</i></sub> <i>p</i><sub>i</sub>. 
+<p>
+
+<b>4. Računanje <i>x</i> = log<sub><i>g</i></sub> <i>h</i></b>: <br>
+Za slučajan broj <i>k</i>, 0 
+<img src="symbols/leqslant.gif" alt="<=" ALIGN=TOP> <i>k</i> 
+<img src="symbols/leqslant.gif" alt="<=" ALIGN=TOP> <i>n</i> - 1, 
+izračunamo <i>h</i> <img src="symbols/cdot.gif" alt="*" ALIGN=TOP>
+<i>g</i><sup><i>k</i></sup>, te ga pokušamo 
+prikazati kao produkt elemenata iz <i>F</i>: 
+<p align=center>
+<i>h</i> <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> <i>g</i><sup><i>k</i></sup> = 
+<img src="symbols/prod.gif" alt="prod" ALIGN=TOP> 
+<i>p</i><sub><i>i</i></sub> <sup><i>d</i></sup><img src="symbols/subi.gif" alt="i" ALIGN=TOP>, 
+&nbsp; <i>d</i><sub>i</sub> 
+<img src="symbols/geqslant.gif" alt=">=" ALIGN=TOP> 0.
+</p>
+Ukoliko nismo u tome uspjeli, onda izaberemo novi <i>k</i>, 
+a ukoliko smo uspjeli, onda logaritmiramo dobivenu relaciju, 
+te tako dobijemo da je  
+<p align=center>
+<i>x</i> = log<sub><i>g</i></sub> <i>h</i></b> = 
+( <img src="symbols/sum.gif" alt="suma" ALIGN=TOP> 
+<i>d</i><sub>i</sub> log<sub><i>g</i></sub> <i>p</i><sub>i</sub> 
+- <i>k</i> ) (mod <i>n</i>). 
+</p>
+
+</font></td></tr></table>
+<p><br>
+
+U primjeni index calculus metode na grupu 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup>, 
+koja je ciklička grupa reda <i>n</i> = <i>p</i> - 1,  
+za faktorsku bazu <i>F</i> uzimamo prvih <i>m</i> prostih brojeva. 
+Potom pokušavamo brojeve oblika <i>r</i> = 
+<i>g</i><sup><i>k</i></sup> prikazati kao produkt prvih 
+<i>m</i> prostih brojeva. Jasno je da što veći <i>m</i> izaberemo, 
+to su veća vjerojatnost da će se <i>r</i> moći rastaviti 
+kao produkt prvih <i>m</i> prostih brojeva. S druge strane, 
+veći <i>m</i> znači će rješavanje sustava u 3. koraku algoritma 
+biti teže. Pokazuje se da je optimalan izbor ako odaberemo 
+da je najveći element faktorske baze <i>p</i><sub><i>m</i></sub> 
+približno jednak  
+<p align=center>
+<i>L</i>(<i>p</i>) = 
+exp( <img src="symbols/surd.gif" alt="korijen" ALIGN=TOP>(ln <i>p</i> 
+ln ln <i>p</i>) ). 
+</p>
+Na taj način, algoritam index calculus postaje subeksponencijalni 
+algoritam za računanje diskretnog logaritma u grupi
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup>. 
+
+
+
+<p>
+<hr size=2 noshade>
+
+<h4 style="color: rgb(128,0,0)">Zadatci:</h4>
+
+<ol>
+<li> Koliko ima prirodnih brojeva manjih od 1000000 koji 
+se mogu prikazati kao produkt prostih brojeva manjih od 100?
+<p>
+<li> Primjenom index calculus metode s faktorskom bazom 
+{2, 3, 5, 7, 11}, izračunajte log<sub>6</sub> 13 u grupi 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><sub>229</sub><sup>*</sup>. 
+</ol>
+<p>
+
+ 
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="dlp.html">[Prethodna tema]</a> &nbsp; 
+<a href="konpolja.html">[Sljedeća tema]</a>  
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../ecc/eccseminar.html">Web stranica seminara</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>
+
+
+
+ 

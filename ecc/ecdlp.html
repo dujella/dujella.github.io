@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Problem diskretnog logaritma za eliptičke krivulje</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Pohlig - 
+Hellmanov algoritam redukcije">
+<meta name="keywords" content="diskretni logaritam, BSGS">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="ecdsa.html">[Prethodna tema]</a> &nbsp; 
+<a href="izbor.html">[Sljedeća tema]</a>  
+</font></b>
+
+<hr size=2 noshade>
+
+
+<h2 align=center style="color: rgb(128,0,0)">6.3. 
+Problem diskretnog logaritma za eliptičke krivulje</h2>
+
+U ovom poglavlju ćemo opisati dva algoritma za 
+rješavanje problema diskretnog logaritma u grupi eliptičke 
+krivulje nad konačnim poljem (ECDLP). 
+<p>
+Opisat ćemo najprije <em><font color="009900">Pohlig</font> - 
+<font color="009900">Hellmanov</font> algoritam redukcije</em> 
+kojim se određivanje broja <i>m</i> svodi na određivanje 
+od <i>m</i> modulo svaki prosti faktor od <i>n</i>. 
+Direktna posljedica postojanja ovog algoritma jest da ako želimo 
+da kriptosustav zasnovan na ECDLP bude siguran, onda <i>n</i> 
+mora imati veliki prosti faktor. 
+<p>
+Pohlig - Hellmanov algoritam se može primijeniti u bilo kojoj 
+abelovoj grupi <i>G</i>. Neka je red <i>n</i> od <i>G</i> 
+djeljiv s prostim brojem <i>p</i>, te pretpostavimo da želimo 
+riješiti problem diskretnog logaritma 
+<p align=center>
+<i>Q</i> = <i>m</i> <i>P</i>. 
+</p>
+Problem se može reducirati na podgrupu od <i>G</i> reda <i>p</i> 
+tako da se rješava problem
+<p align=center>
+<i>Q'</i> = <i>n'</i> <i>Q</i> = <i>m</i><sub>0</sub> (<i>n</i>' 
+<i>P</i>) = <i>m</i><sub>0</sub> <i>P'</i>, 
+</p> 
+gdje je <i>n'</i> = <i>n</i> / <i>p</i> i 
+<i>m</i> <img src="symbols/equiv.gif" alt="=" ALIGN=TOP> 
+<i>m</i><sub>0</sub> (mod <i>p</i>). Stoga je <i>P'</i> točka reda 
+<i>p</i>. Rješenjem ovog novog problema određujemo vrijednost 
+<i>m</i><sub>0</sub>, tj. određujemo <i>m</i> modulo <i>p</i>. 
+<p>
+Vrijednosti od <i>m</i> modulo <i>p</i><sup>2</sup>, 
+<i>p</i><sup>3</sup>, ... , <i>p</i><sup><i>c</i></sup> 
+(gdje je <i>p</i><sup><i>c</i></sup> najveća potencija od <i>p</i>
+koja dijeli <i>n</i>) određuju se na sljedeći način. 
+Pretpostavimo da je poznato da je <i>m</i> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=TOP> 
+<i>m</i><sub><i>i</i></sub> (mod <i>p</i><sup><i>i</i></sup>).  
+Tada je <i>m</i> = <i>m</i><sub><i>i</i></sub> 
++ <i>k</i><i>p</i><sup><i>i</i></sup>), za neki cijeli broj <i>k</i>. 
+Tako dobivamo problem
+<p align=center>
+<i>R</i> = <i>Q</i> - <i>m</i><sub><i>i</i></sub> <i>P</i> = 
+<i>k</i>(<i>p</i><sup><i>i</i></sup> <i>P</i>) = <i>k</i> <i>S</i>, 
+</p> 
+gdje su <i>R</i> i <i>S</i> poznati i <i>S</i> ima red <i>s</i> 
+= <i>n</i> / <i>p</i><sup><i>i</i></sup>. Vrijednost od <i>k</i> modulo 
+<i>p</i> određuje se na isti način kao što je gore određena 
+vrijednost od <i>m</i> modulo <i>p</i>. 
+<p>
+Nastavljajući ovaj postupak, rješavanjem problema diskretnog 
+logaritma u podgrupama reda <i>p</i>, mi na kraju određujemo 
+vrijednost <i>m</i> modulo <i>p</i><sup><i>c</i></sup>. 
+Nakon što izračunamo ovu vrijednost za sve proste djelitelje od 
+<i>m</i>, sam broj <i>m</i>, tj. rješenje originalnog problema 
+diskretnog logaritma, nalazimo primjenom Kineskog teorema o 
+ostatcima.  
+<p>
+
+<b>Primjer:</b> <em>Neka je dana eliptička krivulja</em>
+<p align=center>
+<i>E</i> : &nbsp; &nbsp; &nbsp; &nbsp; 
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 71<i>x</i> + 602
+</p>
+<em>nad poljem</em> <img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><sub>1009</sub>. 
+<em>Red grupe</em> <i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><sub>1009</sub>) 
+<em>je</em> 1060 = 2<sup>2</sup> <img src="symbols/cdot.gif" alt="*" ALIGN=MIDDLE>
+5 <img src="symbols/cdot.gif" alt="*" ALIGN=MIDDLE> 53. 
+<em>Zadane su točke</em> <i>P</i> = (1, 237), <i>Q</i> = (190, 271). 
+<em>Treba riješiti problem eliptičkog diskretnog logaritma </em>
+<i>Q</i> = [<i>m</i>] <i>P</i>. 
+<p>
+Točka <i>P</i> ima red 530 = 2 <img src="symbols/cdot.gif" alt="*" ALIGN=TOP>
+5 <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> 53 
+u grupi <img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><sub>1009</sub>. 
+Dakle, kod nas je <i>n</i> = 530 i pomoću Pohlig-Hellmanovog 
+algoritma računanje broja <i>m</i> se reducira na računanje 
+od <i>m</i> modulo 2, 5 i 53. 
+<p>
+<em>Modulo 2:</em> Množeći točke <i>P</i> i <i>Q</i> s 
+530/2 = 265, dobivamo točke <i>P</i><sub>2</sub> = [265] <i>P</i> 
+= (50, 0) i <i>Q</i><sub>2</sub> = [265] <i>Q</i> = (50, 0). 
+Dobivamo problem
+<p align=center>
+<i>Q</i><sub>2</sub> = (<i>m</i> mod 2) <i>P</i><sub>2</sub>, 
+</p>
+otkud očito slijedi da je <i>m</i>  
+<img src="symbols/equiv.gif" alt="=" ALIGN=TOP> 1 (mod 2).
+<p>
+<em>Modulo 5:</em> Množeći točke <i>P</i> i <i>Q</i> s 
+530/5 = 106, dobivamo točke <i>P</i><sub>5</sub> = [106] <i>P</i> 
+= (639, 160) i <i>Q</i><sub>5</sub> = [106] <i>Q</i> = (639, 849). 
+Očito je <i>Q</i><sub>5</sub> = -<i>P</i><sub>5</sub>, 
+što povlači <i>m</i>  
+<img src="symbols/equiv.gif" alt="=" ALIGN=TOP> -1 
+<img src="symbols/equiv.gif" alt="=" ALIGN=TOP> 4 (mod 5).
+<p>
+<em>Modulo 53:</em> Sada se točke množe s 
+530/53 = 10. Tako se dobivaju točke <i>P</i><sub>53</sub> = 
+[10] <i>P</i> = (32, 737) i <i>Q</i><sub>53</sub> = 
+[10] <i>Q</i> = (592, 97). 
+Dobili smo problem diskretnog logaritma u grupi reda 53, 
+koji ćemo riješiti malo kasnije kao ilustraciju BSGS metode. 
+<p><br>
+
+Poznato je nekoliko metoda za rješavanje ECDLP koje imaju 
+kompleksnost 
+O(<img src="symbols/surd.gif" alt="korijen" ALIGN=TOP><i>n</i>). 
+Danas se najboljim smatra <em><font color=009900>Pollardova</font> 
+<img src="symbols/rho.gif" alt="ro" ALIGN=TOP>-metoda</em>, 
+kod koje je za određivanje diskretmog logaritma potrebno 
+<img src="symbols/surd.gif" alt="korijen" ALIGN=TOP>(<img 
+src="symbols/pi.gif" alt="pi" ALIGN=TOP><i>n</i>)/2 zbrajanja 
+točaka na eliptičkoj krivulji. Mi ćemo ovdje opisati tzv. 
+<em>baby step / giant step</em> (BSGS) metodu čiji je autor 
+<font color=009900>Daniel Shanks</font>. Ova metoda je primjenjiva 
+na problem diskretnog logaritma u proizvoljnoj abelovoj grupi 
+<i>G</i>. Njezina kompleksnost je također  
+O(<img src="symbols/surd.gif" alt="korijen" ALIGN=TOP><i>n</i>), 
+gdje je <i>n</i> red grupe <i>G</i>, a pripadna konstanta je čak 
+i nešto bolja nego kod <img src="symbols/rho.gif" alt="ro" 
+ALIGN=TOP>-metode. No, za razliku od 
+<img src="symbols/rho.gif" alt="ro" ALIGN=TOP>-metode, 
+BSGS metoda zahtjeva i pohranjivanje u memoriju     
+O(<img src="symbols/surd.gif" alt="korijen" ALIGN=TOP><i>n</i>) 
+elemenata grupe. 
+<p>
+Slijedi opis BSGS metode. Neka su <i>P</i>, <i>Q</i> elementi 
+grupe <i>G</i>, te neka je <i>Q</i> = <i>m</i> <i>P</i>. Po 
+teoremu o dijeljenju s ostatkom, znamo da se <i>m</i> može zapisati 
+u obliku 
+<p align=center> 
+<i>m</i> = <img src="symbols/lceil.gif" alt="[" 
+ALIGN=TOP><img src="symbols/surd.gif" alt="korijen" 
+ALIGN=TOP><i>n</i><img src="symbols/rceil.gif" alt="]" ALIGN=TOP> 
+<i>a</i> + <i>b</i>, &nbsp; gdje je 0 
+<img src="symbols/leqslant.gif" alt="<=" ALIGN=TOP> 
+<i>a</i>, <i>b</i> < 
+<img src="symbols/lceil.gif" alt="[" 
+ALIGN=TOP><img src="symbols/surd.gif" alt="korijen" 
+ALIGN=TOP><i>n</i><img src="symbols/rceil.gif" alt="]" ALIGN=TOP>. 
+</p> 
+Mi trebamo odrediti vrijednosti od <i>a</i> i <i>b</i>. 
+Jednadžbu <i>Q</i> = <i>m</i> <i>P</i> možemo sada zapisati u 
+obliku 
+<p align=center>
+(<i>Q</i> - <i>b</i> <i>P</i>) = <i>a</i> (<img src="symbols/lceil.gif" 
+alt="[" ALIGN=TOP><img src="symbols/surd.gif" alt="korijen" 
+ALIGN=TOP><i>n</i><img src="symbols/rceil.gif" alt="]" ALIGN=TOP> 
+<i>P</i>). 
+</p>
+Na prvi pogled se može činiti da smo samo dodatno zakomplicirali 
+problem, međutim ovakav prikaz jednadžbe nam omogućava rješavanje 
+problema balanciranjem zahtjeva za "prostor i vrijeme". 
+<p>
+Najprije izračunamo tablicu "baby stepova". Ta se tablica sastoji 
+od svih vrijednosti 
+<p align=center>
+<i>R</i><sub><i>b</i></sub> = <i>Q</i> - <i>b</i> <i>P</i>, 
+&nbsp; za <i>b</i> = 0, 1, ... ,  
+<img src="symbols/lceil.gif" 
+alt="[" ALIGN=TOP><img src="symbols/surd.gif" alt="korijen" 
+ALIGN=TOP><i>n</i><img src="symbols/rceil.gif" alt="]" ALIGN=TOP> - 1. 
+</p>
+Tablica se sortira, te spremi u memoriju tako da može 
+biti efikasno pretraživana. 
+<p>
+Nakon toga računamo redom "giant stepove": 
+<p align=center>
+<i>S</i><sub><i>a</i></sub> = <i>a</i> (<img src="symbols/lceil.gif" 
+alt="[" ALIGN=TOP><img src="symbols/surd.gif" alt="korijen" 
+ALIGN=TOP><i>n</i><img src="symbols/rceil.gif" alt="]" ALIGN=TOP> 
+<i>P</i>). , 
+&nbsp; za <i>a</i> = 0, 1, ... ,  
+<img src="symbols/lceil.gif" 
+alt="[" ALIGN=TOP><img src="symbols/surd.gif" alt="korijen" 
+ALIGN=TOP><i>n</i><img src="symbols/rceil.gif" alt="]" ALIGN=TOP> - 1. 
+</p>
+Nakon svakog računanja "giant stepa", provjerimo pojavljuje li se 
+<i>S</i><sub><i>a</i></sub> u tablici. Ako se pojavljuje, onda smo 
+otkrili vrijednosti od <i>a</i> i <i>b</i>. Ovaj postupak mora 
+završiti prije nego što <i>a</i> dosegne vrijednost  
+<img src="symbols/lceil.gif" 
+alt="[" ALIGN=TOP><img src="symbols/surd.gif" alt="korijen" 
+ALIGN=TOP><i>n</i><img src="symbols/rceil.gif" alt="]" ALIGN=TOP>. 
+<p><br>
+
+<b>Nastavak primjera:</b> U gornjem primjeru, promatrali smo eliptičku krivulju
+<p align=center>
+<i>E</i> : &nbsp; &nbsp; &nbsp; &nbsp; 
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 71<i>x</i> + 602
+</p>
+nad <img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><sub>1009</sub>. 
+Nakon primjene Pohlig-Hellmanovog algoritma, originalni problem 
+smo sveli na određivanje broja <i>m</i><sub>0</sub> za kojeg vrijedi 
+<i>Q'</i> = [<i>m</i><sub>0</sub>] <i>P'</i>, gdje je 
+<p align=center> 
+<i>Q'</i> = (592,97), <i>P'</i> = (32,737).
+</p>
+Znamo da je red od <i>P'</i> jednak 53. Kako je 
+<img src="symbols/lceil.gif" 
+alt="[" ALIGN=TOP><img src="symbols/surd.gif" alt="korijen" 
+ALIGN=TOP>53<img src="symbols/rceil.gif" alt="]" ALIGN=TOP> 
+= 8, trebamo napraviti osam "baby stepova". Dobivamo sljedeću 
+tablicu 
+<p>
+<table border="1" cellpadding=6 align="center">
+  <tr>
+    <td><b><i>b</i></b></td>
+    <td align=center><b><i>R</i><sub><i>b</i></sub> = 
+<i>Q'</i> - [<i>b</i>] <i>P'</i></b></td>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td align=center>(592, 97)</td>
+  </tr>
+<tr>
+    <td>1</td>
+    <td align=center>(728, 450)</td>
+  </tr>
+<tr>
+    <td>2</td>
+    <td align=center>(537, 344)</td>
+  </tr>
+<tr>
+    <td>3</td>
+    <td align=center>(996, 154)</td>
+  </tr>
+<tr>
+    <td>4</td>
+    <td align=center>(817, 136)</td>
+  </tr>
+<tr>
+    <td>5</td>
+    <td align=center>(365, 715)</td>
+  </tr>
+<tr>
+    <td>6</td>
+    <td align=center>(627, 606)</td>
+  </tr>
+<tr>
+    <td>7</td>
+    <td align=center>(150, 413)</td>
+  </tr>
+</table>
+<p>
+ 
+Sada računamo "giant stepove": 
+
+<p>
+<table border="1" cellpadding=6 align="center">
+  <tr>
+    <td><b><i>a</i></b></td>
+    <td align=center><b>[<i>a</i>] ([8] <i>P'</i>)</b></td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td align=center>(996, 855)</td>
+  </tr>
+<tr>
+    <td>2</td>
+    <td align=center>(200, 652)</td>
+  </tr>
+<tr>
+    <td>3</td>
+    <td align=center>(378, 304)</td>
+  </tr>
+<tr>
+    <td>4</td>
+    <td align=center>(609, 357)</td>
+  </tr>
+<tr>
+    <td>5</td>
+    <td align=center>(304, 583)</td>
+  </tr>
+<tr>
+    <td>6</td>
+    <td align=center>(592, 97)</td>
+  </tr>
+</table>
+<p> 
+
+Primjećujemo poklapanje za <i>a</i> = 6 i <i>b</i> = 0, 
+što povlači <i>m</i><sub>0</sub> = 8<i>a</i> + <i>b</i> = 48. 
+(Već iz <i>a</i> = 1 smo mogli zaključiti da je <i>S</i><sub>1</sub> 
+= - <i>R</i><sub>3</sub>, otkud je [8] <i>P'</i> = -<i>Q</i> + 
+[3] <i>P'</i>, 
+što ponovo povlači da je <i>m</i> = -5 = 48 (mod 53).)
+<p>
+Vratimo li se sada na originalni problem <i>Q</i> = [<i>m</i>]
+<i>P</i>, za <i>P</i> = (1, 237), <i>Q</i> = (190, 271), 
+dobivamo sustav kongruencija 
+<p align=center>
+<i>m</i> <img src="symbols/equiv.gif" alt="=" ALIGN=TOP> 1 (mod 2), 
+&nbsp; &nbsp; 
+<i>m</i> <img src="symbols/equiv.gif" alt="=" ALIGN=TOP> 4 (mod 5), 
+&nbsp; &nbsp; 
+<i>m</i> <img src="symbols/equiv.gif" alt="=" ALIGN=TOP> 48 (mod 53), 
+</p>
+čije je rješenje, po Kineskom teoremu o ostatcima, <i>m</i> = 419.
+<p><br>
+
+Napomenimo da za eliptičke krivulje specijalnih oblika postoje 
+i efikasniji algoritmi za ECDLP od gore navedenih. 
+Neke od tih algoritama ćemo spomenuti u idućem poglavlju. 
+Poznavanje tih algoritama je važno jer nam oni pokazuju 
+koje eliptičke krivulje trebamo izbjegavati u kriptografskim 
+primjenama. 
+
+<p><br>
+
+<hr size=2 noshade>
+
+<h4 style="color: rgb(128,0,0)">Zadatci:</h4>
+
+<ol>
+
+<li> Primjenom Pohlig-Hellmanovog algoritma 
+izračunajte log<sub>7</sub>12 u grupi  
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>41</sub><sup>*</sup>.  
+<p>
+<li> Za eliptičku krivulju  
+<p align=center>
+<i>E</i> : &nbsp; &nbsp; &nbsp; &nbsp; 
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 71<i>x</i> + 602
+</p>
+nad poljem <img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><sub>1009</sub> riješite problem diskretnog 
+logaritma <i>Q</i> = [<i>m</i>] <i>P</i>, gdje je  
+<i>P</i> = (32, 737), <i>Q</i> = (699, 888). 
+
+</ol>
+<p>
+
+ 
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="ecdsa.html">[Prethodna tema]</a> &nbsp; 
+<a href="izbor.html">[Sljedeća tema]</a>  
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../ecc/eccseminar.html">Web stranica seminara</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

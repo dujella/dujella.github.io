@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>ElGamalov kriptosustav</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Kriptosustavi s javnim kljucem">
+<meta name="keywords" content="kriptografija, javni ključ, 
+diskretni logaritam, ElGamal">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="dlp.html">[Prethodna tema]</a> &nbsp; 
+<a href="indcal.html">[Sljedeća tema]</a> 
+</font></b>
+
+<hr size=2 noshade>
+
+
+<h2 align=center style="color: rgb(128,0,0)">4.2. ElGamalov 
+kriptosustav</h2>
+
+Ideja javnog ključa se sastoji u tome da se konstruiraju 
+kriptosustavi kod kojih bi iz poznavanja funkcije za šifriranje <i>e<sub>K</sub></i> 
+bilo praktički nemoguće (u nekom razumnom vremenu) izračunati funkciju za dešifriranje <i>d<sub>K</sub></i>. 
+Tada bi funkcija <i>e<sub>K</sub></i> mogla biti javna. 
+Sada svaki član (nazovimo ga osoba B) neke grupe korisnika koja želi 
+međusobno komunicirati ima dva ključa: <i>B</i><sub><i>e</i></sub> 
+(javni ključ za šifriranje) i 
+<i>B</i><sub><i>d</i></sub> (tajni ključ za dešifriranje).   
+To znači da svatko može poslati poruku osobi B koristeći 
+javni ključ <i>B</i><sub><i>e</i></sub>, ali samo osoba B može 
+pročitati poruku, jer samo ona zna tajni ključ 
+<i>B</i><sub><i>d</i></sub>, a nitko iz poznavanja 
+<i>B</i><sub><i>e</i></sub> ne može izračunati 
+<i>B</i><sub><i>d</i></sub>. 
+<p>
+
+U provedbi ove ideje ključnu ulogu igraju tzv. osobne jednosmjerne 
+funkcije. Za funkciju <i>f</i> kažemo da je <em>jednosmjerna</em> 
+(one-way) ako je <i>f</i> lako, a <i>f</i><sup> -1</sup> teško 
+izračunati. Ako je pritom <i>f</i><sup> -1</sup> lako izračunati 
+ukoliko nam je poznat neki dodatni podatak (trapdoor - skriveni ulaz), 
+onda <i>f</i> nazivamo <em>osobna jednosmjerna funkcija</em>. 
+<p>
+
+U konstrukciji osobnih jednosmjernih funkcija 
+koriste se teški matematički problemi, kao što su 
+<ul>
+<li> faktorizacija velikih brojeva (RSA, Rabin);
+<li> problem diskretnog logaritma (ElGamal, Menezes-Vanstone);
+<li> problem ruksaka (Merkle-Hellman, Chor-Rivest);
+<li> dekodiranje linearnih kodova (McEliece).
+</ul>
+
+<p><br>
+
+Sada ćemo opisati 
+<em>ElGamalov kriptosustav</em> koji je 1985. godine 
+predložio <font color="009900">Taher ElGamal</font>, 
+a zasnovan na teškoći računanja diskretnog logaritma u 
+u grupi (<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup>, 
+<sup><b>.</b></sup><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE>). 
+
+Najbolji poznati algoritam za problem diskretnog logaritma u 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup> 
+je jedna varijanta "<em>index calculus metode</em>" koja se naziva 
+<em>sito polja brojeva</em>. Očekivani broj operacija za računanje 
+diskretnog logaritma tom metodom je  
+<p align=center>
+exp(1.92 (ln <i>p</i>)<sup>1/3</sup> (ln ln <i>p</i>)<sup>2/3</sup>). 
+</p>
+Algoritmi ovakve složenosti nazivaju se subeksponencijalni 
+algoritmi. Pokazuje se da je po složenosti ovaj 
+problem vrlo sličan problemu faktorizacije, a i metode koje koriste 
+u najboljim poznatim algoritmima za rješavanje tih problema su 
+vrlo slične. No, kako ćemo nešto kasnije vidjeti, 
+problem diskretnog logaritma u 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup>
+znatno je lakši od problema diskretnog logaritma u grupi 
+eliptičke krivulje nad konačnim poljem.  
+<p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>ElGamalov kriptosustav:</b> <br>
+
+Neka je <i>p</i> prost broj i 
+<img src="symbols/alpha.gif" alt="alpha" ALIGN=MIDDLE>
+<img src="symbols/in.gif" alt="in" ALIGN=MIDDLE>
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup>
+primitivni korijen modulo <i>p</i>. 
+Neka je prostor otvorenih tekstova 
+<img src="symbols/calp.gif" alt="P" ALIGN=MIDDLE> = 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup>, 
+prostor šifrata 
+<img src="symbols/calc.gif" alt="C" ALIGN=MIDDLE> = 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup> &times 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup> i 
+prostor ključeva 
+<p align=center>
+<img src="symbols/calk.gif" alt="K" ALIGN=MIDDLE> = 
+{ (<i>p</i>, <img src="symbols/alpha.gif" alt="alpha" ALIGN=MIDDLE>,  
+<i>a</i>, <img src="symbols/beta.gif" alt="beta" ALIGN=MIDDLE>) : 
+<img src="symbols/beta.gif" alt="beta" ALIGN=MIDDLE>
+<img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 
+<img src="symbols/alpha.gif" alt="alpha" ALIGN=MIDDLE><sup><i>a</i></sup> 
+(mod <i>p</i>) }. 
+</p>
+Vrijednosti <i>p</i>, <img src="symbols/alpha.gif" alt="alpha" ALIGN=TOP>, 
+i <img src="symbols/beta.gif" alt="beta" ALIGN=TOP>
+su javne, a vrijednost <i>a</i> je tajna. <br>
+
+Za <i>K</i> = (<i>p</i>, <img src="symbols/alpha.gif" alt="alpha" ALIGN=TOP>,  
+<i>a</i>, <img src="symbols/beta.gif" alt="beta" ALIGN=TOP>) 
+<img src="symbols/in.gif" alt="in" ALIGN=TOP> 
+<img src="symbols/calk.gif" alt="K" ALIGN=TOP> i tajni slučajni 
+broj <i>k</i> <img src="symbols/in.gif" alt="in" ALIGN=TOP>
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><sub><i>p</i> -1</sub> 
+definiramo 
+<p align=center>
+<i>e<sub>K</sub></i>(<i>x</i>, <i>k</i>) = (<img src="symbols/alpha.gif" alt="alpha" ALIGN=MIDDLE><sup><i>k</i></sup> 
+mod <i>p</i>,  
+<i>x</i> 
+<img src="symbols/beta.gif" alt="beta" ALIGN=MIDDLE><sup><i>k</i></sup> 
+mod <i>p</i>). 
+</p>
+Za <i>y</i><sub>1</sub>, <i>y</i><sub>2</sub> 
+<img src="symbols/in.gif" alt="in" ALIGN=MIDDLE>
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup> 
+definiramo 
+<p align=center>
+<i>d<sub>K</sub></i>(<i>y</i><sub>1</sub>, <i>y</i><sub>2</sub>) = <i>y</i><sub>2</sub>(<i>y</i><sub>1</sub><sup><i>a</i></sup>)<sup>-1</sup> mod <i>p</i>. 
+</p>
+
+</font></td></tr></table>
+<p>
+
+Mogli bismo reći da se otvoreni tekst <i>x</i> "zamaskira" množeći s 
+<img src="symbols/beta.gif" alt="beta" ALIGN=MIDDLE><sup><i>k</i></sup>. 
+Onaj tko poznaje tajni eksponent <i>a</i> može iz 
+<img src="symbols/alpha.gif" alt="alpha" ALIGN=MIDDLE><sup><i>k</i></sup> 
+izračunati <img src="symbols/beta.gif" alt="beta" ALIGN=MIDDLE><sup><i>k</i></sup> 
+i "ukloniti masku". 
+<p>
+Da bi eksponent <i>a</i> stvarno bio tajan, prost broj <i>p</i> mora biti dovoljno velik da bi u   
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup> 
+problem diskretnog logaritma bio praktički nerješiv. Stoga se danas 
+preporuča korištenje prostih brojeva od oko 1024 bita. Također bi, 
+zbog razloga koje ćemo kasnije objasniti, red grupe, tj. broj 
+<i>p</i> - 1, trebao imati barem jedan veliki prosti faktor 
+(od barem 160 bitova).
+<p><br>
+
+<b>Primjer:</b> Neka je u ElGamalovom kriptosustavu 
+<i>p</i> = 2579, 
+<img src="symbols/alpha.gif" alt="alpha" ALIGN=TOP> = 2, 
+<i>a</i> = 765. Tada je 
+<p align=center>
+<img src="symbols/beta.gif" alt="beta" ALIGN=MIDDLE> = 
+2<sup>765</sup> mod 2579 = 949.
+</p>
+Pretpostavimo sada da Alice želi Bobu poslati poruku 
+<i>x</i> = 1299. Neka je njezin tajno izabrani broj 
+(jednokratni ključ) <i>k</i> = 853. Tada Alice računa
+<p align=center>
+<i>y</i><sub>1</sub> = 2<sup>853</sup> mod 2579 = 435, <br> 
+<i>y</i><sub>2</sub> = 1299 
+<img src="symbols/cdot.gif" alt="*" ALIGN=TOP>
+949<sup>853</sup> mod 2579 = 
+1299 <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> 2424 =
+2396, 
+</p>
+te pošalje Bobu šifrat (435, 2396). 
+<br>
+Bob nakon što primi šifrat (435, 2396) računa 
+<p align=center>
+<i>x</i> = 2396 <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> 
+(435<sup>765</sup>)<sup>-1</sup> mod 2579 = 
+2396 <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> 2424<sup>-1</sup> 
+= 2396 <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> 1980 = 
+1299,
+</p>
+što predstavlja originalni otvoreni tekst. 
+<p>
+Napomenimo da se operacija potenciranja modulo <i>p</i> može 
+efikasno provesti "metodom uzastopnog kvadriranja", tj. tako da se 
+eksponent prikaže u bazi 2. 
+Inverz modulo <i>p</i> se također može efikasno izračunati i 
+to primjenom Euklidovog algoritma, pomoću kojeg za broj <i>n</i> koji 
+je relativno prost s <i>p</i> nalazimo brojeve <i>u</i> i </i>v</i> 
+za koje vrijedi <i>nu</i> + <i>pv</i> = 1.
+
+<p>
+<hr size=2 noshade>
+
+<h4 style="color: rgb(128,0,0)">Zadatci:</h4>
+
+<ol>
+<li> Neka je u ElGamalovom kriptosustavu 
+<i>p</i> = 1777, 
+<img src="symbols/alpha.gif" alt="alpha" ALIGN=TOP> = 6, 
+<i>a</i> = 1009. Šifrirajte otvoreni tekst <i>x</i> = 1483, 
+uz pretpostavku da je jednokratni ključ <i>k</i> = 701. 
+<p>
+<li> Dešifrirajte šifrat (1664, 1031) dobiven ElGamalovim 
+kriptosustavom s istim parametrima kao u 1. zadatku.
+
+</ol>
+<p>
+
+ 
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="dlp.html">[Prethodna tema]</a> &nbsp; 
+<a href="indcal.html">[Sljedeća tema]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../ecc/eccseminar.html">Web stranica seminara</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>
+
+
+
+ 

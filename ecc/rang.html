@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Računanje ranga</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Računanje ranga eliptičke krivulje">
+<meta name="keywords" content="eliptičke krivulje, rang">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="elipQ.html">[Prethodna tema]</a> &nbsp; 
+<a href="dlp.html">[Sljedeća tema]</a>
+</font></b>
+
+
+<hr size=2 noshade>
+
+
+
+<h2 align=center style="color: rgb(128,0,0)">3.2. Računanje ranga</h2>
+
+Računanje ranga eliptičke krivulje nad 
+<img src="symbols/bbq.gif" alt="Q" ALIGN=TOP> 
+je vrlo težak problem i zapravo ne postoji algoritam 
+za računanje ranga proizvoljne eliptičke krivulje. 
+No, postoje metode pomoću kojih se u praksi često može 
+izračunati rang. 
+<p>
+
+Pretpostavimo da <i>E</i> ima točku reda 2. U tom slučaju je 
+računanje ranga u pravilu lakše nego u općem slučaju. 
+Opisat ćemo metodu za računanje ranga koja se naziva 
+<em>spust pomoću 2-izogenije</em>. 
+<p>
+
+Ako krivulja <i>E</i> dana jednadžbom 
+<i>y</i><sup>2</sup> = <i>f</i>(<i>x</i>) ima točku reda 2, onda 
+polinom <i>f</i>(<i>x</i>) ima racionalnu nultočku. Možemo 
+pretpostaviti da je ta racionalna nultočka upravo jednaka 0. 
+To znači da <i>E</i> ima jednadžbu oblika 
+<p align=center>
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + <i>ax</i><sup>2</sup> 
++ <i>bx</i>. 
+</p>
+Za krivulju <i>E</i> ' koja ima jednadžbu 
+<p align=center>
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> - 2<i>ax</i><sup>2</sup> 
++ (<i>a</i><sup>2</sup> - 4<i>b</i>)<i>x</i> 
+</p>
+kažemo da je <em>2-izogena</em> krivulji <i>E</i>. 
+Općenito, <em>izogenijom</em> zovemo homomorfizam između dvije 
+eliptičke krivulje koji je dan pomoću racionalnih funkcija. U našem 
+slučaju, radi se o preslikavanju 
+<img src="symbols/phi.gif" alt="fi" ALIGN=MIDDLE> : 
+<i>E</i>(<img src="symbols/bbc.gif" alt="C" ALIGN=MIDDLE>) 
+<img src="symbols/longrightarrow.gif" alt="-->" ALIGN=MIDDLE>  
+<i>E</i> '(<img src="symbols/bbc.gif" alt="C" ALIGN=MIDDLE>), 
+<img src="symbols/phi.gif" alt="fi" ALIGN=MIDDLE>(<i>x</i>,<i>y</i>) = 
+(<i>y</i><sup>2</sup> / <i>x</i><sup>2</sup>, 
+<i>y</i>(<i>x</i><sup>2</sup> - <i>b</i>) / <i>x</i><sup>2</sup>). 
+<p>
+Zapišimo <i>x</i> i <i>y</i> u obliku <i>x</i> = <i>m</i> / 
+<i>e</i><sup>2</sup>, <i>y</i> = <i>n</i> / <i>e</i><sup>3</sup>, 
+te ih uvrstimo u jednadžbu od <i>E</i>. Dobivamo: 
+<p align=center>
+<i>n</i><sup>2</sup> = <i>m</i>(<i>m</i><sup>2</sup> + 
+<i>ame</i><sup>2</sup> + <i>be</i><sup>4</sup>). 
+</p>
+Stavimo <i>b</i><sub>1</sub> = 
+<img src="symbols/pm.gif" alt="+-" ALIGN=TOP> 
+(<i>m</i>,<i>b</i>), gdje je 
+(<i>m</i>,<i>b</i>) najveći zajednički djelitelj od <i>m</i> i 
+<i>b</i>, s time da je predznak odabran tako da je 
+<i>mb</i><sub>1</sub> &gt; 0. Tada je <i>m</i> = 
+<i>b</i><sub>1</sub><i>m</i><sub>1</sub>, <i>b</i> = 
+<i>b</i><sub>1</sub><i>b</i><sub>2</sub>, <i>n</i> = 
+<i>b</i><sub>1</sub><i>n</i><sub>1</sub>, pa dobivamo 
+<p align=center>
+<i>n</i><sub>1</sub><sup>2</sup> = <i>m</i><sub>1</sub>(<i>b</i><sub>1</sub><i>m</i><sub>1</sub><sup>2</sup> + 
+<i>am</i><sub>1</sub><i>e</i><sup>2</sup> + 
+<i>b</i><sub>2</sub><i>e</i><sup>4</sup>). 
+</p>
+Budući da je faktori na desnoj strani posljednje jednadžbe relativno 
+prosti, zaključujemo da postoje cijeli brojevi <i>M</i> i <i>N</i> 
+tako da vrijedi <i>m</i><sub>1</sub> = <i>M</i><sup>2</sup>, 
+<i>b</i><sub>1</sub><i>m</i><sub>1</sub><sup>2</sup> + 
+<i>am</i><sub>1</sub><i>e</i><sup>2</sup> + 
+<i>b</i><sub>2</sub><i>e</i><sup>4</sup> = <i>N</i><sup>2</sup>, 
+te tako konačno dobivamo jednadžbu 
+<p align=center>
+<i>N</i><sup>2</sup> = <i>b</i><sub>1</sub> <i>M</i><sup>4</sup> 
++ <i>a</i> <i>M</i><sup>2</sup> <i>e</i><sup>2</sup> + 
+<i>b</i><sub>2</sub> <i>e</i><sup>4</sup> 
+&nbsp; &nbsp; &nbsp; &nbsp; (*)
+</p>
+u kojoj su nepoznanice <i>M</i>, <i>e</i> i <i>N</i>. Pritom 
+moraju biti ispunjeni sljedeći uvjeti: 
+<p align=center>
+(<i>M</i>,<i>e</i>) = (<i>N</i>,<i>e</i>) = 
+(<i>b</i><sub>1</sub>,<i>e</i>) = (<i>b</i><sub>2</sub>,<i>M</i>) = 
+(<i>M</i>,<i>N</i>) = 1. 
+</p>
+Rang eliptičke krivulje <i>E</i> može se izračunati na sljedeći način. 
+Za svaku faktorizaciju <i>b</i> = 
+<i>b</i><sub>1</sub><i>b</i><sub>2</sub>, gdje je <i>b</i><sub>1</sub> 
+kvadratno slobodan broj, napišemo jednadžbu (*). 
+Pokušamo odrediti ima li ta jednadžba netrivijalnih cjelobrojnih 
+rješenja. 
+Svako rješenje (<i>M</i>, <i>e</i>, <i>N</i>) jednadžbe (*) inducira 
+točku na krivulji <i>E</i> s koordinatama <i>x</i> = 
+<i>b</i><sub>1</sub> <i>M</i><sup>2</sup> / <i>e</i><sup>2</sup>, 
+<i>y</i> = <i>b</i><sub>1</sub> <i>M</i><i>N</i> / 
+<i>e</i><sup>3</sup>. 
+Neka je <i>r</i><sub>1</sub> broj faktorizacija za koje pripadna 
+jednadžba (*) ima rješenja, te neka je <i>r</i><sub>2</sub> broj 
+definiran na isti način za krivulju <i>E</i> '. Tada postoje 
+nenegativni cijeli brojevi <i>e</i><sub>1</sub> i <i>e</i><sub>2</sub> 
+takvi da je <i>r</i><sub>1</sub> = 
+2<sup><i>e</i><img src="symbols/sub1.gif" alt="1" ALIGN=TOP></sup>, 
+<i>r</i><sub>2</sub> = 
+2<sup><i>e</i><img src="symbols/sub2.gif" alt="2" ALIGN=TOP></sup> 
+i pritom vrijedi da je
+<p align=center>
+rank (<i>E</i>) = <i>e</i><sub>1</sub> + <i>e</i><sub>2</sub> - 2.
+</p> 
+
+<b>Primjer:</b> <i>Izračunajmo rang eliptičke krivulje</i>
+<p align=center>  
+<i>E</i> : &nbsp; &nbsp; &nbsp; &nbsp;<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> - 5<i>x</i>. 
+</p>
+
+Sada je pripadna 2-izogena krivulja
+<p align=center>  
+<i>E</i> ' : &nbsp; &nbsp; &nbsp; &nbsp; 
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 20<i>x</i>. 
+</p>
+Za krivulju <i>E</i>, mogućnosti za broj <i>b</i><sub>1</sub> su 
+<img src="symbols/pm.gif" alt="+-" ALIGN=TOP> 1, 
+<img src="symbols/pm.gif" alt="+-" ALIGN=TOP> 5. 
+Pripadne diofantske jednadžbe su 
+<p align=center>
+<i>N</i><sup>2</sup> = <i>M</i><sup>4</sup> - 
+5<i>e</i><sup>4</sup>, &nbsp; &nbsp; 
+<i>N</i><sup>2</sup> = -<i>M</i><sup>4</sup> + 
+5<i>e</i><sup>4</sup>, &nbsp; &nbsp;
+<i>N</i><sup>2</sup> = 5<i>M</i><sup>4</sup> - 
+<i>e</i><sup>4</sup>, &nbsp; &nbsp;
+<i>N</i><sup>2</sup> = -5<i>M</i><sup>4</sup> + 
+<i>e</i><sup>4</sup>.
+</p>
+Budući da je 1<sup>2</sup> = 3<sup>4</sup> - 
+5 <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> 2<sup>4</sup> i 
+2<sup>2</sup> = -1<sup>4</sup> + 5 
+<img src="symbols/cdot.gif" alt="*" ALIGN=TOP> 1<sup>4</sup>, 
+zaključujemo da je <i>r</i><sub>1</sub> = 4 i <i>e</i><sub>1</sub> = 2.
+<br>
+Za <i>E</i>' je <i>b</i><sub>1</sub>'    
+<img src="symbols/in.gif" alt="in" ALIGN=TOP> 
+{<img src="symbols/pm.gif" alt="+-" ALIGN=TOP> 1, 
+<img src="symbols/pm.gif" alt="+-" ALIGN=TOP> 2, 
+<img src="symbols/pm.gif" alt="+-" ALIGN=TOP> 4, 
+<img src="symbols/pm.gif" alt="+-" ALIGN=TOP> 5, 
+<img src="symbols/pm.gif" alt="+-" ALIGN=TOP> 10, 
+<img src="symbols/pm.gif" alt="+-" ALIGN=TOP> 20}. 
+Međutim, <i>b</i><sub>1</sub>' je kvadratno slobodan, a također je 
+očito da <i>b</i><sub>1</sub>' i <i>b</i><sub>2</sub>' ne mogu 
+oba biti negativni. To povlači da je   
+<i>b</i><sub>1</sub>'    
+<img src="symbols/in.gif" alt="in" ALIGN=TOP> {1, 2, 5, 10}. 
+Očito je 
+1<sup>2</sup> = 1<sup>4</sup> +  
+20 <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> 0<sup>4</sup> i 
+2<sup>2</sup> = 5 <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> 
+0<sup>4</sup> + 4. 
+Moramo odrediti ima li jednadžba
+<p align=center>
+<i>N</i><sup>2</sup> = 2<i>M</i><sup>4</sup> + 
+10<i>e</i><sup>4</sup> 
+</p>
+rješenja. Budući da su <i>M</i> i <i>N</i> relativno prosti, 
+možemo pretpostaviti da je (<i>M</i>, 5) = 1. Tada je po 
+Malom Fermatovom teoremu <i>M</i><sup>4</sup> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=TOP> 
+1 (mod 5) i <i>N</i><sup>2</sup> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=TOP> 
+2 (mod 5). No, to je nemoguće jer kvadrati cijelih brojeva pri 
+djeljenju s 5 daju ostatke 0, 1, ili 4. Zaključujemo da je 
+<i>r</i><sub>2</sub> = 2, <i>e</i><sub<2</sub> = 1. 
+Konačno je rank (<i>E</i>) = 2 + 1 - 2 = 1.
+<p>
+
+Uočimo da smo kod eliminiranja <i>b</i><sub>1</sub>'-ova 
+za koje pripadna diofantska jednadžba nema rješenja 
+koristili činjenice da negativan broj ne može biti kvadrat 
+u <img src="symbols/bbr.gif" alt="R" ALIGN=TOP>, 
+te da broj 2 nije kvadrat u 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><img src="symbols/sub5.gif" alt="5" ALIGN=TOP>. No, kod diofantskih 
+jednadžbi stupnja većeg od 2 može se dogoditi da one imaju 
+rješenja u <img src="symbols/bbr.gif" alt="R" ALIGN=TOP>, 
+te da imaju rješenja u <img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><img src="symbols/subm.gif" alt="m" ALIGN=TOP> 
+za svaki cijeli broj <i>m</i>, ali da ipak nemaju 
+netrivijalnih rješenja u <img src="symbols/bbz.gif" alt="Z" ALIGN=TOP>. 
+Jedan takav primjer je jednadžba 
+<i>N</i><sup>2</sup> = 17<i>M</i><sup>4</sup> -  
+4<i>e</i><sup>4</sup> koja se pojavljuje kod računanja ranga 
+eliptičke krivulje <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> 
++ 17<i>x</i>. U takvim slučajevima je određivanje ranga znatno teže.
+
+<p><br>
+U slučaju krivulja bez 2-torzijskih točaka, osnovna ideja je 
+ponovo pridružiti krivulji <i>E</i> familiju krivulja 
+četvrtog stupnja. Metoda se naziva <em>opći 2-spust</em> i
+puno je manje efikasna od spusta pomoću 2-izogenije. 
+<p><br>
+
+No, i kad metode za direktno računanje ranga ne daju zadovoljavajući 
+rezultat, možemo pokušati pronaći što više nezavisnih točaka 
+na eliptičkoj krivulji, te tako odrediti barem donju ogradu za rang. 
+Recimo stoga nešto o tome kako se može provjeriti 
+nezavisnost točaka na eliptičkoj krivulji. To se radi tako da se 
+provjeri da jedna determinanta ne isčezava. Determinata o kojoj 
+je riječ je tzv. <em>regulator</em> 
+<p align=center>
+<i>R</i> = |det 
+(<i>h</i>'(<i>P<sub>i</sub></i>, <i>P<sub>j</sub></i>))|. 
+</p>
+Ovdje je 
+<p align=center>
+<i>h</i>'(<i>P</i>, <i>Q</i>) = (<i>h</i>'(<i>P</i> + <i>Q</i>) - 
+<i>h</i>'(<i>P</i>) - <i>h</i>'(<i>Q</i>))/2, 
+</p>
+dok je <i>h</i>'(<i>P</i>) <em>kanonska visina</em> točke <i>P</i> 
+definirana sa 
+<p align=center>
+<i>h</i>'(<i>P</i>) = lim <i>h</i>(2<sup><i>n</i></sup> <i>P</i>) 
+/ 4<sup><i>n</i></sup>,  
+</p>  
+gdje je <i>h</i>(<i>P</i>) <em>naivna visina</em>, tj. ako je 
+<i>P</i> = (<i>x</i> / <i>z</i>, <i>y</i> / <i>u</i>), 
+onda je <i>h</i>(<i>P</i>) = log max {|<i>x</i>|, |<i>z</i>|}. 
+
+<p>
+<hr size=2 noshade>
+
+<h4 style="color: rgb(128,0,0)">Zadatci:</h4>
+
+<ol>
+<li> Odredite rang sljedećih eliptičkih krivulja
+<blockquote>
+a) &nbsp; <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + <i>x</i>; <br>
+b) &nbsp; <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> - 4<i>x</i>; <br>
+c) &nbsp; <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 5<i>x</i>; <br>
+d) &nbsp; <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 14<i>x</i>; <br>
+e) &nbsp; <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> - 82<i>x</i>.
+</blockquote>   
+<p>
+<li> Na krivulji 
+<p align=center>
+<i>y</i><sup>2</sup> = x<sup>3</sup> -  x<sup>2</sup> - 3225667994796x 
++ 2205916672708538820
+</p>
+nađite sve cjelobrojne točke <i>P</i> = (<i>x</i>,<i>y</i>) 
+takve da je |<i>x</i>| &lt; 10000000. <br> 
+Formulirajte neku hipotezu o rangu ove krivulje. 
+Provjerite svoju hipotezu koristeći neki od programa 
+za računanje ranga 
+(<a href="http://www.warwick.ac.uk/~masgaj/ftp/progs/">mwrank</a>, 
+<a href="ftp://ftp.math.mcgill.ca/pub/apecs/">apecs</a>, 
+<a href="http://tnt.math.metro-u.ac.jp/simath/index.html">simath</a>)
+
+</ol>
+<p>
+
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="elipQ.html">[Prethodna tema]</a> &nbsp; 
+<a href="dlp.html">[Sljedeća tema]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../ecc/eccseminar.html">Web stranica seminara</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>
+
+

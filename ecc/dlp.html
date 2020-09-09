@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Diffie-Hellmanov 
+protokol za razmjenu ključeva</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Kriptosustavi zasnovani 
+na problemu diskretnog logaritma u konačnoj grupi">
+<meta name="keywords" content="kriptografija, problem diskretnog 
+logaritma ključeva">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="rang.html">[Prethodna tema]</a> &nbsp; 
+<a href="elgamal.html">[Sljedeća tema]</a>  
+</font></b>
+
+<hr size=2 noshade>
+
+
+
+<h2 align=center style="color: rgb(204,0,0)">4. Kriptosustavi zasnovani 
+na problemu diskretnog logaritma u konačnoj grupi</h2>
+
+<h2 align=center style="color: rgb(128,0,0)">4.1. Diffie-Hellmanov 
+protokol za razmjenu ključeva</h2>
+
+Od davnina pa do današnjih dana, ljudi su imali potrebu za 
+sigurnom komunikacijom. Pritom su bili svjesni da njihove poruke 
+često putuju "nesigurnim komunikacijskim kanalima". Ti kanali su 
+mogli biti npr. nesigurni putovi, telefonske linije ili računalne 
+mreže. 
+<p>
+<em>Kriptografija</em> (ili tajnopis) je znanstvena disciplina koja se 
+bavi proučavanjem metoda za slanje poruka u takvom obliku da ih samo 
+onaj kome su namjenjene može pročitati. 
+<p>
+Osnovni zadatak kriptografije je omogućavanje dvjema osobama 
+(zvat ćemo ih pošiljalac i primalac) da komuniciraju 
+preko nesigurnog komunikacijskog kanala na način da treća osoba 
+(njihov protivnik) ne može razumjeti njihove poruke. 
+Poruku koju pošiljalac želi poslati primaocu zovemo  
+<em>otvoreni tekst</em>. Pošiljalac transformira otvoreni tekst 
+koristeći unaprijed dogovoreni <em>ključ</em> <i>K</i>. 
+Taj postupak se zove <em>šifriranje</em>, a dobiveni rezultat <em>šifrat</em>. Nakon toga pošiljalac pošalje šifrat preko nekog 
+komunikacijskog kanala. Protivnik prisluškujući može doznati sadržaj 
+šifrata, ali ne može odrediti otvoreni tekst. Za razliku od njega, 
+primalac koji zna ključ kojim je šifrirana poruka može 
+<em>dešifrirati</em> šifrat i odrediti otvoreni tekst. 
+Spomenimo da su u kriptografskoj literaturi standardna imena 
+za pošiljatelja - Alice, primaoca - Bob, te protivnika - Eve. 
+<p align=center>
+<img src="slike/kript_pravokutnici1.gif" alt="shema">
+</p>
+
+Ova shema opisuje tzv. <em>simetrični ili konvencionalni kriptosustav</em>. Funkcije koje se koriste 
+za šifriranje <i>e</i><sub><i>K</i></sub> i dešifriranje 
+<i>d</i><sub><i>K</i></sub> ovise o ključu <i>K</i> kojeg Alice i Bob 
+moraju tajno razmjeniti prije same komunikacije. Kako njima nije 
+dostupan siguran komunikacijski kanal, ovo može biti veliki problem. 
+
+<p><br>
+Godine 1976. <font color=009900>Whitfield Diffie</font> i 
+<font color=009900>Martin Hellman</font>  
+su ponudili jedno moguće rješenje problema razmjene ključeva, 
+zasnovano na činjenici da je u nekim matematičkim strukturama 
+(grupama) potenciranje puno jednostavnije od logaritmiranja.  
+<p>
+Neka je <i>G</i> konačna abelova grupa. Da bi bila prikladna 
+za primjene u kriptografiji,  
+grupa <i>G</i> bi trebala imati svojstvo da su operacije 
+množenja i potenciranja u njoj jednostavne, dok je logaritmiranje 
+(inverzna operacija od potenciranja) vrlo teško. Također bi trebalo  
+biti moguće generirati slučajne elemente grupe na gotovo 
+uniforman način. Ipak, centralno pitanje jest koliko je težak 
+tzv. problem diskretnog logaritma u grupi <i>G</i>. 
+<p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Problem diskretnog logaritma:</b> Neka je 
+(<i>G</i>, *) konačna grupa, 
+<i>g</i> <img src="symbols/in.gif" alt="in" ALIGN=TOP> <i>G</i>, 
+<i>H</i> = { <i>g</i><sup><i>i</i></sup> : <i>i</i> 
+<img src="symbols/geqslant.gif" alt=">=" ALIGN=TOP> 0 } 
+podgrupa od <i>G</i> generirana s <i>g</i>,  
+te <i>h</i> <img src="symbols/in.gif" alt="in" ALIGN=TOP> <i>H</i>.   
+Treba naći najmanji nenegativni cijeli broj <i>x</i> takav da je 
+<p align=center> 
+<i>h</i> = <i>g</i><sup><i>x</i></sup>,
+</p>
+gdje je <i>g</i><sup><i>x</i></sup> = <i>g</i> 
+* <i>g</i> * ... * <i>g</i> (<i>x</i> puta).
+Taj broj <i>x</i> se zove <em>diskretni logaritam</em> i označava se s 
+log<sub><i>g</i></sub> <i>h</i>.
+
+</font></td></tr></table>
+<p> 
+
+
+Alice i Bob se žele dogovoriti o jednom tajnom slučajnom elementu 
+u grupi <i>G</i>, kojeg bi onda poslije mogli koristi kao ključ 
+za šifriranje u nekom simetričnom kriptosustavu (npr. DES-u ili AES-u). 
+Oni taj svoj dogovor moraju provesti preko nekog nesigurnog 
+komunikacijskog kanala, bez da su prethodno razmjenili bilo 
+kakvu informaciju. Jedina informacija koju imaju jest 
+grupa <i>G</i> i njezin generator <i>g</i> (pretpostavimo 
+da je grupa <i>G</i> ciklička). 
+<p>
+Slijedi opis Diffie-Hellmanovog protokola. 
+Sa |<i>G</i>| ćemo označiti broj elemenata u grupi <i>G</i>.
+<p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Diffie-Hellmanov protokol za razmjenu ključeva:</b> 
+
+<ol>
+<li> Alice generira slučajan prirodan broj <i>a</i> 
+<img src="symbols/in.gif" alt="in" ALIGN=TOP> {1, 2, ... , 
+|<i>G</i>| - 1}. 
+Ona pošalje Bobu element <i>g</i><sup><i>a</i></sup>. 
+
+<li> Bob generira slučajan prirodan broj <i>b</i> 
+<img src="symbols/in.gif" alt="in" ALIGN=TOP> {1, 2, ... , 
+|<i>G</i>| - 1},  
+te pošalje Alice element <i>g</i><sup><i>b</i></sup>.
+
+<li> Alice izračuna (<i>g</i><sup><i>b</i></sup>)<sup><i>a</i></sup> = 
+<i>g</i><sup><i>ab</i></sup>. 
+
+<li> Bob izračuna (<i>g</i><sup><i>a</i></sup>)<sup><i>b</i></sup> = 
+<i>g</i><sup><i>ab</i></sup>. 
+</ol> 
+
+Sada je njihov tajni ključ <i>K</i> = <i>g</i><sup><i>ab</i></sup>. 
+</font></td></tr></table>
+<p> 
+
+
+Njihov protivnik (Eve) koji može prisluškivati njihovu komunikaciju 
+preko nesigurnog komunikacijskog kanala zna sljedeće podatke: 
+<i>G</i>, <i>g</i>, <i>g</i><sup><i>a</i></sup>, 
+<i>g</i><sup><i>b</i></sup>. Eve treba iz ovih podataka izračunati 
+<i>g</i><sup><i>ab</i></sup> (kaže se da treba riješiti 
+<em>Diffie-Hellmanov problem</em> (DHP)). 
+Ako Eve iz poznavanja <i>g</i> i <i>g</i><sup><i>a</i></sup> može 
+izračunati <i>a</i> (tj. ako može riješiti problem diskretnog 
+logaritma (DLP)), onda i ona može pomoću <i>a</i> i 
+<i>g</i><sup><i>b</i></sup> izračunati 
+<i>g</i><sup><i>ab</i></sup>. 
+Vjeruje se da su za većinu grupa koje se koriste u kriptografiji 
+ova dva problema, DHP i DLP, ekvivalentni (tj. da postoje 
+polinomijalni algoritmi koji svode jedan problem na drugi). 
+<p><br>
+
+U originalnoj definiciji Diffie-Hellmanovog protokola za grupu 
+<i>G</i> se uzima multiplikativna grupa 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup> 
+svih ne-nul ostataka modulo <i>p</i>, gdje je <i>p</i> 
+dovoljno velik prost broj. Poznato je da je grupa 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup> 
+ciklička. Generator ove grupe se naziva <em>primitivni korijen</em> 
+modulo <i>p</i>. Broj <i>g</i> <img src="symbols/in.gif" alt="in" ALIGN=MIDDLE> 
+{1, 2, ... , <i>p</i> - 1} je primitivni korijen modulo <i>p</i> 
+ako je <i>g</i><sup><i>p</i> -1</sup> najmanja potencija broja 
+<i>g</i> koja daje ostatak 1 pri djeljenju s <i>p</i>. 
+<p>
+Npr. broj 2 je jedan primitivni korijen modulo 11. Zaista, potencije 
+broja 2 daju redom ostatke 1, 2, 4, 8, 5, 10, 9, 7, 3, 6 
+pri djeljenju s 11. Brojevi 6, 7 i 8 su također primitivni 
+korijeni modulo 11. Općenito, broj primitivnih korijena 
+modulo <i>p</i> jednak je 
+<img src="symbols/varphi.gif" alt="fi" ALIGN=TOP>(<i>p</i> - 1), 
+tj. broju brojeva u nizu 1, 2, ... , <i>p</i> - 1 koji su 
+relativno prosti s <i>p</i> - 1.    
+
+<p>
+<hr size=2 noshade>
+
+<h4 style="color: rgb(128,0,0)">Zadatci:</h4>
+
+<ol>
+<li> Nađite najmanji primitivni korijen <i>g</i> modulo 23, 
+te odredite log<sub><i>g</i></sub> 20.   
+<p>
+<li> Neka je u Diffie-Hellmanovom protokolu <i>G</i> = 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup>, 
+<i>p</i> = 2147483659, te  
+<i>g</i> = 2, <i>a</i> = 1234, <i>b</i> = 4321. 
+Odredite ključ <i>K</i> = <i>g</i><sup><i>ab</i></sup>.  
+
+</ol>
+<p>
+
+ 
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="rang.html">[Prethodna tema]</a> &nbsp; 
+<a href="elgamal.html">[Sljedeća tema]</a>  
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../ecc/eccseminar.html">Web stranica seminara</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>
+
+

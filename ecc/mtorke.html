@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Diofantove m-torke</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Diofantove m-torke i eliptičke 
+krivulje">
+<meta name="keywords" content="Diofantove četvorke, eliptičke 
+krivulje">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="taxi.html">[Prethodna tema]</a> &nbsp; 
+<a href="elipQ.html">[Sljedeća tema]</a>  
+</font></b>
+
+<hr size=2 noshade>
+
+
+<h2 align=center style="color: rgb(128,0,0)">2.3. 
+Diofantove <i>m</i>-torke</h2>
+
+Skup od <i>m</i> prirodnih brojeva zove se <em>Diofantova 
+<i>m</i>-torka</em> ako produkt svaka dva njegova različita 
+elementa uvećan za 1 daje potpun kvadrat. 
+Skup od <i>m</i> racionalnih brojeva (različitih od nule) 
+s istim svojstvom naziva se <em>racionalna Diofantova 
+<i>m</i>-torka</em>. 
+<p>
+Prvu racionalnu Diofantovu četvorku pronašao je grčki matematičar 
+<font color="009900">Diofant</font>, po kome su ovi skupovi i 
+dobili ime. Ta četvorka je bila 
+<p align=center> 
+{1/16, 33/16, 17/4, 105/16}. </p>
+Prvu (cjelobrojnu) Diofantovu četvorku, skup 
+<p align=center>
+{1, 3, 8, 120}, </p>
+pronašao je <font color="009900">Fermat</font>. Uvjerimo se da 
+je ovaj skup zaista Diofantova četvorka: 
+
+<p align=center>
+1 <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> 3 + 1 = 2<sup>2</sup>, &nbsp &nbsp &nbsp &nbsp 
+1 <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> 120 + 1 = 11<sup>2</sup>, <br>
+1 <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> 8 + 1 = 3<sup>2</sup>, &nbsp &nbsp &nbsp &nbsp    
+3 <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> 120 + 1 = 19<sup>2</sup>, <br>
+3 <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> 8 + 1 = 5<sup>2</sup>, &nbsp &nbsp &nbsp &nbsp    
+8 <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> 120 + 1 = 31<sup>2</sup>.
+</p>
+
+Poznato je da se svaka Diofantova trojka može nadopuniti 
+do Diofantove četvorke, te da se svaka Diofantova četvorka 
+može nadopuniti do racionalne Diofantove petorke. Već je 
+<font color="009900">Euler</font> uspio nadupuniti Fermatov 
+skup s petim racionalnim brojem 777480 / 8288641. 
+No, prva racionalna Diofantova šestorka pronađena je tek 1999. godine. 
+Bio je to skup 
+<p align=center>
+{11/192, 35/192, 155/27, 512/27, 1235/48, 
+180873/16}, </p> 
+koji je pronašao <font color="009900">Gibbs</font>.
+<p>
+Nedavno je dokazano  
+da ne postoji niti jedna (cjelobrojna) Diofantova šestorka, 
+a slutnja je da ne postoji niti Diofantova petorka. S druge strane, 
+ne zna se nikakva gornja ograda za veličinu racionalnih 
+Diofantovih <i>m</i>-torki. 
+<p>
+
+Recimo nešto o vezi Diofantovih <i>m</i>-torki i eliptičkih 
+krivulja. Pretpostavimo da želimo (cjelobrojnu ili racionalnu) 
+Diofantovu trojku {<i>a</i>, <i>b</i>, <i>c</i>} 
+nadopuniti do Diofantove četvorke. To znači da želimo naći 
+broj <i>d</i> takav da su brojevi <i>ad</i> + 1, 
+<i>bd</i> + 1 i <i>cd</i> + 1 potpuni kvadrati. Ovom problemu 
+na prirodan način možemo pridružiti eliptičku krivulju 
+<p align=center>
+<i>E</i> : &nbsp &nbsp &nbsp 
+<i>y</i><sup>2</sup> = (<i>x</i> + <i>ab</i>)(<i>x</i> + 
+<i>ac</i>)(<i>x</i> + <i>bc</i>). 
+</p>
+Naime, ako je <i>d</i> rješenje našeg problema, onda je točka 
+s prvom koordinatom <i>x</i> = <i>abcd</i> racionalna točka na 
+krivulji <i>E</i>. Krivulja <i>E</i> ima tri racionalne točke 
+reda 2: (-<i>ab</i>, 0), (-<i>ac</i>, 0), (-<i>bc</i>, 0), 
+a također i trivijalnu racionalnu točku <i>P</i> = (0, <i>abc</i>) 
+za koju nije teško pokazati da je beskonačnog reda. 
+Dakle, na krivulji <i>E</i> postoji beskonačno mnogo racionalnih 
+točaka (<i>x</i>, <i>y</i>). Postavlja se pitanje za koje će od tih 
+točaka broj <i>d</i> = <i>x</i> / <i>abc</i> prestavljati 
+rješenje polaznog problema, tj. imati svojstvo da je 
+{<i>a</i>, <i>b</i>, <i>c</i>, <i>d</i>} racionalna 
+Diofantova četvorka. Odgovor je da su to sve točke oblika 
+<i>P</i> + [2] <i>U</i>, gdje je <i>U</i> proizvoljna racionalna 
+točka na <i>E</i>.  Na krivulji <i>E</i> se nalazi još jedna 
+zanimljiva racionalna točka, naime točka s prvom koordinatom jednakom 
+1. Preciznije, ako je 
+<p align=center>
+<i>ab</i> + 1 = <i>r</i><sup>2</sup>, &nbsp &nbsp  <i>ac</i> + 1 = <i>s</i><sup>2</sup>, &nbsp &nbsp 
+<i>bc</i> + 1 = <i>t</i><sup>2</sup>, </p>
+onda točka <i>S</i> = (1, <i>rst</i>) leži na <i>E</i>. Štoviše, 
+vrijedi da je <i>S</i> = [2] <i>R</i>, gdje je 
+<p align=center> 
+<i>R</i> = ((<i>rs</i> + <i>rt</i> + <i>st</i> + 1), 
+(<i>r</i> + <i>s</i>)(<i>r</i> + <i>t</i>)(<i>s</i> + <i>t</i>)). </p> 
+Direktni račun pokazuje da su prve koordinate točaka 
+<i>P</i> - <i>S</i> i <i>P</i> + <i>S</i> jednake 
+<p align=center> 
+<i>a</i> + <i>b</i> + <i>c</i>  
+<img src="symbols/pm.gif" alt="+-" ALIGN=TOP>
+2<i>abc</i> + 2<i>rst</i>, </p> 
+što predstavlja dokaz činjenice da se svaka Diofantova trojka
+može nadopuniti do Diofantove četvorke. Primjenimo li ovu 
+konstrukciju npr. na Diofantovu trojku {1, 3, 120}, 
+dobit ćemo Diofantove četvorke {1, 3, 8, 120} i {1, 3, 120, 1680}. 
+S tim u vezi spomenimo da su <font color="009900">Dujella</font> 
+i <font color="009900">Petho</font> dokazali 1998. godine 
+da se svaka Diofantova trojka oblika {1, 3, <i>c</i>}, gdje je 
+<i>c</i> <img src="symbols/ne.gif" alt="<>" ALIGN=TOP> 8, 
+može na točno dva načina proširiti do Diofantove četvorke. 
+<p>
+U dokazu da se svaka Diofantova četvorka može nadopuniti do 
+racionalne Diofantove petorke, ponovo se koristi pribrajanje i 
+oduzimanje točke <i>S</i>. Neka je <i>T</i> = (<i>x</i>, <i>y</i>) 
+točka na <i>E</i> takva da broj <i>d</i> = <i>x</i> / <i>abc</i> 
+zadovoljava uvjet da su <i>ad</i> + 1, <i>bd</i> + 1 i 
+<i>cd</i> + 1 potpuni kvadrati. Promotrimo točku <i>T</i> 
+<img src="symbols/pm.gif" alt="+-" ALIGN=TOP>  
+<i>S</i> = (<i>x'</i>, <i>y'</i>). Tada broj <i>d'</i> = 
+<i>x'</i> / <i>abc</i> također zadovoljava isti uvjet kao i <i>d</i>. 
+No, vrijedi i više. Naime, 
+<i>d</i> <img src="symbols/cdot.gif" alt="*" ALIGN=TOP> <i>d'</i> + 1  
+je također potpun kvadrat. Drugim riječima, {<i>a</i>, <i>b</i>, 
+<i>c</i>, <i>d</i>, <i>d'</i>} je racionalna Diofantova petorka. 
+Primjenom ove konstrukcije na Fermatov skup 
+{<i>a</i>, <i>b</i>, <i>c</i>, <i>d</i>} = {1, 3, 8, 120}, 
+dobiva se upravo Eulerovo rješenje 
+<i>d'</i> = 777480 / 8288641. 
+<p>
+Više informacija o različitim problemima vezanim uz 
+Diofantove <i>m</i>-torke može se naći na web stranici o  
+<a href="../dtuples.html">Diofantovim 
+<i>m</i>-torkama</a>.
+
+<p>
+
+
+<hr size=2 noshade>
+
+<h4 style="color: rgb(128,0,0)">Zadatci:</h4>
+
+<ol>
+<li> Originalni Diofantov skup  
+{1/16, 33/16, 17/4, 105/16} nadopunite do   
+racionalne Diofantove petorke. 
+
+<p>
+<li> Koliko ima Diofantovih četvorki čiji su svi elementi  
+manji od 1000000 ? 
+<p>
+<li> Dokažite da ne postoji skup od četiri prirodna broja 
+sa svojstvom da produkt svaka dva njegova različita 
+elementa uvećan za 2 daje potpun kvadrat. Nađite petorku 
+racionalnih brojeva s istim svojstvom.  
+
+
+</ol>
+<p>
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="taxi.html">[Prethodna tema]</a> &nbsp; 
+<a href="elipQ.html">[Sljedeća tema]</a>  
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../ecc/eccseminar.html">Web stranica seminara</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+
+</body>
+</html>
+
+

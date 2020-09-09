@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Izbor parametara ECC kriptosustava</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Izbor parametara u kriptosustavima 
+koji koriste eliptičke krivulje">
+<meta name="keywords" content="ECC, kriptografija">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="ecdlp.html">[Prethodna tema]</a> &nbsp; 
+<a href="usporedba.html">[Sljedeća tema]</a>  
+</font></b>
+
+<hr size=2 noshade>
+
+
+<h2 align=center style="color: rgb(128,0,0)">6.4. 
+Izbor parametara kriptosustava</h2>
+
+Dva su osnovna koraka kod izbora parametara za 
+kriptosustav zasnovan na eliptičkim krivuljama: 
+<ul>
+<li>izbor konačnog polja <img src="symbols/bbf.gif" alt="F" 
+ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>, 
+<li>izbor eliptičke krivulje <i>E</i> nad 
+<img src="symbols/bbf.gif" alt="F" 
+ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>. 
+</ul>
+Kod izbora polja, dvije su osnovne mogućnosti: ili je 
+<i>q</i> = <i>p</i> prost broj ili <i>q</i> = 2<sup><i>m</i></sup> 
+potencija broja 2. Ako su <i>p</i> i 2<sup><i>m</i></sup> 
+približno iste veličine, ova dva izbora pružaju istu razinu sigurnosti. 
+<p>
+Među poljima <img src="symbols/bbf.gif" alt="F" 
+ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP>, 
+da bi se minimiziralo vrijeme potrebno za modularno 
+množenje, preporuča se da <i>p</i> ima oblik 2<sup><i>k</i></sup> 
+<img src="symbols/pm.gif" alt="+-" ALIGN=TOP> <i>c</i> 
+za neki mali prirodni broj <i>c</i> (npr. Mersenneovi 
+prosti brojevi oblika 2<sup><i>k</i></sup> - 1, 
+2<sup>160</sup> + 7, 2<sup>255</sup> + 95, i sl.).
+<p>
+Kod polja karakteristike 2, osim broja elemenata, moramo 
+odabrati i način reprezentacije elemenata. Najčešće se 
+koriste trinomijalne i optimalne normalne baze. Kao što smo 
+ranije napomenuli, izbor takvih baza omogućuje efikasniju 
+implementaciju. No, takve baze ne postoje za svako konačno 
+polje karakteristike 2, pa i to utječe na izbor polja. 
+Neki popularni izbori su npr. 2<sup>163</sup>, 
+2<sup>191</sup>, 2<sup>239</sup> i 2<sup>431</sup>. 
+<p><br>
+
+
+Kod izbora eliptičke krivulje trebamo paziti da problem 
+diskretnog logaritma bude "težak". Kako smo već više puta 
+napomenuli, ECDLP je, prema svemu što vam je danas poznato, 
+vrlo težak problem. Međutim, postoje tipovi eliptičkih krivulja 
+kod kojih je taj problem nešto (ali čak puno) lakši. 
+Zato takve krivulje treba izbjegavati. Situacija je vrlo 
+slična kao kod kriptosustava koji svoju sigurnost 
+zasnivaju na teškoći faktorizacije velikih prirodnih brojeva
+(npr. RSA ili Rabinov). I tamo je tvrdnja da je broj 
+oblika <i>pq</i>, gdje su <i>p</i> i <i>q</i> veliki prosti brojevi, 
+teško rastaviti na faktore  
+točna samo ako se <i>p</i> i <i>q</i> odaberu pažljivo 
+(npr. <i>p</i> i <i>q</i> ne smiju biti jako bliski; 
+brojevi <i>p</i> - 1 i <i>q</i> - 1 moraju imati barem jedan 
+veliki prosti faktor).  
+<p>
+
+Navest ćemo sada tipove eliptičkih krivulja koje treba izbjegavati: 
+<ul>
+
+<li> Pohlig-Hellmanov algoritam implicira da trebamo izbjegavati 
+eliptičke krivulje kod kojih broj 
+#<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>)    
+nema niti jedan veliki prosti faktor. Preciznije, 
+#<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>) 
+bi trebao imati barem jedan prosti faktor <i>n</i> veći od 
+2<sup>160</sup>, jer bi o protivnom protivnom ECDLP mogli 
+riješiti BSGS metodom. Obično se krivulja <i>E</i> odabire tako 
+da broj  
+#<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>)    
+oblika <i>h</i> 
+<img src="symbols/cdot.gif" alt="*" ALIGN=TOP> <i>r</i>, 
+gdje je <i>r</i> prost broj, a <i>h</i> = 1, 2 ili 4.        
+<p>
+
+<li> Eliptička krivulja se zove <em>anomalna</em> ako joj je 
+Frobeniusov trag <i>t</i> = 1, tj. ako je 
+#<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>) = <i>q</i>. 
+Za takve krivulje postoji polinomijalni algoritam za ECDLP 
+koji su otkrili <font color=009900>Smart</font>, 
+<font color=009900>Satoh</font>, <font color=009900>Araki</font> i 
+<font color=009900>Semaev</font>. Stoga se analomalne 
+krivulje nikako ne bi smjele koristiti. 
+<p>
+
+<li>Za eliptičku krivulju <i>E</i> nad 
+<img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><img src="symbols/subq.gif" alt="q" ALIGN=MIDDLE>, 
+gdje je <i>q</i> = <i>p</i><sup><i>k</i></sup>,  
+kažemo da je <em>supersingularna</em> ako <i>p</i> dijeli <i>t</i>. 
+Za krivulje nad 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP> 
+za <i>p</i> <img src="symbols/geqslant.gif" alt=">=" ALIGN=TOP> 5 
+to znači da je <i>t</i> = 0, tj. 
+#<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP>) = <i>p</i> + 1. 
+Za takve krivulje postoji tzv. MOV-napad 
+(<font color=009900>Menezes</font>, <font color=009900>Okamoto</font>, 
+<font color=009900>Vanstone</font>) koji u polinomijalnom vremenu 
+reducira ECDLP u polju 
+#<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>) 
+na DLP u polju 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q^2" ALIGN=TOP><img src="symbols/sup2.gif" alt="2" ALIGN=TOP>.
+Zbog toga bi supersingularne krivulje trebalo izbjegavati. 
+Nadalje, trebalo bi izbjegavati sve krivulje za koje 
+postoji mali prirodni broj <i>k</i> (recimo <i>k</i> 
+<img src="symbols/leqslant.gif" alt="<=" ALIGN=TOP> 20) 
+takav da je <i>q</i><sup><i>k</i></sup> 
+<img src="symbols/equiv.gif" alt="=" ALIGN=TOP> 1 
+(mod #<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><img src="symbols/subq.gif" alt="q" ALIGN=MIDDLE>)), 
+zato što u tom slučaju MOV-napad reducira ECDLP na DLP u polju 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q^k" ALIGN=TOP><img src="symbols/supk.gif" alt="k" ALIGN=TOP>.
+
+</ul>
+
+Vidimo da je lako odlučiti da li je konkretna eliptička 
+krivulja dobra za primjenu u kriptografiji ukoliko znamo red
+grupe <i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>). 
+<p><br>
+
+<b>Primjer:</b> Navest ćemo jedan primjer koji zadovoljava sve gore 
+navedene savjete i zahtjeve na izbor polja i eliptičke krivulje. 
+Neka je krivulja <i>E</i> zadana jednadžbom 
+<p align=center>
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + <i>x</i> + 
+1010685925500572430206879608558642904226772615919
+</p>
+nad poljem <i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE>), 
+gdje je <i>p</i> = 2<sup>160</sup> + 7. 
+Tada je 
+#<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE>) = 
+1461501637330902918203683038630093524408650319587. 
+Može se dokazati (npr. metodom dokazivanja prostosti pomoću 
+eliptičkih krivulja!) da su brojevi <i>p</i> i 
+#<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP>) 
+prosti. 
+
+
+<p><br>
+
+<hr size=2 noshade>
+
+<h4 style="color: rgb(128,0,0)">Zadatci:</h4>
+
+<ol>
+
+<li> Pronađite barem jednu anomalnu i barem jednu 
+supersingularnu eliptičku krivulju nad 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>17</sub>. 
+<p>
+<li> Pronađite barem jednu neanomalnu eliptičku krivulju <i>E</i> nad 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>23</sub> 
+sa svojstvom da je 
+#<i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>23</sub>) 
+prost broj.  
+<p>
+
+</ol>
+<p>
+
+ 
+
+
+<p><br>
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="ecdlp.html">[Prethodna tema]</a> &nbsp; 
+<a href="usporedba.html">[Sljedeća tema]</a>  
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../ecc/eccseminar.html">Web stranica seminara</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

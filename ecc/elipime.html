@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Eliptički integrali i eliptičke funkcije</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Eliptički integrali, 
+eliptičke funkcije, genus krivulje">
+<meta name="keywords" content="eliptičke krivulje, elipticke 
+krivulje, genus, opseg elipse, torus">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="elipdef.html">[Prethodna tema]</a> &nbsp; 
+<a href="kongruentni.html">[Sljedeća tema]</a>  
+</font></b>
+
+
+<hr size=2 noshade>
+
+
+<h2 align=center style="color: rgb(128,0,0)">1.2. Eliptički integrali i 
+eliptičke funkcije</h2>
+
+
+Možemo se pitati od kud dolazi naziv eliptička krivulja. 
+Veza između eliptičkih krivulja i elipse dolazi preko 
+problema računanja opsega elipse.  
+
+Neka je elipsa zadana jednadžbom 
+<a align=center><i>q</i><sup>2</sup><i>x</i><sup>2</sup> + 
+<i>p</i><sup>2</sup><i>y</i><sup>2</sup> = 
+<i>p</i><sup>2</sup><i>q</i><sup>2</sup>. 
+Tada je njezin opseg jednak vrijednosti integrala 
+<p align=center>
+<img src="slike/elipint1a.gif" alt="elipticki integral">
+</p><br>
+Pomoću racionalne supstitucije, ovaj se integral može svesti 
+na sličan integral u kojem se pod korijenom nalazi kubna funkcija. 
+Općenito se integrali u kojima je javljaju drugi korijeni 
+polinoma trećeg ili četvrtog stupnja nazivaju <em>eliptički integrali</em>. Oni se ne mogu izraziti pomoću elementarnih 
+funkcija. Međutim, moguće ih je izraziti pomoću tzv. 
+<em><font color="009900">Weierstrassove</font> 
+<img src="symbols/wp.gif" alt="p" ALIGN=TOP>-funkcije</em>. 
+Ova funkcija zadovoljava diferencijalnu jednadžbu oblika   
+<p align=center>
+(<img src="symbols/wp.gif" alt="p" ALIGN=TOP>')<img src="symbols/sup2.gif" alt="2" ALIGN=TOP> / 4 = 
+<img src="symbols/wp.gif" alt="p" ALIGN=TOP><img src="symbols/sup3.gif" alt="3" ALIGN=TOP> + 
+<i>a</i><img src="symbols/wp.gif" alt="p" ALIGN=TOP> +  <i>b</i>. 
+</p>
+Ovdje je njena uloga analogna ulozi funkcije sinus kod 
+računanja integrala kojih kojih se ispod korijena javljaju 
+kvadratne funkcije. Naime, funkcija sin <i>x</i> je rješenje 
+diferencijalne jednadžbe <i>y</i><sup>2</sup> + (<i>y</i> ')<sup>2</sup> = 1. 
+<p>
+
+Slično kao što jediničnu kružnicu možemo parametrizirati 
+pomoću (cos <i>t</i>, sin <i>t</i>), tako se kompleksne točke 
+na eliptičkoj krivulji <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 
+<i>ax</i> + <i>b</i> mogu parametrizirati pomoću 
+(<img src="symbols/wp.gif" alt="p" ALIGN=TOP>(<i>t</i>), 
+<img src="symbols/wp.gif" alt="p" ALIGN=TOP>'(<i>t</i>)/2). 
+Štoviše, pokazuje se da ako je 
+<i>P</i> = (<img src="symbols/wp.gif" alt="p" ALIGN=TOP>(<i>t</i>), 
+<img src="symbols/wp.gif" alt="p" ALIGN=TOP>'(<i>t</i>)/2) i  
+<i>Q</i> = (<img src="symbols/wp.gif" alt="p" ALIGN=TOP>(<i>u</i>), 
+<img src="symbols/wp.gif" alt="p" ALIGN=TOP>'(<i>u</i>)/2),  
+onda je <i>P</i> + <i>Q</i> = 
+(<img src="symbols/wp.gif" alt="p" ALIGN=TOP>(<i>t</i>+<i>u</i>), 
+<img src="symbols/wp.gif" alt="p" ALIGN=TOP>'(<i>t</i>+<i>u</i>)/2). 
+To znači da zbrajanje točaka na 
+<i>E</i>(<img src="symbols/bbc.gif" alt="C" ALIGN=TOP>) 
+odgovara zbrajanju kompleksnih brojeva. Poznavanje te činjenice daje 
+elegantni dokaz asocijativnosti zbrajanja točaka na eliptičkoj 
+krivulji. 
+<p>
+
+Kad se promatra nad poljem <img src="symbols/bbr.gif" alt="R" ALIGN=TOP>, eliptička krivulja je stvarno "krivulja", tj. 
+1-dimenzionalni objekt. No, promatrana nad 
+<img src="symbols/bbc.gif" alt="C" ALIGN=TOP> ona postaje 
+2-dimenzionalni objekt ("ploha") u 4-dimenzionalnom prostoru. 
+Pokušajmo vizualizirati tu plohu. 
+<p>
+Tu nam može pomoći funkcija <img src="symbols/wp.gif" alt="p" ALIGN=TOP>. 
+Ona posjeduje mnoga važna svojstva. Jedno njih jest da je 
+<em>dvostruko periodična</em>, tj. postoje kompleksni 
+brojevi <img src="symbols/omega.gif" alt="omega" ALIGN=TOP><img src="symbols/sub1.gif" alt="1" ALIGN=TOP> i 
+<img src="symbols/omega.gif" alt="omega" ALIGN=TOP><img src="symbols/sub2.gif" alt="2" ALIGN=TOP> 
+(takvi da 
+<img src="symbols/omega.gif" alt="omega" ALIGN=TOP><img src="symbols/sub1.gif" alt="1" ALIGN=TOP> / 
+<img src="symbols/omega.gif" alt="omega" ALIGN=TOP><img src="symbols/sub2.gif" alt="2" ALIGN=TOP> 
+nije realan broj) sa svojstvom  
+<img src="symbols/wp.gif" alt="p" ALIGN=TOP>(<i>z</i> + <i>m</i>
+<img src="symbols/omega.gif" alt="omega" ALIGN=TOP><img src="symbols/sub1.gif" alt="1" ALIGN=TOP> + <i>n</i> 
+<img src="symbols/omega.gif" alt="omega" ALIGN=TOP><img src="symbols/sub2.gif" alt="2" ALIGN=TOP>) 
+= <img src="symbols/wp.gif" alt="p" ALIGN=TOP>(<i>z</i>) 
+za sve cijele brojeve <i>m</i>, <i>n</i>. 
+Označimo s <i>L</i> "rešetku" svih točaka oblika 
+<i>m</i>
+<img src="symbols/omega.gif" alt="omega" ALIGN=TOP><img src="symbols/sub1.gif" alt="1" ALIGN=TOP> + <i>n</i> 
+<img src="symbols/omega.gif" alt="omega" ALIGN=TOP><img src="symbols/sub2.gif" alt="2" ALIGN=TOP>. Funkcija 
+<img src="symbols/wp.gif" alt="p" ALIGN=TOP> je analitička 
+u svim točkama kompleksne ravnine, osim u točkama iz 
+rešetke <i>L</i> u kojima ima pol drugog reda 
+(tj. <img src="symbols/wp.gif" alt="p" ALIGN=TOP> je 
+meromorfna funkcija). Općenito se meromorfne dvostruko 
+periodične funkcije nazivaju <em>eliptičke funkcije</em>. 
+<p>
+
+Gore navedena parametrizacija 
+točaka na eliptičkoj krivulji pomoću funkcije 
+<img src="symbols/wp.gif" alt="p" ALIGN=TOP> predstavlja zapravo 
+izomorfizam grupa 
+<i>E</i>(<img src="symbols/bbc.gif" alt="C" ALIGN=TOP>) i 
+<img src="symbols/bbc.gif" alt="C" ALIGN=TOP> / <i>L</i>. 
+Funkcija <img src="symbols/wp.gif" alt="p" ALIGN=TOP> 
+je u potpunosti određena svojim vrijednostima u "fundamentalnom 
+paralelogramu" koji se sastoji od svih kompleksnih brojeva 
+oblika <i>m</i>
+<img src="symbols/omega.gif" alt="omega" ALIGN=TOP><img src="symbols/sub1.gif" alt="1" ALIGN=TOP> + <i>n</i> 
+<img src="symbols/omega.gif" alt="omega" ALIGN=TOP><img src="symbols/sub2.gif" alt="2" ALIGN=TOP>, 
+0 <img src="symbols/leqslant.gif" alt="<=" ALIGN=TOP>  
+<i>m</i>, <i>n</i> < 1. 
+
+<p align=center>
+<img src="slike/fundpar.gif" alt="fundamentalni paralelogram">
+</p><br>
+
+Razlika točaka koje se nalaze nasuprot jedna drugoj na paralelnim 
+stranicama tog paralelograma je element iz <i>L</i>. Stoga 
+su te točke poistovjećene u skupu  
+<img src="symbols/bbc.gif" alt="C" ALIGN=TOP> / <i>L</i>.
+Da bi vizualizirali taj skup,  
+možemo zamisliti da smo najprije "slijepili" dvije suprotne 
+stranice paralelograma. Tako dobivamo valjak. Nakon toga 
+"slijepimo" baze toga valjka. Tako dobivamo <em>torus</em>: 
+
+<p align=center>
+<img src="slike/torus.gif" alt="torus">
+</p><br>    
+
+Torus možemo zamisliti i kao sferu s "rupom". Pokazuje se 
+da se svaka algebarska krivulja može prikazati u 
+trodimenzionalnom prostoru kao sfera s konačno mnogo rupa. 
+
+<p align=center>
+<img src="slike/genus2.gif" alt="2-torus">
+</p><br> 
+
+Taj broj rupa se naziva <em>genus</em> ili <em>rod</em> krivulje. 
+Alternativna (šira) definicija eliptičke krivulje je da je to 
+algebarska krivulja genusa jednakog 1. Ova definicija uključuje 
+ne samo nesingularne kubne krivulje, već i sve one krivulje koje 
+su im biracionalnog ekvivalentne. To znači se iz njih mogu 
+dobiti pomoću biracionalne transformacije - racionalne 
+transformacije čiji je inverz također racionalna transformacija.  
+Biracionalne transformacije čuvaju genus krivulje, ali ne čuvaju 
+njezin stupanj.   
+<p>
+
+Ako krivulja ima stupanj <i>n</i>, onda je njezin genus 
+<img src="symbols/leqslant.gif" alt="<=" ALIGN=TOP>
+(<i>n</i> - 1)(<i>n</i> - 2) / 2, s time da ako je 
+krivulja nesingularna, onda joj je genus upravo jednak 
+(<i>n</i> - 1)(<i>n</i> - 2) / 2. 
+Poznato je da takozvane <em>hipereliptičke 
+krivulje</em> čija je jednadžba <i>y</i><sup>2</sup> = 
+<i>f</i>(<i>x</i>), gdje je <i>f</i>(<i>x</i>) polinom stupnja 
+<i>n</i> <img src="symbols/geqslant.gif" alt=">=" ALIGN=TOP> 3 
+bez višestrukih korijena, imaju genus 
+<img src="symbols/lfloor.gif" alt="[" ALIGN=TOP>(<i>n</i> - 1)/2<img 
+src="symbols/rfloor.gif" alt="]" ALIGN=TOP>. 
+To posebno znači da, pored slučaja kada je <i>n</i> = 3, 
+i u slučaju kad je <i>n</i> = 4 također imamo eliptičku krivulju. 
+Uvjerimo se u to na jednom primjeru. 
+Neka je <i>C</i> krivulja zadana jednadžbom 
+<p align=center>
+<i>y</i><sup>2</sup> = <i>x</i><sup>4</sup> + 3<i>x</i><sup>2</sup> 
++ 2<i>x</i>. 
+</p>
+Uvedimo supstituciju <i>x</i> = 2 / (<i>s</i> - 1), 
+<i>y</i> = 2<i>t</i> / (<i>s</i> - 1)<sup>2</sup>. 
+Inverzna transformacija je <i>s</i> = (<i>x</i> + 2) / <i>x</i>, 
+<i>t</i> = 2<i>y</i> / <i>x</i><sup>2</sup>. Stoga je ovo 
+biracionalna transformacija. Ona prevodi krivulju <i>C</i> 
+u eliptičku krivulju danu jednadžbom 
+<p align=center>
+<i>t</i><sup>2</sup> = <i>s</i><sup>3</sup> - 3<i>s</i> + 6. 
+</p> <br>
+ 
+
+Genus krivulje igra važnu ulogu kod klasifikacije diofantskih 
+jednadžbi. Naime, o njemu ovisi broj cjelobrojnih, odnosno 
+racionalnih rješenja jednadžbe, te struktura tih rješenja. 
+<p>
+Krivulje genusa 0 su upravo one koje posjeduju parametrizaciju 
+pomoću racionalnih funkcija. Svaka krivulja drugog stupnja (konika) 
+ima genus 0. Npr. krivulja <i>x</i><sup>2</sup> + 
+<i>y</i><sup>2</sup> = 1 ima racionalnu parametrizaciju 
+<p align=center>
+<i>x</i> = 2<i>t</i> / (<i>t</i><sup>2</sup> + 1),  
+<i>y</i> = (<i>t</i><sup>2</sup> - 1) / (<i>t</i><sup>2</sup> + 1).  
+</p>
+Kubne singularne krivulje također imaju genus 0. 
+Npr. krivulja <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> ima 
+singularnu točku (0,0). Stoga ova kubna krivulja nije eliptička. 
+Njezina racionalna parametrizacija je <i>x</i> = t<sup>2</sup>, 
+<i>y</i> = <i>t</i><sup>3</sup>. Kao drugi primjer navedimo 
+krivulju <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 
+2<i>x</i><sup>2</sup>. Ona je također singularna i ima 
+racionalnu parametrizaciju 
+<i>x</i> = t<sup>2</sup> - 2, 
+<i>y</i> = <i>t</i><sup>3</sup> - 2<i>t</i>.
+<p>
+
+<table border="0" width="100%">
+<tr valign="middle">
+<td>
+<img src="slike/sing1.gif" align="left" alt="singularna krivulja">
+</td>
+<td>
+<img src="slike/sing2.gif" align=right alt="singularna krivulja">
+</td></tr></table>
+
+<p><br>
+
+Očito je da ove dvije kubne krivulje imaju  
+beskonačno mnogo cjelobrojnih točaka. Pellova jednadžba 
+<i>x</i><sup>2</sup> - <i>d</i><i>y</i><sup>2</sup> = 1 
+(<i>d</i> prirodan broj koji nije potpun kvadrat)
+je primjer krivulje drugog stupnja koja ima beskonačno mnogo 
+cjelobrojnih točaka. 
+<p>
+
+Krivulja genusa 1 može imati samo konačno mnogo cjelobrojnih točaka.  
+Racionalnih točaka može biti beskonačno mnogo, ali su "konačno generirane" (sve se mogu dobiti iz konačno točaka primjenom 
+grupovne operacije na eliptičkoj krivulji). 
+<p> 
+
+Krivulja genusa većeg od 1 može imati samo konačno mnogo racionalnih 
+točaka.  Ova tvrdnja je poznata <em><font 
+color="009900">Mordellova</font> 
+slutnja</em> koju je 
+1983. godine dokazao <font color="009900">Faltings</font>.  
+
+<p>
+
+<hr size=2 noshade>
+
+<h4 style="color: rgb(128,0,0)">Zadatci:</h4>
+
+<ol>
+<li> Neka je <i>n</i> prirodan broj. Koliko točaka reda <i>n</i> 
+ima eliptička krivulja definirana nad 
+<img src="symbols/bbc.gif" alt="C" ALIGN=TOP>, a koliko 
+eliptička krivulja definirana nad 
+<img src="symbols/bbr.gif" alt="R" ALIGN=TOP>? 
+O čemu sve ovisi odgovor za krivulje nad 
+<img src="symbols/bbr.gif" alt="R" ALIGN=TOP>? 
+
+<p>
+<li> Pokažite da krivulja 
+<p align=center>
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> - 
+2<i>x</i><sup>2</sup> + <i>x</i> 
+</p>
+ima genus 0, te nađite jednu njezinu racionalnu parametrizaciju. 
+
+<p>
+<li> Poznato je da vrijedi: Ako su <i>C</i><sub>1</sub>, 
+<i>C</i><sub>2</sub>, <i>C</i><sub>3</sub> tri kubne krivulje, 
+te ako <i>C</i><sub>1</sub> prolazi kroz 8 točaka presjeka 
+od <i>C</i><sub>2</sub> i <i>C</i><sub>3</sub>, onda 
+<i>C</i><sub>1</sub> prolazi i kroz devetu točku presjeka 
+(to je posljedica tzv. <em>Bezoutovog teorema</em>). Koristeći 
+ovu činjenicu, dokažite (geometrijski) 
+asocijativnost operacije zbrajanja na eliptičkoj krivulji. 
+
+</ol>
+<p>
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="elipdef.html">[Prethodna tema]</a> &nbsp; 
+<a href="kongruentni.html">[Sljedeća tema]</a>  
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../ecc/eccseminar.html">Web stranica seminara</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>
+
+

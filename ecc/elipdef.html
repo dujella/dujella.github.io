@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Eliptičke krivulje</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Definicija eliptičke krivulje">
+<meta name="keywords" content="eliptičke krivulje, elipticke krivulje">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="elipime.html">[Sljedeća tema]</a> &nbsp;
+</font></b>
+
+<hr size=2 noshade>
+
+<h2 align=center style="color: rgb(204,0,0)">1. Osnovni pojmovi</h2>
+
+<h2 align=center style="color: rgb(128,0,0)">1.1. Definicija 
+eliptičke krivulje</h2>
+
+Neka je <i>K</i> polje. <em>Karakteristika polja</em> <i>K</i> 
+je najmanji prirodni broj <i>n</i> takav da je 
+1 + 1 + ... + 1 = <i>n</i> 
+<img src="symbols/cdot.gif" alt="." ALIGN=TOP> 1 = 0, gdje su 0 i 1 
+neutralni elementi za zbrajanje, odnosno množenje u <i>K</i>.  
+Ako je <i>n</i> <img src="symbols/cdot.gif" alt="." ALIGN=TOP> 1 
+<img src="symbols/ne.gif" alt="<>" ALIGN=TOP>  0 
+za svaki prirodan broj <i>n</i>, onda se kaže da je 
+<i>K</i> polje karakteristike 0. Pojam eliptičke krivulje se 
+može definirati nad proizvoljnim poljem <i>K</i>, međutim najvažniji 
+slučajevi su kad je <i>K</i> polje racionalnih brojeva 
+<img src="symbols/bbq.gif" alt="Q" ALIGN=TOP>, 
+polje realnih brojeva 
+<img src="symbols/bbr.gif" alt="R" ALIGN=TOP>, 
+polje kompleksnih brojeva 
+<img src="symbols/bbc.gif" alt="C" ALIGN=TOP>, 
+te konačno polje <img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP> 
+od <i>q</i> elemenata. Polja 
+<img src="symbols/bbq.gif" alt="Q" ALIGN=TOP>, 
+<img src="symbols/bbr.gif" alt="R" ALIGN=TOP> i 
+<img src="symbols/bbc.gif" alt="C" ALIGN=TOP> su karakteristike 0, 
+dok je karakteristika od 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP> 
+jednaka <i>p</i>, gdje je <i>p</i> prost broj i <i>q</i> = 
+<i>p</i><sup><i>m</i></sup> za neki prirodan broj <i>m</i>. 
+
+
+<p>
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Definicija:</b> 
+Neka je <i>K</i> polje 
+karakteristike različite od 2 i 3, te neka je <i>f</i>(<i>x</i>) = <i>x</i><sup>3</sup> + 
+<i>ax</i> + <i>b</i> (gdje su <i>a</i>, <i>b</i> 
+<img src="symbols/in.gif" alt="in" ALIGN=TOP> <i>K</i>) kubni polinom bez višestrukih korijena.  
+<b>Eliptička krivulja</b> <i>E</i> nad 
+<i>K</i> je skup svih točaka (<i>x</i>, <i>y</i>) 
+<img src="symbols/in.gif" alt="in" ALIGN=TOP> 
+<i>K</i> &times <i>K</i> koje zadovoljavaju jednadžbu 
+<p align=center>
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 
+<i>ax</i> + <i>b</i>,  
+</p> 
+zajedno s još jednim elementom kojeg označavamo s 
+<img src="symbols/calo.gif" alt="O" ALIGN=TOP> i zovemo 
+"točka u beskonačnosti".  
+ 
+</font></td></tr></table>
+<p> 
+Uvjet da polinom <i>f</i>(<i>x</i>) nema višestrukih 
+korijena ekvivalentan je uvjetu da je 
+4<i>a</i><sup>3</sup> + 27<i>b</i><sup>2</sup> <img src="symbols/ne.gif" alt="<>" ALIGN=MIDDLE> 0. 
+Broj <i>D</i> = - 4<i>a</i><sup>3</sup> - 27<i>b</i><sup>2</sup> 
+se zove <em>diskriminanta</em> polinoma <i>f</i>(<i>x</i>). 
+Nije teško provjeriti da ako su <i>x</i><sub>1</sub>, 
+<i>x</i><sub>2</sub> i <i>x</i><sub>3</sub> (kompleksne) 
+nultočke od <i>f</i>, onda je <i>D</i> = 
+(<i>x</i><sub>1</sub> - <i>x</i><sub>2</sub>)<sup>2</sup>
+(<i>x</i><sub>1</sub> - <i>x</i><sub>3</sub>)<sup>2</sup>
+(<i>x</i><sub>2</sub> - <i>x</i><sub>3</sub>)<sup>2</sup>. 
+<p>
+
+Slično se može definirati eliptička krivulja i nad poljima 
+karakteristike 2 ili 3. 
+Ako je char <i>K</i> = 3, onda je pripadna jednadžba 
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 
+<i>ax</i><sup>2</sup> + <i>bx</i> + <i>c</i>, a ako je 
+char <i>K</i> = 2, onda imamo dva tipa jednadžbi: 
+<i>y</i><sup>2</sup> + <i>cy</i> = <i>x</i><sup>3</sup> + 
+<i>ax</i> + <i>b</i> ili 
+<i>y</i><sup>2</sup> + <i>xy</i> = <i>x</i><sup>3</sup> + 
+<i>ax</i><sup>2</sup> + <i>b</i>.  
+<p>
+
+Opći oblik jednadžbe (koji je dobar nad svakim poljem) je: 
+<p align=center>
+<i>y</i><sup>2</sup> + <i>a</i><sub>1</sub><i>xy</i> + 
+<i>a</i><sub>3</sub><i>y</i> = <i>x</i><sup>3</sup> + 
+<i>a</i><sub>2</sub><i>x</i><sup>2</sup> + 
+<i>a</i><sub>4</sub><i>x</i> + <i>a</i><sub>6</sub>. 
+</p>
+Ovu jednadžbu zovemo <em>Weierstrassova forma</em> od 
+<i>E</i> i ona se supstitucijom varijabli (nadopunom na potpun 
+kvadrat i potpun kub) može transformirati do jedne od gore navedenih 
+jednadžbi, koju onda zovemo <em>kratka Weierstrassova forma</em> od 
+<i>E</i>. U slučaju ove opće jednadžbe, umjesto uvjeta o različitim 
+korijenima, imamo uvjet da su sve točke na krivulji 
+nesingularne (to znači da je u svakoj točki barem jedna od 
+parcijalnih derivacija 
+<img src="symbols/ne.gif" alt="<>" ALIGN=TOP> 0, 
+tj. da u svakoj točki postoji tangenta). 
+
+<p><br>
+
+Jedno od najvažnijih svojstava eliptičkih krivulja jest da se na 
+njima može, na prirodan način, uvesti operacija uz koju one 
+postaju abelove grupe. Da bi to objasnili, uzmimo da je <i>K</i> = 
+<img src="symbols/bbr.gif" alt="R" ALIGN=TOP> polje realnih brojeva. 
+Tada eliptičku krivulju (bez točke u beskonačnosti) 
+možemo prikazati kao podskup ravnine.  
+
+Polinom <i>f</i>(<i>x</i>) može imati 1 ili 3 realna korijena. 
+U ovisnosti o tome, graf pripadne eliptičke 
+krivulje ima jednu ili dvije komponente, kao što je 
+prikazano na sljedećim slikama. 
+<p>
+
+<table border="0" width="100%">
+<tr valign="middle">
+<td>
+<img src="slike/ell2a.gif" align="left" alt="elipticka krivulja">
+</td>
+<td>
+<img src="slike/ell1.gif" align=right alt="elipticka krivulja">
+</td></tr></table>
+
+<p><br>
+
+Definirat ćemo operaciju zbrajanja na <i>E</i>. 
+Neka su <i>P</i>, <i>Q</i> 
+<img src="symbols/in.gif" alt="in" ALIGN=TOP> <i>E</i>. 
+Povucimo pravac kroz točke <i>P</i> i <i>Q</i>. On siječe
+krivulju <i>E</i> u tri točke. Treću točku
+označimo s <i>P</i> * <i>Q</i>. Sada definiramo da je 
+<i>P</i> + <i>Q</i> osnosimetrična točka točki <i>P</i> * <i>Q</i> 
+s obzirom na os <i>x</i> (vidi sliku). <br>
+Ako je <i>P</i> = <i>Q</i>, 
+onda umjesto sekante povlačimo tangentu kroz
+točku <i>P</i>. Po definiciji stavljamo da je 
+<i>P</i> + <img src="symbols/calo.gif" alt="O" ALIGN=TOP> = 
+<img src="symbols/calo.gif" alt="O" ALIGN=TOP> + <i>P</i> 
+= <i>P</i> za svaki <i>P</i> 
+<img src="symbols/in.gif" alt="in" ALIGN=TOP> <i>E</i>.
+<p>
+
+<table border="0" width="100%">
+<tr valign="middle">
+<td>
+<img src="slike/ell3.gif" align="left" alt="elipticka krivulja">
+</td>
+<td>
+<img src="slike/ell4a.gif" align=right alt="elipticka krivulja">
+</td></tr></table>
+
+<p><br>
+
+
+Pokazuje se da skup <i>E</i> uz ovako definiranu operaciju
+zbrajanja postaje abelova grupa. Očito je 
+<img src="symbols/calo.gif" alt="O" ALIGN=TOP> neutralni
+element, dok je -<i>P</i> osnosimetrična točka točki <i>P</i> u
+odnosu na os <i>x</i>. Komutativnost je također očita. 
+Najteže je provjeriti asocijativnost. To se
+može napraviti korištenjem eksplicitnih formula za
+zbrajanje, koje ćemo sada navesti.
+<p>
+
+Ako je <i>P</i> = (<i>x</i><sub>1</sub>, <i>y</i><sub>1</sub>) i 
+<i>Q</i> = (<i>x</i><sub>2</sub>, <i>y</i><sub>2</sub>),  
+onda je
+<p align=center>
+  <i>x</i>(<i>P</i> + <i>Q</i>) = ((<i>y</i><sub>2</sub> - 
+<i>y</i><sub>1</sub>) / 
+(<i>x</i><sub>2</sub> - <i>x</i><sub>1</sub>))<sup>2</sup> 
+ - <i>x</i><sub>1</sub> - <i>x</i><sub>2</sub>, <br>
+<i>y</i>(<i>P</i> + <i>Q</i>) = -<i>y</i><sub>1</sub> + 
+(<i>x</i><sub>1</sub> - <i>x</i>(<i>P</i> + <i>Q</i>))
+(<i>y</i><sub>2</sub> - 
+<i>y</i><sub>1</sub>) / (<i>x</i><sub>2</sub> - <i>x</i><sub>1</sub>),
+</p>
+<p align=center>
+  <i>x</i>([2]<i>P</i>) = 
+((3<i>x</i><sub>1</sub><sup>2</sup> + <i>a</i>) / 
+(2<i>y</i><sub>1</sub>))<sup>2</sup> 
+ - 2<i>x</i><sub>1</sub>, <br>
+<i>y</i>([2]<i>P</i>) = -<i>y</i><sub>1</sub> + 
+(<i>x</i><sub>1</sub> - <i>x</i>([2]<i>P</i>))
+(3<i>x</i><sub>1</sub><sup>2</sup> + <i>a</i>) / 
+(2<i>y</i><sub>1</sub>).
+</p>
+
+Recimo još nešto o točki u beskonačnosti 
+<img src="symbols/calo.gif" alt="O" ALIGN=TOP>. Ona se pojavljuje 
+prirodno ukoliko eliptičku krivulju prikažemo u projektivnoj 
+ravnini. <em>Projektivnu ravninu</em> dobijemo tako što na 
+skupu <img src="symbols/bbr.gif" alt="R" ALIGN=TOP><img src="symbols/sup3.gif" alt="3" ALIGN=TOP> \ {(0,0,0)} uvedemo relaciju ekvivalencije 
+(<i>kX</i>, <i>kY</i>, <i>kZ</i>) ~ (<i>X</i>, <i>Y</i>, <i>Z</i>), 
+za <i>k</i> <img src="symbols/ne.gif" alt="<>" ALIGN=TOP> 0. 
+Ako u jednadžbi eliptičke krivulje (koju nazivamo još i <em>afina jednadžba</em>) uvedemo supstituciju  
+<i>x</i> = <i>X</i> / <i>Z</i>, 
+<i>y</i> = <i>Y</i> / <i>Z</i>, dobivamo <em>projektivnu jednadžbu</em> 
+eliptičke krivulje 
+<p align=center>
+<i>Y</i><sup>2</sup><i>Z</i> = <i>X</i><sup>3</sup> + 
+<i>a</i><i>X</i><i>Z</i><sup>2</sup> + <i>b</i><i>Z</i><sup>3</sup>. 
+</p>
+
+Ako je <i>Z</i> <img src="symbols/ne.gif" alt="<>" ALIGN=TOP> 0, 
+onda klasa od (<i>X</i>, <i>Y</i>, <i>Z</i>) ima reprezentant  
+oblika (<i>x</i>, <i>y</i>, 1), pa ju možemo identificirati 
+sa (<i>x</i>, <i>y</i>). Međutim, postoji i jedna klasa 
+ekvivalencije koja sadrži točke za koje je <i>Z</i> = 0. 
+Ona ima reprezentant (0, 1, 0) i nju identificiramo s 
+točkom <img src="symbols/calo.gif" alt="O" ALIGN=TOP>. 
+<p>
+
+Uočimo da je u točkama u kojima eliptička krivulja siječe 
+os <i>x</i>, tangenta okomita na os <i>x</i>. Treća točka 
+presjeka tog pravca s <i>E</i> je 
+<img src="symbols/calo.gif" alt="O" ALIGN=TOP>. To znači da 
+za te točke vrijedi [2] <i>P</i> = 
+<img src="symbols/calo.gif" alt="O" ALIGN=TOP>, pa kažemo da su 
+to točke reda 2 ili 2-torzijske točke. 
+
+<p><br>
+
+Jasno je da gore navedene algebarske formule za zbrajanje točaka, 
+koje smo dobili za slučaj eliptičke krivulje nad 
+<img src="symbols/bbr.gif" alt="R" ALIGN=TOP>, imaju smisla 
+nad svakim poljem (uz malu modifikaciju za slučaj polja s 
+karakteristikom 2 i 3). Pokazuje se da uz operaciju definiranu 
+ovim formulama eliptička krivulja nad proizvoljnim poljem <i>K</i> 
+postaje abelova grupa. 
+
+<p>
+
+<hr size=2 noshade>
+
+<h4 style="color: rgb(128,0,0)">Zadatci:</h4>
+
+<ol>
+<li> Neka su <i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>,  <i>x</i><sub>3</sub> nultočke polinoma <i>f</i>(<i>x</i>) = 
+<i>x</i><sup>3</sup> + <i>ax</i> + <i>b</i>. 
+Dokažite da vrijedi   
+<p align=center>
+(<i>x</i><sub>1</sub> - <i>x</i><sub>2</sub>)<sup>2</sup>
+(<i>x</i><sub>1</sub> - <i>x</i><sub>3</sub>)<sup>2</sup>
+(<i>x</i><sub>2</sub> - <i>x</i><sub>3</sub>)<sup>2</sup> = 
+- 4<i>a</i><sup>3</sup> - 27<i>b</i><sup>2</sup>.  
+<p> 
+
+<li> Izvedite formule za zbrajanje točaka na eliptičkoj 
+krivulji zadanoj jednadžbom  
+<p align=center>
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> +  
+<i>a</i><i>x</i><sup>2</sup> + <i>b</i><i>x</i> + <i>c</i>. 
+</p>
+
+<li> Odredite red točke <i>P</i> = (3, 8) na eliptičkoj krivulji 
+<p align=center>
+<i>y</i><sup>2</sup> = 
+<i>x</i><sup>3</sup> - 43<i>x</i> + 166, 
+</p>
+tj. najmanji prirodan broj <i>n</i> takav da je 
+[<i>n</i>] <i>P</i> = <i>P</i> + ... + <i>P</i> = 
+<img src="symbols/calo.gif" alt="O" ALIGN=TOP>. 
+
+</ol>
+<p>
+<hr size=2 noshade>
+
+
+
+<b><font size="-1" face="Verdana">
+<a href="elipime.html">[Sljedeća tema]</a> &nbsp;
+</font></b>
+
+<hr size=2 noshade>
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../ecc/eccseminar.html">Web stranica seminara</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+<!-- Start eXTReMe Non Public Tracker Code
+Login:    duje
+Page ID:  elipdef
+Page URL: http://www.math.hr/~duje/ecc/elipdef.html
+Help:     http://www.extremetracking.com/  -->
+<script type="text/javascript" language="javascript1.2"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;//-->
+</script><script type="text/javascript"><!--
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+EXd.write("<img src=http://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;pid=elipdef&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXd.referrer)+" height=1 width=1>");//-->
+</script><noscript><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;pid=elipdef&amp;j=n&amp;jv=n"/>
+</noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Elipticke krivulje nad poljem racionalnih brojeva</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Eliptičke 
+krivulje nad poljem racionalnih brojeva">
+<meta name="keywords" content="eliptičke krivulje, torziona grupa, 
+torzijska grupa, rang">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="mtorke.html">[Prethodna tema]</a> &nbsp; 
+<a href="rang.html">[Sljedeća tema]</a> &nbsp;
+</font></b>
+
+<hr size=2 noshade>
+
+
+<a name="4.4"></a>
+<h2 align=center style="color: rgb(204,0,0)">3. Eliptičke 
+krivulje nad poljem racionalnih brojeva</h2>
+
+<h2 align=center style="color: rgb(128,0,0)">3.1. Grupa 
+<i>E</i>(<b>Q</b>)</h2>
+
+Sada ćemo reći nešto više o eliptičkim krivuljama nad poljem 
+racionalnih brojeva 
+<img src="symbols/bbq.gif" alt="Q" ALIGN=TOP>. 
+Kod takvih krivulja su, po definiciji, koeficijenti kubnog 
+polinoma racionalni brojevi. Međutim, množenjem s njihovim 
+zajedničkim nazivnikom možemo postići da su koeficijenti 
+cijeli brojevi. To znači da možemo pretpostaviti da naša 
+krivulja ima oblik
+<p align=center>
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 
+<i>ax</i> + <i>b</i>,  
+</p> 
+gdje su <i>a</i>, <i>b</i> cijeli brojevi i vrijedi da je  
+4<i>a</i><sup>3</sup> + 27<i>b</i><sup>2</sup> <img src="symbols/ne.gif" alt="<>" ALIGN=MIDDLE> 0. 
+<p>
+Najvažnija činjenica o eliptičkim krivuljama nad 
+<img src="symbols/bbq.gif" alt="Q" ALIGN=TOP> je 
+<em>Mordell-Weilov teorem</em>.
+
+<p>
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Teorem:</b> (<font color="009900">Mordell</font> - 
+<font color="009900">Weil</font>)</b> 
+<i>E</i>(<img src="symbols/bbq.gif" alt="Q" ALIGN=TOP>) je konačno 
+generirana abelova grupa. 
+
+</font></td></tr></table>
+<p> 
+
+Drugim riječima, postoji konačan skup racionalnih točaka 
+<i>P</i><sub>1</sub>, ... , <i>P</i><sub><i>k</i></sub> iz kojih se 
+sve ostale racionalne točke na <i>E</i> mogu 
+dobiti metodom sekante i tangente.  
+<br>
+Kako je svaka konačno generirana abelova grupa izomorfna 
+produktu cikličkih grupa, dobivamo sljedeću neposrednu 
+posljedicu Mordell-Weilovog teorema. 
+
+<p>
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Korolar:</b> 
+&nbsp; &nbsp; &nbsp; &nbsp;
+<i>E</i>(<img src="symbols/bbq.gif" alt="Q" ALIGN=TOP>)  
+<img src="symbols/cong.gif" alt="=" ALIGN=TOP> 
+<i>E</i>(<img src="symbols/bbq.gif" alt="Q" ALIGN=TOP>)<sub><small>tors</small></sub> &times; 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><img src="symbols/supr.gif" alt="r" ALIGN=TOP> 
+
+</font></td></tr></table>
+<p>
+
+Grupa <i>E</i>(<img src="symbols/bbq.gif" alt="Q" ALIGN=TOP>)<sub><small>tors</small></sub> koja se sastoji od svih 
+točaka konačnog reda naziva se <em>torzijska grupa</em> od <i>E</i>, 
+a nenegativni cijeli broj <i>r</i> 
+se naziva <em>rang</em> od <i>E</i> i označava se s rank (<i>E</i>).
+<br>
+Korolar nam kaže da postoji <i>r</i> racionalnih točaka 
+<i>P</i><sub>1</sub>, ... , <i>P</i><sub><i>r</i></sub> 
+na krivulji <i>E</i> sa svojstvom da se svaka racionalna 
+točka <i>P</i> na <i>E</i> može prikazati u obliku 
+<p align=center>
+<i>P</i> = <i>T</i> + <i>m</i><sub>1</sub><i>P</i><sub>1</sub> + ... + 
+<i>m</i><sub><i>r</i></sub><i>P</i><sub><i>r</i></sub>,  
+</p>
+gdje je <i>T</i> neka točka konačnog reda, a <i>m</i><sub>1</sub>, 
+... , <i>m</i><sub><i>r</i></sub> cijeli brojevi.
+
+<p>
+
+
+Postavlja se pitanje koje sve vrijednosti mogu poprimiti 
+<i>E</i>(<img src="symbols/bbq.gif" alt="Q" ALIGN=TOP>)<sub><small>tors</small></sub> 
+i rank (<i>E</i>). Nadalje, pitanje je kako izračunati te 
+vrijednosti za konkretnu krivulju <i>E</i>. 
+Pokazuje se da je puno lakše dati odgovore na ova pitanja 
+za torzijsku grupu, nego za rang. Do danas nije poznato koje 
+sve vrijednosti može poprimiti rang eliptičke krivulje. Vjeruje 
+se da rang može biti proizvoljno velik, no danas se zna tek da 
+postoji eliptička krivulja ranga 
+<img src="symbols/geqslant.gif" alt=">=" ALIGN=TOP> 24 
+(<font color="009900">Martin</font> i 
+<font color="009900">McMillen</font>). 
+Krivulja najvećeg ranga za koju je rang egzaktno izračunan 
+(a ne samo donja ograda za rang) je krivulja ranga 15 
+(<font color="009900">Dujella</font>). (Naknadna napomena: 
+<font color="009900">Elkies</font> je 2005. godine pronašao 
+krivulju egzaktnog ranga 17, a 2006. godine krivulju ranga 
+<img src="symbols/geqslant.gif" alt=">=" ALIGN=TOP> 28.) 
+S druge strane, 
+<font color="009900">Mazur</font> je dokazao da postoji 
+točno 15 mogućih torzijskih grupa. To su 
+<p align=center>
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><img src="symbols/subn.gif" alt="n" ALIGN=TOP>, 
+za <i>n</i> = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ili 12; <br>
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><img src="symbols/sub2.gif" alt="2" ALIGN=TOP> &times;
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><img src="symbols/subn.gif" alt="n" ALIGN=TOP>, 
+za <i>n</i> = 2, 4, 6 ili 8. 
+</p>
+Možemo se pitati koliko velik može biti rang krivulje 
+kojoj je zadana torzijska grupa. Slutnja je da i ovdje 
+rang može biti proizvoljno velik, no danas se zna tek 
+da za svaku od 15 mogućih torzijskih grupa postoji 
+krivulja ranga <img src="symbols/geqslant.gif" alt=">=" ALIGN=TOP> 3.  Podatci o najvećim poznatim rangovima za svaku od 
+15 mogućih torzijskih grupa mogu se naći u sljedećoj 
+<a href="../tors/tors.html">tablici</a>.
+<p>
+Recimo sada nešto o računanju torzijske grupe od <i>E</i>. 
+Pretpostavimo najprije 
+da je <i>P</i> = (<i>x</i>, <i>y</i>) točka reda 2 
+na <i>E</i>. To znači da je [2] <i>P</i> = 
+<img src="symbols/calo.gif" alt="O" ALIGN=TOP>, odnosno 
+<i>P</i> = -<i>P</i>. No, odavde je (<i>x</i>, <i>y</i>) = 
+(<i>x</i>, -<i>y</i>), što povlači <i>y</i> = 0. Dakle, točke reda 2 
+su upravo točke s <i>y</i>-koordinatom jednakom 0. Možemo 
+imati 0, 1 ili 3 takve točke, što ovisi o broju racionalnih 
+nultočaka polinoma <i>x</i><sup>3</sup> + <i>ax</i> + <i>b</i>. 
+Te točke, zajedno s točkom u beskonačnosti 
+<img src="symbols/calo.gif" alt="O" ALIGN=TOP>, čine podgrupu od 
+<i>E</i>(<img src="symbols/bbq.gif" alt="Q" ALIGN=TOP>)<sub><small>tors</small></sub> koja je ili trivijalna 
+ili jednaka  <img src="symbols/bbz.gif" 
+alt="Z" ALIGN=TOP><img src="symbols/sub2.gif" alt="2" ALIGN=TOP> 
+ili jednaka 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><img src="symbols/sub2.gif" alt="2" ALIGN=TOP> &times;
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><img src="symbols/sub2.gif" alt="2" ALIGN=TOP>. 
+Ostale točke konačnog reda možemo naći korištenjem sljedećeg teorema. 
+
+<p>
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Teorem:</b> (<font color="009900">Lutz</font> - 
+<font color="009900">Nagell</font>)</b> 
+Ako je <i>P</i> = (<i>x</i>, <i>y</i>) 
+<img src="symbols/in.gif" alt="in" ALIGN=TOP>
+<i>E</i>(<img src="symbols/bbq.gif" alt="Q" ALIGN=TOP>)<sub><small>tors</small></sub>, 
+onda su <i>x</i> i <i>y</i> cijeli brojevi, te vrijedi da je 
+ili <i>y</i> = 0 (tada <i>P</i> ima red 2) ili <i>y</i><sup>2</sup> 
+dijeli diskriminantu <i>D</i> = - 4<i>a</i><sup>3</sup> - 
+27<i>b</i><sup>2</sup>. 
+
+</font></td></tr></table>
+<p>  
+
+<b>Primjer:</b> <em>Odredite torzijsku grupu eliptičke krivulje</em> 
+<p align=center>
+<i>E</i> : &nbsp; &nbsp; &nbsp; &nbsp; <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + <i>x</i>.  
+</p> 
+
+Imamo <i>D</i> = -4. Stoga svaka torzijska točka <i>P</i> = 
+(<i>x</i>, <i>y</i>) mora zadovoljavati ili <i>y</i> = 0 ili 
+<i>y</i> | 2. Dakle, <i>y</i> <img src="symbols/in.gif" 
+alt="in" ALIGN=TOP> {0, 1, -1, 2, -2}. Lako se vidi da jednadžbe 
+<i>x</i><sup>3</sup> + <i>x</i> = 1 i <i>x</i><sup>3</sup> + <i>x</i> 
+= 4 nemaju cjelobrojnih rješenja, dok je <i>x</i> = 0 jedino cjelobrojno 
+rješenje jednadžbe <i>x</i><sup>3</sup> + <i>x</i> = 0. 
+To znači da je 
+<p align=center>
+<i>E</i>(<img src="symbols/bbq.gif" alt="Q" ALIGN=TOP>)<sub><small>tors</small></sub> = 
+{<img src="symbols/calo.gif" alt="O" ALIGN=TOP>, (0,0)} 
+<img src="symbols/cong.gif" alt="=" ALIGN=TOP>  
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><img src="symbols/sub2.gif" alt="2" ALIGN=TOP>.  
+</p>
+
+<hr size=2 noshade>
+
+<h4 style="color: rgb(128,0,0)">Zadatci:</h4>
+
+<ol>
+<li> Provjerite da točke <i>P</i><sub>1</sub> = (-2,3), 
+<i>P</i><sub>2</sub> = (2,5), <i>P</i><sub>3</sub> = (-1,4), 
+<i>P</i><sub>4</sub> = (4,9), <i>P</i><sub>5</sub> = (8,23), 
+<i>P</i><sub>6</sub> = (43,282) i <i>P</i><sub>7</sub> = 
+(52,375) leže na eliptičkoj krivulji 
+<p align=center>
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 17.
+</p>
+Pokažite da se točke <i>P</i><sub>3</sub>, <i>P</i><sub>4</sub>, 
+<i>P</i><sub>5</sub>, <i>P</i><sub>6</sub> i <i>P</i><sub>7</sub> 
+mogu prikazati u obliku [<i>m</i>] <i>P</i><sub>1</sub> + 
+[<i>n</i>] <i>P</i><sub>2</sub>, <i>m</i>, <i>n</i> 
+<img src="symbols/in.gif" alt="in" ALIGN=TOP>
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP>
+
+<p>
+<li> Nađite sve točke konačnog reda, te odredite 
+strukturu torzijske grupe za sljedeće eliptičke krivulje
+<blockquote>
+a) &nbsp; <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 4; <br>
+b) &nbsp; <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 8; <br>
+c) &nbsp; <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> - 4<i>x</i>; <br>
+d) &nbsp; <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> - 43<i>x</i> + 166.
+</blockquote>   
+
+
+</ol>
+
+<p>
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="mtorke.html">[Prethodna tema]</a> &nbsp; 
+<a href="rang.html">[Sljedeća tema]</a> &nbsp;
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../ecc/eccseminar.html">Web stranica seminara</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>
+
+

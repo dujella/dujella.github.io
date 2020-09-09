@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Implementacija osnovnih operacija na eliptičkim 
+krivuljama</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Implementacija 
+operacija na eliptičkim krivuljama">
+<meta name="keywords" content="eliptičke krivulje">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="hasse.html">[Prethodna tema]</a> &nbsp; 
+<a href="menezes.html">[Sljedeća tema]</a>  
+</font></b>
+
+<hr size=2 noshade>
+
+
+<h2 align=center style="color: rgb(128,0,0)">5.3. Implementacija 
+osnovnih operacija na eliptičkim krivuljama</h2>
+
+Da bi neka grupa <i>G</i> mogla poslužiti kao osnova za  
+kriptosustav s javnim ključem, nužno je da se u toj grupi 
+množenje (grupovna operacija) i potenciranje mogu efikasno 
+provesti. Budući da grupovnu operaciju na eliptičkoj krivulji 
+zapisujemo aditivno, govorimo o <em>zbrajanju točaka</em> i 
+<em>višekratniku točke</em>: 
+<p align=center>
+[<i>k</i>] <i>P</i> = <i>P</i> + <i>P</i> + ... +  <i>P</i> 
+&nbsp; (<i>k</i> pribrojnika).
+</p>
+
+Iz formula za zbrajanje točaka vidimo da u slučaju kada je 
+<i>P</i> <img src="symbols/ne.gif" alt="<>" ALIGN=TOP> <i>Q</i>, 
+računanje koordinata točke <i>P</i> + <i>Q</i> zahtijeva 
+jedno računanje inverza u polju, te tri množenja u polju 
+(1I + 3M) (zanemarujemo "trošak" za zbrajanje u polju, te množenje 
+malim konstantama). Kada je <i>P</i> = <i>Q</i>, onda je trošak 
+za udvostručavanje točke jednak 1I + 4M. <br>
+
+Ovo je razmatranje bilo za slučaj char 
+<img src="symbols/ne.gif" alt="<>" ALIGN=TOP> 2, 3. Ako je char = 2, 
+situacija je slična, osim što je u tom slučaju trošak kvadriranja 
+zanemariv u odnosnu na obično množenje, pa zato dobivamo 1I + 2M.  <p>
+
+Inverz u konačnom polju se računa pomoću Euklidovog algoritma. 
+Iako je njegova kompleksnost teoretski usporediva s 
+kompleksnošću množenja, u praksi je množenje ipak dosta 
+brže od računanja inverza.  
+Računanje inverza u polju može se izbjeći uvođenjem 
+<em>težinskih projektivnih koordinata</em>, gdje 
+(<i>X</i>, <i>Y</i>, <i>Z</i>) odgovara 
+(<i>X</i> / <i>Z</i><sup>2</sup>, <i>Y</i> / <i>Z</i><sup>3</sup>). 
+Tada jednadžba eliptičke krivulje (za char 
+<img src="symbols/ne.gif" alt="<>" ALIGN=TOP> 2, 3) postaje
+<p align=center>
+<i>Y</i><sup>2</sup> = <i>X</i><sup>3</sup> + 
+<i>aXZ</i><sup>4</sup> + <i>bZ</i><sup>6</sup>. 
+</p>
+Sada se kod računanja zbroja dvaju točaka uopće ne 
+pojavljuje djeljenje. 
+Na taj način, trošak za računanje <i>P</i> + <i>Q</i> postaje 16M, 
+a za računanje [2]<i>P</i> trošak je 10M. 
+Na primjer, koordinate točke 
+(<i>X</i><sub>2</sub>, <i>Y</i><sub>2</sub>, <i>Z</i><sub>2</sub>) = 
+[2] (<i>X</i>, <i>Y</i>, <i>Z</i>)
+se mogu izračunati na sljedeći način: 
+<p align=center>
+<i>m</i><sub>1</sub> = 3<i>X</i><sup>2</sup> + <i>a</i><i>Z</i><sup>4</sup>, &nbsp; &nbsp; 
+<i>m</i><sub>2</sub> = 4<i>X</i><i>Y</i><sup>2</sup>, &nbsp; &nbsp; 
+<i>m</i><sub>3</sub> = <i>Y</i><sup>4</sup>, <br>
+<i>X</i><sub>2</sub> = (<i>m</i><sub>1</sub>)<sup>2</sup> 
+- 2<i>m</i><sub>2</sub>, &nbsp; &nbsp;  
+<i>Y</i><sub>2</sub> = <i>m</i><sub>1</sub>(<i>m</i><sub>2</sub>   
+- <i>X</i><sub>2</sub>) - <i>m</i><sub>3</sub>, &nbsp; &nbsp;  
+<i>Z</i><sub>2</sub> = 2<i>Y</i><i>Z</i>.
+
+
+
+<p><br>
+
+Računanje višekratnika točke na eliptičkoj krivulji, specijalni 
+je slučaj općeg problema potenciranja u abelovoj grupi. 
+Stoga se mogu primijeniti razni algoritmi koji su poznati za 
+taj opći problem. 
+<p>
+Najjednostavnija (i najstarija) efikasna metoda za računanje
+višekratnika točaka koristi binarni zapis broja <i>k</i>. 
+Zove se <em>binarna metoda</em> ili <em>metoda uzastopnog 
+kvadriranja</em>. Na primjer, binarni zapis broja 100 je 
+(1100100)<sub>2</sub>. Sada točku [100] <i>P</i> možemo izračunati 
+kao [2]([2](<i>P</i> + [2]([2]([2](<i>P</i> + [2]<i>P</i>))))).
+<p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>ALGORITAM:</b><br><br>
+INPUT: točka <i>P</i> i <i>g</i>-bitni 
+prirodni broj <i>k</i> = 
+<img src="symbols/sum.gif" alt="SUMA" ALIGN=MIDDLE> 
+<i>k</i><sub><i>j</i></sub> 2<sup><i>j</i></sup>, 
+<i>k</i><sub><i>j</i></sub> <img src="symbols/in.gif" alt="in" ALIGN=TOP> 
+{0,1}  <br>
+OUTPUT: točka <i>Q</i> = [<i>k</i>] <i>P</i>
+
+<ol>
+<li> <i>Q</i> <img src="symbols/leftarrow.gif" alt="<--" ALIGN=TOP>
+<img src="symbols/calo.gif" alt="O" ALIGN=TOP> 
+<li> For <i>j</i> = <i>g</i> - 1 to 0 by -1 do:
+<li> &nbsp; &nbsp; &nbsp; <i>Q</i> 
+<img src="symbols/leftarrow.gif" alt="<--" ALIGN=TOP> [2] <i>Q</i> 
+<li> &nbsp; &nbsp; &nbsp; If <i>k</i><sub><i>j</i></sub> = 1 
+then <i>Q</i> <img src="symbols/leftarrow.gif" alt="<--" ALIGN=TOP>
+<i>Q</i> + <i>P</i>
+<li> Return <i>Q</i>
+</ol>
+</font></td></tr></table>
+
+<p>
+Broj "bitnih" operacija za računanje [<i>k</i>] <i>P</i> pomoću 
+ovog algoritma je O(log <i>k</i> log<sup>3</sup> <i>q</i>). 
+<p>
+
+Poznato je više općih poboljšanja binarne metode. Međutim, 
+postoji je jedno poboljšanje koje je prilično specifično za 
+eliptičke krivulje. Naime, za razliku od nekih drugih grupa, 
+kod eliptičkih krivulja inverzna operacija (oduzimanje) 
+ima doslovno isti trošak kao i originalna grupovna operacija 
+(zbrajanje). To je zbog toga što vrijedi 
+-(<i>x</i>, <i>y</i>) = (<i>x</i>, -<i>y</i>) za char 
+<img src="symbols/ne.gif" alt="<>" ALIGN=TOP> 2,  dok je 
+-(<i>x</i>, <i>y</i>) = (<i>x</i>, <i>x</i> + <i>y</i>) za char = 2. 
+<p>
+Ova činjenica nas motivira za umjesto binarnog prikaza 
+broja <i>k</i>, koristimo tzv. SD (<em>signed digit</em>) prikaz 
+oblika 
+<i>k</i> = 
+<img src="symbols/sum.gif" alt="SUMA" ALIGN=MIDDLE> 
+<i>s</i><sub><i>j</i></sub> 2<sup><i>j</i></sup>, 
+<i>k</i><sub><i>j</i></sub> <img src="symbols/in.gif" alt="in" ALIGN=TOP> 
+{-1,0,1}.  
+Jasno je da ovakav prikaz nije jedinstven. Npr. 3 = (0 1 1) = 
+(1 0 -1). Stoga možemo pokušati izabrati prikaz koji će voditi 
+do što efikasnijeg algoritma. Reći ćemo da je SD prikaz 
+<em>rijedak</em> ili <em>nesusjedni</em> (non-adjacent form, NAF) 
+ako nema susjednih znamenaka različitih od 0, tj. ako je 
+<i>s</i><sub><i>j</i></sub> <i>s</i><sub><i>j</i>+1</sub> = 0, 
+za svaki <i>j</i>. Poznato je da svaki prirodan broj <i>k</i> ima 
+jedinstveni NAF, te da NAF ima najmanju težinu (broj 
+<i>s</i><sub><i>j</i></sub>-tova različitih od 0), među svim 
+SD prikazima od <i>k</i>. Očekivana težina NAF-a je <i>g</i>/3, 
+za razliku od binarnog prikaza kod kojeg je očekivana težina 
+<i>g</i>/2.  
+
+<p>
+<hr size=2 noshade>
+
+<h4 style="color: rgb(128,0,0)">Zadatci:</h4>
+
+<ol>
+<li> Zadana je točka <i>P</i> = (0,376) na eliptičkoj 
+krivulji 
+<i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> - <i>x</i> + 188 
+nad poljem <img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>751</sub>. 
+Izračunajte [100] <i>P</i>.
+<p>
+<li> Za sve prirodne brojeve između 100 i 200 odredite 
+njihov NAF prikaz. 
+<p>
+<li> Uvjerite se da sljedeći algoritam iz poznatog 
+binarnog zapisa (<i>k</i><sub><i>g</i> -1</sub>, ... , 
+<i>k</i><sub>1</sub>, <i>k</i><sub>0</sub>) broja <i>k</i> 
+računa njegov NAF prikaz 
+(<i>s</i><sub><i>g</i></sub>, ... , 
+<i>s</i><sub>1</sub>, <i>s</i><sub>0</sub>):
+<blockquote>
+<font face="Times New Roman">
+<i>c</i><sub>0</sub> = 0 <br>
+<tt><b>For</b></tt> &nbsp; <i>j</i> = 0  
+&nbsp; <tt><b>to</b></tt> &nbsp; <i>g</i> &nbsp; <tt><b>do</b></tt> <br>
+&nbsp; &nbsp; &nbsp; &nbsp; 
+<i>c</i><sub><i>j</i> + 1</sub> = 
+<img src="symbols/lfloor.gif" alt="[" ALIGN=TOP>(<i>k</i><sub><i>j</i></sub> + <i>k</i><sub><i>j</i> + 1</sub> 
++ <i>c</i><sub><i>j</i></sub>) / 2<img src="symbols/rfloor.gif" alt="]" ALIGN=TOP> <br>
+&nbsp; &nbsp; &nbsp; &nbsp; <i>s</i><sub><i>j</i></sub> = 
+<i>k</i><sub><i>j</i></sub> + <i>c</i><sub><i>j</i></sub> 
+- 2<i>c</i><sub><i>j</i> + 1</sub>.
+</font>
+
+</ol>
+<p>
+
+ 
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="hasse.html">[Prethodna tema]</a> &nbsp; 
+<a href="menezes.html">[Sljedeća tema]</a>  
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../ecc/eccseminar.html">Web stranica seminara</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>
+
+
+
+ 
+
+
+
+
+

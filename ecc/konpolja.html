@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Konačna polja</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Eliptičke krivulje nad konačnim 
+poljima">
+<meta name="keywords" content="konačna polja, karakteristika polja">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="indcal.html">[Prethodna tema]</a> &nbsp; 
+<a href="hasse.html">[Sljedeća tema]</a>  
+</font></b>
+
+<hr size=2 noshade>
+
+
+
+<h2 align=center style="color: rgb(204,0,0)">5. Eliptičke 
+krivulje nad konačnim poljima</h2>
+
+<h2 align=center style="color: rgb(128,0,0)">5.1. Konačna polja</h2>
+
+
+Kod primjena u kriptografiji, eliptičke krivulje se 
+promatraju nad konačnim poljima. Podsjetimo se osnovnih 
+svojstava konačnih polja. 
+<p>
+Konačno polje s <i>q</i> elemenata označava se s 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>. 
+Neka je <i>p</i> karakteristika polja 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>. 
+Tada <img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP> 
+sadrži prosto polje 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP> = 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP>, 
+i stoga je 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>   
+vektorski prostor nad 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP>. 
+Dimenziju od <img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP> 
+kao vektorskog prostora nad 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP> 
+označimo s <i>k</i>. Tada <img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><img src="symbols/subq.gif" alt="q" ALIGN=MIDDLE>   
+ima <i>p</i><sup><i>k</i></sup> elemenata, tj. 
+<i>q</i> = <i>p</i><sup><i>k</i></sup>. 
+Nadalje, za svaku potenciju prostog broja 
+<i>q</i> = <i>p</i><sup><i>k</i></sup> 
+postoji jedinstveno (do na izomorfizam) polje s <i>q</i> elemenata. 
+Jedna od realizacija tog polja je 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP>[<i>x</i>] / 
+(<i>f</i>(<i>x</i>)), gdje je <i>f</i>(<i>x</i>) neki ireducubilni 
+polinom stupnja <i>k</i> nad <img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP>.
+Elementi ovog polja su polinomi nad 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP> 
+stupnja manjeg ili jednakog <i>k</i> - 1 (očito je da takvih polinoma  
+ima točno <i>p</i><sup><i>k</i></sup>), dok su operacije 
+zbrajanje i množenje polinoma u 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP>[<i>x</i>], 
+s time da se nakon množenja računa ostatak pri 
+djeljenju s polinomom <i>f</i>(<i>x</i>). 
+<p>
+
+<b>Primjer:</b> <em>Konstrukcija polja</em> 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>9</sub>. <br>
+
+Polinom <i>f</i>(<i>x</i>) = 
+<i>x</i><sup>2</sup> + 1 je ireducibilan nad 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><sub>3</sub> 
+jer nema korijena u <img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><sub>3</sub>.  
+Stoga  
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>9</sub> 
+možemo reprezentirati kao 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><sub>3</sub>[<i>x</i>] / 
+(<i>f</i>(<i>x</i>)). Dakle, elementi od   
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>9</sub> su
+0, 1, 2, <i>x</i>, <i>x</i> + 1, <i>x</i> + 2, 2<i>x</i>, 
+2<i>x</i> + 1, 2<i>x</i> + 2. Izračunajmo, na primjer, 
+(<i>x</i> + 1)<sup>2</sup> u polju <img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>9</sub>. 
+Imamo: (<i>x</i> + 1)<sup>2</sup> = <i>x</i><sup>2</sup> + 
+2<i>x</i> + 1 = 2<i>x</i>.
+
+<p><br>
+Označimo s <img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><img src="symbols/subq.gif" alt="q" ALIGN=MIDDLE><sup>*</sup> 
+multiplikativnu grupu polja 
+<img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><img src="symbols/subq.gif" alt="q" ALIGN=MIDDLE>. 
+Tada je grupa <img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><img src="symbols/subq.gif" alt="q" ALIGN=MIDDLE><sup>*</sup> 
+ciklička, što znači da postoji element <i>g</i> 
+<img src="symbols/in.gif" alt="in" ALIGN=MIDDLE>
+<img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><img src="symbols/subq.gif" alt="q" ALIGN=MIDDLE> 
+takav da se svaki element iz 
+<img src="symbols/bbf.gif" alt="F" ALIGN=MIDDLE><img src="symbols/subq.gif" alt="q" ALIGN=MIDDLE><sup>*</sup> 
+može dobiti kao neka potencija od <i>g</i>. 
+<p><br>
+
+Za primjene u kriptografiji, posebno za primjene eliptičkih krivulja 
+u kriptografiji, najvažniji su slučajevi kad je <i>q</i> = 
+<i>p</i> prost broj, te kad je <i>q</i> = 2<sup><i>m</i></sup> 
+potencija broja 2. Kako smo već rekli, polje 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>2</sub><img src="symbols/subm.gif" alt="m" ALIGN=TOP> jest vektorski 
+prostor nad 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>2</sub> 
+dimenzije <i>m</i>. Postoji mnogo različitih baza tog vektorskog 
+prostora. Mi ćemo spomeniti dva tipa takvih baza: 
+trinomijalne baze i normalne baze. 
+
+<p><br>
+
+Ako je <i>f</i>(<i>x</i>) ireducibilni polinom stupnja <i>m</i> 
+nad <img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>2</sub>, 
+tada se polje 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>2</sub><img src="symbols/subm.gif" alt="m" ALIGN=TOP>
+može reprezentirati kao skup svih polinoma nad 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>2</sub> 
+stupnja manjeg 
+od <i>m</i>, s operacijama modulo <i>f</i>(<i>x</i>). 
+To se zove reprezentacija pomoću <em>polinomijalne 
+baze</em>. Reprezentacija pomoću <em>trinomijalne baze</em> je 
+specijalni slučaj reprezentacije pomoću polinomijalne baze u 
+kojem polinom <i>f</i>(<i>x</i>) ima oblik <i>f</i>(<i>x</i>) = 
+<i>x</i><sup><i>m</i></sup> + <i>x</i><sup><i>k</i></sup> + 1. 
+Prednost takve reprezentacije jest efikasnost provođenja 
+redukcije modulo <i>f</i>(<i>x</i>). Za neke <i>m</i>-ove (npr. za 
+<i>m</i> <img src="symbols/equiv.gif" alt="=" ALIGN=TOP> 0 
+(mod 8)), trinomijalna baza ne postoji. Eksperimentalno je pokazano 
+da trinomijalna baza postoji za nešto više od pola <i>m</i>-ova 
+manjih od 1000.
+
+<p><br> 
+<em>Normalna baza</em> od 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>2</sub><img src="symbols/subm.gif" alt="m" ALIGN=TOP> 
+nad <img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>2</sub> 
+je baza oblika
+<p align=center>
+{<i>b</i>, <i>b</i><sup>2</sup>, 
+<i>b</i><sup>2</sup><img src="symbols/sup2.gif" alt="2" ALIGN=TOP>, 
+... , <i>b</i><sup>2</sup><img src="symbols/supm.gif" alt="m-1" ALIGN=TOP><img src="symbols/supminus.gif" alt=" " ALIGN=TOP><img src="symbols/sup1.gif" alt=" " ALIGN=TOP>},
+</p>
+gdje je <i>b</i> <img src="symbols/in.gif" alt="in" ALIGN=TOP> 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>2</sub><img src="symbols/subm.gif" alt="m" ALIGN=TOP>. Takva baza uvijek 
+postoji. U reprezentaciji pomoću normalne baze, kvadriranje 
+u polju postaje trivijalno: ako je <i>a</i> = 
+(<i>a</i><sub>0</sub>, <i>a</i><sub>1</sub>, ... , 
+<i>a</i><sub><i>m</i> -1</sub>), onda je <i>a</i><sup>2</sup> = 
+(<i>a</i><sub><i>m</i> -1</sub>, <i>a</i><sub>0</sub>, 
+<i>a</i><sub>1</sub>, ... , <i>a</i><sub><i>m</i> -2</sub>). 
+Dakle, kvadriranje nije ništa drugo nego ciklički pomak udesno. 
+Međutim, za općenitu normalnu bazu, množenje u polju je znatno 
+kompliciranije. Stoga su od interesa one normalne baze kod kojih 
+je množenje što jednostavnije. Takve baze se nazivaju 
+<em>optimalne normalne baze</em> (ONB). Optimalna normalna baza 
+ne mora postojati. Jedan od nužnih uvjeta za postojanje ONB je 
+da je barem jedan od brojeva <i>n</i> + 1, 2<i>n</i> + 1 prost. 
+<p>
+
+<hr size=2 noshade>
+
+<h4 style="color: rgb(128,0,0)">Zadatci:</h4>
+
+<ol>
+<li> Dokažite da je polinom <i>f</i>(<i>x</i>) = 
+<i>x</i><sup>3</sup> + <i>x</i> + 1 ireducibilan nad 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><sub>2</sub>. 
+Napravite tablice zbrajanja i množenja za 8 elemenata polja 
+<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>8</sub> 
+reprezentiranog kao 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><sub>2</sub>[<i>x</i>] / 
+(<i>f</i>(<i>x</i>)).   
+<p>
+<li> Neka je <i>f</i>(<i>x</i>) = <i>x</i><sup><i>m</i></sup> + 
+<i>x</i><sup><i>k</i></sup> + 1, te neka je 
+<i>a</i>(<i>x</i>) = 
+<i>a</i><sub>0</sub> + <i>a</i><sub>1</sub><i>x</i> + <i>a</i><sub>2</sub><i>x</i><sup>2</sup> + ... + 
+<i>a</i><sub>2<i>m</i> -2</sub><i>x</i><sup>2<i>m</i> -2</sup> 
+<img src="symbols/in.gif" alt="in" ALIGN=MIDDLE> 
+<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><sub>2</sub>[<i>x</i>]. 
+Uvjerite se da sljedeći algoritam računa ostatak pri 
+dijeljenju polinoma <i>a</i>(<i>x</i>) s polinomom <i>f</i>(<i>x</i>): 
+<blockquote>
+<font face="Times New Roman">
+<tt><b>For</b></tt> &nbsp; <i>i</i> = 2<i>m</i> - 2 
+&nbsp; <tt><b>to</b></tt> &nbsp; <i>m</i> &nbsp; 
+<tt><b>by</b></tt> &nbsp; -1 &nbsp; <tt><b>do</b></tt> <br>
+&nbsp; &nbsp; &nbsp; &nbsp; 
+<i>a</i><sub><i>i - m</i></sub> = <i>a</i><sub><i>i - m</i></sub> + 
+<i>a</i><sub><i>i</i></sub> <br>
+&nbsp; &nbsp; &nbsp; &nbsp; <i>a</i><sub><i>i - m + k</i></sub> = 
+<i>a</i><sub><i>i - m + k</i></sub> + <i>a</i><sub><i>i</i></sub>.
+</font>
+</blockquote>
+
+</ol>
+<p>
+
+ 
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="indcal.html">[Prethodna tema]</a> &nbsp; 
+<a href="hasse.html">[Sljedeća tema]</a>  
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../ecc/eccseminar.html">Web stranica seminara</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>
+
+
+
+
