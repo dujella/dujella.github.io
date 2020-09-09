@@ -1,0 +1,155 @@
+
+Poštovane kolegice i kolege, 
+Srdaèno Vas pozdravljam. 
+Dobro došli na predstavljanje knjige Teorija brojeva. 
+
+Zahvaljujem kolegici Tanji Djakovic, urednici knjige, 
+na uvodnim rijeèima te na organizaciji ovog predstavljanja. 
+Zahvaljujem kolegi Ivici Gusiæu, recenzentu knjige, 
+na lijepim rijeèima te brojnim savjetima oko razlièitih 
+nedoumica koje sam imao prilikom pisanja knjige, a takoðer 
+i tijekom protekla dva desetljeæa zajednièkog voðenja
+Seminara za teoriju brojeva i algebru oko kojeg je 
+okupljena vrlo aktivna i uspješna hrvatska grupa iz teorije brojeva. 
+Hvala i ostalim recenzentima, kolegama Matiji Kazalickom 
+i Filipu Najmanu na vrlo korisnim primjedbama i sugestijama 
+na prethodnu verziju rukopisa knjige. 
+Zahvaljujuæi njihovim recenzijama, knjiga je dobila status 
+sveuèilišnog udžbenika Sveuèilišta u Zagrebu, a takoðer i 
+financijsku potporu Ministarstva znanosti i obrazovanja. 
+Posebna zahvala kolegi Tomislavu Pejkoviæu, koji je pomno proèitao cijeli 
+rukopis knjige te me upozorio na mnoge manje ili veæe pogreške i nepreciznosti, 
+te sugerirao brojna poboljšanja teksta. 
+Hvala i ostalim kolegicama i kolegama koji su mi slali svoje komentare 
+i sugestije na pojedina poglavlja ili na cijeli rukopis prethodne verzije knjige. 
+To su, abecednim redom, Nikola Adžaga, Marija Bliznac Trebješanin, 
+Bernadin Ibrahimpašiæ, Borka Jadrijeviæ, Ana Jurasiæ, Dijana Kreso, 
+Marcel Maretiæ, Miljen Mikiæ, Goran Muiæ, Vinko Petrièeviæ, 
+Valentina Pribaniæ, Ivan Soldo, Boris Širola i Mladen Vukoviæ. 
+
+Hvala izdavaèu knjige, uglednoj izdavaèkoj kuæi Školska knjiga. 
+Suradnju na knjizi sam zapoèeo s prethodnim urednikom kolegom 
+Gojkom Krivokapiæem, a suradnja je uspješno nastavljena s urednicom knjige 
+kolegicom Tanjom Djakoviæ. Lektorica knjige je bila Silvija Legin, 
+dok je naslovnicu opremio Marijan Zafron (prema ideji moje kæerke Jelene). 
+
+Hvala svima Vama što ste došli na ovo predstavljanje, te ga uvelièali svojom 
+prisutnošæu. Posebna zahvala kolegama koji su doputovali u Zagreb na predstavljanje.  
+Hvala Vam što ste prepoznali koliko me veseli ova knjiga i sve vezano uz nju. 
+Hvala i onima koji su tijekom razgledavanja Interlibera zastali kraj izložbenog 
+prostora Školske knjige da poslušaju dijelove ovog predstavljanja. 
+Svake godine s obitelji posjeæujem Interliber, pa mi je velika èast i zadovoljstvo 
+što je promocija moje knjige organizirana baš na ovoj manifestaciji. 
+
+Ova je knjiga nastala na osnovi nastavnih materijala (dostupnih na mojoj 
+internetskoj stranici) iz kolegija Teorija brojeva i Elementarna teorija brojeva, 
+koji se predaju na preddiplomskim studijima na Matematièkom odsjeku 
+Prirodoslovno-matematièkog fakulteta Sveuèilišta u Zagrebu, 
+te kolegija Diofantske jednadžbe i Diofantske aproksimacije i primjene, 
+koji su se predavali na doktorskom studiju matematike
+na istom fakultetu. Knjiga potpuno pokriva sadržaj navedenih kolegija, 
+te sliènih kolegija koji se predaju na Sveuèilištima u Osijeku, Rijeci i Splitu. 
+Knjiga æe se koristiti kao literatura i u kolegiju Diofantovi skupovi 
+kojeg æe ove godine na doktorskom studiju predavati kolege 
+Alan Filipin i Zrinka Franušiæ. 
+Pored toga, knjiga sadržava i druge povezane teme poput eliptièkih krivulja kojima su
+posveæena zadnja dva poglavlja u knjizi. U knjizi su obraðene i neke teme
+koje su bile i jesu u središtu istraživaèkog interesa autora knjige i ostalih
+èlanova hrvatske grupe iz teorije brojeva.
+
+Knjiga je ponajprije namijenjena studentima matematike i srodnih fakulteta
+na hrvatskim sveuèilištima koji slušaju kolegije iz teorije brojeva i
+njezinih primjena, potom naprednim srednjoškolcima koji se pripremaju za
+matematièka natjecanja u kojima na svim razinama, od školske do meðunarodne,
+teorija brojeva uvijek zauzima važno mjesto, te doktorskim studentima
+i znanstvenicima koji se bave teorijom brojeva, algebrom i kriptografijom.
+
+Knjiga ima 16 poglavlja. 
+Prvi dio knjige, preciznije poglavlja Djeljivost, Kongruencije, Kvadratni ostatci, 
+Kvadratne forme, Aritmetièke funkcije, Diofantske aproksimacije i 
+Diofantske jednadžbe I obuhvaæaju sadržaj kolegija 
+Teorija brojeva i Elementarna teorija brojeva, 
+a ujedno su i poglavlja (uz dodatak uvodnog poglavlja) koja se preporuèaju 
+èitatelju zainteresiranom za sadržaj koji se obièno naziva elementarna
+teorija brojeva. Poglavlje Algebarski brojevi se može shvatiti kao kratki uvod u 
+algebarsku teoriju brojeva, a poglavlje Distribucija prostih brojeva isto tako kao 
+kratki uvod u analitièku teoriju brojeva. Svakako treba naglasiti da opseg knjige 
+(a i znanje autora) ne omoguæavaju da knjiga ukljuèi sve ono što bi sustavna obrada 
+tema iz algebarske i analitièke teorije brojeva obuhvaæala. Knjiga sadrži i jedno 
+poglavlje o polinomima koje izmeðu ostalog služi i kao priprema za poglavlje o 
+algebarskim brojevima. Eliptièkim krivuljama su posveæena zadnja dva poglavlja 
+u knjizi, ali to naravno ne obuhvaæa sve što bi se o toj temi moglo reæi. 
+To je tema na kojoj mnogi èlanovi hrvatske grupe iz teorije brojeva vrlo aktivno rade, 
+a kolege Filip Najman i Matija Kazalicki spadaju meðu vodeæe mlade svjetske struènjake 
+u tom podruèju, te bi sustavan pregled njihovih najvažnijih rezultata zahtijevao 
+još nekoliko dodatnih poglavlja. 
+
+U ovoj knjizi dotièe se i tema primjene teorije brojeva u kriptografiji, 
+posebice primjene diofantskih aproksimacija i eliptièkih krivulja, 
+o èemu zainteresirani èitatelj može dodatne informacije naæi u mojoj prethodnoj knjizi 
+Kriptografija u koautorstvu s kolegom Marcelom Maretiæem, a u izdanju 
+izdavaèke kuæe Element. Spomenuo bih još i da se kroz više poglavlja provlaèe 
+Fibonaccijevi brojevi, kao zanimljiv matematièki objekt s pomoæu kojeg se ilustriraju 
+neke od obraðenih tema.
+
+U predgovoru knjige su precizno navedeni brojevi potpoglavlja u kojima se 
+obraðuju teme koje su u knjigu ukljuèene zbog autorovih afiniteta,
+a neæe se uobièajeno naæi u knjigama i udžbenicima iz teorije brojeva 
+(to su primjerice Diofantove m-torke i njihova veza s eliptièkim krivuljama, 
+konstrukcija eliptièkih krivulja velikog ranga, separacija korijena polinoma, 
+dekompozabilnost polinoma i primjena na diofantske jednadžbe, Thueove jednadžbe 
+povezane sa sustavima pellovskih jednadžbi, veza Newtonovih aproksimanata 
+i verižnih razlomaka). S jedne strane to znaèi da ih èitatelj slobodno može 
+preskoèiti u prvom èitanju, a s druge strane nadam se da æe ipak biti èitatelja 
+kojima æe biti zanimljivo u kratkim crtama proèitati što sam, zajedno sa svojim 
+hrvatskim i meðunarodnim suradnicima, znanstveno radio u zadnjih 25 godina.
+
+Na kraju svakog poglavlja nalaze se (neriješeni) zadatci koji jednim dijelom
+mogu poslužiti studentima i natjecateljima za vježbu, a katkad su
+dopuna osnovnog teksta. Izvori zadataka su razlièiti. S jedne strane su to zadatci
+s kolokvija, pismenih ispita i zadaæa na preddiplomskom i doktorskom
+studiju te zadatci s priprema natjecatelja, a s druge strane je dio zadataka
+preuzet iz literature citirane u knjizi, gdje zainteresirani èitatelj može 
+pronaæi mnogo dodatnih zadataka.
+
+Petnaest godina sam bio èlan državnog povjerenstva za natjecanja iz matematike, 
+a i poslije sam povremeno sudjelovao u pripremama darovitih uèenika za meðunarodna
+natjecanja. Dio materijala i zadataka koje sam pripremao za tu svrhu takoðer je 
+ukljuèen u knjigu. Moj prvi ozbiljniji susret s teorijom brojeva došao je upravo 
+preko matematièkih natjecanja, pa i ovom prilikom zahvaljujem svom srednjoškolskom 
+profesoru Petru Vranjkoviæu uz èiju sam se pomoæ pripremao za ta natjecanja. 
+Zahvaljujem i mentoru svog diplomskog i magistarskog rada Zvonku Èerinu te mentorima 
+doktorske disertacije Dragutinu Svrtanu i Dimitriju Ugrin-Šparcu na uvoðenju 
+u znanstveni rad. 
+Posebna zahvala ide Attili Pethou, profesoru sa Sveuèilišta u Debrecinu i èlanu 
+Maðarske akademije znanosti, koji je, od našeg prvog susreta 1996. godine pa sve 
+do danas, svojim brojnim, vrlo korisnim savjetima usmjeravao moju znanstvenu 
+i nastavnu karijeru. 
+Naravno da me vesele sve pohvale od kolega koji su vidjeli neku verziju ove knjige, 
+ali srdaèna pohvala kolege Attile Pethoa me je zaista posebno jako obradovala.  
+Kao što je veæ naglašeno, neka od potpoglavlja u knjizi govore o mojim osobnim 
+znanstvenim interesima, pa stoga zahvaljujem svim svojim brojnim koautorima 
+znanstvenih radova na inspirativnoj znanstvenoj suradnji. 
+Zahvaljujem i svojoj obitelji na strpljenju, potpori i razumijevanju tijekom 
+pisanja ove knjige.
+
+Nadam se da æe knjiga biti èitana, te da æe èitatelji u njoj naæi ponešto 
+zanimljivo i korisno. Bit æe mi posebno drago ako nekom od mlaðih èitatelja 
+knjiga bude poticaj za ozbiljnije prouèavanje teorije brojeva i njenih primjena.  
+Bit æu zahvalan svima koji ukažu na nedostatke ili moguæe pogrješke u knjizi.
+Korekcije i dodatni komentari na knjigu bit æe dostupni na mojoj internetskoj 
+stranici. Ta stranica za sada sadrži uglavnom samo ažurirane bibliografske 
+podatke o èlancima koji su u meðuvremenu objavljeni ili prihvaæeni za 
+objavljivanje u èasopisima. 
+
+Kao što piše na kraju predgovora knjige, knjiga je najveæim dijelom nastala 
+2018. i 2019. godine u Novigradu i Zagrebu. Iako u Novigradu, 
+mjestu mog djetinjstva, ne provodim puno vremena, èini mi se da tamo dangubim 
+manje nego drugdje, pa je tamo nastalo dosta mojih i znanstvenih 
+i struènih radova. 
+
+Još jednom hvala svima što ste došli na ovo predstavljanje 
+i hvala Vam na pozornosti. 
+ 
+ 
+
