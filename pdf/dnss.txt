@@ -1,0 +1,71 @@
+
+\\ Pari file for the paper 
+\\ A. Dujella, F. Najman, N. Saradha and T. N. Shorey, 
+\\ Products of three factorials
+
+allocatemem()
+allocatemem()
+allocatemem()
+allocatemem()
+for(a3=2,100,\
+print("     ");\
+print(a3);\
+Q=core(a3!);\
+print(Q);\
+i=0;\
+j=0;\
+fordiv(Q,b1,\
+fordiv(Q/b1,b2,\
+b3=Q/(b1*b2);\
+i=i+1;\
+k=1;\
+f1=factor(b1);\
+f2=factor(b2);\
+f3=factor(b3);\
+l1=length(f1~);\
+l2=length(f2~);\
+l3=length(f3~);\
+for(i1=1,l1,\
+p1=f1[i1,1];\
+if(p1>2 && (kronecker(-b2,p1)==-1 || kronecker(-b3,p1)==-1), k=0));\
+for(i2=1,l2,\
+p2=f2[i2,1];\
+if(p2>2 && (kronecker(2*b1,p2)==-1 || kronecker(-2*b3,p2)==-1), k=0));\
+for(i3=1,l3,\
+p3=f3[i3,1];\
+if(p3>2 && (kronecker(b1,p3)==-1 || kronecker(b2,p3)==-1), k=0));\
+k1=0;k2=0;k3=0;\
+if((-b2)%8==1 || (2*b1)%8==1 || (2*b1-b2)%8==1, k1=1);\
+if((-b3)%8==1 || (b1)%8==1 || (b1-b3)%8==1 || (b1-4*b3)%8==1 || (4*b1-b3)%8==1, k2=1);\
+if((-2*b3)%8==1 || (b2)%8==1 || (b2-2*b3)%8==1, k3=1);\
+if(k*k1*k2*k3==1,\
+print(b1," ",b2," ",b3);\
+j=j+1;\
+)));\
+print(i,"  ",j);\
+u=component(quadunit(4*Q),2);\
+print(issquare(u),"  ",issquare(2*u^2-1));\
+)
+
+
+
+
+\\ Magma file for the paper 
+\\ A. Dujella, F. Najman, N. Saradha and T. N. Shorey, 
+\\ Products of three factorials
+\\ Change i below for a different number
+
+
+_<x>:=PolynomialRing(Rationals());
+E:=EllipticCurve(x*(x-1)*(x-2));
+i:=50;
+
+a,b:=SquareFreeFactorization(Factorial(i));
+a;
+n:=IntegralPoints(QuadraticTwist(E,SquareFreeFactorization(Factorial(i))));
+a,b:=SquareFreeFactorization(Factorial(i));
+for j:=1 to #n do n[j][1]/a; end for;
+
+
+
+

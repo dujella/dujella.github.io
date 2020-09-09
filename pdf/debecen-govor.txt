@@ -1,0 +1,113 @@
+
+Dear Vice-rectors of the University of Debrecen, 
+Dear Dean of the Faculty of Informatics, 
+Dear colleagues, ladies and gentlemen,   
+
+I feel deeply honored to be awarded the title of 
+Doctor Honoris Causa of University of Debrecen.  
+
+My connections with University of Debrecen started 
+21 years ago, in June 1996, when I attended Fibonacci conference in Graz,
+and met Professor Atilla Petho, who was an invited speaker on that conference. 
+His interest in my work impressed me at the very start of my scientific career. 
+Two weeks later, I attended Number theory conference in Eger 
+and met Professor Kalman Gyory and other members of famous 
+Debrecen number theory group. 
+They soon organized my first visit and seminar talk in Debrecen 
+in December 1996. 
+Since that time, Debrecen has become very important place in my reseach 
+and my life, and it certainly has a special place in my heart. 
+ 
+During that visit, the scientific collaboration with Professor Attila Petho 
+intensified, and it soon resulted in our first joint paper on the topic of 
+Diophantine m-tuples. A Diophantine m-tuple is a set of m positive integers 
+with the property that the product of any two of its distinct elements plus 1 
+is a square. 
+Fermat found the first Diophantine quadruple, 
+and it was the set {1, 3, 8, 120}. 
+Fields Medalist Alan Baker and Harold Davenport proved in 1969 that this 
+quadruple cannot be extended to a quintuple with the same property. 
+We were able to generalize that result by showing that already the pair {1, 3} 
+cannot be extended to a quintuple. In our paper we introduced some new methods 
+like "the congruence method" and an optimized version of the Baker-Davenport 
+reduction, which appeared to be very useful tools in many Diophantine problems, 
+so to this day, this paper has been cited almost 200 times. 
+
+One of many very important and useful suggestions that Attila Petho gave to me 
+was to look at possible connections of Diophantine m-tuples 
+and elliptic curves. 
+This became very fruitful research topic, especially because of the role of 
+Diophantne m-tuples in construction of elliptic curves of high rank. 
+Elliptic curves are nonsingular cubic curves, so they appear naturally 
+when we want to extend Diophantine triple to an integer or rational 
+Diophantine quadruple. Elliptic curves are important objects in many areas 
+of mathematics, like number theory, algebraic geometry and complex analysis, 
+but they are also very important in cryptography, because their underlining 
+group structure, defined by the secant and tangent method, offers significant 
+advantages compared to standard public-key cryptosytems based on factorization 
+and ordinary discrete logarithm problems. 
+The cryptography is also one of research topics which I discovered 
+through Attila Petho's advice and suggestions. Under his instructions 
+I introduced the first cryptography course in Croatia 18 years ago.  
+
+I have 3 joint papers with Attila Petho, but his influence and importance for 
+my research and scientific career is impossible to explain in numbers 
+and it is hard to express in words my gratitide for all 
+his advices, answers, questions and suggestions. 
+While establishing new reseach group in number theory in Croatia I have learnt
+a lot from Professor Kalman Gyory and other number theorists from Debrecen. 
+I am proud to have joint papers with following colleagues and friends from 
+the University of Debrecen: 
+Kalman Gyory, Attila Petho, Akos Pinter, Lajos Hajdu, Attila Berczes, 
+Szabolcs Tengely and Marton Szikszai. In particular, I would like to mention 
+four joint papers with Lajos Hajdu and  Attila Berczes, and a recent joint paper 
+with young colleagues Marton Szikszai from Debrecen 
+and Matija Kazalicki and Miljen Mikic from Zagreb, 
+published this year, in which we proved that there exist 
+infinitely many rational Diophantine sixtuples, thus solving an open problem 
+from the time of famous mathematician Leonhard Euler who proved 
+in 18th century that there are infinitely many rational Diophantine quintuples.  
+There are other successful collaborations between members of these two groups, 
+in particular between Istvan Gaal from Debrecen and Borka Jadrijevic from Split. 
+  
+Let me briefly mention some other connections with University of Debrecen. 
+In 1998, I stayed one month in Debrecen under scholarship of the 
+Hungarian government, while in 2007 I gave a course 
+"Algorithmic Aspects of Elliptic Curves" 
+for PhD students at the Faculty of Informatics of the University of Debrecen. 
+I have attended many conferences on Number theory and Cryptography organized 
+by colleagues from Debrecen. 
+In particular, Journees Arithmetiques conference, conferences dedicated to 
+the birthdays of Professors Kalman Gyory and Attila Petho, and Central European 
+Conferences on Cryptology. Attila Petho and I organized Hungarian-Croatian 
+Workshop on Mathematics and Informatics in Debrecen in 2005. We had two bilateral 
+Hungarian-Croatian projects in Number theory and cryptography from 2005 to 2011, 
+and in the frame of these projects many visits of Croatian mathematians to 
+Debrecen and Hungarian mathematicians to Zagreb were organized. 
+Another important connection with Debrecen concerns  the journal 
+Publicationes Mathematicae Debrecen, very respectable mathematical journal, 
+in which I published 6 papers. 
+
+Great credit for this grand title and honour that I am recieving today goes to 
+all my collaborators, especially members of number theory and cryptography 
+groups in Debrecen and Croatia.   
+I am sure that this will be additional motivation to all of us 
+to continue our successful cooperation in the future. 
+I am also grateful to my family for support and understanding. 
+  
+I would like to thank once again Professor Attila Petho for all his support 
+and advice in my scientific career, to the Faculty of Informatics for nominating 
+me for this highly respectable title, and to the Senat of the University of 
+Debrecen for conferring me the title of Doctor Honoris Causa of 
+University of Debrecen. 
+I congratulate all colleagues who are promoted and awarded today and I wish them
+many successes in their future work. 
+This is a very special day for all of us and our families.
+ 
+Thank you very much for your attention. 
+
+
+
+
+
+
