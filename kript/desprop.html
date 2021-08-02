@@ -6,11 +6,13 @@
 <meta name="author" content="Andrej Dujella">
 <meta name="description" content="Blokovni kriptosustavi - Svojstva DES-a">
 <meta name="keywords" content="kriptografija, DES, Data Encryption 
-Standard, S-kutije, efekt lavine, klju&#269;evi">
+Standard, S-kutije, efekt lavine, ključevi">
 
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style type="text/css">
 body {font-family: Arial,Helvetica,sans-serif;}
@@ -22,9 +24,10 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="des.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="modovi.html">[Sljede&#263;e poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadr&#382;aj]</a>
+<a href="modovi.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
 </font></b>
+<p>
 
 <hr size=2 noshade>
 
@@ -33,18 +36,18 @@ body {font-family: Arial,Helvetica,sans-serif;}
 <h2 align=center style="color: rgb(128,0,0)">2.3. Svojstva DES-a</h2>
 
 
-Uo&#269;imo da su sve operacije u DES-u linearne 
+Uočimo da su sve operacije u DES-u linearne 
 (sjetimo se da je &oplus; zapravo zbrajanje 
 u <nobr><b>Z</b><sub>2</sub>),</nobr> s izuzetkom S-kutija. 
-Ve&#263; smo na primjeru Hillove &#353;ifre vidjeli da je kod linearnih 
+Već smo na primjeru Hillove šifre vidjeli da je kod linearnih 
 kriptosustava kriptoanaliza napadom &quot;poznati otvoreni tekst&quot; vrlo 
-jednostavna. Stoga su S-kutije izuzetno zna&#269;ajne za sigurnost 
+jednostavna. Stoga su S-kutije izuzetno značajne za sigurnost 
 DES-a. Od objave algoritma, pa sve do danas, S-kutije su
-obavijene tajnovito&#353;&#263;u. Vidjet &#263;emo da &#263;e se kod
-nasljednika DES-a upravo taj dio promijeniti: S-kutije &#263;e biti
+obavijene tajnovitošću. Vidjet ćemo da će se kod
+nasljednika DES-a upravo taj dio promijeniti: S-kutije će biti
 generirane eksplicitno navedenim algoritmom.
 <p>
-Kod DES-a znamo tek neke kriterije koji su kori&#353;teni u
+Kod DES-a znamo tek neke kriterije koji su korišteni u
 dizajniranju S-kutija:
 <ol>
 <li>Svaki redak u svakoj S-kutiji je permutacija brojeva od 0 
@@ -66,50 +69,50 @@ S(<i>x</i> &oplus;
 </ol>
 <p>
 
-Kriteriji za permutaciju P bili su sljede&#263;i:
+Kriteriji za permutaciju P bili su sljedeći:
 <ol>
-<li>&#268;etiri izlazna bita iz svake S-kutije utje&#269;u (&#269;ine ulazne podatke) 
-na &#353;est razli&#269;itih S-kutija u idu&#263;oj rundi, a nikoja dva ne utje&#269;u 
+<li>Četiri izlazna bita iz svake S-kutije utječu (čine ulazne podatke) 
+na šest različitih S-kutija u idućoj rundi, a nikoja dva ne utječu 
 na istu S-kutiju. <p>
-<li>&#268;etiri izlazna bita iz svake S-kutije u <i>i</i>-toj rundi su 
-distribuirani tako da dva od njih utje&#269;u na sredi&#353;nje bitove u 
+<li>Četiri izlazna bita iz svake S-kutije u <i>i</i>-toj rundi su 
+distribuirani tako da dva od njih utječu na središnje bitove u 
 (<i>i</i>+1)-voj rundi, a dva na krajnje bitove (dva najlijevija i 
 dva najdesnija od 6 bitova u ulaznom podatku). <p>
 <li>Za dvije S-kutije S<sub><i>j</i></sub> i S<sub><i>k</i></sub> 
 vrijedi da ako neki izlazni bit od S<sub><i>j</i></sub> 
-utje&#269;e na neki sredi&#353;nji bit od S<sub><i>k</i></sub> u idu&#263;oj rundi, 
-onda niti jedan izlazni bit od S<sub><i>k</i></sub> ne utje&#269;e 
-na sredi&#353;nje bitove od S<sub><i>j</i></sub>. Za <i>j</i> = <i>k</i> 
-ovo povla&#269;i da izlazni bitovi od S<sub><i>j</i></sub> ne utje&#269;u na 
-sredi&#353;nje bitove od S<sub><i>j</i></sub>. 
+utječe na neki središnji bit od S<sub><i>k</i></sub> u idućoj rundi, 
+onda niti jedan izlazni bit od S<sub><i>k</i></sub> ne utječe 
+na središnje bitove od S<sub><i>j</i></sub>. Za <i>j</i> = <i>k</i> 
+ovo povlači da izlazni bitovi od S<sub><i>j</i></sub> ne utječu na 
+središnje bitove od S<sub><i>j</i></sub>. 
 </ol>
 <p>
 
-Ovi kriteriji imaju za zadatak pove&#263;ati tzv. <em>difuziju</em> 
-kriptosustava, tj. posti&#263;i da na svaki bit &#353;ifrata utje&#269;e &#353;to vi&#353;e 
-bitova otvorenog teksta. Oni tako&#273;er ote&#382;avaju i tzv. diferencijalnu 
-kriptoanalizu o kojoj &#263;e biti vi&#353;e rije&#269;i ne&#353;to kasnije. 
+Ovi kriteriji imaju za zadatak povećati tzv. <em>difuziju</em> 
+kriptosustava, tj. postići da na svaki bit šifrata utječe što više 
+bitova otvorenog teksta. Oni također otežavaju i tzv. diferencijalnu 
+kriptoanalizu o kojoj će biti više riječi nešto kasnije. 
 <p>
 
-Po&#382;eljno svojstvo svakog kriptosustava jest da mala promjena bilo 
-otvorenog teksta bilo klju&#269;a dovodi do zna&#269;ajne promjene u &#353;ifratu. 
-Posebno, promjena jednog bita otvorenog teksta ili jednog bita klju&#269;a 
-trebala bi utjecati na mnogo bitova &#353;ifrata. Ako je promjena mala, 
-to mo&#382;e zna&#269;ajno smanjiti broj otvorenih tekstova ili klju&#269;eva koje 
+Poželjno svojstvo svakog kriptosustava jest da mala promjena bilo 
+otvorenog teksta bilo ključa dovodi do značajne promjene u šifratu. 
+Posebno, promjena jednog bita otvorenog teksta ili jednog bita ključa 
+trebala bi utjecati na mnogo bitova šifrata. Ako je promjena mala, 
+to može značajno smanjiti broj otvorenih tekstova ili ključeva koje 
 treba ispitati.
 <p>
 Kriptosustav DES ima gore opisano svojstvo koje se ponekad naziva i 
-"<em>efekt lavine</em>". Ilustrirat &#263;emo to s dva primjera 
+"<em>efekt lavine</em>". Ilustrirat ćemo to s dva primjera 
 (preuzetim iz knjige [Stinson: <i>Cryptography. Theory and Practice</i>]). 
 <p>
 
 <b>Primjer 1: </b> Otvoreni tekstovi (zapisani heksadecimalno) 
 <p align=center><font color=990000>0000000000000000</font> &nbsp; i &nbsp; <font color=990000>1000000000000000</font></p>
-&#353;ifrirani su pomo&#263;u klju&#269;a (tako&#273;er zapisanog heksadecimalno s 
-uklju&#269;enim paritetnim bitovima) 
+šifrirani su pomoću ključa (također zapisanog heksadecimalno s 
+uključenim paritetnim bitovima) 
 <p align=center><font color=990099>029749C438313864</font>.</p>
-Broj bitova u kojima se razlikuju odgovaraju&#263;i &#353;ifrati nakon svake 
-pojedine od 16 rundi DES-a prikazan je u sljede&#263;oj tablici: 
+Broj bitova u kojima se razlikuju odgovarajući šifrati nakon svake 
+pojedine od 16 rundi DES-a prikazan je u sljedećoj tablici: 
 <pre><font size=2>
 ----------------------------------------------------------------------
     runda           0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16
@@ -123,13 +126,13 @@ broj bitova koji    1  6 21 35 39 34 32 31 29 42 44 32 30 30 26 29 34
 
 <b>Primjer 2: </b> Otvoreni tekst
 <p align=center><font color=990000>68852E7A1376EBA4</font></p>
-&#353;ifriran je pomo&#263;u klju&#269;eva  
+šifriran je pomoću ključeva  
 <p align=center><font color=990099>E5F7DF313B0862DC</font> &nbsp; i 
 &nbsp; <font color=990099>64F7DF313B0862DC</font></p>
 koji se razlikuju samo u jednom bitu (i jednom paritetnom bitu: prvih 
 7 bitova su im 1110010 i 0110010). 
-Broj bitova razlike u &#353;ifratima, po rundama, 
-prikazan je u sljede&#263;oj tablici: 
+Broj bitova razlike u šifratima, po rundama, 
+prikazan je u sljedećoj tablici: 
 <pre><font size=2>
 ----------------------------------------------------------------------
     runda           0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16
@@ -140,86 +143,86 @@ broj bitova koji    0  2 14 28 32 30 32 35 34 40 38 31 33 28 26 34 35
 </font></pre>
 <p><br>
 
-Postavlja se pitanje za&#353;to u DES-u imamo upravo 16 rundi. Primjeri 
-1 i 2 sugeriraju da ve&#263; kod 3. runde efekt lavine dolazi do izra&#382;aja. 
-Mo&#382;e se pokazati da nakon 5. runde svaki bit &#353;ifrata ovisi o svakom 
-bitu otvorenog teksta i svakom bitu klju&#269;a, a nakon 8. runde &#353;ifrat 
-je prakti&#269;ki slu&#269;ajna funkcija bitova otvorenog teksta i klju&#269;a. 
-Razlog da ipak imamo 16 rundi je u zahtjevu da poznati kriptoanaliti&#269;ki 
-napadi (kao &#353;to je npr. diferencijalna kriptoanaliza) ne budu 
+Postavlja se pitanje zašto u DES-u imamo upravo 16 rundi. Primjeri 
+1 i 2 sugeriraju da već kod 3. runde efekt lavine dolazi do izražaja. 
+Može se pokazati da nakon 5. runde svaki bit šifrata ovisi o svakom 
+bitu otvorenog teksta i svakom bitu ključa, a nakon 8. runde šifrat 
+je praktički slučajna funkcija bitova otvorenog teksta i ključa. 
+Razlog da ipak imamo 16 rundi je u zahtjevu da poznati kriptoanalitički 
+napadi (kao što je npr. diferencijalna kriptoanaliza) ne budu 
 efikasniji od napada "grubom silom". 
 <p>
-Originalna IBM-ova ponuda NBS-u je imala 112-bitni klju&#269;. 
-Prva IBM-ova realizacija Feistelove &#353;ifre - kriptosustav
-LUCIFER je imao 128-bitni klju&#269;. Me&#273;utim, u
-verziji DES-a koja je prihva&#263;ena kao standard duljina klju&#269;a je
-smanjena na 56 bitova (da bi klju&#269; stao na tada&#353;nje &#269;ipove, ali
+Originalna IBM-ova ponuda NBS-u je imala 112-bitni ključ. 
+Prva IBM-ova realizacija Feistelove šifre - kriptosustav
+LUCIFER je imao 128-bitni ključ. Međutim, u
+verziji DES-a koja je prihvaćena kao standard duljina ključa je
+smanjena na 56 bitova (da bi ključ stao na tadašnje čipove, ali
 vjerojatno i pod utjecajem NSA). Mnogi 
-kriptografi su bili protiv tako kratkog klju&#269;a jer su smatrali da ne 
-pru&#382;a dovoljnu sigurnost protiv napada &quot;grubom silom&quot;. Uz 56-bitni 
-klju&#269; imamo 
+kriptografi su bili protiv tako kratkog ključa jer su smatrali da ne 
+pruža dovoljnu sigurnost protiv napada &quot;grubom silom&quot;. Uz 56-bitni 
+ključ imamo 
 <nobr>2<sup>56</sup> &asymp; 7.2
-&middot; 10<sup>16</sup></nobr> mogu&#263;ih klju&#269;eva, pa se na prvi 
-pogled napad &quot;grubom silom&quot; &#269;ini sasvim neprakti&#269;nim. 
-Me&#273;utim, ve&#263; 1977. godine Diffie i Hellman su ustvrdili da tada&#353;nja 
-tehnologija omogu&#263;ava konstrukciju ra&#269;unala koje bi otkrivalo klju&#269; za 
-jedan dan, a tro&#353;kove su procijenili na 20 milijuna dolara. 
-Na osnovu toga su zaklju&#269;ili da je takvo &#353;to dostupno samo 
-organizacijama kao &#353;to je NSA, ali da &#263;e oko 1990. godine DES postati 
+&middot; 10<sup>16</sup></nobr> mogućih ključeva, pa se na prvi 
+pogled napad &quot;grubom silom&quot; čini sasvim nepraktičnim. 
+Međutim, već 1977. godine Diffie i Hellman su ustvrdili da tadašnja 
+tehnologija omogućava konstrukciju računala koje bi otkrivalo ključ za 
+jedan dan, a troškove su procijenili na 20 milijuna dolara. 
+Na osnovu toga su zaključili da je takvo što dostupno samo 
+organizacijama kao što je NSA, ali da će oko 1990. godine DES postati 
 sasvim nesiguran. Godine 1993. Weiner je procijenio da se za 100000 
-dolara mo&#382;e konstruirati ra&#269;unalo koje bi otkrilo klju&#269; za 35 sati, 
-a za 10 milijuna dolara ono koje bi otkrilo klju&#269; za 20 minuta. 
-Ipak sve su to bili hipotetski dizajni i kona&#269;no razbijanje DES-a 
+dolara može konstruirati računalo koje bi otkrilo ključ za 35 sati, 
+a za 10 milijuna dolara ono koje bi otkrilo ključ za 20 minuta. 
+Ipak sve su to bili hipotetski dizajni i konačno razbijanje DES-a 
 se dogodilo tek 1998. godine. Tada je Electronic Frontier Foundation 
 (EFF) za 250000 dolara zaista napravila "DES Cracker", koji je razbijao  
-poruke &#353;ifrirane DES-om za 56 sati. 
+poruke šifrirane DES-om za 56 sati. 
 <p><br>
 
-Za fiksni klju&#269; K pomo&#263;u DES-a definirana je permutacija skupa 
+Za fiksni ključ K pomoću DES-a definirana je permutacija skupa 
 <nobr>{0,1}<sup>64</sup>.</nobr> Dakle, skup od 2<sup>56</sup> permutacija 
-dobivenih pomo&#263;u DES-a je podskup grupe svih permutacija 
-skupa <nobr>{0,1}<sup>64</sup>,</nobr> &#269;iji je red <nobr>2<sup>64</sup>!.</nobr> Postavlja se 
+dobivenih pomoću DES-a je podskup grupe svih permutacija 
+skupa <nobr>{0,1}<sup>64</sup>,</nobr> čiji je red <nobr>2<sup>64</sup>!.</nobr> Postavlja se 
 pitanje da li je DES (tj. skup svih njegovih permutacija) podgrupa 
 ove grupe. Odgovor na to pitanje je negativan. Naime, skup svih 
 DES-permutacija nije zatvoren. Preciznije, poznato je da je red 
-podgrupe generirane svim DES-permutacijama ve&#263;i o 
-2<sup>2499</sup>. Ova je &#269;injenica jako va&#382;na jer pokazuje da se 
-vi&#353;estrukom upotrebom DES-a mo&#382;e posti&#263;i ve&#263;a sigurnost. Posebno je 
-popularan tzv. Triple-DES koji koristi tri koraka obi&#269;nog DES-a 
-s razli&#269;itim klju&#269;evima. Kad bi DES &#269;inio grupu, Triple-DES ne bi 
-bio ni&#353;ta sigurniji od obi&#269;nog DES-a. 
+podgrupe generirane svim DES-permutacijama veći o 
+2<sup>2499</sup>. Ova je činjenica jako važna jer pokazuje da se 
+višestrukom upotrebom DES-a može postići veća sigurnost. Posebno je 
+popularan tzv. Triple-DES koji koristi tri koraka običnog DES-a 
+s različitim ključevima. Kad bi DES činio grupu, Triple-DES ne bi 
+bio ništa sigurniji od običnog DES-a. 
 <p>
 
-Neki DES-klju&#269;evi su znatno nesigurniji od ostalih, te ih svakako treba 
-izbjegavati. Prvi me&#273;u njima su tzv. DES <em>slabi klju&#269;evi</em>. 
-Kod njih su svi me&#273;uklju&#269;evi <i>K</i><sub>1</sub>, ... , 
+Neki DES-ključevi su znatno nesigurniji od ostalih, te ih svakako treba 
+izbjegavati. Prvi među njima su tzv. DES <em>slabi ključevi</em>. 
+Kod njih su svi međuključevi <i>K</i><sub>1</sub>, ... , 
 <i>K</i><sub>16</sub> 
-jednaki. To zna&#269;i da su postupak
-&#353;ifriranja i de&#353;ifriranja doslovno jednaki. Dakle, vrijedi
+jednaki. To znači da su postupak
+šifriranja i dešifriranja doslovno jednaki. Dakle, vrijedi
 <nobr><i>e<sub>K</sub></i>(<i>e<sub>K</sub></i>(<i>x</i>)) = <i>x</i>.</nobr> 
-Drugim rije&#269;ima, DES sa slabim klju&#269;em je involucija.
-Poznato je da &#353;ifriranje sa slabim klju&#269;em ostavlja
+Drugim riječima, DES sa slabim ključem je involucija.
+Poznato je da šifriranje sa slabim ključem ostavlja
 2<sup>32</sup> otvorenih tekstova fiksnim.
-Postoje to&#269;no 4 DES slaba klju&#269;a. 
+Postoje točno 4 DES slaba ključa. 
 To su oni kod kojih se u rastavu <nobr>PC1(<i>K</i>) = <i>C</i><sub>0</sub><i>D</i><sub>0</sub>,</nobr> 
 lijeve i desne polovice <i>C</i><sub>0</sub> i <i>D</i><sub>0</sub> 
 sastoje ili od samih nula ili od samih jedinica. 
 
-Par klju&#269;eva (<i>K</i>,<i>K</i>') je par DES <em>polu-slabih 
-klju&#269;eva</em> 
-ako je kompozicija DES-ova s klju&#269;evima <i>K</i> i 
+Par ključeva (<i>K</i>,<i>K</i>') je par DES <em>polu-slabih 
+ključeva</em> 
+ako je kompozicija DES-ova s ključevima <i>K</i> i 
 <i>K</i>' identiteta. 
-Drugim rije&#269;ima, &#353;ifriranje s jednim je isto kao de&#353;ifriranje s drugim. 
-Kod DES-a s polu-slabim klju&#269;em, me&#273;u 16 me&#273;uklju&#269;eva 
+Drugim riječima, šifriranje s jednim je isto kao dešifriranje s drugim. 
+Kod DES-a s polu-slabim ključem, među 16 međuključeva 
 <i>K</i><sub>1</sub>, ... , <i>K</i><sub>16</sub> 
-postoje samo dva razli&#269;ita; 
-svaki od njih se koristi u po 8 rundi. Postoji to&#269;no 6 parova DES 
-polu-slabih klju&#269;eva. 
-Kona&#269;no, neki klju&#269;evi generiraju samo 4 razli&#269;ita me&#273;uklju&#269;a. 
-Takvi se klju&#269;evi zovu DES <em>potencijalno slabi klju&#269;evi</em> 
-i ima ih to&#269;no 48. Sve u svemu, izme&#273;u 2<sup>56</sup> 
-mogu&#263;ih klju&#269;eva imamo samo 64 klju&#269;a koja treba izbjegavati, pa je 
-to lako i u&#269;initi. 
+postoje samo dva različita; 
+svaki od njih se koristi u po 8 rundi. Postoji točno 6 parova DES 
+polu-slabih ključeva. 
+Konačno, neki ključevi generiraju samo 4 različita međuključa. 
+Takvi se ključevi zovu DES <em>potencijalno slabi ključevi</em> 
+i ima ih točno 48. Sve u svemu, između 2<sup>56</sup> 
+mogućih ključeva imamo samo 64 ključa koja treba izbjegavati, pa je 
+to lako i učiniti. 
 
 <p>
 
@@ -227,8 +230,8 @@ to lako i u&#269;initi.
 
 <b><font size="-1" face="Verdana">
 <a href="des.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="modovi.html">[Sljede&#263;e poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadr&#382;aj]</a>
+<a href="modovi.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
 </font></b>
 
 <hr size=2 noshade>
@@ -264,6 +267,8 @@ EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
 src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
 </div></noscript>
 <!-- End eXTReMe Non Public Tracker Code -->
+
+<script type="text/javascript" src="https://web.math.pmf.unizg.hr/lib/js/accessibility_black.min.js"></script>
 
 </body>
 </html>

@@ -13,6 +13,8 @@ prim broj, primalitet, Miller, Rabin">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.8">
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style type="text/css">
 body {font-family: Arial,Helvetica,sans-serif;}
 </style>
@@ -23,9 +25,10 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="solstras.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="faktor.html">[Sljede&#263;e poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadr&#382;aj]</a>
+<a href="faktor.html">[Sljedeæe poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
 </font></b>
+<p>
 
 <hr size=2 noshade>
 
@@ -38,32 +41,32 @@ test</h2>
 Neka je <i>n</i> neparan prirodan broj, (<i>b</i>,<i>n</i>) = 1, te 
 <i>b</i><sup><i>n</i> -1</sup> 
 &equiv; 1 (mod <i>n</i>).  
-Budu&#263;i da je <i>n</i> -1 paran, mo&#382;emo
-poku&#353;ati &quot;vaditi drugi korijen&quot; iz ove kongruencije, tj.
+Buduæi da je <i>n</i> -1 paran, možemo
+pokušati &quot;vaditi drugi korijen&quot; iz ove kongruencije, tj.
 dizati <i>b</i> na potencije (<i>n</i>-1)/2, (<i>n</i>-1)/4, ... , 
 (<i>n</i>-1)/2<sup><i>s</i></sup> (gdje je 
 <i>t</i> = (<i>n</i>-1)/2<sup><i>s</i></sup> neparan broj).
 Pretpostavimo da u <i>i</i>-tom koraku prvi put dobijemo na desnoj
-strani ne&#353;to razli&#269;ito od 1, recimo 
+strani nešto razlièito od 1, recimo 
 <i>b</i><sup>(<i>n</i>-1)/2<sup><img src="symbols/supi.gif" alt="i" ALIGN=TOP></sup></sup>
 &equiv; <i>a</i> 
 (mod <i>n</i>). 
 Tada ako je <i>n</i> prost, onda mora biti <i>a</i> = -1 jer
 je <i>b</i><sup>(<i>n</i>-1)/2<sup><img src="symbols/supi.gif" alt="i" ALIGN=TOP><img src="symbols/supminus.gif" alt="-" ALIGN=TOP><img src="symbols/sup1.gif" alt="1" ALIGN=TOP></sup></sup> 
 &equiv; 1  
-(mod <i>n</i>), a jedina rje&#353;enja
+(mod <i>n</i>), a jedina rješenja
 kongruencije <nobr><i>x</i><sup>2</sup> 
 &equiv; 1 (mod <i>p</i>)</nobr> su 
 <nobr><i>x</i> &equiv; 
 &plusmn; 1 (mod <i>p</i>).</nobr>
-Ova &#269;injenica motivira sljede&#263;u definiciju.
+Ova èinjenica motivira sljedeæu definiciju.
 <p><br>
 
 <table align=center border=1 width="95%" cellpadding=15> 
 <tr><td bgcolor="FFFFCC">
 <font face="Arial,Helvetica,sans-serif">
 
-<b>Definicija:</b> Neka je <i>n</i> neparan slo&#382;en broj, te neka je
+<b>Definicija:</b> Neka je <i>n</i> neparan složen broj, te neka je
 <i>n</i> - 1 = 2<sup><i>s</i></sup> <sup><b>.</b></sup> <i>t</i>, 
 gdje je <i>t</i> neparan broj. Neka je <i>b</i> 
 cijeli broj takav da je (<i>b</i>,<i>n</i>) = 1. Ako vrijedi 
@@ -76,15 +79,15 @@ postoji <i>r</i>, 0 &le;
 &equiv; -1 (mod <i>n</i>),
 &nbsp; &nbsp; &nbsp; (***)
 </p>
-onda ka&#382;emo da je <i>n</i> <em>jaki pseudoprosti broj u bazi <i>b</i></em> 
+onda kažemo da je <i>n</i> <em>jaki pseudoprosti broj u bazi <i>b</i></em> 
 (ili spsp(<i>b</i>)).
 
 </font></td></tr></table>
 <p> 
 
 
-O&#269;ito je svaki spsp(<i>b</i>) ujedno i psp(<i>b</i>). 
-Mo&#382;e se pokazati da je svaki spsp(<i>b</i>) ujedno i epsp(<i>b</i>). 
+Oèito je svaki spsp(<i>b</i>) ujedno i psp(<i>b</i>). 
+Može se pokazati da je svaki spsp(<i>b</i>) ujedno i epsp(<i>b</i>). 
 Obrat ne vrijedi. Npr. <i>n</i> =561 je epsp(2) jer je 
 2<sup>280</sup> &equiv;  
 (2/561) &equiv; 1 (mod 561), 
@@ -107,7 +110,7 @@ epsp(<i>b</i>).
 </font></td></tr></table>
 <p> 
 
-<b>Dokaz:</b> U ovom slu&#269;aju je <i>s</i> = 1, <i>t</i> = 
+<b>Dokaz:</b> U ovom sluèaju je <i>s</i> = 1, <i>t</i> = 
 (n-1)/2. Ako je <i>n</i> epsp(<i>b</i>), onda je 
 <p align=center>
 <i>b</i><sup><i>t</i></sup> 
@@ -121,11 +124,11 @@ epsp(<i>b</i>).
 pa je <i>n</i> spsp(<i>b</i>).
 <p>
 
-Neka je sada <i>n</i> spsp(<i>b</i>). To zna&#269;i da je 
+Neka je sada <i>n</i> spsp(<i>b</i>). To znaèi da je 
 <i>b</i><sup>(<i>n</i> -1)/2</sup>
 &equiv;  
 &plusmn;1 (mod <i>n</i>). 
-Budu&#263;i da je <i>n</i> 
+Buduæi da je <i>n</i> 
 &equiv; 3 (mod 4), to je 
 (&plusmn;1/<i>n</i>) =  
 &plusmn;1, pa je 
@@ -139,8 +142,8 @@ alt="(b/n)=b^((n-1)/2) (mod n)" ALIGN=TOP> </p>
 <tr><td bgcolor="FFFFCC">
 <font face="Arial,Helvetica,sans-serif">
 
-<b>Teorem 4.4:</b> Neka je <i>n</i> neparan slo&#382;en broj. Tada
-je <i>n</i> jaki pseudoprosti broj u bazi <i>b</i> za najvi&#353;e 
+<b>Teorem 4.4:</b> Neka je <i>n</i> neparan složen broj. Tada
+je <i>n</i> jaki pseudoprosti broj u bazi <i>b</i> za najviše 
 25% baza <i>b</i>, 0 &lt; <i>b</i> &lt; <i>n</i>. 
 
 </font></td></tr></table>
@@ -148,7 +151,7 @@ je <i>n</i> jaki pseudoprosti broj u bazi <i>b</i> za najvi&#353;e
 
 <b>Dokaz:</b> <br>
 
-<b>1. slu&#269;aj:</b> <i>n</i> nije kvadratno slobodan <br>
+<b>1. sluèaj:</b> <i>n</i> nije kvadratno slobodan <br>
 
 Neka je <i>n</i> = <i>p</i><sup>2</sup><i>q</i>, gdje je <i>p</i> 
 prost. Ako je <i>n</i> spsp(<i>b</i>), onda
@@ -160,8 +163,8 @@ Tada je i
 &equiv; 1 
 (mod <i>p</i><sup>2</sup>). Po
 Lemi 4.1, ova kongruencija ima <i>d</i> = 
-(<i>p</i>(<i>p</i> -1), <i>n</i> -1) rje&#353;enja.
-Budu&#263;i da <i>p</i>|<i>n</i>, to 
+(<i>p</i>(<i>p</i> -1), <i>n</i> -1) rješenja.
+Buduæi da <i>p</i>|<i>n</i>, to 
 <i>p</i> &#8740; (<i>n</i> -1), 
 pa <i>p</i> &#8740; <i>d</i>. 
 Zato je <i>d</i> &le;  
@@ -174,8 +177,8 @@ Zato je <i>d</i> &le;
 (<i>p</i><sup>2</sup> -1)<i>q</i>/(<i>p</i>+1) &lt; <i>n</i>/4.
 </p>
 
-<b>2. slu&#269;aj:</b> <i>n</i> = <i>pq</i>, gdje su <i>p</i> i <i>q</i> 
-razli&#269;iti prosti brojevi <br>
+<b>2. sluèaj:</b> <i>n</i> = <i>pq</i>, gdje su <i>p</i> i <i>q</i> 
+razlièiti prosti brojevi <br>
 
 Neka je <i>p</i> - 1 = 2<sup><i>u</i></sup> <i>v</i>, <i>q</i> - 1 = 
 2<sup><i>w</i></sup> <i>z</i>, gdje su <i>v</i> i <i>z</i> 
@@ -190,15 +193,15 @@ Pretpostavimo sada da je
 <i>b</i><sup>2<sup><sup><img src="symbols/supr.gif" alt="r" ALIGN=TOP></sup></sup><i>t</i></sup> 
 &equiv; -1 (mod <i>p</i>) za neki
 <i>r</i>, 0 &le;  
-<i>r</i> &lt; <i>s</i>. Po Lemi 4.1, ova kongruencija ima rje&#353;enja
-ako i samo ako je <i>r</i> < <i>u</i>, a broj rje&#353;enja je 
+<i>r</i> &lt; <i>s</i>. Po Lemi 4.1, ova kongruencija ima rješenja
+ako i samo ako je <i>r</i> < <i>u</i>, a broj rješenja je 
 <nobr>2<sup><i>r</i></sup> (<i>t</i>,<i>v</i>) &middot;  
 2<sup><i>r</i></sup> (<i>t</i>,<i>z</i>) 
 &le;  
-4<sup><i>r</i></sup> <i>vz</i>.</nobr> Budu&#263;i da je <i>n</i> -1 &gt; &phi;(<i>n</i>) = 
+4<sup><i>r</i></sup> <i>vz</i>.</nobr> Buduæi da je <i>n</i> -1 &gt; &phi;(<i>n</i>) = 
 2<sup><i>u+w</i></sup> <i>vz</i>, slijedi da prirodnih brojeva 
 <i>b</i>, 0 < <i>b</i> < <i>n</i>, za koje je <i>n</i> 
-spsp(<i>b</i>) ima najvi&#353;e
+spsp(<i>b</i>) ima najviše
 
 <p align=center><img src="slike/mil2.gif" alt="vz+" ALIGN=TOP> </p>
 
@@ -210,34 +213,34 @@ Ako je <i>u</i> = <i>w</i>, onda barem jedna od nejednakosti
 (<i>t</i>,<i>v</i>) &le;  
 <i>v</i>, (<i>t</i>,<i>z</i>) 
 &le; <i>z</i> mora biti 
-stroga, jer bi ina&#269;e imali 
+stroga, jer bi inaèe imali 
 0 &equiv;  
 2<sup><i>s</i></sup> <i>t</i> 
 &equiv; <i>pq</i> -1 
 &equiv; <i>q</i> - 1 
 (mod <i>v</i>), pa bi iz <nobr><i>v</i>|(<i>q</i> - 1) = 
 2<sup><i>w</i></sup> <i>z</i></nobr> slijedilo da <i>v</i>|<i>z</i>. 
-Analogno bi dobili da <i>z</i>|<i>v</i>, &#353;to bi zna&#269;ilo da je 
-<i>v</i> = <i>z</i> i <i>p</i> = <i>q</i>, &#353;to je kontradikcija. <br>
+Analogno bi dobili da <i>z</i>|<i>v</i>, što bi znaèilo da je 
+<i>v</i> = <i>z</i> i <i>p</i> = <i>q</i>, što je kontradikcija. <br>
 
-Dakle, u gornjim ocjenama mo&#382;emo zamijeniti <i>vz</i> sa 
-<i>vz</i>/3. To dovodi do sljede&#263;e ocjene za broj baza <i>b</i> za
+Dakle, u gornjim ocjenama možemo zamijeniti <i>vz</i> sa 
+<i>vz</i>/3. To dovodi do sljedeæe ocjene za broj baza <i>b</i> za
 koje je <i>n</i> spsp(<i>b</i>):
 
 <p align=center><img src="slike/mil4.gif" alt="< n/4" ALIGN=TOP> </p>
 
-<b>3. slu&#269;aj:</b> <i>n</i> = 
+<b>3. sluèaj:</b> <i>n</i> = 
 <i>p</i><sub>1</sub><i>p</i><sub>2</sub> &middot; &middot; &middot;  
 <i>p</i><sub><i>k</i></sub>, gdje je 
 <i>k</i> &ge; 3, 
-a <i>p</i><sub><i>i</i></sub>-ovi su razli&#269;iti prosti brojevi <br>
+a <i>p</i><sub><i>i</i></sub>-ovi su razlièiti prosti brojevi <br>
 
 Neka je <i>p</i><sub><i>j</i></sub> - 1 = 
 2<sup><i>s</i></sup><sup><sup><img src="symbols/subj.gif" alt="j" ALIGN=TOP></sup></sup>
 <i>t</i><sub><i>j</i></sub>, 
 <i>t</i><sub><i>j</i></sub> neparan. Postupimo kao u 2.
-slu&#269;aju. Mo&#382;emo pretpostaviti da je <i>s</i><sub>1</sub> 
-&ge; <i>s</i><sub><i>j</i></sub>, za sve <i>j</i>. Dobivamo sljede&#263;u 
+sluèaju. Možemo pretpostaviti da je <i>s</i><sub>1</sub> 
+&ge; <i>s</i><sub><i>j</i></sub>, za sve <i>j</i>. Dobivamo sljedeæu 
 ocjenu za broj baza <i>b</i> takvih da je <i>n</i> spsp(<i>b</i>): 
 
 <p align=center><img src="slike/mil5.gif" alt="< n/4" ALIGN=TOP> </p>
@@ -245,30 +248,30 @@ ocjenu za broj baza <i>b</i> takvih da je <i>n</i> spsp(<i>b</i>):
 <p><br><br>
 
 <h3 align=center>Miller-Rabinov test prostosti:</h3>
-Neka je <i>n</i> neparan broj za kojeg &#382;elimo ustanoviti da li je prost 
-ili slo&#382;en. Neka je <i>n</i> - 1 = 
-2<sup><i>s</i></sup> <sup><b>.</b></sup> <i>t</i>, gdje je <i>t</i>  neparan broj . Na slu&#269;ajan na&#269;in izaberemo <i>b</i>, 
-<nobr>0 &lt; <i>b</i> &lt; <i>n</i>.</nobr> Izra&#269;unamo <i>b</i><sup><i>t</i></sup> 
+Neka je <i>n</i> neparan broj za kojeg želimo ustanoviti da li je prost 
+ili složen. Neka je <i>n</i> - 1 = 
+2<sup><i>s</i></sup> <sup><b>.</b></sup> <i>t</i>, gdje je <i>t</i>  neparan broj . Na sluèajan naèin izaberemo <i>b</i>, 
+<nobr>0 &lt; <i>b</i> &lt; <i>n</i>.</nobr> Izraèunamo <i>b</i><sup><i>t</i></sup> 
 mod <i>n</i>. Ako dobijemo 
-&plusmn;1, zaklju&#269;ujemo 
-da je <i>n</i> pro&#353;ao test (***), te biramo sljede&#263;i <i>b</i>. 
+&plusmn;1, zakljuèujemo 
+da je <i>n</i> prošao test (***), te biramo sljedeæi <i>b</i>. 
 U protivnom, uzastopno kvadriramo <i>b</i><sup><i>t</i></sup> modulo 
 <i>n</i> sve dok ne dobijemo rezultat -1. Ako dobijemo -1, onda je 
-<i>n</i> pro&#353;ao test (***). Ako nikad ne dobijemo -1, tj. ako dobijemo 
+<i>n</i> prošao test (***). Ako nikad ne dobijemo -1, tj. ako dobijemo 
 da je <nobr><i>b</i><sup>2<sup><sup><img src="symbols/supr.gif" alt="r" ALIGN=TOP><img src="symbols/supplus.gif" alt="+" ALIGN=TOP><img src="symbols/sup1.gif" alt="1" ALIGN=TOP></sup></sup><i>t</i></sup> 
 &equiv; 1 (mod <i>n</i>),</nobr> 
 ali <nobr><i>b</i><sup>2<sup><sup><img src="symbols/supr.gif" alt="r" ALIGN=TOP></sup></sup><i>t</i></sup> 
 &#8802; -1 (mod <i>n</i>),</nobr> 
-onda znamo da je sigurno <i>n</i> slo&#382;en. Ako <i>n</i> pro&#273;e test (***)
-za <i>k</i> razli&#269;itih <i>b</i>-ova, onda je vjerojatnost da je 
-<i>n</i> slo&#382;en <nobr>&le; 1/4<sup><i>k</i></sup>.</nobr> 
+onda znamo da je sigurno <i>n</i> složen. Ako <i>n</i> proðe test (***)
+za <i>k</i> razlièitih <i>b</i>-ova, onda je vjerojatnost da je 
+<i>n</i> složen <nobr>&le; 1/4<sup><i>k</i></sup>.</nobr> 
 
 <p>
 
 <b>Napomena:</b> Uz pretpostavku da vrijedi tzv. generalizirana
 Riemannova hipoteza (GRH), Miller-Rabinov test postaje
-polinomijalni deterministi&#269;ki test. Naime, mo&#382;e se
-pokazati da ako je GRH to&#269;na i ako je <i>n</i> slo&#382;en broj,
+polinomijalni deterministièki test. Naime, može se
+pokazati da ako je GRH toèna i ako je <i>n</i> složen broj,
 onda mora postojati barem jedna baza 
 <nobr><i>b</i> &lt; 2 ln<sup>2</sup> <i>n</i></nobr> za koju ne vrijedi (***). 
 
@@ -278,8 +281,8 @@ onda mora postojati barem jedna baza
 
 <b><font size="-1" face="Verdana">
 <a href="solstras.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="faktor.html">[Sljede&#263;e poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadr&#382;aj]</a>
+<a href="faktor.html">[Sljedeæe poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
 </font></b>
 
 <hr size=2 noshade>
@@ -317,6 +320,8 @@ EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
 src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
 </div></noscript>
 <!-- End eXTReMe Non Public Tracker Code -->
+
+<script type="text/javascript" src="https://web.math.pmf.unizg.hr/lib/js/accessibility_black.min.js"></script>
 
 </body>
 </html>

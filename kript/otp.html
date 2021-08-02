@@ -1,17 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Jednokratna bilje&#382;nica</title>
+<title>Jednokratna bilježnica</title>
 
 <meta name="author" content="Andrej Dujella">
 <meta name="description" content="Kriptografija - 
 Jednokratna biljeznica">
-<meta name="keywords" content="kriptografija, jednokratna bilje&#382;nica, 
+<meta name="keywords" content="kriptografija, jednokratna bilježnica, 
 one time pad, Vernam">
 
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style type="text/css">
 body {font-family: Arial,Helvetica,sans-serif;}
@@ -23,44 +25,45 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="hill.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="transp.html">[Sljede&#263;e poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadr&#382;aj]</a>
+<a href="transp.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
 </font></b>
+<p>
 
 <hr size=2 noshade>
 
 
 <a name="1.6"></a>
 <h2 align=center style="color: rgb(128,0,0)">1.6. Jednokratna 
-bilje&#382;nica</h2>
+bilježnica</h2>
 
 
 Postavlja se pitanje postoji li kriptosustav koji je 
-<em>savr&#353;eno siguran</em>, te &#353;to bi to uop&#263;e zna&#269;ilo. 
-Pojam savr&#353;ene sigurnosti uveo je 1949. godine <font color=009900>Claude Shannon</font>. 
-To je kriptosustav u kojem &#353;ifrat ne daje nikakvu informaciju 
+<em>savršeno siguran</em>, te što bi to uopće značilo. 
+Pojam savršene sigurnosti uveo je 1949. godine <font color=009900>Claude Shannon</font>. 
+To je kriptosustav u kojem šifrat ne daje nikakvu informaciju 
 o otvorenom tekstu. Preciznije, pretpostavimo da se u prostoru 
 otvorenih tekstova 
 <font face="Brush Script MT,Script,Times New Roman">P</font>
-otvoreni tekst <i>x</i> pojavljuje s vjerojatno&#353;&#263;u 
+otvoreni tekst <i>x</i> pojavljuje s vjerojatnošću 
 <i>p</i>(<i>x</i>). Tada je uvjetna vjerojatnost 
 <i>p</i>(<i>x</i> | <i>y</i>) da je <i>x</i> otvoreni tekst ako znamo 
-da je <i>y</i> &#353;ifrat, tako&#273;er jednaka <i>p</i>(<i>x</i>)
+da je <i>y</i> šifrat, također jednaka <i>p</i>(<i>x</i>)
 (za svaki fiksirani <i>x</i> &isin;  
 <font face="Brush Script MT,Script,Times New Roman">P</font> i sve <i>y</i> 
 &isin;  
 <font face="Brush Script MT,Script,Times New Roman">C</font>). 
 <p>
 Poznata realizacija ideje potpune sigurnosti je kriptosustav 
-poznat pod nazivom <em>jednokratna bilje&#382;nica</em> (engl. one-time pad). 
+poznat pod nazivom <em>jednokratna bilježnica</em> (engl. one-time pad). 
 Smatra se da su ga uveli <font color=009900>Gilbert Vernam</font> i <font color=009900>Joseph Mauborgne</font> 1917. godine 
-(nedavno je prona&#273;eno da je istu ideju imao ve&#263; 1882. godine <font color=009900>Frank Miller</font>). 
-Naravno, to da se radi o savr&#353;eno sigurnom kriptosustavu bilo je mogu&#263;e 
+(nedavno je pronađeno da je istu ideju imao već 1882. godine <font color=009900>Frank Miller</font>). 
+Naravno, to da se radi o savršeno sigurnom kriptosustavu bilo je moguće 
 precizno ustvrditi tek nakon Shannonove definicije.
 Ideja im je bila dobiti potpuno sigurni kriptosustav za uporabu 
 u telegrafiji. Za razliku 
 od do sada navedenih kriptosustava, ovaj ne radi sa slovima, 
-ve&#263; s binarnim podatcima. Njegova definicija je: 
+već s binarnim podatcima. Njegova definicija je: 
 <p>
 
 <table align=center border=1 width="95%" cellpadding=15> 
@@ -86,33 +89,33 @@ Za <i>K</i> = (<i>k</i><sub>1</sub>, ..., <i>k<sub>n</sub></i>)
 <i>y<sub>n</sub></i> +<sub>2</sub> <i>k<sub>n</sub></i>).
 </font> </td></tr> </table>  
 <p>
-Drugim rije&#269;ima, &#353;ifrat se iz otvorenog teksta dobije tako da se na 
+Drugim riječima, šifrat se iz otvorenog teksta dobije tako da se na 
 bitovima primjeni operacija "ekskluzivno ili" (XOR): 
 <i>y<sub>i</sub></i> = <i>x<sub>i</sub></i> 
 &oplus;  
-<i>k<sub>i</sub></i>. Uo&#269;imo da je postupak de&#353;ifriranja 
-identi&#269;an postupku &#353;ifriranja: 
+<i>k<sub>i</sub></i>. Uočimo da je postupak dešifriranja 
+identičan postupku šifriranja: 
 <i>x<sub>i</sub></i> = <i>y<sub>i</sub></i> 
 &oplus;  
 <i>k<sub>i</sub></i>. Naime, u <b>Z</b><sub>2</sub> zbrajanje i oduzimanje 
-su identi&#269;ne operacije (jer je 1 +<sub>2</sub> 1 = 0). 
+su identične operacije (jer je 1 +<sub>2</sub> 1 = 0). 
 <p>
-Uo&#269;imo tako&#273;er da je ovaj kriptosustav lako razbiti napadom 
-"poznati otvoreni tekst", jer sasvim analogno vrijedi i ("ne&#382;eljena") 
+Uočimo također da je ovaj kriptosustav lako razbiti napadom 
+"poznati otvoreni tekst", jer sasvim analogno vrijedi i ("neželjena") 
 relacija  
 <i>k<sub>i</sub></i> = <i>x<sub>i</sub></i> 
 &oplus;  
 <i>y<sub>i</sub></i>. 
-To zna&#269;i da se sigurnost kod ovog kriptosustava 
-mo&#382;e posti&#263;i samo ako se svaki klju&#269; koristi samo jednom. 
-Odatle i dolazi naziv jednokratna bilje&#382;nica. 
-Naime, razli&#269;itim varijantama ovog kriptosustava su se koristili 
-&#353;pijuni, koji bi za tu svrhu koristili bilje&#382;nicu u kojoj bi se svaki list koristio 
-kao jednokratni klju&#269;. 
-Za prakti&#269;ne primjene veliki problem predstavlja &#269;injenica da je klju&#269;, koji mora biti 
+To znači da se sigurnost kod ovog kriptosustava 
+može postići samo ako se svaki ključ koristi samo jednom. 
+Odatle i dolazi naziv jednokratna bilježnica. 
+Naime, različitim varijantama ovog kriptosustava su se koristili 
+špijuni, koji bi za tu svrhu koristili bilježnicu u kojoj bi se svaki list koristio 
+kao jednokratni ključ. 
+Za praktične primjene veliki problem predstavlja činjenica da je ključ, koji mora biti 
 sigurno prenesen, jednako dug kao i sama poruka. Stoga ovaj 
 kriptosustav nije bio u komercijalnoj uporabi, ali postoje 
-naznake da se koristio u komunikaciji izme&#273;u Moskve i 
+naznake da se koristio u komunikaciji između Moskve i 
 Washingtona tijekom hladnog rata. 
 
 <p> 
@@ -121,8 +124,8 @@ Washingtona tijekom hladnog rata.
 
 <b><font size="-1" face="Verdana">
 <a href="hill.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="transp.html">[Sljede&#263;e poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadr&#382;aj]</a>
+<a href="transp.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
 </font></b>
 
 <hr size=2 noshade>
@@ -158,6 +161,8 @@ EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
 src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
 </div></noscript>
 <!-- End eXTReMe Non Public Tracker Code -->
+
+<script type="text/javascript" src="https://web.math.pmf.unizg.hr/lib/js/accessibility_black.min.js"></script>
 
 </body>
 </html>

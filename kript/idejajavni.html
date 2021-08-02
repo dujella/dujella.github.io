@@ -5,13 +5,15 @@
 
 <meta name="author" content="Andrej Dujella">
 <meta name="description" content="Kriptosustavi s javnim kljucem - 
-Ideja javnog klju&#269;a">
-<meta name="keywords" content="kriptografija, javni klju&#269;, 
-jednosmjerne funkcije, razmjena klju&#269;eva">
+Ideja javnog ključa">
+<meta name="keywords" content="kriptografija, javni ključ, 
+jednosmjerne funkcije, razmjena ključeva">
 
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style type="text/css">
 body {font-family: Arial,Helvetica,sans-serif;}
@@ -23,45 +25,46 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="aes.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="rsa.html">[Sljede&#263;e poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadr&#382;aj]</a>
+<a href="rsa.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
 </font></b>
+<p>
 
 <hr size=2 noshade>
 
 
 <h1 align=center style="color: rgb(204,0,0)">3. Kriptosustavi s 
-javnim klju&#269;em</h1>
+javnim ključem</h1>
 
 <a name="3.1"></a>
 <h2 align=center style="color: rgb(128,0,0)">3.1. Ideja javnog 
-klju&#269;a</h2>
+ključa</h2>
 
 
-Svi kriptosustavi koje smo do sada prou&#269;avali bili su simetri&#269;ni, 
-tj. sustavi s tajnim klju&#269;em. Naime, po&#353;iljalac i primalac bi tajno 
-izabrali klju&#269; <i>K</i>, koji bi onda generirao funkcije za 
-&#353;ifriranje <i>e<sub>K</sub></i> i de&#353;ifriranje <i>d<sub>K</sub></i>. 
+Svi kriptosustavi koje smo do sada proučavali bili su simetrični, 
+tj. sustavi s tajnim ključem. Naime, pošiljalac i primalac bi tajno 
+izabrali ključ <i>K</i>, koji bi onda generirao funkcije za 
+šifriranje <i>e<sub>K</sub></i> i dešifriranje <i>d<sub>K</sub></i>. 
 Pritom je <i>d<sub>K</sub></i> ili isti kao <i>e<sub>K</sub></i> 
-ili se iz njega lako dobije (npr. u DES-u se kod de&#353;ifriranja  
-samo obrne redoslijed me&#273;uklju&#269;eva). Za sigurnost ovih kriptosustava 
-nu&#382;na je tajnost klju&#269;a. No, to je i njihov veliki nedostatak, 
-budu&#263;i da prije &#353;ifriranja po&#353;iljalac i primalac moraju biti 
-u mogu&#263;nosti razmijeniti tajni klju&#269; preko nekog sigurnog 
-komunikacijskog kanala (ili se osobno susresti). &#352;tovi&#353;e, oni bi 
-morali &#269;esto mijenjati klju&#269;eve, budu&#263;i da &#353;ifriranje vi&#353;e poruka 
-istim klju&#269;em znatno smanjuje sigurnost. To mo&#382;e biti veliki problem 
-ako npr. po&#353;iljalac i primalac &#382;ive u udaljenih mjestima i &#382;ele 
-sigurno komunicirati pomo&#263;u e-maila. 
+ili se iz njega lako dobije (npr. u DES-u se kod dešifriranja  
+samo obrne redoslijed međuključeva). Za sigurnost ovih kriptosustava 
+nužna je tajnost ključa. No, to je i njihov veliki nedostatak, 
+budući da prije šifriranja pošiljalac i primalac moraju biti 
+u mogućnosti razmijeniti tajni ključ preko nekog sigurnog 
+komunikacijskog kanala (ili se osobno susresti). Štoviše, oni bi 
+morali često mijenjati ključeve, budući da šifriranje više poruka 
+istim ključem znatno smanjuje sigurnost. To može biti veliki problem 
+ako npr. pošiljalac i primalac žive u udaljenim mjestima i žele 
+sigurno komunicirati pomoću e-maila. 
 <p><br>
 Godine 1976. <font color=009900>Whitfield Diffie</font> i 
 <font color=009900>Martin Hellman</font>  
-su ponudili jedno mogu&#263;e rje&#353;enje problema razmjene klju&#269;eva, 
-zasnovano na &#269;injenici da je u nekim grupama potenciranje puno jednostavnije od logaritmiranja.  
+su ponudili jedno moguće rješenje problema razmjene ključeva, 
+zasnovano na činjenici da je u nekim grupama potenciranje puno jednostavnije od logaritmiranja.  
 <p>
-Pretpostavimo da se osobe A i B  &#382;ele dogovoriti o jednom tajnom 
-slu&#269;ajnom elementu u cikli&#269;koj grupi <i>G</i>, kojeg bi onda poslije 
-mogli koristi kao klju&#269; za &#353;ifriranje u nekom simetri&#269;nom 
+Pretpostavimo da se osobe A i B  žele dogovoriti o jednom tajnom 
+slučajnom elementu u cikličkoj grupi <i>G</i>, kojeg bi onda poslije 
+mogli koristi kao ključ za šifriranje u nekom simetričnom 
 kriptosustavu.  Oni taj svoj dogovor moraju provesti preko nekog 
 nesigurnog komunikacijskog kanala, bez da su prethodno razmijenili bilo 
 kakvu informaciju. Jedina informacija koju imaju jest 
@@ -72,57 +75,57 @@ grupa <i>G</i> i njezin generator <i>g</i>.
 <tr><td bgcolor="FFFFCC">
 <font face="Arial,Helvetica,sans-serif">
 
-<b>Diffie-Hellmanov protokol za razmjenu klju&#269;eva:</b> 
+<b>Diffie-Hellmanov protokol za razmjenu ključeva:</b> 
 
 <ol>
-<li> Osoba A generira slu&#269;ajan prirodan broj <i>a</i> 
+<li> Osoba A generira slučajan prirodan broj <i>a</i> 
 &isin; {1, 2, ... , |G| - 1}. 
-Ona po&#353;alje osobi B element <i>g</i><sup><i>a</i></sup>. 
+Ona pošalje osobi B element <i>g</i><sup><i>a</i></sup>. 
 
-<li> Osoba B generira slu&#269;ajan prirodan broj <i>b</i> 
+<li> Osoba B generira slučajan prirodan broj <i>b</i> 
 &isin; {1, 2, ... , |G| - 1},  
-te po&#353;alje osobi A element <i>g</i><sup><i>b</i></sup>.
+te pošalje osobi A element <i>g</i><sup><i>b</i></sup>.
 
-<li> Osoba A izra&#269;una (<i>g</i><sup><i>b</i></sup>)<sup><i>a</i></sup> 
+<li> Osoba A izračuna (<i>g</i><sup><i>b</i></sup>)<sup><i>a</i></sup> 
 = <i>g</i><sup><i>ab</i></sup>. 
 
-<li> Osoba B izra&#269;una (<i>g</i><sup><i>a</i></sup>)<sup><i>b</i></sup> 
+<li> Osoba B izračuna (<i>g</i><sup><i>a</i></sup>)<sup><i>b</i></sup> 
 = <i>g</i><sup><i>ab</i></sup>. 
 </ol> 
 
-Sada je njihov tajni klju&#269; <i>K</i> = <i>g</i><sup><i>ab</i></sup>. 
+Sada je njihov tajni ključ <i>K</i> = <i>g</i><sup><i>ab</i></sup>. 
 </font></td></tr></table>
 <p> 
 
-Njihov protivnik koji mo&#382;e prislu&#353;kivati njihovu komunikaciju 
-preko nesigurnog komunikacijskog kanala zna sljede&#263;e podatke: 
+Njihov protivnik koji može prisluškivati njihovu komunikaciju 
+preko nesigurnog komunikacijskog kanala zna sljedeće podatke: 
 <i>G</i>, <i>g</i>, <i>g</i><sup><i>a</i></sup>, 
-<i>g</i><sup><i>b</i></sup>, te treba iz ovih podataka izra&#269;unati 
+<i>g</i><sup><i>b</i></sup>, te treba iz ovih podataka izračunati 
 <i>g</i><sup><i>ab</i></sup>.  
-Ako protivnik iz poznavanja <i>g</i> i <i>g</i><sup><i>a</i></sup> mo&#382;e 
-izra&#269;unati <i>a</i> (tj. ako mo&#382;e rije&#353;iti problem diskretnog 
-logaritma), onda i on mo&#382;e pomo&#263;u <i>a</i> i <i>g</i><sup><i>b</i></sup> izra&#269;unati 
+Ako protivnik iz poznavanja <i>g</i> i <i>g</i><sup><i>a</i></sup> može 
+izračunati <i>a</i> (tj. ako može riješiti problem diskretnog 
+logaritma), onda i on može pomoću <i>a</i> i <i>g</i><sup><i>b</i></sup> izračunati 
 <i>g</i><sup><i>ab</i></sup>. 
 
 <p><br>
 
-Diffie i Hellman se smatraju za&#269;etnicima <em>kriptografije 
-javnog klju&#269;a</em>. 
-Ideja javnog klju&#269;a se sastoji u tome da se konstruiraju kriptosustavi 
-kod kojih bi iz poznavanja funkcije &#353;ifriranja <i>e<sub>K</sub></i> 
-bilo prakti&#269;ki nemogu&#263;e (u nekom razumnom vremenu) izra&#269;unati 
-funkciju de&#353;ifriranja <i>d<sub>K</sub></i>. 
+Diffie i Hellman se smatraju začetnicima <em>kriptografije 
+javnog ključa</em>. 
+Ideja javnog ključa se sastoji u tome da se konstruiraju kriptosustavi 
+kod kojih bi iz poznavanja funkcije šifriranja <i>e<sub>K</sub></i> 
+bilo praktički nemoguće (u nekom razumnom vremenu) izračunati 
+funkciju dešifriranja <i>d<sub>K</sub></i>. 
 Tada bi funkcija <i>e<sub>K</sub></i> mogla biti javna. U provedbi 
-ove ideje klju&#269;nu ulogu igraju tzv. osobne jednosmjerne funkcije. 
-Za funkciju <i>f</i> ka&#382;emo da je <em>jednosmjerna</em> (one-way) 
-ako je <i>f</i> lako, a <i>f</i><sup> -1</sup> te&#353;ko izra&#269;unati. 
-Ako je pritom <i>f</i><sup> -1</sup> lako izra&#269;unati ukoliko nam je 
+ove ideje ključnu ulogu igraju tzv. osobne jednosmjerne funkcije. 
+Za funkciju <i>f</i> kažemo da je <em>jednosmjerna</em> (one-way) 
+ako je <i>f</i> lako, a <i>f</i><sup> -1</sup> teško izračunati. 
+Ako je pritom <i>f</i><sup> -1</sup> lako izračunati ukoliko nam je 
 poznat neki dodatni podatak (trapdoor - skriveni ulaz), onda 
 <i>f</i> nazivamo <em>osobna jednosmjerna funkcija</em>. 
-Uo&#269;imo da se i u klasi&#269;noj kriptografiji tajnost u su&#353;tini zahtijeva samo od funkcije
-za de&#353;ifriranje <i>d<sub>K</sub></i>. Banalan primjer: kod Cezarove &#353;ifre nije problem &#353;to svi
-znaju da se slova &#353;ifriraju tako da se pomi&#269;u za 3 mjesta udesno, ve&#263; je problem &#353;to iz tog podatka
-ba&#353; svatko mo&#382;e zaklju&#269;iti da se de&#353;ifriranje provodi pomicanjem za 3 mjesta ulijevo.
+Uočimo da se i u klasičnoj kriptografiji tajnost u suštini zahtijeva samo od funkcije
+za dešifriranje <i>d<sub>K</sub></i>. Banalan primjer: kod Cezarove šifre nije problem što svi
+znaju da se slova šifriraju tako da se pomiču za 3 mjesta udesno, već je problem što iz tog podatka
+baš svatko može zaključiti da se dešifriranje provodi pomicanjem za 3 mjesta ulijevo.
 No, i kod svih ostalih kriptosustava koje smo dosad susreli, veza funkcija 
 <i>e<sub>K</sub></i> i <i>d<sub>K</sub></i>
 je bila vrlo jednostavna, pa skrivanje jedne, 
@@ -133,9 +136,9 @@ a otkrivanje druge funkcije nije imalo nikakvog smisla.
 <tr><td bgcolor="FFFFCC">
 <font face="Arial,Helvetica,sans-serif">
 
-<em>Kriptosustav s javnim klju&#269;em</em> se sastoji od dviju familija 
-{<i>e<sub>K</sub></i>} i {<i>d<sub>K</sub></i>} funkcija za &#353;ifriranje 
-i de&#353;ifriranje (ovdje <i>K</i> prolazi skupom svih mogu&#263;ih 
+<em>Kriptosustav s javnim ključem</em> se sastoji od dviju familija 
+{<i>e<sub>K</sub></i>} i {<i>d<sub>K</sub></i>} funkcija za šifriranje 
+i dešifriranje (ovdje <i>K</i> prolazi skupom svih mogućih 
 korisnika) sa svojstvom: 
 <ol>
 <li>Za svaki <i>K</i> je <i>d<sub>K</sub></i> inverz 
@@ -145,128 +148,128 @@ korisnika) sa svojstvom:
 <li>Za svaki <i>K</i> je <i>e<sub>K</sub></i> osobna jednosmjerna 
 funkcija.
 </ol>
-<i>e<sub>K</sub></i> se zove <em>javni klju&#269;</em>, a 
-<i>d<sub>K</sub></i> <em>tajni</em> ili <em>osobni klju&#269;</em>.
+<i>e<sub>K</sub></i> se zove <em>javni ključ</em>, a 
+<i>d<sub>K</sub></i> <em>tajni</em> ili <em>osobni ključ</em>.
 
 </font></td></tr></table>
 <p>
 
-Ako po&#353;iljalac A &#382;eli poslati poruku <i>x</i> primaocu B, onda B 
-najprije po&#353;alje A svoj javni klju&#269; <i>e<sub>B</sub></i>. 
-Potom A &#353;ifrira svoju poruku pomo&#263;u <i>e<sub>B</sub></i> i 
-po&#353;alje primaocu &#353;ifrat <i>y</i> = <i>e<sub>B</sub></i>(<i>x</i>). 
-Kona&#269;no, B de&#353;ifrira &#353;ifrat koriste&#263;i svoj tajni klju&#269; 
+Ako pošiljalac A želi poslati poruku <i>x</i> primaocu B, onda B 
+najprije pošalje A svoj javni ključ <i>e<sub>B</sub></i>. 
+Potom A šifrira svoju poruku pomoću <i>e<sub>B</sub></i> i 
+pošalje primaocu šifrat <i>y</i> = <i>e<sub>B</sub></i>(<i>x</i>). 
+Konačno, B dešifrira šifrat koristeći svoj tajni ključ 
 <i>d<sub>B</sub></i>: &nbsp; <i>d<sub>B</sub></i>(<i>y</i>) = 
 <i>d<sub>B</sub></i>(<i>e<sub>B</sub></i>(<i>x</i>)) = <i>x</i>. 
 <p>
-Ukoliko grupa korisnika &#382;eli komunicirati na ovaj na&#269;in, 
-situacija je jo&#353; jednostavnija. Naime, tada svi korisnici stave svoje 
-javne klju&#269;eve u neku javnu, svima dostupnu datoteku. Sada B ne mora 
-slati svoj javni klju&#269; osobi A, ve&#263; A jednostavno pro&#269;ita 
+Ukoliko grupa korisnika želi komunicirati na ovaj način, 
+situacija je još jednostavnija. Naime, tada svi korisnici stave svoje 
+javne ključeve u neku javnu, svima dostupnu datoteku. Sada B ne mora 
+slati svoj javni ključ osobi A, već A jednostavno pročita 
 <i>e<sub>B</sub></i> iz datoteke. 
 
 <p align=center>
 <img src="slike/javni_pravokutnici.gif" alt="shema" ALIGN=MIDDLE>
 <p>
        
-Ovdje se mo&#382;e postaviti pitanje kako osoba B mo&#382;e biti sigurna da joj 
+Ovdje se može postaviti pitanje kako osoba B može biti sigurna da joj 
 je upravo osoba A poslala poruku. Naime, svatko ima pristup funkciji 
-<i>e<sub>B</sub></i>, pa se mo&#382;e la&#382;no predstaviti kao osoba A. 
-Dakle, postavlja se pitanje vjerodostojnosti ili autenti&#269;nosti 
-poruke. To se mo&#382;e rije&#353;iti na sljede&#263;i na&#269;in: 
+<i>e<sub>B</sub></i>, pa se može lažno predstaviti kao osoba A. 
+Dakle, postavlja se pitanje vjerodostojnosti ili autentičnosti 
+poruke. To se može riješiti na sljedeći način: 
 <ul>
-<li>A doda svojoj poruci slu&#269;ajan broj <i>a</i> od recimo 10 
+<li>A doda svojoj poruci slučajan broj <i>a</i> od recimo 10 
 znamenaka.
-<li>B generira svoj slu&#269;ajan 10-znamenkasti broj <i>b</i>, te 
-po&#353;alje osobi A poruku <i>e<sub>A</sub></i>(<i>a</i> + <i>b</i>).  
-<li>A izra&#269;una <i>b</i> pomo&#263;u formule <i>b</i> = 
+<li>B generira svoj slučajan 10-znamenkasti broj <i>b</i>, te 
+pošalje osobi A poruku <i>e<sub>A</sub></i>(<i>a</i> + <i>b</i>).  
+<li>A izračuna <i>b</i> pomoću formule <i>b</i> = 
 <i>d<sub>A</sub></i>(<i>e<sub>A</sub></i>(<i>a</i> + <i>b</i>)) - 
-<i>a</i>, te sada ponovo po&#353;alje svoju prvu poruku tako da joj doda 
-<i>b</i>, a isto to u&#269;ini i sa svakom idu&#263;om porukom koju &#263;e 
+<i>a</i>, te sada ponovo pošalje svoju prvu poruku tako da joj doda 
+<i>b</i>, a isto to učini i sa svakom idućom porukom koju će 
 slati osobi B.
 </ul>
 <p>
 
-Neki kriptosustavi omogu&#263;avaju &#269;ak da korisnici <em>digitalno 
-potpi&#353;u</em> svoju poruku. To je va&#382;no zbog toga &#353;to tada A ne mo&#382;e 
+Neki kriptosustavi omogućavaju čak da korisnici <em>digitalno 
+potpišu</em> svoju poruku. To je važno zbog toga što tada A ne može 
 kasnije zanijekati da je upravo on poslao konkretnu poruku. 
 Pretpostavimo da je 
 <font face="Brush Script MT,Script,Times New Roman">P</font> = 
-<font face="Brush Script MT,Script,Times New Roman">C</font>. Tada A mo&#382;e potpisati 
-poruku <i>x</i> tako da osobi B po&#353;alje &#353;ifrat 
+<font face="Brush Script MT,Script,Times New Roman">C</font>. Tada A može potpisati 
+poruku <i>x</i> tako da osobi B pošalje šifrat 
 <nobr><i>z</i> = <i>d<sub>A</sub></i>(<i>y</i>) = 
 <i>d<sub>A</sub></i>(<i>e<sub>B</sub></i>(<i>x</i>)).</nobr>  
 Kad B primi poruku za koju pretpostavlja da mu je poslao A, 
-on najprije primijeni javni klju&#269; <i>e<sub>A</sub></i>, a potom 
-svoj tajni klju&#269; <i>d<sub>B</sub></i>: 
+on najprije primijeni javni ključ <i>e<sub>A</sub></i>, a potom 
+svoj tajni ključ <i>d<sub>B</sub></i>: 
 <p align=center>
 <i>d<sub>B</sub></i>(<i>e<sub>A</sub></i>(<i>z</i>)) = 
 <i>d<sub>B</sub></i>(<i>e<sub>A</sub></i>(<i>d<sub>A</sub></i>(<i>e<sub>B</sub></i>(<i>x</i>)))) = <i>x</i>. 
 </p>
 Sada B zna sigurno da je poruku poslao A, jer je samo on mogao 
 upotrijebiti funkciju <i>d<sub>A</sub></i>. Da je umjesto te 
-funkcije upotrijebljena neka tre&#263;a funkcija <i>d<sub>C</sub></i>, 
+funkcije upotrijebljena neka treća funkcija <i>d<sub>C</sub></i>, 
 kao rezultat ne bi dobili smislenu poruku. Nadalje, ukoliko bi A 
 kasnije zanijekao da je on autor poruke, B bi mogao "sucu" pokazati 
 poruke <i>x</i> i <i>z</i>. Sudac bi provjerio da vrijedi 
 <i>e<sub>B</sub></i>(<i>x</i>) = 
-<i>e<sub>A</sub></i>(<i>z</i>) i to bi bio dokaz da je A po&#353;iljalac. 
+<i>e<sub>A</sub></i>(<i>z</i>) i to bi bio dokaz da je A pošiljalac. 
 <p><br>
 
-Glavne prednosti kriptosustava s javnim klju&#269;em u usporedbi sa 
-simetri&#269;nima su: 
+Glavne prednosti kriptosustava s javnim ključem u usporedbi sa 
+simetričnima su: 
 <ul>
 <li>nema potrebe za sigurnim komunikacijskim kanalom za razmjenu 
-klju&#269;eva
-<li>za komunikaciju grupe od <i>N</i> ljudi treba 2<i>N</i> klju&#269;eva, 
-za razliku od <i>N</i>(<i>N</i>-1)/2 klju&#269;eva kod simetri&#269;nog 
+ključeva
+<li>za komunikaciju grupe od <i>N</i> ljudi treba 2<i>N</i> ključeva, 
+za razliku od <i>N</i>(<i>N</i>-1)/2 ključeva kod simetričnog 
 kriptosustava
-<li>mogu&#263;nost potpisa poruke
+<li>mogućnost potpisa poruke
 </ul>
 <p>
 
-Pa ipak, u realnom svijetu kriptografija javnog klju&#269;a ne predstavlja 
-zamjenu za simetri&#269;ne kriptosustave. Ona se ne koristi za &#353;ifriranje 
-poruka, ve&#263; za &#353;ifriranje klju&#269;eva. Naime, osobe A i B komuniciraju 
-pomo&#263;u simetri&#269;nog kriptosustava s klju&#269;em kojeg su razmijenili 
-pomo&#263;u kriptosustava s javnim klju&#269;em. To se zove 
+Pa ipak, u realnom svijetu kriptografija javnog ključa ne predstavlja 
+zamjenu za simetrične kriptosustave. Ona se ne koristi za šifriranje 
+poruka, već za šifriranje ključeva. Naime, osobe A i B komuniciraju 
+pomoću simetričnog kriptosustava s ključem kojeg su razmijenili 
+pomoću kriptosustava s javnim ključem. To se zove 
 <em>hibridni kriptosustav</em>. 
 <p>
-Osnovni razlog za&#353;to se javni klju&#269; ne koristi za &#353;ifriranje poruka, 
-jest da su algoritmi s javnim klju&#269;em puno sporiji (oko 1000 puta) 
-od modernih simetri&#269;nih algoritama. 
+Osnovni razlog zašto se javni ključ ne koristi za šifriranje poruka, 
+jest da su algoritmi s javnim ključem puno sporiji (oko 1000 puta) 
+od modernih simetričnih algoritama. 
 <p>
-Drugi nedostatak kriptosustava s javnim klju&#269;em jest da su slabi na 
+Drugi nedostatak kriptosustava s javnim ključem jest da su slabi na 
 napad "odabrani otvoreni tekst". Ako je <i>y</i> = <i>e</i>(<i>x</i>), 
-gdje otvoreni tekst mo&#382;e poprimiti jednu od <i>n</i> vrijednosti, 
-onda, budu&#263;i je <i>e</i> javna, kriptoanaliti&#269;ar treba samo 
-&#353;ifrirati svih <i>n</i> mogu&#263;ih otvorenih tekstova i rezultat 
-usporediti s <i>y</i>. Tako ne&#263;e otkriti tajni klju&#269; <i>d</i>, 
-ali &#263;e otkriti otvoreni tekst <i>x</i>. Jasno, ovaj napad je 
+gdje otvoreni tekst može poprimiti jednu od <i>n</i> vrijednosti, 
+onda, budući je <i>e</i> javna, kriptoanalitičar treba samo 
+šifrirati svih <i>n</i> mogućih otvorenih tekstova i rezultat 
+usporediti s <i>y</i>. Tako neće otkriti tajni ključ <i>d</i>, 
+ali će otkriti otvoreni tekst <i>x</i>. Jasno, ovaj napad je 
 primjenjiv ako je <i>n</i> mali (npr. ako je <i>x</i> neki iznos u kunama 
 za kojeg je razumno pretpostaviti da je manji  
 od 1000000). 
 <p><br>
 
 U modernoj kriptografiji, koja se koristi u komercijalnom svijetu 
-(tipi&#269;na situacija je da osoba A &#382;eli kupiti ne&#353;to od osobe B preko 
-interneta), pojavljuju se, uz klasi&#269;ne, i neki sasvim novi problemi: 
+(tipična situacija je da osoba A želi kupiti nešto od osobe B preko 
+interneta), pojavljuju se, uz klasične, i neki sasvim novi problemi: 
 <ol>
-<li>POVJERLJIVOST (confidentiality): Poruku koju osoba A &#353;alje 
-osobi B ne mo&#382;e pro&#269;itati nitko drugi. 
+<li>POVJERLJIVOST (confidentiality): Poruku koju osoba A šalje 
+osobi B ne može pročitati nitko drugi. 
 <li>VJERODOSTOJNOST (autenticity): Osoba B zna da je samo osoba A 
 mogla poslati poruku koju je ona upravo primila. 
 <li>NETAKNUTOST (integrity): Osoba B zna da poruka koju je poslala osoba A 
 nije promijenjena prilikom slanja. 
-<li>NEPOBITNOST (non-repudiation): Osoba A ne mo&#382;e kasnije zanijekati da  
+<li>NEPOBITNOST (non-repudiation): Osoba A ne može kasnije zanijekati   
 da je poslala poruku. 
 </ol>
 <p>
-Kako smo ve&#263; rekli, kriptosustavi javnog klju&#269;a su mnogo sporiji od 
-simetri&#269;nih. Stoga je njihova uporaba u 1. problemu ograni&#269;ena na 
-razmjenu klju&#269;eva za simetri&#269;ne &#353;ifre. S druge strane, 
-&quot;digitalni potpisi&quot;, koji se koriste u rje&#353;avanju 2., 3. i 4. 
-problema, zahtijevaju uporabu kriptografije javnog klju&#269;a. 
+Kako smo već rekli, kriptosustavi javnog ključa su mnogo sporiji od 
+simetričnih. Stoga je njihova uporaba u 1. problemu ograničena na 
+razmjenu ključeva za simetrične šifre. S druge strane, 
+&quot;digitalni potpisi&quot;, koji se koriste u rješavanju 2., 3. i 4. 
+problema, zahtijevaju uporabu kriptografije javnog ključa. 
 
 <p>
 
@@ -274,8 +277,8 @@ problema, zahtijevaju uporabu kriptografije javnog klju&#269;a.
 
 <b><font size="-1" face="Verdana">
 <a href="aes.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="rsa.html">[Sljede&#263;e poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadr&#382;aj]</a>
+<a href="rsa.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
 </font></b>
 
 <hr size=2 noshade>
@@ -311,6 +314,8 @@ EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
 src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
 </div></noscript>
 <!-- End eXTReMe Non Public Tracker Code -->
+
+<script type="text/javascript" src="https://web.math.pmf.unizg.hr/lib/js/accessibility_black.min.js"></script>
 
 </body>
 </html>

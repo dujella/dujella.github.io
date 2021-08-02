@@ -7,11 +7,13 @@
 <meta name="description" content="Testovi prostosti i metode 
 faktorizacije - Faktorizacija">
 <meta name="keywords" content="faktorizacija, Pollardova metoda, 
-elipti&#269;ke krivulje">
+eliptičke krivulje">
 
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style type="text/css">
 body {font-family: Arial,Helvetica,sans-serif;}
@@ -23,9 +25,10 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="miller.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="fbaze.html">[Sljede&#263;e poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadr&#382;aj]</a>
+<a href="fbaze.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
 </font></b>
+<p>
 
 <hr size=2 noshade>
 
@@ -34,38 +37,38 @@ body {font-family: Arial,Helvetica,sans-serif;}
 <h2 align=center style="color: rgb(128,0,0)">4.4. Faktorizacija</h2>
 
 
-Ako prirodni broj <i>n</i> ne pro&#273;e neki od testova prostosti, 
-onda znamo da je <i>n</i> slo&#382;en. Me&#273;utim, ti nam testovi ne daju niti jedan netrivijalni faktor od <i>n</i>. Stoga se postavlja pitanje 
-kako na&#263;i neki faktor broja <i>n</i> za kojeg znamo da je slo&#382;en. 
-To se u op&#263;em slu&#269;aju smatra vrlo te&#353;kim problemom i na tome se zapravo 
+Ako prirodni broj <i>n</i> ne prođe neki od testova prostosti, 
+onda znamo da je <i>n</i> složen. Međutim, ti nam testovi ne daju niti jedan netrivijalni faktor od <i>n</i>. Stoga se postavlja pitanje 
+kako naći neki faktor broja <i>n</i> za kojeg znamo da je složen. 
+To se u općem slučaju smatra vrlo teškim problemom i na tome se zapravo 
 zasniva RSA kriptosustav. 
 <p>
-Metode faktorizacije mo&#382;emo podijeliti na op&#263;e i specijalne. Kod op&#263;ih metoda o&#269;ekivani broj operacija ovisi samo o veli&#269;ini broja <i>n</i>, 
-dok kod specijalnih ovisi tako&#273;er i o svojstvima faktora od <i>n</i>. 
+Metode faktorizacije možemo podijeliti na opće i specijalne. Kod općih metoda očekivani broj operacija ovisi samo o veličini broja <i>n</i>, 
+dok kod specijalnih ovisi također i o svojstvima faktora od <i>n</i>. 
 Kod ocjene sigurnosti kriptosustava zasnovanih na faktorizaciji 
-mo&#382;emo se usredoto&#269;iti na op&#263;e metode. 
+možemo se usredotočiti na opće metode. 
 <p>
 
 Od specijalnih metoda spomenimo samo <em>Pollardovu <i>p</i>-1 metodu</em> iz 1974. godine. Neka je <i>p</i> prosti faktor od <i>n</i>. 
-Tada za svaki vi&#353;ekratnik <i>m</i> od <i>p</i> - 1 vrijedi 
+Tada za svaki višekratnik <i>m</i> od <i>p</i> - 1 vrijedi 
 <i>a<sup>m</sup></i> &equiv;  
 1 (mod <i>p</i>). Pollardova <i>p</i>-1 metoda se sastoji u 
-ra&#269;unanju broja <i>d</i> = (<i>a<sup>m</sup></i> - 1, <i>n</i>). 
-Obi&#269;no se uzima <i>a</i> = 2. Ako je 1 &lt; <i>d</i> &lt; <i>n</i>, onda smo 
-na&#353;li netrivijalni faktor od <i>n</i>. 
-No, pitanje je kako na&#263;i vi&#353;ekratnik od <i>p</i>-1 kad ne znamo <i>p</i>. 
-To mo&#382;emo efikasno
-napraviti u slu&#269;aju kada broj <i>p</i>-1 ima samo male proste faktore. Za prirodan broj
-ka&#382;emo da je <i>B</i>-gladak ako su mu svi prosti faktori &le; <i>B</i>. Pretpostavimo dodatno
+računanju broja <i>d</i> = (<i>a<sup>m</sup></i> - 1, <i>n</i>). 
+Obično se uzima <i>a</i> = 2. Ako je 1 &lt; <i>d</i> &lt; <i>n</i>, onda smo 
+našli netrivijalni faktor od <i>n</i>. 
+No, pitanje je kako naći višekratnik od <i>p</i>-1 kad ne znamo <i>p</i>. 
+To možemo efikasno
+napraviti u slučaju kada broj <i>p</i>-1 ima samo male proste faktore. Za prirodan broj
+kažemo da je <i>B</i>-gladak ako su mu svi prosti faktori &le; <i>B</i>. Pretpostavimo dodatno
 da su sve potencije prostih brojeva, koje dijele <i>p</i>-1, manje ili jednake B. Tada
-za <i>m</i> mo&#382;emo uzeti najmanji zajedni&#269;ki vi&#353;ekratnik brojeva 1, 2, ... , <i>B</i>. 
+za <i>m</i> možemo uzeti najmanji zajednički višekratnik brojeva 1, 2, ... , <i>B</i>. 
 Za ovakav 
-<i>m</i>, broj operacija za ra&#269;unanje <i>a<sup>m</sup></i> - 1 
+<i>m</i>, broj operacija za računanje <i>a<sup>m</sup></i> - 1 
 mod <i>n</i> je ugrubo proporcionalan s <i>B</i> (preciznije 
 O(<i>B</i> log <i>B</i> (log <i>n</i>)<sup>2</sup> + 
-(log <i>n</i>)<sup>3</sup>)). U najgorem slu&#269;aju, a to je kada je broj 
-<nobr>(<i>p</i>-1)/2</nobr> prost, ova metoda nije ni&#353;ta bolja od
-obi&#269;nog dijeljenja brojevima manjim od 
+(log <i>n</i>)<sup>3</sup>)). U najgorem slučaju, a to je kada je broj 
+<nobr>(<i>p</i>-1)/2</nobr> prost, ova metoda nije ništa bolja od
+običnog dijeljenja brojevima manjim od 
 &radic;<i>n</i>.
 
 <p>
@@ -78,18 +81,18 @@ Zaista, <i>n</i> = 421 <b>&middot;</b> 1283.
 <p><br>
 
 <font color=009900>H. W. Lenstra</font> je 1987. ideju Pollardove metode 
-primijenio na elipti&#269;ke krivulje. Naime, umjesto grupe 
-<b>Z</b><sub><i>p</i></sub>* &#269;iji je red <i>p</i> - 1, on je 
+primijenio na eliptičke krivulje. Naime, umjesto grupe 
+<b>Z</b><sub><i>p</i></sub>* čiji je red <i>p</i> - 1, on je 
 koristio grupe <i>E</i>(<b>Z</b><sub><i>p</i></sub>) 
-&#269;iji redovi variraju izme&#273;u <nobr><i>p</i> + 1 - 
+čiji redovi variraju između <nobr><i>p</i> + 1 - 
 2&radic;<i>p</i></nobr> i 
 <nobr><i>p</i> + 1 + 
 2&radic;<i>p</i>.</nobr> 
 Zato ako za neku krivulju ne dobijemo faktorizaciju jer red od 
 <i>E</i>(<b>Z</b><sub><i>p</i></sub>) ima veliki prosti faktor, 
-onda mo&#382;emo uzeti neku drugu krivulju i s njom ponoviti postupak. 
-Na taj na&#269;in je dobivena jedna od najefikasnijih poznatih metoda 
-faktorizacije. O&#269;ekivani broj operacija je 
+onda možemo uzeti neku drugu krivulju i s njom ponoviti postupak. 
+Na taj način je dobivena jedna od najefikasnijih poznatih metoda 
+faktorizacije. Očekivani broj operacija je 
 <p align=center>
 exp(O((log <i>n</i>)<sup>1/2</sup> (log log <i>n</i>)<sup>1/2</sup>)) 
 </p>
@@ -105,8 +108,8 @@ Spomenimo da su ovom metodom faktorizirani Fermatovi brojevi
 
 <b><font size="-1" face="Verdana">
 <a href="miller.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="fbaze.html">[Sljede&#263;e poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadr&#382;aj]</a>
+<a href="fbaze.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
 </font></b>
 
 <hr size=2 noshade>
@@ -145,6 +148,7 @@ src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&a
 </div></noscript>
 <!-- End eXTReMe Non Public Tracker Code -->
 
+<script type="text/javascript" src="https://web.math.pmf.unizg.hr/lib/js/accessibility_black.min.js"></script>
 
 </body>
 </html>

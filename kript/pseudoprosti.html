@@ -13,6 +13,8 @@ Mali Fermatov teorem, Carmichaelovi brojevi">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style type="text/css">
 body {font-family: Arial,Helvetica,sans-serif;}
 </style>
@@ -23,9 +25,10 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="postkvant.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="solstras.html">[Sljede&#263;e poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadr&#382;aj]</a>
+<a href="solstras.html">[Sljedeæe poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
 </font></b>
+<p>
 
 <hr size=2 noshade>
 
@@ -37,27 +40,27 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 
 Vidjeli smo u prethodnom poglavlju da kod RSA kriptosustava, 
-a i kod nekih drugih kriptosustava s javnim klju&#269;em, moramo na po&#269;etku 
-odabrati jedan ili vi&#353;e velikih prostih brojeva. Stoga se postavlja 
+a i kod nekih drugih kriptosustava s javnim kljuèem, moramo na poèetku 
+odabrati jedan ili više velikih prostih brojeva. Stoga se postavlja 
 pitanje kako za veliki prirodan broj <i>n</i> odrediti da li je prost 
-ili ne. To se radi pomo&#263;u <em>testova prostosti</em>. To su 
+ili ne. To se radi pomoæu <em>testova prostosti</em>. To su 
 kriteriji za koje vrijedi da ako ih <i>n</i> ne zadovolji, onda je 
-sigurno slo&#382;en, dok ako ih zadovolji, onda mo&#382;e biti prost, ali i ne 
-mora. &#352;to vi&#353;e testova "pro&#273;e", to je ve&#263;a vjerojatnost da je <i>n</i> 
+sigurno složen, dok ako ih zadovolji, onda može biti prost, ali i ne 
+mora. Što više testova "proðe", to je veæa vjerojatnost da je <i>n</i> 
 prost. 
 <p>
-Jedan na&#269;in za provjeru da li je <i>n</i> prost jest da <i>n</i> 
+Jedan naèin za provjeru da li je <i>n</i> prost jest da <i>n</i> 
 dijelimo sa svim prostim brojevima 
 &le; &radic;<i>n</i>. Ukoliko <i>n</i> 
 nije djeljiv s niti jednim od njih, onda je <i>n</i> sigurno prost. 
-Ovo je vrlo neefikasan test. Budu&#263;i da prostih brojeva manjih od  
+Ovo je vrlo neefikasan test. Buduæi da prostih brojeva manjih od  
 &radic;<i>n</i> ima 
 O(&radic;<i>n</i> / 
 log <i>n</i>), a za svako dijeljenje trebamo O(log<sup>2</sup> <i>n</i>) operacija, 
 to za ovaj test trebamo O(&radic;<i>n</i> log <i>n</i>) operacija. 
 <p>
 
-Efikasniji testovi se zasnivaju na nekim va&#382;nim svojstvima prostih 
+Efikasniji testovi se zasnivaju na nekim važnim svojstvima prostih 
 brojeva. Prvo takvo svojstvo je <em>mali Fermatov teorem</em>:
 <p>
 
@@ -75,13 +78,13 @@ da je (<i>b</i>,<i>n</i>) = 1 vrijedi
 
 </font></td></tr></table>
 <p> 
-Va&#382;no je uo&#269;iti da obrat ovog teorema ne vrijedi. Naime, 
-<i>n</i> mo&#382;e biti slo&#382;en, a da ipak za neki <i>b</i> vrijedi relacija 
+Važno je uoèiti da obrat ovog teorema ne vrijedi. Naime, 
+<i>n</i> može biti složen, a da ipak za neki <i>b</i> vrijedi relacija 
 (*). 
 <p>
 
-<b>Primjer 4.1:</b> Broj 91 je o&#269;ito slo&#382;en jer je 
-91 = 7 <sup><b>.</b></sup> 13. Me&#273;utim, 
+<b>Primjer 4.1:</b> Broj 91 je oèito složen jer je 
+91 = 7 <sup><b>.</b></sup> 13. Meðutim, 
 <p align=center>
 3<sup>90</sup>  
 &equiv; 27<sup>30</sup>
@@ -97,18 +100,18 @@ pa je 3<sup>90</sup>
 &equiv; 1 (mod 91). 
 No, 2<sup>90</sup>  
 &equiv; 64 (mod 91), pa i 
-odavde mo&#382;emo zaklju&#269;iti da je 91 slo&#382;en. 
+odavde možemo zakljuèiti da je 91 složen. 
 <p><br>
 
 <table align=center border=1 width="95%" cellpadding=15> 
 <tr><td bgcolor="FFFFCC">
 <font face="Arial,Helvetica,sans-serif">
 
-<b>Definicija:</b> Ako je <i>n</i> neparan slo&#382;en broj, te <i>b</i> 
+<b>Definicija:</b> Ako je <i>n</i> neparan složen broj, te <i>b</i> 
 cijeli broj takav da je (<i>b</i>,<i>n</i>) = 1 i 
 <i>b</i><sup><i>n</i> -1</sup>  
 &equiv; 1 (mod <i>n</i>), 
-onda ka&#382;emo da je <i>n</i> <em>pseudoprost u bazi <i>b</i></em> 
+onda kažemo da je <i>n</i> <em>pseudoprost u bazi <i>b</i></em> 
 (ili da je <i>n</i> psp(<i>b</i>)).
 
 </font></td></tr></table>
@@ -120,7 +123,7 @@ Na primjer, broj 91 je pseudoprost u bazi 3.
 <tr><td bgcolor="FFFFCC">
 <font face="Arial,Helvetica,sans-serif">
 
-<b>Teorem 4.1:</b> Neka je <i>n</i> neparan slo&#382;en broj. Tada vrijedi: 
+<b>Teorem 4.1:</b> Neka je <i>n</i> neparan složen broj. Tada vrijedi: 
 <p>
 (1) &nbsp; <i>n</i> je pseudoprost u bazi <i>b</i>, gdje je 
 (<i>b</i>,<i>n</i>) = 1, ako i samo ako red od <i>b</i> modulo <i>n</i> 
@@ -134,8 +137,8 @@ dijeli <i>n</i> - 1.
 <i>b</i><sub>1</sub> <sup><b>.</b></sup> <i>b</i><sub>2</sub> i <i>b</i><sub>1</sub> <sup><b>.</b></sup>  <i>b</i><sub>2</sub><sup>-1</sup>. 
 <p>
 (3) &nbsp; Ako <i>n</i> ne zadovoljava (*) za neki <i>b</i>, onda <i>n</i> 
-ne zadovoljava (*) za barem pola mogu&#263;ih baza <i>b</i> (brojeva 
-izme&#273;u 1 i <i>n</i> koji su relativno prosti s <i>n</i>).
+ne zadovoljava (*) za barem pola moguæih baza <i>b</i> (brojeva 
+izmeðu 1 i <i>n</i> koji su relativno prosti s <i>n</i>).
 
 </font></td></tr></table>
 <p>
@@ -151,7 +154,7 @@ izme&#273;u 1 i <i>n</i> koji su relativno prosti s <i>n</i>).
 (<i>b</i><sup><i>a</i></sup>)<sup>-<i>q</i></sup> 
 &equiv; 1 (mod <i>n</i>),
 </p>
-&#353;to je u suprotnosti s minimalno&#353;&#263;u od <i>a</i>. 
+što je u suprotnosti s minimalnošæu od <i>a</i>. 
 <p>
 Obrnuto, neka je <i>n</i> - 1 = <i>a</i> &middot; <i>k</i>. 
 Tada je <i>b</i><sup><i>n</i> -1</sup> 
@@ -184,17 +187,17 @@ baze <i>bb</i><sub>1</sub>, <i>bb</i><sub>2</sub>, ... ,
 to vrijedilo i za <i>b</i> = 
 (<i>bb</i><sub><i>i</i></sub>)<i>b</i><sub><i>i</i></sub><sup>-1</sup>. 
 Prema tome, postoji barem <i>s</i> baza za koje ne vrijedi (*), 
-&#353;to je i trebalo dokazati. 
+što je i trebalo dokazati. 
 <p align=right> &#9632; </p> 
 <p><br>
 
-Teorem 4.1 se mo&#382;e iskoristiti kao osnova za vjerojatnosni test 
+Teorem 4.1 se može iskoristiti kao osnova za vjerojatnosni test 
 prostosti. Naime, ako pretpostavimo da postoji baza <i>b</i> za 
-koju ne vrijedi (*), te ako uzmemo <i>k</i> slu&#269;ajno odabranih baza 
+koju ne vrijedi (*), te ako uzmemo <i>k</i> sluèajno odabranih baza 
 i <i>n</i> zadovolji test (*) za sve njih, onda je po Teoremu 
-5.1(3) vjerojatnost da je <i>n</i> slo&#382;en 
+5.1(3) vjerojatnost da je <i>n</i> složen 
 <nobr>&le; 1/2<sup><i>k</i></sup>.</nobr> 
-Na&#382;alost, nedostatak ovog testa jest u tome &#353;to postoje slo&#382;eni 
+Nažalost, nedostatak ovog testa jest u tome što postoje složeni 
 brojevi koji su pseudoprosti za sve baze <i>b</i>. 
 <p>
 
@@ -202,18 +205,18 @@ brojevi koji su pseudoprosti za sve baze <i>b</i>.
 <tr><td bgcolor="FFFFCC">
 <font face="Arial,Helvetica,sans-serif">
 
-<b>Definicija:</b> Slo&#382;en broj <i>n</i> za kojeg (*) vrijedi za svaki 
+<b>Definicija:</b> Složen broj <i>n</i> za kojeg (*) vrijedi za svaki 
 cijeli broj <i>b</i> takav da je (<i>b</i>,<i>n</i>) = 1 
 zove se <em>Carmichaelov broj</em>.
  
 </font></td></tr></table>
 <p> 
 
-Poznato je da postoji beskona&#269;no mnogo Carmichaelovih brojeva. 
-Najmanji me&#273;u njima je 561 = 3 &middot; 11 
-&middot; 17. Nije te&#353;ko pokazati da Carmichaelov broj 
+Poznato je da postoji beskonaèno mnogo Carmichaelovih brojeva. 
+Najmanji meðu njima je 561 = 3 &middot; 11 
+&middot; 17. Nije teško pokazati da Carmichaelov broj 
 mora biti kvadratno slobodan (nije djeljiv s kvadratom niti jednog 
-prirodnog broja ve&#263;eg od 1) i imati barem 3 prosta faktora. 
+prirodnog broja veæeg od 1) i imati barem 3 prosta faktora. 
 Nadalje, kvadratno slobodni broj <i>n</i> je Carmichaelov ako i 
 samo ako <i>p</i> - 1 dijeli <i>n</i> - 1 za svaki prosti faktor 
 <i>p</i> od <i>n</i>.
@@ -226,8 +229,8 @@ samo ako <i>p</i> - 1 dijeli <i>n</i> - 1 za svaki prosti faktor
 
 <b><font size="-1" face="Verdana">
 <a href="postkvant.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="solstras.html">[Sljede&#263;e poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadr&#382;aj]</a>
+<a href="solstras.html">[Sljedeæe poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
 </font></b>
 
 <hr size=2 noshade>
@@ -263,6 +266,8 @@ EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
 src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
 </div></noscript>
 <!-- End eXTReMe Non Public Tracker Code -->
+
+<script type="text/javascript" src="https://web.math.pmf.unizg.hr/lib/js/accessibility_black.min.js"></script>
 
 </body>
 </html>

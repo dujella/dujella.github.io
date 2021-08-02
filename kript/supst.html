@@ -1,17 +1,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Supstitucijske &#353;ifre</title>
+<title>Supstitucijske šifre</title>
 
 <meta name="author" content="Andrej Dujella">
 <meta name="description" content="Kriptografija - Supstitucijske 
-&#353;ifre">
-<meta name="keywords" content="kriptografija, Cezar, sifra, &#353;ifra, 
+šifre">
+<meta name="keywords" content="kriptografija, Cezar, sifra, šifra, 
 supstitucija">
 
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style type="text/css">
 body {font-family: Arial,Helvetica,sans-serif;}
@@ -23,9 +25,10 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="osnovni.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="vigener.html">[Sljede&#263;e poglavlje]</a> &nbsp; 
-<a href="kriptografija.html">[Sadr&#382;aj]</a>
+<a href="vigener.html">[Sljedeće poglavlje]</a> &nbsp; 
+<a href="kriptografija.html">[Sadržaj]</a>
 </font></b>
+<p>
 
 <hr size=2 noshade>
 
@@ -33,62 +36,62 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <a name="1.2"></a>
 <h2 align=center style="color: rgb(128,0,0)">1.2. Supstitucijske 
-&#353;ifre</h2>
+šifre</h2>
 
 
-Znameniti rimski vojskovo&#273;a i dr&#382;avnik 
+Znameniti rimski vojskovođa i državnik 
 <font color=009900>Gaj Julije Cezar</font> u 
-komunikaciji sa svojim prijateljima koristio se &#353;ifrom u kojoj 
-su se slova otvorenog teksta zamjenjivala slovima &#353;to su se 
+komunikaciji sa svojim prijateljima koristio se šifrom u kojoj 
+su se slova otvorenog teksta zamjenjivala slovima što su se 
 nalazila tri mjesta dalje od njih u alfabetu 
 <nobr>(A &#8614; D,</nobr> 
 <nobr>B &#8614; E,</nobr> itd.). 
-Pretpostavljamo da se alfabet cikli&#269;ki nastavlja, tj. da nakon zadnjeg 
+Pretpostavljamo da se alfabet ciklički nastavlja, tj. da nakon zadnjeg 
 slova Z, ponovo dolaze A, B, C. 
-Ako bi smo upotrijebili dana&#353;nji engleski alfabet od 26 slova, onda 
+Ako bi smo upotrijebili današnji engleski alfabet od 26 slova, onda 
 bi poznata Cezarova izreka 
 <p align=center><font color=990000>VENI VIDI 
-VICI</font> </p>bila &#353;ifrirana ovako: 
+VICI</font> </p>bila šifrirana ovako: 
 <p align=center><font color=000099>YHQL YLGL 
 YLFL</font>. </p>
 
 
-Cezarovu &#353;ifru mo&#382;emo pregledno zapisati na sljede&#263;i na&#269;in: 
+Cezarovu šifru možemo pregledno zapisati na sljedeći način: 
 
 <pre><font size="+1">otvoreni tekst    <font color=990000>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</font> 
 
-    &#353;ifrat        <font color=000099>D E F G H I J K L M N O P Q R S T U V W X Y Z A B C</font> 
+    šifrat        <font color=000099>D E F G H I J K L M N O P Q R S T U V W X Y Z A B C</font> 
 </font></pre>
 
-U daljnjim primjerima koristit &#263;emo se engleskim 
-(me&#273;unarodnim) alfabetom od 26 slova. Ukoliko &#263;emo raditi s 
-otvorenim tekstom na hrvatskom jeziku, onda &#263;emo &#268; i &#262; 
-zamijeniti s C, a &#272;, D&#382;, Lj, Nj, &#352;, &#381; redom s  
+U daljnjim primjerima koristit ćemo se engleskim 
+(međunarodnim) alfabetom od 26 slova. Ukoliko ćemo raditi s 
+otvorenim tekstom na hrvatskom jeziku, onda ćemo Č i Ć 
+zamijeniti s C, a Đ, Dž, Lj, Nj, Š, Ž redom s  
 DJ, DZ, LJ, NJ, S, Z. 
 <p>
-Danas se Cezarovom &#353;ifrom nazivaju i &#353;ifre (tj. kriptosustavi) istog oblika s 
-pomakom razli&#269;itim od 3. Da bismo Cezarovu &#353;ifru precizno definirali u smislu Definicije 1.1, 
-uvest &#263;emo prirodnu korespodenciju izme&#273;u slova alfabeta (A - Z) i cijelih brojeva 
+Danas se Cezarovom šifrom nazivaju i šifre (tj. kriptosustavi) istog oblika s 
+pomakom različitim od 3. Da bismo Cezarovu šifru precizno definirali u smislu Definicije 1.1, 
+uvest ćemo prirodnu korespodenciju između slova alfabeta (A - Z) i cijelih brojeva 
 (0 - 25). 
 <p>
-Skup {0,1,2,...,25} ozna&#269;avat &#263;emo sa <b>Z</b><sub>26</sub> i pretpostavljat &#263;emo 
-da su na njemu definirane operacije zbrajanja, oduzimanja i mno&#382;enja na isti na&#269;in kao 
+Skup {0,1,2,...,25} označavat ćemo sa <b>Z</b><sub>26</sub> i pretpostavljat ćemo 
+da su na njemu definirane operacije zbrajanja, oduzimanja i množenja na isti način kao 
 u skupu cijelih brojeva, ali tako da se rezultat (ukoliko nije iz skupa 
 <nobr>{0,1,2,...,25}</nobr>) na kraju zamijeni s njegovih ostatkom pri 
-dijeljenju s 26. Koristit &#263;emo oznake <nobr><i>a</i> +<sub>26</sub> <i>b</i></nobr> ili 
-<nobr>(<i>a</i> + <i>b</i>) mod 26,</nobr> te analogno za oduzimanje i mno&#382;enje. 
+dijeljenju s 26. Koristit ćemo oznake <nobr><i>a</i> +<sub>26</sub> <i>b</i></nobr> ili 
+<nobr>(<i>a</i> + <i>b</i>) mod 26,</nobr> te analogno za oduzimanje i množenje. 
 Skup <b>Z</b><sub>26</sub>, uz operacije <nobr>+<sub>26</sub></nobr> i 
-<nobr><b>&middot;</b><sub>26</sub></nobr> &#269;ini <em>prsten</em>. Potpuno analogno se definira 
+<nobr><b>&middot;</b><sub>26</sub></nobr> čini <em>prsten</em>. Potpuno analogno se definira 
 skup <nobr><b>Z</b><sub><i>m</i></sub></nobr> i operacije na njemu za proizvoljan 
 prirodan broj <i>m</i>. 
 <p>
-Primijetimo da na ovom mjestu zamjena slova brojevima jo&#353; nije bila nu&#382;na 
+Primijetimo da na ovom mjestu zamjena slova brojevima još nije bila nužna 
 (mogli bismo sve definirati u terminima zamjena slova i njihovog pomicanja unutar 
-alfabeta, te pojasniti &#353;to se doga&#273;a kad "presko&#269;imo" zadnje slovo), no uskoro 
-&#263;e kori&#353;tenje ovog matemati&#269;kog rje&#269;nika postati nu&#382;no. 
+alfabeta, te pojasniti što se događa kad "preskočimo" zadnje slovo), no uskoro 
+će korištenje ovog matematičkog rječnika postati nužno. 
 <p>
-Dakle, <em>Cezarovu &#353;ifru</em> 
-mo&#382;emo definirati na sljede&#263;i na&#269;in: 
+Dakle, <em>Cezarovu šifru</em> 
+možemo definirati na sljedeći način: 
 <p>
 
 
@@ -108,34 +111,34 @@ Za <nobr>0 &le; <i>K</i> &le; 25</nobr> definiramo
 <p>
 
 
-&#352;ifra je definirana nad 
+Šifra je definirana nad 
 <b>Z</b><sub>26</sub>  
-budu&#263;i da koristimo 26 
-slova, pa imamo sljede&#263;u korespondenciju, koja za svako slovo alfabeta 
-daje njegov "numeri&#269;ki ekvivalent": 
+budući da koristimo 26 
+slova, pa imamo sljedeću korespondenciju, koja za svako slovo alfabeta 
+daje njegov "numerički ekvivalent": 
 <pre><font size="+1" color=993333>
 A B C D E F G H I J K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z 
 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 
 </font></pre>
-U Cezarovoj &#353;ifri su osnovni elementi (simboli) otvorenog teksta slova 
-(odnosno njihovi numeri&#269;ki ekvivalenti), a klju&#269; <i>K</i> odre&#273;uje 
-za koliko mjesta udesno &#263;emo pomicati slova pri &#353;ifriranju.  
-O&#269;ito je <i>d<sub>K</sub></i>(<i>e<sub>K</sub></i>(<i>x</i>)) = 
-<i>x</i>, kao &#353;to se zahtjeva u definiciji 
-kriptosustava. Za <i>K</i> = 3 dobiva se originalna Cezarova &#353;ifra. 
-Postoje naznake da je Cezarov ne&#263;ak, prvi rimski car August, 
-koristio najjednostavniju verziju ove &#353;ifre, pomi&#269;u&#263;i slova samo za 
-jedno mjesto u alfabetu, tj. uzimaju&#263;i da je <nobr><i>K</i> = 1.</nobr>
+U Cezarovoj šifri su osnovni elementi (simboli) otvorenog teksta slova 
+(odnosno njihovi numerički ekvivalenti), a ključ <i>K</i> određuje 
+za koliko mjesta udesno ćemo pomicati slova pri šifriranju.  
+Očito je <i>d<sub>K</sub></i>(<i>e<sub>K</sub></i>(<i>x</i>)) = 
+<i>x</i>, kao što se zahtjeva u definiciji 
+kriptosustava. Za <i>K</i> = 3 dobiva se originalna Cezarova šifra. 
+Postoje naznake da je Cezarov nećak, prvi rimski car August, 
+koristio najjednostavniju verziju ove šifre, pomičući slova samo za 
+jedno mjesto u alfabetu, tj. uzimajući da je <nobr><i>K</i> = 1.</nobr>
 <p>
 
-<b>Primjer 1.1: </b> <em>Dekriptirati &#353;ifrat</em> &nbsp;  
+<b>Primjer 1.1: </b> <em>Dekriptirati šifrat</em> &nbsp;  
 <font color=000099>PWNUYTLWFKNOF</font> &nbsp; 
-<em>dobiven Cezarovom &#353;ifrom.</em> <p> 
+<em>dobiven Cezarovom šifrom.</em> <p> 
 
-<i>Rje&#353;enje</i>. 
-Budu&#263;i da je prostor klju&#269;eva jako mali (ima ih 26) zadatak 
-mo&#382;emo rije&#353;iti "grubom silom", tj. tako da ispitamo 
-sve mogu&#263;e klju&#269;eve, sve dok ne do&#273;emo do nekog smislenog 
+<i>Rješenje</i>. 
+Budući da je prostor ključeva jako mali (ima ih 26) zadatak 
+možemo riješiti "grubom silom", tj. tako da ispitamo 
+sve moguće ključeve, sve dok ne dođemo do nekog smislenog 
 teksta. Za <i>d</i><sub>0</sub>, <i>d</i><sub>1</sub>, <i>d</i><sub>2</sub>, ... 
 dobivamo redom: 
 <pre><font size="+2" color=990000>
@@ -146,23 +149,23 @@ dobivamo redom:
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; L S J Q U P H S B G J K B
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; K R I P T O G R A F I J A
 </font></pre>
-Dakle, klju&#269; je <i>K</i> = <font color=990099>5</font>, 
+Dakle, ključ je <i>K</i> = <font color=990099>5</font>, 
 a otvoreni tekst je 
 <font color=990000>KRIPTOGRAFIJA</font>. 
 
 <p>
 <br>
 
-Da bismo dobili barem malo sigurniju &#353;ifru, mo&#382;emo promatrati 
-funkcije za &#353;ifriranje koje &#263;e uklju&#269;ivati vi&#353;e od jednog parametra. 
+Da bismo dobili barem malo sigurniju šifru, možemo promatrati 
+funkcije za šifriranje koje će uključivati više od jednog parametra. 
 Najjednostavnija takva funkcija je afina funkcija 
 <nobr><i>e</i>(<i>x</i>) = <i>ax + b</i></nobr>. No, tu se pojavljuje 
 jedan novi problem jer takva funkcija na skupu <b>Z</b><sub>26</sub> 
 ne mora imati inverz (ne mora biti injekcija). 
-Zato parametar <i>a</i> ne mo&#382;e biti proizvoljan, ve&#263; mora biti 
+Zato parametar <i>a</i> ne može biti proizvoljan, već mora biti 
 relativno prost s modulom 26.
 <p>
-<em>Afina &#353;ifra</em> definira se na sljede&#263;i na&#269;in: 
+<em>Afina šifra</em> definira se na sljedeći način: 
 <p>
 
 <table align=center border=1 width="95%" cellpadding=15> 
@@ -186,7 +189,7 @@ definiramo
 mod 26. </p>
 </font></td></tr></table>
 <p>
-Ova &#353;ifra se zove afinom zato &#353;to su funkcije &#353;ifriranja 
+Ova šifra se zove afinom zato što su funkcije šifriranja 
 afine. Provjerimo je li uvjet 
 <i>d<sub>K</sub></i>(<i>e<sub>K</sub></i>(<i>x</i>)) = <i>x</i> 
 zadovoljen. Zaista, 
@@ -196,15 +199,15 @@ zadovoljen. Zaista,
 <i>a</i><sup>-1</sup>
 (<i>ax + b - b</i>) = <i>x</i>. 
 </p>
-Ovdje <i>a</i><sup>-1</sup> ozna&#269;ava multiplikativni inverz broja 
+Ovdje <i>a</i><sup>-1</sup> označava multiplikativni inverz broja 
 <i>a</i> u prstenu 
 <b>Z</b><sub>26</sub>. 
-Budu&#263;i da broj 26 nije prost, nemaju svi elementi iz <b>Z</b><sub>26</sub> 
-multiplikativni inverz, ve&#263; ih imaju upravo brojevi koji su relativno prosti s 26, 
+Budući da broj 26 nije prost, nemaju svi elementi iz <b>Z</b><sub>26</sub> 
+multiplikativni inverz, već ih imaju upravo brojevi koji su relativno prosti s 26, 
 tj. za koje 
-vrijedi da je najve&#263;i zajedni&#269;ki djelitelje od <i>a</i> i 26 jednak 1 
-(to pi&#353;emo: (<i>a</i>, 26) = 1). 
-Prika&#382;imo te brojeve zajedno s njihovim inverzima: 
+vrijedi da je najveći zajednički djelitelje od <i>a</i> i 26 jednak 1 
+(to pišemo: (<i>a</i>, 26) = 1). 
+Prikažimo te brojeve zajedno s njihovim inverzima: 
 <p>
 
 <table border="1" align="center">
@@ -244,11 +247,11 @@ Prika&#382;imo te brojeve zajedno s njihovim inverzima:
 
 <p><br>
 <b>Primjer 1.2: </b> <em>Neka je</em> <i>K</i> = (7, 3). 
-<em>&#352;ifrirati otvoreni tekst</em> &nbsp; 
+<em>Šifrirati otvoreni tekst</em> &nbsp; 
 <font color=990000>ZADAR</font>. 
 <p>
-<i>Rje&#353;enje</i>. Koriste&#263;i ranije navedenu tablicu, slova otvorenog teksta 
-poistovje&#263;ujemo s njihovim numeri&#269;kim ekvivalentima. 
+<i>Rješenje</i>. Koristeći ranije navedenu tablicu, slova otvorenog teksta 
+poistovjećujemo s njihovim numeričkim ekvivalentima. 
 Imamo:  
 <center>
 <pre><font size="+2">
@@ -258,34 +261,34 @@ Imamo:
  17 <b>&middot;</b> 7 + 3 &equiv; 18 (mod 26), 
 </font></pre>
 </center>
-pa je &#353;ifrat &nbsp; <font color=000099>WDYDS</font>. 
+pa je šifrat &nbsp; <font color=000099>WDYDS</font>. 
 <p>
 
-<b>Primjer 1.3: </b> <em>Dekriptirati &#353;ifrat</em>  
+<b>Primjer 1.3: </b> <em>Dekriptirati šifrat</em>  
 <p align=center><font color=000099>
 OZWHRYEZCVWFCTPCUWRCFPYHWI
 </font></p>
-<em>dobiven afinom &#353;ifrom</em>. 
+<em>dobiven afinom šifrom</em>. 
 <p>
-<i>Rje&#353;enje</i>. 
+<i>Rješenje</i>. 
 Imamo &phi;(26) 
 <b>&middot;</b> 26 = 12 
-<b>&middot;</b> 26 = 312 mogu&#263;ih klju&#269;eva. 
-To je jo&#353; uvijek premalo, pa bi uz pomo&#263; ra&#269;unala sigurno 
+<b>&middot;</b> 26 = 312 mogućih ključeva. 
+To je još uvijek premalo, pa bi uz pomoć računala sigurno 
 mogli primijeniti "grubu silu", kao u Primjeru 1.1. 
 <p>
-No, postoji i elegantniji na&#269;in ukoliko znamo kojim je jezikom 
+No, postoji i elegantniji način ukoliko znamo kojim je jezikom 
 pisan otvoreni tekst. Recimo da nam je poznato da je u ovom 
-slu&#269;aju otvoreni tekst pisan hrvatskim jezikom. 
+slučaju otvoreni tekst pisan hrvatskim jezikom. 
 Frekvencijom slova u hrvatskom, a i nekim drugim jezicima, 
-detaljnije &#263;emo se pozabaviti malo kasnije. Za sada nam je 
-potrebna samo &#269;injenica da su najfrekventnija slova u hrvatskom 
-jeziku A, I, O, E, N, i to upravo u tom redoslijedu. U na&#353;em 
-&#353;ifratu uo&#269;avamo da su najfrekventnija slova <font color=000099>C</font> i 
+detaljnije ćemo se pozabaviti malo kasnije. Za sada nam je 
+potrebna samo činjenica da su najfrekventnija slova u hrvatskom 
+jeziku A, I, O, E, N, i to upravo u tom redoslijedu. U našem 
+šifratu uočavamo da su najfrekventnija slova <font color=000099>C</font> i 
 <font color=000099>W</font>,  
-koja se javljaju po 4 puta. Iako je na&#353; &#353;ifrat prekratak, 
-mo&#382;emo ipak o&#269;ekivati da su ova dva slova &#353;ifrati od 
-A, I, O, E ili N. Pa pogledajmo kakve smo sre&#263;e. 
+koja se javljaju po 4 puta. Iako je naš šifrat prekratak, 
+možemo ipak očekivati da su ova dva slova šifrati od 
+A, I, O, E ili N. Pa pogledajmo kakve smo sreće. 
 <p>
 Imamo <i>e<sub>K</sub></i>(A) = <i>a</i> 
 <b>&middot;</b> 0 + <i>b</i> = 
@@ -296,23 +299,23 @@ Dobivamo da je <i>b</i> = 2 i
 8<i>a</i> + <i>b</i> 
 &equiv; 22 (mod 26), 
 odakle je <i>a</i> = 9. 
-(Op&#263;enito se linearne kongruencije rje&#353;avaju pomo&#263;u (pro&#353;irenog) 
-Euklidovog algoritma, no u slu&#269;aju malog modula, kao &#353;to je na&#353; 
+(Općenito se linearne kongruencije rješavaju pomoću (proširenog) 
+Euklidovog algoritma, no u slučaju malog modula, kao što je naš 
 modul 26, dovoljno je uvrstiti sve dopustive (invertibilne) <i>a</i>-ove, 
 te provjeriti koji zadovoljava kongruenciju.) 
 Dakle, dobili smo da je 
 <nobr><i>e<sub>K</sub></i>(<i>x</i>) = (9<i>x</i> + 2) mod 26.</nobr> 
 Tada je <nobr><i>d<sub>K</sub></i>(<i>y</i>) = 3(<i>y</i> - 2) mod 26.</nobr>   
-Primijenimo li funkciju <i>d<sub>K</sub></i> na na&#353; &#353;ifrat, dobivamo 
-otvoreni tekst (s umetnutim razmacima i "kva&#269;icama"): 
+Primijenimo li funkciju <i>d<sub>K</sub></i> na naš šifrat, dobivamo 
+otvoreni tekst (s umetnutim razmacima i "kvačicama"): 
 <p align=center><font color=990000>
-KRIPTOGRAFIJA ZNA&#268;I TAJNOPIS.
+KRIPTOGRAFIJA ZNAČI TAJNOPIS.
 </font></p>
 
 <p><br>
 
-Cezarova i afina &#353;ifra su specijalni slu&#269;ajevi 
-<em>supstitucijske &#353;ifre</em>, koja je definirana na sljede&#263;i na&#269;in: 
+Cezarova i afina šifra su specijalni slučajevi 
+<em>supstitucijske šifre</em>, koja je definirana na sljedeći način: 
 <p>
 
 <table align=center border=1 width="95%" cellpadding=15> 
@@ -323,7 +326,7 @@ Cezarova i afina &#353;ifra su specijalni slu&#269;ajevi
 Neka je <font face="Brush Script MT,Script,Times New Roman">P</font> = 
 <font face="Brush Script MT,Script,Times New Roman">C</font> = 
 <b>Z</b><sub>26</sub>. 
-Prostor klju&#269;eva <font face="Brush Script MT,Script,Times New Roman">K</font> se sastoji 
+Prostor ključeva <font face="Brush Script MT,Script,Times New Roman">K</font> se sastoji 
 od svih permutacija skupa <nobr>{0, 1, 2, ... , 25}.</nobr>  
 Za svaku permutaciju <nobr>&pi;  
 &isin;  
@@ -336,60 +339,60 @@ inverzna permutacija od &pi;.
 </font></td></tr></table>
 <p>
 
-Ovdje imamo &#269;ak 26! &asymp; 4 
-<b>&middot;</b> 10<sup>26</sup> mogu&#263;ih klju&#269;eva, 
-tako da je napad ispitivanjem svih mogu&#263;ih klju&#269;eva 
-prakti&#269;ki nemogu&#263;, &#269;ak i uz pomo&#263; ra&#269;unala. 
-Me&#273;utim, supstitucijsku &#353;ifru je mogu&#263;e lako dekriptirati 
-koriste&#263;i statisti&#269;ka svojstva jezika na kojem je pisan 
+Ovdje imamo čak 26! &asymp; 4 
+<b>&middot;</b> 10<sup>26</sup> mogućih ključeva, 
+tako da je napad ispitivanjem svih mogućih ključeva 
+praktički nemoguć, čak i uz pomoć računala. 
+Međutim, supstitucijsku šifru je moguće lako dekriptirati 
+koristeći statistička svojstva jezika na kojem je pisan 
 otvoreni tekst. Osnovna metoda je <em>analiza frekvencije slova</em>. 
-Broji se pojavljivanje svakog slova u &#353;ifratu, te se distribucija 
-slova u &#353;ifratu uspore&#273;uje s poznatim podatcima o distribuciji 
+Broji se pojavljivanje svakog slova u šifratu, te se distribucija 
+slova u šifratu uspoređuje s poznatim podatcima o distribuciji 
 slova u jeziku na kojem pretpostavljamo da je napisan otvoreni tekst. 
 Vrlo je vjerojatno da najfrekventnija 
-slova &#353;ifrata odgovaraju najfrekventnijim slovima jezika. 
-Ta vjerojatnost je to ve&#263;a &#353;to je dulji &#353;ifrat. Tako&#273;er, korisni mogu 
-biti i podatci o naj&#269;e&#353;&#263;im <em>bigramima</em> (parovima slova) i 
+slova šifrata odgovaraju najfrekventnijim slovima jezika. 
+Ta vjerojatnost je to veća što je dulji šifrat. Također, korisni mogu 
+biti i podatci o najčešćim <em>bigramima</em> (parovima slova) i 
 <em>trigramima</em> (nizovima od tri slova) u jeziku. 
-Kod nizova od &#269;etiri ili vi&#353;e slova, frekvencije ve&#263; uvelike ovise 
-o sadr&#382;aju teksta, i najfrekventniji nizovi obi&#269;no dolaze od jedne 
-rije&#269;i koja se &#269;esto ponavlja u tekstu (npr. osobnog imena). 
+Kod nizova od četiri ili više slova, frekvencije već uvelike ovise 
+o sadržaju teksta, i najfrekventniji nizovi obično dolaze od jedne 
+riječi koja se često ponavlja u tekstu (npr. osobnog imena). 
 <p>
-Za&#269;etci analize frekvencija se mogu na&#263;i u 14. stolje&#263;u u djelu 
+Začetci analize frekvencija se mogu naći u 14. stoljeću u djelu 
 arapskog autora 
 <font color=009900>Ibn ad-Duraihima</font>. 
-Njegova zapa&#382;anja su objavljena u odjeljku posve&#263;enom kriptologiji u velikoj 
-enciklopediji u &#269;etrnaest svezaka &#269;iji je autor <font color=009900>Qalqashandi</font>. 
-Odjeljak ima naslov "O skrivanju tajnih poruka u pismima". Nedavno prona&#273;eni 
-rukopisi sugeriraju me&#273;utim da su arapski lingvisti tu metodu poznavali 
-mo&#382;da i pet stolje&#263;a ranije. &#268;ini se da su u europskoj kriptografiji 
-metodu analize frekvencija u kriptoanalizi prvi po&#269;eli koristiti 
-talijanski kriptografi u 15. stolje&#263;u. Naime, poznato je da su svoje 
-poruke &#353;ifrirali na na&#269;in da su najfrekventnija slova zamjenjivali 
-s vi&#353;e razli&#269;itih simbola, pa na osnovu toga mo&#382;emo zaklju&#269;iti da im je 
-bilo poznato kako analiza frekvencija slova mo&#382;e dovesti do razbijanja 
-supstitucijske &#353;ifre. Za razliku od znanstvenika ad-Duraihima, oni svoja saznanja 
-nisu javno objavljivali, ve&#263; su ih nastojali &#353;to bolje unov&#269;iti. 
-Naime, mnoge su tada&#353;nje talijanske kne&#382;evine imale ljude pla&#263;ene za razbijanje 
-&#353;ifriranih poruka (jedan od najpoznatijih je venecijanski "tajnik za &#353;ifre" 
-<font color=009900>Giovanni Soro</font>), i taj se posao &#269;esto prenosio 
-unutar obitelji. Ovakvu situaciju u kojoj prakti&#269;ki istovremeno 
-do otkri&#263;a zna&#269;ajnih za kriptografiju do&#273;u znastvenici koji &#382;ele &#353;to prije 
+Njegova zapažanja su objavljena u odjeljku posvećenom kriptologiji u velikoj 
+enciklopediji u četrnaest svezaka čiji je autor <font color=009900>Qalqashandi</font>. 
+Odjeljak ima naslov "O skrivanju tajnih poruka u pismima". Nedavno pronađeni 
+rukopisi sugeriraju međutim da su arapski lingvisti tu metodu poznavali 
+možda i pet stoljeća ranije. Čini se da su u europskoj kriptografiji 
+metodu analize frekvencija u kriptoanalizi prvi počeli koristiti 
+talijanski kriptografi u 15. stoljeću. Naime, poznato je da su svoje 
+poruke šifrirali na način da su najfrekventnija slova zamjenjivali 
+s više različitih simbola, pa na osnovu toga možemo zaključiti da im je 
+bilo poznato kako analiza frekvencija slova može dovesti do razbijanja 
+supstitucijske šifre. Za razliku od znanstvenika ad-Duraihima, oni svoja saznanja 
+nisu javno objavljivali, već su ih nastojali što bolje unovčiti. 
+Naime, mnoge su tadašnje talijanske kneževine imale ljude plaćene za razbijanje 
+šifriranih poruka (jedan od najpoznatijih je venecijanski "tajnik za šifre" 
+<font color=009900>Giovanni Soro</font>), i taj se posao često prenosio 
+unutar obitelji. Ovakvu situaciju u kojoj praktički istovremeno 
+do otkrića značajnih za kriptografiju dođu znastvenici koji žele što prije 
 objaviti svoje rezultate i dobiti za njih priznanje, te ljudi iz 
-obavje&#353;tajnih ili komercijalnih institucija koji ne &#382;ele ili ne smiju 
-odmah objaviti svoje rezultate, susre&#263;emo &#269;esto u povijesti kriptografije 
-sve do dana&#353;njih dana (npr. pitanje prvenstva kod otkri&#263;a diferencijalne 
-kriptoanalize ili kriptosustava s javnim klju&#269;em).  
+obavještajnih ili komercijalnih institucija koji ne žele ili ne smiju 
+odmah objaviti svoje rezultate, susrećemo često u povijesti kriptografije 
+sve do današnjih dana (npr. pitanje prvenstva kod otkrića diferencijalne 
+kriptoanalize ili kriptosustava s javnim ključem).  
 <p>
 
-Navest &#263;emo osnovne podatke o frekvenciji slova, bigrama i trigrama 
-za hrvatski, engleski i njema&#269;ki jezik. 
+Navest ćemo osnovne podatke o frekvenciji slova, bigrama i trigrama 
+za hrvatski, engleski i njemački jezik. 
 Pritom smatramo da u tekstu nema interpunkcijskih znakova ni 
-razmaka izme&#273;u rije&#269;i (u protivnom bi kriptoanaliza bila puno 
-lak&#353;a), te da su slova &#268;, &#262;, &#272;, Dž, Lj, Nj, &#352;, &#381; iz hrvatske abecede 
-zamijenjena na prije opisani na&#269;in slovima iz me&#273;unarodnog alfabeta. 
+razmaka između riječi (u protivnom bi kriptoanaliza bila puno 
+lakša), te da su slova Č, Ć, Đ, Dž, Lj, Nj, Š, Ž iz hrvatske abecede 
+zamijenjena na prije opisani način slovima iz međunarodnog alfabeta. 
 Podatci za hrvatski jezik su dobiveni analizom tekstova iz dnevnog tiska, 
-dok su podatci za engleski i njema&#269;ki jezik preuzeti iz literature 
+dok su podatci za engleski i njemački jezik preuzeti iz literature 
 [Bauer, Stinson]. 
 <p>
 
@@ -407,7 +410,7 @@ dok su podatci za engleski i njema&#269;ki jezik preuzeti iz literature
 <font color=800000><B>ENGLESKI</B></font></td>
 <td align=center>&nbsp;</td>
 <td align=center colSpan=2 height=33>
-<font color=800000><B>NJEMA&#268;KI</B></font></td>
+<font color=800000><B>NJEMAČKI</B></font></td>
 </tr>
 
   <tr valign=bottom>
@@ -662,17 +665,17 @@ Najfrekventniji bigrami u hrvatskom jeziku su:
 JE (2.7 %), NA (1.5 %), RA (1.5 %), ST, AN, NI, KO, OS, TI, IJ, NO, 
 EN, PR (1.0 %). 
 </p>
-Ovdje je va&#382;no uo&#269;iti na je JE najfrekventniji bigram, iako J nije 
-me&#273;u najfrekventnijim slovima. Vi&#353;e od pola pojavljivanja slova J 
+Ovdje je važno uočiti na je JE najfrekventniji bigram, iako J nije 
+među najfrekventnijim slovima. Više od pola pojavljivanja slova J 
 otpada na bigram JE. Druga zanimljivost je da su svi 
 najfrekventniji bigrami oblika suglasnik-samoglasnik ili 
-samoglasnik-suglasnik, osim bigrama ST i PR. Kona&#269;no, najfrekventniji 
-<em>recipro&#269;ni bigrami</em> su NA i AN (1.5 % + 1.4 %), te NI i IN 
+samoglasnik-suglasnik, osim bigrama ST i PR. Konačno, najfrekventniji 
+<em>recipročni bigrami</em> su NA i AN (1.5 % + 1.4 %), te NI i IN 
 (1.3 % + 0.9 %). Jedino kod ovih dvaju parova su frekvencije 
-obaju bigrama ve&#263;e od 0.9 %.
+obaju bigrama veće od 0.9 %.
 <p>
 Daleko najfrekventniji trigram u hrvatskom jeziku je IJE (0.6 %). 
-Slijede (s frekvencijama izme&#273;u 0.3 % i 0.4 %): STA, OST, JED, KOJ, 
+Slijede (s frekvencijama između 0.3 % i 0.4 %): STA, OST, JED, KOJ, 
 OJE, JEN.
 <p>
 
@@ -684,7 +687,7 @@ a trigrami THE (3.5 %), ING (1.1 %), AND (1.0 %),
 ION, TIO, ENT, ERE, HER (0.7 %). 
 <p>
 
-U njema&#269;kom	 jeziku najfrekventniji bigrami su 
+U njemačkom	 jeziku najfrekventniji bigrami su 
 <p align=center>
 ER (4.1 %), EN (4.0 %), CH (2.4%), DE, EI, ND, TE, IN, IE, GE (1.5 %), 
 </p>
@@ -693,24 +696,24 @@ DIE, UND, DER, CHE, END (0.8 %).
 <p>
 <br>
 
-<b>Primjer 1.4: </b> <em>Dekriptirati &#353;ifrat</em>
+<b>Primjer 1.4: </b> <em>Dekriptirati šifrat</em>
 <pre><font size="+2" color=000099>TQCWT QCKIQ RWNOQ OBCEW OQVKB UKAPK
 
 OQOQB CQPQA JGDUQ EQORW TSJGR WEQKY
 
 WGTWC JKRBI KZGVO GBQ
 </font></pre>
-<em>dobiven supstitucijskom &#353;ifrom, ako je poznato da je otvoreni 
+<em>dobiven supstitucijskom šifrom, ako je poznato da je otvoreni 
 tekst na hrvatskom jeziku</em>.
 <p>
-(Zbog preglednosti se kod duljih &#353;ifrata obi&#269;no stavlja razmak nakon svakog 
+(Zbog preglednosti se kod duljih šifrata obično stavlja razmak nakon svakog 
 petog slova - to naravno nema nikakve veze s razmacima u otvorenom tekstu, 
-za koje smo se dogovorili da &#263;emo ih zanemarivati kod &#353;ifriranja.)
+za koje smo se dogovorili da ćemo ih zanemarivati kod šifriranja.)
 <p>
-<i>Rje&#353;enje</i>. 
-Napravit &#263;emo (istovremeno) analizu frekvencija slova i bigrama tako da 
-za svako slovo u alfabetu napi&#353;emo sve njegove sljedbenike u 
-&#353;ifratu (za zadnje slovo u &#353;ifratu stavljamo *). Dobivamo sljede&#263;u tablicu: 
+<i>Rješenje</i>. 
+Napravit ćemo (istovremeno) analizu frekvencija slova i bigrama tako da 
+za svako slovo u alfabetu napišemo sve njegove sljedbenike u 
+šifratu (za zadnje slovo u šifratu stavljamo *). Dobivamo sljedeću tablicu: 
 <pre><font size="+1">
 A |   P, J                      
 B |   C, U, C, I, Q                  
@@ -740,7 +743,7 @@ Y |   W
 Z |   G
 </font></pre> 
 
-Iz tablice i&#353;&#269;itavamo da su najfrekventnija slova: 
+Iz tablice iščitavamo da su najfrekventnija slova: 
 <p align=center>
 Q (13), K (7), O(7), W(7), B, C, G, R, T, E, J,
 </p>
@@ -748,26 +751,26 @@ a najfrekventniji bigrami:
 <p align=center>
 OQ (4), QO (3), RW (3), BC, EQ, JG, QC, TQ, WT.
 </p>
-Logi&#269;no je pretpostaviti da je <i>e</i>(A) = Q. Uo&#269;avamo tako&#273;er 
-recipro&#269;ne bigrame OQ i QO, &#353;to nas navodi na <i>e</i>(N) = O. 
-Nadalje, ve&#263;ina pojavljivanja slova R vezana je uz bigram RW, te 
+Logično je pretpostaviti da je <i>e</i>(A) = Q. Uočavamo također 
+recipročne bigrame OQ i QO, što nas navodi na <i>e</i>(N) = O. 
+Nadalje, većina pojavljivanja slova R vezana je uz bigram RW, te 
 da je W jedno od najfrekventnijih slova. To nas vodi na 
 pretpostavku da je <i>e</i>(J) = R i <i>e</i>(E) = W. 
-Poku&#353;ajmo otkriti &#353;ifrat &#269;estog bigrama ST (naj&#269;e&#353;&#263;eg od neotkrivenih). 
-Najozbiljniji kandidati su BC i JG. Mo&#382;emo uzeti neki od njih, pa 
-vidjeti &#353;to &#263;emo dobiti. Mi &#263;emo krenuti s BC, jer frekvencije 
-od B i C odgovaraju o&#269;ekivanim frekvencijama od S i T. Dakle, 
+Pokušajmo otkriti šifrat čestog bigrama ST (najčešćeg od neotkrivenih). 
+Najozbiljniji kandidati su BC i JG. Možemo uzeti neki od njih, pa 
+vidjeti što ćemo dobiti. Mi ćemo krenuti s BC, jer frekvencije 
+od B i C odgovaraju očekivanim frekvencijama od S i T. Dakle, 
 uzmimo da je <i>e</i>(S) = B i <i>e</i>(T) = C. Od najfrekventnijih slova 
-u hrvatskom jeziku, jo&#353; nismo odgonetnuli &#353;ifrate od I i O. 
+u hrvatskom jeziku, još nismo odgonetnuli šifrate od I i O. 
 Glavni kandidati su K i G, i to upravo tim redoslijedom. Pa uzmimo 
 da je <i>e</i>(I) = K i <i>e</i>(O) = G.
-Rezimirajmo ono &#353;to smo do sada pretpostavili:
+Rezimirajmo ono što smo do sada pretpostavili:
 <pre><font size="+1">
 otvoreni tekst   <font color=990000>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</font>  
-    &#353;ifrat       <font color=000099>q       w       k r       o g       b c</font>  
+    šifrat       <font color=000099>q       w       k r       o g       b c</font>  
 </font></pre>
 
-Ubacimo ove pretpostavke u polazni &#353;ifrat: 
+Ubacimo ove pretpostavke u polazni šifrat: 
 
 <pre><font size="+2">
 <font color=000099>TQCWT QCKIQ RWNOQ OBCEW OQVKB UKAPK</font>
@@ -780,57 +783,57 @@ Ubacimo ove pretpostavke u polazni &#353;ifrat:
 <font color=990000>eo et  ijs  i o n osa</font>
 </font></pre>
 
-Sada ve&#263; imamo dovoljno elemenata otvorenog teksta da mo&#382;emo postupno 
-odgonetavati &#269;itave rije&#269;i (npr. prva rije&#269;: 
+Sada već imamo dovoljno elemenata otvorenog teksta da možemo postupno 
+odgonetavati čitave riječi (npr. prva riječ: 
 <font color=990000>matematika</font>, zadnja 
-rije&#269;: <font color=990000>odnosa</font>). 
-Kona&#269;no dobivamo otvoreni tekst
+riječ: <font color=990000>odnosa</font>). 
+Konačno dobivamo otvoreni tekst
 
 <pre><font size="+2">
 <font color=990000>Matematika je znanstvena disciplina nastala 
-prou&#269;avanjem brojeva i geometrijskih odnosa.</font>
+proučavanjem brojeva i geometrijskih odnosa.</font>
 </font></pre>
 
-Alfabet &#353;ifrata izgleda ovako: 
+Alfabet šifrata izgleda ovako: 
 <pre><font size="+2" color=000099>q s u v w x y z k r i p t o g a f j b c d e h l m n
 </font></pre>
-Uo&#269;avamo pojavljivanje rije&#269;i "kriptografija" unutar alfabeta 
-&#353;ifrata. Radi se o varijanti supstitucijske &#353;ifre koja se naziva 
-<em>Cezarova &#353;ifra s klju&#269;nom rije&#269;i</em>. U njoj klju&#269; predstavlja 
-klju&#269;na rije&#269; (u ovom slu&#269;aju 
+Uočavamo pojavljivanje riječi "kriptografija" unutar alfabeta 
+šifrata. Radi se o varijanti supstitucijske šifre koja se naziva 
+<em>Cezarova šifra s ključnom riječi</em>. U njoj ključ predstavlja 
+ključna riječ (u ovom slučaju 
 <font color=990099>KRIPTOGRAFIJA</font>), te broj (u ovom 
-slu&#269;aju <font color=990099>8</font>) koji ozna&#269;ava poziciju 
-na kojoj po&#269;injemo pisati 
-klju&#269;nu rije&#269; (bez ponavljanja slova). Naravno, da smo znali da je 
-rije&#269; upravo o ovoj varijanti, dekriptiranje bi nam bilo jo&#353; lak&#353;e, 
+slučaju <font color=990099>8</font>) koji označava poziciju 
+na kojoj počinjemo pisati 
+ključnu riječ (bez ponavljanja slova). Naravno, da smo znali da je 
+riječ upravo o ovoj varijanti, dekriptiranje bi nam bilo još lakše, 
 no i bez toga nismo imali puno problema. 
 
 <br><p>
 
-Mo&#382;emo zaklju&#269;iti da je usprkos velikom prostoru klju&#269;eva, supstitucijska &#353;ifra 
-vrlo laka za kriptoanalizu. To je bilo poznato ve&#263; po&#269;etkom 
-15. stolje&#263;a, kada je u Italiji po&#269;ela uporaba <em>homofona</em>, 
-tj. &#353;ifriranje najfrekventnijih slova s vi&#353;e razli&#269;itih simbola. 
-Tu se ne zamjenjuje slovo za slovo, ve&#263; npr. slovo za dvoznamenkasti broj, 
-tako da je mogu&#263;e &#353;ifrirati najfrekventnija slova na nekoliko razli&#269;itih na&#269;ina, 
-dok &#263;e ona niskofrekventna i dalje imati samo jednu zamjenu. 
-To svakako pove&#263;ava sigurnost &#353;ifre, ali i dalje analiza frekvencija 
-bigrama i trigrama mo&#382;e dovesti do rje&#353;enja. Tako&#273;er se mo&#382;e 
-iskoristiti djelomi&#269;no ponavljanje. Primjerice, ako kod &#353;ifriranja 
-slova pomo&#263;u dvoznamenkastih brojeva nai&#273;emo na nizove 
+Možemo zaključiti da je usprkos velikom prostoru ključeva, supstitucijska šifra 
+vrlo laka za kriptoanalizu. To je bilo poznato već početkom 
+15. stoljeća, kada je u Italiji počela uporaba <em>homofona</em>, 
+tj. šifriranje najfrekventnijih slova s više različitih simbola. 
+Tu se ne zamjenjuje slovo za slovo, već npr. slovo za dvoznamenkasti broj, 
+tako da je moguće šifrirati najfrekventnija slova na nekoliko različitih načina, 
+dok će ona niskofrekventna i dalje imati samo jednu zamjenu. 
+To svakako povećava sigurnost šifre, ali i dalje analiza frekvencija 
+bigrama i trigrama može dovesti do rješenja. Također se može 
+iskoristiti djelomično ponavljanje. Primjerice, ako kod šifriranja 
+slova pomoću dvoznamenkastih brojeva naiđemo na nizove 
 <center><pre><font size="+1">
 12 17 37 23 57    i    12 17 42 23 57,
 </font></pre></center>
-onda je prili&#269;no izvjesno da 37 i 42 predstavljaju isto slovo 
-otvorenog teksta, pa ih mo&#382;emo "spojiti" u analizi frekvencija.
+onda je prilično izvjesno da 37 i 42 predstavljaju isto slovo 
+otvorenog teksta, pa ih možemo "spojiti" u analizi frekvencija.
 <p>
 
 <hr size=2 noshade>
 
 <b><font size="-1" face="Verdana">
 <a href="osnovni.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="vigener.html">[Sljede&#263;e poglavlje]</a> &nbsp; 
-<a href="kriptografija.html">[Sadr&#382;aj]</a>
+<a href="vigener.html">[Sljedeće poglavlje]</a> &nbsp; 
+<a href="kriptografija.html">[Sadržaj]</a>
 </font></b>
 
 <hr size=2 noshade>
@@ -866,6 +869,8 @@ EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
 src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
 </div></noscript>
 <!-- End eXTReMe Non Public Tracker Code -->
+
+<script type="text/javascript" src="https://web.math.pmf.unizg.hr/lib/js/accessibility_black.min.js"></script>
 
 </body>
 </html>

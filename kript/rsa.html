@@ -4,13 +4,15 @@
 <title>RSA kriptosustav</title>
 
 <meta name="author" content="Andrej Dujella">
-<meta name="description" content="Javni klju&#269; - RSA kriptosustav">
-<meta name="keywords" content="kriptografija, RSA, javni klju&#269;, 
+<meta name="description" content="Javni ključ - RSA kriptosustav">
+<meta name="keywords" content="kriptografija, RSA, javni ključ, 
 faktorizacija, Eulerova funkcija">
 
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style type="text/css">
 body {font-family: Arial,Helvetica,sans-serif;}
@@ -22,9 +24,10 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="idejajavni.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="rsaan.html">[Sljede&#263;e poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadr&#382;aj]</a>
+<a href="rsaan.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
 </font></b>
+<p>
 
 <hr size=2 noshade>
 
@@ -33,12 +36,12 @@ body {font-family: Arial,Helvetica,sans-serif;}
 <h2 align=center style="color: rgb(128,0,0)">3.2. RSA kriptosustav</h2>
 
 
-Prvi, a ujedno i najpopularniji i naj&#353;ire kori&#353;teni kriptosustav 
-s javnim klju&#269;em je RSA kriptosustav koji su izumili 
+Prvi, a ujedno i najpopularniji i najšire korišteni kriptosustav 
+s javnim ključem je RSA kriptosustav koji su izumili 
 <font color=009900>Ron Rivest</font>, 
 <font color=009900>Adi Shamir</font> i 
 <font color=009900>Len Adleman</font> 1977. godine. 
-Njegova sigurnost je zasnovana na te&#353;ko&#263;i faktorizacije velikih 
+Njegova sigurnost je zasnovana na teškoći faktorizacije velikih 
 prirodnih brojeva. Slijedi precizna definicija RSA kriptosustava.
 <p>
 
@@ -77,8 +80,8 @@ Vrijednosti <i>n</i> i <i>e</i> su javne, a vrijednosti
 
 Ovdje je &phi;(<i>n</i>) 
 <em>Eulerova funkcija</em>, tj. broj brojeva u nizu 1, 2, ... , 
-<i>n</i> koji su relativno prosti s <i>n</i>. U na&#353;em 
-konkretnom slu&#269;aju 
+<i>n</i> koji su relativno prosti s <i>n</i>. U našem 
+konkretnom slučaju 
 je <nobr>&phi;(<i>n</i>) = 
 &phi;(<i>pq</i>) = 
 (<i>p</i> - 1)(<i>q</i> - 1).</nobr> 
@@ -117,11 +120,11 @@ ako je (<i>n</i>, <i>x</i>) = <i>p</i>, onda je
 &equiv; <i>x</i> (mod <i>q</i>), 
 pa je <i>x</i><sup><i>de</i></sup> 
 &equiv; <i>x</i> (mod <i>n</i>); 
-slu&#269;aj (<i>n</i>, <i>x</i>) = <i>q</i> je potpuno analogan. 
+slučaj (<i>n</i>, <i>x</i>) = <i>q</i> je potpuno analogan. 
 Prema tome, zaista je 
 <i>x</i><sup><i>de</i></sup> 
 &equiv; <i>x</i> (mod <i>n</i>), 
-&#353;to zna&#269;i da je <i>d<sub>K</sub></i>(<i>e<sub>K</sub></i>(<i>x</i>)) 
+što znači da je <i>d<sub>K</sub></i>(<i>e<sub>K</sub></i>(<i>x</i>)) 
 = <i>x</i>. 
 <p>
 
@@ -129,9 +132,9 @@ Prema tome, zaista je
 Tada je <i>n</i> = 33 i &phi;(<i>n</i>) = 20. 
 Eksponent <i>e</i> mora biti relativno prost s 20, pa recimo da je 
 <i>e</i> = 7. Tada je <i>d</i> = 3. Sada je 
-(<i>n</i>, <i>e</i>) = (33, 7) na&#353; javni klju&#269;. Pretpostavimo da nam 
-netko &#382;eli poslati poruku <i>x</i> = 
-<font color=990000>17</font>. To zna&#269;i da treba izra&#269;unati 
+(<i>n</i>, <i>e</i>) = (33, 7) naš javni ključ. Pretpostavimo da nam 
+netko želi poslati poruku <i>x</i> = 
+<font color=990000>17</font>. To znači da treba izračunati 
 <i>e<sub>K</sub></i>(<i>x</i>) = 17<sup>7</sup> mod 33: 
 <p align=center>
 17<sup>7</sup> = 17 <sup><b>.</b></sup> 17<sup>2</sup> 
@@ -141,9 +144,9 @@ netko &#382;eli poslati poruku <i>x</i> =
 &equiv;  
 -25 &equiv; 8 (mod 33). 
 </p>
-Dakle, &#353;ifrat je <i>y</i> = <i>e<sub>K</sub></i>(<i>x</i>) = 
+Dakle, šifrat je <i>y</i> = <i>e<sub>K</sub></i>(<i>x</i>) = 
 <font color=<000099>8</font>. 
-Kad primimo ovaj &#353;ifrat, de&#353;ifriramo ga pomo&#263;u tajnog klju&#269;a <i>d</i>: 
+Kad primimo ovaj šifrat, dešifriramo ga pomoću tajnog ključa <i>d</i>: 
 <p align=center> 
 <i>x</i> = <i>d<sub>K</sub></i>(<i>y</i>) = 8<sup>3</sup> = 
 8 <sup><b>.</b></sup> 8<sup>2</sup> 
@@ -153,69 +156,69 @@ Kad primimo ovaj &#353;ifrat, de&#353;ifriramo ga pomo&#263;u tajnog klju&#269;a
 Dakle, <i>x</i> = <font color=990000>17</font>. 
 <p><br>
 
-Sigurnost RSA le&#382;i u pretpostavci da je funkcija 
+Sigurnost RSA leži u pretpostavci da je funkcija 
 <i>e<sub>K</sub></i>(<i>x</i>) = <i>x</i><sup><i>e</i></sup> 
 mod <i>n</i> jednosmjerna. Dodatni podatak (trapdoor) koji 
-omogu&#263;ava de&#353;ifriranje je poznavanje faktorizacije <i>n</i> = 
-<i>pq</i>, jer je tada lako izra&#269;unati 
+omogućava dešifriranje je poznavanje faktorizacije <i>n</i> = 
+<i>pq</i>, jer je tada lako izračunati 
 &phi;(<i>n</i>) = 
 &phi;(<i>pq</i>) = 
 (<i>p</i> - 1)(<i>q</i> - 1), 
 te dobiti eksponent <i>d</i> iz <i>de</i> 
 &equiv; 1 
 (mod &phi;(<i>n</i>)),  
-pomo&#263;u <em>Euklidovog algoritma</em>. 
+pomoću <em>Euklidovog algoritma</em>. 
 <p>
 
-Opi&#353;imo sada postupak kojim korisnik izabire parametre u RSA 
+Opišimo sada postupak kojim korisnik izabire parametre u RSA 
 kriptosustavu malo detaljnije. 
 <ol>
 <li>Izabiremo <u>tajno</u> dva velika prosta broja <i>p</i> i <i>q</i> 
-od oko 100 znamenaka, tako da <i>q</i> ima nekoliko znamenaka 
-vi&#353;e od <i>p</i>. To radimo tako da pomo&#263;u nekog generatora 
-slu&#269;ajnih brojeva generiramo prirodan broj <i>m</i> s tra&#382;enim 
-brojem znamenaka, a zatim kori&#353;tenjem nekog testa za testiranje 
-prostosti (opisat &#263;emo ih u sljede&#263;em poglavlju) tra&#382;imo prvi 
-prosti broj ve&#263;i ili jednak <i>m</i>. Po teoremu o distribuciji 
-prostih brojeva, mo&#382;emo o&#269;ekivati da &#263;emo trebati testirati 
-O(log <i>m</i>) brojeva dok ne na&#273;emo prvi prosti broj. <p>  
+od oko 150 znamenaka, tako da <i>q</i> ima nekoliko znamenaka 
+više od <i>p</i>. To radimo tako da pomoću nekog generatora 
+slučajnih brojeva generiramo prirodan broj <i>m</i> s traženim 
+brojem znamenaka, a zatim korištenjem nekog testa za testiranje 
+prostosti (opisat ćemo ih u sljedećem poglavlju) tražimo prvi 
+prosti broj veći ili jednak <i>m</i>. Po teoremu o distribuciji 
+prostih brojeva, možemo očekivati da ćemo trebati testirati 
+O(log <i>m</i>) brojeva dok ne nađemo prvi prosti broj. <p>  
 
-<li>Izra&#269;unamo <i>n</i> = <i>pq</i> i 
+<li>Izračunamo <i>n</i> = <i>pq</i> i 
 &phi;(<i>n</i>) = 
 (<i>p</i> - 1)(<i>q</i> - 1) = <i>n</i> + 1 - <i>p</i> - <i>q</i>. 
 (Za to nam treba O(log<sup>2</sup> <i>n</i>) operacija.) <p>
 
-<li>Izaberemo na slu&#269;ajan na&#269;in broj <i>e</i> takav da je 
+<li>Izaberemo na slučajan način broj <i>e</i> takav da je 
 <i>e</i> &lt; 
 &phi;(<i>n</i>) i 
 (&phi;(<i>n</i>), 
-<i>e</i>) = 1. To se mo&#382;e napraviti sli&#269;no kao pod 1. 
-Nakon toga <u>tajno</u> izra&#269;unamo <i>d</i> tako da je 
+<i>e</i>) = 1. To se može napraviti slično kao pod 1. 
+Nakon toga <u>tajno</u> izračunamo <i>d</i> tako da je 
 <nobr><i>de</i> &equiv; 1 
 (mod &phi;(<i>n</i>)),</nobr>  
 tj. <nobr>d &equiv;  
 <i>e</i><sup>-1</sup> 
 (mod &phi;(<i>n</i>)).</nobr> 
-To se radi pomo&#263;u Euklidovog algoritma i za to nam treba 
+To se radi pomoću Euklidovog algoritma i za to nam treba 
 O(log<sup>3</sup> <i>n</i>) operacija. <p>
 
-<li>Stavimo klju&#269; za &#353;ifriranje (<i>n</i>, <i>e</i>) u javni 
+<li>Stavimo ključ za šifriranje (<i>n</i>, <i>e</i>) u javni 
 direktorij. 
 </ol>
 <p>
 
-Za efikasnost RSA kriptosustava, va&#382;na je &#269;injenica da se 
-modularno potenciranje mo&#382;e izvesti vrlo efikasno. 
-Podsjetimo se kako se efikasno ra&#269;una 
+Za efikasnost RSA kriptosustava, važna je činjenica da se 
+modularno potenciranje može izvesti vrlo efikasno. 
+Podsjetimo se kako se efikasno računa 
 <nobr><i>e</i><sub><i>K</i></sub>(<i>x</i>) = <i>x</i><sup><i>e</i></sup> 
-mod <i>n</i>.</nobr> To se radi tzv. metodom &quot;kvadriraj i mno&#382;i&quot;. 
-Najprije <i>e</i> prika&#382;emo u bazi 2: 
+mod <i>n</i>.</nobr> To se radi tzv. metodom &quot;kvadriraj i množi&quot;. 
+Najprije <i>e</i> prikažemo u bazi 2: 
 <p align=center>
 <i>e</i> = <i>e</i><sub>0</sub> + 2 <sup><b>.</b></sup> 
 <i>e</i><sub>1</sub> + ... + 2<sup><i>s</i> -1</sup> <sup><b>.</b></sup> 
 <i>e</i><sub><i>s</i> -1</sub>, 
 </p>
-a potom primijenimo sljede&#263;i algoritam: 
+a potom primijenimo sljedeći algoritam: 
 <p>
 
 <table align=center border=1 width="95%" cellpadding=15> 
@@ -233,21 +236,21 @@ ako je <i>e<sub>i</sub></i> = 1, onda <i>y</i> = <i>y</i> <b>&middot;</b>
 </font></td></tr></table>
 
 <p>
-O&#269;ito je ukupan broj mno&#382;enja 
+Očito je ukupan broj množenja 
 &le; 2<i>s</i>, 
 pa je ukupan broj operacija O(log <i>e</i> <b>&middot;</b>  
-log<sup>2</sup> <i>n</i>). To zna&#269;i da je ovaj algoritam 
+log<sup>2</sup> <i>n</i>). To znači da je ovaj algoritam 
 polinomijalan. 
 <p>
-Op&#263;enito, za algoritam koji kao ulazne podatke ima prirodne brojeve 
+Općenito, za algoritam koji kao ulazne podatke ima prirodne brojeve 
 <i>x</i><sub>1</sub>, ... , <i>x</i><sub><i>m</i></sub> s redom 
 <i>k</i><sub>1</sub>, ... , <i>k</i><sub><i>m</i></sub> bitova 
-ka&#382;emo da je <em>polinomijalan</em> ako mu je broj operacija 
+kažemo da je <em>polinomijalan</em> ako mu je broj operacija 
 <nobr>O(<i>k</i><sub>1</sub><sup><i>d</i><font size=-1>1</font></sup> <b>&middot;</b> ... <b>&middot;</b>  
 <i>k</i><sub><i>m</i></sub><sup><i>d</i><font size=-1><i>m</i></font></sup>),</nobr> tj. 
 <nobr>O((log <i>x</i><sub>1</sub>)<sup><i>d</i><font size=-1>1</font></sup> <b>&middot;</b> ... <b>&middot;</b>  
 log(<i>x</i><sub><i>m</i></sub>)<sup><i>d</i><font size=-1><i>m</i></font></sup>)</nobr> za neke 
-cijele brojeve <i>d</i><sub>1</sub>, ... , <i>d</i><sub><i>m</i></sub>.
+nenegativne cijele brojeve <i>d</i><sub>1</sub>, ... , <i>d</i><sub><i>m</i></sub>.
 
 <p>
 
@@ -255,8 +258,8 @@ cijele brojeve <i>d</i><sub>1</sub>, ... , <i>d</i><sub><i>m</i></sub>.
 
 <b><font size="-1" face="Verdana">
 <a href="idejajavni.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="rsaan.html">[Sljede&#263;e poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadr&#382;aj]</a>
+<a href="rsaan.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
 </font></b>
 
 <hr size=2 noshade>
@@ -292,6 +295,8 @@ EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
 src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
 </div></noscript>
 <!-- End eXTReMe Non Public Tracker Code -->
+
+<script type="text/javascript" src="https://web.math.pmf.unizg.hr/lib/js/accessibility_black.min.js"></script>
 
 </body>
 </html>
