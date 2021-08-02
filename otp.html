@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Jednokratna bilježnica</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Kriptografija - 
+Jednokratna biljeznica">
+<meta name="keywords" content="kriptografija, jednokratna bilježnica, 
+one time pad, Vernam">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="hill.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="transp.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+<p>
+
+<hr size=2 noshade>
+
+
+<a name="1.6"></a>
+<h2 align=center style="color: rgb(128,0,0)">1.6. Jednokratna 
+bilježnica</h2>
+
+
+Postavlja se pitanje postoji li kriptosustav koji je 
+<em>savršeno siguran</em>, te što bi to uopće značilo. 
+Pojam savršene sigurnosti uveo je 1949. godine <font color=009900>Claude Shannon</font>. 
+To je kriptosustav u kojem šifrat ne daje nikakvu informaciju 
+o otvorenom tekstu. Preciznije, pretpostavimo da se u prostoru 
+otvorenih tekstova 
+<font face="Brush Script MT,Script,Times New Roman">P</font>
+otvoreni tekst <i>x</i> pojavljuje s vjerojatnošću 
+<i>p</i>(<i>x</i>). Tada je uvjetna vjerojatnost 
+<i>p</i>(<i>x</i> | <i>y</i>) da je <i>x</i> otvoreni tekst ako znamo 
+da je <i>y</i> šifrat, također jednaka <i>p</i>(<i>x</i>)
+(za svaki fiksirani <i>x</i> &isin;  
+<font face="Brush Script MT,Script,Times New Roman">P</font> i sve <i>y</i> 
+&isin;  
+<font face="Brush Script MT,Script,Times New Roman">C</font>). 
+<p>
+Poznata realizacija ideje potpune sigurnosti je kriptosustav 
+poznat pod nazivom <em>jednokratna bilježnica</em> (engl. one-time pad). 
+Smatra se da su ga uveli <font color=009900>Gilbert Vernam</font> i <font color=009900>Joseph Mauborgne</font> 1917. godine 
+(nedavno je pronađeno da je istu ideju imao već 1882. godine <font color=009900>Frank Miller</font>). 
+Naravno, to da se radi o savršeno sigurnom kriptosustavu bilo je moguće 
+precizno ustvrditi tek nakon Shannonove definicije.
+Ideja im je bila dobiti potpuno sigurni kriptosustav za uporabu 
+u telegrafiji. Za razliku 
+od do sada navedenih kriptosustava, ovaj ne radi sa slovima, 
+već s binarnim podatcima. Njegova definicija je: 
+<p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+Neka je <i>n</i> prirodan broj, 
+<font face="Brush Script MT,Script,Times New Roman">P</font> = 
+<font face="Brush Script MT,Script,Times New Roman">C</font> = 
+<font face="Brush Script MT,Script,Times New Roman">K</font> = 
+(<b>Z</b><sub>2</sub>)<sup><i>n</i></sup>. 
+Za <i>K</i> = (<i>k</i><sub>1</sub>, ..., <i>k<sub>n</sub></i>) 
+&isin;  
+<font face="Brush Script MT,Script,Times New Roman">K</font> definiramo 
+<p align=center>
+<i>e<sub>K</sub></i>(<i>x</i><sub>1</sub>, ... , 
+<i>x<sub>n</sub></i>) = (<i>x</i><sub>1</sub> +<sub>2</sub>  
+<i>k</i><sub>1</sub>, ... , 
+<i>x<sub>n</sub></i> +<sub>2</sub> <i>k<sub>n</sub></i>), <br>
+<i>d<sub>K</sub></i>(<i>y</i><sub>1</sub>, ... , 
+<i>y<sub>n</sub></i>) = (<i>y</i><sub>1</sub> +<sub>2</sub>  
+<i>k</i><sub>1</sub>, ... , 
+<i>y<sub>n</sub></i> +<sub>2</sub> <i>k<sub>n</sub></i>).
+</font> </td></tr> </table>  
+<p>
+Drugim riječima, šifrat se iz otvorenog teksta dobije tako da se na 
+bitovima primjeni operacija "ekskluzivno ili" (XOR): 
+<i>y<sub>i</sub></i> = <i>x<sub>i</sub></i> 
+&oplus;  
+<i>k<sub>i</sub></i>. Uočimo da je postupak dešifriranja 
+identičan postupku šifriranja: 
+<i>x<sub>i</sub></i> = <i>y<sub>i</sub></i> 
+&oplus;  
+<i>k<sub>i</sub></i>. Naime, u <b>Z</b><sub>2</sub> zbrajanje i oduzimanje 
+su identične operacije (jer je 1 +<sub>2</sub> 1 = 0). 
+<p>
+Uočimo također da je ovaj kriptosustav lako razbiti napadom 
+"poznati otvoreni tekst", jer sasvim analogno vrijedi i ("neželjena") 
+relacija  
+<i>k<sub>i</sub></i> = <i>x<sub>i</sub></i> 
+&oplus;  
+<i>y<sub>i</sub></i>. 
+To znači da se sigurnost kod ovog kriptosustava 
+može postići samo ako se svaki ključ koristi samo jednom. 
+Odatle i dolazi naziv jednokratna bilježnica. 
+Naime, različitim varijantama ovog kriptosustava su se koristili 
+špijuni, koji bi za tu svrhu koristili bilježnicu u kojoj bi se svaki list koristio 
+kao jednokratni ključ. 
+Za praktične primjene veliki problem predstavlja činjenica da je ključ, koji mora biti 
+sigurno prenesen, jednako dug kao i sama poruka. Stoga ovaj 
+kriptosustav nije bio u komercijalnoj uporabi, ali postoje 
+naznake da se koristio u komunikaciji između Moskve i 
+Washingtona tijekom hladnog rata. 
+
+<p> 
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="hill.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="transp.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../kript.html">Web stranica kolegija <em>Kriptografija</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+<script type="text/javascript" src="https://web.math.pmf.unizg.hr/lib/js/accessibility_black.min.js"></script>
+
+</body>
+</html>

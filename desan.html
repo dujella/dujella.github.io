@@ -1,0 +1,754 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Kriptoanaliza DES-a</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Blokovni kriptosustavi - Kriptoanaliza DES-a">
+<meta name="keywords" content="kriptografija, kriptoanaliza, 
+DES, linearna kriptoanaliza, diferencijalna kriptoanaliza, xor, 
+DES Cracker">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="modovi.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="josblok.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+<p>
+
+<hr size=2 noshade>
+
+
+<a name="2.5"></a>
+<h2 align=center style="color: rgb(128,0,0)">2.5. Kriptoanaliza DES-a</h2>
+
+
+U ovom poglavlju opisat ćemo tri napada na DES: diferencijalnu 
+kriptoanalizu, linearnu kriptoanalizu i EFF-ov DES Cracker. 
+Iako prva dva napada nisu dovela do razbijanja DES-a, njihova je 
+važnost u tome što su primjenjivi na bilo koji simetrični 
+blokovni kriptosustav. Tako su kod većine mogućih nasljednika DES-a 
+operacije i broj rundi odabrani upravo tako da bi dobiveni 
+kriptosustav bio što otporniji na diferencijalnu i linearnu 
+kriptoanalizu. 
+<p>
+
+Metodu <em>diferencijalne kriptoanalize</em> prvi su javno opisali 
+izraelski kriptolozi <font color=009900>Eli Biham</font> i 
+<font color=009900>Adi Shamir</font> 1990. godine.  
+No, po svemu sudeći, ta je metoda bila poznata konstruktorima DES-a 
+već 1974. godine, te su je imali u vidu kod dizajna S-kutija i 
+permutacije P. Metoda spada u napade &quot;odabrani otvoreni tekst&quot;. 
+<p>
+Prikazat ćemo kako ova metoda može biti primjenjena na DES s <i>n</i> 
+rundi (n &le; 16). 
+Slijedeći [Stinson: <i>Cryptography. Theory and Practice</i>; Poglavlje 3.6, 1. izdanje], 
+metodu ćemo potom ilustrirati prikazom napada na DES s 3 runde.
+U tu svrhu možemo ignorirati inicijalnu permutaciju IP i njezin inverz 
+(oni nemaju nikakav efekt na kriptoanalizu). 
+Stoga ćemo <nobr><i>L</i><sub>0</sub><i>R</i><sub>0</sub></nobr> uzeti za otvoreni tekst, a 
+<nobr><i>L</i><sub><i>n</i></sub><i>R</i><sub><i>n</i></sub></nobr> za šifrat u DES-u s 
+<i>n</i> rundi. Osnovna ideja diferencijane kriptoanalize 
+jest usporedba XOR-a od dva otvorena teksta sa XOR-om od 
+odgovarajuća dva šifrata. Općenito, promatrat ćemo dva otvorena 
+teksta <nobr><i>L</i><sub>0</sub><i>R</i><sub>0</sub></nobr> i 
+<nobr><i>L</i>*<sub>0</sub><i>R</i>*<sub>0</sub></nobr> sa zadanom XOR 
+vrijednošću <nobr><i>L</i>'<sub>0</sub><i>R</i>'<sub>0</sub> = 
+<i>L</i><sub>0</sub><i>R</i><sub>0</sub></nobr> 
+&oplus; 
+<i>L</i>*<sub>0</sub><i>R</i>*<sub>0</sub>.  
+
+<p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Definicija: </b> Neka je S<sub><i>j</i></sub> neka S-kutija 
+(1 &le; <i>j</i> 
+&le; 8), te neka je 
+(<i>B</i><sub><i>j</i></sub>, <i>B</i>*<sub><i>j</i></sub>) 
+uređeni par 6-bitnih nizova. Tada 
+<nobr><i>B</i><sub><i>j</i></sub> &oplus; 
+<i>B</i>*<sub><i>j</i></sub></nobr> zovemo <em>input XOR</em>, a  
+<nobr>S<sub><i>j</i></sub> (<i>B</i><sub><i>j</i></sub>) 
+&oplus;  
+S<sub><i>j</i></sub> (<i>B</i>*<sub><i>j</i></sub>)</nobr> 
+zovemo <em>output XOR</em>. 
+<p>
+Za svaki <i>B</i>'<sub><i>j</i></sub> 
+&isin;  
+<nobr>(<b>Z</b><sub>2</sub>)<sup>6</sup>,</nobr> sa 
+<nobr>&Delta;(<i>B</i>'<sub><i>j</i></sub>)</nobr> 
+označavamo skup svih uređenih parova <nobr>(<i>B</i><sub><i>j</i></sub>, 
+<i>B</i>*<sub><i>j</i></sub>)</nobr> čiji je input XOR jednak 
+<i>B</i>'<sub><i>j</i></sub>.    
+</font></td></tr></table>
+<p>
+
+Jasno je da vrijedi 
+<p align=center>
+&Delta;(<i>B</i>'<sub><i>j</i></sub>) = { 
+(<i>B</i><sub><i>j</i></sub>, 
+<i>B</i><sub><i>j</i></sub> &oplus; 
+<i>B</i>'<sub><i>j</i></sub>) : 
+<i>B</i><sub><i>j</i></sub> 
+&isin;  
+(<b>Z</b><sub>2</sub>)<sup>6</sup> },</p>
+pa skup &Delta;(<i>B</i>'<sub><i>j</i></sub>) 
+sadrži 2<sup>6</sup> = 64 para. Za svaki par iz 
+&Delta;(<i>B</i>'<sub><i>j</i></sub>) 
+možemo izračunati output XOR. Dobivamo 64 output XOR-a koji su 
+distribuirani između 2<sup>4</sup> = 16 mogućih vrijednosti za 
+output XOR. Činjenica da ovih 64 output XOR-ova nije uniformno 
+distribuirano predstavlja osnovu za kriptoanalitički napad.  
+<p>
+
+<b>Primjer 4: </b> Promotrimo prvu S-kutiju S<sub>1</sub> i 
+input XOR 110100. Imamo
+<p align=center>
+&Delta;(110100) = 
+{(000000,110100), (000001,110101), ... , (111111,001011)}.</p>
+Za svaki uređeni par iz 
+&Delta;(110100) 
+izračunamo output XOR. Npr. S<sub>1</sub>(000000) = 
+14<sub>10</sub> = 1110, S<sub>1</sub>(110100) = 9<sub>10</sub> = 1001, 
+pa je output XOR para (000000,110100) jednak 0111. 
+Nakon što izračunamo output XOR-ove za sva 64 para, dobivamo sljedeću 
+distribuciju: 
+<pre><font size=2>
+ -------------------------------------------------------
+  0000   0001   0010   0011   0100   0101   0110   0111
+ -------------------------------------------------------
+    0      8     16      6      2      0      0     12 
+ ------------------------------------------------------- 
+
+
+ -------------------------------------------------------
+  1000   1001   1010   1011   1100   1101   1110   1111
+ -------------------------------------------------------
+    6      0      0      0      0      8      0      6 
+ -------------------------------------------------------
+</font></pre>
+
+<p>
+U Primjeru 4 pojavilo se samo 8 od mogućih 16 output XOR-ova i to 
+s vrlo različitim frekvencijama. 
+Općenito, u prosjeku se pojavljuje 75-80% mogućih XOR-ova.
+
+<p>
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Definicija: </b> Za <i>j</i> &isin; {1, 2, ... , 8}, 
+6-bitni niz <i>B</i>'<sub><i>j</i></sub> i 4-bitni niz <i>C</i>'<sub><i>j</i></sub> 
+definiramo 
+<p align=center> 
+IN<sub><i>j</i></sub> (<i>B</i>'<sub><i>j</i></sub>, <i>C</i>'<sub><i>j</i></sub>) = 
+{ <i>B</i><sub><i>j</i></sub> 
+&isin;  
+(<b>Z</b><sub>2</sub>)<sup>6</sup> : 
+S<sub><i>j</i></sub> (<i>B</i><sub><i>j</i></sub>)  
+&oplus; 
+S<sub><i>j</i></sub> (<i>B</i><sub><i>j</i></sub> 
+&oplus; 
+<i>B</i>'<sub><i>j</i></sub>) = <i>C</i>'<sub><i>j</i></sub> },</p>
+<p align=center> 
+N<sub><i>j</i></sub> (B'<sub><i>j</i></sub>, C'<sub><i>j</i></sub>) = 
+| IN<sub><i>j</i></sub> (B'<sub><i>j</i></sub>, C'<sub><i>j</i></sub>) |.</p> 
+</font></td></tr></table>
+<p>
+
+Dakle, N<sub><i>j</i></sub>(<i>B</i>'<sub><i>j</i></sub>, <i>C</i>'<sub><i>j</i></sub>) 
+je broj parova čiji je input XOR jednak <i>B</i>'<sub><i>j</i></sub>, 
+a output XOR je jednak <i>C</i>'<sub><i>j</i></sub>. 
+Distribucije iz Primjera 4 su upravo vrijednosti 
+N<sub>1</sub>(110100, <i>C</i>'<sub>1</sub>), 
+<i>C</i>'<sub>1</sub> 
+&isin;  
+(<b>Z</b><sub>2</sub>)<sup>4</sup>, 
+dok su skupovi IN<sub>1</sub>(110100, <i>C</i>'<sub>1</sub>) 
+prikazani u sljedećoj 
+<a href="tablice/inputs.html" target="_blank">tablici</a>. 
+<p>
+Podsjetimo se da ulazni podatak za S-kutije u <i>i</i>-toj rundi 
+ima oblik <nobr><i>B</i> = <i>E</i> &oplus; <i>J</i>,</nobr> 
+gdje je <nobr><i>E</i> = <i>E</i>(<i>R</i><sub><i>i</i> -1</sub>)</nobr> proširenje od 
+<i>R</i><sub><i>i</i> -1</sub>, a <nobr><i>J</i> = <i>K</i><sub><i>i</i></sub></nobr> 
+je <i>i</i>-ti međuključ. 
+Sada je 
+<p align=center>
+<i>B</i> &oplus; <i>B</i>* = 
+(<i>E</i> &oplus; <i>J</i>) 
+&oplus;  
+(<i>E</i>* &oplus; <i>J</i>) = 
+<i>E</i> &oplus; <i>E</i>*,</p> 
+pa input XOR ne ovisi o međuključu <i>J</i>. Zapišimo <i>B</i>, <i>E</i>, <i>J</i>, 
+<i>B</i>* i <i>E</i>* kao spoj od osam 6-bitnih nizova: 
+<pre><font size=3>
+&nbsp; &nbsp; &nbsp; &nbsp; <i>B</i> = <i>B</i><sub>1</sub> <i>B</i><sub>2</sub> <i>B</i><sub>3</sub> <i>B</i><sub>4</sub> <i>B</i><sub>5</sub> <i>B</i><sub>6</sub> <i>B</i><sub>7</sub> <i>B</i><sub>8</sub>
+&nbsp; &nbsp; &nbsp; &nbsp; <i>E</i> = <i>E</i><sub>1</sub> <i>E</i><sub>2</sub> <i>E</i><sub>3</sub> <i>E</i><sub>4</sub> <i>E</i><sub>5</sub> <i>E</i><sub>6</sub> <i>E</i><sub>7</sub> <i>E</i><sub>8</sub>
+&nbsp; &nbsp; &nbsp; &nbsp; <i>J</i> = <i>J</i><sub>1</sub> <i>J</i><sub>2</sub> <i>J</i><sub>3</sub> <i>J</i><sub>4</sub> <i>J</i><sub>5</sub> <i>J</i><sub>6</sub> <i>J</i><sub>7</sub> <i>J</i><sub>8</sub>
+&nbsp; &nbsp; &nbsp; &nbsp; <i>B</i>* = <i>B</i>*<sub>1</sub><i>B</i>*<sub>2</sub><i>B</i>*<sub>3</sub><i>B</i>*<sub>4</sub><i>B</i>*<sub>5</sub><i>B</i>*<sub>6</sub><i>B</i>*<sub>7</sub><i>B</i>*<sub>8</sub>
+&nbsp; &nbsp; &nbsp; &nbsp; <i>E</i>* = <i>E</i>*<sub>1</sub><i>E</i>*<sub>2</sub><i>E</i>*<sub>3</sub><i>E</i>*<sub>4</sub><i>E</i>*<sub>5</sub><i>E</i>*<sub>6</sub><i>E</i>*<sub>7</sub><i>E</i>*<sub>8</sub>
+</font></pre>
+ 
+<p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Definicija: </b> Neka su <i>E</i><sub><i>j</i></sub> i 
+<i>E</i>*<sub><i>j</i></sub> 6-bitni nizovi, a 
+<i>C</i>'<sub><i>j</i></sub> 4-bitni niz. Definiramo 
+<p align=center> 
+test<sub><i>j</i></sub> (<i>E</i><sub><i>j</i></sub>, 
+<i>E</i>*<sub><i>j</i></sub>, <i>C</i>'<sub><i>j</i></sub>) = 
+{ <i>B</i><sub><i>j</i></sub> 
+&oplus;  
+<i>E</i><sub><i>j</i></sub> : 
+<i>B</i><sub><i>j</i></sub> 
+&isin;  
+IN<sub><i>j</i></sub> (<i>E</i>'<sub><i>j</i></sub>, <i>C</i>'<sub><i>j</i></sub>) },</p>
+gdje je 
+<i>E</i>'<sub><i>j</i></sub> = <i>E</i><sub><i>j</i></sub> 
+&oplus;  
+<i>E</i>*<sub><i>j</i></sub>.
+</font></td></tr></table>
+<p>
+
+<b>Primjer 5: </b> Neka je <i>E</i><sub>1</sub> = 000001, 
+<i>E</i>*<sub>1</sub> = 110101, <i>C</i>'<sub>1</sub> = 1101.
+Budući da je 
+<nobr>N<sub>1</sub>(110100, 1101) = 8,</nobr> skup 
+<nobr>test<sub>1</sub>(000001, 110101, 1101)</nobr> će imati 8 elemenata. 
+Iz <a href="tablice/inputs.html" target="_blank">tablice</a> vidimo da je 
+<p align=center>
+IN<sub>1</sub>(110100, 1101) = { 000110, 010000, 010110, 011100, 100010, 100100, 101000, 110010 },</p>
+pa je 
+<p align=center>
+test<sub>1</sub>(000001, 110101, 1101) = 
+{ 000111, 010001, 010111, 011101, 100011, 100101, 101001, 110011 }.</p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+
+<b>Tvrdnja 1: </b> <em>Neka je</em> <i>C</i>'<sub><i>j</i></sub> = 
+S<sub><i>j</i></sub> (<i>B</i><sub><i>j</i></sub>) 
+&oplus; 
+S<sub><i>j</i></sub> (<i>B</i>*<sub><i>j</i></sub>). 
+<em>Tada je</em> <i>J</i><sub><i>j</i></sub> &isin;  
+test<sub><i>j</i></sub> (<i>E</i><sub><i>j</i></sub>, 
+<i>E</i>*<sub><i>j</i></sub>, <i>C</i>'<sub><i>j</i></sub>).
+
+</font></td></tr></table>
+
+<p>
+<b>Dokaz: </b> Po definiciji treba provjeriti da je 
+<i>J</i><sub><i>j</i></sub>
+&oplus; 
+<i>E</i><sub><i>j</i></sub> &isin;  
+IN<sub><i>j</i></sub> (<i>E</i>'<sub><i>j</i></sub>, <i>C</i>'<sub><i>j</i></sub>). 
+No, <i>J</i><sub><i>j</i></sub>
+&oplus; 
+<i>E</i><sub><i>j</i></sub> = <i>B</i><sub><i>j</i></sub> i 
+S<sub><i>j</i></sub> (<i>B</i><sub><i>j</i></sub>) 
+&oplus; 
+S<sub><i>j</i></sub> (<i>B</i><sub><i>j</i></sub> 
+&oplus; 
+<i>B</i>'<sub><i>j</i></sub>) = 
+S<sub><i>j</i></sub> (<i>B</i><sub><i>j</i></sub>) 
+&oplus; 
+S<sub><i>j</i></sub> (<i>B</i>*<sub><i>j</i></sub>) = 
+<i>C</i>'<sub><i>j</i></sub>, pa je  
+<i>J</i><sub><i>j</i></sub> &isin;  
+test<sub><i>j</i></sub> (<i>E</i><sub><i>j</i></sub>, 
+<i>E</i>*<sub><i>j</i></sub>, <i>C</i>'<sub><i>j</i></sub>).
+<p><br>
+
+Tvrdnja 1 nam daje nekoliko mogućnosti za <i>J</i><sub><i>j</i></sub>. 
+Primjenom Tvrdnja 1 na nekoliko različitih trojki 
+<i>E</i><sub><i>j</i></sub>, 
+<i>E</i>*<sub><i>j</i></sub>, <i>C</i>'<sub><i>j</i></sub>, 
+možemo odrediti <i>J</i><sub><i>j</i></sub>. Jasno, ovdje je 
+pretpostavka da mi te vrijednosti 
+<i>E</i><sub><i>j</i></sub>, 
+<i>E</i>*<sub><i>j</i></sub>, <i>C</i>'<sub><i>j</i></sub> znamo.  
+I veliko je pitanje koliko je ta pretpostavka realistična. 
+<p>
+
+Pokažimo sada kako se ove ideje mogu primijeniti u napadu 
+&quot;odabrani otvoreni tekst&quot; na DES s 3 runde. Krećemo od parova 
+otvorenih tekstova 
+<i>L</i><sub>0</sub><i>R</i><sub>0</sub>, 
+<i>L*</i><sub>0</sub><i>R*</i><sub>0</sub> 
+koje smo odabrali tako da je 
+<i>R</i><sub>0</sub> = <i>R</i>*<sub>0</sub>, 
+tj. <nobr><i>R'</i><sub>0</sub> = 00...0,</nobr> te odgovarajućih šifrata 
+<i>L</i><sub>3</sub><i>R</i><sub>3</sub>, 
+<i>L*</i><sub>3</sub><i>R*</i><sub>3</sub>. 
+Vrijedi:  
+<p align=center>
+<i>R</i><sub>3</sub> = <i>L</i><sub>2</sub> 
+&oplus; 
+<i>f</i>(<i>R</i><sub>2</sub>,<i>K</i><sub>3</sub>) =  
+<i>R</i><sub>1</sub> 
+&oplus; 
+<i>f</i>(<i>R</i><sub>2</sub>,<i>K</i><sub>3</sub>) =  
+<i>L</i><sub>0</sub> 
+&oplus; 
+<i>f</i>(<i>R</i><sub>0</sub>,<i>K</i><sub>1</sub>)
+&oplus; 
+<i>f</i>(<i>R</i><sub>2</sub>,<i>K</i><sub>3</sub>),<br> 
+
+<i>R*</i><sub>3</sub> =   
+<i>L*</i><sub>0</sub> 
+&oplus; 
+<i>f</i>(<i>R*</i><sub>0</sub>,<i>K</i><sub>1</sub>)
+&oplus; 
+<i>f</i>(<i>R*</i><sub>2</sub>,<i>K</i><sub>3</sub>),<br> 
+
+<i>R'</i><sub>3</sub> =   
+<i>L'</i><sub>0</sub> 
+&oplus; 
+<i>f</i>(<i>R</i><sub>2</sub>,<i>K</i><sub>3</sub>)
+&oplus; 
+<i>f</i>(<i>R*</i><sub>2</sub>,<i>K</i><sub>3</sub>). 
+</p>
+Sada je <i>f</i>(<i>R</i><sub>2</sub>,<i>K</i><sub>3</sub>) = 
+P(<i>C</i>) i 
+<i>f</i>(<i>R</i>*<sub>2</sub>,<i>K</i><sub>3</sub>) = 
+P(<i>C</i>*), gdje su <i>C</i> i <i>C</i>* 
+outputi od S-kutija. Stoga je 
+<p align=center>
+P(<i>C</i>) &oplus; 
+P(<i>C</i>*) = <i>R'</i><sub>3</sub> 
+&oplus; 
+<i>L'</i><sub>0</sub>, 
+</p>
+pa je    
+<p align=center>
+<i>C</i>' = <i>C</i> &oplus; 
+<i>C</i>* = P<sup>-1</sup>(<i>R'</i><sub>3</sub> 
+&oplus; 
+<i>L'</i><sub>0</sub>). 
+</p>
+Konačno, <i>E</i> = <i>E</i>(<i>R</i><sub>2</sub>) = <i>E</i>(<i>L</i><sub>3</sub>) i 
+<i>E</i>* = <i>E</i>(<i>R</i>*<sub>2</sub>) = 
+<i>E</i>(<i>L</i>*<sub>3</sub>). 
+Dakle, <i>E</i>, <i>E</i>* i <i>C</i>' su nam poznati. 
+<p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>ALGORITAM:</b><br><br>
+&nbsp; &nbsp; Ulazni podatci: <i>L</i><sub>0</sub><i>R</i><sub>0</sub>, 
+<i>L</i>*<sub>0</sub><i>R</i>*<sub>0</sub>, 
+<i>L</i><sub>3</sub><i>R</i><sub>3</sub> i 
+<i>L</i>*<sub>3</sub><i>R</i>*<sub>3</sub>, 
+gdje je <i>R</i><sub>0</sub> = <i>R</i>*<sub>0</sub> <br>
+<ol>
+<li>Izračunamo: <i>C</i>' = P<sup>-1</sup>(<i>R'</i><sub>3</sub>
+&oplus; 
+<i>L'</i><sub>0</sub>)
+<li>Izračunamo: <i>E</i> = <i>E</i>(<i>L</i><sub>3</sub>) i 
+<i>E</i>* = <i>E</i>(<i>L</i>*<sub>3</sub>)
+<li>Za <i>j</i> = 1, 2, ... , 8 <br>
+&nbsp; &nbsp; &nbsp; &nbsp; računamo &nbsp; 
+test<sub><i>j</i></sub> (<i>E</i><sub><i>j</i></sub>, 
+<i>E</i>*<sub><i>j</i></sub>, <i>C</i>'<sub><i>j</i></sub>).
+</ol>
+</font></td></tr></table>
+
+<p><br>
+
+Primjenom ovog algoritma na nekoliko različitih inputa možemo 
+odrediti međuključ <i>K</i><sub>3</sub>, što nam daje 48 bitova 
+ključa <i>K</i>. Preostalih 8 bitova možemo pronaći tako da 
+testiramo svih 2<sup>8</sup> = 256 mogućnosti. 
+<p>
+
+<b>Primjer 6: </b> Pretpostavimo da imamo sljedeća tri para 
+otvorenih tekstova i šifrata (zapisanih heksadecimalno) 
+šifriranih istim ključem (otvoreni tekstovi su odabrani tako da 
+zadovoljavaju uvjet <i>R</i><sub>0</sub> = 
+<i>R</i><sup>*</sup><sub>0</sub>): 
+
+<pre>
+  ------------------------------------------------- 
+      otvoreni tekst                 šifrat
+  -------------------------------------------------
+     <font color=990000>748502CD38451097</font>           <font color=000099>03C70306D8A09F10</font>  
+     <font color=990000>3874756438451097</font>           <font color=000099>78560A0960E6D4CB</font>
+  -------------------------------------------------
+     <font color=990000>486911026ACDFF31</font>           <font color=000099>45FA285BE5ADC730</font>
+     <font color=990000>375BD31F6ACDFF31</font>           <font color=000099>134F7915AC253457</font>  
+  -------------------------------------------------
+     <font color=990000>357418DA013FEC86</font>           <font color=000099>D8A31B2F28BBC5CF</font>
+     <font color=990000>12549847013FEC86</font>           <font color=000099>0F317AC2B23CB944</font> 
+  -------------------------------------------------
+</pre>
+<p>
+Primjenom algoritma na prvi par, dobivamo: 
+<pre>
+     E = 000000000111111000001110100000000110100000001100
+     E*= 101111110000001010101100000001010100000001010010
+     C'= 10010110010111010101101101100111
+</pre>
+Za drugi par dobivamo
+<pre>
+     E = 101000001011111111110100000101010000001011110110
+     E*= 100010100110101001011110101111110010100010101010
+     C'= 10011100100111000001111101010110  
+</pre>
+a za treći
+<pre>
+     E = 111011110001010100000110100011110110100101011111
+     E*= 000001011110100110100010101111110101011000000100
+     C'= 11010101011101011101101100101011
+</pre>
+Sada za svaki <i>J</i><sub><i>j</i></sub>, <i>j</i> = 1, 2, ... , 8, 
+konstruiramo brojač koji broji za koliko parova <i>J</i><sub><i>j</i></sub> 
+zadovoljava uvjet iz Tvrdnje 1. Na primjer, u slučaju prvog para i 
+brojača za <i>J</i><sub>1</sub> imamo 
+<i>E</i>'<sub>1</sub> = 101111, <i>C</i>'<sub>1</sub> = 1001. Nadalje je 
+<p align=center>
+IN<sub>1</sub> (101111, 1001) = { 000000, 000111, 101000, 101111 }.
+</p>
+Budući da je <i>E</i><sub>1</sub> = 000000, konačno dobivamo 
+<p align=center>
+<i>J</i><sub>1</sub> 
+&isin; 
+test<sub>1</sub> (000000, 101111, 1001) = 
+{ 000000, 000111, 101000, 101111 }.
+</p>
+To znači da brojač povećamo za 1 na pozicijama 0, 7, 40 i 47. 
+Konačne vrijednosti svih 8 brojača, nakon što su obrađena sva tri 
+para, prikazane su u <a href="tablice/jtablice.html" target="_blank">tablicama</a>. 
+Vidimo da u svakom brojaču imamo jedinstvenu poziciju s brojem 3. 
+Te pozicije određuju bitove od 
+<i>J</i><sub>1</sub>, <i>J</i><sub>2</sub>, ... , <i>J</i><sub>8</sub>. Te pozicije 
+su redom; 47, 5, 19, 0, 24, 7, 7, 49, odnosno binarno 
+<p align=center>
+<i>J</i><sub>1</sub> = 101111 <br>    
+<i>J</i><sub>2</sub> = 000101 <br>
+<i>J</i><sub>3</sub> = 010011 <br>
+<i>J</i><sub>4</sub> = 000000 <br>
+<i>J</i><sub>5</sub> = 011000 <br>
+<i>J</i><sub>6</sub> = 000111 <br>
+<i>J</i><sub>7</sub> = 000111 <br>
+<i>J</i><sub>8</sub> = 110001
+</p>
+Sada pogledamo kako izgleda raspored bitova ključa u međuključu 
+<i>K</i><sub>3</sub>, te na osnovu toga rekonstruiramo 48 bitova 
+ključa <i>K</i>: 
+<pre><font size=3 color=990099>
+     0001101   0110001   01?01?0   1?00100
+     0101001   0000??0   111?11?   ?100011
+</font></pre>
+Upitnike imamo na onim mjestima koja ne sudjeluju u međuključu 
+<i>K</i><sub>3</sub>. Sada testiranjem preostalih 256 mogućnosti 
+dobivamo da je ključ (zapisan heksadecimalno, s paritetnim bitovima) 
+jednak 
+<p align=center><font color=990099>1A624C89520DEC46.</font></p><br>      
+U našem napadu na DES s 3 runde pošli smo od zahtjeva da je 
+<i>R'</i><sub>0</sub> = 00...0. Ova ideja se može poopćiti. 
+<p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Definicija 4: </b> Neka je <i>n</i> prirodan broj. 
+<em>n-rundna karakteristika</em> je niz oblika 
+<p align=center>
+<i>L'</i><sub>0</sub>, <i>R'</i><sub>0</sub>, 
+<i>L'</i><sub>1</sub>, <i>R'</i><sub>1</sub>, <i>p</i><sub>1</sub>, 
+... , 
+<i>L'</i><sub><i>n</i></sub>, <i>R'</i><sub><i>n</i></sub>, 
+<i>p</i><sub><i>n</i></sub> 
+</p>
+sa svojstvima: <br>
+&nbsp; &nbsp; (1) <i>L'</i><sub><i>i</i></sub> = 
+<i>R'</i><sub><i>i</i> -1</sub> za 1 
+&le; <i>i</i> 
+&le; <i>n</i>, <br>
+&nbsp; &nbsp; (2) Neka je 1 
+&le; <i>i</i> 
+&le; <i>n</i>, te 
+neka su <i>L</i><sub><i>i</i> -1</sub>, 
+<i>R</i><sub><i>i</i> -1</sub>, 
+<i>L</i>*<sub><i>i</i> -1</sub>, 
+<i>R</i>*<sub><i>i</i> -1</sub> izabrani tako da je 
+<i>L</i><sub><i>i</i> -1</sub> 
+&oplus; 
+<i>L</i>*<sub><i>i</i> -1</sub> =  
+<i>L'</i><sub><i>i</i> -1</sub> i  
+<i>R</i><sub><i>i</i> -1</sub> 
+&oplus; 
+<i>R</i>*<sub><i>i</i> -1</sub> = 
+<i>R'</i><sub><i>i</i> -1</sub>. Pretpostavimo da su
+<i>L</i><sub><i>i</i></sub>, 
+<i>R</i><sub><i>i</i></sub>, 
+<i>L</i>*<sub><i>i</i></sub>, 
+<i>R</i>*<sub><i>i</i></sub> dobiveni primjenom 
+jedne rudne DES-a. Tada je vjerojatnost da je  
+<i>L</i><sub><i>i</i></sub> 
+&oplus; 
+<i>L</i>*<sub><i>i</i></sub> =  
+<i>L'</i><sub><i>i</i></sub> i  
+<i>R</i><sub><i>i</i></sub> 
+&oplus; 
+<i>R</i>*<sub><i>i</i></sub> = 
+<i>R'</i><sub><i>i</i></sub> jednaka <i>p</i><sub><i>i</i></sub>. 
+     
+</font></td></tr></table>
+<p>
+
+U našem primjeru mi smo koristili 1-rundnu karakteristiku 
+<p align=center>
+<i>L'</i><sub>0</sub> = prozvoljno, 
+<i>R'</i><sub>0</sub> = 00000000<sub>16</sub>,  
+<i>L'</i><sub>1</sub> = <i>R'</i><sub>0</sub>,  
+<i>R'</i><sub>1</sub> = <i>L'</i><sub>0</sub>, 
+<i>p</i><sub>1</sub> = 1.
+</p>
+Jedna druga 1-rundna karakteristika je    
+<p align=center>
+<i>L'</i><sub>0</sub> = 00000000<sub>16</sub>, 
+<i>R'</i><sub>0</sub> = 60000000<sub>16</sub>,  
+<i>L'</i><sub>1</sub> = <i>R'</i><sub>0</sub>,  
+<i>R'</i><sub>1</sub> = 00808200<sub>16</sub>, 
+<i>p</i><sub>1</sub> = 0.21875.
+</p>
+       
+Biham i Shamir su pronašli 13-rundnu karakteristiku pomoću koje 
+se može razbiti DES (pronaći 48 bitova ključa) uz poznavanje 
+šifrata za 2<sup>47</sup> odabranih otvorenih tekstova. 
+Ukoliko nemamo mogućnosti koristiti napad "odabrani otvoreni tekst" 
+već samo "poznati otvoreni tekst", onda iz većeg broja parova 
+otvoreni tekst-šifrat moramo odabrati one korisne. Možda je 
+zanimljivo napomenuti da je procijenjeno da time broj potrebnih 
+DES operacija u napadu diferencijalnom kriptoanalizom postaje 
+približno 2<sup>55</sup>, što je sasvim usporedivo s brojem DES operacija 
+u napadu &quot;grubom silom&quot; uz jedan 
+poznati par otvoreni tekst-šifrat. 
+Broj ključeva koje treba testirati je 2<sup>56</sup>.
+Primijetimo da se taj
+broj može prepoloviti koristeći svojstvo 
+<i>e</i><sub><span style="text-decoration:
+overline"><i>K</i></span></sub>(<span style="text-decoration:
+overline"><i>x</i></span>) = 
+<span style="text-decoration: 
+overline"><i>e</i></span><sub><i>K</i></sub>(<i>x</i>), gdje  
+<span style="text-decoration: overline">&nbsp;&nbsp;</span> 
+označava komplement, pa se <i>K</i> i 
+<span style="text-decoration: overline"><i>K</i></span> 
+mogu testirati istovremeno.
+<p>
+Spomenimo da je za DES 
+sa 8, 10, 12 i 14 rundi potrebno poznavanje šifrata za 
+2<sup>14</sup>, 2<sup>24</sup>, 2<sup>31</sup>, odnosno  
+2<sup>39</sup> odabranih tekstova.  Dakle, ovo nam daje pravo
+objašnjenje zašto DES ima upravo 16 rundi.
+ 
+<p><br><br>
+
+<em>Linearnu kriptoanalizu</em> je uveo japanski kriptolog 
+<font color=009900>Mitsuru Matsui</font> 1993. godine i čini se da ova metoda 
+nije bila poznata tvorcima DES-a. 
+Ideja se sastoji u tome da iako bitovi ključa nisu linearne funkcije 
+otvorenog teksta i šifrata, neki se bitovi ključa mogu dobro 
+aproksimirati linearnom funkcijom. 
+<p>
+Označimo bitove otvorenog teksta s 
+P[1], P[2], ... , šifrata s C[1], C[2], ... , te ključa s 
+K[1], K[2], ... . Također uvedimo oznaku 
+<p align=center>
+A[<i>i</i><sub>1</sub>,<i>i</i><sub>2</sub>,...,<i>i</i><sub><i>k</i></sub>] =   
+A[<i>i</i><sub>1</sub>] 
+&oplus; 
+A[<i>i</i><sub>2</sub>] 
+&oplus;  ... 
+&oplus; 
+A[<i>i</i><sub><i>k</i></sub>]. </p>
+Želimo naći linearne jednadžbe oblika
+<p align=center>P[<i>i</i><sub>1</sub>,<i>i</i><sub>2</sub>,...,<i>i</i><sub><i>a</i></sub>] 
+&oplus; 
+C[<i>j</i><sub>1</sub>,<i>j</i><sub>2</sub>,...,<i>j</i><sub><i>b</i></sub>] =   
+K[<i>k</i><sub>1</sub>,<i>k</i><sub>2</sub>,...,<i>k</i><sub><i>c</i></sub>]
+</p>
+koje za slučajni otvoreni tekst i šifrat vrijede s vjerojatnošću 
+<i>p</i> &ne; 0.5. 
+Što je <i>p</i> dalje od 0.5, to bolje. Tada računamo lijevu stranu 
+za mnogo parova <i>otvoreni tekst-šifrat</i> i tako dobivamo očekivanu 
+vrijednost desne strane. Pretpostavimo da je u više pola slučajeva 
+na lijevoj strani dobivena 0. Ako je <i>p</i> &gt; 0.5, 
+onda za vjerojatnu 
+vrijednost uzimamo 0, a ako je <i>p</i> &lt; 0.5, onda uzimamo 1. 
+Tako dobivamo  
+jednu linearnu jednadžbu u bitovima ključa. Ako nađemo dovoljno takvih 
+jednadžbi, moći ćemo odrediti ključ. Postavlja se pitanje koliko 
+parova <i>otvoreni tekst-šifrat</i> treba uzeti. Odgovor je otprilike 
+|<i>p</i> - 0.5|<sup> -2</sup> parova. 
+Preciznije, Matsui je pokazao da ako uzmemo 
+|<i>p</i> - 0.5|<sup> -2</sup> parova, 
+vjerojatnost uspjeha je 97.7%, dok je za 
+2|<i>p</i> - 0.5|<sup> -2</sup> parova vjerojatnost uspjeha 99.8%. 
+<p>
+Kao primjer navedimo jednadžbu 
+<p align=center><i>L</i><sub>0</sub>[3,8,14,25] 
+&oplus; 
+<i>R</i><sub>0</sub>[17]
+&oplus; 
+<i>R</i><sub>3</sub>[3,8,14,25]
+&oplus; 
+<i>L</i><sub>3</sub>[17] =     
+<i>K</i><sub>1</sub>[26] 
+&oplus; 
+<i>K</i><sub>3</sub>[26], </p>
+za koju je Matsui pokazao da vrijedi s vjerojatnošću 0.695. 
+<p>
+
+Opišimo Matsuijevu konstrukciju.
+Za S-kutiju S<sub><i>j</i></sub>, <i>j</i> = 1, 2, ..., 8, 
+te cijele brojeve 0 &le; &alpha; &le; 63 i 0 &le; &beta; &le; 15,
+definiramo
+<p align=center>
+NS<sub><i>j</i></sub>(&alpha;, &beta;) =
+ |{ 0 &le; <i>x</i> &le; 63 : 
+<font size="+2">&oplus;</font><sub><i>i</i></sub> 
+(<i>x</i>[<i>i</i>] &middot; &alpha;[<i>i</i>])  =
+ <font size="+2">&oplus;</font><sub><i>i</i></sub> 
+(S<sub><i>j</i></sub>(<i>x</i>)[<i>i</i>] &middot; &beta;[<i>i</i>]) }|.
+</p>
+Ukoliko je NS<sub><i>j</i></sub>(&alpha;, &beta;) &ne; 32, onda možemo reći da postoji
+neka korelacija između ulaznih i izlaznih podataka od kutije S<sub><i>j</i></sub>. 
+Možda bismo očekivali
+da će NS<sub><i>j</i></sub>(&alpha;, &beta;) uvijek biti blizu 32. 
+No, to nije točno. Jedan dosta
+drastičan primjer odstupanja je
+<p align=center>
+ NS<sub>5</sub>(16, 15)= |{ 2,7,10,14,16, 24,28,29,37,40,59,62 }| =12.
+</p>
+Tu je vjerojatnost podudaranja
+ulaznih i izlaznih podataka samo <nobr>12/64 = 0.1875,</nobr> 
+što je dosta daleko od 0.5. Ovdje se radi o vezi
+između 2. bita ulaznog podatka u S<sub>5</sub>-kutiju, te sva četiri izlazna bita iz te kutije
+(jer je &alpha; = 16 = 010000<sub>2</sub>, &beta; = 15 = 1111<sub>2</sub>).
+Ako uzmemo u obzir kako funkcija proširenja <i>E</i> proširuje ulazne podatke, te
+kako permutacija <i>P</i> raspoređuje izlazne podatke, dobivamo sljedeće jednadžbe:
+<p align=center>
+ <i>R</i><sub>0</sub>[17] &oplus;  
+<i>K</i><sub>1</sub>[26] = <i>f</i>(<i>R</i><sub>0</sub>,<i>K</i><sub>1</sub>)[3,8,14,25] = 
+<i>L</i><sub>0</sub>[3,8,14,25] &oplus;  
+<i>R</i><sub>1</sub>[3,8,14,25], <br>
+ <i>R</i><sub>2</sub>[17] &oplus;  
+<i>K</i><sub>3</sub>[26] = <i>f</i>(<i>R</i><sub>2</sub>,<i>K</i><sub>3</sub>)[3,8,14,25] = 
+<i>L</i><sub>2</sub>[3,8,14,25] &oplus;  
+<i>R</i><sub>3</sub>[3,8,14,25]. 
+</p>
+Uzmemo li u obzir da je <i>L</i><sub>2</sub> = <i>R</i><sub>1</sub> i 
+<i>L</i><sub>3</sub> = <i>R</i><sub>2</sub>, iz ovih jednadžbi dobivamo
+upravo gore navedenu Matsuievu jednadžbu. Vjerojatnost da vrijedi Matsuieva jednadžba jednaka
+je zbroju vjerojatnosti da obje ove jednadžbe vrijede
+i vjerojatnosti da obje jednadžbe ne vrijede, a to je
+<p align=center>
+0.1875<sup>2</sup> + (1 - 0.1875)<sup>2</sup> &asymp; 0.6953 .
+</p>
+
+<p>
+
+Pomoću linearne kriptoanalize Matsui je opisao napad 
+&quot;poznati otvoreni tekst&quot; koji za razbijanje DES-a treba u prosjeku 
+2<sup>43</sup> otvorenih tekstova. Ovaj napad je implementiran 
+pomoću 12 radnih stanica i za otkrivanje ključa je trebalo 50 dana. 
+<p><br>
+
+No, ni diferencijalna ni linearna kriptoanaliza nisu razbile DES, 
+već su tu učinili brzi i jeftini čipovi. Naime, pokazalo se da je u 
+praksi lakše napraviti napad &quot;grubom silom&quot; s 2<sup>55</sup> 
+DES operacija, nego primijeniti napad linearnom kriptoanalizom 
+koji zahtjeva 2<sup>43</sup> poznatih parova otvoreni tekst-šifrat. 
+<p>
+U srpnju 1998., koristeći čipove i osobno računalo, Electronic 
+Frontier Foundation je napravio "DES Cracker". Koštao je 
+$250000, a za njegovu izradu je utrošeno godinu dana. DES Cracker 
+je razbio poruku šifriranu DES-om za 56 sati. Sagrađen je od 
+1536 čipova koji mogu testirati 88 milijardi ključeva po sekundi. 
+Inače, u samoj konstrukciji ovog stroja nema ništa osobito novo. 
+Sličnih prijedloga bilo je i ranije, no EFF je prvi to sproveo u 
+djelo i tek nakon izrade DES Crackera moglo se definitivno 
+ustvrditi da se DES nije siguran kriptosustav.    
+
+<p>
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="modovi.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="josblok.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../kript.html">Web stranica kolegija <em>Kriptografija</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+<script type="text/javascript" src="https://web.math.pmf.unizg.hr/lib/js/accessibility_black.min.js"></script>
+
+</body>
+</html>
+
+

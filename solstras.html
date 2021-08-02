@@ -1,0 +1,570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Solovay-Strassenov test</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Testovi prostosti i metode 
+faktorizacije - Solovay-Strassenov test">
+<meta name="keywords" content="prosti brojevi, test prostosti, 
+prim broj, primalitet, Solovay, Strassen, kvadratni ostatak, 
+Eulerov pseudoprosti broj, Monte Carlo algoritam">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="pseudoprosti.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="miller.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+<p>
+
+<hr size=2 noshade>
+
+
+<a name="4.2"></a>
+<h2 align=center style="color: rgb(128,0,0)">4.2. Solovay-Strassenov test</h2>
+
+Neka je <i>p</i> neparan prost broj. Za broj <i>b</i>, koji je 
+relativno prost s <i>p</i>, kažemo da je <em>kvadratni ostatak</em> 
+modulo <i>p</i> ako kongruencija <i>x</i><sup>2</sup> 
+&equiv; <i>b</i> 
+(mod <i>p</i>) ima rješenja. U protivnom, kažemo da je <i>b</i> 
+kvadratni neostatak.
+<em>Legendreov simbol</em> 
+<img src="slike/lagp.gif" alt="(b/p)" ALIGN=MIDDLE> se definira ovako: 
+<img src="slike/lagp.gif" alt="(b/p)" ALIGN=MIDDLE> = 1 ako je <i>b</i> 
+kvadratni ostatak modulo <i>p</i>; 
+<img src="slike/lagp.gif" alt="(b/p)" ALIGN=MIDDLE> = -1 ako je <i>b</i> 
+kvadratni neostatak modulo <i>p</i>; 
+<img src="slike/lagp.gif" alt="(b/p)" ALIGN=MIDDLE> = 0 ako <i>p</i> dijeli 
+<i>b</i>. 
+<p>
+Neka je <i>n</i> neparan broj i <i>n</i> = <i>p</i><sub>1</sub> 
+&middot; &middot; &middot; <i>p</i><sub><i>k</i></sub> njegov rastav na 
+(ne nužno različite) proste faktore. 
+Tada se <em>Jacobijev simbol</em> 
+<img src="slike/lagn.gif" alt="(b/n)" ALIGN=MIDDLE> definira sa 
+<img src="slike/lagn.gif" alt="(b/n)" ALIGN=TOP> = 
+<img src="slike/lagp1.gif" alt="(b/p_1)...(b/p_k)" ALIGN=TOP>  
+Ako je <i>n</i> prost, onda se Jacobijev i Legendreov simbol 
+podudaraju. Važno svojstvo Legendreovog simbola je 
+<em>Eulerov kriterij</em>: 
+<p align=center> 
+<img src="slike/sol1.gif" alt="(b/p)=b^((p-1)/2) (mod p)" ALIGN=TOP> 
+</p>
+
+<p>
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Definicija:</b> Ako je <i>n</i> neparan složen broj, te <i>b</i> 
+cijeli broj takav da je (<i>b</i>,<i>n</i>) = 1 i vrijedi 
+<p align=center>
+<img src="slike/sol2.gif" alt="(b/n)=b^((n-1)/2)" ALIGN=TOP> 
+</p>
+gdje je <img src="slike/lagn2.gif" alt="(b/n)" ALIGN=MIDDLE> 
+Jacobijev simbol, onda <i>n</i> zovemo 
+<em>Eulerov pseudoprosti broj u bazi <i>b</i></em> (ili 
+epsp(<i>b</i>)).
+
+</font></td></tr></table>
+<p>
+
+Kvadriranjem relacije (**) dobivamo <i>b</i><sup><i>n</i> -1</sup> 
+&equiv; 1 (mod <i>n</i>), 
+tj. relaciju (*). To znači da je svaki epsp(<i>b</i>) ujedno i psp(<i>b</i>). Međutim , obrat ove tvrdnje ne vrijedi.  
+<p>
+<b>Primjer 4.2:</b> Vidjeli smo u Primjeru 4.1 da je 91 pseudoprost u 
+bazi 3. Međutim, 
+<p align=center>
+3<sup>45</sup>  
+&equiv;  
+729<sup>7</sup> <sup><b>.</b></sup> 27
+&equiv; 27 (mod 91), 
+</p> 
+pa 91 nije Eulerov pseudoprost broj u bazi 3. Ipak, 91 jest Eulerov 
+pseudoprost u bazi 10 jer je 
+<p align=center>
+10<sup>45</sup>  
+&equiv;  
+1000<sup>15</sup> 
+&equiv; (-1)<sup>15</sup>
+&equiv; -1 (mod 91) 
+&nbsp; &nbsp; i &nbsp; &nbsp; (<sup>10</sup> / <sub>91</sub>) = -1.  
+</p> <br>
+
+Neka je <b>Z</b><sub><i>n</i></sub>*  
+= { <i>b</i> &isin;  
+<b>Z</b><sub><i>n</i></sub> : (<i>b</i>,<i>n</i>) = 1}. 
+Tada je |<b>Z</b><sub><i>n</i></sub>*| = 
+&phi;(<i>n</i>). Neka je 
+nadalje 
+<p align=center>
+<i>P<sub>n</sub></i> = { <i>b</i> &isin; 
+<b>Z</b><sub><i>n</i></sub>* : 
+<img src="slike/lagn.gif" alt="(b/n)" ALIGN=MIDDLE> 
+&equiv;  
+<i>b</i><sup>(<i>n</i> -1)/2</sup> (mod <i>n</i>) }.
+</p>
+Sljedeći teorem predstavlja osnovu za Solovay-Strassenov test prostosti. 
+
+<p>
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Teorem 4.2:</b> Za sve neparne složene brojeve <i>n</i> vrijedi 
+|<i>P<sub>n</sub></i>| 
+&le;  
+&phi;(<i>n</i>)/2.  
+
+</font></td></tr></table>
+<p>
+
+Uočimo važnu razliku između Teorema 4.1.3) i 4.2. Naime, kod Eulerovih 
+pseudoprostih brojeva nema analogona Carmichaelovih brojeva, već za 
+svaki složen broj <i>n</i>, relacija (**) nije zadovoljena za barem 
+pola mogućih baza. 
+<p>
+Prije dokaza Teorema 4.2, dokažimo dvije leme. Koristit ćemo oznaku: 
+&nu;<sub><i>m</i></sub>(<i>t</i>) = 
+najveći cijeli broj <i>k</i> takav da <i>m<sup>k</sup></i> 
+dijeli <i>t</i>.  
+
+<p>
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Lema 4.1:</b> Neka je <i>n</i> = 
+<i>p</i><sub>1</sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/sub1.gif" alt="1" ALIGN=TOP>
+<sup><b>. . . </b></sup> 
+<i>p</i><sub><i>r</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subr.gif" alt="r" ALIGN=TOP> neparan broj, 
+te neka je 
+&nu; = min { 
+&nu;<sub>2</sub> 
+(<i>p<sub>i</sub></i>) : <i>i</i> = 1, ... , <i>r</i> },  
+<i>s</i> = &prod;<sub><i>i</i></sub> 
+(<i>m</i>, &phi;(<i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP>). 
+Tada vrijedi: 
+<p>
+(1) &nbsp; Kongruencija <i>x<sup>m</sup></i> 
+&equiv; 1 (mod <i>n</i>) 
+ima točno <i>s</i> rješenja.
+<p>
+(2) &nbsp; Kongruencija <i>x<sup>m</sup></i> 
+&equiv; -1 (mod <i>n</i>) 
+ima rješenja ako i samo ako je 
+&nu;<sub>2</sub>(<i>m</i>) &lt; &nu;.
+<p>
+(3) &nbsp; Ako kongruencija <i>x<sup>m</sup></i> 
+&equiv; -1 (mod <i>n</i>) 
+ima rješenja, onda ih ima točno <i>s</i>.
+
+</font></td></tr></table>
+<p>
+
+<b>Dokaz:</b> Neka je <i>g<sub>i</sub></i> primitivni korijen modulo 
+<i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP>, 
+tj. <i>g<sub>i</sub><sup>a</sup></i> 
+&#8802; 
+1 (mod <i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP>) 
+za <i>a</i> &lt; &phi;(<i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP>) = 
+<i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP> 
+(1 - 1/<i>p<sub>i</sub></i> ).  
+To znači da za svaki <i>x</i> 
+&isin; 
+{ 1, ... , 
+<i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP> - 1 } 
+postoji <i>j</i> takav da je 
+<i>g<sub>i</sub><sup>j</sup></i> 
+&equiv; <i>x</i> 
+(mod <i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP>). 
+Označimo taj <i>j</i> s 
+ind<sub><i>i</i></sub> <i>x</i>. 
+Sada je kongruencija 
+<i>x<sup>m</sup></i> 
+&equiv; <i>c</i> (mod <i>n</i>)
+ekvivalentna sustavu kongruencija 
+<p align=center>
+<i>m</i> &middot; ind<sub><i>i</i></sub> <i>x</i> 
+&equiv;  
+ind<sub><i>i</i></sub> <i>c</i> (mod 
+&phi;(<i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP>)), 
+&nbsp; za <i>i</i> = 1, ... , <i>r</i>. 
+&nbsp; &nbsp; &nbsp; &nbsp; (4.1)
+</p>
+
+Za <i>c</i> = 1 je ind<sub><i>i</i></sub> 1 = 0, pa sustav (4.1) postaje 
+<p align=center>
+<i>m</i> &middot; ind<sub><i>i</i></sub> <i>x</i> 
+&equiv;  
+0 (mod 
+&phi;(<i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP>)), 
+&nbsp; za <i>i</i> = 1, ... , <i>r</i>. 
+</p>
+Ovo su linearne kongruencije i <i>i</i>-ta ima 
+(<i>m</i>, &phi;(<i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP>)) 
+rješenja. Stoga je ukupan broj rješenja sustava jednak <i>s</i>.  
+
+<p>
+Za <i>c</i> = -1 je ind<sub><i>i</i></sub> (-1) =
+&phi;(<i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP>)/2, 
+pa sustav (4.1) postaje
+<p align=center>
+<i>m</i> <sup><b>.</b></sup> ind<sub><i>i</i></sub> <i>x</i> 
+&equiv;  
+&phi;(<i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP>)/2 (mod 
+&phi;(<i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP>)), 
+&nbsp; za <i>i</i> = 1, ... , <i>r</i>. 
+</p>
+Sada iz svojstava linearnih kongruencija zaključujemo da ako
+ovaj sustav ima rješenja, onda ih ima <i>s</i>, a nužan i
+dovoljan uvjet za postojanje rješenja je da
+(<i>m</i>,&phi;(<i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP>))
+dijeli &phi;(<i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP>)/2. 
+Odavde imamo da 
+(2<img src="symbols/supnu.gif" alt="nu" ALIGN=TOP><sup><font size=-2>2</font>(<i>m</i>)</sup> <i>m</i><sub>1</sub>, 
+<i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><sup><font size=-2><i>i</i></font> -<font size=-1>1</font></sup> <sup><b>.</b></sup> 
+2<img src="symbols/supnu.gif" alt="nu" ALIGN=TOP><sup><font size=-2>2</font>(<i>p<sub>i</sub></i> -1)</sup> <i>q</i><sub>1</sub>) dijeli 
+<i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><sup><font size=-2><i>i</i></font> -1</sup> <sup><b>.</b></sup> 
+2<img src="symbols/supnu.gif" alt="nu" ALIGN=TOP><sup><font size=-2>2</font>(<i>p<sub>i</sub></i> -1)-1</sup> <i>q</i><sub>1</sub>, 
+gdje su <i>m</i><sub>1</sub> i <i>q</i><sub>1</sub> neparni brojevi. 
+No, ovo je očito ekvivalentno s 
+&nu;<sub>2</sub>(<i>m</i>) 
+&lt; &nu;<sub>2</sub>(<i>p<sub>i</sub></i>-1) za 
+<i>i</i> = 1, ... , <i>r</i>, tj. s  
+&nu;<sub>2</sub>(<i>m</i>) 
+&lt; &nu;. 
+<p align=right> &#9632; </p>
+<p><br>
+
+<p>
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Lema 4.2:</b> Neka je <i>n</i> neparan broj, te 
+<i>p</i><sub>1</sub>, ..., <i>p</i><sub><i>r</i></sub> 
+svi različiti prosti faktori od <i>n</i>. Tada je
+<p align=center><img src="slike/sol3.gif" 
+alt="|P_n|=delta_n*((n-1)/2,p_i-1)" ALIGN=TOP></p> 
+gdje je 
+&delta;<sub><i>n</i></sub> 
+&isin;  
+{1/2, 1, 2}. 
+
+</font></td></tr></table>
+<p>
+
+<b>Dokaz:</b> Neka je
+
+<p align=center><img src="slike/sol4.gif" 
+alt="K_n+-, L_n+-, M_n+-" ALIGN=TOP></p> 
+
+Tada je <i>P</i><sub><i>n</i></sub> = 
+<i>M</i><sub><i>n</i></sub><sup>+</sup>. Iz Leme 4.1 imamo: 
+|<i>K</i><sub><i>n</i></sub><sup>+</sup>| = 
+&prod;<sub><i>i</i></sub> 
+((<i>n</i>-1)/2, <i>p</i><sub><i>i</i></sub> -1). 
+S druge strane, <i>M</i><sub><i>n</i></sub><sup>+</sup> = 
+(<i>K</i><sub><i>n</i></sub><sup>+</sup> 
+&cap; 
+<i>L</i><sub><i>n</i></sub><sup>+</sup>) 
+&cup; 
+(<i>K</i><sub><i>n</i></sub><sup>-</sup>
+&cap; 
+<i>L</i><sub><i>n</i></sub><sup>-</sup>). 
+Ako je 
+<nobr><i>K</i><sub><i>n</i></sub><sup>-</sup>
+&cap; 
+<i>L</i><sub><i>n</i></sub><sup>-</sup> = 
+&empty;,</nobr> 
+onda je 
+<nobr>|<i>M</i><sub><i>n</i></sub><sup>+</sup>| = 
+|<i>K</i><sub><i>n</i></sub><sup>+</sup> 
+&cap; 
+<i>L</i><sub><i>n</i></sub><sup>+</sup>|.</nobr> 
+Ako je 
+<nobr><i>K</i><sub><i>n</i></sub><sup>-</sup>
+&cap; 
+<i>L</i><sub><i>n</i></sub><sup>-</sup> 
+&ne;   
+&empty;</nobr>
+i <nobr><i>b</i><sub>0</sub> 
+&isin;   
+<i>K</i><sub><i>n</i></sub><sup>-</sup>
+&cap; 
+<i>L</i><sub><i>n</i></sub><sup>-</sup>,</nobr> onda je preslikavanje 
+<nobr><i>f</i> : 
+<i>K</i><sub><i>n</i></sub><sup>+</sup>
+&cap; 
+<i>L</i><sub><i>n</i></sub><sup>+</sup> 
+&rarr;   
+<i>K</i><sub><i>n</i></sub><sup>-</sup>
+&cap; 
+<i>L</i><sub><i>n</i></sub><sup>-</sup></nobr> 
+definirano s <i>f</i>(<i>b</i>) = <i>bb</i><sub>0</sub> 
+bijekcija, pa je 
+<nobr>|<i>M</i><sub><i>n</i></sub><sup>+</sup>| = 
+2|<i>K</i><sub><i>n</i></sub><sup>+</sup> 
+&cap; 
+<i>L</i><sub><i>n</i></sub><sup>+</sup>|.</nobr> 
+Na isti način, iz relacije 
+<nobr><i>K</i><sub><i>n</i></sub><sup>+</sup> = 
+(<i>K</i><sub><i>n</i></sub><sup>+</sup> 
+&cap; 
+<i>L</i><sub><i>n</i></sub><sup>+</sup>) 
+&cup; 
+(<i>K</i><sub><i>n</i></sub><sup>+</sup>
+&cap; 
+<i>L</i><sub><i>n</i></sub><sup>-</sup>)</nobr> slijedi  
+<nobr>|<i>K</i><sub><i>n</i></sub><sup>+</sup> 
+&cap; 
+<i>L</i><sub><i>n</i></sub><sup>+</sup>| =  
+|<i>K</i><sub><i>n</i></sub><sup>+</sup>|</nobr> ako je  
+<nobr><i>K</i><sub><i>n</i></sub><sup>+</sup>
+&cap; 
+<i>L</i><sub><i>n</i></sub><sup>-</sup> = 
+&empty;, 
+te |<i>K</i><sub><i>n</i></sub><sup>+</sup> 
+&cap; 
+<i>L</i><sub><i>n</i></sub><sup>+</sup>| =  
+1/2 |<i>K</i><sub><i>n</i></sub><sup>+</sup>|</nobr> ako je  
+<nobr><i>K</i><sub><i>n</i></sub><sup>+</sup>
+&cap; 
+<i>L</i><sub><i>n</i></sub><sup>-</sup> 
+&ne;   
+&empty;.</nobr>  
+<br>
+Stoga je zaista |<i>P</i><sub><i>n</i></sub>|= 
+|<i>M</i><sub><i>n</i></sub><sup>+</sup>|= 
+&delta;<sub><i>n</i></sub>     
+|<i>K</i><sub><i>n</i></sub><sup>+</sup>|, gdje je
+&delta;<sub><i>n</i></sub> 
+&isin;  
+{1/2, 1, 2}. 
+<p align=right> &#9632; </p>
+<p><br>
+
+
+<b>Dokaz Teorema 4.1:</b> Neka je <i>n</i> = 
+<img src="slike/palfa2.gif" alt="p_1^a_1...p_r^a_r" ALIGN=TOP>.
+Iz Leme 4.2 slijedi
+
+<p align=center><img src="slike/sol5.gif" 
+alt="|P_n|/phi(n)=  (4.2)" ALIGN=TOP></p> 
+
+Ako je 
+&alpha;<sub><i>i</i></sub> 
+&ge; 2 
+za neki <i>i</i>, onda je desna strana od
+(4.2) &nbsp; &le;  
+&delta;<sub><i>n</i></sub>/3  
+&le; 2/3. 
+Skup <i>P</i><sub><i>n</i></sub> je
+jezgra homomorfizma <nobr><i>h</i><sub><i>n</i></sub> : 
+<b>Z</b><sub><i>n</i></sub>* &rarr;  
+<b>Z</b><sub><i>n</i></sub>*</nobr> 
+definiranog s <nobr><i>h</i><sub><i>n</i></sub>(<i>a</i>) = 
+(<i>a</i>/<i>n</i>) <i>a</i><sup>(<i>n</i>-1)/2</sup> mod <i>n</i>,</nobr> pa
+je <i>P</i><sub><i>n</i></sub> podgrupa od 
+<b>Z</b><sub><i>n</i></sub>*,  
+a zbog |<i>P</i><sub><i>n</i></sub>| &lt;
+&phi;(<i>n</i>) je 
+prava podgrupa od 
+<b>Z</b><sub><i>n</i></sub>*. 
+Stoga je 
+|<i>P<sub>n</sub></i>| 
+&le; 
+&phi;(<i>n</i>)/2.   
+
+<p>
+
+Sada možemo pretpostaviti da je 
+&alpha;<sub><i>i</i></sub> = 1,
+tj. <i>n</i> = <i>p</i><sub>1</sub> &middot; &middot; &middot;  
+<i>p</i><sub><i>r</i></sub>, <i>r</i> 
+&ge; 2.
+Pretpostavimo da tvrdnja teorema ne vrijedi. Tada bi bilo 
+<i>P</i><sub><i>n</i></sub> = 
+<b>Z</b><sub><i>n</i></sub>*. 
+Neka je <i>g</i> primitivni korijen modulo <i>p</i><sub>1</sub> 
+(ili bilo koji kvadratni neostatak modulo <i>p</i><sub>1</sub>). 
+Po Kineskom teoremu o ostatcima, možemo naći <i>a</i> 
+&isin; 
+<b>Z</b><sub><i>n</i></sub>*  
+takav da je <i>a</i> 
+&equiv; <i>g</i> 
+(mod <i>p</i><sub>1</sub>) i <i>a</i> 
+&equiv; 1 
+(mod <i>n</i>/<i>p</i><sub>1</sub>). Budući da je
+<b>Z</b><sub><i>n</i></sub>* = 
+<i>P</i><sub><i>n</i></sub>, to je 
+<i>a</i><sup>(<i>n</i>-1)/2</sup> 
+&equiv; (<i>a</i>/<i>n</i>) 
+(mod <i>n</i>). Međutim, (<i>a</i>/<i>n</i>) = 
+(<i>a</i>/<i>p</i><sub>1</sub>) 
+(<i>a</i>/(<i>n</i>/<i>p</i><sub>1</sub>)) = 
+(<i>g</i>/<i>p</i><sub>1</sub>) = -1. Zato je
+<i>a</i><sup>(<i>n</i>-1)/2</sup> 
+&equiv; -1 
+(mod <i>n</i>/<i>p</i><sub>1</sub>), što je u
+suprotnosti s <i>a</i> &equiv; 1 
+(mod <i>n</i>/<i>p</i><sub>1</sub>). 
+<p align=right> &#9632; </p>
+<p><br>
+
+<p>
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Korolar 4.1:</b> Neka je 
+<i>n</i> &equiv; 3 
+(mod 4) složen broj s <i>r</i> različitih prostih faktora. Tada je
+<p align=center> 
+|<i>P</i><sub><i>n</i></sub>| 
+&le;  
+&phi;(<i>n</i>)/2<sup><i>r</i> -1</sup>.
+</p> 
+
+</font></td></tr></table>
+<p>
+
+<b>Dokaz:</b> Iz relacije (4.2) imamo:
+
+<p align=center>
+<img src="slike/sol6.gif" 
+alt="|P_n|/phi(n) <= 1/2^(r-1)" ALIGN=TOP>
+</p>
+<p align=right> &#9632; </p>
+<p><br><br>
+
+
+<h3 align=center>Solovay-Strassenov test prostosti:</h3>
+Neka je <i>n</i> neparan broj za kojeg želimo ustanoviti 
+da li je prost ili složen. Odaberimo na slučajan način 
+<i>k</i> brojeva <i>b</i> takvih da je 0 &lt; <i>b</i> &lt; <i>n</i>. 
+Za svaki od tih <i>b</i>-ova izračunamo
+obje strane od (**). Za računanje &nbsp; 
+<i>b</i><sup>(<i>n</i>-1)/2</sup> mod <i>n</i> &nbsp;
+treba O(log<sup>3</sup> <i>n</i>) operacija metodom kvadriraj i
+množi. Za
+računanje Jacobijevog simbola 
+(b/n), koristeći
+kvadratni zakon reciprociteta, treba 
+O(log<sup>2</sup> <i>n</i>) operacija. 
+Ako ova dva broja nisu kongruentna modulo <i>n</i>, onda
+znamo da je <i>n</i> složen i test staje. Inače uzmemo idući
+<i>b</i>. Ako <i>n</i> prođe test (**) za <i>k</i> različitih 
+<i>b</i>-ova, onda je
+vjerojatnost da je <i>n</i> složen 
+&le;  
+1/2<sup><i>k</i></sup>. 
+Stoga, ako je <i>k</i> dovoljno velik, <i>n</i> proglašavamo 
+"<em>vjerojatno prostim</em>".
+U praksi se uzima <i>k</i> = 50 ili <i>k</i> = 100 
+(2<sup>-50</sup> 
+&approx; 10<sup>-15</sup>, 
+2<sup>-100</sup> 
+&approx; 10<sup>-30</sup>).
+
+<p>
+
+Solovay-Strassenov test je primjer tzv. <em>Monte Carlo
+algoritma</em> koji uvijek daje odgovor, ali on može biti
+netočan. Drugi tip vjerojatnosnog algoritma je <em>Las Vegas
+algoritam</em> koji ne daje uvijek odgovor, ali kada ga da, onda je
+odgovor sigurno točan. Primjer takvog algoritma smo vidjeli
+kod faktorizacije RSA modula <i>n</i> ako je poznat tajni eksponent
+<i>d</i>.
+
+<p><br>
+
+<b>Napomena:</b> Navest ćemo svojstva Jacobijevog simbola koja se 
+koriste u njegovom računanju: <p>
+
+&nbsp; &nbsp; (1) &nbsp; 
+<i>a</i> &equiv; <i>b</i> 
+(mod <i>n</i>) &nbsp; &rArr; &nbsp; 
+(<i>a</i>/<i>n</i>) = (<i>b</i>/<i>n</i>) 
+<p>
+&nbsp; &nbsp; (2) &nbsp; 
+(-1/n) = (-1)<sup>(<i>n</i> -1)/2</sup>, &nbsp; 
+(2/n) = (-1)<sup>(<i>n</i><img src="symbols/sup2.gif" alt="2"> -1)/8</sup>  
+<p>
+&nbsp; &nbsp; (3) &nbsp; 
+(<i>ab</i>/<i>n</i>) = (<i>a</i>/<i>n</i>) (<i>b</i>/<i>n</i>) 
+<p>
+&nbsp; &nbsp; (4) &nbsp; (<i>m</i>/<i>n</i>) = - 
+(<i>n</i>/<i>m</i>) ako je <i>m</i> 
+&equiv; <i>n</i> 
+&equiv; 3 (mod 4), a (<i>m</i>/<i>n</i>) = (<i>n</i>/<i>m</i>) 
+inače.
+
+<p>
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="pseudoprosti.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="miller.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../kript.html">Web stranica kolegija <em>Kriptografija</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+<script type="text/javascript" src="https://web.math.pmf.unizg.hr/lib/js/accessibility_black.min.js"></script>
+
+</body>
+</html>
+
+

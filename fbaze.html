@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Faktorizacija - Faktorske baze</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Testovi prostosti i metode 
+faktorizacije - Faktorske baze">
+<meta name="keywords" content="faktorizacija, faktorske baze, 
+Fermatova faktorizacija">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<b><font size="-1" face="Verdana">
+<a href="faktor.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="verizni.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+<p>
+
+<hr size=2 noshade>
+
+
+<a name="4.5"></a>
+<h2 align=center style="color: rgb(128,0,0)">4.5. Faktorske baze</h2>
+
+
+Ako je <i>n</i> produkt dva bliska broja, onda postoji jednostavna
+metoda, tzv. <em>Fermatova faktorizacija</em>, za faktorizaciju od
+<i>n</i>. Metoda se zasniva na činjenici da je <i>n</i> tada razlika
+kvadrata dva broja, od kojih je jedan jako mali. Naime, ako je
+<i>n</i> = <i>ab</i>, onda je <i>n</i> = <i>t</i><sup>2</sup> - 
+<i>s</i><sup>2</sup>, gdje je <i>t</i> = (<i>a+b</i>)/2, 
+<i>s</i> = (<i>a-b</i>)/2. Ako su <i>a</i> i <i>b</i> bliski, 
+onda je <i>s</i> mali, a <i>t</i> je samo malo veći od 
+&radic;<i>n</i>.
+
+<p>
+
+<b>Primjer 4.4:</b> Neka je <i>n</i> = 200819. Imamo: 
+<nobr>&lfloor;&radic;200819&rfloor;</nobr> + 1 = 449. 
+Sada je 449<sup>2</sup> - 200819 = 782, 
+što nije kvadrat. Pokušajmo sa <i>t</i> = 450. Imamo:
+<nobr>450<sup>2</sup> - 200819 = 1681 = 41<sup>2</sup>,</nobr> pa je 
+200819 = 450<sup>2</sup> - 41<sup>2</sup> = 
+(450 + 41)(450 - 41) = 491 <b>&middot;</b> 409.
+
+<p>
+
+Poopćenje ove ideje dovodi do vrlo efikasne metode
+faktorizacije.
+<p>
+
+<table align=center border=1 width="95%" cellpadding=15> 
+<tr><td bgcolor="FFFFCC">
+<font face="Arial,Helvetica,sans-serif">
+
+<b>Definicija:</b> <em>Faktorska baza</em> je skup 
+<font face="Brush Script MT,Script,Times New Roman">B</font>
+= {<i>p</i><sub>1</sub>, <i>p</i><sub>2</sub>, ... , 
+<i>p</i><sub><i>k</i></sub>} različitih prostih brojeva, s time
+da može biti <i>p</i><sub>1</sub> = -1. Reći ćemo da je kvadrat 
+cijelog broja <i>b</i> 
+<font face="Brush Script MT,Script,Times New Roman">B</font>-<em>broj</em> 
+(za dani <i>n</i>) ako se najmanji ostatak
+po apsolutnoj vrijednosti od <i>b</i><sup>2</sup> modulo <i>n</i> 
+može napisati kao produkt brojeva iz 
+<font face="Brush Script MT,Script,Times New Roman">B</font>.
+
+</font></td></tr></table>
+<p><br> 
+
+<h3 align=center>Algoritam faktorske baze:</h3>
+
+Odaberimo prirodan broj
+<i>y</i> &quot;srednje veličine&quot; (npr. ako je 
+<i>n</i> &asymp; 
+10<sup>50</sup>, uzmimo <i>y</i> 
+&asymp; 10<sup>6</sup>). 
+Neka je <font face="Brush Script MT,Script,Times New Roman">B</font> = 
+{<i>p</i> : <i>p</i> prost, <i>p</i> 
+&le; <i>y</i>} 
+&cup; {-1}. Izaberimo na 
+slučajan način mnogo <i>b</i><sub><i>i</i></sub>-ova, te 
+pokušajmo prikazati <i>b</i><sub><i>i</i></sub><sup>2</sup> 
+mod <i>n</i> (apsolutno najmanji ostatak) kao produkt elemenata iz
+<font face="Brush Script MT,Script,Times New Roman">B</font>. 
+Kad dobijemo dovoljno mnogo 
+<font face="Brush Script MT,Script,Times New Roman">B</font>-brojeva
+među tim ostatcima (dovoljno je 
+&pi;(<i>y</i>) + 2), 
+pogledajmo odgovarajuće vektore parnosti eksponenata. 
+To su vektori u 
+(<b>Z</b><sub>2</sub>)<sup><font=-1>&pi;(<i>y</i>)+1</font></sup>. 
+Budući da tih vektora ima više od
+dimenzije pripadnog vektorskog prostora, to su oni linearno
+zavisni. Pronađemo njihovu netrivijalnu linearnu kombinaciju
+koja daje nul-vektor. Drugim riječima, nađemo podskup
+<i>b</i><sub><i>i</i></sub>-ova takav da je suma pripadnih vektora 
+jednaka nul-vektoru. <br>
+
+Neka je sada <i>b</i> = 
+&prod;<sub><i>i</i></sub> 
+<i>b</i><sub><i>i</i></sub> mod <i>n</i>, 
+<i>c</i> = 
+&prod;<sub><i>j</i></sub> 
+<i>p</i><sub><i>j</i></sub> <img src="symbols/supgamma.gif" alt="gamma" ALIGN=TOP><img src="symbols/subj.gif" alt="j" ALIGN=TOP> mod <i>n</i>, 
+gdje je <i>b</i><sub><i>i</i></sub><sup>2</sup> mod <i>n</i> = 
+&prod;<sub><i>j</i></sub> 
+<i>p</i><sub><i>j</i></sub> <img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP><img src="symbols/subj.gif" alt="j" ALIGN=TOP>, 
+&gamma;<sub><i>j</i></sub> = 
+(&sum;<sub><i>i</i></sub> 
+&alpha;<sub><i>ij</i></sub>)/2.
+Tada je <i>b</i><sup>2</sup> 
+&equiv;  
+<i>c</i><sup>2</sup> mod <i>n</i>. 
+Ako je <i>b</i> &#8802;  
+&plusmn;<i>c</i> (mod <i>n</i>), 
+onda izračunamo (<i>b</i> + <i>c</i>, <i>n</i>) i to je netrivijalni 
+faktor od <i>n</i>.
+Ako je 
+<i>b</i> &equiv; 
+&plusmn;<i>c</i> (mod <i>n</i>), onda odaberemo neki drugi 
+linearno nezavisni podskup ili nađemo još 
+<font face="Brush Script MT,Script,Times New Roman">B</font>-brojeva, pa ponovimo 
+postupak.
+
+<p><br>
+
+<b>Primjer 4.5:</b> Neka je <i>n</i> = 1829 i uzmimo za 
+<i>b</i><sub><i>i</i></sub> brojeve 
+oblika &lfloor;&radic;1829<i>k</i>&rfloor;  i 
+&lfloor;&radic;1829<i>k</i>&rfloor; + 1, 
+<i>k</i> = 1, 2, ...  takve da je 
+<i>b</i><sub><i>i</i></sub><sup>2</sup> mod <i>n</i> produkt prostih
+brojeva manjih od 14 (šansa da je 
+<i>b</i><sub><i>i</i></sub><sup>2</sup> mod <i>n</i> 
+produkt malih prostih brojeva je veća ako je taj broj i sam mali, 
+a to će biti ako je <i>b</i><sub><i>i</i></sub> 
+&asymp; 
+&radic;<i>kn</i>). 
+Za takve <i>b</i><sub><i>i</i></sub> napišemo 
+<i>b</i><sub><i>i</i></sub><sup>2</sup> mod <i>n</i> = 
+&prod;<sub><i>j</i></sub> 
+<i>p</i><sub><i>j</i></sub> <img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP><img src="symbols/subj.gif" alt="j" ALIGN=TOP>
+i tabeliramo 
+<img src="symbols/alpha.gif" alt="alpha" ALIGN=TOP><sub><i>ij</i></sub>-ove. 
+Nakon što smo uzeli <i>k</i> = 
+1, 2, 3, 4, dobili smo sljedeću tablicu kojoj se elementi 
+<img src="symbols/alpha.gif" alt="alpha" ALIGN=TOP><sub><i>ij</i></sub>-ovi:
+
+
+<table align=center border=0 cellspacing=10 cellpadding=5> 
+<tr>
+<td> <b><i>b</i><sub><i>i</i></sub></b> </td>
+<td> &nbsp; </td> <td> <b>-1</b> </td> <td> <b>2</b> </td> 
+<td> <b>3</b> </td> <td> <b>5</b> </td> <td> <b>7</b> </td> 
+<td> <b>11</b> </td> <td> <b>13</b> </td> 
+</tr>
+<tr> 
+<td> 42 </td> <td> &nbsp; </td> <td> 1 </td> <td> &nbsp; </td> 
+<td> &nbsp; </td> 
+<td> 1 </td> <td> &nbsp; </td> <td> &nbsp; </td> <td> 1 </td> 
+</tr>
+<tr>
+<td> 43 </td> <td> &nbsp; </td> <td> &nbsp; </td> <td> 2 </td> 
+<td> &nbsp; </td> <td> 1 </td> <td> &nbsp; </td> <td> &nbsp; </td>
+<td> &nbsp; </td>  
+</tr>
+<tr>
+<td> 61 </td> <td> &nbsp; </td> <td> &nbsp; </td> <td> &nbsp; </td> 
+<td> 2 </td> <td> &nbsp; </td> <td> 1 </td> <td> &nbsp; </td> 
+<td> &nbsp; </td>  
+</tr>
+<tr>
+<td> 74 </td> <td> &nbsp; </td> <td> 1 </td> <td> &nbsp; </td> 
+<td> &nbsp; </td> <td> &nbsp; </td> <td> &nbsp; </td> <td> 1 </td> 
+<td> &nbsp; </td> 
+</tr>
+<tr>
+<td> 85 </td> <td> &nbsp; </td> <td> 1 </td> <td> &nbsp; </td> 
+<td> &nbsp; </td> <td> &nbsp; </td> <td> 1 </td> <td> &nbsp; </td> 
+<td> 1 </td>  
+</tr>
+<tr>
+<td> 86 </td> <td> &nbsp; </td> <td> &nbsp; </td> <td> 4 </td> 
+<td> &nbsp; </td> <td> 1 </td> <td> &nbsp; </td> <td> &nbsp; </td>
+<td> &nbsp; </td> 
+</tr>
+
+</table>
+<p><br> 
+
+Vidimo da je suma drugog i šestog retka (0,6,0,2,0,0,0) 
+nul-vektor u 
+(<b>Z</b><sub>2</sub>)<sup>7</sup>. To nam daje kongruenciju 
+<p align=center> 
+(<i>b</i><sub>2</sub> <i>b</i><sub>6</sub>)<sup>2</sup>  
+&equiv; 
+(2<sup>(6/2)</sup> &middot; 5<sup>(2/2)</sup>)<sup>2</sup> 
+(mod <i>n</i>), 
+</p>
+tj. (43 <sup><b>.</b></sup> 86)<sup>2</sup>
+&equiv; 
+40<sup>2</sup> (mod 1829). No, 43 &middot; 86
+&equiv; 
+40 (mod 1829), pa ne dobivamo netrivijalnu
+faktorizaciju. Uočimo međutim da je suma prvog, drugog,
+trećeg i petog retka (2,2,2,2,2,0,2), što daje
+kongruenciju
+<p align=center>
+(42 <sup><b>.</b></sup> 43 <sup><b>.</b></sup> 61 
+<sup><b>.</b></sup> 85)<sup>2</sup> 
+&equiv;  
+(2 &middot; 3 &middot; 5 
+&middot; 7 &middot; 13)<sup>2</sup> 
+(mod <i>n</i>), 
+</p>
+tj. 1459<sup>2</sup> 
+&equiv; 
+901<sup>2</sup> (mod 1829). Tako dobivamo da je 
+(1459 + 901, 1829) = 59, faktor od 1829. Zaista, 
+1829 = 59 <b>&middot;</b> 31.
+
+<p>
+
+
+<hr size=2 noshade>
+
+<b><font size="-1" face="Verdana">
+<a href="faktor.html">[Prethodno poglavlje]</a> &nbsp; 
+<a href="verizni.html">[Sljedeće poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[Sadržaj]</a>
+</font></b>
+
+<hr size=2 noshade>
+
+
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../kript.html">Web stranica kolegija <em>Kriptografija</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+<script type="text/javascript" src="https://web.math.pmf.unizg.hr/lib/js/accessibility_black.min.js"></script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Kriptografija</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Predavanja iz kolegija Kriptografija">
+<meta name="keywords" content="kriptografija, kriptologija, 
+cryptography, sifriranje, šifriranje, DES, AES, Rijndael, RSA, 
+kriptoanaliza, faktorizacija, prosti brojevi, predavanja, 
+lecture notes">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+body {font-family: Arial,Helvetica,sans-serif;}
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF">
+
+
+<h3>Andrej Dujella:</h3>
+<p>
+<h1>Kriptografija</h1>
+<p>
+<hr size=2 noshade>
+
+<h2>Sadržaj</h2>
+<p>
+<font size="+1">
+&nbsp; &nbsp; 1. Klasična kriptografija<br></font>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.1. <a href="osnovni.html">Osnovni pojmovi</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.2. <a href="supst.html">Supstitucijske šifre</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.3. <a href="vigener.html">Vigen&egrave;reova šifra</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.4. <a  href="playfair.html">Playfairova šifra</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.5. <a href="hill.html">Hillova šifra</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.6. <a href="otp.html">Jednokratna bilježnica</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.7. <a href="transp.html">Transpozicijske šifre</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.8. <a href="naprave.html">Naprave za šifriranje</a><br><br>
+<font size="+1">
+&nbsp; &nbsp; 2. Moderni simetrični blokovni  
+kriptosustavi<br></font>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.1. <a href="deshist.html">Povijest DES-a</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.2. <a href="des.html">Opis algoritma DES-a</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.3. <a href="desprop.html">Svojstva DES-a</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.4. <a href="modovi.html">Načini djelovanja</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.5. <a href="desan.html">Kriptoanaliza DES-a</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.6. <a href="josblok.html">Još neki moderni blokovni kriptosustavi</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2.7. 
+<a href="aes.html">Advanced Encryption Standard</a><br><br>
+<font size="+1">
+&nbsp; &nbsp; 3. Kriptosustavi s 
+javnim ključem<br></font>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.1. <a href="idejajavni.html">Ideja javnog ključa</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.2. <a href="rsa.html">RSA
+kriptosustav</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.3. <a href="rsaan.html">Kriptoanaliza RSA kriptosustava</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.4. <a href="josjavni.html">Ostali kriptosustavi s javnim ključem</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.5. <a href="postkvant.html">Post-kvantna kriptografija</a><br><br>
+<font size="+1">
+&nbsp; &nbsp; 4. Testovi prostosti 
+i metode faktorizacije<br></font>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.1. <a href="pseudoprosti.html">Pseudoprosti brojevi</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.2. <a href="solstras.html">Solovay-Strassenov 
+test</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.3. <a href="miller.html">Miller-Rabinov 
+test</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.4. <a href="faktor.html">Faktorizacija</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.5. <a href="fbaze.html">Faktorske 
+baze</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.6. <a href="verizni.html">Metoda 
+verižnog razlomka</a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4.7. <a href="sito.html">Metoda 
+kvadratnog sita</a><br><br>
+<font size="+1">
+&nbsp; &nbsp; <a href="kriptoref.html">Literatura</a></font><br>
+
+<p>
+
+<hr size=2 noshade>
+<p>
+<h3><a href="http://web.math.hr/~duje/kript/kriptoknjiga.html">Knjiga 
+A. Dujella, M. Maretić: <em>Kriptografija</em></a> </h3>
+<p>
+
+<hr size=2 noshade>
+<table border="0" width="100%">
+<tr valign="bottom">
+<td>
+<a href="../kript.html">Web stranica kolegija <em>Kriptografija</em></a>
+</td>
+
+<td align="right">
+<a href="../index.html"><em>Andrej Dujella</em> - osobna stranica</a>
+</td>
+</tr>
+</table>
+
+<!-- Start eXTReMe Non Public Tracker Code
+Login:    duje
+Page ID:  kriptogr
+Page URL: http://www.math.hr/~duje/kript/kriptografija.html
+Help:     http://www.extremetracking.com/  -->
+<script type="text/javascript" language="javascript1.2"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;//-->
+</script><script type="text/javascript"><!--
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+EXd.write("<img src=http://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;pid=kriptogr&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXd.referrer)+" height=1 width=1>");//-->
+</script><noscript><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;pid=kriptogr&amp;j=n&amp;jv=n"/>
+</noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+<script type="text/javascript" src="https://web.math.pmf.unizg.hr/lib/js/accessibility_black.min.js"></script>
+
+</body>
+</html>
