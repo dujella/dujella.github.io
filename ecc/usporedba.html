@@ -1,14 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Usporedba ECC s ostalim kriptosustavima javnog ključa</title>
+<title>Usporedba ECC s ostalim kriptosustavima javnog kljuÄŤa</title>
 
 <meta name="author" content="Andrej Dujella">
-<meta name="description" content="Usporedba duljina ključeva 
-u kriptosustavima s javnim ključem">
+<meta name="description" content="Usporedba duljina kljuÄŤeva 
+u kriptosustavima s javnim kljuÄŤem">
 <meta name="keywords" content="kriptografija">
 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utb-8">
 
 <style type="text/css">
 body {font-family: Arial,Helvetica,sans-serif;}
@@ -27,39 +27,39 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 
 <h2 align=center style="color: rgb(128,0,0)">6.5. 
-Usporedba s ostalim kriptosustavima javnog ključa</h2>
+Usporedba s ostalim kriptosustavima javnog kljuÄŤa</h2>
 
-Osnovna motivacija za korištenje eliptičkih krivulja 
+Osnovna motivacija za koriĹˇtenje eliptiÄŤkih krivulja 
 dolazi iz nepostojanja subeksponencijalnog algoritma za 
-rješavanje problema diskretnog logaritma za eliptičke krivulje. 
+rjeĹˇavanje problema diskretnog logaritma za eliptiÄŤke krivulje. 
 S druge strane, problem diskretnog logaritma u multiplikativnoj 
-grupi konačnog polja može se riješiti u subeksponencijalnom vremenu 
-korištenjem Index Calculus metode. Glavni razlozi zašto je 
-Index Calculus metoda neprimjenjiva na eliptičke krivulje leže u tome 
-što 
+grupi konaÄŤnog polja moĹľe se rijeĹˇiti u subeksponencijalnom vremenu 
+koriĹˇtenjem Index Calculus metode. Glavni razlozi zaĹˇto je 
+Index Calculus metoda neprimjenjiva na eliptiÄŤke krivulje leĹľe u tome 
+Ĺˇto 
 <ul>
-<li>teško je naći eliptičku krivulju velikog ranga, 
-<li>teško je naći eliptičku krivulju generiranu točkama male visine, 
-<li>teško je "podići" točke iz 
+<li>teĹˇko je naÄ‡i eliptiÄŤku krivulju velikog ranga, 
+<li>teĹˇko je naÄ‡i eliptiÄŤku krivulju generiranu toÄŤkama male visine, 
+<li>teĹˇko je "podiÄ‡i" toÄŤke iz 
 <i>E</i>(<img src="symbols/bbf.gif" alt="F" 
 ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP>) 
-do točaka iz <i>E</i>(<img src="symbols/bbq.gif" alt="Q" 
+do toÄŤaka iz <i>E</i>(<img src="symbols/bbq.gif" alt="Q" 
 ALIGN=TOP>).
 </ul>
-Kad bi bilo moguće riješiti ove teške probleme, onda bi mogli 
+Kad bi bilo moguÄ‡e rijeĹˇiti ove teĹˇke probleme, onda bi mogli 
 primjeniti analogon Index Calculus metode u kojem bi skup 
-prostih brojeva zamijenili s generatorima neke eliptičke krivulje 
+prostih brojeva zamijenili s generatorima neke eliptiÄŤke krivulje 
 velikog ranga. Spomenimo da je procjenjeno da bi za 
-primjenu ove ideje za <i>p</i> približno jednak 2<sup>160</sup> 
-trebali koristiti krivulju ranga većeg 180. Budući da danas nije 
-poznata niti jedna krivulja ranga većeg od 24, jasno je da ova 
-ideja vrlo nerealistična.  
+primjenu ove ideje za <i>p</i> pribliĹľno jednak 2<sup>160</sup> 
+trebali koristiti krivulju ranga veÄ‡eg 180. BuduÄ‡i da danas nije 
+poznata niti jedna krivulja ranga veÄ‡eg od 24, jasno je da ova 
+ideja vrlo nerealistiÄŤna.  
 <p>
-Zbog toga možemo očekivati da ćemo kod kriptosustava zasnovanih 
-na eliptičkim krivuljama postići zadovoljavajuću sigurnost 
-s (puno) kraćim ključem nego kod kriptosustava zasnovanih 
-na faktorizaciji ili običnom problemu diskretnog logaritma. 
-Sada ćemo pokušati malo precizirati ovo razmatranje. 
+Zbog toga moĹľemo oÄŤekivati da Ä‡emo kod kriptosustava zasnovanih 
+na eliptiÄŤkim krivuljama postiÄ‡i zadovoljavajuÄ‡u sigurnost 
+s (puno) kraÄ‡im kljuÄŤem nego kod kriptosustava zasnovanih 
+na faktorizaciji ili obiÄŤnom problemu diskretnog logaritma. 
+Sada Ä‡emo pokuĹˇati malo precizirati ovo razmatranje. 
 
 <p>
 Pretpostavimo da imamo jedan kriptosutav zasnovan na DLP u 
@@ -70,84 +70,84 @@ te drugi zasnovan na ECDLP u grupi
 ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP>). 
 Ovdje su <i>p</i> i <i>q</i> prosti brojevi. Neka je <i>M</i> broj 
 bitova od <i>p</i>, a <i>N</i> broj bitova od <i>q</i>. 
-Brojeve <i>M</i> i <i>N</i> možemo interpretirati kao duljine 
-ključeva u pripadnim kriptosustavima. Stoga želimo naći odnos između 
+Brojeve <i>M</i> i <i>N</i> moĹľemo interpretirati kao duljine 
+kljuÄŤeva u pripadnim kriptosustavima. Stoga Ĺľelimo naÄ‡i odnos izmeÄ‘u 
 <i>M</i> i <i>N</i>, uz pretpostavku da su pripadni kriptosustavi 
 podjednako sigurni, tj. da su pripadni problemi diskretnog 
-logaritma podjednako teški.   
+logaritma podjednako teĹˇki.   
 <p> 
-Najbolji poznati algoritmi za problem eliptičkog diskretnog logiritma 
+Najbolji poznati algoritmi za problem eliptiÄŤkog diskretnog logiritma 
 trebaju O(<img src="symbols/surd.gif" alt="sqrt" ALIGN=TOP><i>n</i>)
 operacija, gdje je <i>n</i> red grupe 
 <i>E</i>(<img src="symbols/bbf.gif" alt="F" 
 ALIGN=TOP><img src="symbols/subq.gif" alt="q" ALIGN=TOP><sup>*</sup>). 
-Kako je <i>n</i> vrlo blizu <i>q</i>, zaključujemo da je kompleksnost 
+Kako je <i>n</i> vrlo blizu <i>q</i>, zakljuÄŤujemo da je kompleksnost 
 promatranog ECDLP proporcionalna s 2<sup><i>N</i>/2</sup>. 
 S druge strane, kompleksnog najboljeg poznatog algoritma za 
-problem običnog DLP je približno
+problem obiÄŤnog DLP je pribliĹľno
 <p align=center>
 exp(1.92 <i>M</i><sup>1/3</sup> (ln(<i>M</i> ln 2))<sup>2/3</sup>). 
 </p>
 Primjetimo da je najbolji poznati algoritmi za faktorizaciju 
-velikih brojeva imaju vrlo sličnu kompleksnost. Stoga će 
-zaključci koje ćemo dobiti biti primjenjivi i na usporedbu 
-kriptosustava zasnovanih eliptičkim krivuljama s onima zasnovanima 
-na faktorizaciji (kao što je npr. RSA).  
+velikih brojeva imaju vrlo sliÄŤnu kompleksnost. Stoga Ä‡e 
+zakljuÄŤci koje Ä‡emo dobiti biti primjenjivi i na usporedbu 
+kriptosustava zasnovanih eliptiÄŤkim krivuljama s onima zasnovanima 
+na faktorizaciji (kao Ĺˇto je npr. RSA).  
 <p>
-Usporedbom gore navedenih kompleksnosti (zanemarujući konstante), 
-dobivamo sljedeći odnos između <i>M</i> i <i>N</i>: 
+Usporedbom gore navedenih kompleksnosti (zanemarujuÄ‡i konstante), 
+dobivamo sljedeÄ‡i odnos izmeÄ‘u <i>M</i> i <i>N</i>: 
 <p align=center>
 <i>N</i> <img src="symbols/approx.gif" alt="=" ALIGN=TOP>
 4.91 <i>M</i><sup>1/3</sup> (ln(<i>M</i> ln 2))<sup>2/3</sup>. 
 </p>  
-Dakle, uz današnja saznanja o najboljim algoritmima za 
+Dakle, uz danaĹˇnja saznanja o najboljim algoritmima za 
 problem diskretnog logaritma, za istu razinu sigurnosti 
-duljina ključa <i>N</i> ugrubo je treći korijen duljine ključa 
+duljina kljuÄŤa <i>N</i> ugrubo je treÄ‡i korijen duljine kljuÄŤa 
 <i>M</i>. 
-Naravno, naša komparacija nije bila sasvim precizna, prvenstveno zbog 
-toga što je implementacija grupovnih operacija kompleksnija u slučaju eliptičkih krivulja. 
+Naravno, naĹˇa komparacija nije bila sasvim precizna, prvenstveno zbog 
+toga Ĺˇto je implementacija grupovnih operacija kompleksnija u sluÄŤaju eliptiÄŤkih krivulja. 
 Ali ona svakako pokazuje prednost kriptosustava zasnovanih na 
-eliptičkim krivuljama (ECC kriptosustava) u odnosu na RSA ili ElGamalov 
-kriptosustav. No, više nego za asimptotski odnos između 
+eliptiÄŤkim krivuljama (ECC kriptosustava) u odnosu na RSA ili ElGamalov 
+kriptosustav. No, viĹˇe nego za asimptotski odnos izmeÄ‘u 
 <i>M</i> i <i>N</i>, mi smo zainteresirani za njihovu usporedbu 
-kod standarnih vrijednosti, koje odgovaraju današnjim 
-potrebama za sigurnošću.   
+kod standarnih vrijednosti, koje odgovaraju danaĹˇnjim 
+potrebama za sigurnoĹˇÄ‡u.   
 Tako za postizanje iste razine sigurnosti kao kod RSA 
-kriptosustava (a za ElGamalov vrijedi isto) s duljinom ključa od 
-1024 (a to je standardna vrijednost), kod eliptičkih 
-krivulja dovoljno je uzeti ključ duljine 160 bitova 
-(što je standardna vrijednost za ECC). 
+kriptosustava (a za ElGamalov vrijedi isto) s duljinom kljuÄŤa od 
+1024 (a to je standardna vrijednost), kod eliptiÄŤkih 
+krivulja dovoljno je uzeti kljuÄŤ duljine 160 bitova 
+(Ĺˇto je standardna vrijednost za ECC). 
 <p>
 
-U članku iz 2001. godine, 
+U ÄŤlanku iz 2001. godine, 
 <font color=009900>Lenstra</font> i <font color=009900>Verheul</font> 
-su dali preporuke za duljine ključeva koje bi trebalo koristiti 
-da bi se postigla zadovoljavajuća sigurnost. Također su dali 
-predviđanja o tome kako bi se te duljine ključeva trebale kretati 
-u budućnosti. U svojim preporukama su uzeli u obzir više 
+su dali preporuke za duljine kljuÄŤeva koje bi trebalo koristiti 
+da bi se postigla zadovoljavajuÄ‡a sigurnost. TakoÄ‘er su dali 
+predviÄ‘anja o tome kako bi se te duljine kljuÄŤeva trebale kretati 
+u buduÄ‡nosti. U svojim preporukama su uzeli u obzir viĹˇe 
 varijabilnih parametara. Jedan od osnovnih parametara uzima 
 u obzir razumnu pretpostavku da najbolji <em>javno objavljeni</em> 
 rezultati u razbijanju pojedinih kriptosustava ne predstavljaju 
 garanciju da ne postoje i bolji (neobjavljeni) 
 rezultati. Za parametar koji uzima ovu pretpostavku u obzir,  
 uzeli su zadnju godinu u kojoj se smatra da je najpopularniji 
-simetrični kriptosustav DES bio siguran. DES je kao standard 
-prihvaćen 1976. godine. Kod njega je duljina ključa 56 bitova. 
-Već tada je bilo mišljenja da je ta duljina ključa premala, 
-međutim to javnog razbijanja DES-a došlo je tek 1997. godine. 
-U podatcima u sljedećoj tablici koristi se pretpostavka da je 
+simetriÄŤni kriptosustav DES bio siguran. DES je kao standard 
+prihvaÄ‡en 1976. godine. Kod njega je duljina kljuÄŤa 56 bitova. 
+VeÄ‡ tada je bilo miĹˇljenja da je ta duljina kljuÄŤa premala, 
+meÄ‘utim to javnog razbijanja DES-a doĹˇlo je tek 1997. godine. 
+U podatcima u sljedeÄ‡oj tablici koristi se pretpostavka da je 
 zadnja godina u kojoj je DES bio siguran bila 1982. godina. 
-Napomenimo da njihova predviđanja ne uzimaju u obzir moguću 
-konstrukciju kvantnih računala, koja bi sve kriptostave javnog ključa 
-koji su danas u uporabi učinila nesigurnima. 
+Napomenimo da njihova predviÄ‘anja ne uzimaju u obzir moguÄ‡u 
+konstrukciju kvantnih raÄŤunala, koja bi sve kriptostave javnog kljuÄŤa 
+koji su danas u uporabi uÄŤinila nesigurnima. 
 <p>
-U tablici su dane preporučene duljine ključa u bitovima 
-za simetrične kriptosustave (DES, AES), kriptosustave zasnovane 
-na faktorizaciji ili diskretnom logaritmu u konačnom polju 
-(RSA, ElGamal), te kriptosustave zasnovane na eliptičkim krivuljama. 
+U tablici su dane preporuÄŤene duljine kljuÄŤa u bitovima 
+za simetriÄŤne kriptosustave (DES, AES), kriptosustave zasnovane 
+na faktorizaciji ili diskretnom logaritmu u konaÄŤnom polju 
+(RSA, ElGamal), te kriptosustave zasnovane na eliptiÄŤkim krivuljama. 
 Uz to, dana je procjena kompjuterskog vremena potrebnog za 
-razbijanje šifre u <em>MIPS-godinama</em>. Jedna MIPS (million-instructions-per-second) godina se definira kao količina 
-računanja koje se može provesti u godinu dana na računalu sposobnom 
+razbijanje Ĺˇifre u <em>MIPS-godinama</em>. Jedna MIPS (million-instructions-per-second) godina se definira kao koliÄŤina 
+raÄŤunanja koje se moĹľe provesti u godinu dana na raÄŤunalu sposobnom 
 provesti milijun instrukcija u sekundi. 
    
 
@@ -155,9 +155,9 @@ provesti milijun instrukcija u sekundi.
 <table border="1" cellpadding=6 align="center">
   <tr>
     <td><b>Godina</b></td>
-    <td><b>DES duljina ključa</b></td>
-    <td><b>RSA duljina ključa</b></td>
-    <td><b>ECC duljina ključa</b></td>
+    <td><b>DES duljina kljuÄŤa</b></td>
+    <td><b>RSA duljina kljuÄŤa</b></td>
+    <td><b>ECC duljina kljuÄŤa</b></td>
     <td><b>MIPS godina</b></td>
      </tr>
   <tr>
@@ -206,25 +206,25 @@ provesti milijun instrukcija u sekundi.
 <p> 
 
 
-Možemo zaključiti da kriposustavi zasnovani na eliptičkim 
-krivuljama, trenutno, uz 7 puta manju duljinu ključa pružaju istu sigurnost kao RSA kriptosustav, a u budućnosti se može očekivati 
-da će taj omjer biti još povoljniji za ECC. To je osobito 
-važno kod onih primjena (kao što su tzv. "pametne kartice") 
-kod kojih je prostor za pohranu ključeva vrlo ograničen.   
-Jasno je da su zbog toga eliptičke 
+MoĹľemo zakljuÄŤiti da kriposustavi zasnovani na eliptiÄŤkim 
+krivuljama, trenutno, uz 7 puta manju duljinu kljuÄŤa pruĹľaju istu sigurnost kao RSA kriptosustav, a u buduÄ‡nosti se moĹľe oÄŤekivati 
+da Ä‡e taj omjer biti joĹˇ povoljniji za ECC. To je osobito 
+vaĹľno kod onih primjena (kao Ĺˇto su tzv. "pametne kartice") 
+kod kojih je prostor za pohranu kljuÄŤeva vrlo ograniÄŤen.   
+Jasno je da su zbog toga eliptiÄŤke 
 krivulje u posljednje vrijeme predmet velikog interesa kriptografa.  
-Njihovim intenzivnijim proučavanjem može se očekivati da će otpasti  
+Njihovim intenzivnijim prouÄŤavanjem moĹľe se oÄŤekivati da Ä‡e otpasti  
 i jedan od rijetkih argumenata protiv njihove uporabe u kriptografiji, 
-a to je da su problemi na kojima je zasnovana uporaba eliptčkih 
-krivulja u kriptografiji slabije istraženi, i puno kraće u žiži 
+a to je da su problemi na kojima je zasnovana uporaba eliptÄŤkih 
+krivulja u kriptografiji slabije istraĹľeni, i puno kraÄ‡e u ĹľiĹľi 
 interesa kriptografa, od recimo problema faktorizacije. 
 <p>
-No, u isto vrijeme interes za eliptičke krivulje 
-raste i zbog njihove uloge u rješavanju važnih matematičkih 
-problema, kao što je npr. <em>Zadnji Fermatov teorem</em>.  
-Imajući u vidu sve navedeno, možemo očekivati da će i u godinama 
-pred nama eliptičke krivulje predstavljati važan dio i 
-čiste i primjenjene matematike.
+No, u isto vrijeme interes za eliptiÄŤke krivulje 
+raste i zbog njihove uloge u rjeĹˇavanju vaĹľnih matematiÄŤkih 
+problema, kao Ĺˇto je npr. <em>Zadnji Fermatov teorem</em>.  
+ImajuÄ‡i u vidu sve navedeno, moĹľemo oÄŤekivati da Ä‡e i u godinama 
+pred nama eliptiÄŤke krivulje predstavljati vaĹľan dio i 
+ÄŤiste i primjenjene matematike.
 
 
 

@@ -7,7 +7,7 @@
 <meta name="description" content="Elliptic Curve Digital Signature Algorithm">
 <meta name="keywords" content="digitalni potpis">
 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utb-8">
 
 <style type="text/css">
 body {font-family: Arial,Helvetica,sans-serif;}
@@ -19,7 +19,7 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="menezes.html">[Prethodna tema]</a> &nbsp; 
-<a href="ecdlp.html">[Sljedeća tema]</a>  
+<a href="ecdlp.html">[SljedeÄ‡a tema]</a>  
 </font></b>
 
 <hr size=2 noshade>
@@ -29,81 +29,81 @@ body {font-family: Arial,Helvetica,sans-serif;}
 Elliptic Curve Digital Signature Algorithm</h2>
 
 
-Jedno od pitanja koje se može postaviti prilikom komunikacije 
-pomoću kriptosustava s javnim ključem jest pitanje 
-vjerodostojnosti ili autentičnosti poruke. Naime, osoba B ne može biti sigurna da joj je upravo osoba A poslala poruku. Zaista, svatko ima pristup funkciji za šifriranje <i>B</i><sub><i>e</i></sub>, 
-pa se može lažno predstaviti kao osoba A. 
-Dakle, htjeli bi imati nešto što bi bilo analogon potpisa na 
+Jedno od pitanja koje se moĹľe postaviti prilikom komunikacije 
+pomoÄ‡u kriptosustava s javnim kljuÄŤem jest pitanje 
+vjerodostojnosti ili autentiÄŤnosti poruke. Naime, osoba B ne moĹľe biti sigurna da joj je upravo osoba A poslala poruku. Zaista, svatko ima pristup funkciji za Ĺˇifriranje <i>B</i><sub><i>e</i></sub>, 
+pa se moĹľe laĹľno predstaviti kao osoba A. 
+Dakle, htjeli bi imati neĹˇto Ĺˇto bi bilo analogon potpisa na 
 dokumentu. <font color=009900>Diffie</font> i 
 <font color=009900>Hellman</font> su 1976. opisali ideju <em>digitalnog 
-potpisa</em> poruke. Ideja se sastoji u tome da se pomoću 
-originalne poruke i tajnog ključa osobe A generira digitalni potpis 
-za osobu A. Imajući na raspolaganju poruku, digitalni potpis i 
-javni ključ osobe A, osoba B može verificirati da je potpis 
-autentičan. 
+potpisa</em> poruke. Ideja se sastoji u tome da se pomoÄ‡u 
+originalne poruke i tajnog kljuÄŤa osobe A generira digitalni potpis 
+za osobu A. ImajuÄ‡i na raspolaganju poruku, digitalni potpis i 
+javni kljuÄŤ osobe A, osoba B moĹľe verificirati da je potpis 
+autentiÄŤan. 
 <p>
-Korištenje originalne poruke u generiranju digitalnog potpisa 
-često rezultira vrlo dugačkim potpisom. Stoga se umjesto 
-originalne poruke često koristi "<em>sažetak poruke</em>" 
+KoriĹˇtenje originalne poruke u generiranju digitalnog potpisa 
+ÄŤesto rezultira vrlo dugaÄŤkim potpisom. Stoga se umjesto 
+originalne poruke ÄŤesto koristi "<em>saĹľetak poruke</em>" 
 (message digest) koji se dobije primjenom neke <em>hash funkcije</em>. 
 U kriptografiji, hash funkcija je jednosmjerna funkcija koja 
 za ulazni podatak proizvoljne duljine daje izlazni podatak 
-fiksne duljine. Među najpoznatije hash funkcije spadaju 
+fiksne duljine. MeÄ‘u najpoznatije hash funkcije spadaju 
 MD5 (output od 128 bitova), RIPEMD-160 (output od 160 bitova) i 
 SHA-1 (output od 160 bitova). 
 <p>
-Neki kriptosustavi s javnim ključem (npr. RSA) mogu se direktno 
+Neki kriptosustavi s javnim kljuÄŤem (npr. RSA) mogu se direktno 
 iskoristiti za potpisivanje poruke. Ipak, najpoznatije metode za 
 generiranje digitalnih potpisa su Digital Signature Algorithm 
 (DSA/DSS) i Elliptic Curve Digital Signature Algorithm (ECDSA). DSA je 
 zasnovan na problemu diskretnog logaritma u multiplikativnoj grupi 
-konačnog polja, dok ECDSA predstavlja njegov analogon i koristi 
-eliptičke krivulje.  
-U siječnju 1999. ECDSA je prihvaćen kao ANSI standard. 
+konaÄŤnog polja, dok ECDSA predstavlja njegov analogon i koristi 
+eliptiÄŤke krivulje.  
+U sijeÄŤnju 1999. ECDSA je prihvaÄ‡en kao ANSI standard. 
 <p>
-Opisat ćemo tri etape od ECDSA.
+Opisat Ä‡emo tri etape od ECDSA.
 <p>
-<b>1. ECDSA generiranje ključeva.</b> <br>
-<i>E</i> je eliptička krivulja nad 
+<b>1. ECDSA generiranje kljuÄŤeva.</b> <br>
+<i>E</i> je eliptiÄŤka krivulja nad 
 <img src="symbols/bbf.gif" alt="F" 
 ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP>, 
-a <i>P</i> je točka prostog reda <i>n</i> na 
+a <i>P</i> je toÄŤka prostog reda <i>n</i> na 
 <i>E</i>(<img src="symbols/bbf.gif" alt="F" 
 ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP>). 
-Svaki korisnik napravi sljedeće: 
+Svaki korisnik napravi sljedeÄ‡e: 
 <blockquote>
-<b>a)</b> Izabere slučajan broj <i>d</i> iz skupa {1, ... , <i>n</i> - 1}; <br>
-<b>b)</b> Izračuna <i>Q</i> = [<i>d</i>] <i>P</i>; <br>
-<b>c)</b> <i>Q</i> je javni, a <i>d</i> tajni ključ. 
+<b>a)</b> Izabere sluÄŤajan broj <i>d</i> iz skupa {1, ... , <i>n</i> - 1}; <br>
+<b>b)</b> IzraÄŤuna <i>Q</i> = [<i>d</i>] <i>P</i>; <br>
+<b>c)</b> <i>Q</i> je javni, a <i>d</i> tajni kljuÄŤ. 
 </blockquote>
 
 <b>2. ECDSA generiranje potpisa.</b> <br>
-Kad želi potpisati poruku <i>m</i>, Alice radi sljedeće: 
+Kad Ĺľeli potpisati poruku <i>m</i>, Alice radi sljedeÄ‡e: 
 <blockquote>
-<b>a)</b> Izabere slučajan broj <i>k</i> iz skupa {1, ... , <i>n</i> - 1}; <br>
-<b>b)</b> Izračuna [<i>k</i>] <i>P</i> = (<i>x</i><sub>1</sub>, 
+<b>a)</b> Izabere sluÄŤajan broj <i>k</i> iz skupa {1, ... , <i>n</i> - 1}; <br>
+<b>b)</b> IzraÄŤuna [<i>k</i>] <i>P</i> = (<i>x</i><sub>1</sub>, 
 <i>y</i><sub>1</sub>) i <i>r</i> = <i>x</i><sub>1</sub> mod <i>n</i>. 
 Ako je <i>r</i> = 0, onda se vrati na korak a);<br>
-<b>c)</b> Izračuna <i>k</i><sup>-1</sup> mod <i>n</i>; <br>
-<b>d)</b> Izračuna <i>s</i> = <i>k</i><sup>-1</sup>(<i>H</i>(<i>m</i>) 
+<b>c)</b> IzraÄŤuna <i>k</i><sup>-1</sup> mod <i>n</i>; <br>
+<b>d)</b> IzraÄŤuna <i>s</i> = <i>k</i><sup>-1</sup>(<i>H</i>(<i>m</i>) 
 + <i>dr</i>) mod <i>n</i>, gdje je <i>H</i> hash funkcija. Ako je <i>s</i> = 0, onda se vrati na korak a); <br>
-<b>e)</b> Potpis poruke <i>m</i> je uređeni par prirodnih brojeva 
+<b>e)</b> Potpis poruke <i>m</i> je ureÄ‘eni par prirodnih brojeva 
 (<i>r</i>, <i>s</i>). 
 </blockquote>
 
 <b>3. ECDSA provjera potpisa.</b> <br>
 Da bi verificirao Alicein potpis (<i>r</i>, <i>s</i>) poruke  <i>m</i>, 
-Bob treba napraviti sljedeće: 
+Bob treba napraviti sljedeÄ‡e: 
 <blockquote>
-<b>a)</b> Dobiti Alicein javni ključ <i>Q</i>; <br>
+<b>a)</b> Dobiti Alicein javni kljuÄŤ <i>Q</i>; <br>
 <b>b)</b> Provjeriti da su <i>r</i> i <i>s</i> cijeli brojevi iz skupa 
 {1, ... , <i>n</i> - 1}; <br>
-<b>c)</b> Izračunati <i>w</i> = <i>s</i><sup>-1</sup> mod <i>n</i> i 
+<b>c)</b> IzraÄŤunati <i>w</i> = <i>s</i><sup>-1</sup> mod <i>n</i> i 
 <i>H</i>(<i>m</i>); <br>
-<b>d)</b> Izračunati <i>u</i><sub>1</sub> = <i>H</i>(<i>m</i>)<i>w</i> 
+<b>d)</b> IzraÄŤunati <i>u</i><sub>1</sub> = <i>H</i>(<i>m</i>)<i>w</i> 
 mod <i>n</i> i <i>u</i><sub>2</sub> = <i>r</i><i>w</i> 
 mod <i>n</i>; <br>
-<b>e)</b> Izračunati [<i>u</i><sub>1</sub>] <i>P</i> + 
+<b>e)</b> IzraÄŤunati [<i>u</i><sub>1</sub>] <i>P</i> + 
 [<i>u</i><sub>2</sub>] <i>Q</i> = (<i>x</i><sub>0</sub>, 
 <i>y</i><sub>0</sub>) i <i>v</i> = <i>x</i><sub>0</sub> mod <i>n</i>; 
 <br>
@@ -113,7 +113,7 @@ mod <i>n</i>; <br>
 
 Uvjet <i>r</i> <img src="symbols/ne.gif" alt="<>" ALIGN=TOP> 0 
 osigurava da se u potpisivanju stvarno koristi Alicein tajni 
-ključ <i>d</i>, dok se uvjet <i>s</i> 
+kljuÄŤ <i>d</i>, dok se uvjet <i>s</i> 
 <img src="symbols/ne.gif" alt="<>" ALIGN=TOP> 0 pojavljuje zbog 
 koraka 3.c). 
 
@@ -124,22 +124,22 @@ koraka 3.c).
 <h4 style="color: rgb(128,0,0)">Zadatci:</h4>
 
 <ol>
-<li> Eliptička krivulja <i>E</i> nad poljem 
+<li> EliptiÄŤka krivulja <i>E</i> nad poljem 
 <img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><sub>199</sub> zadana 
-je jednadžbom 
+je jednadĹľbom 
 <i>y</i><sup>2</sup> = 
 <i>x</i><sup>3</sup> + <i>x</i> + 3. 
-Dokažite da je 
+DokaĹľite da je 
 <i>E</i>(<img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><sub>199</sub>) 
-ciklička grupa s <i>n</i> = 197 elemenata 
+cikliÄŤka grupa s <i>n</i> = 197 elemenata 
 i generatorom <i>P</i> = (1,76).  
   
 <p>
 <li>
-Pomoću ECDSA definiranog pomoću eliptičke krivulje <i>E</i> iz 
-1. zadatka, digitalno potpišite poruku čija je hash vrijednost 
-<i>H</i>(<i>m</i>) = 68, uz pretpostavku da je Vaš tajni ključ 
-<i>d</i> = 29, a jednokratni ključ <i>k</i> = 153. 
+PomoÄ‡u ECDSA definiranog pomoÄ‡u eliptiÄŤke krivulje <i>E</i> iz 
+1. zadatka, digitalno potpiĹˇite poruku ÄŤija je hash vrijednost 
+<i>H</i>(<i>m</i>) = 68, uz pretpostavku da je VaĹˇ tajni kljuÄŤ 
+<i>d</i> = 29, a jednokratni kljuÄŤ <i>k</i> = 153. 
 
 </ol>
 <p>
@@ -151,7 +151,7 @@ Pomoću ECDSA definiranog pomoću eliptičke krivulje <i>E</i> iz
 
 <b><font size="-1" face="Verdana">
 <a href="menezes.html">[Prethodna tema]</a> &nbsp; 
-<a href="ecdlp.html">[Sljedeća tema]</a>  
+<a href="ecdlp.html">[SljedeÄ‡a tema]</a>  
 </font></b>
 
 <hr size=2 noshade>

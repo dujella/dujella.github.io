@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Kriptosustavi koji koriste eliptičke krivulje</title>
+<title>Kriptosustavi koji koriste eliptiÄŤke krivulje</title>
 
 <meta name="author" content="Andrej Dujella">
 <meta name="description" content="Menezes-Vanstoneov kriptosustav">
-<meta name="keywords" content="eliptičke krivulje, ECC">
+<meta name="keywords" content="eliptiÄŤke krivulje, ECC">
 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utb-8">
 
 <style type="text/css">
 body {font-family: Arial,Helvetica,sans-serif;}
@@ -19,50 +19,50 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="elimplem.html">[Prethodna tema]</a> &nbsp; 
-<a href="ecdsa.html">[Sljedeća tema]</a>  
+<a href="ecdsa.html">[SljedeÄ‡a tema]</a>  
 </font></b>
 
 <hr size=2 noshade>
 
 <h2 align=center style="color: rgb(204,0,0)">6. Kriptosustavi koji 
-koriste eliptičke krivulje</h2>
+koriste eliptiÄŤke krivulje</h2>
 
 <h2 align=center style="color: rgb(128,0,0)">6.1. 
 Menezes-Vanstoneov kriptosustav</h2>
 
-Ideju o tome da bi eliptičke krivulje mogle biti korisne 
-u konstrukciji kriptosustava s javnim ključem prvi su javno 
+Ideju o tome da bi eliptiÄŤke krivulje mogle biti korisne 
+u konstrukciji kriptosustava s javnim kljuÄŤem prvi su javno 
 iznijeli <font color=009900>Koblitz</font> i 
 <font color=009900>Miller</font> 1985. godine.   
 <p>
 Svi kriptosustavi koji je u svojoj originalnoj definiciji 
 koriste grupu  
 <img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup>, 
-kao što je npr. ElGamalov, mogu se vrlo 
+kao Ĺˇto je npr. ElGamalov, mogu se vrlo 
 lako modificirati tako da koriste grupu 
 E(<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP>). 
-No, doslovno prevođenje ElGamalovog kriptosustava u  
-eliptičke krivulje ima nekoliko nedostataka. Prvi je da 
-prije šifriranja moramo elemente otvorenog teksta prebaciti 
-u točke na eliptičkoj krivulji. Za to ne postoji zadovoljavajući 
-deterministički, već samo vjerojatnosni algoritam, koji koristi 
-činjenicu da kvadrati u konačnom polju predstavljaju 50% svih 
-elemenata. Nadalje, šifrat jednog elementa otvorenog teksta 
+No, doslovno prevoÄ‘enje ElGamalovog kriptosustava u  
+eliptiÄŤke krivulje ima nekoliko nedostataka. Prvi je da 
+prije Ĺˇifriranja moramo elemente otvorenog teksta prebaciti 
+u toÄŤke na eliptiÄŤkoj krivulji. Za to ne postoji zadovoljavajuÄ‡i 
+deterministiÄŤki, veÄ‡ samo vjerojatnosni algoritam, koji koristi 
+ÄŤinjenicu da kvadrati u konaÄŤnom polju predstavljaju 50% svih 
+elemenata. Nadalje, Ĺˇifrat jednog elementa otvorenog teksta 
 se kod ove varijante 
 ElGamalovog kriptosustava sastoji od  
-uređenog para točaka na eliptičkoj krivulji. To znači da 
-prilikom šifriranja poruka postane otprilike 4 puta duža. 
+ureÄ‘enog para toÄŤaka na eliptiÄŤkoj krivulji. To znaÄŤi da 
+prilikom Ĺˇifriranja poruka postane otprilike 4 puta duĹľa. 
 <p>
-Navest ćemo jednu varijantu ElGamalovog kriptosustava koja 
-koristi eliptičke krivulje. Zove se 
+Navest Ä‡emo jednu varijantu ElGamalovog kriptosustava koja 
+koristi eliptiÄŤke krivulje. Zove se 
 <em><font color=009900>Menezes</font> - 
 <font color=009900>Vanstoneov</font> 
 kriptosustav</em> (Menezes-Vanstone ECC). 
-U njemu se eliptičke krivulje koriste 
-samo za "maskiranje", dok su otvoreni tekstovi i šifrati 
-proizvoljni uređeni parovi elemenata iz polja (a ne nužno 
-parovi koji odgovaraju točkama na eliptičkoj krivulji). 
-Kod ovog kriptosustava, šifrirana poruka je 2 puta duža od 
+U njemu se eliptiÄŤke krivulje koriste 
+samo za "maskiranje", dok su otvoreni tekstovi i Ĺˇifrati 
+proizvoljni ureÄ‘eni parovi elemenata iz polja (a ne nuĹľno 
+parovi koji odgovaraju toÄŤkama na eliptiÄŤkoj krivulji). 
+Kod ovog kriptosustava, Ĺˇifrirana poruka je 2 puta duĹľa od 
 originalne poruke. 
 <p>
 
@@ -72,9 +72,9 @@ originalne poruke.
 
 <b>Menezes-Vanstoneov kriptosustav:</b> <br>
 
-Neka je <i>E</i> eliptička krivulja nad 
+Neka je <i>E</i> eliptiÄŤka krivulja nad 
 <img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><img src="symbols/subp.gif" alt="p" ALIGN=TOP> (<i>p</i> > 3 prost), 
-te <i>H</i> ciklička podgrupa od <i>E</i> generirana s 
+te <i>H</i> cikliÄŤka podgrupa od <i>E</i> generirana s 
 <img src="symbols/alpha.gif" alt="alpha" ALIGN=MIDDLE>. 
 Neka je <img src="symbols/calp.gif" alt="P" ALIGN=MIDDLE> = 
 <img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><img src="symbols/subp.gif" alt="p" ALIGN=MIDDLE><sup>*</sup> &times 
@@ -96,7 +96,7 @@ su javne, a vrijednost <i>a</i> je tajna. <br>
 Za <i>K</i> = (<i>E</i>, <img src="symbols/alpha.gif" alt="alpha" ALIGN=MIDDLE>,  
 <i>a</i>, <img src="symbols/beta.gif" alt="beta" ALIGN=MIDDLE>) 
 <img src="symbols/in.gif" alt="in" ALIGN=MIDDLE> 
-<img src="symbols/calk.gif" alt="K" ALIGN=MIDDLE> i tajni slučajni 
+<img src="symbols/calk.gif" alt="K" ALIGN=MIDDLE> i tajni sluÄŤajni 
 broj <i>k</i> <img src="symbols/in.gif" alt="in" ALIGN=MIDDLE>
 <img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><sub>|<i>H</i>|</sub>, 
 te za <i>x</i> = (<i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>) 
@@ -115,7 +115,7 @@ gdje je <i>y</i><sub>0</sub> = [<i>k</i>] <img src="symbols/alpha.gif" alt="alph
 mod <i>p</i>,  
 <i>y</i><sub>2</sub> = <i>c</i><sub>2</sub><i>x</i><sub>2</sub>  
 mod <i>p</i>. <br>
-Za šifrat <i>y</i> = (<i>y</i><sub>0</sub>, <i>y</i><sub>1</sub>, <i>y</i><sub>2</sub>) definiramo 
+Za Ĺˇifrat <i>y</i> = (<i>y</i><sub>0</sub>, <i>y</i><sub>1</sub>, <i>y</i><sub>2</sub>) definiramo 
 <p align=center>
 <i>d<sub>K</sub></i>(<i>y</i>) = (<i>y</i><sub>1</sub>(<i>c</i><sub>1</sub>)<sup>-1</sup> mod <i>p</i>, 
 <i>y</i><sub>2</sub>(<i>c</i><sub>2</sub>)<sup>-1</sup> mod <i>p</i>), 
@@ -126,21 +126,21 @@ gdje je [<i>a</i>] <i>y<sub>0</sub></i> = (<i>c</i><sub>1</sub>,
 </font></td></tr></table>
 <p><br>
  
-<b>Primjer:</b> Neka je <i>E</i> eliptička krivulja nad 
+<b>Primjer:</b> Neka je <i>E</i> eliptiÄŤka krivulja nad 
 <img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><sub>13</sub> 
-zadana jednadžbom 
+zadana jednadĹľbom 
 <p align=center>
 <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + 4<i>x</i> + 4. </p>
 Grupa <i>E</i>(<img src="symbols/bbf.gif" alt="F" ALIGN=TOP><sub>13</sub>) 
-je ciklička grupa reda 15 s generatorom 
+je cikliÄŤka grupa reda 15 s generatorom 
 <img src="symbols/alpha.gif" alt="alfa" ALIGN=TOP> = (1,3). 
 <p>
-Pretpostavimo da Alice želi poslati poruku (<i>x</i><sub>1</sub>, 
-<i>x</i><sub>2</sub>) = (12,7) Bobu, čiji je tajni ključ 
-<i>a</i> = 2, a javni ključ 
+Pretpostavimo da Alice Ĺľeli poslati poruku (<i>x</i><sub>1</sub>, 
+<i>x</i><sub>2</sub>) = (12,7) Bobu, ÄŤiji je tajni kljuÄŤ 
+<i>a</i> = 2, a javni kljuÄŤ 
 <img src="symbols/beta.gif" alt="beta" ALIGN=TOP> = <i>a</i><img src="symbols/alpha.gif" alt="alfa" ALIGN=TOP> 
 = [2] (1,3) = (12,8). Pretpostavimo da je Alice izabrala 
-tajni broj <i>k</i> = 5. Tada ona računa: 
+tajni broj <i>k</i> = 5. Tada ona raÄŤuna: 
 <p align=center>
 (<i>c</i><sub>1</sub>,<i>c</i><sub>2</sub>) = [<i>k</i>] 
 <img src="symbols/beta.gif" alt="beta" ALIGN=TOP> = [5] (12,8) = 
@@ -152,10 +152,10 @@ tajni broj <i>k</i> = 5. Tada ona računa:
 <i>y</i><sub>2</sub> = <i>c</i><sub>2</sub><i>x</i><sub>2</sub> = 
 77 = 12 mod 13. 
 </p> 
-Sada Alice šalje Bobu šifrat 
+Sada Alice Ĺˇalje Bobu Ĺˇifrat 
 (<i>y</i><sub>0</sub>,<i>y</i><sub>1</sub>,<i>y</i><sub>2</sub>) 
 = ((10,2), 3, 12). <p>
-Nakon primitka šifrata Bob računa: 
+Nakon primitka Ĺˇifrata Bob raÄŤuna: 
 <p align=center>
 [<i>a</i>] <i>y</i><sub>0</sub> = [2] (10,2) = (10,11) = 
 (<i>c</i><sub>1</sub>,<i>c</i><sub>2</sub>), <br>
@@ -174,20 +174,20 @@ mod 13) = (12,7) = (<i>x</i><sub>1</sub>,<i>x</i><sub>2</sub>).
 <h4 style="color: rgb(128,0,0)">Zadatci:</h4>
 
 <ol>
-<li> Eliptička krivulja <i>E</i> nad poljem 
+<li> EliptiÄŤka krivulja <i>E</i> nad poljem 
 <img src="symbols/bbz.gif" alt="Z" ALIGN=MIDDLE><sub>11</sub> zadana 
-je jednadžbom 
+je jednadĹľbom 
 <i>y</i><sup>2</sup> = 
 <i>x</i><sup>3</sup> + <i>x</i> + 6.  
-Dokažite da je <img src="symbols/alpha.gif" alt="alfa" ALIGN=TOP> 
+DokaĹľite da je <img src="symbols/alpha.gif" alt="alfa" ALIGN=TOP> 
 = (2,7) 
 generator grupe <i>E</i>(<img src="symbols/bbz.gif" alt="Z" ALIGN=TOP><sub>11</sub>). 
 <li>
-Pomoću Menezes-Vanstoneovog kriptosustava u kojem su 
-javni ključevi <i>E</i> i <img src="symbols/alpha.gif" alt="alfa" ALIGN=TOP> iz 1. zadatka, te 
+PomoÄ‡u Menezes-Vanstoneovog kriptosustava u kojem su 
+javni kljuÄŤevi <i>E</i> i <img src="symbols/alpha.gif" alt="alfa" ALIGN=TOP> iz 1. zadatka, te 
 <img src="symbols/beta.gif" alt="beta" ALIGN=TOP> = (7,2), 
-šifrirajte otvoreni tekst (<i>x</i><sub>1</sub>,<i>x</i><sub>2</sub>) 
-= (9,1), uz pretpostavku da je jednokratni ključ <i>k</i> = 6. 
+Ĺˇifrirajte otvoreni tekst (<i>x</i><sub>1</sub>,<i>x</i><sub>2</sub>) 
+= (9,1), uz pretpostavku da je jednokratni kljuÄŤ <i>k</i> = 6. 
 
 </ol>
 <p>
@@ -198,7 +198,7 @@ javni ključevi <i>E</i> i <img src="symbols/alpha.gif" alt="alfa" ALIGN=TOP> iz 
 
 <b><font size="-1" face="Verdana">
 <a href="elimplem.html">[Prethodna tema]</a> &nbsp; 
-<a href="ecdsa.html">[Sljedeća tema]</a>
+<a href="ecdsa.html">[SljedeÄ‡a tema]</a>
 </font></b>
 
 <hr size=2 noshade>
