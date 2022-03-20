@@ -1,15 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Transpozicijske šifre</title>
+<title>Transpozicijske Ĺˇifre</title>
 
 <meta name="author" content="Andrej Dujella">
 <meta name="description" content="Kriptografija - 
 Transpozicijske sifre">
-<meta name="keywords" content="kriptografija, transpozicijske šifre, 
+<meta name="keywords" content="kriptografija, transpozicijske Ĺˇifre, 
 transpozicija, anagramiranje">
 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utb-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
 
@@ -25,8 +25,8 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="otp.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="naprave.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="naprave.html">[SljedeÄ‡e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 <p>
 
@@ -34,17 +34,17 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 
 <a name="1.7"></a>
-<h2 align=center style="color: rgb(128,0,0)">1.7. Transpozicijske šifre</h2>
+<h2 align=center style="color: rgb(128,0,0)">1.7. Transpozicijske Ĺˇifre</h2>
 
 
-Svi kriptosustavi koje smo do sada promatrali su uključivali 
-supstituciju: elementi otvorenog teksta zamjenjivani su različitim 
-elementima šifrata. Ideja <em>transpozicijske šifre</em> je da se 
+Svi kriptosustavi koje smo do sada promatrali su ukljuÄŤivali 
+supstituciju: elementi otvorenog teksta zamjenjivani su razliÄŤitim 
+elementima Ĺˇifrata. Ideja <em>transpozicijske Ĺˇifre</em> je da se 
 elementi otvorenog teksta ostave nepromijenjeni, ali da se promjeni 
-njihov međusobni položaj. Spomenimo da je podjelu šifri na 
-supstitucijske i transpozicijske uveo u 16. stoljeću 
+njihov meÄ‘usobni poloĹľaj. Spomenimo da je podjelu Ĺˇifri na 
+supstitucijske i transpozicijske uveo u 16. stoljeÄ‡u 
 <font color=009900>Giovanni Porta</font>. Formalna definicija 
-transpozicijske šifre je sljedeća:
+transpozicijske Ĺˇifre je sljedeÄ‡a:
 <p>
 
 <table align=center border=1 width="95%" cellpadding=15> 
@@ -73,24 +73,24 @@ permutacija skupa <nobr>{1, 2, ... , <i>m</i>}.</nobr> Za
 </font> </td></tr> </table>  
 <p>
 
-Postavlja se ponovo pitanje praktične realizacije ove opće ideje. 
-U praksi najupotrebljavanija transpozicijska šifra bila je 
-<em>stupčana transpozicija</em>. Kod nje se otvoreni tekst upisuje 
-u pravokutnik po redcima, a zatim se poruka čita po stupcima, ali s promijenjenim 
+Postavlja se ponovo pitanje praktiÄŤne realizacije ove opÄ‡e ideje. 
+U praksi najupotrebljavanija transpozicijska Ĺˇifra bila je 
+<em>stupÄŤana transpozicija</em>. Kod nje se otvoreni tekst upisuje 
+u pravokutnik po redcima, a zatim se poruka ÄŤita po stupcima, ali s promijenjenim 
 poretkom stupaca. Ako se posljednji redak ne ispuni do kraja, 
 onda se prazna mjesta popune proizvoljnim slovima (<em>nulama</em>) 
-koja ne mijenjaju sadržaj poruke. (Koristili su se i nepotpuni pravokutnici, 
-no mi ih ovdje nećemo analizirati.)
+koja ne mijenjaju sadrĹľaj poruke. (Koristili su se i nepotpuni pravokutnici, 
+no mi ih ovdje neÄ‡emo analizirati.)
 <p>
 
-<b>Primjer 1.12: </b> <em>Šifrirati otvoreni tekst</em> &nbsp; 
+<b>Primjer 1.12: </b> <em>Ĺ ifrirati otvoreni tekst</em> &nbsp; 
 <font color=990000>KRIPTOGRAFIJA I KRIPTOANALIZA</font>  
-&nbsp; <em>stupčanom transpozicijom s 
-ključem</em> &nbsp; <font color=990099>4 3 1 2 5 7 6</font>. 	  
+&nbsp; <em>stupÄŤanom transpozicijom s 
+kljuÄŤem</em> &nbsp; <font color=990099>4 3 1 2 5 7 6</font>. 	  
 <p>
-<i>Rješenje</i>. 
+<i>RjeĹˇenje</i>. 
 <pre><font size=3> 
-     ključ         <font color=990099>4  3  1  2  5  7  6</font>
+     kljuÄŤ         <font color=990099>4  3  1  2  5  7  6</font>
 
 
                    <font color=990000>K  R  I  P  T  O  G
@@ -103,40 +103,40 @@ otvoreni tekst
 
 
 
-    šifrat         <font color=000099>IFILPIPIRARAKRKNTJTZGIAXOAOA</font>
+    Ĺˇifrat         <font color=000099>IFILPIPIRARAKRKNTJTZGIAXOAOA</font>
 </font></pre>
 <p>
 
-Prepoznavanje da se radi o transpozicijskoj šifri je 
+Prepoznavanje da se radi o transpozicijskoj Ĺˇifri je 
 vrlo jednostavno jer kod nje slova imaju iste frekvencije 
-kao u otvorenom tekstu. U kriptoanalizi stupčane transpozicije, 
-prvi korak je određivanje dimenzije pravokutnika. To se radi 
-tako da se broj slova u šifratu faktorizira. Ukoliko time 
-dobijemo više mogućnosti, upišemo slova šifrata po stupcima u 
+kao u otvorenom tekstu. U kriptoanalizi stupÄŤane transpozicije, 
+prvi korak je odreÄ‘ivanje dimenzije pravokutnika. To se radi 
+tako da se broj slova u Ĺˇifratu faktorizira. Ukoliko time 
+dobijemo viĹˇe moguÄ‡nosti, upiĹˇemo slova Ĺˇifrata po stupcima u 
 pravokutnike pretpostavljenih dimenzija, te promatramo odnos 
 samoglasnika i suglasnika u svakom retku. Ukoliko je pretpostavka 
-o dimenziji točna, taj odnos ne bi smio puno odstupati od 
+o dimenziji toÄŤna, taj odnos ne bi smio puno odstupati od 
 njihovog odnosa u jeziku otvorenog teksta (u hrvatskom 43% : 57%). 
-Nakon što odredimo dimenzije, moramo još odrediti poredak stupaca. 
-Ako je broj stupaca relativno mali, to će nam obično poći za rukom 
-običnim anagramiranjem. Izrežemo vrpce koje sadrže stupce pravokutnika 
-i premještamo ih dok ne dobijemo smisleni sadržaj u redcima. 
-Dodatnu pomoć nam mogu dati podatci o frekvencijama bigrama. 
+Nakon Ĺˇto odredimo dimenzije, moramo joĹˇ odrediti poredak stupaca. 
+Ako je broj stupaca relativno mali, to Ä‡e nam obiÄŤno poÄ‡i za rukom 
+obiÄŤnim anagramiranjem. IzreĹľemo vrpce koje sadrĹľe stupce pravokutnika 
+i premjeĹˇtamo ih dok ne dobijemo smisleni sadrĹľaj u redcima. 
+Dodatnu pomoÄ‡ nam mogu dati podatci o frekvencijama bigrama. 
 <p>
 
-<b>Primjer 1.13: </b> <em>Dekriptirati šifrat</em>
+<b>Primjer 1.13: </b> <em>Dekriptirati Ĺˇifrat</em>
 <pre><font size=3 color=990000>&nbsp; &nbsp; &nbsp; AAOSA JRTIE EAAAU SCEAE IANPI
 &nbsp; &nbsp; &nbsp; JAJJN FVSOI RZVPH NIONA RNZIJ
 &nbsp; &nbsp; &nbsp; INUSS NTRZU TIC
 </font></pre>
-<em>dobiven stupčanom transpozicijom</em>
+<em>dobiven stupÄŤanom transpozicijom</em>
 <p>
 
-<i>Rješenje</i>. U šifratu imamo 63 slova, pa nam se kao najvjerojatnije nameću 
+<i>RjeĹˇenje</i>. U Ĺˇifratu imamo 63 slova, pa nam se kao najvjerojatnije nameÄ‡u 
 dimenzije 7 &times; 9 i 9 &times; 7 (razumno je pretpostaviti da ni broj 
-stupaca ni broj redaka nisu jako mali - u prvom slučaju bi anagramiranje 
-bilo trivijalno za obaviti, a u drugom duljina ključa 
-ne bi bila bitno kraća od duljine otvorenog teksta). Upišemo li šifrat u pravokutnike tih 
+stupaca ni broj redaka nisu jako mali - u prvom sluÄŤaju bi anagramiranje 
+bilo trivijalno za obaviti, a u drugom duljina kljuÄŤa 
+ne bi bila bitno kraÄ‡a od duljine otvorenog teksta). UpiĹˇemo li Ĺˇifrat u pravokutnike tih 
 dimenzija, dobivamo: 
 <pre><font size=2>
 A E A J Z R S   3:4              A T U A J R O J T   4:5
@@ -150,17 +150,17 @@ T C J I N U I   3:4
 I E A R A S C   4:3
 </font></pre>
 Odnos samoglasnika i suglasnika sugerira da je prvi izbor dimenzija 
-vjerojatniji. Sada ovih 7 stupaca možemo pokušati "anagramirati" 
-tako da dobijemo smisleni tekst. Tu nam (barem na početku) može 
-pomoći frekvencija bigrama. Bigrami koji u hrvatskom jeziku imaju 
-frekvenciju veću od 0.8% su (abecednim redom): 
+vjerojatniji. Sada ovih 7 stupaca moĹľemo pokuĹˇati "anagramirati" 
+tako da dobijemo smisleni tekst. Tu nam (barem na poÄŤetku) moĹľe 
+pomoÄ‡i frekvencija bigrama. Bigrami koji u hrvatskom jeziku imaju 
+frekvenciju veÄ‡u od 0.8% su (abecednim redom): 
 <pre><font size=3>
 AK, AN, AS, AT, AV, CI, DA, ED, EN, IC, IJ, IN, 
 IS, JA, JE, KA, KO, LI, NA, NE, NI, NO, OD, OJ,
 OS, OV, PO, PR, RA, RE, RI, ST, TA, TI, VA, ZA. 
 </font></pre>
-Za svaki od parova redaka, pogledajmo koliko se od tako dobivenih 9 
-bigrama nalazi među ovih 36 najfrekventnijih. Tako se dobije sljedeća tablica: 
+Za svaki od parova stupaca, pogledajmo koliko se od tako dobivenih 9 
+bigrama nalazi meÄ‘u ovih 36 najfrekventnijih. Tako se dobije sljedeÄ‡a tablica: 
 <pre>
       |  1   2   3   4   5   6   7
   ----------------------------------
@@ -179,42 +179,42 @@ bigrama nalazi među ovih 36 najfrekventnijih. Tako se dobije sljedeća tablica:
    7  |  3   5   4   0   1   1
 </pre>
 
-Uočavamo da je broj 6 najveći od svih brojeva u tablici. 
+UoÄŤavamo da je broj 6 najveÄ‡i od svih brojeva u tablici. 
 Stoga krenimo od pretpostavke da stupci 
 <font color=000099>4 2</font> dolaze jedan do drugoga (u tom poretku). 
-Vjerojatno je već ovo dovoljno da pogodimo rješenje, ali 
-možemo još iskoristiti tablicu. Eliminirajmo sve parove s 
+Vjerojatno je veÄ‡ ovo dovoljno da pogodimo rjeĹˇenje, ali 
+moĹľemo joĹˇ iskoristiti tablicu. Eliminirajmo sve parove s 
 frekvencijama bigrama 0 ili 1, te one koji su u kontradikciji 
 s izborom <font color=000099>4 2</font>, tj. par <font color=000099>2 4</font> 
 i parove kojima je 4 na prvom ili 2 na drugom mjestu. 
-Uočavamo kao vjerojatne parove (najbolji u retku 
+UoÄŤavamo kao vjerojatne parove (najbolji u retku 
 i stupcu) <font color=000099>7 3</font>  i  
-<font color=000099>6 1</font>. Također je vrlo vjerojatan par 
+<font color=000099>6 1</font>. TakoÄ‘er je vrlo vjerojatan par 
 <font color=000099>2 7</font> (najbolji u retku). 
-Čini se da bi <font color=000099>4 2 7 3</font> mogao biti 
-dio ključa. 
+ÄŚini se da bi <font color=000099>4 2 7 3</font> mogao biti 
+dio kljuÄŤa. 
 Iz preostalih vrijednosti u tablici, kao najvjerojatniji 
-ključevi se nameću 
+kljuÄŤevi se nameÄ‡u 
 <p align=center>
 <font color=000099>4 2 7 3 6 1 5</font>, &nbsp; &nbsp; &nbsp; <font color=000099>5 1 6 4 2 7 3</font>, &nbsp; &nbsp; &nbsp; <font color=000099>6 1 5 4 2 7 3</font>.
 </p>
 Sada se lako provjeri da jedino drugi izbor daje suvisli tekst: 
-<pre><font size=3 color=990000>ZA RJEŠAVANJE NEPOZNATIH ŠIFARA NAJVAŽNIJI 
-SU UPORNOST, INTUICIJA I SREĆA.</font><font size=2> 
+<pre><font size=3 color=990000>ZA RJEĹ AVANJE NEPOZNATIH Ĺ IFARA NAJVAĹ˝NIJI 
+SU UPORNOST, INTUICIJA I SREÄ†A.</font><font size=2> 
 
-             (Parker Hitt: Udžbenik za rješavanje vojnih šifara)
+             (Parker Hitt: UdĹľbenik za rjeĹˇavanje vojnih Ĺˇifara)
 </font></pre>
 <p>
 
-Napomenimo da se sigurnost transpozicijskih šifara može znatno povećati 
-korištenjem više koraka transpozicije. Većina njemačkih šifri tijekom 
-prvog svjetskog rata su bile dvostruke transpozicijske šifre. Ove šifre 
+Napomenimo da se sigurnost transpozicijskih Ĺˇifara moĹľe znatno poveÄ‡ati 
+koriĹˇtenjem viĹˇe koraka transpozicije. VeÄ‡ina njemaÄŤkih Ĺˇifri tijekom 
+prvog svjetskog rata su bile dvostruke transpozicijske Ĺˇifre. Ove Ĺˇifre 
 su vrlo sigurne, ali njihovo dekriptiranje postaje relativno jednostavno 
-ako kriptoanalitičar raspolaže s nekoliko jednako dugih šifrata 
-šifriranih istim ključem. Tada se dva šifrata ispišu jedan ispod drugog 
-na dugim trakama papira, pa se trake okomito razrežu tako da po dva 
-slova (jedno iz svakog šifrata) dođu na isti papirić. Ti se papirići 
-sada slažu jedan uz drugog, sve dok se gore i dolje ne pojavi nešto nalik na 
+ako kriptoanalitiÄŤar raspolaĹľe s nekoliko jednako dugih Ĺˇifrata 
+Ĺˇifriranih istim kljuÄŤem. Tada se dva Ĺˇifrata ispiĹˇu jedan ispod drugog 
+na dugim trakama papira, pa se trake okomito razreĹľu tako da po dva 
+slova (jedno iz svakog Ĺˇifrata) doÄ‘u na isti papiriÄ‡. Ti se papiriÄ‡i 
+sada slaĹľu jedan uz drugog, sve dok se gore i dolje ne pojavi neĹˇto nalik na 
 otvoreni tekst. 
 
 <p>
@@ -224,8 +224,8 @@ otvoreni tekst.
 
 <b><font size="-1" face="Verdana">
 <a href="otp.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="naprave.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="naprave.html">[SljedeÄ‡e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 
 <hr size=2 noshade>

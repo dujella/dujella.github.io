@@ -2,14 +2,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Vigenereova šifra</title>
+<title>Vigenereova Ĺˇifra</title>
 
 <meta name="author" content="Andrej Dujella">
 <meta name="description" content="Kriptografija - Vigenereova sifra">
 <meta name="keywords" content="Vigenere, kriptoanaliza, 
 indeks koincidencije">
 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utb-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
 
@@ -25,8 +25,8 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="supst.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="playfair.html">[Sljedeće poglavlje]</a> &nbsp; 
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="playfair.html">[SljedeÄ‡e poglavlje]</a> &nbsp; 
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 <p>
 
@@ -34,23 +34,24 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <a name="1.3"></a>
 <h2 align=center style="color: rgb(128,0,0)">1.3. Vigen&egrave;reova 
-šifra</h2>
+Ĺˇifra</h2>
 
 
-Kod supstitucijske šifre svakom slovu otvorenog teksta odgovara 
-jedinstveno slovo šifrata. Takve šifre se zovu 
-<em>monoalfabetske</em>. Prikazat ćemo sada Vigen&egrave;reovu šifru 
+Kod supstitucijske Ĺˇifre svakom slovu otvorenog teksta odgovara 
+jedinstveno slovo Ĺˇifrata. Takve Ĺˇifre se zovu 
+<em>monoalfabetske</em>. Prikazat Ä‡emo sada Vigen&egrave;reovu Ĺˇifru 
 koja spada u <em>polialfabetske kriptosustave</em>. Naime, kod nje 
-svako slovo otvorenog teksta može se preslikati u jedno od <i>m</i> 
-mogućih slova (gdje je <i>m</i> duljina ključa), u ovisnosti o svom 
-položaju unutar otvorenog teksta. 
+svako slovo otvorenog teksta moĹľe se preslikati u jedno od <i>m</i> 
+moguÄ‡ih slova (gdje je <i>m</i> duljina kljuÄŤa), u ovisnosti o svom 
+poloĹľaju unutar otvorenog teksta. 
 <p>
 Francuski diplomat <font color=009900>Blaise de Vigen&egrave;re</font> je 1586. godine 
 objavio knjigu "Traicte de Chiffres" u kojoj se 
-nalazilo sve što se u to vrijeme znalo o kriptografiji 
-(ali gotovo ništa o kriptoanalizi). U njoj je opisano više 
+nalazilo sve Ĺˇto se u to vrijeme znalo o kriptografiji 
+(ali gotovo niĹˇta o kriptoanalizi). U njoj je opisano viĹˇe 
 originalnih polialfabetskih sustava. Sustav koji se danas naziva 
-Vigen&egrave;reova šifra definiran je na sljedeći način. 
+Vigen&egrave;reova Ĺˇifra (iako ju je prvi opisao Giovan Battista Bellaso 1553. godine) 
+definiran je na sljedeÄ‡i naÄŤin. 
 <p>
 
 <table align=center border=1 width="95%" cellpadding=15> 
@@ -62,7 +63,7 @@ Neka je <i>m</i> fiksan prirodan broj. Definiramo
 <font face="Brush Script MT,Script,Times New Roman">C</font> = 
 <font face="Brush Script MT,Script,Times New Roman">K</font> = 
 (<b>Z</b><sub>26</sub>)<sup><i>m</i></sup>. 
-Za ključ <i>K</i> = (<i>k</i><sub>1</sub>, <i>k</i><sub>2</sub>, 
+Za kljuÄŤ <i>K</i> = (<i>k</i><sub>1</sub>, <i>k</i><sub>2</sub>, 
 ... , <i>k</i><sub><i>m</i></sub>), definiramo 
 <p align=center>
 <i>e<sub>K</sub></i>(<i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>, ... , 
@@ -78,23 +79,23 @@ Za ključ <i>K</i> = (<i>k</i><sub>1</sub>, <i>k</i><sub>2</sub>,
 </font></td></tr></table>
 <p><br><br>
 
-Dakle, slova otvorenog teksta pomičemo za <i>k</i><sub>1</sub>, <i>k</i><sub>2</sub>, ... 
+Dakle, slova otvorenog teksta pomiÄŤemo za <i>k</i><sub>1</sub>, <i>k</i><sub>2</sub>, ... 
 ili <i>k</i><sub><i>m</i></sub> mjesta, u ovisnosti o tome na kojem se mjestu u 
 otvorenom tekstu nalaze (preciznije, pomak ovisi o ostatku koji dobijemo kada poziciju slova 
-podijelimo s duljinom ključa <i>m</i>). Kod ove su šifre 
-osnovni elementi otvorenog teksta i šifrata "blokovi" od po <i>m</i> slova. 
-No, šifriranje se zapravo provodi "slovo po slovo", pa ovdje nije 
-nužno nadopuniti zadnji blok ako broj slova u otvorenom tekstu nije djeljiv s <i>m</i>. 
+podijelimo s duljinom kljuÄŤa <i>m</i>). Kod ove su Ĺˇifre 
+osnovni elementi otvorenog teksta i Ĺˇifrata "blokovi" od po <i>m</i> slova. 
+No, Ĺˇifriranje se zapravo provodi "slovo po slovo", pa ovdje nije 
+nuĹľno nadopuniti zadnji blok ako broj slova u otvorenom tekstu nije djeljiv s <i>m</i>. 
 <p>
 
-<b>Primjer 1.5: </b> Neka je <i>m</i> = 4 i ključna 
-riječ &nbsp; 
+<b>Primjer 1.5: </b> Neka je <i>m</i> = 4 i kljuÄŤna 
+rijeÄŤ &nbsp; 
 <font color=990099>BROJ</font></tt>. 
-Njezin numerički ekvivalent je ključ  
+Njezin numeriÄŤki ekvivalent je kljuÄŤ  
 <i>K</i> = (1, 17, 14, 9). 
 Pretpostavimo da je otvoreni tekst &nbsp; 
 <font color=990000>KRIPTOLOGIJA</font>. 
-Šifriranje se provodi na sljedeći način: 
+Ĺ ifriranje se provodi na sljedeÄ‡i naÄŤin: 
 
 <pre><font size=2>
         10  17   8  15      19  14  11  14       6   8   9   0 
@@ -105,86 +106,87 @@ Pretpostavimo da je otvoreni tekst &nbsp;
         11   8  22  24      20   5  25  23       7  25  23   9
 
 </font></pre>
-Dakle, šifrat je &nbsp;  
-<font color=000099>LIWYUFZXHZXJ</font>. Rezultat se može provjeriti i <a href="vigjs.html">OVDJE</a>.  
-Uočimo da se prvo 
+Dakle, Ĺˇifrat je &nbsp;  
+<font color=000099>LIWYUFZXHZXJ</font>. Rezultat se moĹľe provjeriti i <a href="vigjs.html">OVDJE</a>.  
+UoÄŤimo da se prvo 
 slovo O preslikalo u F, a drugo u X.
 <p>
 
-Primjer 1.5 može se ilustrirati i ovako 
-<pre><font size=3>    ključ         <font color=990099>B R O J B R O J B R O J</font> 
+Primjer 1.5 moĹľe se ilustrirati i ovako 
+<pre><font size=3>    kljuÄŤ         <font color=990099>B R O J B R O J B R O J</font> 
 otvoreni tekst    <font color=990000>K R I P T O L O G I J A</font> 
-    šifrat        <font color=000099>L I W Y U F Z X H Z X J</font>
+    Ĺˇifrat        <font color=000099>L I W Y U F Z X H Z X J</font>
 </font></pre>
-Vidimo da se ovdje ključ ponavlja u nedogled pa prema podjeli šifara, 
-s obzirom na način na koji se obrađuje otvoreni tekst, ovu šifru možemo 
-shvatiti kao primjer blokovne šifre. Postoje i druge 
-varijante Vigen&egrave;reove šifre. Jedna takva (sigurnija od originalne) 
-je ona s <em>autoključem</em> (engl. autokey), u kojoj otvoreni tekst generira ključ. 
-naime, originalni ključ se koristi samo za šifriranje prvog bloka 
-od <i>m</i> slova, dok se za šifriranje daljnjih blokova koristi 
-prethodni blok otvorenog teksta. Time ova varijanta spada u protočne šifre. 
+Vidimo da se ovdje kljuÄŤ ponavlja u nedogled pa prema podjeli Ĺˇifara, 
+s obzirom na naÄŤin na koji se obraÄ‘uje otvoreni tekst, ovu Ĺˇifru moĹľemo 
+shvatiti kao primjer blokovne Ĺˇifre. Postoje i druge 
+varijante Vigen&egrave;reove Ĺˇifre. Jedna takva 
+(ÄŤiji je autor zaista Vigen&egrave;re i koja je sigurnija od originalne) 
+je ona s <em>autokljuÄŤem</em> (engl. autokey), u kojoj otvoreni tekst generira kljuÄŤ. 
+naime, originalni kljuÄŤ se koristi samo za Ĺˇifriranje prvog bloka 
+od <i>m</i> slova, dok se za Ĺˇifriranje daljnjih blokova koristi 
+prethodni blok otvorenog teksta. Time ova varijanta spada u protoÄŤne Ĺˇifre. 
 <p>
 
 <b>Primjer 1.6: </b> <em>Sve isto kao u Primjeru 1.5, ali s 
-autoključem</em>. 
+autokljuÄŤem</em>. 
 <p>
-U šifriranju ćemo koristiti tzv. 
+U Ĺˇifriranju Ä‡emo koristiti tzv. 
 <a href="tablice/vigkva.html" target="_blank">Vigen&egrave;reov kvadrat</a> 
-Ako npr. slovo K treba šifrirati 
-ključem B, onda pogledamo stupac koji počinje s K i redak koji počinje 
-s B. U presjeku je šifrat L. Dobivamo: 
-<pre><font size=3>    ključ         <font color=990099>B R O J K R I P T O L O</font> 
+Ako npr. slovo K treba Ĺˇifrirati 
+kljuÄŤem B, onda pogledamo stupac koji poÄŤinje s K i redak koji poÄŤinje 
+s B. U presjeku je Ĺˇifrat L. Dobivamo: 
+<pre><font size=3>    kljuÄŤ         <font color=990099>B R O J K R I P T O L O</font> 
 otvoreni tekst    <font color=990000>K R I P T O L O G I J A</font> 
-    šifrat        <font color=000099>L I W Y D F T D Z W U O</font>
+    Ĺˇifrat        <font color=000099>L I W Y D F T D Z W U O</font>
 </font></pre>
 <p>
 
-Vigen&egrave;reova šifra je jedan od najpopularnijih kriptosustava u 
-povijesti. Spomenimo da je bila u širokoj uporabi tijekom Američke revolucije, 
-krajem 18. stoljeća, a korištena je i u Američkom građanskom ratu. 
-Čak je 1917. u uglednom časopisu 
-"Scientific American" objavljeno da je ovu šifru "nemoguće razbiti". 
-To naravno nije bilo točno, jer su kriptoanalitičari već pola stoljeća 
-prije toga poznavali metode za napad na Vigen&egrave;reovu šifru. 
+Vigen&egrave;reova Ĺˇifra je jedan od najpopularnijih kriptosustava u 
+povijesti. Spomenimo da je bila u Ĺˇirokoj uporabi tijekom AmeriÄŤke revolucije, 
+krajem 18. stoljeÄ‡a, a koriĹˇtena je i u AmeriÄŤkom graÄ‘anskom ratu. 
+ÄŚak je 1917. u uglednom ÄŤasopisu 
+"Scientific American" objavljeno da je ovu Ĺˇifru "nemoguÄ‡e razbiti". 
+To naravno nije bilo toÄŤno, jer su kriptoanalitiÄŤari veÄ‡ pola stoljeÄ‡a 
+prije toga poznavali metode za napad na Vigen&egrave;reovu Ĺˇifru. 
 <p>
-Recimo sada nešto o kriptoanalizi Vigen&egrave;reove šifre. 
-Prvi korak je određivanje duljine ključne riječi. 
-Prikazat ćemo dvije metode. Prva metoda se zove <em>Kasiskijev 
+Recimo sada neĹˇto o kriptoanalizi Vigen&egrave;reove Ĺˇifre. 
+Prvi korak je odreÄ‘ivanje duljine kljuÄŤne rijeÄŤi. 
+Prikazat Ä‡emo dvije metode. Prva metoda se zove <em>Kasiskijev 
 test</em> i uveo ju je 
 <font color=009900>Friedrich Kasiski</font> 1863. godine, 
 a koristio ju je otprilike u isto vrijeme i <font color=009900>Charles Babbage</font>. 
 Metoda se 
-zasniva na činjenici da će dva identična segmenta otvorenog teksta 
-biti šifrirana na isti način ukoliko se njihove početne pozicije 
-razlikuju za neki višekratnik od <i>m</i>, gdje je <i>m</i> duljina ključa. 
+zasniva na ÄŤinjenici da Ä‡e dva identiÄŤna segmenta otvorenog teksta 
+biti Ĺˇifrirana na isti naÄŤin ukoliko se njihove poÄŤetne pozicije 
+razlikuju za neki viĹˇekratnik od <i>m</i>, gdje je <i>m</i> duljina kljuÄŤa. 
 Obrnuto, ako 
-uočimo dva identična segmenta u šifratu, duljine barem 3, tada 
-je vrlo vjerojatno da oni odgovaraju identičnim segmentima otvorenog 
-teksta (podudarnost odsječaka duljine 2 lako može biti i slučajna, 
-dok je kod odsječaka veće duljine to puno manje vjerojatno). 
+uoÄŤimo dva identiÄŤna segmenta u Ĺˇifratu, duljine barem 3, tada 
+je vrlo vjerojatno da oni odgovaraju identiÄŤnim segmentima otvorenog 
+teksta (podudarnost odsjeÄŤaka duljine 2 lako moĹľe biti i sluÄŤajna, 
+dok je kod odsjeÄŤaka veÄ‡e duljine to puno manje vjerojatno). 
 <p>
-U Kasiskijevom testu u šifrati tražimo parove identičnih segmenata 
-duljine barem 3, te (ako takvi postoje) zabilježimo udaljenosti između njihovih početnih 
-položaja. Ako na takav način dobijemo udaljenosti 
+U Kasiskijevom testu u Ĺˇifrati traĹľimo parove identiÄŤnih segmenata 
+duljine barem 3, te (ako takvi postoje) zabiljeĹľimo udaljenosti izmeÄ‘u njihovih poÄŤetnih 
+poloĹľaja. Ako na takav naÄŤin dobijemo udaljenosti 
 <i>d</i><sub>1</sub>, <i>d</i><sub>2</sub>, ... , onda je 
-razumna pretpostavka da <i>m</i> dijeli većinu 
-<i>d<sub>i</sub></i>-ova. Nakon što odredimo <i>m</i>, nalazimo se u 
-sličnoj situaciji kao kod Cezarove šifre. 
-Naime, ako pogledamo samo ona slova koja su šifrirana pomakom za <i>k</i><sub>1</sub> 
+razumna pretpostavka da <i>m</i> dijeli veÄ‡inu 
+<i>d<sub>i</sub></i>-ova. Nakon Ĺˇto odredimo <i>m</i>, nalazimo se u 
+sliÄŤnoj situaciji kao kod Cezarove Ĺˇifre. 
+Naime, ako pogledamo samo ona slova koja su Ĺˇifrirana pomakom za <i>k</i><sub>1</sub> 
 slova (a ako znamo <i>m</i>, onda znamo i koja su to slova), onda su ona 
-šifrirana običnom Cezarovom šifrom. Situacija je ipak nešto teža nego kod obične 
-Cezarove šifre, zbog toga što to ovdje 
-nisu uzastopna slova u otvorenom tekstu, pa njihovim dešifriranjem nećemo dobiti 
-smisleni tekst. Zato ćemo opisati još jednu metodu za razbijanje Vigen&egrave;reove šifre.
+Ĺˇifrirana obiÄŤnom Cezarovom Ĺˇifrom. Situacija je ipak neĹˇto teĹľa nego kod obiÄŤne 
+Cezarove Ĺˇifre, zbog toga Ĺˇto to ovdje 
+nisu uzastopna slova u otvorenom tekstu, pa njihovim deĹˇifriranjem neÄ‡emo dobiti 
+smisleni tekst. Zato Ä‡emo opisati joĹˇ jednu metodu za razbijanje Vigen&egrave;reove Ĺˇifre.
 <p>
 
-Druga metoda za određivanje duljine ključa koristi tzv. 
+Druga metoda za odreÄ‘ivanje duljine kljuÄŤa koristi tzv. 
 indeks koincidencije. Taj je pojam uveo 1920. godine 
 <font color=009900>William Friedman</font> u knjizi 
 "Indeks koincidencije i njegove 
 primjene u kriptografiji", koja se smatra jednom od 
-najvažnijih publikacija u povijesti kriptologije. 
+najvaĹľnijih publikacija u povijesti kriptologije. 
 <p>
 
 <table align=center border=1 width="95%" cellpadding=15> 
@@ -196,14 +198,14 @@ najvažnijih publikacija u povijesti kriptologije.
 <i>x</i><sub><i>n</i></sub> 
 niz od <i>n</i> slova. <em>Indeks koincidencije</em> od <i>x</i>, 
 u oznaci I<sub>c</sub>(<i>x</i>), se definira kao vjerojatnost 
-da su dva slučajna elementa iz <i>x</i> jednaka. 
+da su dva sluÄŤajna elementa iz <i>x</i> jednaka. 
 <p>
 Neka su <i>f</i><sub>0</sub>, <i>f</i><sub>1</sub>, ... , 
 <i>f</i><sub>25</sub> redom (apsolutne) frekvencije od A, B, 
-C, ... , Z u <i>x</i>. Dva elementa iz <i>x</i> možemo odabrati na 
-<nobr><i>n</i>(<i>n</i>-1)/2</nobr> načina, a za svaki <i>i</i> = 
+C, ... , Z u <i>x</i>. Dva elementa iz <i>x</i> moĹľemo odabrati na 
+<nobr><i>n</i>(<i>n</i>-1)/2</nobr> naÄŤina, a za svaki <i>i</i> = 
 0, 1, ... , 25 postoji <nobr><i>f</i><sub><i>i</i></sub>
-(<i>f</i><sub><i>i</i></sub>-1)/2</nobr> načina odabira dvaput 
+(<i>f</i><sub><i>i</i></sub>-1)/2</nobr> naÄŤina odabira dvaput 
 <i>i</i>-tog slova. Stoga vrijedi formula
 <p align=center>
 I<sub>c</sub>(<i>x</i>) = &sum;<sub><i>i</i></sub>&nbsp   
@@ -214,11 +216,11 @@ I<sub>c</sub>(<i>x</i>) = &sum;<sub><i>i</i></sub>&nbsp
 <p>
 
 Pretpostavimo sada da <i>x</i> predstavlja neki tekst na hrvatskom  
-jeziku. Označimo očekivane vjerojatnosti pojavljivanja slova 
+jeziku. OznaÄŤimo oÄŤekivane vjerojatnosti pojavljivanja slova 
 A, B, ... , Z u hrvatskom jeziku redom s <i>p</i><sub>0</sub>, <i>p</i><sub>1</sub>, 
 ... , <i>p</i><sub>25</sub> (vidi ranije navedene 
 <a href="supst.html#frek">frekvencije slova</a> u promilima). 
-Ako je <i>n</i> dovoljno velik, za očekivati je da će vrijediti 
+Ako je <i>n</i> dovoljno velik, za oÄŤekivati je da Ä‡e vrijediti 
 
 <p align=center>
 I<sub>c</sub>(<i>x</i>) &asymp; &sum;<sub><i>i</i></sub>&nbsp  
@@ -227,38 +229,38 @@ I<sub>c</sub>(<i>x</i>) &asymp; &sum;<sub><i>i</i></sub>&nbsp
 (vjerojatnost da su oba slova A je <i>p</i><sub>0</sub><sup>2</sup> &asymp; 
 0.115<sup>2</sup>, 
 da su oba B je <i>p</i><sub>1</sub><sup>2</sup> &asymp; 0.015<sup>2</sup>, itd.). 
-Isti zaključak vrijedi i ukoliko je <i>x</i> šifrat dobiven iz 
-otvorenog teksta na hrvatskom jeziku pomoću neke monoalfabetske 
-šifre. Tu će se pojedinačne vjerojatnosti ispremještati, 
-ali će veličina 
+Isti zakljuÄŤak vrijedi i ukoliko je <i>x</i> Ĺˇifrat dobiven iz 
+otvorenog teksta na hrvatskom jeziku pomoÄ‡u neke monoalfabetske 
+Ĺˇifre. Tu Ä‡e se pojedinaÄŤne vjerojatnosti ispremjeĹˇtati, 
+ali Ä‡e veliÄŤina 
 <nobr>&sum;<sub><i>i</i></sub>&nbsp 
 <i>p</i><sub><i>i</i></sub><sup>2</sup></nobr>
 ostati nepromijenjena.  
 <p>
-Pretpostavimo sada da imamo šifrat <nobr><i>y</i> = 
+Pretpostavimo sada da imamo Ĺˇifrat <nobr><i>y</i> = 
 <i>y</i><sub>1</sub><i>y</i><sub>2</sub> ... 
 <i>y</i><sub><i>n</i></sub></nobr> 
-koji je dobiven Vigen&egrave;reovom šifrom. Rastavimo <i>y</i> na 
+koji je dobiven Vigen&egrave;reovom Ĺˇifrom. Rastavimo <i>y</i> na 
 <i>m</i> podnizova <nobr><i>z</i><sub>1</sub>, <i>z</i><sub>2</sub>, ... , 
-<i>z</i><sub><i>m</i></sub></nobr> tako da <i>y</i> napišemo, 
+<i>z</i><sub><i>m</i></sub></nobr> tako da <i>y</i> napiĹˇemo, 
 po stupcima, u matricu dimenzija <i>m</i> 
-&times; (<i>n</i>/<i>m</i>). (Ako <i>m</i> ne dijeli <i>n</i>, možemo 
-nadopuniti <i>y</i> na prozvoljan način ili promatrati "krnju matricu" 
+&times; (<i>n</i>/<i>m</i>). (Ako <i>m</i> ne dijeli <i>n</i>, moĹľemo 
+nadopuniti <i>y</i> na prozvoljan naÄŤin ili promatrati "krnju matricu" 
 s nepotpunim zadnjim stupcem.)   
-Redci ove matrice su upravo traženi podnizovi 
+Redci ove matrice su upravo traĹľeni podnizovi 
 <nobr><i>z</i><sub>1</sub>, <i>z</i><sub>2</sub>, ... , 
 <i>z</i><sub><i>m</i></sub>.</nobr>  
-Ako je <i>m</i> jednak duljini ključne riječi, 
-onda su elementi istog retka matrice šifrirani pomoću istog slova ključa. 
-Na primjer, prvi redak sadrži prvo, <nobr>(<i>m</i>+1)-vo,</nobr> 
-<nobr>(2<i>m</i>+1)-vo,</nobr> ... slovo šifrata, a sva su ta slova šifrirana 
-pomoću <i>k</i><sub>1</sub>. 
+Ako je <i>m</i> jednak duljini kljuÄŤne rijeÄŤi, 
+onda su elementi istog retka matrice Ĺˇifrirani pomoÄ‡u istog slova kljuÄŤa. 
+Na primjer, prvi redak sadrĹľi prvo, <nobr>(<i>m</i>+1)-vo,</nobr> 
+<nobr>(2<i>m</i>+1)-vo,</nobr> ... slovo Ĺˇifrata, a sva su ta slova Ĺˇifrirana 
+pomoÄ‡u <i>k</i><sub>1</sub>. 
 Zato bi svi indeksi koincidencije  
 I<sub>c</sub>(<i>z</i><sub><i>i</i></sub>) trebali biti 
-približno jednaki 0.064. S druge strane, ako <i>m</i> nije duljina 
-ključne riječi, onda će <i>z</i><sub><i>i</i></sub>-ovi izgledati 
-više-manje slučajni nizovi slova, budući su dobiveni pomacima pomoću različitih 
-slova ključa. Primijetimo da za potpuno slučajni niz imamo
+pribliĹľno jednaki 0.064. S druge strane, ako <i>m</i> nije duljina 
+kljuÄŤne rijeÄŤi, onda Ä‡e <i>z</i><sub><i>i</i></sub>-ovi izgledati 
+viĹˇe-manje sluÄŤajni nizovi slova, buduÄ‡i su dobiveni pomacima pomoÄ‡u razliÄŤitih 
+slova kljuÄŤa. Primijetimo da za potpuno sluÄŤajni niz imamo
 <p align=center>
 I<sub>c</sub> &asymp; 26 
 <b>&middot;</b> (1/26)<sup>2</sup> 
@@ -268,19 +270,19 @@ Ove dvije vrijednosti
 <nobr>&kappa;<sub>p</sub> = 0.064</nobr> i 
 <nobr>&kappa;<sub>r</sub> = 0.038</nobr>  
 (p = plaintext, r = random) 
-su dovoljno daleko jedna od druge, tako da ćemo najčešće na 
-ovaj način moći odrediti točnu duljinu ključne riječi (ili 
-potvrditi pretpostavku dobivenu pomoću Kasiskijeve metode). 
+su dovoljno daleko jedna od druge, tako da Ä‡emo najÄŤeĹˇÄ‡e na 
+ovaj naÄŤin moÄ‡i odrediti toÄŤnu duljinu kljuÄŤne rijeÄŤi (ili 
+potvrditi pretpostavku dobivenu pomoÄ‡u Kasiskijeve metode). 
 Spomenimo da je u engleskom jeziku 
 <nobr>&kappa;<sub>p</sub> = 0.065,</nobr>  
-u njemačkom 0.076, u francuskom 0.078, u talijanskom 0.074, 
-a u španjolskom 0.078. Odavde zaključujemo da za primjenu ove metode nije nužno 
+u njemaÄŤkom 0.076, u francuskom 0.078, u talijanskom 0.074, 
+a u Ĺˇpanjolskom 0.078. Odavde zakljuÄŤujemo da za primjenu ove metode nije nuĹľno 
 znati na kojem je jeziku pisan otvoreni tekst. Jedina bitna pretpostavka 
-jest da se za jezik na kojem je pisan otvoreni tekst veličina &kappa;<sub>p</sub> 
-značajno razlikuje od 0.038.  
+jest da se za jezik na kojem je pisan otvoreni tekst veliÄŤina &kappa;<sub>p</sub> 
+znaÄŤajno razlikuje od 0.038.  
 <p>
 
-<b>Primjer 1.7: </b> <em>Dekriptirati šifrat dobiven Vigen&egrave;reovom šifrom:</em> 
+<b>Primjer 1.7: </b> <em>Dekriptirati Ĺˇifrat dobiven Vigen&egrave;reovom Ĺˇifrom:</em> 
 <pre><font size=4>
       GSIQITUKQIEAOHRVUGLTAZGHXUHLPJMRTTNQRBZIAVBTG
       QTBY<font size=4 color=CC3333>MYA</font>IVO<font size=4 color=FFCC66>MZT</font>AIXJBT<font size=4 color=CC33CC>EDE</font>WVQWADVWGOOKNQNTCIPEGPY
@@ -288,12 +290,12 @@ značajno razlikuje od 0.038.
       ERXJSYS<font size=4 color=336699>IVW</font>ABG<u>VWF</u>DTZILNTI<font size=4 color=CC33CC>EDE</font>FJMFAMPNQZBRSDIZPR
       MLGVKFEDZXMVXVQMJXWSLEEQRMAEPRUJXIMFNT
 </font></pre>
-Primijenimo najprije Kasiskijev test. Uočavamo pojavu 
-nekoliko trigrama koji se dvaput pojavljuju u šifratu. 
+Primijenimo najprije Kasiskijev test. UoÄŤavamo pojavu 
+nekoliko trigrama koji se dvaput pojavljuju u Ĺˇifratu. 
 To su
-<font color=CC3333>MYA</font> s početkom na pozicijama 50 i 115 
+<font color=CC3333>MYA</font> s poÄŤetkom na pozicijama 50 i 115 
 (115 - 50 = 65 = 5 <b>&middot;</b> 13),
-<font color=FFCC66>MZT</font> s početkom na pozicijama 56 i 125 
+<font color=FFCC66>MZT</font> s poÄŤetkom na pozicijama 56 i 125 
 (125 - 56 = 69 = 3 <b>&middot;</b> 23),
 <font color=CC33CC>EDE</font> (160 - 65 = 95 =
 5 <b>&middot;</b> 19),
@@ -301,22 +303,22 @@ To su
 5 <b>&middot;</b> 7),
 i <u>VWF</u> (149 - 109 = 40 =
 5 <b>&middot;</b> 8).
-Odavde se kao najvjerojatnija duljina ključne riječi
-nameće broj <i>m</i> = 5, koji dijeli sve osim jedne od razlika
-početnih pozicija ponovljenih trigrama.
+Odavde se kao najvjerojatnija duljina kljuÄŤne rijeÄŤi
+nameÄ‡e broj <i>m</i> = 5, koji dijeli sve osim jedne od razlika
+poÄŤetnih pozicija ponovljenih trigrama.
 <p>
 
-Pogledajmo hoćemo li pomoću indeksa koincidencije doći do
-istog zaključka. Za <i>m</i> = 1 je I<sub>c</sub> = 0.040;
+Pogledajmo hoÄ‡emo li pomoÄ‡u indeksa koincidencije doÄ‡i do
+istog zakljuÄŤka. Za <i>m</i> = 1 je I<sub>c</sub> = 0.040;
 za <i>m</i> = 2 su indeksi 0.037 i 0.040; za <i>m</i> = 3
 su 0.038, 0.048 i 0.038; za <i>m</i> = 4 su 0.036, 0.038,
 0.044 i 0.036, dok za <i>m</i> = 5 dobivamo indekse
-0.057, 0.052, 0.066, 0.076 i 0.066. Sada već s prilično
-velikom sigurnošću možemo zaključiti da je duljina ključne riječi
+0.057, 0.052, 0.066, 0.076 i 0.066. Sada veÄ‡ s priliÄŤno
+velikom sigurnoĹˇÄ‡u moĹľemo zakljuÄŤiti da je duljina kljuÄŤne rijeÄŤi
 jednaka 5.
 <p>
-Sljedeće je pitanje kako odrediti ključnu riječ ukoliko znamo
-njezinu duljinu. Tu nam može pomoći <em>međusobni indeks
+SljedeÄ‡e je pitanje kako odrediti kljuÄŤnu rijeÄŤ ukoliko znamo
+njezinu duljinu. Tu nam moĹľe pomoÄ‡i <em>meÄ‘usobni indeks
 koincidencije dvaju nizova</em>.
 
 <p>
@@ -327,11 +329,11 @@ koincidencije dvaju nizova</em>.
 <b>Definicija 1.3: </b> Neka su <nobr><i>x</i> = 
 <i>x</i><sub>1</sub><i>x</i><sub>2</sub> ... <i>x</i><sub><i>n</i></sub></nobr> i <nobr><i>y</i> = 
 <i>y</i><sub>1</sub><i>y</i><sub>2</sub> ... <i>y</i><sub><i>n'</i></sub></nobr> dva niza od <i>n</i>, odnosno 
-<i>n'</i> slova. <em>Međusobni indeks koincidencije</em> 
+<i>n'</i> slova. <em>MeÄ‘usobni indeks koincidencije</em> 
 od <i>x</i> i <i>y</i>, u oznaci <nobr>MI<sub>c</sub>(<i>x</i>,<i>y</i>),</nobr>  
-se definira kao vjerojatnost da je slučajni element od <i>x</i> 
-jednak slučajnom elementu od <i>y</i>. Ako frekvencije od 
-A, B, C, ... , Z u <i>x</i> i <i>y</i> označimo sa 
+se definira kao vjerojatnost da je sluÄŤajni element od <i>x</i> 
+jednak sluÄŤajnom elementu od <i>y</i>. Ako frekvencije od 
+A, B, C, ... , Z u <i>x</i> i <i>y</i> oznaÄŤimo sa 
 <i>f</i><sub>0</sub>, <i>f</i><sub>1</sub>, ... , 
 <i>f</i><sub>25</sub>, odnosno 
 <i>f'</i><sub>0</sub>, <i>f'</i><sub>1</sub>, ... , 
@@ -345,22 +347,22 @@ MI<sub>c</sub> =
 </font></td></tr></table>
 <p>
 
-Neka je sada <i>m</i> duljina ključne riječi, te neka su podnizovi 
+Neka je sada <i>m</i> duljina kljuÄŤne rijeÄŤi, te neka su podnizovi 
 <nobr><i>z</i><sub>1</sub>, <i>z</i><sub>2</sub>, ... , 
 <i>z</i><sub><i>m</i></sub></nobr> dobiveni kao prije.
 <p>
 Pretpostavimo da je <nobr><i>K</i> = 
 (<i>k</i><sub>1</sub>, <i>k</i><sub>2</sub>, ... , 
-<i>k</i><sub><i>m</i></sub>)</nobr> ključna riječ, te pokušajmo ocijeniti indeks 
+<i>k</i><sub><i>m</i></sub>)</nobr> kljuÄŤna rijeÄŤ, te pokuĹˇajmo ocijeniti indeks 
 <nobr>MI<sub>c</sub>(<i>z</i><sub>i</sub>,<i>z</i><sub>j</sub>).</nobr>  
 Promotrimo proizvoljno slovo u <i>z</i><sub><i>i</i></sub> 
 i proizvoljno slovo u <i>z</i><sub>j</sub>. 
 Procijenimo vjerojatnost da su oba slova jednaka A. 
 Vjerojatnost da pomakom za <i>k</i><sub><i>i</i></sub> dobijemo slovo A 
-približno je jednaka vjerojatnosti s kojom se u hrvatskom jeziku 
-pojavljuje slovo čiji je numerički ekvivalent 
+pribliĹľno je jednaka vjerojatnosti s kojom se u hrvatskom jeziku 
+pojavljuje slovo ÄŤiji je numeriÄŤki ekvivalent 
 <nobr>-<i>k</i><sub><i>i</i></sub> mod 26.</nobr> 
-Dakle, vjerojatnost, da su oba ova slova jednaka A, približno je jednaka 
+Dakle, vjerojatnost, da su oba ova slova jednaka A, pribliĹľno je jednaka 
 <TABLE align=center CELLSPACING=0 CELLPADDING=0><TR><TD><I>p</I></TD><TD><TABLE 
 CELLSPACING=0 
 CELLPADDING=0><TR><TD>&nbsp</TD></TR><TR><TD>-<I>k</I><SUB><FONT 
@@ -371,7 +373,7 @@ CELLSPACING=0
 CELLPADDING=0><TR><TD>&nbsp</TD></TR><TR><TD>-<I>k</I><SUB><FONT 
 SIZE=-1><I>j</I></FONT></SUB></TD></TR></TABLE></TD><TD>,</TD>
 </TR></TABLE>
-da su oba slova B, približno je jednaka  
+da su oba slova B, pribliĹľno je jednaka  
 <TABLE align=center CELLSPACING=0 CELLPADDING=0><TR><TD><I>p</I></TD><TD><TABLE 
 CELLSPACING=0 
 CELLPADDING=0><TR><TD>&nbsp</TD></TR><TR><TD>1-<I>k</I><SUB><FONT 
@@ -393,22 +395,22 @@ MI<sub>c</sub>(<i>z</i><sub><i>i</i></sub>,
 &sum;<sub><i>h</i></sub>&nbsp 
 <i>p<sub>h</sub></i> <i>p<sub>h+k<sub>i</sub>-k<sub>j</sub></sub></i> </p>
 (pomakom indeksa suma se ne mijenja).  
-Uočimo da ova ocjena ovisi samo o razlici 
+UoÄŤimo da ova ocjena ovisi samo o razlici 
 <nobr>(<i>k<sub>i</sub> - k<sub>j</sub></i>) mod 26,</nobr> 
-koju ćemo zvati relativni pomak od 
+koju Ä‡emo zvati relativni pomak od 
 <i>z</i><sub><i>i</i></sub> i <i>z</i><sub><i>j</i></sub>. 
-Također, vrijedi  
+TakoÄ‘er, vrijedi  
 <nobr>&sum;<sub><i>h</i></sub>&nbsp 
 <i>p<sub>h</sub></i> <i>p<sub>h+q</sub></i> = 
 &sum;<sub><i>h</i></sub>&nbsp 
 <i>p<sub>h</sub></i> <i>p<sub>h-q</sub></i>,</nobr>  
-što znači da za pomak <i>q</i> dobivamo istu ocjenu kao i za 
+Ĺˇto znaÄŤi da za pomak <i>q</i> dobivamo istu ocjenu kao i za 
 pomak <nobr>26 - <i>q</i>.</nobr> Stoga je dovoljno promatrati 
-pomake između 0 i 13. To je i napravljeno u sljedećoj tablici 
+pomake izmeÄ‘u 0 i 13. To je i napravljeno u sljedeÄ‡oj tablici 
 <pre><font size=3>
 ________________________________________________________
 
- relativni pomak            očekivana vrijednost od MI<sub>c</sub> 
+ relativni pomak            oÄŤekivana vrijednost od MI<sub>c</sub> 
 ________________________________________________________
 
         0                             0.064  
@@ -428,19 +430,19 @@ ________________________________________________________
 ________________________________________________________
 
 </font></pre>
-Važno je uočiti da ako je pomak jednak 0, onda je ocjena 
-0.064, a ako je pomak različit od 0, onda su ocjene 
-između 0.031 i 0.044, dakle, bitno manje. Ovo zapažanje 
-se može iskoristiti za određivanje vrijednosti 
+VaĹľno je uoÄŤiti da ako je pomak jednak 0, onda je ocjena 
+0.064, a ako je pomak razliÄŤit od 0, onda su ocjene 
+izmeÄ‘u 0.031 i 0.044, dakle, bitno manje. Ovo zapaĹľanje 
+se moĹľe iskoristiti za odreÄ‘ivanje vrijednosti 
 <nobr><i>q</i> = <i>k<sub>i</sub> - k<sub>j</sub></i>.</nobr> 
 <p>
 Pretpostavimo da smo fiksirali <i>z</i><sub><i>i</i></sub> 
-i promotrimo efekt šifriranja <i>z</i><sub><i>j</i></sub> 
+i promotrimo efekt Ĺˇifriranja <i>z</i><sub><i>j</i></sub> 
 sa slovima A, B, C, ... , Z (tj. pomakom za 0, 1, 2, ... , 25 mjesta). 
-Tako dobivene nizove označimo sa 
+Tako dobivene nizove oznaÄŤimo sa 
 <nobr><i>z</i><sub><i>j</i></sub><sup>0</sup>, 
 <i>z</i><sub><i>j</i></sub><sup>1</sup>, ... .</nobr> 
-Za <i>g</i> = 0,1,...,25 izračunamo indeks 
+Za <i>g</i> = 0,1,...,25 izraÄŤunamo indeks 
 <nobr>MI<sub>c</sub>(<i>z</i><sub><i>i</i></sub>, 
 <i>z</i><sub><i>j</i></sub><sup><i>g</i></sup>)</nobr> 
 po formuli 
@@ -452,25 +454,25 @@ MI<sub>c</sub>(<i>x</i>, <i>y</i><sup>g</sup>) =
 </p>
 Za <i>g</i> &equiv; <i>q</i> (mod 26), MI<sub>c</sub> bi trebao biti blizu 
 0.064, a za <nobr><i>g</i> &#8802;  
-<i>q</i> (mod 26)</nobr> bi trebao uglavnom varirati između 0.031 i 0.044. 
+<i>q</i> (mod 26)</nobr> bi trebao uglavnom varirati izmeÄ‘u 0.031 i 0.044. 
 <p>
-Na ovaj način, možemo utvrditi relativne pomake bilo koja dva podniza 
+Na ovaj naÄŤin, moĹľemo utvrditi relativne pomake bilo koja dva podniza 
 <i>z</i><sub><i>i</i></sub> i <i>z</i><sub><i>j</i></sub>. 
-Nakon što to učinimo, ostaje nam samo 26 mogućih ključnih riječi 
-koje onda možemo ispitati jednu po jednu.
+Nakon Ĺˇto to uÄŤinimo, ostaje nam samo 26 moguÄ‡ih kljuÄŤnih rijeÄŤi 
+koje onda moĹľemo ispitati jednu po jednu.
 <p>
-No, malom modifikacijom ove metode, do ključne riječi možemo doći 
+No, malom modifikacijom ove metode, do kljuÄŤne rijeÄŤi moĹľemo doÄ‡i 
 efikasnije, ukoliko nam je poznato na kojem je jeziku 
-pisan otvoreni tekst. Umjesto međusobnog indeksa koincidencije nizova   
+pisan otvoreni tekst. Umjesto meÄ‘usobnog indeksa koincidencije nizova   
 <i>z</i><sub><i>i</i></sub> i <i>z</i><sub><i>j</i></sub><sup><i>g</i></sup>, 
-računat ćemo <nobr>MI<sub>c</sub>(<i>x</i>, 
+raÄŤunat Ä‡emo <nobr>MI<sub>c</sub>(<i>x</i>, 
 <i>z</i><sub><i>j</i></sub><sup><i>g</i></sup>),</nobr> gdje je <i>x</i> niz koji 
-odgovara tipičnom tekstu na jeziku otvorenog teksta. 
-Pretpostavimo da nam je poznato (ili da to barem naslućujemo) da je 
+odgovara tipiÄŤnom tekstu na jeziku otvorenog teksta. 
+Pretpostavimo da nam je poznato (ili da to barem nasluÄ‡ujemo) da je 
 otvoreni tekst pisan na hrvatskom jeziku. 
-To znači da su relativne 
+To znaÄŤi da su relativne 
 frekvencije <nobr><i>f<sub>i</sub></i> / <i>n</i></nobr> 
-približno jednake <i>p<sub>i</sub></i>, pa je   
+pribliĹľno jednake <i>p<sub>i</sub></i>, pa je   
 <p align=center>
 MI<sub>c</sub>(<i>x</i>, <i>z</i><sub><i>j</i></sub><sup><i>g</i></sup>) 
 &asymp;  
@@ -478,14 +480,14 @@ MI<sub>c</sub>(<i>x</i>, <i>z</i><sub><i>j</i></sub><sup><i>g</i></sup>)
 <i>p</i><sub><i>i</i> </sub><i>f'</i><sub><i>i-g</i></sub> / 
 <i>n'</i>. 
 </p>
-Očekujemo da je MI<sub>c</sub>(<i>x</i>, <i>z</i><sub><i>j</i></sub><sup><i>g</i></sup>) 
+OÄŤekujemo da je MI<sub>c</sub>(<i>x</i>, <i>z</i><sub><i>j</i></sub><sup><i>g</i></sup>) 
 &asymp; 0.064 ako je <i>g</i> &equiv;  
 -<i>k<sub>j</sub></i> (mod 26), a u protivnom da je 
 MI<sub>c</sub>(<i>x</i>, <i>z</i><sub><i>j</i></sub><sup><i>g</i></sup>) < 0.045.
 <p>
-Prema tome, da bismo odredili <i>j</i>-to slovo <i>k<sub>j</sub></i> ključne riječi, 
-postupamo da sljedeći način. Za 
-<nobr>0 &le; <i>g</i> &le; 25</nobr> izračunamo 
+Prema tome, da bismo odredili <i>j</i>-to slovo <i>k<sub>j</sub></i> kljuÄŤne rijeÄŤi, 
+postupamo da sljedeÄ‡i naÄŤin. Za 
+<nobr>0 &le; <i>g</i> &le; 25</nobr> izraÄŤunamo 
 <p align=center>
 <i>M<sub>g</sub></i> =   
 &sum;<sub><i>i</i></sub>&nbsp   
@@ -499,17 +501,17 @@ Odredimo <i>h</i> takav da je
 <p>  
   
 
-<b>Nastavak primjera 1.7: </b> Već smo zaključili da je <i>m</i> = 5. 
-Za <i>j</i> = 1,2,3,4,5 izračunajmo vrijednosti <i>M</i><sub>0</sub>, 
+<b>Nastavak primjera 1.7: </b> VeÄ‡ smo zakljuÄŤili da je <i>m</i> = 5. 
+Za <i>j</i> = 1,2,3,4,5 izraÄŤunajmo vrijednosti <i>M</i><sub>0</sub>, 
 <i>M</i><sub>1</sub>, ... , <i>M</i><sub>25</sub>. Npr. za <i>j</i> = 1 je 
 <p align=center>
 <i>M</i><sub>0</sub> = (0.115 <b>&middot;</b> 3 + 0.015 <b>&middot;</b> 1 + 
 0.028 <b>&middot;</b> 0 + ... + 0.023 <b>&middot;</b> 1)/44 &asymp; 0.0310.
 </p>
-Sve tražene vrijednosti nalaze se u sljedećoj 
+Sve traĹľene vrijednosti nalaze se u sljedeÄ‡oj 
 <a href="tablice/coincid3.html" target="_blank">tablici</a>. 
 <p>
-Iz tablice iščitavamo redom:
+Iz tablice iĹˇÄŤitavamo redom:
 <ul>
 <li>Za <i>j</i> = 1 imamo <i>h</i> = 14, <i>M</i><sub>14</sub> = 0.0636, 
 pa je <i>k</i><sub>1</sub> = -14 mod 26 = 26- 14 = 12;  
@@ -522,9 +524,9 @@ pa je <i>k</i><sub>4</sub> = 7;
 <li>Za <i>j</i> = 5 imamo <i>h</i> = 22, <i>M</i><sub>22</sub> = 0.0681, 
 pa je <i>k</i><sub>5</sub> = 4.  
 </ul>
-Stoga je ključna riječ &nbsp; 
+Stoga je kljuÄŤna rijeÄŤ &nbsp; 
 <font color=990099>MATHE</font>,   
-a traženi otvoreni tekst glasi: 
+a traĹľeni otvoreni tekst glasi: 
 <pre><font size="+1" color=990000>
 USPJE HURJE SAVAN JUNEP OZNAT IHSIF ARAMJ ERISE OVIMC ETIRI
 MAPOK AZATE LJIMA REDOM KAKOS UOVDJ ENAVE DENIU PORNO SCUPA
@@ -533,26 +535,26 @@ TDASE ZNABA REMCI TATIJ EZIKO RIGIN ALNOG TEKST AVEOM AJEPO
 ZELJN AALIN IJEBI TNA
 </font></pre>
 
-ili, s umetnutim "kvačicama", razmacima i interpunkcijom:
+ili, s umetnutim "kvaÄŤicama", razmacima i interpunkcijom:
 <p><font color=990000>
-Uspjeh u rješavanju nepoznatih šifara mjeri se ovim četirima
-pokazateljima, redom kako su ovdje navedeni: upornošću,
-pažljivim postupcima analize, intuicijom i srećom. Sposobnost
-da se zna barem čitati jezik originalnog teksta veoma je
-poželjna, ali nije bitna.
+Uspjeh u rjeĹˇavanju nepoznatih Ĺˇifara mjeri se ovim ÄŤetirima
+pokazateljima, redom kako su ovdje navedeni: upornoĹˇÄ‡u,
+paĹľljivim postupcima analize, intuicijom i sreÄ‡om. Sposobnost
+da se zna barem ÄŤitati jezik originalnog teksta veoma je
+poĹľeljna, ali nije bitna.
 </font><p>
-Tako glase prve dvije rečenice "Udžbenika za rješavanje vojnih
-šifara" autora <font color=009900>Parkera Hitta</font>,
+Tako glase prve dvije reÄŤenice "UdĹľbenika za rjeĹˇavanje vojnih
+Ĺˇifara" autora <font color=009900>Parkera Hitta</font>,
 jednog od najpoznatijih
-američkih kriptografa iz vremena Prvog svjetskog rata.
+ameriÄŤkih kriptografa iz vremena Prvog svjetskog rata.
 <p>
 
 <hr size=2 noshade>
 
 <b><font size="-1" face="Verdana">
 <a href="supst.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="playfair.html">[Sljedeće poglavlje]</a> &nbsp; 
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="playfair.html">[SljedeÄ‡e poglavlje]</a> &nbsp; 
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 
 <hr size=2 noshade>
