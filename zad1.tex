@@ -1,0 +1,106 @@
+
+\documentclass[10pt]{article}
+
+\topmargin-35mm \textheight=25cm \textwidth=16cm
+\oddsidemargin=0.5cm \evensidemargin=0.5cm
+
+\usepackage[croatian]{babel}
+%\input{cm-math}
+\usepackage[centertags]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{newlfont}
+
+\def\tg {\mathop{\mathrm{tg}}\nolimits}
+\def\ctg {\mathop{\mathrm{ctg}}\nolimits}
+\def\nzd {\mathop{\mathrm{nzd}}\nolimits}
+\def\nzv {\mathop{\mathrm{nzv}}\nolimits}
+\def\ord {\mathop{\mathrm{ord}}\nolimits}
+\def\Dis {\mathop{\mathrm{Dis}}\nolimits}
+\def\Resultant {\mathop{\mathrm{Resultant}}\nolimits}
+
+
+\title{ALGORITMI ZA ELIPTI\v{C}KE KRIVULJE}
+\author{\Large 1. zada\'ca}
+\date{ 12. 12. 2008. }
+
+\def \dj {\hbox
+         {\rlap{\kern 0.2em\raise 1.30ex\hbox
+         {\vrule height 0.09ex width 0.33em}}d}}
+
+\def \R {{\bf R}}
+\def \C {{\bf C}}
+\def \N {{\bf N}}
+\def \Q {{\bf Q}}
+\def \Z {{\bf Z}}
+\def \F {{\cal F}}
+
+\def \baselinestretch{1.1}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{enumerate}
+
+\item Poka\v{z}ite da je krivulja
+$$ y^2 = x^3 - 2x^2 + x $$
+singularna. Odredite joj singularnu to\v{c}ku, te na\dj{}ite jednu
+njezinu racionalnu parametrizaciju.
+
+\item Otvoreni tekst na hrvatskom jeziku \v{s}ifriran je
+      pomo\'cu ElGamalovog kriptosustava, \v{c}iji su parametri $p=31847$,
+      $\alpha =5$, $a=7899$, $\beta=18074$, na sljede\'ci na\v{c}in.
+      Naj\-prije su slovima pridru\v{z}ene odgovaraju\'ce brojevne
+      vrijednosti: $\mbox{A}=0$, $\mbox{B}=1$, $\mbox{C}=2$, $\mbox{\v{C}}=3$, ... ,
+      $\mbox{Z}=28$, $\mbox{\v{Z}}=29$. Potom su tri po tri susjedna slova
+      otvorenog teksta "kodirana" kao elementi od $\mathbb{Z}_n$,
+      kao \v{s}to pokazuju ovi primjeri:
+      $$ DAN= 5\cdot 30^2 + 0\cdot 30 + 18 = 4518, \quad
+      PUT = 21\cdot 30^2 + 26\cdot 30 + 25 = 19705. $$
+      Kona\v{c}no su ovako dobiveni elementi od
+      $\mathbb{Z}_n$ \v{s}ifrirani pomo\'cu ElGamalovog kriptosustava
+      s gore navedenim parametrima. De\v{s}ifrirajte \v{s}ifrat
+      $$ (6841, 10449), \quad (8006, 21703),$$
+      tj. odredite polazni otvoreni tekst na hrvatskom jeziku.
+
+
+\item Zadana je elipti\v{c}ka krivulja
+$$ E\,:\,\, y^2 = x^3 + 33750x+2953125. $$
+Odredite njezin minimalni Weierstarssov model.
+Kakvu redukciju (dobru ili lo\v{s}u; aditivnu ili mutiplikativnu; rascjepivu ili nerascjepivu)
+ima ta krivulja za $p=3$?
+
+\item Neka je $E$ elipti\v{c}ka krivulja s jednad\v{z}bom
+$$ y^2 = x^3 + ax +b. $$
+Neka je $P=(x_1,y_1)$ to\v{c}ka na $E$, te neka je $2P=(x_2,y_2)$.
+Doka\v{z}ite da vrijedi
+$$ y_1^2 (4x_2(3x_1^2+4a)-3x_1^3 + 5ax_1 + 27b) = 4a^3 + 27b^2. $$
+
+\item Poka\v{z}ite primjerom da elipti\v{c}ka krivulja s jednad\v{z}bom
+$$ y^2 + a_1xy + a_3 y= x^3 + a_2 x^2 + a_4 x + a_6, $$
+gdje su $a_1,a_2,a_3,a_4,a_6 \in \mathbb{Z}$, mo\v{z}e imati
+to\v{c}ku kona\v{c}nog reda \v{c}ije koordinate nisu cjelobrojne.
+
+
+\item Na\dj{}ite sve to\v{c}ke kona\v{c}nog reda,
+te odredite strukturu torzijske grupe za sljede\'ce elipti\v{c}ke krivulje:
+\begin{itemize}
+\item[a)] $y^2 = x^3 +3x +7$
+\item[b)] $y^2 = x^3 - 19x + 30$
+\item[c)] $y^2 = x^3 - 219x+ 1654$
+\item[d)] $y^2 = x^3 - 12987x - 263466$
+\item[e)] $y^2 = x^3 - 1386747x+ 368636886$
+\end{itemize}
+Poka\v{z}ite da u svakom od ovih primjera postoje prosti brojevi
+$p_1,p_2$, takvi da $p_i\nmid 2\Delta$, za koje vrijedi
+$$ |E(\mathbb{Q})_{\textrm{tors}}| = \nzd(|E(\mathbb{F}_{p_1})|, |E(\mathbb{F}_{p_2})|). $$
+
+\end{enumerate}
+
+
+\vspace{0.2in}
+Rok za predaju zada\'ce je 21.1.2009.
+\hfill Andrej Dujella
+\end{document}
