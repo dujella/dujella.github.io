@@ -8,7 +8,7 @@
 <meta name="keywords" content="kriptografija, DES, Data Encryption 
 Standard">
 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utb-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
 
@@ -24,8 +24,8 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="deshist.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="desprop.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="desprop.html">[SljedeÄ‡e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 <p>
 
@@ -36,21 +36,21 @@ body {font-family: Arial,Helvetica,sans-serif;}
 <h2 align=center style="color: rgb(128,0,0)">2.2. Opis algoritma DES-a</h2>
 
 
-DES šifrira otvoreni tekst duljine 64 bita, koristeći ključ 
-<i>K</i> duljine 56 bitova. Tako se dobiva šifrat koji ponovo 
+DES Ĺˇifrira otvoreni tekst duljine 64 bita, koristeÄ‡i kljuÄŤ 
+<i>K</i> duljine 56 bitova. Tako se dobiva Ĺˇifrat koji ponovo 
 ima 64 bita. Algoritam se sastoji od 3 etape: 
 <ol>
-<li>Za dani otvoreni tekst <i>x</i>, permutiranjem pomoću 
+<li>Za dani otvoreni tekst <i>x</i>, permutiranjem pomoÄ‡u 
 fiksne inicijalne permutacije 
 <a href="tablice/destablice.html#IP" target="_blank">IP</a> dobije se <i>x</i><sub>0</sub>. 
-Zapišemo <nobr><i>x</i><sub>0</sub> = IP(<i>x</i>)</nobr> u obliku 
+ZapiĹˇemo <nobr><i>x</i><sub>0</sub> = IP(<i>x</i>)</nobr> u obliku 
 <nobr><i>x</i><sub>0</sub> = <i>L</i><sub>0</sub><i>R</i><sub>0</sub>,</nobr>  
-gdje <i>L</i><sub>0</sub> sadrži prva (lijeva) 32 bita, a 
+gdje <i>L</i><sub>0</sub> sadrĹľi prva (lijeva) 32 bita, a 
 <i>R</i><sub>0</sub> zadnja (desna) 32 bita od <i>x</i><sub>0</sub>.
-<li>Određena funkcija se 16 puta iterira. Računamo 
+<li>OdreÄ‘ena funkcija se 16 puta iterira. RaÄŤunamo 
 <nobr><i>L</i><sub><i>i</i></sub> <i>R</i><sub><i>i</i></sub>,</nobr> 
 <nobr>1 &le; <i>i</i> 
-&le; 16,</nobr> po sljedećem pravilu: 
+&le; 16,</nobr> po sljedeÄ‡em pravilu: 
 
 <p align=center>
 <i>L</i><sub><i>i</i></sub> = <i>R</i><sub><i>i</i> -1</sub> <br>
@@ -58,8 +58,8 @@ gdje <i>L</i><sub>0</sub> sadrži prva (lijeva) 32 bita, a
 &oplus; <i>f</i> (<i>R</i><sub><i>i</i> -1</sub>, 
 <i>K</i><sub><i>i</i></sub>), 
 </p>
-gdje &oplus; označava operaciju 
-"ekskluzivno ili" (XOR). Funkciju <i>f</i> ćemo opisati kasnije, 
+gdje &oplus; oznaÄŤava operaciju 
+"ekskluzivno ili" (XOR). Funkciju <i>f</i> Ä‡emo opisati kasnije, 
 a <i>K</i><sub>1</sub>, <i>K</i><sub>2</sub>, ... , 
 <i>K</i><sub>16</sub> su nizovi bitova duljine 48, koji se 
 dobivaju kao permutacije nekih bitova iz <i>K</i>. 
@@ -67,9 +67,9 @@ dobivaju kao permutacije nekih bitova iz <i>K</i>.
 <li>Primijenimo 
 <a href="tablice/destablice.html#IPinv" target="_blank">inverznu permutaciju</a> 
 IP<sup>-1</sup> na <i>R</i><sub>16</sub><i>L</i><sub>16</sub> i tako 
-dobivamo šifrat <i>y</i>. Dakle, 
+dobivamo Ĺˇifrat <i>y</i>. Dakle, 
 <nobr><i>y</i> = IP<sup>-1</sup>(<i>R</i><sub>16</sub><i>L</i><sub>16</sub>).</nobr> 
-Uočimo inverzni poredak od <i>L</i><sub>16</sub> i 
+UoÄŤimo inverzni poredak od <i>L</i><sub>16</sub> i 
 <i>R</i><sub>16</sub>. 
 </ol>   
 <p>
@@ -80,47 +80,47 @@ Uočimo inverzni poredak od <i>L</i><sub>16</sub> i
 Funkcija <i>f</i> za prvi argument ima niz bitova <i>A</i> duljine 
 32, a za drugi argument ima niz bitova <i>J</i> duljine 48. 
 Kao rezultat se dobiva niz bitova duljine 32. Funkcija se 
-računa u sljedeća 4 koraka:
+raÄŤuna u sljedeÄ‡a 4 koraka:
 <ol>
-<li>Prvi argument <i>A</i> se "proširi" do niza duljine 48 u 
-skladu s fiksnom <em>funkcijom proširenja</em> 
+<li>Prvi argument <i>A</i> se "proĹˇiri" do niza duljine 48 u 
+skladu s fiksnom <em>funkcijom proĹˇirenja</em> 
 <a href="tablice/destablice.html#E" target="_blank">E</a>. 
 Niz E(<i>A</i>) se sastoji od 32 bita iz <i>A</i>, 
-permutiranih na određeni način, s time da se 16 bitova 
+permutiranih na odreÄ‘eni naÄŤin, s time da se 16 bitova 
 pojavi dvaput. 
 
-<li>Izračunamo E(<i>A</i>) 
+<li>IzraÄŤunamo E(<i>A</i>) 
 &oplus; <i>J</i> i rezultat 
-zapišemo kao spoj od osam 6-bitnih nizova 
+zapiĹˇemo kao spoj od osam 6-bitnih nizova 
 <p align=center>
 <i>B</i> = <i>B</i><sub>1</sub><i>B</i><sub>2</sub><i>B</i><sub>3</sub><i>B</i><sub>4</sub><i>B</i><sub>5</sub><i>B</i><sub>6</sub><i>B</i><sub>7</sub><i>B</i><sub>8</sub>. </p>
 
-<li>Sljedeći korak koristi 8 tzv. 
+<li>SljedeÄ‡i korak koristi 8 tzv. 
 <a href="slike/s-box.pdf" target="_blank"><em>S-kutija</em></a>  
 (supstitucijskih kutija) S<sub>1</sub>, ... , 
 S<sub>8</sub>. Svaki S<sub><i>i</i></sub> je fiksna 
-<nobr>4 &times; 16</nobr> matrica čiji su elementi cijeli brojevi između 
+<nobr>4 &times; 16</nobr> matrica ÄŤiji su elementi cijeli brojevi izmeÄ‘u 
 0 i 15. Za dani niz bitova 
 duljine 6, recimo <i>B</i><sub><i>j</i></sub> = 
 <nobr><i>b</i><sub>1</sub><i>b</i><sub>2</sub><i>b</i><sub>3</sub><i>b</i><sub>4</sub><i>b</i><sub>5</sub><i>b</i><sub>6</sub>,</nobr> 
-računamo 
-<nobr>S<sub><i>j</i></sub> (<i>B</i><sub><i>j</i></sub>)</nobr> na sljedeći način. 
+raÄŤunamo 
+<nobr>S<sub><i>j</i></sub> (<i>B</i><sub><i>j</i></sub>)</nobr> na sljedeÄ‡i naÄŤin. 
 Dva bita <nobr><i>b</i><sub>1</sub><i>b</i><sub>6</sub></nobr> 
-određuju binarni zapis retka <i>r</i> od S<sub><i>j</i></sub> (<i>r</i> = 0,1,2,3), 
-a četiri bita <nobr><i>b</i><sub>2</sub><i>b</i><sub>3</sub><i>b</i><sub>4</sub><i>b</i><sub>5</sub></nobr> 
-određuju binarni zapis stupca <i>c</i> od S<sub><i>j</i></sub> 
+odreÄ‘uju binarni zapis retka <i>r</i> od S<sub><i>j</i></sub> (<i>r</i> = 0,1,2,3), 
+a ÄŤetiri bita <nobr><i>b</i><sub>2</sub><i>b</i><sub>3</sub><i>b</i><sub>4</sub><i>b</i><sub>5</sub></nobr> 
+odreÄ‘uju binarni zapis stupca <i>c</i> od S<sub><i>j</i></sub> 
 (<i>c</i> = 0,1,2,...,15). Sada je 
 <nobr>S<sub><i>j</i></sub> (<i>B</i><sub><i>j</i></sub>)</nobr> po 
 definiciji jednako <nobr>S<sub><i>j</i></sub> (<i>r</i>,<i>c</i>),</nobr> 
-zapisano kao binarni broj duljine 4. Na ovaj način izračunamo 
+zapisano kao binarni broj duljine 4. Na ovaj naÄŤin izraÄŤunamo 
 <i>C</i><sub><i>j</i></sub> = <nobr>S<sub><i>j</i></sub> (<i>B</i><sub><i>j</i></sub>),</nobr>  
 <i>j</i> = 1,2,...,8. 
 
 <li>Niz bitova 
 <i>C</i><sub>1</sub><i>C</i><sub>2</sub><i>C</i><sub>3</sub><i>C</i><sub>4</sub><i>C</i><sub>5</sub><i>C</i><sub>6</sub><i>C</i><sub>7</sub><i>C</i><sub>8</sub> 
-duljine 32 se permutira pomoću fiksne <em>završne permutacije</em> 
+duljine 32 se permutira pomoÄ‡u fiksne <em>zavrĹˇne permutacije</em> 
 <a href="tablice/destablice.html#P" target="_blank">P</a>. 
-Tako se dobije <nobr>P(<i>C</i>),</nobr> što je po definiciji 
+Tako se dobije <nobr>P(<i>C</i>),</nobr> Ĺˇto je po definiciji 
 upravo <nobr><i>f</i>(<i>A</i>,<i>J</i>).</nobr>
 </ol>
 
@@ -128,55 +128,55 @@ upravo <nobr><i>f</i>(<i>A</i>,<i>J</i>).</nobr>
 <img src="slike/function_DES.gif" alt="DES funkcija">
 <p>
 
-Konačno, trebamo opisati računanje tablice ključeva 
+KonaÄŤno, trebamo opisati raÄŤunanje tablice kljuÄŤeva 
 <i>K</i><sub>1</sub>, <i>K</i><sub>2</sub>, ... , <i>K</i><sub>16</sub> 
-iz ključa <i>K</i>. Ključ <i>K</i> se sastoji od 64 bita, od 
-kojih 56 predstavlja ključ, a preostalih 8 bitova služe za testiranje 
+iz kljuÄŤa <i>K</i>. KljuÄŤ <i>K</i> se sastoji od 64 bita, od 
+kojih 56 predstavlja kljuÄŤ, a preostalih 8 bitova sluĹľe za testiranje 
 pariteta. Bitovi na pozicijama 8, 16, ... , 64 su definirani tako da 
-svaki bajt (8 bitova) sadrži neparan broj jedinica. Ovi bitovi se 
-ignoriraju kod računanja tablice ključeva.
+svaki bajt (8 bitova) sadrĹľi neparan broj jedinica. Ovi bitovi se 
+ignoriraju kod raÄŤunanja tablice kljuÄŤeva.
 
 <ol>
-<li>Za dani 64-bitni ključ <i>K</i>, ignoriramo paritetne bitove,  
-te permutiramo preostale bitove pomoću fiksne permutacije 
+<li>Za dani 64-bitni kljuÄŤ <i>K</i>, ignoriramo paritetne bitove,  
+te permutiramo preostale bitove pomoÄ‡u fiksne permutacije 
 <a href="tablice/destablice.html#PC1" target="_blank">PC1</a>. 
-Zapišemo PC1(<i>K</i>) = <nobr><i>C</i><sub>0</sub><i>D</i><sub>0</sub>,</nobr> 
-gdje <i>C</i><sub>0</sub> sadrži prvih 28, a <i>D</i><sub>0</sub> 
+ZapiĹˇemo PC1(<i>K</i>) = <nobr><i>C</i><sub>0</sub><i>D</i><sub>0</sub>,</nobr> 
+gdje <i>C</i><sub>0</sub> sadrĹľi prvih 28, a <i>D</i><sub>0</sub> 
 zadnjih 28 bitova od <nobr>PC1(<i>K</i>).</nobr> 
 
-<li>Za <i>i</i> = 1, 2, ... , 16 računamo: 
+<li>Za <i>i</i> = 1, 2, ... , 16 raÄŤunamo: 
 <p align=center>  <i>C</i><sub><i>i</i></sub> = 
 LS<sub><i>i</i></sub> (<i>C</i><sub><i>i</i> -1</sub>), <br>
 <i>D</i><sub><i>i</i></sub> = 
 LS<sub><i>i</i></sub> (<i>D</i><sub><i>i</i> -1</sub>), <br>
 <i>K</i><sub><i>i</i></sub> = PC2(<i>C</i><sub><i>i</i></sub> <i>D</i><sub><i>i</i></sub>). </p>
 
-LS<sub><i>i</i></sub> predstavlja ciklički pomak ulijevo za 1 ili 2 
+LS<sub><i>i</i></sub> predstavlja cikliÄŤki pomak ulijevo za 1 ili 2 
 pozicije, u ovisnosti od <i>i</i>. Ako je <i>i</i> = 1, 2, 9 ili 16, 
-onda je pomak za jednu poziciju, a inače je pomak za dvije pozicije. 
-<a href="tablice/destablice.html#PC2" target="_blank">PC2</a> je još jedna fiksna permutacija.
+onda je pomak za jednu poziciju, a inaÄŤe je pomak za dvije pozicije. 
+<a href="tablice/destablice.html#PC2" target="_blank">PC2</a> je joĹˇ jedna fiksna permutacija.
 </ol>
 
 <p>
 
-Ovim je u potpunosti opisan postupak šifriranja. 
+Ovim je u potpunosti opisan postupak Ĺˇifriranja. 
 <p>
-Dešifriranje koristi isti algoritam kao šifriranje. Krenemo od šifrata 
-<i>y</i>, ali koristimo tablicu ključeva u obrnutom redoslijedu: 
+DeĹˇifriranje koristi isti algoritam kao Ĺˇifriranje. Krenemo od Ĺˇifrata 
+<i>y</i>, ali koristimo tablicu kljuÄŤeva u obrnutom redoslijedu: 
 <i>K</i><sub>16</sub>, <i>K</i><sub>15</sub>, ... , <i>K</i><sub>1</sub>. 
 Kao rezultat dobivamo otvoreni tekst <i>x</i>. 
 <p>
-Uvjerimo se da ovako definirana funkcija dešifriranja <i>d<sub>K</sub></i> zaista ima
-traženo svojstvo da je <nobr><i>d<sub>K</sub></i>(<i>y</i>) = <i>x</i>.</nobr> 
+Uvjerimo se da ovako definirana funkcija deĹˇifriranja <i>d<sub>K</sub></i> zaista ima
+traĹľeno svojstvo da je <nobr><i>d<sub>K</sub></i>(<i>y</i>) = <i>x</i>.</nobr> 
 Podsjetimo se da smo <i>y</i> dobili kao
 <nobr><i>y</i> = IP<sup>-1</sup>(<i>R</i><sub>16</sub><i>L</i><sub>16</sub>).</nobr> 
 Stoga se primjenom inicijalne permutacije na <i>y</i> dobije
 <nobr><i>y</i><sub>0</sub> = <i>R</i><sub>16</sub><i>L</i><sub>16</sub>.</nobr> 
-Nakon prve runde dešifriranja, lijeva polovica
+Nakon prve runde deĹˇifriranja, lijeva polovica
 postaje <nobr><i>L</i><sub>16</sub> = <i>R</i><sub>15</sub>,</nobr> 
 a desna <nobr><i>R</i><sub>16</sub> &oplus;  
 <i>f</i>(<i>L</i><sub>16</sub>,<i>K</i><sub>16</sub>).</nobr>
-No, iz zadnje runde šifriranja znamo da vrijedi
+No, iz zadnje runde Ĺˇifriranja znamo da vrijedi
 <p align=center>
 <i>R</i><sub>16</sub> = <i>L</i><sub>15</sub> &oplus;  
 <i>f</i>(<i>R</i><sub>15</sub>,<i>K</i><sub>16</sub>) = <i>L</i><sub>15</sub>  
@@ -185,23 +185,23 @@ No, iz zadnje runde šifriranja znamo da vrijedi
 Zato je <nobr><i>R</i><sub>16</sub> 
 &oplus; <i>f</i>(<i>L</i><sub>16</sub>,<i>K</i><sub>16</sub>) = 
 <i>L</i><sub>15</sub>.</nobr>  
-Znači, nakon jedne runde
-dešifriranja dobivamo <nobr><i>R</i><sub>15</sub><i>L</i><sub>15</sub>.</nobr> 
-Nastavljajući taj postupak,
-nakon svake sljedeće rudne dešifriranja dobivat ćemo redom:
+ZnaÄŤi, nakon jedne runde
+deĹˇifriranja dobivamo <nobr><i>R</i><sub>15</sub><i>L</i><sub>15</sub>.</nobr> 
+NastavljajuÄ‡i taj postupak,
+nakon svake sljedeÄ‡e rudne deĹˇifriranja dobivat Ä‡emo redom:
 <nobr><i>R</i><sub>14</sub><i>L</i><sub>14</sub>,</nobr> 
 <nobr><i>R</i><sub>13</sub><i>L</i><sub>13</sub></nobr> ..., 
 <nobr><i>R</i><sub>1</sub><i>L</i><sub>1</sub></nobr> i nakon zadnje runde
 <nobr><i>R</i><sub>0</sub><i>L</i><sub>0</sub>.</nobr> 
 Preostaje zamijeniti poredak lijeve i desne polovice i
 primijeniti <nobr>IP<sup>-1</sup>.</nobr> 
-Dakle, na kraju postupka dešifriranja dobivamo
+Dakle, na kraju postupka deĹˇifriranja dobivamo
 <nobr>IP<sup>-1</sup>(<i>L</i><sub>0</sub><i>R</i><sub>0</sub>),</nobr> 
-a to je upravo otvoreni tekst <i>x</i>, što je i trebalo dokazati.
+a to je upravo otvoreni tekst <i>x</i>, Ĺˇto je i trebalo dokazati.
 <p>
 Vidimo da razlog za zamjenu lijeve i desne polovice prije primjene permutacije
-<nobr>IP<sup>-1</sup></nobr> leži upravo u želji da se za dešifriranje može koristiti isti
-algoritam kao za šifriranje.
+<nobr>IP<sup>-1</sup></nobr> leĹľi upravo u Ĺľelji da se za deĹˇifriranje moĹľe koristiti isti
+algoritam kao za Ĺˇifriranje.
 
 
 <p>
@@ -210,8 +210,8 @@ algoritam kao za šifriranje.
 
 <b><font size="-1" face="Verdana">
 <a href="deshist.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="desprop.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="desprop.html">[SljedeÄ‡e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 
 <hr size=2 noshade>

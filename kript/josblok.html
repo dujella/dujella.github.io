@@ -1,14 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Još neki moderni blokovni kriptosustavi</title>
+<title>JoĹˇ neki moderni blokovni kriptosustavi</title>
 
 <meta name="author" content="Andrej Dujella">
 <meta name="description" content="Moderni blokovni kriptosustavi">
 <meta name="keywords" content="kriptografija, trostruki DES, Triple 
 DES, IDEA, CAST, CAST-128, RC5">
 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utb-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
 
@@ -24,8 +24,8 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="desan.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="aes.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="aes.html">[SljedeÄ‡e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 <p>
 
@@ -33,104 +33,104 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 
 <a name="2.6"></a>
-<h2 align=center style="color: rgb(128,0,0)">2.6. Još neki moderni 
+<h2 align=center style="color: rgb(128,0,0)">2.6. JoĹˇ neki moderni 
 blokovni kriptosustavi</h2>
 
 
-U naredna dva poglavlja spomenut ćemo neke kriptosustave koji se  
+U naredna dva poglavlja spomenut Ä‡emo neke kriptosustave koji se  
 koriste kao zamjena za DES, te kriptosustave koji bi trebali 
-i službeno zamijeniti DES. U ovom poglavlju obradit ćemo 
-Trostruki DES (Triple DES, 3DES), IDEA, CAST-128 i RC5, dok ćemo 
-u narednom poglavlju reći nešto o finalistima natječaja za 
+i sluĹľbeno zamijeniti DES. U ovom poglavlju obradit Ä‡emo 
+Trostruki DES (Triple DES, 3DES), IDEA, CAST-128 i RC5, dok Ä‡emo 
+u narednom poglavlju reÄ‡i neĹˇto o finalistima natjeÄŤaja za 
 nasljednika DES-a. 
 <p>
 
-Prije nego što kažemo nešto o Trostrukom DES-u, odgovorimo na pitanje 
-zašto se ne koristi &quot;Dvostruki DES&quot;. Kod Dvostrukog DES-a 
-bi svaki blok šifrirali dvaput, s dva različita ključa 
+Prije nego Ĺˇto kaĹľemo neĹˇto o Trostrukom DES-u, odgovorimo na pitanje 
+zaĹˇto se ne koristi &quot;Dvostruki DES&quot;. Kod Dvostrukog DES-a 
+bi svaki blok Ĺˇifrirali dvaput, s dva razliÄŤita kljuÄŤa 
 <i>K</i> i <i>L</i>: 
 <p align=center>
 <i>y</i> = <i>e</i><sub><i>L</i></sub>(<i>e</i><sub><i>K</i></sub>(<i>x</i>)), <br>
 <i>x</i> = <i>d</i><sub><i>K</i></sub>(<i>d</i><sub><i>L</i></sub>(<i>y</i>)). 
 </p>
-Kako smo već napomenuli, DES nije grupa, pa se čini da smo 
-ovako dobili znatno sigurniji kriptosustav. Međutim, postoji 
-nešto što se zove napad "<em>susret u sredini</em>", koji je opisao 
+Kako smo veÄ‡ napomenuli, DES nije grupa, pa se ÄŤini da smo 
+ovako dobili znatno sigurniji kriptosustav. MeÄ‘utim, postoji 
+neĹˇto Ĺˇto se zove napad "<em>susret u sredini</em>", koji je opisao 
 Diffie 1977. godine. Pretpostavimo da je poznat jedan par 
-<i>otvoreni tekst-šifrat</i> (<i>x</i>,<i>y</i>). Šifriramo <i>x</i> sa svih 
-2<sup>56</sup> mogućih ključeva <i>K</i>. Spremimo rezultate u 
+<i>otvoreni tekst-Ĺˇifrat</i> (<i>x</i>,<i>y</i>). Ĺ ifriramo <i>x</i> sa svih 
+2<sup>56</sup> moguÄ‡ih kljuÄŤeva <i>K</i>. Spremimo rezultate u 
 tablicu i sortiramo ih po vrijednostima od <i>z</i> = 
-<i>e</i><sub><i>K</i></sub>(<i>x</i>). Zatim dešifriramo <i>y</i> 
-koristeći svih 2<sup>56</sup> mogućih ključeva <i>L</i>. Nakon svakog 
-dešifriranja, potražimo rezultat u tablici. (Naime, treba vrijediti 
+<i>e</i><sub><i>K</i></sub>(<i>x</i>). Zatim deĹˇifriramo <i>y</i> 
+koristeÄ‡i svih 2<sup>56</sup> moguÄ‡ih kljuÄŤeva <i>L</i>. Nakon svakog 
+deĹˇifriranja, potraĹľimo rezultat u tablici. (Naime, treba vrijediti 
 <i>z</i> = <i>d</i><sub><i>L</i></sub>(<i>y</i>).) Ako ga 
-pronađemo, onda tako dobiveni par (<i>K</i>,<i>L</i>) testiramo 
-na sljedećem poznatom paru otvoreni tekst-šifrat. Ako prođu taj test, 
-prihvaćamo ih za korektne ključeve. Vjerojatnost da smo pogriješili 
-je 2<sup>112-64-64</sup> = 2<sup>-16</sup>. Na taj način dobivamo  
+pronaÄ‘emo, onda tako dobiveni par (<i>K</i>,<i>L</i>) testiramo 
+na sljedeÄ‡em poznatom paru otvoreni tekst-Ĺˇifrat. Ako proÄ‘u taj test, 
+prihvaÄ‡amo ih za korektne kljuÄŤeve. Vjerojatnost da smo pogrijeĹˇili 
+je 2<sup>112-64-64</sup> = 2<sup>-16</sup>. Na taj naÄŤin dobivamo  
 da je za razbijanje Dvostrukog DES-a broj operacija 
-reda 2<sup>56</sup>, što je neznatno više nego za obični DES. 
+reda 2<sup>56</sup>, Ĺˇto je neznatno viĹˇe nego za obiÄŤni DES. 
 <p>
 
 Jedna od najpopularnijih zamjena za DES je <em>Trostruki DES</em> 
-(koriste se još i nazivi Triple DES i 3DES): 
+(koriste se joĹˇ i nazivi Triple DES i 3DES): 
 <p align=center>
 <i>y</i> = <i>e</i><sub><i>M</i></sub>(<i>d</i><sub><i>L</i></sub>(<i>e</i><sub><i>K</i></sub>(<i>x</i>))), <br>
 <i>x</i> = <i>d</i><sub><i>K</i></sub>(<i>e</i><sub><i>L</i></sub>(<i>d</i><sub><i>M</i></sub>(<i>y</i>))). 
 </p>
-Ovdje je ključ duljine 56 &middot; 3=168 bitova. Često se koristi i
-verzija u kojoj je <i>M</i> = <i>K</i>, pa je u njoj duljina ključa 
-56 &middot; 2=112, no za nju postoje neki, još uvijek nedovoljno praktični napadi,
-koji koriste njezinu specifičnu strukturu.
-Razlog za kombinaciju &quot;<i>ede</i>&quot; je kompatibilnost s običnim 
+Ovdje je kljuÄŤ duljine 56 &middot; 3=168 bitova. ÄŚesto se koristi i
+verzija u kojoj je <i>M</i> = <i>K</i>, pa je u njoj duljina kljuÄŤa 
+56 &middot; 2=112, no za nju postoje neki, joĹˇ uvijek nedovoljno praktiÄŤni napadi,
+koji koriste njezinu specifiÄŤnu strukturu.
+Razlog za kombinaciju &quot;<i>ede</i>&quot; je kompatibilnost s obiÄŤnim 
 DES-om: dovoljno je staviti <i>L</i> = <i>M</i> ili <i>K</i> = <i>L</i>. Za Trostruki DES 
 broj operacija kod napada &quot;susret u sredini&quot; je reda 
 <nobr>2<sup>112</sup> &asymp; 5 &middot; 10<sup>33</sup></nobr> 
 dok je kod diferencijalne kriptoanalize 
-procijenjen na 10<sup>52</sup>. Možemo reći da je sigurnost kod 
-trostrukog šifriranja upravo onakva kakvu bismo možda naivno 
-očekivali kod dvostrukog. U svakom slučaju, sigurnost 3DES-a je 
-danas i više nego zadovoljavajuća.
+procijenjen na 10<sup>52</sup>. MoĹľemo reÄ‡i da je sigurnost kod 
+trostrukog Ĺˇifriranja upravo onakva kakvu bismo moĹľda naivno 
+oÄŤekivali kod dvostrukog. U svakom sluÄŤaju, sigurnost 3DES-a je 
+danas i viĹˇe nego zadovoljavajuÄ‡a.
 <p><br>
 
 IDEA (<em>International Data Encryption Algorithm</em>) je kriptosustav 
-koji su razvili švicarski kriptografi 
+koji su razvili Ĺˇvicarski kriptografi 
 <font color=009900>Xuejia Lai</font> 
 i <font color=009900>James Massey</font> s ETH Z&uuml;rich. Prvu verziju zvanu PES 
-(<em>Proposed Encryption Standard</em>) su objavili 1990. Međutim, 
+(<em>Proposed Encryption Standard</em>) su objavili 1990. MeÄ‘utim, 
 taj kriptosustav nije bio otporan na diferencijalnu kriptoanalizu 
-(za 128-bitni ključ je trebalo 2<sup>64</sup> operacija), pa su 
-nakon Biham-Shamirovog otkrića, autori 1992. godine prepravili 
+(za 128-bitni kljuÄŤ je trebalo 2<sup>64</sup> operacija), pa su 
+nakon Biham-Shamirovog otkriÄ‡a, autori 1992. godine prepravili 
 algoritam i nazvali ga IDEA. 
 <p>
-IDEA koristi 128-bitni ključ za šifriranje 64-bitnih blokova otvorenog 
+IDEA koristi 128-bitni kljuÄŤ za Ĺˇifriranje 64-bitnih blokova otvorenog 
 teksta. Koristi tri operacije na 16-bitnim podblokovima: 
 <ul>
 <li>XOR &nbsp; &nbsp; (oznaka &nbsp; &oplus;),
 <li>zbrajanje modulo 2<sup>16</sup> &nbsp; &nbsp; (oznaka &nbsp; &#8862;),
-<li>množenje modulo 2<sup>16</sup> + 1 &nbsp; &nbsp; (oznaka &nbsp; &#8900;).
+<li>mnoĹľenje modulo 2<sup>16</sup> + 1 &nbsp; &nbsp; (oznaka &nbsp; &#8900;).
 </ul>
-Množenje se ovdje može smatrati analogonom S-kutija u DES-u. 
+MnoĹľenje se ovdje moĹľe smatrati analogonom S-kutija u DES-u. 
 Modul <nobr>2<sup>16</sup>+1</nobr> je odabran
-zbog efikasnije implementacije modularnog množenja.
+zbog efikasnije implementacije modularnog mnoĹľenja.
 Ove tri operacije 
 su inkompatibilne, u smislu da nikoje dvije ne zadovoljavaju 
 zakone asocijativnosti i distributivnosti. IDEA ima 8 rundi i 
-završnu transformaciju. U njima se koristi 52 16-bitnih međuključeva 
-generiranih pomoću polaznog 128-bitnog ključa.  
+zavrĹˇnu transformaciju. U njima se koristi 52 16-bitnih meÄ‘ukljuÄŤeva 
+generiranih pomoÄ‡u polaznog 128-bitnog kljuÄŤa.  
 <p align=center>
 <img src="slike/idea_rot.gif" alt="idea">
 </p><br>
 
-CAST-128 (koristi se još i naziv CAST5) su dizajnirali kanadski kriptografi 
+CAST-128 (koristi se joĹˇ i naziv CAST5) su dizajnirali kanadski kriptografi 
 <font color=009900>Carlisle Adams</font> i 
 <font color=009900>Stafford Taraves</font> 1993. godine. 
-CAST šifrira 64-bitne blokove otvorenog teksta koristeći ključ čija 
-duljina može varirati od 40 do 128 bitova. CAST je, isto kao i DES, 
-primjer Feistelove šifre sa 16 rundi. Dvije su razlike od klasične 
-Feistelove šifre: 
+CAST Ĺˇifrira 64-bitne blokove otvorenog teksta koristeÄ‡i kljuÄŤ ÄŤija 
+duljina moĹľe varirati od 40 do 128 bitova. CAST je, isto kao i DES, 
+primjer Feistelove Ĺˇifre sa 16 rundi. Dvije su razlike od klasiÄŤne 
+Feistelove Ĺˇifre: 
 <ol>
-<li>dva međuključa u svakoj rundi: 32-bitni <i>Km<sub>i</sub></i> i 
+<li>dva meÄ‘ukljuÄŤa u svakoj rundi: 32-bitni <i>Km<sub>i</sub></i> i 
 5-bitni <i>Kr<sub>i</sub></i>;
 <li>funkcija <i>f</i> ovisi o rundi.
 </ol>
@@ -138,7 +138,7 @@ Osnovne operacije u CAST-u su:
 <ul>
 <li>XOR,
 <li>zbrajanje i oduzimanje modulo 2<sup>32</sup>,
-<li>lijeva ciklička rotacija od <i>a</i> za <i>b</i> bitova &nbsp; &nbsp; (oznaka &nbsp; <i>a</i> <<< <i>b</i>).
+<li>lijeva cikliÄŤka rotacija od <i>a</i> za <i>b</i> bitova &nbsp; &nbsp; (oznaka &nbsp; <i>a</i> <<< <i>b</i>).
 </ul>
 Skica jedne CAST-128 runde: 
 <p align=center>
@@ -159,32 +159,32 @@ U ovisnosti o rundama, imamo:
 <p><br><br>
 
 RC5 algoritam je izumio <font color=009900>Ron Rivest</font> 1994. 
-godine. Zapravo to je cijela familija algoritama određena s tri parametra: <br>
-&nbsp; &nbsp; &nbsp; <i>w</i> - duljina riječi u bitovima = 16, 32, 64<br>
+godine. Zapravo to je cijela familija algoritama odreÄ‘ena s tri parametra: <br>
+&nbsp; &nbsp; &nbsp; <i>w</i> - duljina rijeÄŤi u bitovima = 16, 32, 64<br>
 &nbsp; &nbsp; &nbsp; <i>r</i> - broj rundi = 0, 1, ... , 255<br>
-&nbsp; &nbsp; &nbsp; <i>b</i> - broj bajtova u ključu = 0, 1, ... , 255<br>
-Obično se koristi verzija sa <i>w</i> = 32, <i>r</i> = 12, 
+&nbsp; &nbsp; &nbsp; <i>b</i> - broj bajtova u kljuÄŤu = 0, 1, ... , 255<br>
+ObiÄŤno se koristi verzija sa <i>w</i> = 32, <i>r</i> = 12, 
 <i>b</i> = 12. 
 <p>
 Osnovne operacije u RC5 su: 
 <ul>
 <li>XOR,
 <li>zbrajanje i oduzimanje modulo 2<sup><i>w</i></sup>,
-<li>lijeva i desna ciklička rotacija &nbsp; &nbsp; 
+<li>lijeva i desna cikliÄŤka rotacija &nbsp; &nbsp; 
 (<i>a</i> <<< <i>b</i>, <i>a</i> >>> <i>b</i>).
 </ul>
 <p>
-U šifriranju se koristi 2<i>r</i>+2 32-bitnih riječi 
+U Ĺˇifriranju se koristi 2<i>r</i>+2 32-bitnih rijeÄŤi 
 <i>S</i><sub>0</sub>, <i>S</i><sub>1</sub>, ... , 
-<i>S</i><sub>2<i>r</i>+1</sub> koje ovise o ključu <i>K</i>. 
-Najprije se ključ 
+<i>S</i><sub>2<i>r</i>+1</sub> koje ovise o kljuÄŤu <i>K</i>. 
+Najprije se kljuÄŤ 
 <i>K</i><sub>0</sub>...<i>K</i><sub><i>b</i>-1</sub> od <i>b</i> 
 bajtova prebaci u 
-niz od <i>c</i> riječi 
+niz od <i>c</i> rijeÄŤi 
 <i>M</i><sub>0</sub>...<i>M</i><sub><i>c</i>-1</sub> 
-(ako <i>b</i> nije višekratnik od <i>w</i>, onda se dodaju nule). 
-Zatim se <i>S<sub>i</sub></i>-ovi inicijaliziraju koristeći 
-pseudoslučajne veličine 
+(ako <i>b</i> nije viĹˇekratnik od <i>w</i>, onda se dodaju nule). 
+Zatim se <i>S<sub>i</sub></i>-ovi inicijaliziraju koristeÄ‡i 
+pseudosluÄŤajne veliÄŤine 
 <p align=center>
 <i>P<sub>w</sub></i> = Odd [(e - 2) 2<sup><i>w</i></sup>], &nbsp; &nbsp; 
 <i>Q<sub>w</sub></i> = Odd 
@@ -194,7 +194,7 @@ pseudoslučajne veličine
 gdje je <i>e</i> baza prirodnog logaritma, 
 &phi; = 
 (1 + &radic;5)/2 
-omjer zlatnog reza, a funkcija Odd zaokruživanje na najbliži neparni 
+omjer zlatnog reza, a funkcija Odd zaokruĹľivanje na najbliĹľi neparni 
 broj. Za <i>w</i> = 32 je <i>P<sub>w</sub></i> = B7E15163, 
 <i>Q<sub>w</sub></i> = 9E3779B9. 
 <p>
@@ -216,8 +216,8 @@ Procedura: <br>
 (mod <i>c</i>). 
 <p>
 
-Kod šifriranja, najprije podijelimo blok otvorenog teksta na dvije 
-<i>w</i>-bitne riječi <i>A</i> i <i>B</i>. Zatim se primjeni algoritam: 
+Kod Ĺˇifriranja, najprije podijelimo blok otvorenog teksta na dvije 
+<i>w</i>-bitne rijeÄŤi <i>A</i> i <i>B</i>. Zatim se primjeni algoritam: 
 <p>
 &nbsp; &nbsp; &nbsp; <i>L</i><sub>0</sub> = <i>A</i> + <i>S</i><sub>0</sub>, 
 <i>R</i><sub>0</sub> = <i>B</i> + <i>S</i><sub>1</sub>, <br>
@@ -238,16 +238,16 @@ Kod šifriranja, najprije podijelimo blok otvorenog teksta na dvije
 </p>
 
 Primijetimo da se u svakoj rundi mijenjaju obje polovice podatka. 
-Stoga se jedna runda RC5 može na neki način smatrati ekvivalentom 
-za dvije runde DES-a. To donekle objašnjava zašto RC5 s 12 rundi postiže
-slične efekte za koje je 3DES-u potrebno čak 48 rundi.
+Stoga se jedna runda RC5 moĹľe na neki naÄŤin smatrati ekvivalentom 
+za dvije runde DES-a. To donekle objaĹˇnjava zaĹˇto RC5 s 12 rundi postiĹľe
+sliÄŤne efekte za koje je 3DES-u potrebno ÄŤak 48 rundi.
 
 <p>
 
 Naziv RC5 sugerira da je to jedan iz niza kriptosustava (RC dolazi od &quot;Rivest Cipher&quot;).
 Zaista, postoje RC2, RC4 i RC6 kripotsustavi (RC1 i RC3 su bile radne verzije).
-Dok su RC2 i RC6 slični RC5, kriptosustav RC4 je drukčijeg tipa i predstavlja
-jednu od najpoznatijih protočnih šifri.
+Dok su RC2 i RC6 sliÄŤni RC5, kriptosustav RC4 je drukÄŤijeg tipa i predstavlja
+jednu od najpoznatijih protoÄŤnih Ĺˇifri.
 
 <p>
 
@@ -255,8 +255,8 @@ jednu od najpoznatijih protočnih šifri.
 
 <b><font size="-1" face="Verdana">
 <a href="desan.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="aes.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="aes.html">[SljedeÄ‡e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 
 <hr size=2 noshade>

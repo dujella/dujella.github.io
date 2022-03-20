@@ -1,15 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Ostali kriptosustavi s javnim ključem</title>
+<title>Ostali kriptosustavi s javnim kljuÄŤem</title>
 
 <meta name="author" content="Andrej Dujella">
 <meta name="description" content="Kriptosustavi s javnim kljucem">
-<meta name="keywords" content="kriptografija, javni ključ, 
-Rabinov kriptosustav, diskretni logaritam, eliptičke krivulje, 
+<meta name="keywords" content="kriptografija, javni kljuÄŤ, 
+Rabinov kriptosustav, diskretni logaritam, eliptiÄŤke krivulje, 
 ElGamal, problem ruksaka, Merkle, Hellman">
 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utb-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
 
@@ -25,8 +25,8 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="rsaan.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="postkvant.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="postkvant.html">[SljedeÄ‡e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 <p>
 
@@ -34,14 +34,14 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 
 <a name="3.4"></a>
-<h2 align=center style="color: rgb(128,0,0)">3.4. Ostali kriptosustavi s javnim ključem</h2>
+<h2 align=center style="color: rgb(128,0,0)">3.4. Ostali kriptosustavi s javnim kljuÄŤem</h2>
 
 
 
 <b><em>Rabinov kriptosustav</em></b> 
 (<font color=009900>Michael Rabin</font>, 1979.) 
-zasnovan je na teškoći nalaženja kvadratnog korijena modulo fiksni 
-složeni broj. Pokazuje se da je ovaj problem ekvivalentan problemu 
+zasnovan je na teĹˇkoÄ‡i nalaĹľenja kvadratnog korijena modulo fiksni 
+sloĹľeni broj. Pokazuje se da je ovaj problem ekvivalentan problemu 
 faktorizacije. Definicija Rabinovog kriptosustava: 
 <p>
 
@@ -79,15 +79,15 @@ Vrijednost <i>n</i> je javna, a vrijednosti
 
 Ovdje <i>a</i> = 
 &radic;<i>b</i> mod <i>n</i> 
-znači da je <i>a</i><sup>2</sup> 
+znaÄŤi da je <i>a</i><sup>2</sup> 
 &equiv; <i>b</I> (mod <i>n</i>). 
 Uvjet <i>p</i> &equiv; <i>q</i> 
 &equiv; 3 (mod 4)
-se može izostaviti. No, uz ovaj uvjet je dešifriranje jednostavnije i efikasnije. 
-Postoji i varijanta Rabinovog kriptosustava u kojoj se za šifriranje koristi općenitija 
+se moĹľe izostaviti. No, uz ovaj uvjet je deĹˇifriranje jednostavnije i efikasnije. 
+Postoji i varijanta Rabinovog kriptosustava u kojoj se za Ĺˇifriranje koristi opÄ‡enitija 
 kvadratna funkcija <i>x</i>(<i>x</i> + <i>B</i>), gdje je vrijednost <i>B</i> javna. 
  
-Važno je uočiti da funkcija <i>e</i><sub><i>K</i></sub> nije 
+VaĹľno je uoÄŤiti da funkcija <i>e</i><sub><i>K</i></sub> nije 
 injekcija. Naime, ako je <i>w</i> neki od 4 druga korijena iz 1  
 modulo n (dobiju se primjenom Kineskog teorema o ostatcima na 
 kongruencije <i>x</i> &equiv;  
@@ -105,13 +105,13 @@ onda imamo:
 <i>e</i><sub><i>K</i></sub>(<i>x</i>) mod <i>n</i>. 
 </p>
 
-To znači da se dešifriranje ne može provesti na jedinstven način 
-(osim ako je otvoreni tekst neki smisleni tekst, a to nije slučaj 
-kod razmjene ključeva, za što se kriptosustavi s javnim ključem 
+To znaÄŤi da se deĹˇifriranje ne moĹľe provesti na jedinstven naÄŤin 
+(osim ako je otvoreni tekst neki smisleni tekst, a to nije sluÄŤaj 
+kod razmjene kljuÄŤeva, za Ĺˇto se kriptosustavi s javnim kljuÄŤem 
 prvenstveno i koriste). Jedan
-način za rješavanje ovog problema je da se u otvoreni tekst na umjetan način ubaci
-izvjesna pravilnost. To se može napraviti npr. tako da se posljednja 64 bita dupliciraju
-(ponove). Tada možemo očekivati da će samo jedan od 4 kvadratna korijena
+naÄŤin za rjeĹˇavanje ovog problema je da se u otvoreni tekst na umjetan naÄŤin ubaci
+izvjesna pravilnost. To se moĹľe napraviti npr. tako da se posljednja 64 bita dupliciraju
+(ponove). Tada moĹľemo oÄŤekivati da Ä‡e samo jedan od 4 kvadratna korijena
 dati rezultat koji ima zadanu pravilnost.
 <font color="009900">Hugh Williams</font> je 1980. dao modifikaciju 
 Rabinovog kriptosustava kojom je eliminirao ovaj nedostatak. 
@@ -122,19 +122,19 @@ Rabinovog kriptosustava kojom je eliminirao ovaj nedostatak.
 <p align=center>
 (<i>n</i>, <i>p</i>, <i>q</i>) = (437, 19, 23)
 </p>
-dešifrirati šifrat <i>y</i> = 35. Poznato je da je otvoreni tekst prirodan broj <i>x</i> &lt; <i>n</i> 
-kojem su zadnja četiri bita u binarnom zapisu medusobno jednaka.
+deĹˇifrirati Ĺˇifrat <i>y</i> = 35. Poznato je da je otvoreni tekst prirodan broj <i>x</i> &lt; <i>n</i> 
+kojem su zadnja ÄŤetiri bita u binarnom zapisu medusobno jednaka.
 <p>
 
-Najprije trebamo naći kvadratne korijene od 35 modulo 19 i
-modulo 23. Budući da je 
+Najprije trebamo naÄ‡i kvadratne korijene od 35 modulo 19 i
+modulo 23. BuduÄ‡i da je 
 19 &equiv; 23 &equiv; 3 (mod 4), 
-možemo ih naći po formuli
+moĹľemo ih naÄ‡i po formuli
 <nobr>&plusmn; <i>a</i><sup>(<i>p</i>+1)/4</sup> (mod p).</nobr> Za <i>p</i> = 19, dobivamo 
 35<sup>5</sup> &equiv; 4 (mod 19), a za <i>p</i> = 23,
 35<sup>6</sup> &equiv; 9 (mod 23). 
-Sada koristimo Kineski teorem o ostacima da bi našli
-kvadratne korijene od 35 modulo 437 = 19 <b>&middot</b> 23, rješavajući 4 sustava linearnih
+Sada koristimo Kineski teorem o ostacima da bi naĹˇli
+kvadratne korijene od 35 modulo 437 = 19 <b>&middot</b> 23, rjeĹˇavajuÄ‡i 4 sustava linearnih
 kongruencija:
 <p align=center>
 <i>x</i> &equiv; &plusmn; 4 (mod 19), &nbsp; &nbsp; 
@@ -145,21 +145,21 @@ Sustav od dvije linearne konguencije
 <i>x</i> &equiv; <i>a</i><sub>1</sub> (mod <i>m</i><sub>1</sub>), &nbsp; &nbsp;
 <i>x</i> &equiv; <i>a</i><sub>2</sub> (mod <i>m</i><sub>2</sub>)
 </p>
-se efikasno rješava primjenom Euklidovog algoritma: dobivamo <i>u</i>, <i>v</i> takve da je 
+se efikasno rjeĹˇava primjenom Euklidovog algoritma: dobivamo <i>u</i>, <i>v</i> takve da je 
 <i>um</i><sub>1</sub> + <i>vm</i><sub>2</sub> = 1.
 Tada je <nobr><i>x</i> = <i>um</i><sub>1</sub><i>a</i><sub>2</sub> + <i>vm</i><sub>2</sub><i>a</i><sub>1</sub> 
-mod <i>m</i><sub>1</sub><i>m</i><sub>2</sub></nobr> rješenje sustava.
-U našem slučaju je <i>u</i> = -6, <i>v</i> = 5, pa su rješenja sustava 
+mod <i>m</i><sub>1</sub><i>m</i><sub>2</sub></nobr> rjeĹˇenje sustava.
+U naĹˇem sluÄŤaju je <i>u</i> = -6, <i>v</i> = 5, pa su rjeĹˇenja sustava 
 <i>x</i>  &equiv;  
-129, 175, 262, 308 (mod 437). Zapišimo ova četiri broja binarno:
+129, 175, 262, 308 (mod 437). ZapiĹˇimo ova ÄŤetiri broja binarno:
 129 = 10000001, 175 = 10101111, 262 = 100000110, 308 = 100110100, 
-pa vidimo da je traženi otvoreni tekst <i>x</i> = 175.
+pa vidimo da je traĹľeni otvoreni tekst <i>x</i> = 175.
 
 <p><br><br>
 
 <b><em>ElGamalov kriptosustav</em></b> (<font color="009900">Taher 
 ElGamal</font>, 1985)
-je zasnovan na teškoći računanja diskretnog logaritma u konačnim 
+je zasnovan na teĹˇkoÄ‡i raÄŤunanja diskretnog logaritma u konaÄŤnim 
 poljima. 
 <p>
 
@@ -168,7 +168,7 @@ poljima.
 <font face="Arial,Helvetica,sans-serif">
 
 <b>Problem diskretnog logaritma:</b> Neka je 
-(<i>G</i>, *) konačna grupa, 
+(<i>G</i>, *) konaÄŤna grupa, 
 &alpha; 
 &isin; <i>G</i>, 
 <i>H</i> = { &alpha;<sup><i>i</i></sup> : <i>i</i> 
@@ -176,7 +176,7 @@ poljima.
 grupa generirana s &alpha;, 
 te &beta;  
 &isin; <i>H</i>. 
-Naći jedinstveni cijeli broj <i>a</i> takav da je 
+NaÄ‡i jedinstveni cijeli broj <i>a</i> takav da je 
 0 &le; <i>a</i> 
 &le; |<i>H</i>| - 1 i 
 &alpha;<sup><i>a</i></sup> 
@@ -185,7 +185,7 @@ Naći jedinstveni cijeli broj <i>a</i> takav da je
 = &alpha; * 
 &alpha; * ... * 
 &alpha; 
-(<i>a</i> puta). Taj cijeli broj <i>a</i> se zove diskretni logaritam i označava se s  
+(<i>a</i> puta). Taj cijeli broj <i>a</i> se zove diskretni logaritam i oznaÄŤava se s  
 log<sub>&alpha;</sub> &beta;.
 
 </font></td></tr></table>
@@ -198,14 +198,14 @@ primitivni korijen modulo <i>p</i>, tj.
 &alpha; ima svojstvo da je 
 { &alpha;<sup><i>i</i></sup> : <i>i</i> = 0, 1, ... , <i>p</i> - 1 } 
 = <b>Z</b><sub><i>p</i></sub>*. 
-To znači da je u ovom slučaju <i>H</i> = <i>G</i>. 
+To znaÄŤi da je u ovom sluÄŤaju <i>H</i> = <i>G</i>. 
 Najbolji poznati algoritmi za problem diskretnog logaritma u 
 <b>Z</b><sub><i>p</i></sub>*  
 trebaju  
 <p align=center>
 exp(O((log <i>p</i>)<sup>1/3</sup> (log log <i>p</i>)<sup>2/3</sup>)) 
 </p>
-operacija. Prema tome, ovaj problem je po kompleksnosti vrlo sličan 
+operacija. Prema tome, ovaj problem je po kompleksnosti vrlo sliÄŤan 
 problemu faktorizacije. 
 <p>
 Definicija ElGamalovog kriptosustava: 
@@ -241,7 +241,7 @@ su javne, a vrijednost <i>a</i> je tajna. <br>
 Za <i>K</i> = (<i>p</i>, &alpha;,  
 <i>a</i>, &beta;) 
 &isin;  
-<font face="Brush Script MT,Script,Times New Roman">K</font> i tajni slučajni 
+<font face="Brush Script MT,Script,Times New Roman">K</font> i tajni sluÄŤajni 
 broj <i>k</i> &isin; 
 <b>Z</b><sub><i>p</i> -1</sub> 
 definiramo 
@@ -267,77 +267,77 @@ definiramo
 </font></td></tr></table>
 <p>
 
-Mogli bi reći da se otvoreni tekst <i>x</i> "zamaskira" množeći s 
+Mogli bi reÄ‡i da se otvoreni tekst <i>x</i> "zamaskira" mnoĹľeÄ‡i s 
 &beta;<sup><i>k</i></sup>. 
-Onaj tko poznaje tajni eksponent <i>a</i> može iz 
+Onaj tko poznaje tajni eksponent <i>a</i> moĹľe iz 
 &alpha;<sup><i>k</i></sup> 
-izračunati &beta;<sup><i>k</i></sup> 
+izraÄŤunati &beta;<sup><i>k</i></sup> 
 i "ukloniti masku". 
 <p>
 Da bi eksponent <i>a</i> stvarno bio tajan, prost broj <i>p</i> mora biti dovoljno
-velik da bi u <b>Z</b><sub><i>p</i></sub>* problem diskretnog logaritma bio praktički nerješiv. 
-Stoga se danas preporuča korištenje prostih brojeva od oko 1024 bita. Takoder bi
+velik da bi u <b>Z</b><sub><i>p</i></sub>* problem diskretnog logaritma bio praktiÄŤki nerjeĹˇiv. 
+Stoga se danas preporuÄŤa koriĹˇtenje prostih brojeva od oko 1024 bita. Takoder bi
 red grupe, tj. broj <i>p</i> - 1, trebao imati barem jedan veliki prosti faktor (od
 barem 160 bitova).
 <p>
 
 <b>Primjer 3.5: </b> Neka je u ElGamalovom kriptosustavu <i>p</i> = 23, 
 &alpha; = 5, a = 17,
-&beta; = 15. Dešifrirati šifrat (<i>y</i><sub>1</sub>, <i>y</i><sub>2</sub>) = (17, 6).
+&beta; = 15. DeĹˇifrirati Ĺˇifrat (<i>y</i><sub>1</sub>, <i>y</i><sub>2</sub>) = (17, 6).
 <p>
 
-Računamo <i>y</i><sub>1</sub><sup><i>a</i></sup> = 17<sup>17</sup> 
+RaÄŤunamo <i>y</i><sub>1</sub><sup><i>a</i></sup> = 17<sup>17</sup> 
 &equiv; 11 (mod 23). Potom nademo inverz
 od 11 modulo 23. Dobivamo da je inverz -2 &equiv; 21 (mod 23). 
-Konačno izračunamo 6 <b>&middot;</b> 21 mod 23 i dobivamo otvoreni tekst <i>x</i> = 11. 
+KonaÄŤno izraÄŤunamo 6 <b>&middot;</b> 21 mod 23 i dobivamo otvoreni tekst <i>x</i> = 11. 
 
 <p><br><br>
 Pored grupa 
 <b>Z</b><sub><i>p</i></sub>*, 
-u ovom kontekstu od interesa su i sljedeće grupe: 
-<ul><li>multiplikativne grupe konačnih polja karakteristike 2: &nbsp; 
+u ovom kontekstu od interesa su i sljedeÄ‡e grupe: 
+<ul><li>multiplikativne grupe konaÄŤnih polja karakteristike 2: &nbsp; 
 GF(2<sup><i>n</i></sup>)  
-<li>grupe eliptičkih krivulja nad konačnim poljima: &nbsp; 
+<li>grupe eliptiÄŤkih krivulja nad konaÄŤnim poljima: &nbsp; 
 EC(<i>F</i>)
 </ul>
 
 Neka je <i>f</i>(<i>x</i>) neki ireducibilni polinom stupnja <i>n</i> 
 nad <b>Z</b><sub>2</sub>. 
-Elementi <em>konačnog polja</em> GF(2<sup><i>n</i></sup>) su svi 
+Elementi <em>konaÄŤnog polja</em> GF(2<sup><i>n</i></sup>) su svi 
 polinomi stupnja &le;  
 <i>n</i> - 1 nad <b>Z</b><sub>2</sub>  
-(ima ih 2<sup><i>n</i></sup>), a operacije zbrajanja i množenja u 
-GF(2<sup><i>n</i></sup>) su zbrajanje i množenje polinoma u 
+(ima ih 2<sup><i>n</i></sup>), a operacije zbrajanja i mnoĹľenja u 
+GF(2<sup><i>n</i></sup>) su zbrajanje i mnoĹľenje polinoma u 
 <b>Z</b><sub>2</sub>[X] modulo <i>f</i>(<i>x</i>). Npr. u konstrukciji 
-polja GF(2<sup>3</sup>) možemo uzeti <i>f</i>(<i>x</i>) = 
+polja GF(2<sup>3</sup>) moĹľemo uzeti <i>f</i>(<i>x</i>) = 
 <i>x</i><sup>3</sup> + <i>x</i> + 1. Elementi od GF(2<sup>3</sup>) su: 
 0, 1, <i>x</i>, <i>x</i> + 1, <i>x</i><sup>2</sup>, 
 <i>x</i><sup>2</sup> + 1, <i>x</i><sup>2</sup> + <i>x</i>, 
 <i>x</i><sup>2</sup> + <i>x</i> + 1. 
 <p>
 ElGamalov kriptosustav u GF(2<sup><i>n</i></sup>)<sup>*</sup> 
-definira se na sasvim isti način kao u 
+definira se na sasvim isti naÄŤin kao u 
 <b>Z</b><sub><i>p</i></sub>*. 
-Naime, multiplikativna grupa svakog konačnog polja je ciklička. 
+Naime, multiplikativna grupa svakog konaÄŤnog polja je cikliÄŤka. 
 Najbolji poznati algoritmi za problem diskretnog logaritma u 
 GF(2<sup><i>n</i></sup>) trebaju 
 <p align=center>
 exp(O(<i>n</i><sup>1/4 + &epsilon;</sup>)) 
 </p>
-operacija. Tako se smatra da je za <i>n</i> &gt; 10000 odgovarajući 
+operacija. Tako se smatra da je za <i>n</i> &gt; 10000 odgovarajuÄ‡i 
 kriptosustav siguran ukoliko 2<sup><i>n</i></sup> - 1 ima barem 
 jedan veliki prosti faktor.
 
 
 <p><br><br>
 
-Neka je <i>p</i> &gt; 3 prost broj. <b><em>Eliptička krivulja</em></b> 
+Neka je <i>p</i> &gt; 3 prost broj. <b><em>EliptiÄŤka krivulja</em></b> 
 <p align=center> 
 <i>E</i> : &nbsp; &nbsp; &nbsp; <i>y</i><sup>2</sup> = 
 <i>x</i><sup>3</sup> + <i>ax</i> + <i>b</i> 
 </p>
 nad <b>Z</b><sub><i>p</i></sub>  
-je skup rješenja (<i>x</i>, <i>y</i>) 
+je skup rjeĹˇenja (<i>x</i>, <i>y</i>) 
 &isin;   
 <b>Z</b><sub><i>p</i></sub> &times
 <b>Z</b><sub><i>p</i></sub> 
@@ -350,16 +350,16 @@ kongruencije <i>y</i><sup>2</sup>
 takvi da je 4<i>a</i><sup>3</sup> + 27<i>b</i><sup>2</sup> 
 &ne; 0 
 u <b>Z</b><sub><i>p</i></sub>, 
-zajedno s točkom <font face="Brush Script MT,Script,Times New Roman">O</font> 
-koju zovemo točka u beskonačnosti. 
-Na eliptičkoj krivulji <i>E</i> možemo uvesti operaciju zbrajanja 
+zajedno s toÄŤkom <font face="Brush Script MT,Script,Times New Roman">O</font> 
+koju zovemo toÄŤka u beskonaÄŤnosti. 
+Na eliptiÄŤkoj krivulji <i>E</i> moĹľemo uvesti operaciju zbrajanja 
 uz koju <i>E</i> postaje abelova grupa. Neka su 
 <i>P</i> = (<i>x</i><sub>1</sub>, <i>y</i><sub>1</sub>), 
 <i>Q</i> = (<i>x</i><sub>2</sub>, <i>y</i><sub>2</sub>) iz <i>E</i>. 
 Ako je <i>x</i><sub>1</sub> = <i>x</i><sub>2</sub> i 
 <i>y</i><sub>1</sub> = -<i>y</i><sub>2</sub>, onda je 
 po definiciji <i>P</i> + <i>Q</i> = 
-<font face="Brush Script MT,Script,Times New Roman">O</font>. Inače, je 
+<font face="Brush Script MT,Script,Times New Roman">O</font>. InaÄŤe, je 
 <i>P</i> + <i>Q</i> = (<i>x</i><sub>3</sub>, <i>y</i><sub>3</sub>), 
 gdje je 
 <p align=center>
@@ -374,15 +374,15 @@ gdje je
 <i>m</i> = (3<i>x</i><sub>1</sub><sup>2</sup> + <i>a</i>) / 
 (2<i>y</i><sub>1</sub>), &nbsp; ako je <i>P</i> = <i>Q</i>. 
 </p>
-Konačno, <i>P</i> + <font face="Brush Script MT,Script,Times New Roman">O</font> = 
+KonaÄŤno, <i>P</i> + <font face="Brush Script MT,Script,Times New Roman">O</font> = 
 <font face="Brush Script MT,Script,Times New Roman">O</font> + <i>P</i> = <i>P</i> 
 za sve <i>P</i> iz <i>E</i>. 
 <p>
-Geometrijski, zbrajanje možemo interpretirati tako da povučemo pravac 
-kroz <i>P</i> i <i>Q</i> (ako je <i>P</i> = <i>Q</i>, onda povučemo 
-tangentu). Taj pravac siječe <i>E</i> u tri točke: <i>P</i>, 
+Geometrijski, zbrajanje moĹľemo interpretirati tako da povuÄŤemo pravac 
+kroz <i>P</i> i <i>Q</i> (ako je <i>P</i> = <i>Q</i>, onda povuÄŤemo 
+tangentu). Taj pravac sijeÄŤe <i>E</i> u tri toÄŤke: <i>P</i>, 
 <i>Q</i> i recimo <i>P</i> * <i>Q</i>. Tada je <i>P</i> + <i>Q</i> 
-osnosimetrična točka točki <i>P</i> * <i>Q</i> s obzirom na os 
+osnosimetriÄŤna toÄŤka toÄŤki <i>P</i> * <i>Q</i> s obzirom na os 
 <i>x</i>. 
 
 <p align=center>
@@ -390,14 +390,14 @@ osnosimetrična točka točki <i>P</i> * <i>Q</i> s obzirom na os
 alt="P+Q">
 </p>
 
-Sada točku <font face="Brush Script MT,Script,Times New Roman">O</font> možemo shvatiti 
-kao treću točku presjeka od <i>E</i> i pravca okomitog na os <i>x</i>. 
+Sada toÄŤku <font face="Brush Script MT,Script,Times New Roman">O</font> moĹľemo shvatiti 
+kao treÄ‡u toÄŤku presjeka od <i>E</i> i pravca okomitog na os <i>x</i>. 
 <p>
 Kako je polovica elemenata iz <b>Z</b><sub><i>p</i></sub>* 
 jednaka kvadratu nekog elementa iz 
-<b>Z</b><sub><i>p</i></sub>*, za očekivati je da <i>E</i> ima približno 
-<i>p</i> točaka (ako je točka (<i>x</i>, <i>y</i>) u </i>E</i>, 
-onda je također i točka (<i>x</i>, -<i>y</i>) u <i>E</i>). Preciznije, 
+<b>Z</b><sub><i>p</i></sub>*, za oÄŤekivati je da <i>E</i> ima pribliĹľno 
+<i>p</i> toÄŤaka (ako je toÄŤka (<i>x</i>, <i>y</i>) u </i>E</i>, 
+onda je takoÄ‘er i toÄŤka (<i>x</i>, -<i>y</i>) u <i>E</i>). Preciznije, 
 po <em>Hasseovom teoremu</em>, vrijedi: 
 <p align=center>
 p + 1 - 2&radic;<i>p</i> 
@@ -410,23 +410,23 @@ Nadalje, <i>E</i> &#8771;
 <b>Z</b><sub><i>k</i></sub> 
 i vrijedi <i>k</i> | <i>m</i> i <i>k</i> | <i>p</i> - 1. 
 <p>
-Navest ćemo jednu varijantu ElGamalovog kriptosustava koja 
-koristi eliptičke krivulje. Zove se <em>Menezes - Vanstoneov 
-kriptosustav</em>. U njemu se eliptičke krivulje koriste samo za &quot;maskiranje&quot;, 
+Navest Ä‡emo jednu varijantu ElGamalovog kriptosustava koja 
+koristi eliptiÄŤke krivulje. Zove se <em>Menezes - Vanstoneov 
+kriptosustav</em>. U njemu se eliptiÄŤke krivulje koriste samo za &quot;maskiranje&quot;, 
 dok su otvoreni tekstovi
-i šifrati proizvoljni uređeni parovi elemenata iz polja (a ne nužno parovi koji
-odgovaraju točkama na eliptičkoj krivulji). Kod ovog kriptosustava, šifrirana
+i Ĺˇifrati proizvoljni ureÄ‘eni parovi elemenata iz polja (a ne nuĹľno parovi koji
+odgovaraju toÄŤkama na eliptiÄŤkoj krivulji). Kod ovog kriptosustava, Ĺˇifrirana
 poruka je (samo) 2 puta dulja od originalne poruke, a ne 4 puta, koliko bi bila 
-kod direktnog prevođenja ElGamalovog kriptusustava na grupu eliptičkih krivulja.
+kod direktnog prevoÄ‘enja ElGamalovog kriptusustava na grupu eliptiÄŤkih krivulja.
 <p>
 
 <table align=center border=1 width="95%" cellpadding=15> 
 <tr><td bgcolor="FFFFCC">
 <font face="Arial,Helvetica,sans-serif">
 
-Neka je <i>E</i> eliptička krivulja nad 
+Neka je <i>E</i> eliptiÄŤka krivulja nad 
 <b>Z</b><sub><i>p</i></sub> (<i>p</i> &gt; 3 prost), 
-te <i>H</i> ciklička podgrupa od <i>E</i> generirana s 
+te <i>H</i> cikliÄŤka podgrupa od <i>E</i> generirana s 
 &alpha;. 
 Neka je <nobr><font face="Brush Script MT,Script,Times New Roman">P</font> = 
 <b>Z</b><sub><i>p</i></sub>* &times 
@@ -448,7 +448,7 @@ su javne, a vrijednost <i>a</i> je tajna. <br>
 Za <i>K</i> = (<i>E</i>, &alpha;,  
 <i>a</i>, &beta;) 
 &isin;  
-<font face="Brush Script MT,Script,Times New Roman">K</font> i tajni slučajni 
+<font face="Brush Script MT,Script,Times New Roman">K</font> i tajni sluÄŤajni 
 broj <i>k</i> &isin; 
 <b>Z</b><sub>|<i>H</i>|</sub>, 
 te za <i>x</i> = (<i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>) 
@@ -467,7 +467,7 @@ gdje je <i>y</i><sub>0</sub> = <i>k</i>&alpha;,
 mod <i>p</i>,  
 <i>y</i><sub>2</sub> = <i>c</i><sub>2</sub><i>x</i><sub>2</sub>  
 mod <i>p</i>. <br>
-Za šifrat <i>y</i> = (<i>y</i><sub>0</sub>, <i>y</i><sub>1</sub>, <i>y</i><sub>2</sub>) definiramo 
+Za Ĺˇifrat <i>y</i> = (<i>y</i><sub>0</sub>, <i>y</i><sub>1</sub>, <i>y</i><sub>2</sub>) definiramo 
 <p align=center>
 <i>d<sub>K</sub></i>(<i>y</i>) = (<i>y</i><sub>1</sub>(<i>c</i><sub>1</sub>)<sup>-1</sup> mod <i>p</i>, 
 <i>y</i><sub>2</sub>(<i>c</i><sub>2</sub>)<sup>-1</sup> mod <i>p</i>), 
@@ -479,31 +479,31 @@ gdje je <i>ay<sub>0</sub></i> = (<i>c</i><sub>1</sub>,
 <p>
  
 
-Najbolji poznati algoritmi za problem eliptičkog diskretnog logaritma 
+Najbolji poznati algoritmi za problem eliptiÄŤkog diskretnog logaritma 
 trebaju O(&radic;<i>p</i>)
-operacija. To pokazuje prednost kriptosustava zasnovanih na eliptičkim 
+operacija. To pokazuje prednost kriptosustava zasnovanih na eliptiÄŤkim 
 krivuljama u odnosu na RSA i ElGamalov  
 kriptosustav. Naime, za postizanje iste sigurnosti kao kod RSA 
-kriptosustava (a za ElGamalov vrijedi isto) s duljinom ključa od 
-1024 ili 4096 bita (a to su uobičajene vrijednosti), kod eliptičkih 
-krivulja dovoljno je uzeti ključ duljine 160, odnosno 320 bitova. 
-To je osobito važno kod onih primjena (kao što su npr. čip-kartice)
-kod kojih je prostor za pohranu ključeva vrlo ograničen.
+kriptosustava (a za ElGamalov vrijedi isto) s duljinom kljuÄŤa od 
+1024 ili 4096 bita (a to su uobiÄŤajene vrijednosti), kod eliptiÄŤkih 
+krivulja dovoljno je uzeti kljuÄŤ duljine 160, odnosno 320 bitova. 
+To je osobito vaĹľno kod onih primjena (kao Ĺˇto su npr. ÄŤip-kartice)
+kod kojih je prostor za pohranu kljuÄŤeva vrlo ograniÄŤen.
 <p>
-Slično kao kod ElGamalovog kriptosustava, za primjene u kriptografiji, 
-uz eliptičke krivulje nad poljima 
+SliÄŤno kao kod ElGamalovog kriptosustava, za primjene u kriptografiji, 
+uz eliptiÄŤke krivulje nad poljima 
 <b>Z</b><sub><i>p</i></sub>,  
-važne su i krivulje nad poljima GF(2<sup><i>n</i></sup>). 
-Napomenimo da ovdje (i općenito kod polja karakteristike 2), treba 
-promatrati malo drugačiju jednadžbu, naime 
+vaĹľne su i krivulje nad poljima GF(2<sup><i>n</i></sup>). 
+Napomenimo da ovdje (i opÄ‡enito kod polja karakteristike 2), treba 
+promatrati malo drugaÄŤiju jednadĹľbu, naime 
 <p align=center> 
 <i>E</i> : &nbsp; &nbsp; &nbsp; <i>y</i><sup>2</sup> + 
 <i>xy</i> = 
 <i>x</i><sup>3</sup> + <i>ax</i><sup>2</sup> + <i>b</i>. 
 </p>
 
-Ideju o tome da bi eliptičke krivulje mogle biti korisne u konstrukciji
-kriptosustava s javnim ključem prvi su javno iznijeli <font color="009900">Neal Koblitz</font> i 
+Ideju o tome da bi eliptiÄŤke krivulje mogle biti korisne u konstrukciji
+kriptosustava s javnim kljuÄŤem prvi su javno iznijeli <font color="009900">Neal Koblitz</font> i 
 <font color="009900">Victor Miller</font> 1985. godine. 
 
 <p><br><br>
@@ -516,7 +516,7 @@ Merkle</font> i <font color="009900">Martin Hellman</font>, 1978)
 za osnovu ima tzv. <em>problem ruksaka</em>. Pretpostavimo da imamo 
 <i>n</i> predmeta s volumenima <i>v</i><sub>1</sub>, 
 <i>v</i><sub>2</sub>, ... , <i>v</i><sub><i>n</i></sub> 
-koje želimo staviti u ruksak volumena <i>V</i>. Dakle, želimo naći 
+koje Ĺľelimo staviti u ruksak volumena <i>V</i>. Dakle, Ĺľelimo naÄ‡i 
 podskup <i>J</i> &sube;  
 {1, 2, ... , <i>n</i>} tako da je 
 <nobr>&sum;<sub><i>j</i></sub> <i>v<sub>j</sub></i> 
@@ -531,7 +531,7 @@ Ekvivalentna formulacija je:
 
 Za dani skup {<i>v</i><sub>1</sub>, <i>v</i><sub>2</sub>, 
 ... , <i>v</i><sub><i>n</i></sub>} od <i>n</i> prirodnih brojeva i 
-prirodan broj <i>V</i>, naći niz 
+prirodan broj <i>V</i>, naÄ‡i niz 
 <i>m</i> = (&epsilon;<sub>1</sub>, 
 &epsilon;<sub>2</sub>, ... ,  
 &epsilon;<sub><i>n</i></sub>)
@@ -549,25 +549,25 @@ ako takav <i>m</i> postoji.
 </font></td></tr></table>
 <p>
 
-Poznato je da je ovaj opći problem ruksaka vrlo težak. On spada u tzv. 
-<em>NP-potpune</em> probleme. To, pored ostalog, znači da nije poznat 
-polinomijalni algoritam za njegovo rješavanje. Međutim, 
-specijalni slučaj, tzv. <em>superrastući problem ruksaka</em>, 
-je puno lakši. To je slučaj kad je niz <i>v</i><sub>1</sub>, 
-<i>v</i><sub>2</sub>, ... , <i>v</i><sub><i>n</i></sub> rastući i 
+Poznato je da je ovaj opÄ‡i problem ruksaka vrlo teĹľak. On spada u tzv. 
+<em>NP-potpune</em> probleme. To, pored ostalog, znaÄŤi da nije poznat 
+polinomijalni algoritam za njegovo rjeĹˇavanje. MeÄ‘utim, 
+specijalni sluÄŤaj, tzv. <em>superrastuÄ‡i problem ruksaka</em>, 
+je puno lakĹˇi. To je sluÄŤaj kad je niz <i>v</i><sub>1</sub>, 
+<i>v</i><sub>2</sub>, ... , <i>v</i><sub><i>n</i></sub> rastuÄ‡i i 
 vrijedi <i>v</i><sub><i>j</i></sub> &gt; <i>v</i><sub>1</sub> + ... + 
 <i>v</i><sub><i>j</i> -1</sub> za <i>j</i> = 2, 3, ... , <i>n</i>.  
-Primjer superrastućeg niza je niz <i>v</i><sub><i>i</i></sub> = 2<sup><i>i</i> -1</sup>. 
+Primjer superrastuÄ‡eg niza je niz <i>v</i><sub><i>i</i></sub> = 2<sup><i>i</i> -1</sup>. 
 Tada su &epsilon;<sub><i>i</i></sub>-ovi upravo binarne
-znamenke broja <i>V</i>. Jasno je da u slučaju superrastućeg niza, u svakom
-koraku u ruksak moramo staviti najveći predmet koji u njega stane.
-Ova činjenica je osnova za Merkle-Hellmanov kriptosustav. 
-Ideja Merkle-Hellmanovog kriptosustava je &quot;zamaskirati&quot; superrastući
-niz tako da izgleda kao sasvim slučajan niz. Onaj kome je poruka namjenjena  
-zna kako ukloniti masku, pa može pročitati poruku rješavajući
-supperrastući problem ruksaka. Svi drugi moraju rješavati, puno teži, opći
-problem ruksaka, pa ne mogu pročitati poruku. &quot;Maskiranje&quot; se provodi
-modularnim množenjem. 
+znamenke broja <i>V</i>. Jasno je da u sluÄŤaju superrastuÄ‡eg niza, u svakom
+koraku u ruksak moramo staviti najveÄ‡i predmet koji u njega stane.
+Ova ÄŤinjenica je osnova za Merkle-Hellmanov kriptosustav. 
+Ideja Merkle-Hellmanovog kriptosustava je &quot;zamaskirati&quot; superrastuÄ‡i
+niz tako da izgleda kao sasvim sluÄŤajan niz. Onaj kome je poruka namjenjena  
+zna kako ukloniti masku, pa moĹľe proÄŤitati poruku rjeĹˇavajuÄ‡i
+supperrastuÄ‡i problem ruksaka. Svi drugi moraju rjeĹˇavati, puno teĹľi, opÄ‡i
+problem ruksaka, pa ne mogu proÄŤitati poruku. &quot;Maskiranje&quot; se provodi
+modularnim mnoĹľenjem. 
 <p>
 
 <table align=center border=1 width="95%" cellpadding=15> 
@@ -575,7 +575,7 @@ modularnim množenjem.
 <font face="Arial,Helvetica,sans-serif">
 
 Neka je <i>v</i> = (<i>v</i><sub>1</sub>, <i>v</i><sub>2</sub>, ... , 
-<i>v<sub>n</sub></i>) superrastući niz prirodnih brojeva, te neka je  
+<i>v<sub>n</sub></i>) superrastuÄ‡i niz prirodnih brojeva, te neka je  
 <i>p</i> &gt; <i>v</i><sub>1</sub> + ... + <i>v<sub>n</sub></i> 
 prost broj i 1 &le;  
 <i>a</i> 
@@ -583,7 +583,7 @@ prost broj i 1 &le;
 Za 1 &le;   
 <i>i</i> &le; <i>n</i> 
 definiramo <nobr><i>t<sub>i</sub></i> = <i>a v<sub>i</sub></i> mod <i>p</i></nobr> 
-i označimo <i>t</i> = (<i>t</i><sub>1</sub>, ... , 
+i oznaÄŤimo <i>t</i> = (<i>t</i><sub>1</sub>, ... , 
 <i>t</i><sub><i>n</i></sub>). Neka je 
 <font face="Brush Script MT,Script,Times New Roman">P</font> = 
 {0,1}<sup><i>n</i></sup>, 
@@ -592,7 +592,7 @@ i označimo <i>t</i> = (<i>t</i><sub>1</sub>, ... ,
 <font face="Brush Script MT,Script,Times New Roman">K</font> = 
 {(<i>v</i>, <i>p</i>, <i>a</i>, <i>t</i>)}, gdje su 
 <i>v</i>, <i>p</i>, <i>a</i> i <i>t</i> konstruirani na gore 
-opisani način. <br>
+opisani naÄŤin. <br>
 
 Za <i>K</i> = (<i>v</i>, <i>p</i>, <i>a</i>, <i>t</i>) definiramo 
 <p align=center>
@@ -604,7 +604,7 @@ Za <i>K</i> = (<i>v</i>, <i>p</i>, <i>a</i>, <i>t</i>) definiramo
 Za 0 &le; <i>y</i> 
 &le; <i>n</i>(<i>p</i>-1) 
 definiramo <i>z</i> = <i>a</i><sup>-1</sup><i>y</i> mod <i>p</i>, 
-riješimo (superrastući) problem ruksaka za skup 
+rijeĹˇimo (superrastuÄ‡i) problem ruksaka za skup 
 {<i>v</i><sub>1</sub>, ... , <i>v</i><sub><i>n</i></sub>, <i>z</i>} 
 i tako dobivamo <nobr><i>d</i><sub><i>K</i></sub>(<i>y</i>) = 
 (<i>x</i><sub>1</sub>, ... , <i>x</i><sub><i>n</i></sub>).</nobr> <br>
@@ -620,12 +620,12 @@ Vrijednost <i>t</i> je javna, dok su vrijednosti
 <i>v</i> = (2, 5, 11, 23, 45, 91), &nbsp; <i>p</i> = 181, &nbsp; <i>a</i> = 111,  &nbsp;
 <i>t</i> = (41, 12, 135, 19, 108, 146).
 </p>
-Dešifrirati šifrat <i>y</i> = 296.
+DeĹˇifrirati Ĺˇifrat <i>y</i> = 296.
 <p>
 
-Najprije izračunamo inverz od <i>a</i> modulo <i>p</i> (Euklidovim algoritmom). 
-Dobivamo da je inverz 106. Zatim računamo <i>z</i> = 106 <b>&middot;</b> 296 mod 181 =
-63. Sada riješimo superrastući problem ruksaka za <i>v</i> i <i>z</i>. Dobivamo da je
+Najprije izraÄŤunamo inverz od <i>a</i> modulo <i>p</i> (Euklidovim algoritmom). 
+Dobivamo da je inverz 106. Zatim raÄŤunamo <i>z</i> = 106 <b>&middot;</b> 296 mod 181 =
+63. Sada rijeĹˇimo superrastuÄ‡i problem ruksaka za <i>v</i> i <i>z</i>. Dobivamo da je
 63 = 45 + 11 + 5 + 2, pa je otvoreni tekst
 <p align=center>
 (<i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>, <i>x</i><sub>3</sub>, 
@@ -638,26 +638,26 @@ Provjera: <i>e<sub>K</sub></i>(<i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>, <i>x<
 
 
 Merkle-Hellmanov kriptosustav je imao jednu vrlo veliku prednost u odnosu
-na ostale kriptosustave s javnim ključem. Naime, šifranje njime je znatno
-brže, te je on po brzini bio usporediv s najboljim simetričnim kriptosustavima. 
-No, godine 1982. je uslijedilo razočaranje, kad je <font color="009900">Adi Shamir</font> pronašao
+na ostale kriptosustave s javnim kljuÄŤem. Naime, Ĺˇifranje njime je znatno
+brĹľe, te je on po brzini bio usporediv s najboljim simetriÄŤnim kriptosustavima. 
+No, godine 1982. je uslijedilo razoÄŤaranje, kad je <font color="009900">Adi Shamir</font> pronaĹˇao
 polinomijalni algoritam za razbijanje Merkle-Hellmanovog kriptosustava.
 Pokazalo se da se ovako jednostavnim maskiranjem vrlo specijanog niza ipak
-ne dobiva sasvim slučajan niz. U razbijanju se koriste algoritmi za diofantske
-aproksimacije (verižni razlomci i LLL-algoritam).
+ne dobiva sasvim sluÄŤajan niz. U razbijanju se koriste algoritmi za diofantske
+aproksimacije (veriĹľni razlomci i LLL-algoritam).
  
-Prema tome, ovaj sustav se ne može više smatrati sigurnim 
+Prema tome, ovaj sustav se ne moĹľe viĹˇe smatrati sigurnim 
 kriptosustavom. Ipak, ideja na kojoj je zasnovan je vrlo zanimljiva. 
-Ta ideja je korištenje u dešifriranju nekog jednostavnog specijalnog 
-slučaja nekog teškog (NP-potpunog) problema, s time da se taj 
-specijalni slučaj prikrije tako da izgleda kao opći. 
+Ta ideja je koriĹˇtenje u deĹˇifriranju nekog jednostavnog specijalnog 
+sluÄŤaja nekog teĹˇkog (NP-potpunog) problema, s time da se taj 
+specijalni sluÄŤaj prikrije tako da izgleda kao opÄ‡i. 
 <p>
 
 <!--
 
 Ova ideja se koristi i u <em>McElieceovom kriptosustavu</em> 
 (<font color="009900">Robert McEliece</font>, 1978). Ovdje je NP-potpun 
-problem dekodiranje općih linearnih kodova za ispravljanje grešaka. 
+problem dekodiranje opÄ‡ih linearnih kodova za ispravljanje greĹˇaka. 
 Kao osnova u ovom kriptosustavu koristi se specijalna klasa tzv. 
 <em>Goppa kodova</em> za koje postoji polinomijalni algoritam 
 za dekodiranje.  
@@ -666,34 +666,34 @@ za dekodiranje.
 <br>
 
 Jedan od najzanimljivijih novijih kriptosustava, koji je
-još uvijek predmet intenzivnog proučavanja,
-je <em>NTRU kriptosustav</em>, koji su 1997. godine predložili
+joĹˇ uvijek predmet intenzivnog prouÄŤavanja,
+je <em>NTRU kriptosustav</em>, koji su 1997. godine predloĹľili
 <font color="009900">Jeffrey Hoffstein</font>, <font color="009900">Jill Pipher</font> i 
 <font color="009900">Joseph Silverman</font>. U ovom se kriptosustavu
-kod šifriranja koriste polinomi. Preciznije, koristi se
+kod Ĺˇifriranja koriste polinomi. Preciznije, koristi se
 prsten <nobr><i>R</i> = <b>Z</b>[<i>X</i>]/(<i>X</i><sup><i>n</i></sup> -1).</nobr> 
 Na elementima
-od <i>R</i> definira se operacija cikličke konvolucije. 
+od <i>R</i> definira se operacija cikliÄŤke konvolucije. 
 Pored toga se koristi redukcija ovako dobivenih polinoma po dvama relativno prostim
 modulima <i>p</i> i <i>q</i>. Sigurnost ovog
 kriptosustava se upravo zasniva na nezavisnosti tih dviju redukcija.
 <p>
 Jedna potencijalna, za sada samo teoretska, prednost NTRU kriptosustava u odnosu na RSA je
-vezana uz pitanje što bi se dogodilo s njihovom sigurnošću ako bi se uspjelo
-konstruirati kvantna računala. Za razliku od klasičnih računala kod kojih je osnovna jedinica
-informacije jedan bit (koji može biti 0 ili 1), kvantna računala 
+vezana uz pitanje Ĺˇto bi se dogodilo s njihovom sigurnoĹˇÄ‡u ako bi se uspjelo
+konstruirati kvantna raÄŤunala. Za razliku od klasiÄŤnih raÄŤunala kod kojih je osnovna jedinica
+informacije jedan bit (koji moĹľe biti 0 ili 1), kvantna raÄŤunala 
 bi koristila ideje iz kvantne mehanike, te bi kod njih osnovna jedinica informacije - qubit -
-nosila puno više informacija. Takva računala još nisu praktično realizirana u obliku koji bi
-bio konkurencija klasičnim računalima, ali takva realizacija nije isključena u doglednoj budućnosti.
-Stoga se u posljednjih 15-tak godina radi i na algoritmima specijalno dizajniranim baš za takva računala.
+nosila puno viĹˇe informacija. Takva raÄŤunala joĹˇ nisu praktiÄŤno realizirana u obliku koji bi
+bio konkurencija klasiÄŤnim raÄŤunalima, ali takva realizacija nije iskljuÄŤena u doglednoj buduÄ‡nosti.
+Stoga se u posljednjih 15-tak godina radi i na algoritmima specijalno dizajniranim baĹˇ za takva raÄŤunala.
 
-Jedan od najpoznatih algoritama za kvantna računala je 
-Shorov algoritam koji koristi činjenicu da kvantne metode
-omogućavaju vrlo brzo računanje perioda periodičnih funkcija. To daje polinomijalne kvantne algoritme
-za probleme faktorizacije i diskretnog algoritma. Znači da bi efektivna konstrukcija dovoljno snažnih
-kvantnih računala učinila neupotrebljivim kriptosustave javnog ključa zasnovane na faktorizaciji
+Jedan od najpoznatih algoritama za kvantna raÄŤunala je 
+Shorov algoritam koji koristi ÄŤinjenicu da kvantne metode
+omoguÄ‡avaju vrlo brzo raÄŤunanje perioda periodiÄŤnih funkcija. To daje polinomijalne kvantne algoritme
+za probleme faktorizacije i diskretnog algoritma. ZnaÄŤi da bi efektivna konstrukcija dovoljno snaĹľnih
+kvantnih raÄŤunala uÄŤinila neupotrebljivim kriptosustave javnog kljuÄŤa zasnovane na faktorizaciji
 (RSA, Rabin) i problemu diskretnog logaritma (ElGamal, ECC).
-Čini se da bi McElieceov i NTRU možda mogli biti sigurni i u eri kvantnih računala. 
+ÄŚini se da bi McElieceov i NTRU moĹľda mogli biti sigurni i u eri kvantnih raÄŤunala. 
 
 <p>
 
@@ -703,8 +703,8 @@ kvantnih računala učinila neupotrebljivim kriptosustave javnog ključa zasnovane 
 
 <b><font size="-1" face="Verdana">
 <a href="rsaan.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="postkvant.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="postkvant.html">[SljedeÄ‡e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 
 <hr size=2 noshade>
