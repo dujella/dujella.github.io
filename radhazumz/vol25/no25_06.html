@@ -1,0 +1,358 @@
+<html>
+<head>
+
+<title>Hierarchical and dynamic threshold Paillier cryptosystem without trusted dealer</title>
+
+<meta name="description" content="Rad HAZU, Vol.25, 107-141">
+
+</head>
+
+<!-- 
+<body bgcolor="#FFDD77">
+-->
+
+<h4>Rad HAZU, Matemati&#269;ke znanosti, Vol. 25 (2021), 107-141.</h4>
+
+<h3 align=center>HIERARCHICAL AND DYNAMIC THRESHOLD PAILLIER CRYPTOSYSTEM WITHOUT TRUSTED DEALER</h3>
+<h3 align=center>Andreas Klinger, Stefan W&uuml;ller, Giulia Traverso and Ulrike Meyer</h3>
+
+RWTH Aachen University, Templergraben 55, 52062 Aachen, Germany <br>
+<em>e-mail:</em> <tt>klinger@itsec.rwth-aachen.de</tt> 
+<p>
+RWTH Aachen University, Templergraben 55, 52062 Aachen, Germany <br>
+<em>e-mail:</em> <tt>wueller@itsec.rwth-aachen.de</tt> 
+<p>
+EY Switzerland, Rue du Simplon 35, 1006 Lausanne, Switzerland <br>
+<em>e-mail:</em> <tt>giutra90@icloud.com</tt> 
+<p>
+RWTH Aachen University, Templergraben 55, 52062 Aachen, Germany <br>
+<em>e-mail:</em> <tt>meyer@itsec.rwth-aachen.de</tt> 
+
+
+<p>
+<hr size=2 noshade>
+<p>
+
+
+<b>Abstract.</b> &nbsp; We propose the first hierarchical and dynamic threshold
+Paillier cryptosystem without trusted dealer and prove its security in the
+malicious adversary model. The new cryptosystem is fully distributed, i. e.,
+public and private key generation is performed without a trusted dealer.
+The private key is shared with a hierarchical and dynamic secret sharing
+scheme over the integers. In such a scheme not only the amount of shareholders,
+but also their levels in the hierarchy decide whether or not they
+can reconstruct the secret and new shareholders can be added or removed
+without reconstruction of the secret.
+
+<p>
+<b>2020 Mathematics Subject Classification.</b> &nbsp; 
+94A60, 94A62.
+<p>
+<b>Key words and phrases.</b> &nbsp; Homomorphic cryptosystem, threshold cryptosystem, hierarchical
+secret sharing, dynamic secret sharing, Paillier, SMPC, Birkhoff interpolation.
+<p>
+
+<hr size=2 noshade>
+
+<a href="https://hrcak.srce.hr/file/380448"><b>Full text (PDF)</b></a> (free access)
+<p>
+
+DOI: <a href="https://doi.org/10.21857/mnlqgc582y">https://doi.org/10.21857/mnlqgc582y</a>
+
+<hr size=2 noshade>
+<p>
+<b>References:</b>
+<small>
+<ol>
+
+<li> S. G. Akl and P. D. Taylor, <i>Cryptographic solution to a problem of access control in a
+hierarchy</i>, ACM Trans. Comput. Syst. <b>1 (3)</b> (1983), 239-248.
+<br>
+<a href="https://doi.org/10.1145/357369.357372">CrossRef</a>
+<p>
+
+<li> A. Beimel, T. Tassa and E. Weinreb, <i>Characterizing ideal weighted threshold secret
+sharing</i>, in: Theory of Cryptography, Lecture Notes in Comput. Sci. <b>3378</b>, Springer,
+Berlin, 2005, pp. 600-619.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=2168504">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/978-3-540-30576-7_32">CrossRef</a>
+<p>
+
+<li> J. Benaloh and J. Leichter, <i>Generalized secret sharing and monotone functions</i>, in:
+Advances in Cryptology – CRYPTO 88, Lecture Notes in Comput. Sci. <b>403</b>, Springer,
+New York, 1990, pp. 27-35.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=1046379">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/0-387-34799-2_3">CrossRef</a>
+<p>
+
+<li> G. R. Blakley, <i>Safeguarding cryptographic keys</i>, 
+in: Proceedings of International Workshop on Managing Requirements Knowledge, 1979, pp. 313-317.
+<br>
+<a href="https://doi.org/10.1109/MARK.1979.8817296">CrossRef</a>
+<p>
+
+<li> P. Bogetoft, D. L. Christensen, I. Damgård, M. Geisler, T. Jakobsen, M. Krøigaard,
+J. D. Nielsen, J. B. Nielsen, K. Nielsen, J. Pagter, M. Schwartzbach and T. Toft, <i>Secure
+multiparty computation goes live</i>, in: Financial Cryptography and Data Security,
+Lecture Notes in Comput. Sci. <b>5628</b>, Springer, Berlin, 2009, pp. 325-343.
+<br>
+<a href="https://doi.org/978-3-642-03549-4_20">CrossRef</a>
+<p>
+
+<li> D. Boneh and M. Franklin, <i>Efficient generation of shared RSA keys</i>, 
+in: Advances in Cryptology - CRYPTO '97, Lecture Notes in Comput. Sci. <b>1294</b>, Springer, Berlin,
+1997, pp. 425-439.
+<br>
+<a href="https://doi.org/10.1007/BFb0052253">CrossRef</a>
+<p>
+
+<li> E. F. Brickell, <i>Some ideal secret sharing schemes</i>, in: Advances in Cryptology - EUROCRYPT 89,
+Lecture Notes in Comput. Sci. <b>434</b>, Springer, Berlin, 1990, pp. 468-475.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=1083968">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/3-540-46885-4_45">CrossRef</a>
+<p>
+
+<li> C. Clifton, M. Kantarcioglu, A. Doan, G. Schadow, J. Vaidya, A. Elmagarmid and
+D. Suciu, <i>Privacy-preserving data integration and sharing</i>, in: Proceedings of the 9th
+ACM SIGMOD workshop on Research issues in data mining and knowledge discovery
+- DMKD ’04, ACM Press, 2004, pp. 19-26. 
+<br>
+<a href="https://doi.org/10.1145/1008694.1008698">CrossRef</a>
+<p>
+
+<li> R. Cramer, I. Damg&aring;rd and J. B. Nielsen, <i>Multiparty computation from threshold
+homomorphic encryption</i>, in: Advances in Cryptology – EUROCRYPT 2001, Lecture
+Notes in Comput. Sci. <b>2045</b>, Springer, Berlin, 2001, pp. 280-300.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=1895439">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/3-540-44987-6_18">CrossRef</a>
+<p>
+
+<li> I. Damg&aring;rd and M. Jurik, <i>A length-flexible threshold cryptosystem with applications</i>,
+in: Information Security and Privacy, Lecture Notes in Comput. Sci. <b>2727</b>, Springer,
+Berlin, 2003, pp. 350-364.
+<br>
+<a href="https://doi.org/10.1007/3-540-45067-X_30">CrossRef</a>
+<p>
+
+<li> I. Damg&aring;rd and M. Koprowski, <i>Practical threshold RSA signatures without a trusted
+dealer</i>, in: Advances in Cryptology - EUROCRYPT 2001, Lecture Notes in Comput. Sci. <b>2045</b>, 
+Springer, Berlin, 2001, pp. 152-165.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=1895431">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/3-540-44987-6_10">CrossRef</a>
+<p>
+
+<li> I. Damg&aring;rd and J. B. Nielsen, <i>Universally composable efficient multiparty computation
+from threshold homomorphic encryption</i>, in: Advances in Cryptology - CRYPTO 2003,
+Lecture Notes in Comput. Sci. <b>2729</b>, Springer, Berlin, 2003, pp. 247-264.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=2093197">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/978-3-540-45146-4_15">CrossRef</a>
+<p>
+
+<li> Y. Desmedt, <i>Society and group oriented cryptography: a new concept</i>, in: Advances
+in Cryptology - CRYPTO 87, Lecture Notes in Comput. Sci. <b>293</b>, Springer, Berlin,
+1988, pp. 120-127.
+<br>
+<a href="https://doi.org/10.1007/3-540-48184-2_8">CrossRef</a>
+<p>
+
+<li> Y. Desmedt and Y. Frankel, <i>Threshold cryptosystems</i>, in: Advances in Cryptology - 
+CRYPTO 89 Proceedings, Lecture Notes in Comput. Sci. <b>435</b>, Springer, New York,
+1990, pp. 307-315.
+<br>
+<a href="https://doi.org/10.1007/0-387-34805-0_28">CrossRef</a>
+<p>
+
+<li> O. Farr&agrave;s and C. Padr&oacute;, <i>Ideal hierarchical secret sharing schemes</i>, in: Theory of Cryptography,
+Lecture Notes in Comput. Sci. <b>5978</b>, Springer, Berlin, 2010, pp. 219-236.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=2673375">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/978-3-642-11799-2_14">CrossRef</a>
+<p>
+
+<li> P.-A. Fouque, G. Poupard and J. Stern, <i>Sharing decryption in the context of voting or lotteries</i>, 
+in: Financial Cryptography, Lecture Notes in Comput. Sci. <b>1962</b>, Springer, Berlin, 2001, pp. 90-104.
+<br>
+<a href="https://doi.org/10.1007/3-540-45472-1_7">CrossRef</a>
+<p>
+
+<li> R. Gennaro, S. Halevi, H. Krawczyk and T. Rabin, <i>Threshold RSA for dynamic and
+ad-hoc groups</i>, in: Advances in Cryptology - EUROCRYPT 2008, Lecture Notes in
+Comput. Sci. <b>4965</b>, Springer, Berlin, 2008, pp. 88-107.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=2606328">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/978-3-540-78967-3_6">CrossRef</a>
+<p>
+
+<li> H. Ghodosi, J. Pieprzyk and R. Safavi-Naini, <i>Dynamic threshold cryptosystems (A new
+scheme in group oriented cryptography)</i>, in: Proceedings of PRAGOCRYPT 96 (1996),
+pp. 370-379.
+<p>
+
+<li> H. Ghodosi, J. Pieprzyk and R. Safavi-Naini, <i>Secret sharing in multilevel and compartmented
+groups</i>, in: Information Security and Privacy, Lecture Notes in Comput. Sci. <b>1438</b>, 
+Springer, Berlin, 1998, pp. 367-378.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=1670939">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/BFb0053748">CrossRef</a>
+<p>
+
+<li> O. Goldreich, Foundations of Cryptography: Basic Tools, Cambridge University Press,
+2003.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=1881185">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1017/CBO9780511546891">CrossRef</a>
+<p>
+
+<li> O. Goldreich, Foundations of Cryptography: Basic Applications, Cambridge University
+Press, 2004.
+<br>
+<a href="https://doi.org/10.1017/CBO9780511721656">CrossRef</a>
+<p>
+
+<li> D. Grigoriev and I. Ponomarenko, <i>Homomorphic public-key cryptosystems and encrypting
+Boolean circuits</i>, Appl. Algebra Engrg. Comm. Comput. <b>17</b> (2006), 239-255.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=2233784">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/s00200-006-0005-x">CrossRef</a>
+<p>
+
+<li> L. Harn, H. Lin and S. Yang, <i>Threshold cryptosystem with multiple secret sharing
+policies</i>, IEE Proceedings - Computers and Digital Techniques <b>141</b> (1994), 142-144.
+<p>
+
+<li> C. Hazay and Y. Lindell, Efficient Secure Two-Party Protocols, Springer, Berlin, 2010.
+<br>
+<a href="https://doi.org/10.1007/978-3-642-14303-8">CrossRef</a>
+<p>
+
+<li> M. Ito, A. Saito and T. Nishizeki, <i>Secret sharing scheme realizing general access structure</i>,
+Electron. Comm. Japan Part III Fund. Electron. Sci. <b>72 (9)</b> (1989), 56-64.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=1048477">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1002/ecjc.4430720906">CrossRef</a>
+<p>
+
+<li> C. S. Laih and L. Harn, <i>Generalized threshold cryptosystems</i>, in: Advances in Cryptology
+– ASIACRYPT '91, Lecture Notes in Comput. Sci. <b>2894</b>, Springer, Berlin, 1993,
+pp. 159-166.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=2094316">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/b94617">CrossRef</a>
+<p>
+
+<li> G. G. Lorentz, K. Jetter and S. Riemenschneider, Birkhoff Interpolation, Encyclopedia
+of Mathematics and its Applications <b>19</b>, Cambridge University Press, 1983.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=0680938">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1017/CBO9780511662959">CrossRef</a>
+<p>
+
+<li> R. Mendes and J. P. Vilela, <i>Privacy-preserving data mining: Methods, metrics, and
+applications</i>, IEEE Access <b>5</b> (2017), 10562–10582.
+<br>
+<a href="https://doi.org/10.1109/ACCESS.2017.2706947">CrossRef</a>
+<p>
+
+<li> T. Nishide and K. Sakurai, <i>Distributed Paillier cryptosystem without trusted dealer</i>,
+in: Information Security Applications, Lecture Notes in Comput. Sci. <b>6513</b>, Springer,
+Berlin, 2010, pp. 44-60.
+<br>
+<a href="https://doi.org/10.1007/978-3-642-17955-6_4">CrossRef</a>
+<p>
+
+<li> T. Okamoto, <i>An efficient divisible electronic cash scheme</i>, in: Advances in Cryptology
+- CRYPTO '95, Lecture Notes in Comput. Sci. <b>963</b>, Springer, Berlin, 1995, pp. 438-451.
+<br>
+<a href="https://doi.org/10.1007/3-540-44750-4_35">CrossRef</a>
+<p>
+
+<li> P. Paillier, <i>Public-key cryptosystems based on composite degree residuosity classes</i>,
+in: Advances in Cryptology - EUROCRYPT 99, Lecture Notes in Comput. Sci. <b>1592</b>,
+Springer, Berlin, 1999, pp. 223-238.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=1717471">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/3-540-48910-X_16">CrossRef</a>
+<p>
+
+<li> N. Pakniat, M. Noroozi and Z. Eslami, <i>Distributed key generation protocol with hierarchical
+threshold access structure</i>, IET Information Security <b>9</b> (2015), 248-255.
+<br>
+<a href="https://doi.org/10.1049/iet-ifs.2014.0161">CrossRef</a>
+<p>
+
+<li> T. P. Pedersen, <i>Non-interactive and information-theoretic secure verifiable secret sharing</i>,
+in: Advances in Cryptology - CRYPTO 91, Lecture Notes in Comput. Sci. <b>576</b>,
+Springer, Berlin, 1991, pp. 129-140.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=1243648">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/3-540-46766-1_9">CrossRef</a>
+<p>
+
+<li> T. P. Pedersen, <i>A threshold cryptosystem without a trusted party</i>, in: Advances in
+Cryptology - EUROCRYPT 91, Lecture Notes in Comput. Sci. <b>547</b>, Springer, Berlin,
+1991, pp. 522-526.
+<br>
+<a href="https://doi.org/10.1007/3-540-46416-6_47">CrossRef</a>
+<p>
+
+<li> T. Rabin, <i>A simplified approach to threshold and proactive RSA</i>, in: Advances in
+Cryptology - CRYPTO ’98, Lecture Notes in Comput. Sci. <b>1462</b>, Springer, Berlin,
+1998, pp. 89-104.
+<br>
+<a href="https://doi.org/10.1007/BFb0055722">CrossRef</a>
+<p>
+
+<li> A. Shamir, <i>How to share a secret</i>, Commun. ACM <b>22</b> (1979), 612-613.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=0549252">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1145/359168.359176">CrossRef</a>
+<p>
+
+<li> G. J. Simmons, <i>How to (really) share a secret</i>, in: Advances in Cryptology - CRYPTO
+88, Lecture Notes in Comput. Sci. <b>403</b>, Springer, New York, 1990, pp. 390-448.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=1046402">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/0-387-34799-2_30">CrossRef</a>
+<p>
+
+<li> T. Tassa, <i>Hierarchical threshold secret sharing</i>, J. Cryptology <b>20</b> (2007), 237-264.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=2344121">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/s00145-006-0334-8">CrossRef</a>
+<p>
+
+<li> G. Traverso, D. Demirel and J. Buchmann, <i>Dynamic and verifiable hierarchical secret
+sharing</i>, in: Information Theoretic Security, Lecture Notes in Comput. Sci. <b>10015</b>,
+Springer, Cham, 2016, pp. 24-43.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=3609943">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/978-3-319-49175-2_2">CrossRef</a>
+<p>
+
+<li> G. Traverso, D. Demirel and J. Buchmann, <i>Performing computations on hierarchically
+shared secrets</i>, in: Progress in Cryptology - AFRICACRYPT 2018, Lecture Notes in
+Comput. Sci. <b>10831</b>, Springer, Cham, 2018, pp. 141-161.
+<br>
+<a href="https://www.ams.org/mathscinet-getitem?mr=3796616">MathSciNet</a> &nbsp; &nbsp; 
+<a href="https://doi.org/10.1007/978-3-319-89339-6_9">CrossRef</a>
+<p>
+
+
+
+</ol>
+</small>
+
+<hr size=2 noshade>
+
+<a href="http://web.math.pmf.unizg.hr/~duje/radhazumz/"><em>Rad HAZU</em> Home Page</a>
+
+</body>
+
+</html>
+
