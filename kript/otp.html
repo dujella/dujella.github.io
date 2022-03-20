@@ -1,15 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Jednokratna bilježnica</title>
+<title>Jednokratna biljeĹľnica</title>
 
 <meta name="author" content="Andrej Dujella">
 <meta name="description" content="Kriptografija - 
 Jednokratna biljeznica">
-<meta name="keywords" content="kriptografija, jednokratna bilježnica, 
+<meta name="keywords" content="kriptografija, jednokratna biljeĹľnica, 
 one time pad, Vernam">
 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utb-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
 
@@ -25,8 +25,8 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="hill.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="transp.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="transp.html">[SljedeÄ‡e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 <p>
 
@@ -35,35 +35,35 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <a name="1.6"></a>
 <h2 align=center style="color: rgb(128,0,0)">1.6. Jednokratna 
-bilježnica</h2>
+biljeĹľnica</h2>
 
 
 Postavlja se pitanje postoji li kriptosustav koji je 
-<em>savršeno siguran</em>, te što bi to uopće značilo. 
-Pojam savršene sigurnosti uveo je 1949. godine <font color=009900>Claude Shannon</font>. 
-To je kriptosustav u kojem šifrat ne daje nikakvu informaciju 
+<em>savrĹˇeno siguran</em>, te Ĺˇto bi to uopÄ‡e znaÄŤilo. 
+Pojam savrĹˇene sigurnosti uveo je 1949. godine <font color=009900>Claude Shannon</font>. 
+To je kriptosustav u kojem Ĺˇifrat ne daje nikakvu informaciju 
 o otvorenom tekstu. Preciznije, pretpostavimo da se u prostoru 
 otvorenih tekstova 
 <font face="Brush Script MT,Script,Times New Roman">P</font>
-otvoreni tekst <i>x</i> pojavljuje s vjerojatnošću 
+otvoreni tekst <i>x</i> pojavljuje s vjerojatnoĹˇÄ‡u 
 <i>p</i>(<i>x</i>). Tada je uvjetna vjerojatnost 
 <i>p</i>(<i>x</i> | <i>y</i>) da je <i>x</i> otvoreni tekst ako znamo 
-da je <i>y</i> šifrat, također jednaka <i>p</i>(<i>x</i>)
+da je <i>y</i> Ĺˇifrat, takoÄ‘er jednaka <i>p</i>(<i>x</i>)
 (za svaki fiksirani <i>x</i> &isin;  
 <font face="Brush Script MT,Script,Times New Roman">P</font> i sve <i>y</i> 
 &isin;  
 <font face="Brush Script MT,Script,Times New Roman">C</font>). 
 <p>
 Poznata realizacija ideje potpune sigurnosti je kriptosustav 
-poznat pod nazivom <em>jednokratna bilježnica</em> (engl. one-time pad). 
+poznat pod nazivom <em>jednokratna biljeĹľnica</em> (engl. one-time pad). 
 Smatra se da su ga uveli <font color=009900>Gilbert Vernam</font> i <font color=009900>Joseph Mauborgne</font> 1917. godine 
-(nedavno je pronađeno da je istu ideju imao već 1882. godine <font color=009900>Frank Miller</font>). 
-Naravno, to da se radi o savršeno sigurnom kriptosustavu bilo je moguće 
+(nedavno je pronaÄ‘eno da je istu ideju imao veÄ‡ 1882. godine <font color=009900>Frank Miller</font>). 
+Naravno, to da se radi o savrĹˇeno sigurnom kriptosustavu bilo je moguÄ‡e 
 precizno ustvrditi tek nakon Shannonove definicije.
 Ideja im je bila dobiti potpuno sigurni kriptosustav za uporabu 
 u telegrafiji. Za razliku 
 od do sada navedenih kriptosustava, ovaj ne radi sa slovima, 
-već s binarnim podatcima. Njegova definicija je: 
+veÄ‡ s binarnim podatcima. Njegova definicija je: 
 <p>
 
 <table align=center border=1 width="95%" cellpadding=15> 
@@ -89,33 +89,33 @@ Za <i>K</i> = (<i>k</i><sub>1</sub>, ..., <i>k<sub>n</sub></i>)
 <i>y<sub>n</sub></i> +<sub>2</sub> <i>k<sub>n</sub></i>).
 </font> </td></tr> </table>  
 <p>
-Drugim riječima, šifrat se iz otvorenog teksta dobije tako da se na 
+Drugim rijeÄŤima, Ĺˇifrat se iz otvorenog teksta dobije tako da se na 
 bitovima primjeni operacija "ekskluzivno ili" (XOR): 
 <i>y<sub>i</sub></i> = <i>x<sub>i</sub></i> 
 &oplus;  
-<i>k<sub>i</sub></i>. Uočimo da je postupak dešifriranja 
-identičan postupku šifriranja: 
+<i>k<sub>i</sub></i>. UoÄŤimo da je postupak deĹˇifriranja 
+identiÄŤan postupku Ĺˇifriranja: 
 <i>x<sub>i</sub></i> = <i>y<sub>i</sub></i> 
 &oplus;  
 <i>k<sub>i</sub></i>. Naime, u <b>Z</b><sub>2</sub> zbrajanje i oduzimanje 
-su identične operacije (jer je 1 +<sub>2</sub> 1 = 0). 
+su identiÄŤne operacije (jer je 1 +<sub>2</sub> 1 = 0). 
 <p>
-Uočimo također da je ovaj kriptosustav lako razbiti napadom 
-"poznati otvoreni tekst", jer sasvim analogno vrijedi i ("neželjena") 
+UoÄŤimo takoÄ‘er da je ovaj kriptosustav lako razbiti napadom 
+"poznati otvoreni tekst", jer sasvim analogno vrijedi i ("neĹľeljena") 
 relacija  
 <i>k<sub>i</sub></i> = <i>x<sub>i</sub></i> 
 &oplus;  
 <i>y<sub>i</sub></i>. 
-To znači da se sigurnost kod ovog kriptosustava 
-može postići samo ako se svaki ključ koristi samo jednom. 
-Odatle i dolazi naziv jednokratna bilježnica. 
-Naime, različitim varijantama ovog kriptosustava su se koristili 
-špijuni, koji bi za tu svrhu koristili bilježnicu u kojoj bi se svaki list koristio 
-kao jednokratni ključ. 
-Za praktične primjene veliki problem predstavlja činjenica da je ključ, koji mora biti 
+To znaÄŤi da se sigurnost kod ovog kriptosustava 
+moĹľe postiÄ‡i samo ako se svaki kljuÄŤ koristi samo jednom. 
+Odatle i dolazi naziv jednokratna biljeĹľnica. 
+Naime, razliÄŤitim varijantama ovog kriptosustava su se koristili 
+Ĺˇpijuni, koji bi za tu svrhu koristili biljeĹľnicu u kojoj bi se svaki list koristio 
+kao jednokratni kljuÄŤ. 
+Za praktiÄŤne primjene veliki problem predstavlja ÄŤinjenica da je kljuÄŤ, koji mora biti 
 sigurno prenesen, jednako dug kao i sama poruka. Stoga ovaj 
 kriptosustav nije bio u komercijalnoj uporabi, ali postoje 
-naznake da se koristio u komunikaciji između Moskve i 
+naznake da se koristio u komunikaciji izmeÄ‘u Moskve i 
 Washingtona tijekom hladnog rata. 
 
 <p> 
@@ -124,8 +124,8 @@ Washingtona tijekom hladnog rata.
 
 <b><font size="-1" face="Verdana">
 <a href="hill.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="transp.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="transp.html">[SljedeÄ‡e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 
 <hr size=2 noshade>

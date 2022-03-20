@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Playfairova šifra</title>
+<title>Playfairova Ĺˇifra</title>
 
 <meta name="author" content="Andrej Dujella">
 <meta name="description" content="Kriptografija - Playfairova sifra">
 <meta name="keywords" content="kriptografija, Plaifairova sifra">
 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utb-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
 
@@ -23,8 +23,8 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="vigener.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="hill.html">[Sljedeće poglavlje]</a> &nbsp; 
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="hill.html">[SljedeÄ‡e poglavlje]</a> &nbsp; 
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 <p>
 
@@ -32,29 +32,29 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 
 <a name="1.4"></a>
-<h2 align=center style="color: rgb(128,0,0)">1.4. Playfairova šifra</h2>
+<h2 align=center style="color: rgb(128,0,0)">1.4. Playfairova Ĺˇifra</h2>
 
 
-Jedna ideja za poboljšanje supstitucijskih šifara je uvođenje 
-polialfabetskih šifara. Jednu takvu šifru smo vidjeli u prethodnom 
+Jedna ideja za poboljĹˇanje supstitucijskih Ĺˇifara je uvoÄ‘enje 
+polialfabetskih Ĺˇifara. Jednu takvu Ĺˇifru smo vidjeli u prethodnom 
 poglavlju. Druga ideja je uporaba blokova slova kao osnovnih 
 elemenata otvorenog teksta. 
-No, veliki je problem kako spretno realizirati tu ideju, jer već za blokove od dva slova 
-treba opisati (zapamtiti, sigurno prenijeti) šifrate od 26<sup>2</sup> = 676 
+No, veliki je problem kako spretno realizirati tu ideju, jer veÄ‡ za blokove od dva slova 
+treba opisati (zapamtiti, sigurno prenijeti) Ĺˇifrate od 26<sup>2</sup> = 676 
 elemenata otvorenog teksta. 
-Prikazat ćemo najpoznatiju takvu šifru, 
-tzv. <em>Playfairovu šifru</em>. Ovu šifru je izumio britanski znanstvenik 
+Prikazat Ä‡emo najpoznatiju takvu Ĺˇifru, 
+tzv. <em>Playfairovu Ĺˇifru</em>. Ovu Ĺˇifru je izumio britanski znanstvenik 
 <font color=009900>Charles Wheatstone</font> 1854. godine, a ime je 
 dobila po njegovom prijatelju barunu 
 <font color=009900>Playfairu od St. Andrewsa</font> koji ju je 
 popularizirao. 
 <p>
-To je bigramska šifra, u smislu da se šifriraju parovi slova 
+To je bigramska Ĺˇifra, u smislu da se Ĺˇifriraju parovi slova 
 i to tako da rezultat ovisi i o jednom i o drugom slovu. 
-Algoritam za šifriranje se bazira na 
+Algoritam za Ĺˇifriranje se bazira na 
 5 &times; 5 matrici slova, 
-koja se konstruira koristeći ključnu riječ. Na primjer, 
-ako je ključna riječ &nbsp; 
+koja se konstruira koristeÄ‡i kljuÄŤnu rijeÄŤ. Na primjer, 
+ako je kljuÄŤna rijeÄŤ &nbsp; 
 <font color=990099>PLAYFAIR</font>, onda matrica izgleda ovako: 
 <pre><font size="+1" color=990099>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; P   L   A   Y   F  
@@ -67,34 +67,34 @@ ako je ključna riječ &nbsp;
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; U   V   W   X   Z  
 </font></pre> 
-Budući da imamo 25 slova, dogovor je da se slova I i J poistovjete. 
-U slučaju da je otvoreni tekst na hrvatskom jeziku, mi ćemo 
-poistovjećivati V i W da bismo izbjegli moguće nesporazume kod dešifriranja. 
+BuduÄ‡i da imamo 25 slova, dogovor je da se slova I i J poistovjete. 
+U sluÄŤaju da je otvoreni tekst na hrvatskom jeziku, mi Ä‡emo 
+poistovjeÄ‡ivati V i W da bismo izbjegli moguÄ‡e nesporazume kod deĹˇifriranja. 
 <p>
-Šifriranje se sada vrši na sljedeći način. Najprije podijelimo otvoreni 
+Ĺ ifriranje se sada vrĹˇi na sljedeÄ‡i naÄŤin. Najprije podijelimo otvoreni 
 tekst na blokove od po dva slova. Pritom pazimo da se niti jedan blok 
 ne sastoji od dva jednaka slova, te da je duljina teksta parna. 
-I jedno i drugo postižemo umetanjem npr. slova X 
+I jedno i drugo postiĹľemo umetanjem npr. slova X 
 ukoliko je to potrebno. 
 <p>
-Kod šifriranja bloka od dva slova, mogu nastupiti tri slučaja, 
-ovisno o položaju slova u matrici:
+Kod Ĺˇifriranja bloka od dva slova, mogu nastupiti tri sluÄŤaja, 
+ovisno o poloĹľaju slova u matrici:
 <ol>
 <li> Slova se nalaze u istom retku. Tada ih zamijenimo sa slovima 
-koja se nalaze za jedno mjesto udesno (ciklički, tj. 
+koja se nalaze za jedno mjesto udesno (cikliÄŤki, tj. 
 iza najdesnijeg slova dolazi najljevije slovo iz istog retka). Npr. 
 EH &#8614; GK, 
 ST &#8614; TN, 
 FP &#8614; PL. 
 <li> Slova se nalaze u istom stupcu. Tada ih zamijenimo sa slovima koja 
-se nalaze za jedno mjesto ispod (ciklički, tj. iza najdonjeg slova dolazi najgornje slovo
+se nalaze za jedno mjesto ispod (cikliÄŤki, tj. iza najdonjeg slova dolazi najgornje slovo
 iz istog stupca). Npr. 
 OV &#8614; VL, 
 KY &#8614; SC, 
 PI &#8614; IE. 
-<li> U protivnom, pogledamo pravokutnik koji određuju ta dva slova, 
+<li> U protivnom, pogledamo pravokutnik koji odreÄ‘uju ta dva slova, 
 te ih zamijenimo s preostala dva vrha tog pravokutnika. 
-Redoslijed je određen tako da najprije dođe ono slovo koje 
+Redoslijed je odreÄ‘en tako da najprije doÄ‘e ono slovo koje 
 se nalazi u istom retku kao prvo slovo u polaznom bloku. Npr. 
 OC &#8614; SR, 
 RK &#8614; CG, 
@@ -102,45 +102,45 @@ PD &#8614; FI.
 </ol>
 <p>
 
-<b>Primjer 1.8: </b> <em>Šifrirajmo otvoreni tekst</em> &nbsp; 
+<b>Primjer 1.8: </b> <em>Ĺ ifrirajmo otvoreni tekst</em> &nbsp; 
 <font color=990000>CRYPTOGRAPHY</font> 
-<em>pomoću Playfairove šifre s ključem</em> &nbsp; 
+<em>pomoÄ‡u Playfairove Ĺˇifre s kljuÄŤem</em> &nbsp; 
 <font color=990099>PLAYFAIR</font>.
 
 <p> 
-<i>Rješenje</i>. &nbsp; <font color=990000>CR YP TO GR AP HY</font> &nbsp;  
+<i>RjeĹˇenje</i>. &nbsp; <font color=990000>CR YP TO GR AP HY</font> &nbsp;  
 &#8614; &nbsp;  
 <font color=000099>DB FL NQ OG YL KA</font> </p>
 <p>
-Playfairova šifra ima nekoliko značajnih prednosti pred supstitucijskom šifrom. 
-Budući da je šifra bigramska, gube se u šifratu 
-jednoslovne riječi (npr. "a") koje dosta utječu na frekvencije. 
-Nadalje, bigramsko šifriranje smanjuje na polovicu broj elemenata  
-dostupnih analizi frekvencije. S druge strane, broj bigrama je puno veći 
+Playfairova Ĺˇifra ima nekoliko znaÄŤajnih prednosti pred supstitucijskom Ĺˇifrom. 
+BuduÄ‡i da je Ĺˇifra bigramska, gube se u Ĺˇifratu 
+jednoslovne rijeÄŤi (npr. "a") koje dosta utjeÄŤu na frekvencije. 
+Nadalje, bigramsko Ĺˇifriranje smanjuje na polovicu broj elemenata  
+dostupnih analizi frekvencije. S druge strane, broj bigrama je puno veÄ‡i 
 od broja individualnih slova (26 slova - 676 bigrama), dok su 
-frekvencije najfrekventnijih bigrama puno ujednačenije od 
+frekvencije najfrekventnijih bigrama puno ujednaÄŤenije od 
 frekvencija najfrekventnijih slova. 
 <p>
-Iz ovih razloga, Playfairova šifra je dugo vremena smatrana sigurnom. 
-Tako je bila standardna šifra u britanskoj vojsci za vrijeme 
-1. svjetskog rata, a čak je korištena (za šifriranje poruka manje važnosti) 
-i u američkoj vojsci u 2. svjetskom ratu. 
+Iz ovih razloga, Playfairova Ĺˇifra je dugo vremena smatrana sigurnom. 
+Tako je bila standardna Ĺˇifra u britanskoj vojsci za vrijeme 
+1. svjetskog rata, a ÄŤak je koriĹˇtena (za Ĺˇifriranje poruka manje vaĹľnosti) 
+i u ameriÄŤkoj vojsci u 2. svjetskom ratu. 
 <p>
-Ipak, kod dugih tekstova ova šifra postaje nesigurna jer se može 
+Ipak, kod dugih tekstova ova Ĺˇifra postaje nesigurna jer se moĹľe 
 iskoristiti analiza frekvencija bigrama. 
-Poznato je da i kod ove šifre dio strukture 
-jezika ostaje sačuvan. Naime, slova u šifratu nisu jednoliko 
-raspoređena. Dok u otvorenom tekstu na engleskom jeziku 
+Poznato je da i kod ove Ĺˇifre dio strukture 
+jezika ostaje saÄŤuvan. Naime, slova u Ĺˇifratu nisu jednoliko 
+rasporeÄ‘ena. Dok u otvorenom tekstu na engleskom jeziku 
 najfrekventnije slovo ima relativnu frekvenciju 
 &approx; 13%, 
-u šifratu dobivenom Playfairovom šifrom to iznosi 
+u Ĺˇifratu dobivenom Playfairovom Ĺˇifrom to iznosi 
 &approx; 7%, 
-dok recimo kod Vigenereove šifre imamo 
+dok recimo kod Vigenereove Ĺˇifre imamo 
 &approx; 6%. 
-Takvi podatci mogu nam pomoći i kod određivanja vrste šifre. 
+Takvi podatci mogu nam pomoÄ‡i i kod odreÄ‘ivanja vrste Ĺˇifre. 
 <p>
 
-<b>Primjer 1.9: </b> <em>Dekriptirati šifrat</em>
+<b>Primjer 1.9: </b> <em>Dekriptirati Ĺˇifrat</em>
 <pre><font size="+1" color=000099>       CK FL ET IJ KS VI XG IE QO SA
        GA PL TE AU KH CA ET AF CK TO
        IV OV OI AD BS HM HA OJ AF VU
@@ -149,63 +149,63 @@ Takvi podatci mogu nam pomoći i kod određivanja vrste šifre.
        ZC AI BS HM IE AJ SJ NT SJ AF
        OJ VC ZA PJ JT HT ET OJ FJ   
 </font></pre>
-<em>dobiven Playfairovom šifrom (V = W). Otvoreni tekst je na 
+<em>dobiven Playfairovom Ĺˇifrom (V = W). Otvoreni tekst je na 
 hrvatskom jeziku.</em>
 <p>
-<i>Rješenje</i>. Ovaj šifrat je prekratak da bi ga dekriptirali samo analizom 
-frekvencija bigrama. Zato ćemo uvesti dodatnu pretpostavku da nam 
-je poznata jedna riječ koja se pojavljuje u otvorenom tekstu. 
-Dakle, koristit ćemo metodu "<em>vjerojatne riječi</em>". 
+<i>RjeĹˇenje</i>. Ovaj Ĺˇifrat je prekratak da bi ga dekriptirali samo analizom 
+frekvencija bigrama. Zato Ä‡emo uvesti dodatnu pretpostavku da nam 
+je poznata jedna rijeÄŤ koja se pojavljuje u otvorenom tekstu. 
+Dakle, koristit Ä‡emo metodu "<em>vjerojatne rijeÄŤi</em>". 
 Metoda se sastoji 
-u tome da se napravi lista riječi ili fraza 
+u tome da se napravi lista rijeÄŤi ili fraza 
 za koje pretpostavljamo da ih 
-otvoreni tekst sadrži, te da u šifratu pronađemo segment čija se
-struktura podudara sa strukturom vjerojatne riječi. 
-Recimo da je vjerojatna riječ (fraza) "MATEMATIKA I MATEMATIČARI". Kod 
-rastavljanja na blokove po dva slova, imamo dvije mogućnosti 
+otvoreni tekst sadrĹľi, te da u Ĺˇifratu pronaÄ‘emo segment ÄŤija se
+struktura podudara sa strukturom vjerojatne rijeÄŤi. 
+Recimo da je vjerojatna rijeÄŤ (fraza) "MATEMATIKA I MATEMATIÄŚARI". Kod 
+rastavljanja na blokove po dva slova, imamo dvije moguÄ‡nosti 
 (u ovisnosti o tome gdje se ovaj tekst nalazi unutar poruke): 
 <font size="+1">
 <pre>
-       <u><span style="background-color: #FFFF00">MA</span></u>  TE  <u><span style="background-color: #FFFF00">MA</span></u>  TI  KA  IM  <u><span style="background-color: #00FF00">AT</span></u>  EM  <u><span style="background-color: #00FF00">AT</span></u>  IČ  AR  I* 
+       <u><span style="background-color: #FFFF00">MA</span></u>  TE  <u><span style="background-color: #FFFF00">MA</span></u>  TI  KA  IM  <u><span style="background-color: #00FF00">AT</span></u>  EM  <u><span style="background-color: #00FF00">AT</span></u>  IÄŚ  AR  I* 
 
-       *M  <u><span style="background-color: #00FFFF">AT</span></u>  EM  <u><span style="background-color: #00FFFF">AT</span></u>  IK  AI  <u><span style="background-color: #FF99CC">MA</span></u>  TE  <u><span style="background-color: #FF99CC">MA</span></u>  TI  ČA  RI
+       *M  <u><span style="background-color: #00FFFF">AT</span></u>  EM  <u><span style="background-color: #00FFFF">AT</span></u>  IK  AI  <u><span style="background-color: #FF99CC">MA</span></u>  TE  <u><span style="background-color: #FF99CC">MA</span></u>  TI  ÄŚA  RI
 </pre>
 </font>
-Sada bismo u šifratu potražili segment koji ima neku od ove dvije 
+Sada bismo u Ĺˇifratu potraĹľili segment koji ima neku od ove dvije 
 strukture (po dva ponavljanja s istim ovakvim razmacima). 
-Ovakav napad je često vrlo efikasan. U praksi se on sprječava  
-tako da se vjerojatne riječi najprije "<em>kodiraju</em>" 
-(npr. MATEMATIKA = ABC, MATEMATIČARI = ADE), a tek potom 
-šifriraju. Budući da nam je poznat šifrat, to znači da smo već 
-poduzeli (uspješnu) akciju presretanja poruke, pa nije nerealno 
-pretpostaviti da naslućujemo barem nešto o njenom mogućem sadržaju. 
-Također, često su poznate neke informacije o strukturi poruke 
+Ovakav napad je ÄŤesto vrlo efikasan. U praksi se on sprjeÄŤava  
+tako da se vjerojatne rijeÄŤi najprije "<em>kodiraju</em>" 
+(npr. MATEMATIKA = ABC, MATEMATIÄŚARI = ADE), a tek potom 
+Ĺˇifriraju. BuduÄ‡i da nam je poznat Ĺˇifrat, to znaÄŤi da smo veÄ‡ 
+poduzeli (uspjeĹˇnu) akciju presretanja poruke, pa nije nerealno 
+pretpostaviti da nasluÄ‡ujemo barem neĹˇto o njenom moguÄ‡em sadrĹľaju. 
+TakoÄ‘er, ÄŤesto su poznate neke informacije o strukturi poruke 
 (zaglavlje, datum, kome je naslovljena, od koga potpisana, i sl.).  
 <p>
-No, za potrebe našeg primjera, mi ćemo pretpostaviti da otvoreni 
-tekst sadrži riječ MINISTARSTVO (u nekom padežu). Pogledajmo 
-strukturu ove riječi: 
+No, za potrebe naĹˇeg primjera, mi Ä‡emo pretpostaviti da otvoreni 
+tekst sadrĹľi rijeÄŤ MINISTARSTVO (u nekom padeĹľu). Pogledajmo 
+strukturu ove rijeÄŤi: 
 <font size="+1">
 <pre>
        MI   NI   <u><span style="background-color: #FFFF00">ST</span></u>   AR   <u><span style="background-color: #FFFF00">ST</span></u>   VO
 </pre>
 </font>
-Identičnu strukturu uočavamo u 4. retku šifrata i krećemo s 
-pretpostavkom da je LS AB PJ OL PJ šifrat of MI NI ST AR ST. 
+IdentiÄŤnu strukturu uoÄŤavamo u 4. retku Ĺˇifrata i kreÄ‡emo s 
+pretpostavkom da je LS AB PJ OL PJ Ĺˇifrat of MI NI ST AR ST. 
 To je u skladu s analizom frekvencija bigrama: 
 <p align=center>
 OJ (4), PJ, AF, IE, ET, VI (3), 
 </p>
 jer visoko frekventni bigram u hrvatskom jeziku ST, odgovara 
-visoko frekventnom bigramu PJ u šifratu. Dakle, imamo: 
+visoko frekventnom bigramu PJ u Ĺˇifratu. Dakle, imamo: 
 <p align=center>
 LS &#8614; MI, 
 AB &#8614; NI, 
 PJ &#8614; ST, 
 OL &#8614; AR. 
 </p>
-Pokušajmo krenuti u popunjavanje kvadrata za šifriranje. 
-Krenimo s prvom, trećom i četvrtom supstitucijom. 
+PokuĹˇajmo krenuti u popunjavanje kvadrata za Ĺˇifriranje. 
+Krenimo s prvom, treÄ‡om i ÄŤetvrtom supstitucijom. 
 Uz pretpostavku da se slova u tim supstitucijama ne nalaze u istom 
 retku ili stupcu, dobivamo (do na permutaciju redaka ili stupaca, 
 ili njihovo spajanje) konfiguraciju
@@ -217,29 +217,29 @@ ili njihovo spajanje) konfiguraciju
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;P   I   S         
 </font></pre> 
-Za očekivati je da OJ odgovara nekom visoko frekventnom bigramu 
+Za oÄŤekivati je da OJ odgovara nekom visoko frekventnom bigramu 
 (osim ST i RA), a to su JE, NA i AN. Ako 
 JE &#8614; OJ, onda su 
 E, J, O susjedna slova u istom retku ili istom stupcu, pa taj 
-slučaj možemo barem privremeno odbaciti. 
-To znači da O, J, N, A ili čine pravokutnik ili se nalaze u istom retku ili stupcu. 
-Jedina je mogućnost da retke s A i O, te T i J spojimo, 
-pa tom retku još pridodamo N. Taj redak izgleda 
+sluÄŤaj moĹľemo barem privremeno odbaciti. 
+To znaÄŤi da O, J, N, A ili ÄŤine pravokutnik ili se nalaze u istom retku ili stupcu. 
+Jedina je moguÄ‡nost da retke s A i O, te T i J spojimo, 
+pa tom retku joĹˇ pridodamo N. Taj redak izgleda 
 <p align=center>
 _ A J _ N O _  &nbsp; &nbsp; &nbsp; ili &nbsp; &nbsp; &nbsp;  _ N J _ A O _ 
 </p>
-s tim da još treba na neko prazno mjesto ubaciti slovo T. 
+s tim da joĹˇ treba na neko prazno mjesto ubaciti slovo T. 
 No, ovih 5 slova je toliko "porazbacano" u abecedi da je jasno 
-da je ovaj redak dio ključa. Zaključujemo da je taj redak TAJNO, 
-te da je to prvi redak. Također je vrlo vjerojatno da je segment PIS 
-dio ključa, pa ga pomaknimo u drugi redak. Tako dobivamo: 
+da je ovaj redak dio kljuÄŤa. ZakljuÄŤujemo da je taj redak TAJNO, 
+te da je to prvi redak. TakoÄ‘er je vrlo vjerojatno da je segment PIS 
+dio kljuÄŤa, pa ga pomaknimo u drugi redak. Tako dobivamo: 
 <pre><font size="+1" color=990099>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; T   A   J   N   O
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; P   I   S 
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;     L   M       R
 </font></pre>
-Odavde se vrlo vjerojatnom čini pretpostavka da je ključna riječ 
+Odavde se vrlo vjerojatnom ÄŤini pretpostavka da je kljuÄŤna rijeÄŤ 
 TAJNOPIS. Popunimo kvadrat i provjerimo pretpostavku: 
 <pre><font size="+1" color=990099>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; T   A   J   N   O
 
@@ -251,11 +251,11 @@ TAJNOPIS. Popunimo kvadrat i provjerimo pretpostavku:
 
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; U   V   X   Y   Z
 </font></pre>
-Dešifriranjem dobivamo:
+DeĹˇifriranjem dobivamo:
 <pre><font size="+1" color=990000>PR EM DA SA MP LA YF AI R nije nikad tvrdio
-da je pronalazač te šifre, ona je u žargonu
+da je pronalazaÄŤ te Ĺˇifre, ona je u Ĺľargonu
 Ministarstva rata dobila naziv Playfairova
-šifra i taj <font color=DDDD33>x</font> joj <font color=DDDD33>x</font> je naziv ostao do danas <font color=DDDD33>x</font>.
+Ĺˇifra i taj <font color=DDDD33>x</font> joj <font color=DDDD33>x</font> je naziv ostao do danas <font color=DDDD33>x</font>.
 </font></pre>
 
 <p>
@@ -264,8 +264,8 @@ Ministarstva rata dobila naziv Playfairova
 
 <b><font size="-1" face="Verdana">
 <a href="vigener.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="hill.html">[Sljedeće poglavlje]</a> &nbsp; 
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="hill.html">[SljedeÄ‡e poglavlje]</a> &nbsp; 
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 
 <hr size=2 noshade>

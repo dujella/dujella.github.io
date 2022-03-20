@@ -9,7 +9,7 @@ faktorizacije - Metoda kvadratnog sita">
 <meta name="keywords" content="faktorizacija, kvadratno sito, 
 faktorska baza">
 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utb-8">
 
 <style type="text/css">
 body {font-family: Arial,Helvetica,sans-serif;}
@@ -22,7 +22,7 @@ body {font-family: Arial,Helvetica,sans-serif;}
 <b><font size="-1" face="Verdana">
 <a href="verizni.html">[Prethodno poglavlje]</a> &nbsp; 
 <a href="kriptoref.html">[Literatura]</a> &nbsp; 
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 
 <hr size=2 noshade>
@@ -41,11 +41,11 @@ faktorsku bazu
 <i>P</i>, <img src="slike/lagnp.gif" alt="(n/p)" ALIGN=TOP> = 1} 
 <img src="symbols/cup.gif" alt="U" ALIGN=TOP> {2},  
 </p>
-gdje je <i>P</i> broj odabran na neki optimalan način. 
-Skup <i>S</i> u kojem tražimo 
+gdje je <i>P</i> broj odabran na neki optimalan naÄŤin. 
+Skup <i>S</i> u kojem traĹľimo 
 <font face="Brush Script MT,Script,Times New Roman">B</font>-brojeve 
 (to su oni koji su djeljivi samo s prostim brojevima iz 
-<font face="Brush Script MT,Script,Times New Roman">B</font> bit će isti kao u
+<font face="Brush Script MT,Script,Times New Roman">B</font> bit Ä‡e isti kao u
 Fermatovoj faktorizaciji, tj.
 <p align=center>
 <i>S</i> = {<i>t</i><sup>2</sup> - <i>n</i> : 
@@ -60,7 +60,7 @@ za neki prikladno odabrani <i>A</i>.
 
 Glavna ideja ove metode je da umjesto da za svaki 
 <i>s</i> <img src="symbols/in.gif" alt="in" ALIGN=TOP> <i>S</i> 
-djeljeći ga s prostim brojevima 
+djeljeÄ‡i ga s prostim brojevima 
 <i>p</i> <img src="symbols/in.gif" alt="in" ALIGN=TOP>
 <font face="Brush Script MT,Script,Times New Roman">B</font> provjeravamo
 da li je <font face="Brush Script MT,Script,Times New Roman">B</font>-broj, 
@@ -71,9 +71,9 @@ djeljivost sa <i>p</i> za sve <i>s</i>
 <img src="symbols/in.gif" alt="in" ALIGN=TOP> <i>S</i>.
 Odavde dolazi i naziv "sito", po analogiji s 
 <em>Eratostenovim sitom</em> 
-za generiranje tablice prostih brojeva. Opisat ćemo glavne korake 
-u faktorizaciji neparnog složenog broja <i>n</i> metodom kvadratnog sita (QS), 
-slijedeći [Koblitz: 
+za generiranje tablice prostih brojeva. Opisat Ä‡emo glavne korake 
+u faktorizaciji neparnog sloĹľenog broja <i>n</i> metodom kvadratnog sita (QS), 
+slijedeÄ‡i [Koblitz: 
 <em>A Course in Number Theory and Cryptography</em>, Poglavlje V.5].
 
 <p><br>
@@ -81,11 +81,11 @@ slijedeći [Koblitz:
 <h3 align=center>Algoritam kvadratnog sita:</h3>
 
 <b>1.</b> Odaberimo brojeve <i>P</i> i <i>A</i>, 
-oba reda veličine 
-exp(&radic;(log <i>n</i> log log <i>n</i>)) = <i>L</i>(<i>n</i>). Obično 
+oba reda veliÄŤine 
+exp(&radic;(log <i>n</i> log log <i>n</i>)) = <i>L</i>(<i>n</i>). ObiÄŤno 
 se uzima da je <i>P</i> &lt; <i>A</i> &lt; <i>P</i><sup>2</sup>. 
-Funkcija <i>L</i>(<i>n</i>) ima red veličine
-između polinoma u log <i>n</i> i polinoma u <i>n</i>. Za 
+Funkcija <i>L</i>(<i>n</i>) ima red veliÄŤine
+izmeÄ‘u polinoma u log <i>n</i> i polinoma u <i>n</i>. Za 
 <i>n</i> = 10<sup>6</sup> je
 <i>L</i>(<i>n</i>) &asymp; 400; 
 za <i>n</i> = 10<sup>200</sup> je <i>L</i>(<i>n</i>) = 
@@ -104,13 +104,13 @@ provjerimo da li je (<i>n</i>/<i>p</i>) = 1. Ako nije,
 izbacimo <i>p</i> iz faktorske baze. <p>
 
 <b>4.</b> Za neparan prost broj <i>p</i> takav da je 
-(<i>n</i>/<i>p</i>) = 1, rješavamo kongruenciju 
+(<i>n</i>/<i>p</i>) = 1, rjeĹˇavamo kongruenciju 
 <i>t</i><sup>2</sup> 
 <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> <i>n</i> 
 (mod <i>p</i><img src="symbols/supbeta.gif" alt="beta" ALIGN=TOP>)
 za &beta; 
 = 1, 2, ... . Neka je &beta;  
-najveći prirodan broj za kojeg postoji <i>t</i>, 
+najveÄ‡i prirodan broj za kojeg postoji <i>t</i>, 
 <nobr><img src="symbols/lfloor.gif" alt="[" ALIGN=MIDDLE>&radic;<i>n</i><img src="symbols/rfloor.gif" alt="]" ALIGN=MIDDLE> 
 + 1 &le; <i>t</i> 
 &le;  
@@ -121,7 +121,7 @@ takav da je
 <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> <i>n</i> 
 (mod <i>p</i><img src="symbols/supbeta.gif" alt="beta" ALIGN=TOP>).
 Neka su <i>t</i><sub>1</sub> i <i>t</i><sub>2</sub> dva
-rješenja od 
+rjeĹˇenja od 
 <i>t</i><sup>2</sup> 
 <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> <i>n</i> 
 (mod <i>p</i><img src="symbols/supbeta.gif" alt="beta" ALIGN=TOP>) 
@@ -129,10 +129,10 @@ takva da je
 <i>t</i><sub>2</sub> 
 <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE>
 -<i>t</i><sub>1</sub> (mod <i>p</i><img src="symbols/supbeta.gif" alt="beta" ALIGN=TOP>) &nbsp; (<i>t</i><sub>1</sub> i 
-<i>t</i><sub>2</sub> nisu nužno iz <i>S</i>). <p>
+<i>t</i><sub>2</sub> nisu nuĹľno iz <i>S</i>). <p>
 
-<b>5.</b> Za <i>p</i> iz točke <b>4.</b>, pogledamo listu iz
-točke <b>2.</b> U stupcu ispod <i>p</i> stavimo broj 1 kod svih
+<b>5.</b> Za <i>p</i> iz toÄŤke <b>4.</b>, pogledamo listu iz
+toÄŤke <b>2.</b> U stupcu ispod <i>p</i> stavimo broj 1 kod svih
 vrijednosti od <i>t</i><sup>2</sup> - <i>n</i> kod kojih 
 <i>p</i>|(<i>t</i> - <i>t</i><sub>1</sub>); promijenimo 1 u 2 
 kod onih kod kojih 
@@ -141,41 +141,41 @@ promijenimo 2 u 3 ako <i>p</i><sub>3</sub>|(<i>t</i> -
 <i>t</i><sub>1</sub>), itd. sve do 
 <i>p</i><img src="symbols/supbeta.gif" alt="beta" ALIGN=TOP>. 
 Potom napravimo sve isto s <i>t</i><sub>2</sub> 
-umjesto <i>t</i><sub>1</sub>. Najveći broj koji će se pojaviti u ovom 
-stupcu bit će &beta;. <p>
+umjesto <i>t</i><sub>1</sub>. NajveÄ‡i broj koji Ä‡e se pojaviti u ovom 
+stupcu bit Ä‡e &beta;. <p>
 
-<b>6.</b> Svaki put kad u točki <b>5.</b> stavimo broj 1 ili 
+<b>6.</b> Svaki put kad u toÄŤki <b>5.</b> stavimo broj 1 ili 
 promijenimo 1 u 2, ili 2 u 3, ili itd., podijelimo
-odgovarajući <i>t</i><sup>2</sup> - <i>n</i> sa <i>p</i> i 
-zabilježimo rezultat. <p>
+odgovarajuÄ‡i <i>t</i><sup>2</sup> - <i>n</i> sa <i>p</i> i 
+zabiljeĹľimo rezultat. <p>
 
 <b>7.</b> U stupcu ispod <i>p</i> = 2, ako 
 <i>n</i> <img src="symbols/notequiv.gif" alt="<>" ALIGN=MIDDLE> 1 (mod 8),
 onda stavimo broj 1 kod svih <i>t</i><sup>2</sup> - <i>n</i> u kojima 
 je <i>t</i> neparan, te podijelimo <i>t</i><sup>2</sup> - <i>n</i> 
 s 2. Ako je <i>n</i> <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 
-1 (mod 8), onda rješavamo kongruenciju 
+1 (mod 8), onda rjeĹˇavamo kongruenciju 
 <i>t</i><sup>2</sup> 
 <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> <i>n</i> 
 (mod 2<img src="symbols/supbeta.gif" alt="beta" ALIGN=TOP>)
-i radimo sve isto kao za neparne <i>p</i> (osim što će za 
+i radimo sve isto kao za neparne <i>p</i> (osim Ĺˇto Ä‡e za 
 &beta; &ge; 3 
-biti 4 različita rješenja <i>t</i><sub>1</sub>,
+biti 4 razliÄŤita rjeĹˇenja <i>t</i><sub>1</sub>,
 <i>t</i><sub>2</sub>, <i>t</i><sub>3</sub>, <i>t</i><sub>4</sub>
 modulo 2<img src="symbols/supbeta.gif" alt="beta" ALIGN=TOP>). 
 <p>
 
-<b>8.</b> Kad završimo sa svim prostim brojevima <i>p</i> 
+<b>8.</b> Kad zavrĹˇimo sa svim prostim brojevima <i>p</i> 
 &le; <i>P</i>, 
 odbacimo sve <i>t</i><sup>2</sup> - <i>n</i>, 
 osim onih koji su postali jednaki 1 nakon
 dijeljenja sa svim potencijama prostih brojeva 
 <i>p</i> &le; <i>P</i>. 
-Dobit ćemo tako tablicu kao u Primjeru 4.5, u kojoj će stupac koji 
+Dobit Ä‡emo tako tablicu kao u Primjeru 4.5, u kojoj Ä‡e stupac koji 
 odgovara <i>b</i><sub><i>i</i></sub> imati vrijednosti elemenata 
 <i>t</i><sup>2</sup> - <i>n</i> iz <i>S</i> koji su 
 <font face="Brush Script MT,Script,Times New Roman">B</font>-brojevi, 
-a ostali stupci će odgovarati vrijednostima <i>p</i> 
+a ostali stupci Ä‡e odgovarati vrijednostima <i>p</i> 
 <img src="symbols/in.gif" alt="in" ALIGN=TOP> <i>P</i> za koje je (<i>n</i>/<i>p</i>) = 1. <p>
 
 <b>9.</b> Ostatak postupka je isti kao kod Fermatove
@@ -188,14 +188,14 @@ faktorizacije.
 Uzmimo <i>P</i> = 50 i <i>A</i> = 500.
 Ovdje je 
 <img src="symbols/lfloor.gif" alt="[" ALIGN=TOP>&radic;<i>n</i><img src="symbols/rfloor.gif" alt="]" ALIGN=TOP> 
-= 1020. Naša faktorska baza
+= 1020. NaĹˇa faktorska baza
 se sastoji od 8 prostih brojeva {2, 3, 11, 17, 19, 23, 43, 47}. 
-Budući da je <i>n</i> <img src="symbols/notequiv.gif" alt="<>" ALIGN=TOP> 
+BuduÄ‡i da je <i>n</i> <img src="symbols/notequiv.gif" alt="<>" ALIGN=TOP> 
 1 (mod 8), u stupcu pod <i>p</i> = 2 
-stavljamo 1 kod svih neparnih brojeva između 1021 i 1520.
+stavljamo 1 kod svih neparnih brojeva izmeÄ‘u 1021 i 1520.
 <p>
-Opisat ćemo detaljno formiranje stupca pod <i>p</i> = 3. Želimo 
-naći rješenje 
+Opisat Ä‡emo detaljno formiranje stupca pod <i>p</i> = 3. Ĺ˝elimo 
+naÄ‡i rjeĹˇenje 
 <i>t</i><sub>1</sub> = <i>t</i><sub>1,0</sub> + 
 <i>t</i><sub>1,1</sub> <sup><b>.</b></sup> 3 + 
 <i>t</i><sub>1,2</sub> <sup><b>.</b></sup> 3<sup>2</sup> + ... + 
@@ -206,7 +206,7 @@ naći rješenje
 (mod 3<sup>&beta;</sup>),</nobr>  
 <i>t</i><sub>1,<i>j</i></sub> 
 <img src="symbols/in.gif" alt="in" ALIGN=MIDDLE>
-{0, 1, 2}. Možemo uzeti <i>t</i><sub>1,0</sub> =1. 
+{0, 1, 2}. MoĹľemo uzeti <i>t</i><sub>1,0</sub> =1. 
 Modulo 9 imamo:
 (1 + 3<i>t</i><sub>1,1</sub>)<sup>2</sup> 
 <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 
@@ -214,13 +214,13 @@ Modulo 9 imamo:
 Modulo 27 imamo: (1 + 3 + 9<i>t</i><sub>1,2</sub>)<sup>2</sup> 
 <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE>
 25 (mod 27), odakle je <i>t</i><sub>1,2</sub> = 2. 
-Nastavljajući ovaj postupak do 3<sup>7</sup>,
+NastavljajuÄ‡i ovaj postupak do 3<sup>7</sup>,
 dobivamo <i>t</i><sub>1</sub> = (210211)<sub>3</sub> = 
-589 mod 3<sup>7</sup>. Budući da je
+589 mod 3<sup>7</sup>. BuduÄ‡i da je
 589 &lt; 1021, a 3<sup>7</sup> - 589 = 1598 &gt; 1520, 
-zaključujemo da je 
+zakljuÄŤujemo da je 
 &beta; = 6 
-i možemo uzeti <i>t</i><sub>1</sub> = 589 
+i moĹľemo uzeti <i>t</i><sub>1</sub> = 589 
 <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE>
 1318 (mod 3<sup>6</sup>) 
 i <i>t</i><sub>2</sub> = 3<sup>6</sup> - 589 = 140 &nbsp;  
@@ -228,22 +228,22 @@ i <i>t</i><sub>2</sub> = 3<sup>6</sup> - 589 = 140 &nbsp;
 <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE> 
 1112 (mod 3<sup>5</sup>)).
 <p>
-Sada konstruiramo &quot;sito&quot; za <i>p</i> = 3. Krenuvši od 1318, 
-skačemo za po 3 broja na dolje do 1021 i na gore do 1519, te svaki put 
-stavimo broj 1 u stupac i podijelimo odgovarajući 
+Sada konstruiramo &quot;sito&quot; za <i>p</i> = 3. KrenuvĹˇi od 1318, 
+skaÄŤemo za po 3 broja na dolje do 1021 i na gore do 1519, te svaki put 
+stavimo broj 1 u stupac i podijelimo odgovarajuÄ‡i 
 <i>t</i><sup>2</sup> - <i>n</i> sa 3. Tada napravimo 
 sve isto sa skokovima po 9, 27, 81, 243 i 729 brojeva 
-(u stvari, za 729 nemamo skokova, već samo promijenimo 5 u 6 
-kod 1318 i podijelimo 1318<sup>2</sup> - 1042387 još jednom sa 3). Nakon toga ponovimo sve krenuvši u skokove od 1112, umjesto 1318. 
+(u stvari, za 729 nemamo skokova, veÄ‡ samo promijenimo 5 u 6 
+kod 1318 i podijelimo 1318<sup>2</sup> - 1042387 joĹˇ jednom sa 3). Nakon toga ponovimo sve krenuvĹˇi u skokove od 1112, umjesto 1318. 
 Ovaj put se zaustavljamo kod skoka za 243 brojeva.
 <br>
-Nakon što ovaj postupak primijenimo na preostalih 6 brojeva u
-faktorskoj bazi, dobit ćemo tablicu 500 &times; 8 u kojoj retci
-odgovaraju <i>t</i>-ovima između 1021 i 1520. Izbacimo li sve retke
+Nakon Ĺˇto ovaj postupak primijenimo na preostalih 6 brojeva u
+faktorskoj bazi, dobit Ä‡emo tablicu 500 &times; 8 u kojoj retci
+odgovaraju <i>t</i>-ovima izmeÄ‘u 1021 i 1520. Izbacimo li sve retke
 za koje se <i>t</i><sup>2</sup> - <i>n</i> nije reducirao na 1, tj. 
-zadržimo li samo one retke za koje je <i>t</i><sup>2</sup> - 
+zadrĹľimo li samo one retke za koje je <i>t</i><sup>2</sup> - 
 <i>n</i> <font face="Brush Script MT,Script,Times New Roman">B</font>-broj, 
-dobivamo sljedeću tablicu:
+dobivamo sljedeÄ‡u tablicu:
 
 
 <table align=center border=0 cellspacing=10 cellpadding=5> 
@@ -325,8 +325,8 @@ dobivamo sljedeću tablicu:
 </table>
 <p> 
 
-Sada tražimo relacije modulo 2 između redaka u ovoj
-matrici. Jedan takav slučaj nalazimo u prva tri retka. Tako
+Sada traĹľimo relacije modulo 2 izmeÄ‘u redaka u ovoj
+matrici. Jedan takav sluÄŤaj nalazimo u prva tri retka. Tako
 dobivamo
 
 <p align=center>
@@ -337,11 +337,11 @@ dobivamo
 &middot; 11<sup>2</sup> &middot; 17)<sup>2</sup> (mod 1042387).  
 </p>
 
-Nažalost, brojevi pod
+NaĹľalost, brojevi pod
 kvadratom na obje strane ove kongruencije su 
 <img src="symbols/equiv.gif" alt="=" ALIGN=TOP>
-111078 (mod 1042387), tako da ne dobivamo ništa korisno.
-Međutim, ako kombiniramo peti i zadnji redak, dobivamo
+111078 (mod 1042387), tako da ne dobivamo niĹˇta korisno.
+MeÄ‘utim, ako kombiniramo peti i zadnji redak, dobivamo
 <p align=center>
 (1112 &middot; 1520)<sup>2</sup> 
 <img src="symbols/equiv.gif" alt="=" ALIGN=MIDDLE>
@@ -359,11 +359,11 @@ odakle dobivamo netrivijalni faktor (647853 - 496179,
 
 <p><br>
 
-Očekivani broj operacija metodom kvadratnog sita je 
+OÄŤekivani broj operacija metodom kvadratnog sita je 
 
 <p align=center><img src="slike/fba1.gif" alt="O(exp())" ALIGN=TOP> </p>
 
-dakle, isto kao kod metode eliptičkih krivulja. Spomenimo da
+dakle, isto kao kod metode eliptiÄŤkih krivulja. Spomenimo da
 je 1996. godine metodom kvadratnog sita faktoriziran tzv. RSA-129.
 To je broj od 129 znamenaka koji je produkt dva prosta broja od 64
 i 65 znamenaka.
@@ -373,7 +373,7 @@ i 65 znamenaka.
 Trenutno najbolja poznata metoda faktorizacije je <em>metoda
 sita polja brojeva</em> (number field sieve) koja kombinira ideje iz
 metode kvadratnog sita i algebarsku teoriju brojeva. Kod ove
-metode je očekivani broj operacija
+metode je oÄŤekivani broj operacija
 
 <p align=center><img src="slike/sito2.gif" alt="O(exp())" ALIGN=TOP> </p>
 
@@ -385,7 +385,7 @@ Metodu je prvi put upotrijebio
 Fermatovog broja 
 2<sup>2</sup><img src="symbols/sup9.gif" alt="9" ALIGN=TOP> + 1. 
 Ovom su metodom faktorizirani brojevi
-iz natječaja <i>RSA Factoring Challenge</i>:
+iz natjeÄŤaja <i>RSA Factoring Challenge</i>:
 RSA-130 (1996. godine), RSA-140, RSA-155 (oba 1999.),
 RSA-160, RSA-576 (oba 2003.), RSA-200, RSA-640 (oba 2005.).
 Npr. broj RSA-200 ima 200 znamenaka, dok broj RSA-640 ima 640 bitova (193 znamenke)
@@ -393,9 +393,9 @@ Npr. broj RSA-200 ima 200 znamenaka, dok broj RSA-640 ima 640 bitova (193 znamen
 Brojevi su dizajnirani tako da slijede pravila za odabir modula
 u RSA algoritmu, te uspjesi u njihovoj faktorizaciji daju dobru
 informaciju o tome koliko velik RSA modul bi trebalo birati da bi
-nam komunikacija bila sigurna (danas, ali i u skoroj budućnosti).
+nam komunikacija bila sigurna (danas, ali i u skoroj buduÄ‡nosti).
 Broj RSA-640 je u studenom 2005. godine faktorizirala grupa
-njemačkih istraživača (<font color=009900>Bahr</font>, <font color=009900>Boehm</font>, 
+njemaÄŤkih istraĹľivaÄŤa (<font color=009900>Bahr</font>, <font color=009900>Boehm</font>, 
 <font color=009900>Franke</font>, <font color=009900>Kleinjung</font>). Evo tog broja i
 njegove faktorizacije:
 
@@ -417,7 +417,7 @@ njegove faktorizacije:
 <b><font size="-1" face="Verdana">
 <a href="verizni.html">[Prethodno poglavlje]</a> &nbsp; 
 <a href="kriptoref.html">[Literatura]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 
 <hr size=2 noshade>

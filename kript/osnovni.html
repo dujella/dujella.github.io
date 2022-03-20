@@ -1,14 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Klasična kriptografija - Osnovni pojmovi</title>
+<title>KlasiÄŤna kriptografija - Osnovni pojmovi</title>
 
 <meta name="author" content="Andrej Dujella">
 <meta name="description" content="Kriptografija - Osnovni pojmovi">
 <meta name="keywords" content="kriptografija, kriptoanaliza, 
 kriptologija">
 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utb-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
 
@@ -23,8 +23,8 @@ body {font-family: Arial,Helvetica,sans-serif;}
 <body bgcolor="#FFFFFF">
 
 <b><font size="-1" face="Verdana">
-<a href="supst.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="supst.html">[SljedeÄ‡e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 <p>
 
@@ -32,70 +32,70 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 
 
-<h1 align=center style="color: rgb(204,0,0)">1. Klasična kriptografija</h1>
+<h1 align=center style="color: rgb(204,0,0)">1. KlasiÄŤna kriptografija</h1>
 
 <a name="1.1"></a>
 <h2 align=center style="color: rgb(128,0,0)">1.1. Osnovni pojmovi</h2>
 
 
 <em>Kriptografija</em> je znanstvena disciplina koja se bavi 
-proučavanjem metoda za slanje poruka u takvom obliku da ih samo 
-onaj kome su namijenjene može pročitati. Sama riječ 
-kriptografija je grčkog podrijetla i mogla bi se doslovno prevesti kao <em>tajnopis</em>. 
+prouÄŤavanjem metoda za slanje poruka u takvom obliku da ih samo 
+onaj kome su namijenjene moĹľe proÄŤitati. Sama rijeÄŤ 
+kriptografija je grÄŤkog podrijetla i mogla bi se doslovno prevesti kao <em>tajnopis</em>. 
 <p>
 
 <img src="slike/skital12.gif" width=416 height=150 alt="skital" align=right>
-Neki elementi kriptografije bili su prisutni već kod starih Grka. 
+Neki elementi kriptografije bili su prisutni veÄ‡ kod starih Grka. 
 Naime, 
-Spartanci su u 5. stoljeću prije Krista upotrebljavali napravu za 
-šifriranje zvanu <em>skital</em>. To je bio drveni štap oko kojeg se 
+Spartanci su u 5. stoljeÄ‡u prije Krista upotrebljavali napravu za 
+Ĺˇifriranje zvanu <em>skital</em>. To je bio drveni Ĺˇtap oko kojeg se 
 namotavala vrpca od pergamenta, pa se na nju okomito pisala poruka. 
 Nakon upisivanja poruke, vrpca bi se odmotala, a na njoj bi ostali 
-izmiješani znakovi koje je mogao pročitati samo onaj tko je 
-imao štap jednake debljine. 
+izmijeĹˇani znakovi koje je mogao proÄŤitati samo onaj tko je 
+imao Ĺˇtap jednake debljine. 
 <p>
-Osnovni zadatak kriptografije je omogućiti dvjema osobama 
-(zvat ćemo ih <em>pošiljalac</em> i <em>primalac</em> - u kriptografskoj 
+Osnovni zadatak kriptografije je omoguÄ‡iti dvjema osobama 
+(zvat Ä‡emo ih <em>poĹˇiljalac</em> i <em>primalac</em> - u kriptografskoj 
 literaturi su za njih rezervirana imena Alice i Bob) komuniciranje  
 preko nesigurnog komunikacijskog kanala (telefonska linija, 
-računalna mreža, ...) na način da treća osoba 
-(njihov protivnik - u literaturi se najčešće zove Eva ili Oskar), 
-koja može nadzirati komunikacijski kanal,  
-ne može razumjeti njihove poruke. 
-Poruku koju pošiljalac želi poslati primaocu zvat ćemo 
-<em>otvoreni tekst</em> (engl. plaintext). To može biti 
-tekst na njihovom materinjem jeziku, numerički podatci ili 
-bilo što drugo. Pošiljalac transformira otvoreni tekst 
-koristeći unaprijed dogovoreni <em>ključ</em>. Taj postupak se 
-naziva <em>šifriranje</em>, a dobiveni rezultat <em>šifrat</em> 
-(engl. ciphertext) ili <em>kriptogram</em>. Nakon toga pošiljalac 
-pošalje šifrat preko nekog komunikacijskog kanala. 
-Protivnik prisluškujući može doznati sadržaj šifrata, ali 
-ne može odrediti otvoreni tekst. Za razliku od njega, primalac 
-koji zna ključ kojim je šifrirana poruka može 
-<em>dešifrirati</em> šifrat i odrediti otvoreni tekst. 
+raÄŤunalna mreĹľa, ...) na naÄŤin da treÄ‡a osoba 
+(njihov protivnik - u literaturi se najÄŤeĹˇÄ‡e zove Eva ili Oskar), 
+koja moĹľe nadzirati komunikacijski kanal,  
+ne moĹľe razumjeti njihove poruke. 
+Poruku koju poĹˇiljalac Ĺľeli poslati primaocu zvat Ä‡emo 
+<em>otvoreni tekst</em> (engl. plaintext). To moĹľe biti 
+tekst na njihovom materinjem jeziku, numeriÄŤki podatci ili 
+bilo Ĺˇto drugo. PoĹˇiljalac transformira otvoreni tekst 
+koristeÄ‡i unaprijed dogovoreni <em>kljuÄŤ</em>. Taj postupak se 
+naziva <em>Ĺˇifriranje</em>, a dobiveni rezultat <em>Ĺˇifrat</em> 
+(engl. ciphertext) ili <em>kriptogram</em>. Nakon toga poĹˇiljalac 
+poĹˇalje Ĺˇifrat preko nekog komunikacijskog kanala. 
+Protivnik prisluĹˇkujuÄ‡i moĹľe doznati sadrĹľaj Ĺˇifrata, ali 
+ne moĹľe odrediti otvoreni tekst. Za razliku od njega, primalac 
+koji zna kljuÄŤ kojim je Ĺˇifrirana poruka moĹľe 
+<em>deĹˇifrirati</em> Ĺˇifrat i odrediti otvoreni tekst. 
 <p align=center>
 <img src="slike/kript_pravokutnici1.gif" alt="shema">
 </p>
-Za razliku od dešifriranja, <em>kriptoanaliza</em> ili 
+Za razliku od deĹˇifriranja, <em>kriptoanaliza</em> ili 
 <em>dekriptiranje</em> je znanstvena disciplina koja se bavi 
-proučavanjem postupaka za čitanje skrivenih poruka bez 
-poznavanja ključa. <em>Kriptologija</em> je pak grana 
-znanosti koja obuhvaća kriptografiju i kriptoanalizu. 
+prouÄŤavanjem postupaka za ÄŤitanje skrivenih poruka bez 
+poznavanja kljuÄŤa. <em>Kriptologija</em> je pak grana 
+znanosti koja obuhvaÄ‡a kriptografiju i kriptoanalizu. 
 <p>
-<em>Kriptografski algoritam</em> ili <em>šifra</em> je 
-matematička funkcija koja se koristi za šifriranje i 
-dešifriranje. Općenito, radi se o dvije funkcije, jednoj 
-za šifriranje, a drugoj za dešifriranje. 
+<em>Kriptografski algoritam</em> ili <em>Ĺˇifra</em> je 
+matematiÄŤka funkcija koja se koristi za Ĺˇifriranje i 
+deĹˇifriranje. OpÄ‡enito, radi se o dvije funkcije, jednoj 
+za Ĺˇifriranje, a drugoj za deĹˇifriranje. 
 Te funkcije preslikavaju osnovne elemente otvorenog teksta 
-(najčešće su to slova, bitovi, grupe slova ili bitova) 
-u osnovne elemente šifrata, i obratno. 
-Funkcije se biraju iz određene familije funkcija u ovisnosti 
-o ključu. Skup svih mogućih vrijednosti ključeva 
-nazivamo <em>prostor ključeva</em>. <em>Kriptosustav</em> se sastoji 
+(najÄŤeĹˇÄ‡e su to slova, bitovi, grupe slova ili bitova) 
+u osnovne elemente Ĺˇifrata, i obratno. 
+Funkcije se biraju iz odreÄ‘ene familije funkcija u ovisnosti 
+o kljuÄŤu. Skup svih moguÄ‡ih vrijednosti kljuÄŤeva 
+nazivamo <em>prostor kljuÄŤeva</em>. <em>Kriptosustav</em> se sastoji 
 od kriptografskog 
-algoritma, te svih mogućih otvorenih tekstova, šifrata i 
-ključeva. Dakle, imamo sljedeću formalnu definiciju. 
+algoritma, te svih moguÄ‡ih otvorenih tekstova, Ĺˇifrata i 
+kljuÄŤeva. Dakle, imamo sljedeÄ‡u formalnu definiciju. 
 <p>
 
 <table align=center border=1 width="95%" cellpadding=15> 
@@ -103,7 +103,7 @@ ključeva. Dakle, imamo sljedeću formalnu definiciju.
 <td bgcolor="FFFFCC">
 <font face="Arial,Helvetica,sans-serif">
 
-<b>Definicija 1.1: </b> <em>Kriptosustav</em> je uređena petorka 
+<b>Definicija 1.1: </b> <em>Kriptosustav</em> je ureÄ‘ena petorka 
 (<font face="Brush Script MT,Script,Times New Roman">P</font>, 
 <font face="Brush Script MT,Script,Times New Roman">C</font>, 
 <font face="Brush Script MT,Script,Times New Roman">K</font>, 
@@ -111,20 +111,20 @@ ključeva. Dakle, imamo sljedeću formalnu definiciju.
 <font face="Brush Script MT,Script,Times New Roman">D</font>) za koju 
 vrijedi: <br>
 &nbsp; &nbsp; &nbsp; 1) <font face="Brush Script MT,Script,Times New Roman">P</font> 
-je konačan skup svih mogućih osnovnih elementa otvorenog teksta; <br>
+je konaÄŤan skup svih moguÄ‡ih osnovnih elementa otvorenog teksta; <br>
 &nbsp; &nbsp; &nbsp; 2) <font face="Brush Script MT,Script,Times New Roman">C</font> 
-je konačan skup svih mogućih osnovnih elemenata šifrata; <br>
+je konaÄŤan skup svih moguÄ‡ih osnovnih elemenata Ĺˇifrata; <br>
 &nbsp; &nbsp; &nbsp; 3) <font face="Brush Script MT,Script,Times New Roman">K</font> 
-je prostor ključeva, tj. konačan skup svih 
-mogućih ključeva; <br> 
+je prostor kljuÄŤeva, tj. konaÄŤan skup svih 
+moguÄ‡ih kljuÄŤeva; <br> 
 &nbsp; &nbsp; &nbsp; 4) Za svaki <nobr><i>K</i> 
 &isin;  
 <font face="Brush Script MT,Script,Times New Roman">K</font></nobr> 
-postoji funkcija šifriranja 
+postoji funkcija Ĺˇifriranja 
 <nobr><i>e<sub>K</sub></i> 
 &isin;  
 <font face="Brush Script MT,Script,Times New Roman">E</font></nobr> i 
-odgovarajuća funkcija dešifriranja 
+odgovarajuÄ‡a funkcija deĹˇifriranja 
 <nobr><i>d<sub>K</sub></i> &isin;  
 <font face="Brush Script MT,Script,Times New Roman">D</font>.</nobr> Pritom su 
 <nobr><i>e<sub>K</sub></i> : <font face="Brush Script MT,Script,Times New Roman">P</font> 
@@ -141,15 +141,15 @@ za svaki otvoreni tekst <nobr><i>x</i>
 </font></td></tr></table>
 
 <p>
-Najvažnije svojstvo u definiciji je <nobr><i>d<sub>K</sub></i>(<i>e<sub>K</sub></i>(<i>x</i>)) = <i>x</i></nobr>. 
+NajvaĹľnije svojstvo u definiciji je <nobr><i>d<sub>K</sub></i>(<i>e<sub>K</sub></i>(<i>x</i>)) = <i>x</i></nobr>. 
 Iz njega slijedi da funkcije 
 <i>e<sub>K</sub></i> moraju biti injekcije. Zaista, ako bi bilo 
 <p align=center>
 <i>e<sub>K</sub></i>(<i>x</i><sub>1</sub>) = 
 <i>e<sub>K</sub></i>(<i>x</i><sub>2</sub>) = <i>y</i>, 
 </p>
-za dva različita otvorena teksta <i>x</i><sub>1</sub> i <i>x</i><sub>2</sub>, 
-onda primalac ne bi mogao odrediti treba li <i>y</i> dešifrirati u 
+za dva razliÄŤita otvorena teksta <i>x</i><sub>1</sub> i <i>x</i><sub>2</sub>, 
+onda primalac ne bi mogao odrediti treba li <i>y</i> deĹˇifrirati u 
 <i>x</i><sub>1</sub> ili <i>x</i><sub>2</sub>, tj. 
 <i>d<sub>K</sub></i>(<i>y</i>) ne bi bilo definirano. 
 U skladu s tim imamo da ako je 
@@ -159,133 +159,133 @@ onda su funkcije <i>e<sub>K</sub></i> permutacije.
 
 <br><p>
 
-Kriptosustave obično klasificiramo s obzirom na sljedeća tri 
+Kriptosustave obiÄŤno klasificiramo s obzirom na sljedeÄ‡a tri 
 kriterija: 
 
 <p>
 
-<b>1. Tip operacija koje se koriste pri šifriranju</b><p>
+<b>1. Tip operacija koje se koriste pri Ĺˇifriranju</b><p>
 
-Imamo podjelu na <em>supstitucijske šifre</em> u kojima se svaki 
+Imamo podjelu na <em>supstitucijske Ĺˇifre</em> u kojima se svaki 
 <em>element otvorenog teksta</em> (bit, slovo, grupa bitova ili slova) 
-zamjenjuje s nekim drugim elementom, te <em>transpozicijske šifre</em> 
-u kojima se elementi otvorenog teksta permutiraju (premještaju). Npr. ako riječ 
-TAJNA šifriramo u XIWOI, načinili smo supstituciju, a ako je 
-šifriramo u JANAT, načinili smo transpoziciju. Postoje 
-također i kriptosustavi koji kombiniraju ove dvije metode. 
+zamjenjuje s nekim drugim elementom, te <em>transpozicijske Ĺˇifre</em> 
+u kojima se elementi otvorenog teksta permutiraju (premjeĹˇtaju). Npr. ako rijeÄŤ 
+TAJNA Ĺˇifriramo u XIWOI, naÄŤinili smo supstituciju, a ako je 
+Ĺˇifriramo u JANAT, naÄŤinili smo transpoziciju. Postoje 
+takoÄ‘er i kriptosustavi koji kombiniraju ove dvije metode. 
 
 <p>
 
-<b>2. Način na koji se obrađuje otvoreni tekst</b><p>
+<b>2. NaÄŤin na koji se obraÄ‘uje otvoreni tekst</b><p>
 
-Ovdje razlikujemo <em>blokovne šifre</em>, kod kojih se obrađuje 
-jedan po jedan blok elemenata otvorenog teksta koristeći jedan te 
-isti ključ <i>K</i>, te <em>protočne šifre</em> (engl. stream 
-cipher) kod koji se elementi otvorenog teksta obrađuju jedan po jedan 
-koristeći pritom niz ključeva (engl. keystream) koji se 
+Ovdje razlikujemo <em>blokovne Ĺˇifre</em>, kod kojih se obraÄ‘uje 
+jedan po jedan blok elemenata otvorenog teksta koristeÄ‡i jedan te 
+isti kljuÄŤ <i>K</i>, te <em>protoÄŤne Ĺˇifre</em> (engl. stream 
+cipher) kod koji se elementi otvorenog teksta obraÄ‘uju jedan po jedan 
+koristeÄ‡i pritom niz kljuÄŤeva (engl. keystream) koji se 
 paralelno generira. 
 
 <p>
 
-<b>3. Tajnost i javnost ključeva</b><p>
+<b>3. Tajnost i javnost kljuÄŤeva</b><p>
 
-Ovdje je osnovna podjela na <em>simetrične kriptosustave</em> 
-i <em>kriptosustave s javnim ključem</em>. Kod simetričnih 
-ili konvencionalnih kriptosustava, ključ za dešifriranje 
-se može izračunati poznavajući ključ za šifriranje i 
-obratno. Ustvari, najčešće su ovi ključevi 
-identični. Sigurnost ovih kriptosustava leži u tajnosti 
-ključa. Zato se oni zovu i <em>kriptosustavi s tajnim 
-ključem</em>. 
+Ovdje je osnovna podjela na <em>simetriÄŤne kriptosustave</em> 
+i <em>kriptosustave s javnim kljuÄŤem</em>. Kod simetriÄŤnih 
+ili konvencionalnih kriptosustava, kljuÄŤ za deĹˇifriranje 
+se moĹľe izraÄŤunati poznavajuÄ‡i kljuÄŤ za Ĺˇifriranje i 
+obratno. Ustvari, najÄŤeĹˇÄ‡e su ovi kljuÄŤevi 
+identiÄŤni. Sigurnost ovih kriptosustava leĹľi u tajnosti 
+kljuÄŤa. Zato se oni zovu i <em>kriptosustavi s tajnim 
+kljuÄŤem</em>. 
 
-Kod kriptosustava s javnim ključem ili asimetričnih kriptosustava, 
-ključ za dešifriranje se ne može 
-(barem ne u nekom razumnom vremenu) izračunati iz ključa 
-za šifriranje. Ovdje je ključ za šifriranje <em>javni ključ</em>. 
-Naime, bilo tko može šifrirati poruku 
-pomoću njega, ali samo osoba koja ima odgovaraju ključ za 
-dešifriranje (<em>privatni</em> ili <em>tajni ključ</em>) 
-može dešifrirati tu poruku. Ideju javnog ključa prvi su javno iznijeli 
+Kod kriptosustava s javnim kljuÄŤem ili asimetriÄŤnih kriptosustava, 
+kljuÄŤ za deĹˇifriranje se ne moĹľe 
+(barem ne u nekom razumnom vremenu) izraÄŤunati iz kljuÄŤa 
+za Ĺˇifriranje. Ovdje je kljuÄŤ za Ĺˇifriranje <em>javni kljuÄŤ</em>. 
+Naime, bilo tko moĹľe Ĺˇifrirati poruku 
+pomoÄ‡u njega, ali samo osoba koja ima odgovaraju kljuÄŤ za 
+deĹˇifriranje (<em>privatni</em> ili <em>tajni kljuÄŤ</em>) 
+moĹľe deĹˇifrirati tu poruku. Ideju javnog kljuÄŤa prvi su javno iznijeli 
 <font color=009900>Whitfield Diffie</font> i 
 <font color=009900>Martin Hellman</font> 1976. godine, kada su dali prijedlog 
-rješenja problema razmjenjivanja ključeva za simetrične kriptosustave putem nesigurnih 
+rjeĹˇenja problema razmjenjivanja kljuÄŤeva za simetriÄŤne kriptosustave putem nesigurnih 
 komunikacijskih kanala. 
 
 <br><p> 
 
-Sada ćemo dati nekoliko općih napomena o kriptoanalizi. 
+Sada Ä‡emo dati nekoliko opÄ‡ih napomena o kriptoanalizi. 
 
-Osnovna pretpostavka kriptoanalize je da kriptoanalitičar zna koji 
-se kriptosustav koristi. To se zove <em>Kerckhoffsovo načelo</em>,  
+Osnovna pretpostavka kriptoanalize je da kriptoanalitiÄŤar zna koji 
+se kriptosustav koristi. To se zove <em>Kerckhoffsovo naÄŤelo</em>,  
 po Nizozemcu <font color=009900>Augustu Kerckhoffsu</font> 
-(1835-1903), autoru važne knjige "La Cryptographie militaire" 
+(1835-1903), autoru vaĹľne knjige "La Cryptographie militaire" 
 (Vojna kriptografija). 
-Naravno, ova pretpostavka u konkretnom slučaju ne mora biti točna, 
-ali mi ne želimo da nam sigurnost kriptosustava 
-leži na "klimavoj" pretpostavci da naš protivnik ne zna koji 
-kriptosustav koristimo. Čak ukoliko kriptoanalitičar treba 
-provjeriti nekoliko mogućih kriptosustava, time se kompleksnost 
+Naravno, ova pretpostavka u konkretnom sluÄŤaju ne mora biti toÄŤna, 
+ali mi ne Ĺľelimo da nam sigurnost kriptosustava 
+leĹľi na "klimavoj" pretpostavci da naĹˇ protivnik ne zna koji 
+kriptosustav koristimo. ÄŚak ukoliko kriptoanalitiÄŤar treba 
+provjeriti nekoliko moguÄ‡ih kriptosustava, time se kompleksnost 
 procedure bitno ne mijenja. 
-Dakle, mi pretpostavljamo da tajnost šifre u potpunosti leži u ključu. 
+Dakle, mi pretpostavljamo da tajnost Ĺˇifre u potpunosti leĹľi u kljuÄŤu. 
 <p>
 
-Razlikujemo četiri osnovna nivoa kriptoanalitičkih napada. 
+Razlikujemo ÄŤetiri osnovna nivoa kriptoanalitiÄŤkih napada. 
 
 <p>
 
-<b>1. Samo šifrat</b><p> 
+<b>1. Samo Ĺˇifrat</b><p> 
 
-Kriptoanalitičar posjeduje samo šifrat od nekoliko poruka 
-šifriranih pomoću istog algoritma. Njegov je zadatak otkriti 
-otvoreni tekst od što više poruka ili u najboljem 
-slučaju otkriti ključ kojim su poruke šifrirane. 
+KriptoanalitiÄŤar posjeduje samo Ĺˇifrat od nekoliko poruka 
+Ĺˇifriranih pomoÄ‡u istog algoritma. Njegov je zadatak otkriti 
+otvoreni tekst od Ĺˇto viĹˇe poruka ili u najboljem 
+sluÄŤaju otkriti kljuÄŤ kojim su poruke Ĺˇifrirane. 
 
 <p>
 
 <b>2. Poznat otvoreni tekst</b><p>
 
-Kriptoanalitičar posjeduje šifrat neke poruke, ali i njemu 
-odgovarajući otvoreni tekst. Njegov zadatak je otkriti ključ 
-ili neki algoritam za dešifriranje poruka šifriranih s tim ključem. 
+KriptoanalitiÄŤar posjeduje Ĺˇifrat neke poruke, ali i njemu 
+odgovarajuÄ‡i otvoreni tekst. Njegov zadatak je otkriti kljuÄŤ 
+ili neki algoritam za deĹˇifriranje poruka Ĺˇifriranih s tim kljuÄŤem. 
 
 <p>
 
 <b>3. Odabrani otvoreni tekst</b><p>
 
-Kriptoanalitičar ima mogućnost odabira teksta koji će biti 
-šifriran, te može dobiti njegov šifrat. Ovaj napad je 
-jači od prethodnoga, ali je manje realističan. 
+KriptoanalitiÄŤar ima moguÄ‡nost odabira teksta koji Ä‡e biti 
+Ĺˇifriran, te moĹľe dobiti njegov Ĺˇifrat. Ovaj napad je 
+jaÄŤi od prethodnoga, ali je manje realistiÄŤan. 
 
 <p>
 
-<b>4. Odabrani šifrat</b><p>
+<b>4. Odabrani Ĺˇifrat</b><p>
 
-Kriptoanalitičar je dobio pristup alatu za dešifriranje, 
-pa može odabrati šifrat, te dobiti odgovarajući otvoreni 
-tekst. Ovaj napad je tipičan kod kriptosustava s javnim 
-ključem. Tu je zadatak kriptoanalitičara otkriti ključ 
-za dešifriranje (tajni ključ).  
+KriptoanalitiÄŤar je dobio pristup alatu za deĹˇifriranje, 
+pa moĹľe odabrati Ĺˇifrat, te dobiti odgovarajuÄ‡i otvoreni 
+tekst. Ovaj napad je tipiÄŤan kod kriptosustava s javnim 
+kljuÄŤem. Tu je zadatak kriptoanalitiÄŤara otkriti kljuÄŤ 
+za deĹˇifriranje (tajni kljuÄŤ).  
 
 <p>
 
-<b>(5.) Potkupljivanje, ucjena, krađa i slično</b><p> 
+<b>(5.) Potkupljivanje, ucjena, kraÄ‘a i sliÄŤno</b><p> 
 
 Ovaj napad ne spada doslovno u kriptoanalizu, ali je vrlo efikasan i 
-često primjenjivan u kombinaciji s "pravim" kriptoanalitičkim napadima. 
+ÄŤesto primjenjivan u kombinaciji s "pravim" kriptoanalitiÄŤkim napadima. 
 <p>
 
-Naravno, možemo se pitati koliko je realno da će kriptoanalitičar biti u prilici 
+Naravno, moĹľemo se pitati koliko je realno da Ä‡e kriptoanalitiÄŤar biti u prilici 
 primijeniti 2., 3. ili 4. vrstu napada. Na prvi pogled to izgleda dosta 
-nerealno. Međutim, tu treba imati u vidu činjenicu da je kriptoanalitičar 
-već nekako došao u posjed šifrata koji nije bio njemu namjenjen. 
-Dakle, svakako on posjeduje izvjesne sposobnosti koje mu mogu pomoći 
-i oko drugih vrsta kriptoanalitičkih napada. 
+nerealno. MeÄ‘utim, tu treba imati u vidu ÄŤinjenicu da je kriptoanalitiÄŤar 
+veÄ‡ nekako doĹˇao u posjed Ĺˇifrata koji nije bio njemu namjenjen. 
+Dakle, svakako on posjeduje izvjesne sposobnosti koje mu mogu pomoÄ‡i 
+i oko drugih vrsta kriptoanalitiÄŤkih napada. 
 
 <hr size=2 noshade> 
 
 <b><font size="-1" face="Verdana">
-<a href="supst.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="supst.html">[SljedeÄ‡e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 
 <hr size=2 noshade> 

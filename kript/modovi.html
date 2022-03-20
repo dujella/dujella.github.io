@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>DES - Načini djelovanja</title>
+<title>DES - NaÄŤini djelovanja</title>
 
 <meta name="author" content="Andrej Dujella">
 <meta name="description" content="DES - Nacini djelovanja">
@@ -9,7 +9,7 @@
 modes of operation, ECB, Electronic Codebook, CBC, Cipher Block 
 Chaining, CFB, Cipher Feedback, OFB, Output Feedback">
 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utb-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
 
@@ -25,8 +25,8 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="desprop.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="desan.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="desan.html">[SljedeÄ‡e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 <p>
 
@@ -34,56 +34,56 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 
 <a name="2.4"></a>
-<h2 align=center style="color: rgb(128,0,0)">2.4. Načini djelovanja</h2>
+<h2 align=center style="color: rgb(128,0,0)">2.4. NaÄŤini djelovanja</h2>
 
 
-Iako je sam opis DES-a dosta dug, on se može vrlo efikasno 
+Iako je sam opis DES-a dosta dug, on se moĹľe vrlo efikasno 
 implementirati, i hardverski i softverski. Spomenimo da je do 1991. 
 godine u NBS-u registrirano 45 hardverskih implementacija DES-a. 
-Godine 1992. proizveden je čip s 50000 tranzistora koji može šifrirati 
-10<sup>9</sup> bita (tj. 16 milijuna blokova) po sekundi (čip je koštao 
+Godine 1992. proizveden je ÄŤip s 50000 tranzistora koji moĹľe Ĺˇifrirati 
+10<sup>9</sup> bita (tj. 16 milijuna blokova) po sekundi (ÄŤip je koĹˇtao 
 300 dolara). 
 <p>
-Jedna važna primjena DES-a je u bankarskim transakcijama. Tako se, 
-između ostalog, DES koristio za šifriranje PIN-ova (personal 
+Jedna vaĹľna primjena DES-a je u bankarskim transakcijama. Tako se, 
+izmeÄ‘u ostalog, DES koristio za Ĺˇifriranje PIN-ova (personal 
 identification numbers), te transakcija preko bankomata. 
-DES je također do nedavno bio u širokoj uporabi u civilnim 
+DES je takoÄ‘er do nedavno bio u Ĺˇirokoj uporabi u civilnim 
 satelitskim komunikacijama. 
 <p><br>
 Mi smo do sada opisali kako radi DES na jednom bloku od 64 bita. 
-U realnim situacijama, u kojima su poruke znatno duže, poznata  
-su 4 <em>načina djelovanja</em> (modes of operation) DES-a. Ti 
-<em>modovi</em> pokrivaju sve moguće primjene DES-a, a također su 
-primjenjivi na bilo koju simetričnu blokovnu šifru. 
+U realnim situacijama, u kojima su poruke znatno duĹľe, poznata  
+su 4 <em>naÄŤina djelovanja</em> (modes of operation) DES-a. Ti 
+<em>modovi</em> pokrivaju sve moguÄ‡e primjene DES-a, a takoÄ‘er su 
+primjenjivi na bilo koju simetriÄŤnu blokovnu Ĺˇifru. 
 <p>
 Najjednostavniji mod je ECB (Electronic Codebook) u kojem se svaki 
-blok otvorenog teksta šifrira s istim ključem. Dakle, poruka se 
+blok otvorenog teksta Ĺˇifrira s istim kljuÄŤem. Dakle, poruka se 
 razbije na blokove od po 64 bita (zadnji blok se nadopuni ako je 
-nužno), te se šifrira jedan po jedan blok koristeći uvijek jedan te 
-isti ključ. 
+nuĹľno), te se Ĺˇifrira jedan po jedan blok koristeÄ‡i uvijek jedan te 
+isti kljuÄŤ. 
 <p align=center>
 <img src="slike/ecbmode.gif" alt="ecb mode">
 </p>
 
-ECB mod je idealan za kratke poruke, pa se često koristi za razmjenu 
-ključeva za šifriranje. Kod dugih poruka sigurnost ECB moda se 
-smanjuje, budući da identični blokovi u otvorenom tekstu daju 
-identične šifrate. 
+ECB mod je idealan za kratke poruke, pa se ÄŤesto koristi za razmjenu 
+kljuÄŤeva za Ĺˇifriranje. Kod dugih poruka sigurnost ECB moda se 
+smanjuje, buduÄ‡i da identiÄŤni blokovi u otvorenom tekstu daju 
+identiÄŤne Ĺˇifrate. 
 <p>
-Da bi povećali sigurnost, želimo postići da identičnim blokovima u 
-otvorenom tekstu odgovaraju različiti šifrati. Relativno jednostavan 
-način da se to postigne je korištenje CBC (Cipher Block Chaining) moda. 
+Da bi poveÄ‡ali sigurnost, Ĺľelimo postiÄ‡i da identiÄŤnim blokovima u 
+otvorenom tekstu odgovaraju razliÄŤiti Ĺˇifrati. Relativno jednostavan 
+naÄŤin da se to postigne je koriĹˇtenje CBC (Cipher Block Chaining) moda. 
 Na trenutni blok otvorenog teksta se primjeni operacija XOR sa 
-šifratom prethodnog bloka, a tek potom se šifrira pomoću ključa 
+Ĺˇifratom prethodnog bloka, a tek potom se Ĺˇifrira pomoÄ‡u kljuÄŤa 
 <i>K</i>. 
 Dakle, <nobr><i>y<sub>i</sub></i> = 
 <i>e<sub>K</sub></i>(<i>y</i><sub><i>i</i> -1</sub> 
 &oplus;  
 <i>x<sub>i</sub></i>)</nobr> za <nobr><i>i</i> &ge; 1.</nobr>   
 Na startu uzimamo da je <i>y</i><sub>0</sub> = IV, gdje je IV 
-tzv. inicijalizirajući vektor, koji mora biti poznat i primaocu i 
-pošiljaocu. To se može postići npr. tako da ga se pošalje ECB modom. 
-Za dešifriranje koristimo relaciju 
+tzv. inicijalizirajuÄ‡i vektor, koji mora biti poznat i primaocu i 
+poĹˇiljaocu. To se moĹľe postiÄ‡i npr. tako da ga se poĹˇalje ECB modom. 
+Za deĹˇifriranje koristimo relaciju 
 <nobr><i>x<sub>i</sub></i> = 
 <i>y</i><sub><i>i</i> -1</sub> 
 &oplus;  
@@ -93,52 +93,52 @@ Za dešifriranje koristimo relaciju
 <img src="slike/cbcmode.gif" alt="cbc mode">
 </p>
 
-U prethodna dva moda DES funkcionira kao blokovna šifra. No, od DES-a 
-se može napraviti i protočna (stream) šifra. Prvi način je pomoću 
-CFB (Cipher Feedback) moda. Kod protočnih šifri nema potrebe za 
-proširivanjem poruke da bi se dobio cijeli broj blokova. To znači da će 
-šifrat biti iste duljine kao otvoreni tekst. Obrađuje se odjednom 
+U prethodna dva moda DES funkcionira kao blokovna Ĺˇifra. No, od DES-a 
+se moĹľe napraviti i protoÄŤna (stream) Ĺˇifra. Prvi naÄŤin je pomoÄ‡u 
+CFB (Cipher Feedback) moda. Kod protoÄŤnih Ĺˇifri nema potrebe za 
+proĹˇirivanjem poruke da bi se dobio cijeli broj blokova. To znaÄŤi da Ä‡e 
+Ĺˇifrat biti iste duljine kao otvoreni tekst. ObraÄ‘uje se odjednom 
 <i>j</i> bitova 
 (1 &le; <i>j</i> &le; 64). 
-Najčešće je <i>j</i> = 1 ili <i>j</i> = 8. Ako je <i>j</i> = 8, 
-to znači da se šifrira slovo po slovo (jednom slovu odgovara 8 
+NajÄŤeĹˇÄ‡e je <i>j</i> = 1 ili <i>j</i> = 8. Ako je <i>j</i> = 8, 
+to znaÄŤi da se Ĺˇifrira slovo po slovo (jednom slovu odgovara 8 
 bitova po ASCII standardu). 
 <p>
-U šifriranje krećemo šifriranjem 64 bitnog inicijalizirajućeg 
+U Ĺˇifriranje kreÄ‡emo Ĺˇifriranjem 64 bitnog inicijalizirajuÄ‡eg 
 vektora IV. Na <i>j</i> najlijevijih bitova 
 izlaznog podatka primijenimo 
 XOR sa <i>x</i><sub>1</sub> i tako dobijemo <i>y</i><sub>1</sub>. 
-Ulazni podatak za sljedeći korak šifriranja se dobije tako da se 
+Ulazni podatak za sljedeÄ‡i korak Ĺˇifriranja se dobije tako da se 
 prethodni ulazni podatak pomakne za <i>j</i> mjesta ulijevo, a 
 na desni kraj se stavi <i>y</i><sub>1</sub>. Postupak se nastavlja 
-sve dok se sve jedinice otvorenog teksta ne šifriraju. 
+sve dok se sve jedinice otvorenog teksta ne Ĺˇifriraju. 
 <p align=center>
 <img src="slike/cfbmode.gif" alt="cfb mode">
 </p>
 
-Kod dešifriranja se koristi ista shema, osim što se na 
-odgovarajući šifrat primjeni XOR s izlaznim podatkom funkcije šifriranja 
-<i>e<sub>K</sub></i> da bi se dobio otvoreni tekst. Uočimo da se ponovo 
+Kod deĹˇifriranja se koristi ista shema, osim Ĺˇto se na 
+odgovarajuÄ‡i Ĺˇifrat primjeni XOR s izlaznim podatkom funkcije Ĺˇifriranja 
+<i>e<sub>K</sub></i> da bi se dobio otvoreni tekst. UoÄŤimo da se ponovo 
 koristi funkcija <i>e<sub>K</sub></i>, a ne <i>d<sub>K</sub></i>. 
 Naime, ovdje je funkcija 
-šifriranja zapravo XOR, a on je sam sebi inverz.
-Zapravo, ovaj modus možemo shvatiti kao svojevrsnu realizaciju 
-&quot;jednokratne bilježnice&quot;, 
-u kojoj nam <i>e<sub>K</sub></i> ne služi za šifriranje, već za generiranje 
-&quot;pseudoslučajnog&quot; 
-ključa za jednokratnu bilježnicu. Ovo pokazuje da inicijalni vektor IV mora biti 
-&quot;svjež&quot;, 
+Ĺˇifriranja zapravo XOR, a on je sam sebi inverz.
+Zapravo, ovaj modus moĹľemo shvatiti kao svojevrsnu realizaciju 
+&quot;jednokratne biljeĹľnice&quot;, 
+u kojoj nam <i>e<sub>K</sub></i> ne sluĹľi za Ĺˇifriranje, veÄ‡ za generiranje 
+&quot;pseudosluÄŤajnog&quot; 
+kljuÄŤa za jednokratnu biljeĹľnicu. Ovo pokazuje da inicijalni vektor IV mora biti 
+&quot;svjeĹľ&quot;, 
 tj. ne bi se dvaput smio koristiti isti inicijalni vektor.
 <p>
 
-OFB (Output Feedback) mod je vrlo sličan kao CFB. Jedina razlika 
+OFB (Output Feedback) mod je vrlo sliÄŤan kao CFB. Jedina razlika 
 je da se ulazni podatak za funkciju <i>e<sub>K</sub></i> 
-u idućem koraku šalje odmah nakon primjene <i>e<sub>K</sub></i> 
+u iduÄ‡em koraku Ĺˇalje odmah nakon primjene <i>e<sub>K</sub></i> 
 u prethodnom koraku (prije primjene XOR-a). Jedna od prednosti 
-OFB moda je da se greške u transmisiji ne propagiraju. Npr. 
-greška u <i>y</i><sub>1</sub> utječe samo na <i>x</i><sub>1</sub>. 
-Ovaj mod se često koristi u šifriranje poruka sa satelita. 
-No, ovo svojstvo može biti i nedostatak. Stoga se modovi CBC i CFB 
+OFB moda je da se greĹˇke u transmisiji ne propagiraju. Npr. 
+greĹˇka u <i>y</i><sub>1</sub> utjeÄŤe samo na <i>x</i><sub>1</sub>. 
+Ovaj mod se ÄŤesto koristi u Ĺˇifriranje poruka sa satelita. 
+No, ovo svojstvo moĹľe biti i nedostatak. Stoga se modovi CBC i CFB 
 koriste za ustanovljavanje vjerodostojnosti poruke. 
    
 <p align=center>
@@ -146,32 +146,32 @@ koriste za ustanovljavanje vjerodostojnosti poruke.
 </p> 
 <p>
 
-Pored ova četiri (klasična) načina djelovanja, u posljednje je vrijeme sve
-popularniji CTR (Counter) mod. U njemu se koristi niz brojača (countera)
+Pored ova ÄŤetiri (klasiÄŤna) naÄŤina djelovanja, u posljednje je vrijeme sve
+popularniji CTR (Counter) mod. U njemu se koristi niz brojaÄŤa (countera)
 <nobr><i>c</i><sub>1</sub>, <i>c</i><sub>2</sub>, ... .</nobr> 
-Niz blokova šifrata dobiva se po sljedećem pravilu:
+Niz blokova Ĺˇifrata dobiva se po sljedeÄ‡em pravilu:
 <p align=center>
  <i>y<sub>i</sub></i> = <i>x<sub>i</sub></i> 
 &oplus; <i>e<sub>K</sub></i>(<i>c<sub>i</sub></i>). 
 </p>
-Brojači moraju biti u parovima različiti. Obično se to postiže tako da se brojaču 
+BrojaÄŤi moraju biti u parovima razliÄŤiti. ObiÄŤno se to postiĹľe tako da se brojaÄŤu 
 <i>c</i><sub>1</sub>
-pridruži neka inicijalna vrijednost, a potom se ostali brojači povećavaju za 1: 
+pridruĹľi neka inicijalna vrijednost, a potom se ostali brojaÄŤi poveÄ‡avaju za 1: 
 <nobr><i>c<sub>i</sub></i> = <i>c</i><sub>1</sub> + (<i>i</i> - 1)</nobr> 
 (zbrajanje je modulo 2<sup><i>b</i></sup>, gdje je <i>b</i> duljina bloka; 
 kod DES-a je <i>b</i> = 64).
 <p>
 
-Za razliku od prethodna tri &quot;ulančana&quot; (chaining) moda, 
-u CTR modu se šifriranje (i dešifriranje)
-može lako paralelizirati. Kod ulančanih modusa je to bio problem, jer je
-algoritam morao završiti obradu jednog bloka, da bi prešao na naredni. To pokazuje
-još jednu prednost CTR modusa, a to je mogućnost dešifriranja samo jednog određenog bloka,
-što može biti interesanstno za neke aplikacije. Slično kao kod CFB i OFB modusa,
-i ovdje se u dešifiranju ponovo koristi funkcija <i>e<sub>K</sub></i> 
+Za razliku od prethodna tri &quot;ulanÄŤana&quot; (chaining) moda, 
+u CTR modu se Ĺˇifriranje (i deĹˇifriranje)
+moĹľe lako paralelizirati. Kod ulanÄŤanih modusa je to bio problem, jer je
+algoritam morao zavrĹˇiti obradu jednog bloka, da bi preĹˇao na naredni. To pokazuje
+joĹˇ jednu prednost CTR modusa, a to je moguÄ‡nost deĹˇifriranja samo jednog odreÄ‘enog bloka,
+Ĺˇto moĹľe biti interesanstno za neke aplikacije. SliÄŤno kao kod CFB i OFB modusa,
+i ovdje se u deĹˇifiranju ponovo koristi funkcija <i>e<sub>K</sub></i> 
 (a ne <i>d<sub>K</sub></i>). Ovo nije neka
-posebna prednost kod DES-a, ali može biti relevantno kod blokovnih kriptosustava
-kod kojih algoritam dešifriranja nije doslovno isti kao algoritam šifriranja
+posebna prednost kod DES-a, ali moĹľe biti relevantno kod blokovnih kriptosustava
+kod kojih algoritam deĹˇifriranja nije doslovno isti kao algoritam Ĺˇifriranja
 (npr. AES).
 
 <p align=center>
@@ -183,8 +183,8 @@ kod kojih algoritam dešifriranja nije doslovno isti kao algoritam šifriranja
 
 <b><font size="-1" face="Verdana">
 <a href="desprop.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="desan.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="desan.html">[SljedeÄ‡e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 
 <hr size=2 noshade>

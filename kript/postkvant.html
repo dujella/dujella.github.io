@@ -8,7 +8,7 @@
 <meta name="keywords" content="kriptografija, kvantna racunala, 
 McElieceov kriptosustav, NTRU">
 
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Type" content="text/html; charset=utb-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=0.6">
 
@@ -24,8 +24,8 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <b><font size="-1" face="Verdana">
 <a href="josjavni.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="pseudoprosti.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="pseudoprosti.html">[SljedeÄ‡e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 <p>
 
@@ -35,54 +35,54 @@ body {font-family: Arial,Helvetica,sans-serif;}
 <a name="3.4"></a>
 <h2 align=center style="color: rgb(128,0,0)">3.5. Post-kvantna kriptografija</h2>
 
-Važno je pitanje što bi se dogodilo sa sigurnošću RSA kriptosustava 
-(i ostalih kriptosustava s javnim ključem koje smo do sada spomenuli) 
-ako bi se uspjelo konstruirati efikasna kvantna računala. 
-Za razliku od klasičnih računala kod kojih je osnovna jedinica
-informacije jedan bit (koji može biti 0 ili 1), kvantna računala 
+VaĹľno je pitanje Ĺˇto bi se dogodilo sa sigurnoĹˇÄ‡u RSA kriptosustava 
+(i ostalih kriptosustava s javnim kljuÄŤem koje smo do sada spomenuli) 
+ako bi se uspjelo konstruirati efikasna kvantna raÄŤunala. 
+Za razliku od klasiÄŤnih raÄŤunala kod kojih je osnovna jedinica
+informacije jedan bit (koji moĹľe biti 0 ili 1), kvantna raÄŤunala 
 koriste ideje iz kvantne mehanike, te je kod njih osnovna jedinica informacije - qubit -
-nosi puno više informacija. Takva računala još nisu praktično realizirana u obliku koji bi
-bio konkurencija klasičnim računalima, ali takva realizacija nije isključena u skoroj budućnosti.
-Stoga se u posljednjih 20-tak godina radi i na algoritmima specijalno dizajniranim baš za takva računala.  
+nosi puno viĹˇe informacija. Takva raÄŤunala joĹˇ nisu praktiÄŤno realizirana u obliku koji bi
+bio konkurencija klasiÄŤnim raÄŤunalima, ali takva realizacija nije iskljuÄŤena u skoroj buduÄ‡nosti.
+Stoga se u posljednjih 20-tak godina radi i na algoritmima specijalno dizajniranim baĹˇ za takva raÄŤunala.  
 <p>
 
-Od poznatih algoritama za kvantna računala, dva su vrlo relevantna za kriptoanalizu:
+Od poznatih algoritama za kvantna raÄŤunala, dva su vrlo relevantna za kriptoanalizu:
 Groverov i Shorov.
-Groverov algoritam ubrzava pretraživanja nesortiranih datoteka, te
-pomoću njega napadi "grubom silom" postaju puno učinkovitiji 
-(kod simetričnih kriptosustava to bi značilo da će biti potreban otprilike dvostruko duži 
-ključ da se zadrži sadašnja razina sigurnosti).
-Shorov algoritam koristi činjenicu da kvantne metode
-omogućavaju vrlo brzo računanje perioda periodičnih funkcija. 
+Groverov algoritam ubrzava pretraĹľivanja nesortiranih datoteka, te
+pomoÄ‡u njega napadi "grubom silom" postaju puno uÄŤinkovitiji 
+(kod simetriÄŤnih kriptosustava to bi znaÄŤilo da Ä‡e biti potreban otprilike dvostruko duĹľi 
+kljuÄŤ da se zadrĹľi sadaĹˇnja razina sigurnosti).
+Shorov algoritam koristi ÄŤinjenicu da kvantne metode
+omoguÄ‡avaju vrlo brzo raÄŤunanje perioda periodiÄŤnih funkcija. 
 To daje polinomijalne kvantne algoritme
-za probleme faktorizacije i diskretnog algoritma. To znači da bi efektivna konstrukcija dovoljno 
-snažnih kvantnih računala učinila neupotrebljivim kriptosustave javnog ključa zasnovane na faktorizaciji
+za probleme faktorizacije i diskretnog algoritma. To znaÄŤi da bi efektivna konstrukcija dovoljno 
+snaĹľnih kvantnih raÄŤunala uÄŤinila neupotrebljivim kriptosustave javnog kljuÄŤa zasnovane na faktorizaciji
 (RSA, Rabin) i problemu diskretnog logaritma (ElGamal, ECC).
 <p>
 
 Grana kriptografije koja se bavi dizajniranjem i analizom kriptosustava koji bi bili 
-otporni i na napade koje bi realizirala kvantna računala naziva se 
+otporni i na napade koje bi realizirala kvantna raÄŤunala naziva se 
 post-kvantna kriptografija. Post-kvantna kriptografija je poseban zamah dobila 
-raspisivanjem natječaja za post-kvantne kriptografske standarde, koji je NIST raspisao 2017. godine. 
-Na natječaj se javilo 59 prijedloga za kriptosustave s javnim ključem i protokole za razmjenu ključeva, 
-te 23 algoritma za digitalne potpise. Godine 2019. je izabrano ukupno 26 prijedloga koji su prošli u 
-drugu rundu natječaja. U srpnju 2020. lista je dodatno reducirana te je objavljeno 
-7 finalista treće runde natječaja, uz još 8 alternativnih kandidata. 
-Konačan izbor standarda se očekuje do 2024. godine.  
+raspisivanjem natjeÄŤaja za post-kvantne kriptografske standarde, koji je NIST raspisao 2017. godine. 
+Na natjeÄŤaj se javilo 59 prijedloga za kriptosustave s javnim kljuÄŤem i protokole za razmjenu kljuÄŤeva, 
+te 23 algoritma za digitalne potpise. Godine 2019. je izabrano ukupno 26 prijedloga koji su proĹˇli u 
+drugu rundu natjeÄŤaja. U srpnju 2020. lista je dodatno reducirana te je objavljeno 
+7 finalista treÄ‡e runde natjeÄŤaja, uz joĹˇ 8 alternativnih kandidata. 
+KonaÄŤan izbor standarda se oÄŤekuje do 2024. godine.  
 <p>
-Opisat ćemo dva kriptosustava za koja se smatra da bi mogli biti sigurni i u eri 
-kvantnih računala. Oni su nastali dosta prije NIST-ovog natječaja, 
-ali se njihove inačice nalaze među kandidatima koji su se javili na natječaj i prošli u drugu i treću rundu. 
+Opisat Ä‡emo dva kriptosustava za koja se smatra da bi mogli biti sigurni i u eri 
+kvantnih raÄŤunala. Oni su nastali dosta prije NIST-ovog natjeÄŤaja, 
+ali se njihove inaÄŤice nalaze meÄ‘u kandidatima koji su se javili na natjeÄŤaj i proĹˇli u drugu i treÄ‡u rundu. 
 To su McElieceov kriptosustav i NTRU kriptosustav.  
 
 <p>
 <br>
 
 U <em>McElieceovom kriptosustavu</em> (<font color="009900">Robert McEliece</font>, 1978) 
-koristi se ideja slična ideja onoj 
+koristi se ideja sliÄŤna ideja onoj 
 koju smo vidjeli kod Merkle-Hellmanovog kriptosustava. 
-Ovdje je pripadni NP-potpuni problem dekodiranje općih linearnih kodova za ispravljanje
-grešaka. Kao osnova u ovom kriptosustavu koristi
+Ovdje je pripadni NP-potpuni problem dekodiranje opÄ‡ih linearnih kodova za ispravljanje
+greĹˇaka. Kao osnova u ovom kriptosustavu koristi
 se specijalna klasa <em>Goppinih kodova</em> 
 za koje postoji polinomijalni algoritam za dekodiranje.
 <p>
@@ -90,8 +90,8 @@ za koje postoji polinomijalni algoritam za dekodiranje.
 Neka su <i>k</i> i <i>n</i> prirodni brojevi, <i>k</i> &leq; <i>n</i>.
 <em>Binarni linearni [<i>n,k</i>]-kod</em> <i>C</i> je
 <i>k</i>-dimenzionalni potprostor vektorskog prostora (<b>Z</b><sub>2</sub>)<sup><i>n</i></sup>.
-Generirajuća matrica za linearni kod <i>C</i> je
-<i>k</i> &times; <i>n</i> matrica <i>G</i> čiji redci tvore bazu za <i>C</i>.
+GenerirajuÄ‡a matrica za linearni kod <i>C</i> je
+<i>k</i> &times; <i>n</i> matrica <i>G</i> ÄŤiji redci tvore bazu za <i>C</i>.
 <p>
 
 Za <i>x</i> = (<i>x</i><sub>1</sub>, ..., <i>x</i><sub><i>n</i></sub>),
@@ -108,10 +108,10 @@ Definiramo <em>minimalnu udaljenost</em> od <i>C</i> s
 <i>d</i> = <i>d</i>(<i>C</i>) = min {<i>d</i>(<i>x,y</i>) : <i>x</i>, <i>y</i> &in; 
 <i>C</i>, <i>x</i> &ne; <i>y</i>}. 
 </p>
-Tada za <i>C</i> kažemo da je [<i>n,k,d</i>]-kod.
+Tada za <i>C</i> kaĹľemo da je [<i>n,k,d</i>]-kod.
 <p>
 
-Primjer jednog [7,4,3]-koda dan je sljedećom generirajućom matricom:
+Primjer jednog [7,4,3]-koda dan je sljedeÄ‡om generirajuÄ‡om matricom:
 
 <p>
 <table align=center><tr><td><i>G</i> = </td>
@@ -140,31 +140,31 @@ Primjer jednog [7,4,3]-koda dan je sljedećom generirajućom matricom:
 </tr></table>   
 <p>
 
-Svrha kodova za ispravljanje grešaka jest da isprave slučajne
-greške koje mogu nastati prilikom prenošenja binarnih
-podataka preko kanala sa "šumom" (engl. chanell with noise). Neka je <i>G</i> generirajuća
+Svrha kodova za ispravljanje greĹˇaka jest da isprave sluÄŤajne
+greĹˇke koje mogu nastati prilikom prenoĹˇenja binarnih
+podataka preko kanala sa "Ĺˇumom" (engl. chanell with noise). Neka je <i>G</i> generirajuÄ‡a
 matrica za [<i>n,k,d</i>]-kod <i>C</i>. Pretpostavimo da je <i>x</i> binarna <i>k</i>-torka
-koju Alice želi prenijeti Bobu preko kanala sa šumom.
-Tada Alice <em>kodira</em> <i>x</i> kao <i>n</i>-torku <i>y</i> = <i>xG</i>, te pošalje
-<i>y</i> preko kanala. Bob primi <i>n</i>-torku <i>r</i> koja se, budući da
-kanal ima šum, ne mora podudarati s <i>y</i>. Da bi
-<em>dekodirao</em> <i>r</i>, Bob traži element ("kodnu riječ")
+koju Alice Ĺľeli prenijeti Bobu preko kanala sa Ĺˇumom.
+Tada Alice <em>kodira</em> <i>x</i> kao <i>n</i>-torku <i>y</i> = <i>xG</i>, te poĹˇalje
+<i>y</i> preko kanala. Bob primi <i>n</i>-torku <i>r</i> koja se, buduÄ‡i da
+kanal ima Ĺˇum, ne mora podudarati s <i>y</i>. Da bi
+<em>dekodirao</em> <i>r</i>, Bob traĹľi element ("kodnu rijeÄŤ")
 <i>y</i>' &in; <i>C</i> koja ima najmanju Hammingovu udaljenost od <i>r</i>,
-te potom izračuna <i>k</i>-torku <i>x</i>' takvu da je <i>y</i>' = <i>x</i>'<i>G</i>.
-Tada Bob može očekivati da je <i>y</i>' = <i>y</i>, pa onda i <i>x</i>' = <i>x</i>,
-tj. da je uspio ispraviti sve greške nastale prilikom
-prijenosa. Nije teško vidjeti da ukoliko broj grešaka
-nije veći od (<i>d</i>-1)/2, onda se na ovaj način
-mogu "ispraviti sve greške", tj. može se jednoznačno rekonstruirati poslana poruka.
-Primijetimo analogiju, ali i razliku između
-pojmova šifriranje-dešifriranje i kodiranje-dekodiranje.
+te potom izraÄŤuna <i>k</i>-torku <i>x</i>' takvu da je <i>y</i>' = <i>x</i>'<i>G</i>.
+Tada Bob moĹľe oÄŤekivati da je <i>y</i>' = <i>y</i>, pa onda i <i>x</i>' = <i>x</i>,
+tj. da je uspio ispraviti sve greĹˇke nastale prilikom
+prijenosa. Nije teĹˇko vidjeti da ukoliko broj greĹˇaka
+nije veÄ‡i od (<i>d</i>-1)/2, onda se na ovaj naÄŤin
+mogu "ispraviti sve greĹˇke", tj. moĹľe se jednoznaÄŤno rekonstruirati poslana poruka.
+Primijetimo analogiju, ali i razliku izmeÄ‘u
+pojmova Ĺˇifriranje-deĹˇifriranje i kodiranje-dekodiranje.
 <p>
 
-Pokazuje se da je problem nalaženja najbliže kodne riječi vrlo težak
-problem za opće linearne kodove. No, postoje kodovi za koje
+Pokazuje se da je problem nalaĹľenja najbliĹľe kodne rijeÄŤi vrlo teĹľak
+problem za opÄ‡e linearne kodove. No, postoje kodovi za koje
 postoje efikasni algoritmi za dekodiranje. McEliece je 1978. godine
-predložio da se jedna klasa takvih kodova, tzv. Goppini kodovi,
-iskoristi u konstrukciji kriptosustava s javnim ključem.
+predloĹľio da se jedna klasa takvih kodova, tzv. Goppini kodovi,
+iskoristi u konstrukciji kriptosustava s javnim kljuÄŤem.
 Parametri Goppinih kodova imaju oblik
 <i>n</i> = 2<sup><i>m</i></sup>, &nbsp; <i>d</i> = 2<i>t</i> + 1, &nbsp; <i>k</i> = <i>n</i> - <i>mt</i>.
 <p>
@@ -175,15 +175,15 @@ Slijedi definicija <em><b>McElieceovog kriptosustava</b></em>.
 <tr><td bgcolor="FFFFCC">
 <font face="Arial,Helvetica,sans-serif">
 
-Neka je <i>G</i> generirajuća matrica za [<i>n,k,d</i>]-kod <i>C</i>. Neka je <i>S</i> invertibilna
+Neka je <i>G</i> generirajuÄ‡a matrica za [<i>n,k,d</i>]-kod <i>C</i>. Neka je <i>S</i> invertibilna
 <i>k</i> &times; <i>k</i> matrica nad <b>Z</b><sub>2</sub>, te <i>P</i> <i>n &times; <i>n</i> permutacijska matrica
-(u svakom retku i svakom stupcu ima točno jednu jedinicu, a svi ostali elementi su nule).
+(u svakom retku i svakom stupcu ima toÄŤno jednu jedinicu, a svi ostali elementi su nule).
 Stavimo <i>G</i>'= SGP</i>. Sada definiramo 
 <font face="Brush Script MT,Script,Times New Roman">P</font> = (<b>Z</b><sub>2</sub>)<sup><i>k</i></sup>, 
 <font face="Brush Script MT,Script,Times New Roman">C</font> = (<b>Z</b><sub>2</sub>)<sup><i>n</i></sup>, 
 <font face="Brush Script MT,Script,Times New Roman">K</font> = 
-{ (G,S,P,G') }, gdje su <i>G</i>, <i>S</i>, <i>P</i>, <i>G</i>' konstruirani na prije opisani način.
-Ovdje je <i>G</i>' javni, a <i>G,S,P</i> tajni ključ.
+{ (G,S,P,G') }, gdje su <i>G</i>, <i>S</i>, <i>P</i>, <i>G</i>' konstruirani na prije opisani naÄŤin.
+Ovdje je <i>G</i>' javni, a <i>G,S,P</i> tajni kljuÄŤ.
 <p>
 
 Za <i>K</i> = (G,S,P,G') &in; <font face="Brush Script MT,Script,Times New Roman">K</font>, definiramo
@@ -191,38 +191,38 @@ Za <i>K</i> = (G,S,P,G') &in; <font face="Brush Script MT,Script,Times New Roman
 <i>e</i><sub><i>K</i></sub>(<i>x,e</i>) = <i>xG</i>' + <i>e</i>, 
 </p>
 gdje je <i>e</i> &in; (<b>Z</b><sub>2</sub>)<sup><i>n</i></sup> 
-slučajno generirani vektor težine <i>t</i> = (<i>d</i>-1)/2 (ima <i>t</i> jedinica, a ostalo su nule).
+sluÄŤajno generirani vektor teĹľine <i>t</i> = (<i>d</i>-1)/2 (ima <i>t</i> jedinica, a ostalo su nule).
 <p>
-Šifrat <i>y</i> &in; (<b>Z</b><sub>2</sub>)<sup><i>n</i></sup> se dešifrira na sljedeći način. 
-Najprije se izračuna <i>y</i><sub>1</sub> = <i>y</i><i>P</i><sup>-1</sup>.
-Potom se dekodira <i>y</i><sub>1</sub>, i tako se dobije kodna riječ 
-<i>x</i><sub>1</sub> &in; <i>C</i> koja je najbliža <i>y</i><sub>1</sub> 
-(budući da je <i>P</i> permutacijska matrica, imamo da je 
+Ĺ ifrat <i>y</i> &in; (<b>Z</b><sub>2</sub>)<sup><i>n</i></sup> se deĹˇifrira na sljedeÄ‡i naÄŤin. 
+Najprije se izraÄŤuna <i>y</i><sub>1</sub> = <i>y</i><i>P</i><sup>-1</sup>.
+Potom se dekodira <i>y</i><sub>1</sub>, i tako se dobije kodna rijeÄŤ 
+<i>x</i><sub>1</sub> &in; <i>C</i> koja je najbliĹľa <i>y</i><sub>1</sub> 
+(buduÄ‡i da je <i>P</i> permutacijska matrica, imamo da je 
 <i>y</i><sub>1</sub> = <i>xSG</i> + <i>e</i><sub>1</sub>, gdje je 
-<i>e</i><sub>1</sub> = <i>e</i><i>P</i><sup>-1</sup> binarni niz težine <i>t</i> = (<i>d</i>-1)/2,
+<i>e</i><sub>1</sub> = <i>e</i><i>P</i><sup>-1</sup> binarni niz teĹľine <i>t</i> = (<i>d</i>-1)/2,
 pa znamo da mora vrijediti da je <i>x</i><sub>1</sub> = <i>xSG</i>).
-Izračuna se <i>x</i><sub>0</sub> &in; (<b>Z</b><sub>2</sub>)<sup><i>k</i></sup>, 
+IzraÄŤuna se <i>x</i><sub>0</sub> &in; (<b>Z</b><sub>2</sub>)<sup><i>k</i></sup>, 
 takav da je <i>x</i><sub>0</sub><i>G</i> = <i>x</i><sub>1</sub>. 
-Konačno se izračuna <i>x</i> = <i>x</i><sub>0</sub><i>S</i><sup>-1</sup>.
+KonaÄŤno se izraÄŤuna <i>x</i> = <i>x</i><sub>0</sub><i>S</i><sup>-1</sup>.
 
 </font></td></tr></table>
 <p> 
 
-Uočimo da <i>y</i><sub>1</sub> možemo dekodirati jer je kodiran Goppinim kodom <i>G</i>, a
-<i>y</i> ne možemo jer je kodiran s <i>G</i>' za koji nemamo efikasan algoritam za dekodiranje.
-McEliece je predložio korištenje Goppinog koda s parametrima
+UoÄŤimo da <i>y</i><sub>1</sub> moĹľemo dekodirati jer je kodiran Goppinim kodom <i>G</i>, a
+<i>y</i> ne moĹľemo jer je kodiran s <i>G</i>' za koji nemamo efikasan algoritam za dekodiranje.
+McEliece je predloĹľio koriĹˇtenje Goppinog koda s parametrima
 [1024, 524, 101]. Otvoreni tekst je binarna 524-torka, a
-odgovarajući šifrat je binarna 1024-torka. Javni ključ je
+odgovarajuÄ‡i Ĺˇifrat je binarna 1024-torka. Javni kljuÄŤ je
 524 &times; 1024 binarna matrica. Do danas nije poznat
 niti jedan efikasan napad na McElieceov kriptosustav.
-Važan nedostatak mu je ogromna veličina javnog ključa.
-Jedna njegova inačica je jedan od finalista u trećoj rundi NIST-ovog 
-natječaja za post-kvantne kriptografske standarde. 
+VaĹľan nedostatak mu je ogromna veliÄŤina javnog kljuÄŤa.
+Jedna njegova inaÄŤica je jedan od finalista u treÄ‡oj rundi NIST-ovog 
+natjeÄŤaja za post-kvantne kriptografske standarde. 
 <p>
 
 <b>Primjer 3.6: </b> 
-Ilustrirat ćemo šifriranje i dešifriranje pomoću McElieceovog kriptosustava sa sasvim
-malim parametrima. Za <i>G</i> ćemo uzeti prethodno navedenu generirajuću matricu za [7,4,3]-kod.
+Ilustrirat Ä‡emo Ĺˇifriranje i deĹˇifriranje pomoÄ‡u McElieceovog kriptosustava sa sasvim
+malim parametrima. Za <i>G</i> Ä‡emo uzeti prethodno navedenu generirajuÄ‡u matricu za [7,4,3]-kod.
 Za matrice <i>S</i> i <i>P</i> uzmimo: 
 <p>
 <table align=center><tr><td><i>S</i> = </td>
@@ -288,7 +288,7 @@ Za matrice <i>S</i> i <i>P</i> uzmimo:
 </tr></table>  
 <p>
 
-Sada je Bobov javni ključ
+Sada je Bobov javni kljuÄŤ
 <p>
 <table align=center><tr><td><i>G</i>' = </td>
 <td><table cellpadding=5 cellspacing=0 frame=vsides rules=none>
@@ -316,17 +316,17 @@ Sada je Bobov javni ključ
 </tr></table>   
 <p>
 
-Pretpostavimo da Alice želi poslati Bobu poruku <i>x</i> = (1,0,1,1),
-te da je izabrala slučajni vektor <i>e</i> = (0,1,0,0,0,0,0) (s jednom jedinicom).
-Tada Alice pošalje Bobu šifrat <i>y</i> =  (0,0,0,1,1,0,0). 
+Pretpostavimo da Alice Ĺľeli poslati Bobu poruku <i>x</i> = (1,0,1,1),
+te da je izabrala sluÄŤajni vektor <i>e</i> = (0,1,0,0,0,0,0) (s jednom jedinicom).
+Tada Alice poĹˇalje Bobu Ĺˇifrat <i>y</i> =  (0,0,0,1,1,0,0). 
 <p>
-Bob računa <i>y</i><sub>1</sub> = <i>y</i><i>P</i><sup>-1</sup> = (0,0,1,0,0,0,1). 
+Bob raÄŤuna <i>y</i><sub>1</sub> = <i>y</i><i>P</i><sup>-1</sup> = (0,0,1,0,0,0,1). 
 Sada Bob treba dekodirati <i>y</i><sub>1</sub>.
-Jedna metoda koja je praktična za ovako male dimenzije je korištenje tzv. sindroma.
-Kodu <i>G</i> pridružimo njegovu <em>matricu provjere parnosti</em> <i>H</i>, što je 
+Jedna metoda koja je praktiÄŤna za ovako male dimenzije je koriĹˇtenje tzv. sindroma.
+Kodu <i>G</i> pridruĹľimo njegovu <em>matricu provjere parnosti</em> <i>H</i>, Ĺˇto je 
 (<i>n</i>-<i>k</i>) &times; <i>n</i> matrica
-čiji redci tvore bazu za ortogonalni komplement od <i>C</i> (koji se naziva <em>dualni kod</em> od <i>C</i> i
-označava <i>C</i><sup>&perp;</sup>). Za našu matricu <i>G</i> je 
+ÄŤiji redci tvore bazu za ortogonalni komplement od <i>C</i> (koji se naziva <em>dualni kod</em> od <i>C</i> i
+oznaÄŤava <i>C</i><sup>&perp;</sup>). Za naĹˇu matricu <i>G</i> je 
 
 <p>
 <table align=center><tr><td><i>H</i> = </td>
@@ -352,35 +352,35 @@ označava <i>C</i><sup>&perp;</sup>). Za našu matricu <i>G</i> je
 
 Sindrom od <i>r</i> &in; (<b>Z</b><sub>2</sub>)<sup><i>n</i></sup> je 
 <i>s</i> = <i>Hr</i><sup>T</sup>. Ako se vektor <i>s</i> sastoji od samih nula,
-onda <i>r</i> dekodiramo kao <i>r</i>. U protivnom, generiramo sve moguće <i>e</i><sub>1</sub> 
-vektore s težinom 1,
-te računamo <i>He</i><sub>1</sub><sup>T</sup>. Ako za neki od tih vektora <i>e</i><sub>1</sub> 
+onda <i>r</i> dekodiramo kao <i>r</i>. U protivnom, generiramo sve moguÄ‡e <i>e</i><sub>1</sub> 
+vektore s teĹľinom 1,
+te raÄŤunamo <i>He</i><sub>1</sub><sup>T</sup>. Ako za neki od tih vektora <i>e</i><sub>1</sub> 
 vrijedi <i>He</i><sub>1</sub><sup>T</sup = <i>s</i>, onda <i>r</i> dekodiramo kao
-<i>r</i> - <i>e</i><sub>1</sub>. Postupak nastavljamo s vektorima težine 
+<i>r</i> - <i>e</i><sub>1</sub>. Postupak nastavljamo s vektorima teĹľine 
 2, 3, ..., &lfloor;(<i>d</i>-1)/2&rfloor;.
-U našem slučaju, računamo sindrom od <i>y</i><sub>1</sub> i dobivamo 
-<i>Hy</i><sub>1</sub><sup>T</sup> = (0,1,0)<sup>T</sup>. Sada tražimo vektor <i>e</i><sub>1</sub> 
-težine 1 sa svojstvom <i>He</i><sub>1</sub><sup>T</sup> = (0,1,0)<sup>T</sup>. 
+U naĹˇem sluÄŤaju, raÄŤunamo sindrom od <i>y</i><sub>1</sub> i dobivamo 
+<i>Hy</i><sub>1</sub><sup>T</sup> = (0,1,0)<sup>T</sup>. Sada traĹľimo vektor <i>e</i><sub>1</sub> 
+teĹľine 1 sa svojstvom <i>He</i><sub>1</sub><sup>T</sup> = (0,1,0)<sup>T</sup>. 
 Nalazimo da je <i>e</i><sub>1</sub> = (0,0,0,0,0,1,0), pa <i>y</i><sub>1</sub> dekodiramo
-kao <i>x</i><sub>1</sub> = (0,0,1,0,0,1,1). Sada treba naći <i>x</i><sub>0</sub> takav da je 
+kao <i>x</i><sub>1</sub> = (0,0,1,0,0,1,1). Sada treba naÄ‡i <i>x</i><sub>0</sub> takav da je 
 <i>x</i><sub>0</sub><i>G</i> = <i>x</i><sub>1</sub>. No, zbog specijalnog oblika od <i>G</i>,
-<i>x</i><sub>0</sub> čine upravo prve četiri komponente od <i>x</i><sub>1</sub>, 
-tj. <i>x</i><sub>0</sub> = (0,0,1,0). Konačno, otvoreni tekst <i>x</i> 
-dobivamo računajući <i>x</i> = <i>x</i><sub>0</sub><i>S</i><sup>-1</sup> = (1,0,1,1). 
+<i>x</i><sub>0</sub> ÄŤine upravo prve ÄŤetiri komponente od <i>x</i><sub>1</sub>, 
+tj. <i>x</i><sub>0</sub> = (0,0,1,0). KonaÄŤno, otvoreni tekst <i>x</i> 
+dobivamo raÄŤunajuÄ‡i <i>x</i> = <i>x</i><sub>0</sub><i>S</i><sup>-1</sup> = (1,0,1,1). 
 
 <p>
 <br>
 
 Jedan od najzanimljivijih novijih kriptosustava, koji je
-još uvijek predmet intenzivnog proučavanja,
+joĹˇ uvijek predmet intenzivnog prouÄŤavanja,
 je <em><b>NTRU kriptosustav</b></em> (od "<i>N</i>th degree TRUncated polynomials"), 
-koji su 1997. godine predložili
+koji su 1997. godine predloĹľili
 <font color="009900">Jeffrey Hoffstein</font>, <font color="009900">Jill Pipher</font> i 
 <font color="009900">Joseph Silverman</font>. U ovom se kriptosustavu
-kod šifriranja koriste polinomi. Preciznije, koristi se
+kod Ĺˇifriranja koriste polinomi. Preciznije, koristi se
 prsten <nobr><i>R</i> = <b>Z</b>[<i>X</i>]/(<i>X</i><sup><i>N</i></sup> -1).</nobr> 
 Na elementima
-od <i>R</i> definira se operacija <em>cikličke konvolucije</em>, 
+od <i>R</i> definira se operacija <em>cikliÄŤke konvolucije</em>, 
 tj. za <i>F</i> = &Sigma;<sub><i>i</i>=0</sub><sup><i>N</i>-1</sup> <i>F<sub>i</sub> x<sup>i</sup></i>, 
 <i>G</i> = &Sigma;<sub><i>i</i>=0</sub><sup><i>N</i>-1</sup> <i>G<sub>i</sub> x<sup>i</sup></i>, 
 definira se <i>H</i> = <i>F</i> &#8859; <i>G</i> = 
@@ -394,66 +394,66 @@ modulima <i>p</i> i <i>q</i>. Sigurnost ovog
 kriptosustava se upravo zasniva na nezavisnosti tih dviju redukcija.
 <p>
 
-Da bi kreirao svoje NTRU ključeve, Bob na slučajan način izabire dva
+Da bi kreirao svoje NTRU kljuÄŤeve, Bob na sluÄŤajan naÄŤin izabire dva
 polinoma <i>f</i>, <i>g</i> &in; <i>R</i>. Polinom <i>f</i> mora zadovoljavati uvjet da ima
 inverze modulo <i>p</i> i modulo <i>q</i>. 
-Ako je <i>p</i> prost, onda se inverz od <i>f</i> računa primjenom proširenog Euklidovog algoritma na polinome 
+Ako je <i>p</i> prost, onda se inverz od <i>f</i> raÄŤuna primjenom proĹˇirenog Euklidovog algoritma na polinome 
 <i>f</i> i <i>x<sup>N</sup></i>-1 u prstenu polinoma <b>Z</b><sub><i>p</i></sub>[<i>x</i>], 
-a ako je <i>p</i> složen, onda se, slično kao kod rješavanja kongruencija, 
+a ako je <i>p</i> sloĹľen, onda se, sliÄŤno kao kod rjeĹˇavanja kongruencija, 
 inverz po prostom modulo "podigne" do inverza po potenciji prostog broja, 
-a inverzi koji odgovaraju različitim prostim brojevima "kombiniraju" primjenom 
+a inverzi koji odgovaraju razliÄŤitim prostim brojevima "kombiniraju" primjenom 
 Kineskog teorem o ostatcima. 
 <p>
 
-Označimo te inverze s <i>F</i><sub><i>p</i></sub> i 
+OznaÄŤimo te inverze s <i>F</i><sub><i>p</i></sub> i 
 <i>F</i><sub><i>q</i></sub>, tj.
 <p align=center>
 <i>F</i><sub><i>p</i></sub> &#8859; <i>f</i> &equiv; 1 (mod <i>p</i>), &nbsp; &nbsp; 
 <i>F</i><sub><i>q</i></sub> &#8859; <i>f</i> &equiv; 1 (mod <i>q</i>). 
 </p>
-Bob zatim izračuna polinom <i>h</i> takav da je
+Bob zatim izraÄŤuna polinom <i>h</i> takav da je
 <p align=center>
 <i>h</i> &equiv; <i>F</i><sub><i>q</i></sub> &#8859; <i>g</i> (mod <i>q</i>). 
 </p>
-Sada je <i>h</i> Bobov javni, a <i>f</i> tajni ključ.
+Sada je <i>h</i> Bobov javni, a <i>f</i> tajni kljuÄŤ.
 <p>
 
-Pretpostavimo da Alice želi poslati Bobu poruku <i>m</i>, za koju ćemo pretpostaviti
-da je također element skupa <i>R</i> (obično se uzima da su koeficijenti tog polinoma 
-iz segmenta [-<i>p</i>/2, <i>p</i>/2]). Ona izabire slučajan polinom
-<i>r</i> &in; <i>R</i> i koristi Bobov javni ključ da izračuna
+Pretpostavimo da Alice Ĺľeli poslati Bobu poruku <i>m</i>, za koju Ä‡emo pretpostaviti
+da je takoÄ‘er element skupa <i>R</i> (obiÄŤno se uzima da su koeficijenti tog polinoma 
+iz segmenta [-<i>p</i>/2, <i>p</i>/2]). Ona izabire sluÄŤajan polinom
+<i>r</i> &in; <i>R</i> i koristi Bobov javni kljuÄŤ da izraÄŤuna
 <p align=center>
 <i>e</i> &equiv; <i>p</i> <sup><b>.</b></sup> <i>r</i> &#8859; <i>h</i> + <i>m</i> (mod <i>q</i>).
 </p>
-Alice pošalje Bobu šifrat <i>e</i>.
+Alice poĹˇalje Bobu Ĺˇifrat <i>e</i>.
 <p>
 
-Kad Bob primi šifrat <i>e</i>, najprije pomoću svog tajnog ključa <i>f</i> izračuna
+Kad Bob primi Ĺˇifrat <i>e</i>, najprije pomoÄ‡u svog tajnog kljuÄŤa <i>f</i> izraÄŤuna
 <p align=center>
 <i>a</i> &equiv; <i>f</i> &#8859; <i>e</i> (mod <i>q</i>), 
 </p>
 gdje su koeficijenti polinoma <i>a</i> izabrani iz sustava najmanjih ostataka po apsolutnoj
 vrijednosti, tj. iz segmenta [-<i>q</i>/2, <i>q</i>/2].
-Sada Bob računa originalni otvoreni tekst <i>m</i> iz
+Sada Bob raÄŤuna originalni otvoreni tekst <i>m</i> iz
 <p align=center>
 <i>m</i> &equiv; <i>F</i><sub><i>p</i></sub> &#8859; <i>a</i> (mod <i>p</i>). 
 </p>
 
-U praktičnoj implementaciji, polinomi <i>f</i>, <i>g</i>, <i>r</i> i <i>m</i> se biraju iz fiksiranih
+U praktiÄŤnoj implementaciji, polinomi <i>f</i>, <i>g</i>, <i>r</i> i <i>m</i> se biraju iz fiksiranih
 podskupova <i>R<sub>f</sub></i>, <i>R<sub>g</sub></i>, <i>R<sub>r</sub></i>, 
 <i>R<sub>m</sub></i> od <i>R</i>, koji se sastoje od polinoma s
 koeficijentima iz skupa {-1, 0, 1} sa zadanim brojem ne-nul koeficijenata. 
 Primjerice, <i>R<sub>f</sub></i> se bira iz skupa polinoma s <i>d</i>+1 koeficijenata jednakih 1 
 i <i>d</i> koeficijenata jednakih -1, dok se <i>R<sub>g</sub></i> bira iz skupa polinoma 
 s <i>d</i> koeficijenata jednakih 1 i <i>d</i> koeficijenata jednakih -1. 
-Prirodan broj <i>d</i> se tada također smatra parametrom kriptosustava.
-Tipičan izbor za parametre <i>p</i> i <i>q</i> je <i>p</i> = 3, <i>q</i> = 128 
-(za <i>q</i> se iz praktičnih razloga uzima potencija broja 2), 
-<i>N</i> prost broj, recimo <i>N</i> = 251 ili 347, dok se za <i>d</i> može uzeti 36   
+Prirodan broj <i>d</i> se tada takoÄ‘er smatra parametrom kriptosustava.
+TipiÄŤan izbor za parametre <i>p</i> i <i>q</i> je <i>p</i> = 3, <i>q</i> = 128 
+(za <i>q</i> se iz praktiÄŤnih razloga uzima potencija broja 2), 
+<i>N</i> prost broj, recimo <i>N</i> = 251 ili 347, dok se za <i>d</i> moĹľe uzeti 36   
 (i naravno, ti parametri su javni).
 <p>
 
-Provjerimo hoće li Bob na ovaj način zaista dešifrirati šifrat. Imamo:
+Provjerimo hoÄ‡e li Bob na ovaj naÄŤin zaista deĹˇifrirati Ĺˇifrat. Imamo:
 <p align=center>
 <i>a</i> &equiv; <i>f</i> &#8859; <i>e</i> &equiv; f &#8859; 
 (<i>p</i> <sup><b>.</b></sup> <i>r</i>) &#8859; <i>h</i> + <i>f</i> &#8859; <i>m</i> 
@@ -461,8 +461,8 @@ Provjerimo hoće li Bob na ovaj način zaista dešifrirati šifrat. Imamo:
 <i>F</i><sub><i>q</i></sub> &#8859; <i>g</i> + <i>f</i> &#8859; <i>m</i> <br>
 &equiv; <i>p</i> <sup><b>.</b></sup> <i>r</i> &#8859; <i>g</i> + <i>f</i> &#8859; <i>m</i> (mod <i>q</i>).
 </p>
-Izbor parametara nam osigurava da će (skoro uvijek) ovaj posljednji polinom imati
-koeficijente iz segmenta [-<i>q</i>/2, <i>q</i>/2]. To znači da vrijedi jednakost
+Izbor parametara nam osigurava da Ä‡e (skoro uvijek) ovaj posljednji polinom imati
+koeficijente iz segmenta [-<i>q</i>/2, <i>q</i>/2]. To znaÄŤi da vrijedi jednakost
 <p align=center>
 <i>a</i> = <i>p</i> <sup><b>.</b></sup> <i>r</i> &#8859; <i>g</i> + <i>f</i> &#8859; <i>m</i> 
 &nbsp; &nbsp; (u <i>R</i>). 
@@ -474,7 +474,7 @@ Zato je
 </p>
 
 <b>Primjer 3.7: </b> 
-Ilustrirat ćemo šifriranje i dešifriranje u NTRU kriptosustavu na primjeru s malim parametrima 
+Ilustrirat Ä‡emo Ĺˇifriranje i deĹˇifriranje u NTRU kriptosustavu na primjeru s malim parametrima 
 (<i>N</i>, <i>p</i>, <i>q</i>, <i>d</i>) = (7, 3, 41, 2).
 <p>
 Bob izabire polinome
@@ -483,7 +483,7 @@ Bob izabire polinome
 &nbsp; 
 <i>g</i>(<i>x</i>) = <i>x</i><sup>6</sup> + <i>x</i><sup>4</sup> - <i>x</i><sup>2</sup> - <i>x</i>, 
 </p>
-te izračuna inverze 
+te izraÄŤuna inverze 
 <p align=center>
 <i>F</i><sub><i>p</i></sub> = <i>f</i>(<i>x</i>)<sup>-1</sup> mod <i>p</i> = 
 <i>x</i><sup>6</sup> + 2<i>x</i><sup>5</sup> + <i>x</i><sup>3</sup> + <i>x</i><sup>2</sup> + <i>x</i> + 1, &nbsp; 
@@ -491,65 +491,65 @@ te izračuna inverze
 8<i>x</i><sup>6</sup> + 26<i>x</i><sup>5</sup> + 31<i>x</i><sup>4</sup> + 21<i>x</i><sup>3</sup> 
 + 40<i>x</i><sup>2</sup> + 2<i>x</i> + 37
 </p>
-i svoj javni ključ 
+i svoj javni kljuÄŤ 
 <p align=center>
 <i>h</i>(<i>x</i>) = <i>F</i><sub><i>q</i></sub> &#8859; <i>g</i> = 
 20<i>x</i><sup>6</sup> + 40<i>x</i><sup>5</sup> + 2<i>x</i><sup>4</sup> 
 + 38<i>x</i><sup>3</sup> + 8<i>x</i><sup>2</sup> + 26<i>x</i> + 30.
 </p>
 
-Pretpostavimo da Alice želi poslati poruku 
+Pretpostavimo da Alice Ĺľeli poslati poruku 
 <p align=center>
 <i>m</i>(<i>x</i>) = -<i>x</i><sup>5</sup> + <i>x</i><sup>3</sup> + <i>x</i><sup>2</sup> - <i>x</i> + 1
 </p>
-koristeći slučajni polinom ("efemerni ključ")
+koristeÄ‡i sluÄŤajni polinom ("efemerni kljuÄŤ")
 <p align=center>
 <i>r</i>(<i>x</i>) = <i>x</i><sup>6</sup> - <i>x</i><sup>5</sup> + <i>x</i> - 1.
 </p>
-Alice računa šifrat i šalje ga Bobu: 
+Alice raÄŤuna Ĺˇifrat i Ĺˇalje ga Bobu: 
 <p align=center>
 <i>e</i>(<i>x</i>) &equiv; <i>p</i> <i>r</i>(<i>x</i>) &#8859; <i>h</i>(<i>x</i>) + <i>m</i>(<i>x</i>) 
 &equiv; 31<i>x</i><sup>6</sup> + 19<i>x</i><sup>5</sup>  + 4<i>x</i><sup>4</sup> 
 + 2<i>x</i><sup>3</sup> + 40<i>x</i><sup>2</sup> + 3<i>x</i> + 25 (mod <i>q</i>).
 </p>
-Pokažimo sada kako će Bob dešifrirati šifrat. 
-Bob najprije računa 
+PokaĹľimo sada kako Ä‡e Bob deĹˇifrirati Ĺˇifrat. 
+Bob najprije raÄŤuna 
 <p align=center>
 <i>f</i>(<i>x</i>) &#8859; <i>e</i>(<i>x</i>) &equiv; 
 <i>x</i><sup>6</sup> + 10<i>x</i><sup>5</sup> - 8<i>x</i><sup>4</sup> - <i>x</i><sup>3</sup> 
 - <i>x</i><sup>2</sup> + <i>x</i> - 1 (mod <i>q</i>), 
 </p>
 ali tako da izabere koeficijente iz sustava najmanjih ostataka po apsolutnoj vrijednosti. 
-Konačno, Bob izračuna otvoreni tekst
+KonaÄŤno, Bob izraÄŤuna otvoreni tekst
 <p align=center>
 <i>F</i><sub><i>p</i></sub> &#8859; <i>a</i> &equiv; 
 -<i>x</i><sup>5</sup> + <i>x</i><sup>3</sup> + <i>x</i><sup>2</sup> - <i>x</i> + 1 (mod <i>p</i>), 
 </p>
-(opet birajući koeficijente iz sustava najmanjih ostataka po apsolutnoj vrijednosti). 
+(opet birajuÄ‡i koeficijente iz sustava najmanjih ostataka po apsolutnoj vrijednosti). 
 <p>
 
-Šifriranje i dešifriranje kod NTRU kriptosustava je usporedive brzine kao kod RSA kriptosustava. 
-No, poznato je nekoliko mogućih napada na NTRU koji koriste LLL-algoritam za nalaženje 
-najkraćeg elementa u rešetki. Također, postoje i napadi koji koristi
-činjenicu da u NTRU-u postoje šifrati koje je nemoguće dešifrirati
-(postoji vrlo mala vjerojatnost da će neki koeficijent polinoma
+Ĺ ifriranje i deĹˇifriranje kod NTRU kriptosustava je usporedive brzine kao kod RSA kriptosustava. 
+No, poznato je nekoliko moguÄ‡ih napada na NTRU koji koriste LLL-algoritam za nalaĹľenje 
+najkraÄ‡eg elementa u reĹˇetki. TakoÄ‘er, postoje i napadi koji koristi
+ÄŤinjenicu da u NTRU-u postoje Ĺˇifrati koje je nemoguÄ‡e deĹˇifrirati
+(postoji vrlo mala vjerojatnost da Ä‡e neki koeficijent polinoma
 <nobr><i>p</i> <sup><b>.</b></sup> <i>r</i> &#8859; <i>g</i> + <i>f</i> &#8859; <i>m</i></nobr> 
 biti izvan segmenta [-<i>q</i>/2, <i>q</i>/2]).
 Zasad nije sasvim jasno koliko su ti napadi ozbiljna prijetnja za sigurnost ovog kriptosustava. 
-Dvije inačice NTRU kriptosustava, jedna nastala spajanjem kandidata iz prve runde NTRUEncrypt i 
-NTRU-HRSS-KEM te druga NTRU Prime, bile su među finalistima druge runde NIST-ovog  
-natječaja za post-kvantne kriptografske standarde, te je prva inačica prošla i u treću rundu,  
-dok se druga inačica nalazi među alternativnim kandidatima.  
+Dvije inaÄŤice NTRU kriptosustava, jedna nastala spajanjem kandidata iz prve runde NTRUEncrypt i 
+NTRU-HRSS-KEM te druga NTRU Prime, bile su meÄ‘u finalistima druge runde NIST-ovog  
+natjeÄŤaja za post-kvantne kriptografske standarde, te je prva inaÄŤica proĹˇla i u treÄ‡u rundu,  
+dok se druga inaÄŤica nalazi meÄ‘u alternativnim kandidatima.  
 <p>
 <br>
 
-Većina predloženih post-kvantnih kriptografskih algoritama su povezani ili s kodovima (poput McElieceovog) 
-ili s rešetkama (poput NTRU). Spomenimo da postoje i post-kvantni algoritmi zasnovani 
-na svojstvima izogenija supersingularnih eliptičkih krivulja, od kojih je najpoznatiji 
-protokol za razmjenu ključeva SIDH (supersingular isogeny Diffie-Hellman key exchange), 
-kojeg su predložili <font color="009900">Luca de Feo</font>, <font color="009900">David Jao</font> i 
-<font color="009900">Jerome Plut</font> 2011. godine. Inačica SIKE (Supersingular Isogeny Key Encapsulation) 
-se nalazi među alternativnim kandidatima u trećoj rundi NIST-ovog natječaja. 
+VeÄ‡ina predloĹľenih post-kvantnih kriptografskih algoritama su povezani ili s kodovima (poput McElieceovog) 
+ili s reĹˇetkama (poput NTRU). Spomenimo da postoje i post-kvantni algoritmi zasnovani 
+na svojstvima izogenija supersingularnih eliptiÄŤkih krivulja, od kojih je najpoznatiji 
+protokol za razmjenu kljuÄŤeva SIDH (supersingular isogeny Diffie-Hellman key exchange), 
+kojeg su predloĹľili <font color="009900">Luca de Feo</font>, <font color="009900">David Jao</font> i 
+<font color="009900">Jerome Plut</font> 2011. godine. InaÄŤica SIKE (Supersingular Isogeny Key Encapsulation) 
+se nalazi meÄ‘u alternativnim kandidatima u treÄ‡oj rundi NIST-ovog natjeÄŤaja. 
 
 <p>
 
@@ -557,8 +557,8 @@ se nalazi među alternativnim kandidatima u trećoj rundi NIST-ovog natječaja.
 
 <b><font size="-1" face="Verdana">
 <a href="josjavni.html">[Prethodno poglavlje]</a> &nbsp; 
-<a href="pseudoprosti.html">[Sljedeće poglavlje]</a> &nbsp;
-<a href="kriptografija.html">[Sadržaj]</a>
+<a href="pseudoprosti.html">[SljedeÄ‡e poglavlje]</a> &nbsp;
+<a href="kriptografija.html">[SadrĹľaj]</a>
 </font></b>
 
 <hr size=2 noshade>
