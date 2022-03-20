@@ -2,64 +2,63 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Algorithms for elliptic curves</title>
+<title>Algoritmi za eliptičke krivulje</title>
 
 <meta name="author" content="Andrej Dujella">
-<meta name="description" content="Algorithms for elliptic curves  
-- Graduate Course, Department of Mathematics, University of Zagreb">
-<meta name="keywords" content="elliptic curves, algorithms,
+<meta name="description" content="Algoritmi za eliptičke krivulje  
+- poslijediplomski kolegij, PMF-Matematicki odjel, Zagreb">
+<meta name="keywords" content="elipticke krivulje, algoritmi,
 number theory, cryptography, graduate course">
-<meta http-equiv="Content-Type" content="text/html; charset=windows-utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utb-8">
 
 </head>
 
 <body bgcolor="#FAEBD7">
 
-<p align=right><a href="algelip.html">Croatian</a></p>
+<p align=right><a href="algelipeng.html">English</a></p>
 <h3>Andrej Dujella:</h3>
 <p>
-<h1>Algorithms for elliptic curves</h1>
-Graduate course &nbsp; &nbsp; (2008/2009)
+<h1>Algoritmi za eliptičke krivulje</h1>
+Poslijediplomski kolegij &nbsp; &nbsp; (2008/2009)
 <hr size=2 noshade>
 
-<h3>Course description</h3>
+<h3> Opis kolegija</h3>
 <p>
 
-
-This course will cover some important algorithms for elliptic curves 
-over the field of rational numbers and over finite fields.
+U ovom kolegiju obradit će se neki važni algoritmi za
+eliptičke krivulje nad poljem racionalnih brojeva, te nad konačnim poljima.
 <p>
 
-We will describe in details the algorithms for obtaining information 
-on Mordell-Weil group of an elliptic curve of the field of rationals (torsion group, upper and lower 
-bounds for the rank, generators in case when the rank can be computed exactly). 
-Some methods for construction of high rank elliptic curves will be described, 
-and also methods for finding all integer points on elliptic curves, 
-in particular, the methods based on the knowledge of the associated Mordell-Weil group.
+Detaljno će se opisati algoritmi za dobivanje informacija o Mordell-Weilovoj grupi
+eliptičke krivulje nad poljem racionalnih brojeva (torzijska grupa, gornje i donje ocjene
+za rang, generatori grupe u slučaju kad je moguće egzaktno izračunati rang).
+Prikazat će se neke metode za konstrukciju eliptičkih krivulja relativno velikog ranga,
+a također i metode za nalaženje svih cjelobrojnih točaka na eliptičkoj krivulji,
+koje koriste poznavanje pripadne Mordell-Weilove grupe.
 <p>
 
-Concerning elliptic curves of finite fields, we will discuss efficient implementation 
-of point addition and multiplication, with special emphasis on field of characteristic 2, 
-which are important for applications in cryptography. 
-Algorithms for point counting and elliptic curve discrete logarithm problem will be described.
+Kod eliptičkih krivulja nad konačnim poljima, bit će riječi o efikasnoj implementaciji
+zbrajanja i multipliciranja točaka, s posebnim naglaskom na polja karakteristike 2,
+koja su važna za primjene u kriptografiji. Prikazat će se algoritmi
+za efikasno brojenje točaka, te algoritmi za problem diskretnog logaritma na eliptičkoj krivulji.
 <p>
 
-It is expected that this course will make the students competent for using programs and 
-program packages specialized for work with elliptic curves 
-(PARI/GP, MWRANK, MAGMA), and they will use them in solving exercises. 
+Tijekom kolegija studenti bi trebali ovladati programima i
+programskim paketima za rad s eliptičkim krivuljama
+(PARI/GP, MWRANK, MAGMA), te pomoću njih rješavati programske zadatke.
 <p>
 
-It will be assumed that the students are familiar with the basic
-notions and results on elliptic curves, at the level covered in
-the graduate course <i>Ivica Gusi&#263;: Introduction to Arithmetic of Elliptic Curves</i>
-(lecture notes (in Croatian) can be found on  
+Od studenata se očekuje poznavanje osnovnih pojmova i činjenica o eliptičkim krivuljama,
+na razini poslijediplomskog kolegija Ivice Gusića
+<i>Uvod u aritmetiku eliptičkih krivulja</i> 
+(predavanja se mogu naći na 
 <a href="http://www.math.hr/~duje/seminar.html"><tt>http://www.math.hr/~duje/seminar.html</tt></a>)
-or the standard textbook <i>Silverman, Tate: Rational Points on Elliptic Curves</i>.
+ili standardnog udžbenika Silverman-Tate <i>Rational Points on Elliptic Curves</i>.
 
 <p>
 <hr size=2 noshade>
 
-<h3>References</h3>
+<h3>Literatura</h3>
 
 <p>
 <ol>
@@ -71,9 +70,6 @@ Elliptic Curves in Cryptography</a></em>, Cambridge University Press, Cambridge,
 <li>H. Cohen: <em>A Course in Computational Algebraic Number Theory</em>,
 Springer-Verlag, New York, 1993. 
 <p>
-<li>H. Cohen: <em>Number Theory. Volume I: Tools and Diophantine Equations</em>, 
-Springer Verlag, Berlin, 2007.
-<p>
 <li>I. Connell: <em><a href="http://www.math.mcgill.ca/connell/public/ECH1/">Elliptic Curve Handbook</a></em>,
 McGill University, 1999. 
 <p>
@@ -81,7 +77,7 @@ McGill University, 1999.
 Algorithms for Modular Elliptic Curves</a></em>,
 Cambridge University Press, Cambridge, 1997. 
 <p>
-<li>A. Dujella, M. Mareti&#263;: <em><a href="http://web.math.hr/~duje/kript/kriptoknjiga.html">Kriptografija</a></em>, 
+<li>A. Dujella, M. Maretić: <em><a href="http://web.math.hr/~duje/kript/kriptoknjiga.html">Kriptografija</a></em>, 
 Element, Zagreb, 2007. 
 <p>
 <li>D. Hankerson, A. Menezes, S. Vanstone:
@@ -101,56 +97,30 @@ Springer-Verlag, 1996, 2009.
 <li>J. H. Silverman, J. Tate: <em>Rational Points on Elliptic Curves</em>,
 Springer-Verlag, Berlin, 1992. 
 <p>
-<li>N. P. Smart: <em>The Algorithmic Resolution of Diophantine
-Equations</em>, Cambridge University Press,
-Cambridge, 1998. 
-<p>
 <li>L. C. Washington: <em><a href="http://www.math.umd.edu/~lcw/ec.html">
 Elliptic Curves: Number Theory and Cryptography</a></em>,
 CRC Press, Boca Raton, 2003, 2008.
 
 </ol>
 
-<hr size=2 noshade>
-<p>
-<a href="elipticke/algelip.pdf"><b>Lecture notes</b></a> <br> 
-(in <em>pdf</em> format; in Croatian)
-<p>
-
-<hr size=2 noshade>
-<p>
-<h4><a href="elipticke/elipsem.html">Seminar topics</a></h4>
-<p>
-
-<hr size=2 noshade>
-
-<p>
-
-<h4>Homework exercises:</h4>
-<p>
-<a href="elipticke/zad1.pdf">ex1</a> &nbsp; 
-<a href="elipticke/zad2.pdf">ex2</a> &nbsp; 
-<a href="elipticke/zad3.pdf">ex3</a>
-
-<p>
-
 
 
 <hr size=2 noshade>
 
 
-<h3>Some (useful) links </h3>
+<h3>Neki (korisni) linkovi </h3>
 <blockquote>
-<a href="semeng.html">
-Seminar on Number Theory and Algebra</a> (University of Zagreb) 
+<a href="seminar.html">
+Seminar za teoriju brojeva i algebru</a> 
 <br>
-<a href="utbeng.html">Number Theory</a> - Undergraduate course (Andrej Dujella) <br>
-<a href="kripteng.html">Cryptography</a> - 
-Undergraduate course (Andrej Dujella) <br>
-<a href="ecc/eccseminar.html">Elliptic curves and 
-their applications in cryptography</a> - Student seminar (2002/2003)  <br>
-<a href="tbkripteng.html">Number Theory in Cryptography</a> - Graduate course (Andrej Dujella, 2003/2004) <br>
-<a href="diophantine.html">Diophantine Equations</a> - Graduate course (Andrej Dujella, 2006/2007) <br>
+<a href="utb.html">Teorija brojeva</a> - dodiplomski izborni kolegij <br>
+<a href="kript.html">Kriptografija</a> - 
+dodiplomski izborni kolegij <br>
+<a href="ecc/eccseminar.html">Eliptičke 
+krivulje i njihova primjena u kriptografiji</a> - 
+studentski seminar (2002/2003) <br>
+<a href="tbkript.html">Teorija brojeva u kriptografiji</a> - poslijediplomski kolegij (Andrej Dujella, 2003/2004) <br>
+<a href="diofantske.html">Diofantske jednadžbe</a> - poslijediplomski kolegij (Andrej Dujella, 2006/2007) <br>
 
 <a href="http://www.mindspring.com/~pate/course.html">Algorithms</a>  from <em>A Course in Computational Algebraic Number Theory</em> 
 (James Pate Williams) <br>
@@ -163,21 +133,19 @@ PARI/GP home page</a> <br>
 <a href="http://www.sagemath.org/">
 SAGE home page</a> <br>
 
-<a href="http://www.warwick.ac.uk/~masgaj/ftp/progs/">Cremona's MWRANK</a> <br>
-
 <a href="http://www.math.harvard.edu/~elkies/compnt.html">
 Algorithmic Number Theory: Tables and Links</a> (Noam Elkies) <br>
 
 <a href="tors/tors.html">
 High rank elliptic curves with prescribed torsion</a> (Andrej Dujella) <br>
-<a href="http://www.numbertheory.org/ntw/">Number Theory Web</a> (maintained by Keith Matthews) <br>
+<a href="http://www.numbertheory.org/ntw/">Number Theory Web</a> (održava Keith Matthews) <br>
 
-<a href="literatura.html">Recommended readings for graduate students in number theory</a> <br>
+<a href="literatura.html">Popis dostupne literature iz teorije brojeva</a> <br>
 
 </blockquote>
 <p>
 
-<b>Web pages of some courses on elliptic curves:</b> 
+<b>Web stranice nekih kolegija o eliptičkim krivuljama:</b> 
 <blockquote>
 <a href="http://web.math.hr/~duje/debrecen.html">
 Algorithmic Aspects of Elliptic Curves</a> (Andrej Dujella) 
@@ -188,7 +156,7 @@ Arithmetic of Elliptic Curves and Modular Forms</a> (Hossein Movasati)
 <a href="http://homepage.mac.com/ehgoins/ma598/">
 Elliptic Curves</a> (Edray Goins)
 <br>
-<a href="http://www.jmilne.org/math/">
+<a href="http://www.jmilne.org/math/CourseNotes/math679.html">
 Elliptic Curves</a> (Jim Milne)
 <br>
 <a href="http://www.maths.warwick.ac.uk/~miles/MA426/">
