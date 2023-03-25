@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>High rank elliptic curves with prescribed torsion over quadratic fields</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Table of elliptic curves over quadratic fields with 
+largest known ranks for curves with given torsion group">
+<meta name="keywords" content="elliptic curves, high rank, rank, 
+large rank, torsion group, quadratic fields, records, arithmetic geometry, 
+computational number theory">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+</head>
+<body bgcolor="#DDEEDD"> 
+
+<h2 align=center>High rank elliptic curves with prescribed torsion over quadratic fields</h2>
+
+<center>
+<font face="Arial,Helvetica,sans-serif" size="-1">
+Maintained by 
+<a href="../index.html">Andrej Dujella</a>, 
+University of Zagreb
+</font></center>
+
+
+<hr size=2 noshade>
+<p>
+
+Let <i>T</i> be one of 26 admissible torsion groups for 
+an elliptic curve over a quadratic field [KM,Ka]. <br>
+We define <i>B</i>(<i>T</i>) as the supremum of the ranks
+of elliptic curves defined over any quadratic field and having torsion group <i>T</i> 
+(for the trivial torsion group we put <i>T</i> = 0). <br>
+In the following table, in the second column we give the best known  
+lower bounds for <i>B</i>(<i>T</i>), <br> 
+while the third column gives
+the values <i>d</i> (smallest in absolute value) of the corresponding quadratic number fields 
+<nobr><b>K</b> = <b>Q</b>(&radic;<i>d</i>).</nobr> <br>
+Values in the brackets in the second column are conditional, assuming
+the Parity Conjecture.
+<p>
+
+<pre>
+______________________________________________________________________________________________________
+
+    <i>T</i>          <i>B</i>(<i>T</i>)>=	                 <i>d</i>              			References
+______________________________________________________________________________________________________
+
+    0            30                     -3					[Na,El4], [El1,El3,Me]
+
+   <b>Z</b>/2<b>Z</b>          28        	        -1					[Wa,ACP,ADJBP]
+
+   <b>Z</b>/3<b>Z</b>          22		        -3					[Na,ER]       
+
+   <b>Z</b>/4<b>Z</b>          15 (16)            -25689       				[ADJBP], [Na], [EK,Me]   
+
+   <b>Z</b>/5<b>Z</b>          11        	         *					[Kl,Me]
+
+   <b>Z</b>/6<b>Z</b>          15                 330374    					[EK,Vo]
+
+   <b>Z</b>/7<b>Z</b>           8        	         *					[EK,Me]
+
+   <b>Z</b>/8<b>Z</b>           9 (10)              -227 (68434553555382)			[ADJBP], [DP,Vo]
+
+   <b>Z</b>/9<b>Z</b>           8        	    408729 					[Du,Vo]
+
+   <b>Z</b>/10<b>Z</b>          7        	     -2495  					[ADJBP]
+
+   <b>Z</b>/11<b>Z</b>          2 (3)		       105 (151)				[ADJBP], [Vo]
+
+   <b>Z</b>/12<b>Z</b>          7		      2014					[ADJBP]
+
+   <b>Z</b>/13<b>Z</b>          2		       193					[Ra]
+
+   <b>Z</b>/14<b>Z</b>          3		       430					[HH]
+
+   <b>Z</b>/15<b>Z</b>          2		       190					[Vo]
+
+   <b>Z</b>/16<b>Z</b>          3 (4)                205 (17381446)				[Na], [Vo], [HHVZ]
+
+   <b>Z</b>/18<b>Z</b>          2		      9049					[BBDN], [Vo]
+
+<b>Z</b>/2<b>Z</b> &times; <b>Z</b>/2<b>Z</b>      20 (21)               <i>d</i><sub>37</sub>					[EK,Vo]
+ 
+<b>Z</b>/2<b>Z</b> &times; <b>Z</b>/4<b>Z</b>      13 (14)	    -83201 (186503453333275772907657409)	[ADJBP], [EK,Vo]
+
+<b>Z</b>/2<b>Z</b> &times; <b>Z</b>/6<b>Z</b>      10 	            624341					[ADJBP]
+
+<b>Z</b>/2<b>Z</b> &times; <b>Z</b>/8<b>Z</b>       8               31230597					[ADJBP]
+
+<b>Z</b>/2<b>Z</b> &times; <b>Z</b>/10<b>Z</b>      4 (5)               4063 (55325286553)			[BBDN], [ADJBP], [Vo] 
+
+<b>Z</b>/2<b>Z</b> &times; <b>Z</b>/12<b>Z</b>      4                2413099					[BBDN], [At,Vo]
+
+<b>Z</b>/3<b>Z</b> &times; <b>Z</b>/3<b>Z</b>       8		        -3					[Du,Pe]
+
+<b>Z</b>/3<b>Z</b> &times; <b>Z</b>/6<b>Z</b>       6		        -3					[JB], [At,Vo], [At,Pe,Vo]
+
+<b>Z</b>/4<b>Z</b> &times; <b>Z</b>/4<b>Z</b>       8		        -1					[Pe]
+
+                                                  
+______________________________________________________________________________________________________
+
+</pre>
+
+<p>
+
+<i>d</i><sub>37</sub> = 3466878976650056958751531193538841866
+<p>
+The marks * in the table refer to the curves obtained by an application 
+of Mestre's general construction <br>
+(he proved that for any elliptic curve <i>E</i> over <b>Q</b> there exist infinitely 
+many quadratic twists with rank &ge; 2) <br>
+which produces quadratic fields with huge discriminants.
+
+
+<p>
+<hr size=2 noshade>
+
+
+<h3>References:</h3>
+
+[ACP] &nbsp; J. Aguirre, F. Castaneda, J. C. Peral, 
+<em><a href="http://www.ams.org/journals/mcom/2004-73-245/S0025-5718-03-01547-3/S0025-5718-03-01547-3.pdf">
+High rank elliptic curves with torsion group <b>Z</b>/(2<b>Z</b>)</a></em>, 
+Math. Comp. <b>73</b> (2004), 323-331.
+<p>
+[ADJBP] &nbsp; J. Aguirre, A. Dujella, M. Jukic Bokun, J. C. Peral, 
+<em><a href="http://web.math.pmf.unizg.hr/~duje/pdf/RankQFweb.pdf">
+High rank elliptic curves with prescribed torsion group over quadratic fields</a></em>, 
+Period. Math. Hungar. <b>68</b> (2014), 222-230.
+<p>
+[At] &nbsp; Y. AttarBashi, Personal communication, 2021, 2022.
+<p>
+[BBDN] &nbsp; J. Bosman, P. Bruin, A. Dujella and F. Najman, 
+<em><a href="http://web.math.pmf.unizg.hr/~duje/pdf/ranknf.pdf">
+Ranks of elliptic curves with prescribed torsion over number fields</a></em>, 
+Int. Math. Res. Not. IMRN <b>2014 (11)</b> (2014), 2885-2923.
+<p>
+[Du] &nbsp; A. Dujella, Personal communication, 2001, 2022.
+<p>
+[DJB] &nbsp; A. Dujella and M. Jukic Bokun, 
+<em><a href="http://web.math.pmf.unizg.hr/~duje/pdf/dujemirelaz4z4a.pdf">
+On the rank of elliptic curves over <b>Q</b>(i) with
+torsion group <b>Z</b>/4<b>Z</b> &times; <b>Z</b>/4<b>Z</b></a></em>, Proc. Japan Acad. Ser. A Math. Sci. 
+<b>86</b> (2010), 93-96.   
+<p>
+[DJBS] &nbsp; A. Dujella, M. Jukic Bokun and I. Soldo, 
+<em><a href="http://web.math.pmf.unizg.hr/~duje/pdf/AD_MJB_IS.pdf">
+On the torsion group of elliptic curves induced by Diophantine triples over quadratic fields</a></em>, 
+Rev. R. Acad. Cienc. Exactas Fis. Nat. Ser. A Math. RACSAM <b>111</b> (2017), 1177-1185.    
+<p>
+[DN] &nbsp; A. Dujella and F. Najman, 
+<em><a href="http://web.math.pmf.unizg.hr/~duje/pdf/cecc11paper.pdf">
+Elliptic curves with large torsion and positive rank over number fields of small degree and ECM factorization</a></em>, 
+Period. Math. Hungar. <b>65</b> (2012), 193-203. 
+<p>
+[DP] &nbsp; A. Dujella and J. C. Peral, 
+<em><a href="https://web.math.pmf.unizg.hr/~duje/pdf/DujellaPeralConstruction.pdf">
+Construction of high rank elliptic curves</a></em>, J. Geom. Anal. <b>31</b> (2021), 6698-6724.
+<p>
+[El1] &nbsp; N. D. Elkies, <em><a href="https://listserv.nodak.edu/cgi-bin/wa.exe?A2=ind0605&L=NMBRTHRY&P=R2">
+<b>Z</b><sup>28</sup> in E(<b>Q</b>), etc.</a></em>, 
+Number Theory Listserver, May 2006.
+<p>
+[El2] &nbsp; N. D. Elkies, Personal communication, 2006, 2009.
+<p>
+[El3] &nbsp; N. D. Elkies, <em><a href="http://arxiv.org/abs/0709.2908">
+Three lectures on elliptic surfaces and curves of high rank</a></em>, 
+Lecture notes, Oberwolfach, 2007, arXiv:0709.2908.
+<p>
+[El4] &nbsp; N. Elkies, <em><a href="https://listserv.nodak.edu/cgi-bin/wa.exe?A2=ind0912&L=NMBRTHRY&F=&S=&P=14012">
+<i>j</i> = 0; rank 15; also 3-rank 6 and 7 in real and imaginary quadratic fields</a></em>, 
+Number Theory Listserver, Dec 2009.
+<p>
+[EK] &nbsp; N. D. Elkies and Z. Klagsbrun, <em><a href="https://msp.org/obs/2020/4-1/p15.xhtml">New rank records 
+for elliptic curves having rational torsion</a></em>, 
+Proceedings of the Fourteenth Algorithmic Number Theory Symposium, Mathematical Sciences Publishers, Berkeley, 2020, 
+pp. 233-250.
+<p>
+[ER] &nbsp; N. D. Elkies and N. F. Rogers, <em><a href="http://arxiv.org/abs/math/0403116">
+Elliptic curves <i>x</i><sup>3</sup> + <i>y</i><sup>3</sup> = <i>k</i> of 
+high rank</a></em>, Proceedings of ANTS-6 (D. Buell, ed.), 
+Lecture Notes in Comput. Sci. <b>3076</b> (2004), 184-193.
+<p>
+[Er] &nbsp; Y. G. Eroshkin, Personal communication, 2009, 2011.
+<p>
+[Fi] &nbsp; T. A. Fisher, Personal communication, 2009.
+<p>
+[HH] &nbsp; L. Halbeisen and N. Hungerb&uuml;hler, Personal communication, 2020.
+<p>
+[HHVZ] L. Halbeisen, N. Hungerb&uuml;hler, A. Shamsi Zargar, M. Voznyy, 
+<em><a href="https://arxiv.org/abs/2106.06861">A geometric approach to elliptic curves with torsion groups 
+<b>Z</b>/10<b>Z</b>, <b>Z</b>/12<b>Z</b>, <b>Z</b>/14<b>Z</b>, and <b>Z</b>/16<b>Z</b></a></em>, 
+Rad Hrvat. Akad. Znan. Umjet. Mat. Znan.. to appear.
+<p>
+[JB] &nbsp; M. Jukic Bokun, 
+<em><a href="http://www.mathos.unios.hr/~mirela/papers/Q(sqrt(-3)).pdf">
+On the rank of elliptic curves over <b>Q</b>(&radic;-3) with
+torsion groups <b>Z</b>/3<b>Z</b> &times; <b>Z</b>/3<b>Z</b> and <b>Z</b>/3<b>Z</b> &times; 
+<b>Z</b>/6<b>Z</b></a></em>, 
+Proc. Japan Acad. Ser. A Math. Sci. <b>87</b> (2011), 61-64.  
+<p>
+[JB2] &nbsp; M. Jukic Bokun, 
+<em><a href="http://www.mathos.unios.hr/~mirela/papers/Paper_Jukic_Bokun.pdf">
+Elliptic curves over quadratic fields with fixed torsion subgroup and positive rank</a></em>, 
+Glas. Mat. Ser. III <b>47</b> (2012), 277-284.
+<p>
+[Ka] &nbsp; S. Kamienny, <em><a href="http://link.springer.com/article/10.1007%2FBF01232025">
+Torsion points on elliptic curves and <i>q</i>-coefficients of modular forms</a></em>, 
+Invent. Math. <b>109</b> (1992), 221-229.
+<p>
+[KM] &nbsp; M. A. Kenku and F. Momose, <em><a href="http://www.math.uga.edu/~pete/KenkuMomose88.pdf">
+Torsion points on elliptic curves defined over quadratic fields</a></em>,
+Nagoya Math. J. <b>109</b> (1988), 125-149.
+<p>
+[Kl] &nbsp; Z. Klagsbrun, Personal communication, 2020.
+<p>
+[Ku] &nbsp; L. Kulesz, <em>Arithmetique des courbes algebriques de genre
+au moins deux</em>, These de doctorat, Universite Paris 7, 1998. 
+<p>
+[Le1] &nbsp; O. Lecacheux, <em><a href="http://www.sciencedirect.com/science/article/pii/S0764444200017754">
+Rang de courbes elliptiques sur <b>Q</b> avec un groupe 
+de torsion isomorphe a <b>Z</b>/5<b>Z</b></a></em>, 
+C. R. Acad. Sci. Paris Ser. I Math. 
+<b>332</b> (2001), 1-6.
+<p>
+[Le2] &nbsp; O. Lecacheux, <em><a href="http://www.labmath.uqam.ca/~annales/volumes/28-12/PDF/145-151.pdf">
+Rang de courbes elliptiques dont le groupe de torsion 
+est non trivial</a></em>, Ann. Sci. Math. Quebec <b>28</b> (2004), 145-151.  
+<p>
+[Me] &nbsp; J.-F. Mestre, <em><a href="http://arxiv.org/pdf/alg-geom/9206007.pdf">
+Rang des courbes elliptiques d'invariant donn&eacute;</a></em>, 
+C. R. Acad. Sci. Paris <b>314</b> (1992), 919-922.
+<p>
+[Na] &nbsp; F. Najman, <em><a href="http://web.math.pmf.unizg.hr/~fnajman/rankrec.pdf">
+Some rank records for elliptic curves with prescribed torsion over quadratic fields</a></em>, 
+An. Stiint. Univ. "Ovidius" Constanta Ser. Mat. <b>22</b> (2014), 215-220.
+<p>
+[Pe] &nbsp; V. Petricevic, Personal communication, 2022.
+<p>
+[Ra] &nbsp; F. P. Rabarison, <em><a href="http://journals.impan.pl/cgi-bin/doi?aa144-1-3">
+Structure de torsion des courbes elliptiques
+sur les corps quadratiques</a></em>, Acta Arith. <b>144</b> (2010), 17-52.
+<p>
+[SZ] &nbsp; U. Schneiders and H.G. Zimmer, <em>The rank of elliptic curves 
+upon quadratic extensions</em>, in: Computational Number Theory 
+(A. Petho, H.C. Williams, H.G. Zimmer, eds.), de Gruyter, Berlin, 
+1991, pp. 239-260.
+<p>
+<!-- [vB] &nbsp; M. van Beek, <em><a href="https://core.ac.uk/download/pdf/35279272.pdf">
+Computing the Cassels-Tate pairing</a></em>, PhD thesis, University of Cambridge, 2015.
+<p> -->
+[Vo] &nbsp; M. Voznyy, Personal communication, 2021, 2022.
+<p>
+[Wa] &nbsp; M. Watkins, Personal communication, 2005.
+<p>
+
+
+<p>
+<hr size=2 noshade>
+<p>
+<font size="+1">
+<a href="tors.html">High rank elliptic curves with prescribed torsion</a> 
+</font>
+<p>
+<font size="+1">
+<a href="generic.html">Infinite families of elliptic curves with high 
+rank and prescribed torsion</a> 
+</font>
+<p>
+<font size="+1">
+<a href="rankhist.html">History of elliptic curves rank records</a> 
+</font>
+<p>
+<hr size=2 noshade>
+
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+
+
+
+</body>
+</html>
