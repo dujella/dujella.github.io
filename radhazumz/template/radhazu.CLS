@@ -645,7 +645,7 @@
 %\newcommand{\subjclassname}{\textup{1991} Mathematics Subject
 %     Classification}
 \newcommand{\subjclassname}{%
-  \textup{2010} Mathematics Subject Classification}
+  \textup{2020} Mathematics Subject Classification}
 \@xp\let\csname subjclassname@1991\endcsname \subjclassname
 \@namedef{subjclassname@2000}{%
   \textup{2000} Mathematics Subject Classification}
