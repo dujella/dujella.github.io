@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Algoritmi u teoriji brojeva</title>
+
+<meta name="author" content="Andrej Dujella">
+<meta name="description" content="Algoritmi u teoriji brojeva, 
+PMF - Matematicki odsjek, Zagreb">
+<meta name="keywords" content="teorija brojeva, kriptografija, algoritmi, faktorizacija, 
+prosti brojevi">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.6">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body bgcolor="#FAEBD7">
+
+<!-- <p align=right><a href="ellcrypt.html">English</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p> -->
+
+<h1>Algoritmi u teoriji brojeva</h1>
+Izborni kolegij na Diplomskom sveučilišnom studiju Računarstvo i matematika   
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 0+0 &nbsp  3+0 <br>
+
+<hr size=2 noshade>
+
+<b>Raspored:</b> četvrtak 12-15 u 004  
+
+<hr size=2 noshade>
+
+<b>Završni pismeni ispit</b> će se održati u četvrtak 13.6.2024. u 12 sati (u terminu zadnjih predavanja) u predavaonici 004. <br>
+Ispit se piše 2 sata. Sastojat će se od 4 zadatka od koji svaki donosi 10 bodova. 
+Zadaci će biti iz gradiva 3. i 4. poglavlja u skripti (Testiranje i dokazivanje prostosti, Metode faktorizacije). 
+Primjeri zadataka koji se mogu očekivati na završnom ispitu mogu se naći dnu web stranice kolegija. <br>
+Na testu će pisati: "Dozvoljeno je korištenje džepnog kalkulatora, te dva papira s formulama. Kalkulatori se mogu koristiti za standardne operacije, ali nije dozvoljeno korištenje gotovih funkcija za algoritme iz teorije brojeva." 
+<br>
+<b>Prijava ispita za "predrok" 13.6.2024.</b> moguća je u ISVU-u do 10.6.2024 u 12:00.
+Studenti koji su iz zadaća i aktivnosti na nastavi sakupili dovoljan broj bodova za prolaznu ocjenu nisu obavezni izaći na završni ispit ako su zadovoljni ocjenom, no također moraju prijaviti ispit kako bi im se mogla upisati ocjena (na predroku ili na nekom od narednih rokova 24.6.2024. ili 8.7.2024.). Studenti koji žele da im se upiše ocjena bez polaganja završnog ispita, trebaju to javiti nastavniku nakon što prijave ispit.
+
+<hr size=2 noshade>
+
+U četvrtak 14.3.2024. studenti će na e-mail adresu navedenu u sustavu Merlin dobiti 1. zadaću. <br>
+Rješenja treba poslati do 28.3.2024. na <tt>duje&#064;math.hr</tt>, po mogućnosti kao jedan pdf file. 
+<p>
+U četvrtak 28.3.2024. studenti će na e-mail adresu navedenu u sustavu Merlin dobiti 2. zadaću. <br>
+Rješenja treba poslati do 11.4.2024. na <tt>duje&#064;math.hr</tt>, po mogućnosti kao jedan pdf file. 
+<p>
+U četvrtak 11.4.2024. studenti će na e-mail adresu navedenu u sustavu Merlin dobiti 3. zadaću. <br>
+Rješenja treba poslati do 9.5.2024. na <tt>duje&#064;math.hr</tt>, po mogućnosti kao jedan pdf file. 
+<p>
+U četvrtak 9.5.2024. studenti će na e-mail adresu navedenu u sustavu Merlin dobiti 4. zadaću. <br>
+Rješenja treba poslati do 23.5.2024. na <tt>duje&#064;math.hr</tt>, po mogućnosti kao jedan pdf file. 
+<p>
+
+<hr size=2 noshade>
+
+<a href="https://web.math.pmf.unizg.hr/~duje/algortb/rezultati/Algoritmi_u_teoriji_brojeva-2024.pdf">
+<b>Bodovi iz završnog ispita, zadaća i aktivnosti na nastavi</b></a> <br>
+Ako ima studenata koji ne žele prihvatiti ostvarenu ocjenu, molim da mi to jave do petka 14.6.2024. u 14 sati. <br>
+Molim da mi se do istog roka jave i studenti koji žele imati uvid u završni ispit.
+
+
+<hr size=2 noshade>
+
+Cilj ovog kolegija je osposobiti studente za razumijevanje uloge teorije brojeva u suvremenoj računalnoj kriptografiji 
+te izvod, primjenu i implementaciju algoritama za rješavanje problema s kongruencijama, 
+testiranje prostosti i faktorizacije velikih prirodnih brojeva. 
+<p>
+Kolegij nema formalnih kolegija prethodnika. Za uspješno praćenje kolegija,  
+poželjno je da je položen kolegij Teorija brojeva s preddiplomskog studija matematike. 
+
+<hr size=2 noshade>
+
+<a href="https://www.youtube.com/playlist?list=PLXEF_9cPvHNSRxjh2ka8jmXl7WbcpOH76">Snimke predavanja iz akad. god. 2020/2021</a>
+
+<hr size=2 noshade>
+
+
+<h3> Sadržaj kolegija</h3>
+<p>
+<em>Osnovni algoritmi u teoriji brojeva.</em> 
+Algoritmi za množenje velikih prirodnih brojeva. Euklidov algoritam. Kineski teorem o ostacima. Verižni razlomci. 
+Kvadratne kongruencije. Kvadrati i kvadratni korijeni. LLL-algoritam. 
+<p>
+<em>Kriptografija javnog ključa.</em> Kriptosustavi zasnovani na problemu faktorizacije. 
+Kriptosustavi zasnovani na problemu diskretnog logaritma. 
+Primjena LLL-algoritma u kriptoanalizi.  
+<p>
+<em>Testiranje i dokazivanje prostosti.</em> Distribucija prostih brojeva. Pseudoprosti brojevi. 
+Miller-Rabinov, AKS i drugi testovi prostosti.
+<p>
+<em>Metode faktorizacije.</em> Pollardova &rho;-metoda. Pollardova <i>p</i>-1 metoda. 
+Metoda verižnog razlomka. Metoda kvadratnog sita.
+<p>
+
+<hr size=2 noshade>
+
+
+<h3>Osnovna literatura</h3>
+
+<p>
+<ol>
+<li> A. Dujella, M. Maretić: <em><a href="kript/kriptoknjiga.html">Kriptografija</a></em>, 
+Element, Zagreb, 2007.
+<p>
+<li> A. Dujella: <em><a href="teorijabrojevaknjiga.html">Teorija brojeva</a></em>, 
+Školska knjiga, Zagreb, prvo  izdanje 2019, drugo izdanje 2024.
+<p>
+<li> A. Dujella: <em><a href="numbertheorybook.html">Number Theory</a></em>, 
+Školska knjiga, Zagreb, 2021. 
+<p>
+</ol>
+
+<h3>Dodatna literatura</h3>
+
+<p>
+<ol>
+
+<li> H. Cohen: <em>A Course in Computational Algebraic Number Theory</em>, Springer-Verlag, 1993.
+<p>
+<li> R. Crandall, C. Pomerance: <em>Prime Numbers. A Computational Perspective</em>, Springer-Verlag, 2001.
+<p>
+<li> A. Das: <em>Computational Number Theory</em>, CRC Press, 2013.
+<p>
+<li> N. Koblitz: <em>A Course in Number Theory and Cryptography</em>, Springer-Verlag, 1994. 
+<p>
+<li> A. J. Menezes, P. C. Oorschot, S. A. Vanstone: <em>Handbook of Applied Cryptography</em>, CRC Press, 1996.
+<p>
+<li> D. R. Stinson: <em>Cryptography. Theory and Practice</em>, CRC Press, 2005.
+ 
+<p>
+
+</ol>
+
+<hr size=2 noshade>
+<p>
+<a href="algortb/algortb.pdf"><b>Algoritmi u teoriji brojeva, skripta</b> </a> <br> 
+(u <em>pdf</em> formatu)
+<p>
+<a href="algortb/parilll.txt">Primjeri u PARI/GP</a> 
+<p>
+
+<hr size=2 noshade>
+
+<h3>Način polaganja ispita:</h3>
+
+<b>Domaće zadaće:</b> Bit će četiri domaće zadaće (koje će se bodovati). 
+Rok za predaju zadaće će biti u pravilu dva tjedna. 
+Maksimalan broj bodova na svakoj zadaći je 15.
+<br>
+<b>Aktivnost na nastavi:</b> Na nastavi će se zadavati zadaci za samostalno rješavanje. Studenti koji budu najuspješniji 
+u rješavanju tih zadataka, dobit će u pravilu za svaki zadatak po 5 bodova.
+Maksimalan broj bodova koji će se moći sakupiti u ovoj komponenti je 20. 
+<br>
+<b>Kolokviji i završni ispit:</b> Neće biti kolokvija. Završni ispit je pismeni. 
+Zadaci će biti iz onih poglavlja koja nisu bila 
+obuhvaćena domaćim zadaćama. 
+Nema uvjeta za pristup završnom ispitu. 
+Maksimalan broj bodova koji je moguće dobiti na završnom ispitu je 40. <br>
+<b>Zaključivanje ocjene:</b> Zbrojit će se bodovi iz domaćih zadaća (max. 60), 
+aktivnosti na nastavi (max. 20) i završnog ispita (max. 40). <br>
+<b>Ocjene:</b> &nbsp; &ge; 85 bodova - ocjena 5; &nbsp; &ge; 70 bodova - ocjena 4; 
+&nbsp; &ge; 55 bodova - ocjena 3; &nbsp; &ge; 40 bodova - ocjena 2; &nbsp; &lt; 40  bodova - ocjena 1. 
+
+<p>
+<hr size=2 noshade>
+<p>
+
+<a href="http://degiorgi.math.hr/forum/viewtopic.php?t=21736"><font size="+1">Obavijesti na web forumu</font></a> kolegija "Kriptografija" 
+<p>
+
+<a href="kriptsig.html"><b>Kriptografija i sigurnost mreža</b></a> - kolegij na diplomskom studiju računarstva
+<p>
+
+<a href="elkripto.html"><b>Eliptičke krivulje u kriptografiji</b></a> - kolegij na diplomskom studiju računarstva i teorijske matematike
+<p>
+
+<a href="utb.html"><b>Teorija brojeva</b></a> 
+- kolegij na preddiplomskom studiju
+<p>
+
+<a href="utbprof.html"><b>Elementarna teorija brojeva</b></a> 
+- kolegij na preddiplomskom studiju
+<p>
+
+<a href="algelip.html"><b>Algoritmi za eliptičke krivulje</b></a> - poslijediplomski kolegij (2008/2009) 
+<p>
+
+<a href="tbkript.html"><b>Teorija brojeva u kriptografiji</b></a> - poslijediplomski kolegij (2003/2004) 
+<p>
+
+<a href="daproxprim.html"><b>Diofantske aproksimacije i primjene</b></a> - poslijediplomski kolegij (2011/2012) 
+<p>
+
+<a href="ecc/eccseminar.html"><b>Studentski seminar - Eliptičke krivulje i njihova primjena u 
+kriptografiji</b></a> (2002/2003)
+<p>
+
+<a href="literatura.html">Popis dostupne literature iz teorije brojeva</a> 
+<p>
+
+<a href="http://pari.math.u-bordeaux.fr/">
+PARI/GP home page</a> 
+<p>
+
+<a href="https://pari.math.u-bordeaux.fr/gpwasm.html">
+PARI/GP in browser</a>
+<p>
+
+<a href="https://web.math.pmf.unizg.hr/~vpetrice/seminar/Seminar.pdf">
+Traženje eliptičkih krivulja velikog ranga u programskom paketu PARI/GP</a> (Vinko Petričević)
+<p>
+
+<a href="https://sagecell.sagemath.org/">
+SageMathCell</a>
+<p>
+
+<a href="http://magma.maths.usyd.edu.au/calc/">MAGMA Calculator</a> 
+<p>
+
+<hr size=2 noshade>
+<p>
+
+<h4>Domaće zadaće i završni ispiti:</h4>
+<p>
+2020/2021:
+<a href="algortb/zad211.pdf">zad1</a>,
+<a href="algortb/zad212.pdf">zad2</a>,
+<a href="algortb/zad213.pdf">zad3</a>,
+<a href="algortb/zad214.pdf">zad4</a>, 
+<a href="algortb/algortb21.pdf">završni</a> 
+<p>
+2021/2022:
+<a href="algortb/zad221.pdf">zad1</a>,
+<a href="algortb/zad222.pdf">zad2</a>,
+<a href="algortb/zad223.pdf">zad3</a>,
+<a href="algortb/zad224.pdf">zad4</a>, 
+<a href="algortb/algortb22a.pdf">završni</a>
+<p>
+2022/2023:
+<a href="algortb/zad231.pdf">zad1</a>,
+<a href="algortb/zad232.pdf">zad2</a>,
+<a href="algortb/zad233.pdf">zad3</a>,
+<a href="algortb/zad234.pdf">zad4</a>, 
+<a href="algortb/algortb23a.pdf">završni</a>
+
+
+
+<p>
+<hr size=2 noshade>
+
+
+
+<a href="index.html"><em>Andrej Dujella</em> home page</a>
+
+<!-- Start eXTReMe Non Public Tracker Code V3/5
+Login:    duje
+Help:     https://www.extremetracking.com -->
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+location.protocol=="https:"?EXprot="https":EXprot="http";
+top.document.referrer?EXref=top.document.referrer:EXref=EXd.referrer;
+EXd.write("<img src="+EXprot+"://nht-2.extreme-dm.com",
+"/n2.g?login=duje&amp;url="+escape(document.URL)+"&amp;pv=&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXref)+" height=1 width=1>");//-->
+</script><noscript><div id="nneXTReMe"><img height="1" width="1" alt=""
+src="http://nht-2.extreme-dm.com/n2.g?login=duje&amp;url=nojs&amp;j=n&amp;jv=n&amp;pv=" />
+</div></noscript>
+<!-- End eXTReMe Non Public Tracker Code -->
+
+<script src="https://web.math.pmf.unizg.hr/lib/js/accessibility.min.js"></script>
+
+</body>
+</html>
