@@ -43,7 +43,7 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <p>
 Page 10, line 1: The claim "Moreover, the converse statement also holds." and its proof are not correct 
-(they are imprecise), since the proof uses a stonger version of the axiom (2), 
+(they are imprecise), since the proof uses a stronger version of the axiom (2), 
 that every positive integer other than 1 has a predecessor. 
 See e.g. <br>
 L.-D. &Ouml;hman, <i>Are induction and well-ordering equivalent?</i>, Math. Intelligencer <b>41</b> (2019), no. 3, 33-40. <br>
@@ -64,7 +64,7 @@ Page 37, line -8: Instead of "(1601-1665)" it should probably be "(1607-1665)"
 <p>
 Page 38: The largest known Mersenne prime number is <i>M</i><sub>136279841</sub>. 
 It is also the largest currently known prime number (it has 41 024 320 decimal digits, 
-and it was discoved by Luke Durant in the frame of the project GIMPS in October 2024). 
+and it was discovered by Luke Durant in the frame of the project GIMPS in October 2024). 
 <p>
 
 <font size="+1">2.4 Exercises</font>
@@ -93,6 +93,9 @@ Page 98, line 12: In the first product, instead of <i>p</i> it should be <i>P</i
 <font size="+1">4.5 Divisibility of Fibonacci numbers</font>
 <p>
 Page 100, line 18: Instead of "Example 4.12" it should be "Proposition 4.12". (Thanks to Alejandra Alvarado.)
+<p>
+Page 100, line -10: The largest known prime Fibonacci number is now <i>F</i><sub>201107</sub>, 
+and it has 42 029 digits. It was proved prime by ECPP in September 2023.
 <p>
 
 <font size="+1">4.6 Exercises</font>
@@ -125,7 +128,7 @@ Page 234, line 16: Instead of "<i>j</i> = 1...,<i>m</i>" it should be "<i>j</i> 
 (Thanks to Tomislav Pejkovi&#263;.) 
 <p>
 
-<font size="+1">8.9 LLL algoritam</font>
+<font size="+1">8.9 LLL algorithm</font>
 
 <p>
 Page 241, line -6: Instead of "||<i>b</i><sub>1</sub>||" it should be "<i>b</i><sub>1</sub>". 
@@ -234,7 +237,7 @@ is 581.
 <p>
 Page 469: Elementary proofs of the associative law can be found in the papers: <br>
 S. Friedl, <i>An elementary proof of the group law for elliptic curves</i>, Groups Complex. Cryptol. <b>9</b> (2017),  117-123. <br>
-S. Zwegers, <i>On the associativity of the addition on elliptic curves</i>, preprint, 2024. 
+S. Zwegers, <i>An elementary approach to the group law on elliptic curves</i>, Arch. Math. (Basel) <b>123</b> (2024), 477-486. 
 <p>
 
 <font size="+1">15.4 Canonical height and Mordell-Weil theorem</font>
@@ -245,7 +248,7 @@ Page 503: In Example 15.8, instead of <i>h</i><sup>^</sup>(2<sup><i>n</i></sup><
 
 <font size="+1">15.5 Rank of elliptic curves</font>
 <p>
-Page 506: The current recond for the rank of elliptic curves over <b>Q</b> is the curve with rank &ge; 29 
+Page 506: The current record for the rank of elliptic curves over <b>Q</b> is the curve with rank &ge; 29 
 found by N. Elkies and Z. Klagsbrun in August 2024: 
 <pre>
 y<sup>2</sup> + xy = x<sup>3</sup> - 27006183241630922218434652145297453784768054621836357954737385x  
@@ -256,6 +259,9 @@ Tables on p.506 and p.519 should be updated accordingly.
 <p>
 Page 512, line -10: Instead of <i>b</i>'<sub><i>i</i></sub> it should be <i>b</i>&tilde;'<sub><i>i</i></sub>. 
 (Thanks to Tomislav Pejkovi&#263;.) 
+<p>
+<p>
+Page 513, line -1: Instead of "larger than 28" it should be "larger than 29". 
 <p>
 Page 515, line 19: Instead of "rank 14" it should be "rank &ge; 14". 
 <p>
@@ -294,9 +300,16 @@ Page 533, line -4; page 534, lines 1 and 3: Instead of "<i>E</i>(<b>F</b><sub><i
 
 <font size="+1">15.8 Applications of elliptic curves in cryptography</font>
 <p>
+Page 543, line 10: Instead of "greater than 28" it should be "greater than 29".
+<p>
+<p>
+Page 543: The comparison of 1024-bit RSA with 160-bit elliptic-curve keys should be understood 
+as an old 80-bit security-level comparison. Current recommendations use larger key sizes; 
+for example, NIST SP 800-57 Rev. 5 lists 2048-bit RSA and elliptic-curve keys of size 224–255 bits for 112-bit security strength.
+<p>
 Page 544, line 12: In August 2022, Castryck and Decru proposed an efficient attack to SIDH in the paper <br>
-W. Castryck, T. Decru, <i>An efficient key recovery attack on SIDH (preliminary version)</i>, 
-Cryptology ePrint Archive, Report 2022/975, 2022. <tt>http://eprint.iacr.org/2022/975</tt>.
+W. Castryck, T. Decru, <i>An efficient key recovery attack on SIDH</i>, 
+Lecture Notes in Comput. Sci. <b>14008</b>, Springer, Cham, 2023, pp. 423-447.
 <p>
 
 <font size="+1">15.10 Elliptic curve factorization method</font>
@@ -349,7 +362,7 @@ Reference [53] is published as: <br>
 N. C. Bonciocat, M. Cipu, M. Mignotte,
 <i>There is no Diophantine <i>D</i>(-1)-quadruple</i>, J. London Math. Soc. <b>105</b> (2022), 63-99.
 <p>
-Reference [67] is publishes as: <br>
+Reference [67] is published as: <br>
 Y. Bugeaud, A. Dujella, W. Fang, T. Pejkovi&#263;, B. Salvy, <i>Absolute root separation</i>,
 Experiment. Math. <b>31</b> (2022), 806-813.
 <p>
