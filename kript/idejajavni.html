@@ -64,10 +64,10 @@ zasnovano na činjenici da je u nekim grupama potenciranje puno jednostavnije od
 <p>
 Pretpostavimo da se osobe A i B  žele dogovoriti o jednom tajnom 
 slučajnom elementu u cikličkoj grupi <i>G</i>, kojeg bi onda poslije 
-mogli koristi kao ključ za šifriranje u nekom simetričnom 
+mogli koristiti kao ključ za šifriranje u nekom simetričnom 
 kriptosustavu.  Oni taj svoj dogovor moraju provesti preko nekog 
-nesigurnog komunikacijskog kanala, bez da su prethodno razmijenili bilo 
-kakvu informaciju. Jedina informacija koju imaju jest 
+nesigurnog komunikacijskog kanala, a da pritom nisu prethodno razmijenili nikakvu tajnu informaciju. 
+Jedina informacija koju imaju jest 
 grupa <i>G</i> i njezin generator <i>g</i>. 
 
 <p>
@@ -106,6 +106,13 @@ Ako protivnik iz poznavanja <i>g</i> i <i>g</i><sup><i>a</i></sup> može
 izračunati <i>a</i> (tj. ako može riješiti problem diskretnog 
 logaritma), onda i on može pomoću <i>a</i> i <i>g</i><sup><i>b</i></sup> izračunati 
 <i>g</i><sup><i>ab</i></sup>. 
+<p>
+
+Ovdje pretpostavljamo da protivnik samo prisluškuje komunikaciju.
+Ako protivnik može i mijenjati poruke, tada osnovni Diffie-Hellmanov
+protokol nije dovoljan: moguć je napad "čovjek u sredini" 
+(engl. man-in-the-middle). Zato se u praksi javne vrijednosti
+moraju autentificirati, primjerice digitalnim potpisima ili certifikatima.
 
 <p><br>
 
@@ -119,7 +126,7 @@ Tada bi funkcija <i>e<sub>K</sub></i> mogla biti javna. U provedbi
 ove ideje ključnu ulogu igraju tzv. osobne jednosmjerne funkcije. 
 Za funkciju <i>f</i> kažemo da je <em>jednosmjerna</em> (one-way) 
 ako je <i>f</i> lako, a <i>f</i><sup> -1</sup> teško izračunati. 
-Ako je pritom <i>f</i><sup> -1</sup> lako izračunati ukoliko nam je 
+Ako je pritom <i>f</i><sup> -1</sup> lako izračunati ako nam je 
 poznat neki dodatni podatak (trapdoor - skriveni ulaz), onda 
 <i>f</i> nazivamo <em>osobna jednosmjerna funkcija</em>. 
 Uočimo da se i u klasičnoj kriptografiji tajnost u suštini zahtijeva samo od funkcije
@@ -162,11 +169,17 @@ Konačno, B dešifrira šifrat koristeći svoj tajni ključ
 <i>d<sub>B</sub></i>: &nbsp; <i>d<sub>B</sub></i>(<i>y</i>) = 
 <i>d<sub>B</sub></i>(<i>e<sub>B</sub></i>(<i>x</i>)) = <i>x</i>. 
 <p>
-Ukoliko grupa korisnika želi komunicirati na ovaj način, 
+Ako grupa korisnika želi komunicirati na ovaj način, 
 situacija je još jednostavnija. Naime, tada svi korisnici stave svoje 
 javne ključeve u neku javnu, svima dostupnu datoteku. Sada B ne mora 
 slati svoj javni ključ osobi A, već A jednostavno pročita 
 <i>e<sub>B</sub></i> iz datoteke. 
+<p>
+Pritom je važno pitanje kako A može biti siguran da javni ključ koji
+je pročitao zaista pripada osobi B. Ako protivnik može podmetnuti svoj
+javni ključ umjesto B-ova, tada može čitati poruke namijenjene B-u.
+U praksi se taj problem rješava certifikatima i infrastrukturom javnih
+ključeva (PKI) ili drugim pouzdanim načinima provjere javnog ključa.
 
 <p align=center>
 <img src="slike/javni_pravokutnici.gif" alt="shema" ALIGN=MIDDLE>
@@ -176,7 +189,10 @@ Ovdje se može postaviti pitanje kako osoba B može biti sigurna da joj
 je upravo osoba A poslala poruku. Naime, svatko ima pristup funkciji 
 <i>e<sub>B</sub></i>, pa se može lažno predstaviti kao osoba A. 
 Dakle, postavlja se pitanje vjerodostojnosti ili autentičnosti 
-poruke. To se može riješiti na sljedeći način: 
+poruke. 
+Sljedeći pojednostavljeni protokol ilustrira ideju izazova i odgovora
+(engl. challenge-response), iako se u stvarnim sustavima koriste
+preciznije definirani protokoli i digitalni potpisi.  
 <ul>
 <li>A doda svojoj poruci slučajan broj <i>a</i> od recimo 10 
 znamenaka.
@@ -193,6 +209,13 @@ slati osobi B.
 Neki kriptosustavi omogućavaju čak da korisnici <em>digitalno 
 potpišu</em> svoju poruku. To je važno zbog toga što tada A ne može 
 kasnije zanijekati da je upravo on poslao konkretnu poruku. 
+U pojednostavljenom modelu, osobito za kriptosustave poput RSA-a u
+kojima su prostor otvorenih tekstova i šifrata isti, potpis se može
+shvatiti kao primjena tajne funkcije na poruku ili na njezin sažetak.
+U stvarnim sustavima digitalni potpis se ne dobiva jednostavnim
+"dešifriranjem" poruke, nego se potpisuje kriptografski sažetak poruke
+prema posebno definiranoj shemi potpisa.
+<p>
 Pretpostavimo da je 
 <font face="Brush Script MT,Script,Times New Roman">P</font> = 
 <font face="Brush Script MT,Script,Times New Roman">C</font>. Tada A može potpisati 
@@ -209,7 +232,7 @@ svoj tajni ključ <i>d<sub>B</sub></i>:
 Sada B zna sigurno da je poruku poslao A, jer je samo on mogao 
 upotrijebiti funkciju <i>d<sub>A</sub></i>. Da je umjesto te 
 funkcije upotrijebljena neka treća funkcija <i>d<sub>C</sub></i>, 
-kao rezultat ne bi dobili smislenu poruku. Nadalje, ukoliko bi A 
+kao rezultat ne bi dobili smislenu poruku. Nadalje, ako bi A 
 kasnije zanijekao da je on autor poruke, B bi mogao "sucu" pokazati 
 poruke <i>x</i> i <i>z</i>. Sudac bi provjerio da vrijedi 
 <i>e<sub>B</sub></i>(<i>x</i>) = 
@@ -221,7 +244,8 @@ simetričnima su:
 <ul>
 <li>nema potrebe za sigurnim komunikacijskim kanalom za razmjenu 
 ključeva
-<li>za komunikaciju grupe od <i>N</i> ljudi treba 2<i>N</i> ključeva, 
+<li>za komunikaciju grupe od <i>N</i> ljudi treba po jedan javni i jedan tajni ključ
+za svakog korisnika, dakle ukupno 2<i>N</i> ključeva, 
 za razliku od <i>N</i>(<i>N</i>-1)/2 ključeva kod simetričnog 
 kriptosustava
 <li>mogućnost potpisa poruke
@@ -229,8 +253,9 @@ kriptosustava
 <p>
 
 Pa ipak, u realnom svijetu kriptografija javnog ključa ne predstavlja 
-zamjenu za simetrične kriptosustave. Ona se ne koristi za šifriranje 
-poruka, već za šifriranje ključeva. Naime, osobe A i B komuniciraju 
+zamjenu za simetrične kriptosustave. U praksi se kriptografija javnog ključa najčešće ne koristi za izravno
+šifriranje dugih poruka, nego za razmjenu ključeva
+koji se zatim koriste u simetričnom kriptosustavu. Naime, osobe A i B komuniciraju 
 pomoću simetričnog kriptosustava s ključem kojeg su razmijenili 
 pomoću kriptosustava s javnim ključem. To se zove 
 <em>hibridni kriptosustav</em>. 
@@ -239,16 +264,19 @@ Osnovni razlog zašto se javni ključ ne koristi za šifriranje poruka,
 jest da su algoritmi s javnim ključem puno sporiji (oko 1000 puta) 
 od modernih simetričnih algoritama. 
 <p>
-Drugi nedostatak kriptosustava s javnim ključem jest da su slabi na 
-napad "odabrani otvoreni tekst". Ako je <i>y</i> = <i>e</i>(<i>x</i>), 
-gdje otvoreni tekst može poprimiti jednu od <i>n</i> vrijednosti, 
-onda, budući je <i>e</i> javna, kriptoanalitičar treba samo 
-šifrirati svih <i>n</i> mogućih otvorenih tekstova i rezultat 
-usporediti s <i>y</i>. Tako neće otkriti tajni ključ <i>d</i>, 
+Drugi nedostatak naivno definiranih kriptosustava s javnim ključem jest
+da su ranjivi ako je prostor mogućih poruka malen i ako je šifriranje
+determinističko. Ako je <i>y</i> = <i>e</i>(<i>x</i>), a otvoreni tekst može poprimiti samo
+jednu od <i>n</i> mogućih vrijednosti, kriptoanalitičar može šifrirati svih
+<i>n</i> mogućih otvorenih tekstova i usporediti rezultate s <i>y</i>.
+Tako neće otkriti tajni ključ <i>d</i>, 
 ali će otkriti otvoreni tekst <i>x</i>. Jasno, ovaj napad je 
-primjenjiv ako je <i>n</i> mali (npr. ako je <i>x</i> neki iznos u kunama 
+primjenjiv ako je <i>n</i> mali (npr. ako je <i>x</i> neki iznos u eurima  
 za kojeg je razumno pretpostaviti da je manji  
 od 1000000). 
+Zato se u stvarnim shemama šifriranja s javnim ključem koristi
+odgovarajuće slučajno popunjavanje (padding), odnosno probabilističko
+šifriranje.
 <p><br>
 
 U modernoj kriptografiji, koja se koristi u komercijalnom svijetu 
@@ -257,7 +285,7 @@ interneta), pojavljuju se, uz klasične, i neki sasvim novi problemi:
 <ol>
 <li>POVJERLJIVOST (confidentiality): Poruku koju osoba A šalje 
 osobi B ne može pročitati nitko drugi. 
-<li>VJERODOSTOJNOST (autenticity): Osoba B zna da je samo osoba A 
+<li>VJERODOSTOJNOST (authenticity): Osoba B zna da je samo osoba A 
 mogla poslati poruku koju je ona upravo primila. 
 <li>NETAKNUTOST (integrity): Osoba B zna da poruka koju je poslala osoba A 
 nije promijenjena prilikom slanja. 

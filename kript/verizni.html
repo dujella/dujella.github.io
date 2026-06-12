@@ -63,7 +63,7 @@ ili jednostavnije
 
 Razlomak
 
-<p align=center><img src="slike/ver2.gif" alt="p_n/q_n" ALIGN=TOP> </p>
+<p align=center><img src="slike/ver2.gif" alt="p_i/q_i" ALIGN=TOP> </p>
 
 zovemo <i>i</i>-ta konvergenta od 
 &alpha;<sub>0</sub>. 
@@ -83,7 +83,7 @@ U slučaju kada je
 &alpha;<sub>0</sub> = 
 &radic;<i>n</i>,  
 gdje je <i>n</i> prirodan
-broj koji nije potpun kvadrat, poznato je da je njegov raznoj u
+broj koji nije potpun kvadrat, poznato je da je njegov razvoj u
 verižni razlomak periodičan. Preciznije
 
 <p align=center><img src="slike/ver3.gif" alt="n^(1/2)" ALIGN=TOP> </p>
@@ -105,9 +105,9 @@ dobiti primjenom sljedećeg algoritma:
 <i>t</i><sub><i>i</i></sub> - <i>s</i><sub><i>i</i></sub>, &nbsp; 
 <i>t</i><sub><i>i</i>+1</sub> = (<i>n</i> - 
 <i>s</i><sub><i>i</i>+1</sub><sup>2</sup>)/<i>t</i><sub><i>i</i></sub>, 
-&nbsp; <i>a</i><sub><i>i</i></sub> = 
+&nbsp; <i>a</i><sub><i>i</i>+1</sub> = 
 &lfloor;(<i>a</i><sub>0</sub> + 
-<i>s</i><sub><i>i</i></sub>)/<i>t</i><sub><i>i</i></sub>&rfloor; 
+<i>s</i><sub><i>i+1</i></sub>)/<i>t</i><sub><i>i</i>+1</sub>&rfloor; 
 &nbsp; za <i>i</i> &ge; 0. 
 </p>
 
@@ -135,7 +135,7 @@ Metodu faktorizacije pomoću verižnih razlomaka uveli su
 
 Uvedimo oznaku <i>t</i><sub><i>i</i></sub>* = 
 (-1)<sup><i>i</i></sup> <i>t</i><sub><i>i</i></sub>. 
-Pretpostavimo da smo pronašli produkt &nbsp;
+Pretpostavimo da smo pronašli produkt brojeva &nbsp;
 <i>t</i><sup>*</sup><sub><i>k</i><sub>1</sub>+1</sub> 
 <i>t</i><sup>*</sup><sub><i>k</i><sub>2</sub>+1</sub> &middot; &middot; &middot;   
 <i>t</i><sup>*</sup><sub><i>k<sub>m</sub></i>+1</sub> &nbsp;
@@ -159,7 +159,7 @@ Promotrimo brojeve
 <i>p</i><sub><i>k</i><sub><i>m</i></sub></sub> - <i>z</i>, <i>n</i>) 
 i (<i>p</i><sub><i>k</i><sub>1</sub></sub> &middot; &middot; &middot;  
 <i>p</i><sub><i>k</i><sub><i>m</i></sub></sub> + <i>z</i>, <i>n</i>). 
-To su sigurno faktori od <i>n</i>. Ukoliko je barem
+To su sigurno faktori od <i>n</i>. Ako je barem
 jedan od njih različit od <i>n</i>, naš je zadatak dovršen.
 
 <p><br>
@@ -185,7 +185,7 @@ jedan od njih različit od <i>n</i>, naš je zadatak dovršen.
 <td align=center> <b><i>t</i><sub><i>i</i></sub></b> </td> 
 <td align=center> &nbsp; </td>
 <td align=center> 1 </td> <td align=center> 
-<font color=FF0000><b>48</48></font> </td> 
+<font color=FF0000><b>48</b></font> </td> 
 <td align=center> 139 </td> <td align=center> 7 </td> 
 <td align=center> 87 </td> <td align=center> 
 <font color=FF0000><b>27</b></font> </td>
@@ -208,9 +208,11 @@ jedan od njih različit od <i>n</i>, naš je zadatak dovršen.
 </table>
 <p>
 
-Očito je 
+Budući da je <i>t</i><sub>1</sub>* = -48 i 
+<i>t</i><sub>5</sub>* = -27, vrijedi
 <i>t</i><sub>1</sub>* <b>&middot;</b> 
-<i>t</i><sub>5</sub>* = 36<sup>2</sup>. Stoga je
+<i>t</i><sub>5</sub>* = 36<sup>2</sup>. 
+Stoga je
 <p align=center>
 <i>p</i><sub>0</sub><sup>2</sup> 
 <i>p</i><sub>4</sub><sup>2</sup> = 
@@ -241,7 +243,7 @@ faktorizaciji <i>t</i><sub><i>i</i></sub>-ova. U ovom slučaju je
 Brillhart i Morrison su 1970. godine metodom verižnog razlomka
 faktorizirali Fermatov broj
 <p align=center>
-2<sup>2</sup><sup><sup><img src="symbols/sup7.gif" alt="7" ALIGN=TOP></sup></sup> + 1 = 59 649 589 127 497 217 <sup><b>.</b></sup> 
+2<sup>2</sup><sup><img src="symbols/sup7.gif" alt="7" ALIGN=TOP></sup> + 1 = 59 649 589 127 497 217 <sup><b>.</b></sup> 
 5 704 689 200 685 129 054 721. 
 </p>
 U stvari, oni su
@@ -253,7 +255,7 @@ oni su koristili razvoj od
 za prikladno odabrani prirodni broj 
 &lambda;. U konkretnom
 slučaju za <i>n</i> = 
-2<sup>2</sup><sup><sup><img src="symbols/sup7.gif" alt="7" ALIGN=TOP></sup></sup> + 1, 
+2<sup>2</sup><sup><img src="symbols/sup7.gif" alt="7" ALIGN=TOP></sup> + 1, 
 uzeli su &lambda; = 257.
 
 

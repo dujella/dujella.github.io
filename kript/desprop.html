@@ -42,9 +42,12 @@ u <nobr><b>Z</b><sub>2</sub>),</nobr> s izuzetkom S-kutija.
 Već smo na primjeru Hillove šifre vidjeli da je kod linearnih 
 kriptosustava kriptoanaliza napadom &quot;poznati otvoreni tekst&quot; vrlo 
 jednostavna. Stoga su S-kutije izuzetno značajne za sigurnost 
-DES-a. Od objave algoritma, pa sve do danas, S-kutije su
-obavijene tajnovitošću. Vidjet ćemo da će se kod
-nasljednika DES-a upravo taj dio promijeniti: S-kutije će biti
+DES-a. 
+Pri objavi DES-a kriteriji za izbor S-kutija nisu bili u potpunosti
+objašnjeni, što je izazvalo mnoge rasprave i sumnje. Kasnije se
+pokazalo da su S-kutije vrlo pažljivo odabrane, osobito s obzirom na
+otpornost prema diferencijalnoj kriptoanalizi.
+Kod nasljednika DES-a taj će se dio promijeniti: S-kutije će biti
 generirane eksplicitno navedenim algoritmom.
 <p>
 Kod DES-a znamo tek neke kriterije koji su korišteni u
@@ -69,11 +72,10 @@ S(<i>x</i> &oplus;
 </ol>
 <p>
 
-Kriteriji za permutaciju P bili su sljedeći:
+Neki od kriterija za permutaciju P bili su sljedeći: 
 <ol>
 <li>Četiri izlazna bita iz svake S-kutije utječu (čine ulazne podatke) 
-na šest različitih S-kutija u idućoj rundi, a nikoja dva ne utječu 
-na istu S-kutiju. <p>
+na šest različitih S-kutija u idućoj rundi, a nikoja dva ne utječu na istu S-kutiju. <p>
 <li>Četiri izlazna bita iz svake S-kutije u <i>i</i>-toj rundi su 
 distribuirani tako da dva od njih utječu na središnje bitove u 
 (<i>i</i>+1)-voj rundi, a dva na krajnje bitove (dva najlijevija i 
@@ -103,10 +105,10 @@ treba ispitati.
 <p>
 Kriptosustav DES ima gore opisano svojstvo koje se ponekad naziva i 
 "<em>efekt lavine</em>". Ilustrirat ćemo to s dva primjera 
-(preuzetim iz knjige [Stinson: <i>Cryptography. Theory and Practice</i>]). 
+(preuzeta iz knjige [Stinson: <i>Cryptography. Theory and Practice</i>]). 
 <p>
 
-<b>Primjer 1: </b> Otvoreni tekstovi (zapisani heksadecimalno) 
+<b>Primjer 2.1: </b> Otvoreni tekstovi (zapisani heksadecimalno) 
 <p align=center><font color=990000>0000000000000000</font> &nbsp; i &nbsp; <font color=990000>1000000000000000</font></p>
 šifrirani su pomoću ključa (također zapisanog heksadecimalno s 
 uključenim paritetnim bitovima) 
@@ -124,7 +126,7 @@ broj bitova koji    1  6 21 35 39 34 32 31 29 42 44 32 30 30 26 29 34
 
 <p>
 
-<b>Primjer 2: </b> Otvoreni tekst
+<b>Primjer 2.2: </b> Otvoreni tekst
 <p align=center><font color=990000>68852E7A1376EBA4</font></p>
 šifriran je pomoću ključeva  
 <p align=center><font color=990099>E5F7DF313B0862DC</font> &nbsp; i 
@@ -143,11 +145,18 @@ broj bitova koji    0  2 14 28 32 30 32 35 34 40 38 31 33 28 26 34 35
 </font></pre>
 <p><br>
 
+U Shannonovoj terminologiji često se govori o difuziji i konfuziji:
+difuzija znači da se utjecaj pojedinog bita otvorenog teksta ili ključa
+raširi na mnogo bitova šifrata, dok konfuzija otežava uočavanje veze
+između ključa i šifrata.
+<p>
+
 Postavlja se pitanje zašto u DES-u imamo upravo 16 rundi. Primjeri 
 1 i 2 sugeriraju da već kod 3. runde efekt lavine dolazi do izražaja. 
-Može se pokazati da nakon 5. runde svaki bit šifrata ovisi o svakom 
-bitu otvorenog teksta i svakom bitu ključa, a nakon 8. runde šifrat 
-je praktički slučajna funkcija bitova otvorenog teksta i ključa. 
+Može se pokazati da se već nakon nekoliko rundi postiže vrlo dobra
+difuzija: nakon 5. runde svaki bit izlaza ovisi o svakom bitu
+otvorenog teksta i svakom bitu ključa. Nakon 8 rundi statistička
+svojstva izlaza već su mnogo bliža svojstvima slučajne funkcije.
 Razlog da ipak imamo 16 rundi je u zahtjevu da poznati kriptoanalitički 
 napadi (kao što je npr. diferencijalna kriptoanaliza) ne budu 
 efikasniji od napada "grubom silom". 
@@ -172,24 +181,26 @@ organizacijama kao što je NSA, ali da će oko 1990. godine DES postati
 sasvim nesiguran. Godine 1993. Weiner je procijenio da se za 100000 
 dolara može konstruirati računalo koje bi otkrilo ključ za 35 sati, 
 a za 10 milijuna dolara ono koje bi otkrilo ključ za 20 minuta. 
-Ipak sve su to bili hipotetski dizajni i konačno razbijanje DES-a 
-se dogodilo tek 1998. godine. Tada je Electronic Frontier Foundation 
-(EFF) za 250000 dolara zaista napravila "DES Cracker", koji je razbijao  
-poruke šifrirane DES-om za 56 sati. 
+Ipak, sve su to bili hipotetski dizajni, a prvo praktično javno
+razbijanje DES-a dogodilo se 1998. godine. 
+Tada je Electronic Frontier Foundation 
+(EFF) za 250000 dolara zaista napravila "DES Cracker", 
+koji je pronalazio DES ključ za oko 56 sati.
 <p><br>
 
 Za fiksni ključ K pomoću DES-a definirana je permutacija skupa 
 <nobr>{0,1}<sup>64</sup>.</nobr> Dakle, skup od 2<sup>56</sup> permutacija 
 dobivenih pomoću DES-a je podskup grupe svih permutacija 
 skupa <nobr>{0,1}<sup>64</sup>,</nobr> čiji je red <nobr>2<sup>64</sup>!.</nobr> Postavlja se 
-pitanje da li je DES (tj. skup svih njegovih permutacija) podgrupa 
+pitanje je li DES (tj. skup svih njegovih permutacija) podgrupa 
 ove grupe. Odgovor na to pitanje je negativan. Naime, skup svih 
 DES-permutacija nije zatvoren. Preciznije, poznato je da je red 
-podgrupe generirane svim DES-permutacijama veći o 
+podgrupe generirane svim DES-permutacijama veći od  
 2<sup>2499</sup>. Ova je činjenica jako važna jer pokazuje da se 
-višestrukom upotrebom DES-a može postići veća sigurnost. Posebno je 
-popularan tzv. Triple-DES koji koristi tri koraka običnog DES-a 
-s različitim ključevima. Kad bi DES činio grupu, Triple-DES ne bi 
+višestrukom upotrebom DES-a može postići veća sigurnost. 
+Posebno je važan tzv. Triple-DES, koji koristi tri primjene DES-a,
+najčešće u obliku šifriranje–dešifriranje–šifriranje, s dva ili tri
+ključa. Kad bi DES činio grupu, Triple-DES ne bi 
 bio ništa sigurniji od običnog DES-a. 
 <p>
 
@@ -213,15 +224,15 @@ ključeva</em>
 ako je kompozicija DES-ova s ključevima <i>K</i> i 
 <i>K</i>' identiteta. 
 Drugim riječima, šifriranje s jednim je isto kao dešifriranje s drugim. 
-Kod DES-a s polu-slabim ključem, među 16 međuključeva 
+Kod poluslabih DES-ključeva, među 16 međuključeva 
 <i>K</i><sub>1</sub>, ... , <i>K</i><sub>16</sub> 
 postoje samo dva različita; 
 svaki od njih se koristi u po 8 rundi. Postoji točno 6 parova DES 
 polu-slabih ključeva. 
 Konačno, neki ključevi generiraju samo 4 različita međuključa. 
 Takvi se ključevi zovu DES <em>potencijalno slabi ključevi</em> 
-i ima ih točno 48. Sve u svemu, između 2<sup>56</sup> 
-mogućih ključeva imamo samo 64 ključa koja treba izbjegavati, pa je 
+i ima ih točno 48. Sve u svemu, od 2<sup>56</sup> 
+mogućih ključeva samo je 64 potrebno izbjegavati, pa je 
 to lako i učiniti. 
 
 <p>

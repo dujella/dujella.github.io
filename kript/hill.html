@@ -39,7 +39,7 @@ body {font-family: Arial,Helvetica,sans-serif;}
 <font color=009900>Lester Hill</font> je 1929. godine izumio 
 kriptosustav kod kojeg se <i>m</i> uzastopnih slova otvorenog teksta 
 zamjenjuje s <i>m</i> slova u šifratu. Dakle, radi se o 
-<em>poligramskoj</em> šifri. Ukoliko broj slova u originalnom otvorenom tekstu nije 
+<em>poligramskoj</em> šifri. Ako broj slova u originalnom otvorenom tekstu nije 
 djeljiv s <i>m</i>, poruku trebamo nadopuniti da bismo je mogli podijeliti u 
 blokove od po <i>m</i> slova. 
 Kriptosustav je definiran na sljedeći način: 
@@ -86,7 +86,7 @@ tj. ako je <nobr>(det <i>A</i>, 26)=1.</nobr>
 <tr><td>10</td><td>20</td><td>17</td></tr>
 </table></td><td>,</td></tr></table>
 te neka je otvoreni tekst</em> &nbsp;  
-<font color=990000>UTORAK</font></tt>.
+<font color=990000>UTORAK</font>.
 <p>
 Njegov numerički ekvivalent je (20, 19, 14, 17, 0, 10). 
 Računamo: 
@@ -115,10 +115,10 @@ Računamo:
 </tr></table>
 <p>
 
-Dakle šifrat je &nbsp; 
+Dakle, šifrat je &nbsp; 
 <font color=000099>SPQDYY</font>. 
 <p>
-Primijetimo da ukoliko bi tekst umjesto s 
+Primijetimo da ako bi tekst umjesto s 
 <font color=990000>UTO</font> započeo sa 
 <font color=990000>STO</font>, onda bi 
 šifrat započeo sa 
@@ -137,9 +137,10 @@ Primijetimo da ukoliko bi tekst umjesto s
 
 Hillov kriptosustav s 3 &times; 3 matricama skriva ne samo sve informacije 
 o frekvencijama slova, već 
-i o frekvencijama bigrama. Stoga već za <i>m</i> 
-&ge; 5 možemo Hillov 
-kriptosustav smatrati gotovo potpuno sigurnim na napad "samo šifrat". 
+i o frekvencijama bigrama. 
+Stoga već za <i>m</i> 
+&ge; 5 možemo Hillov kriptosustav smatrati otpornim na
+jednostavnu analizu frekvencija u napadu "samo šifrat".  
 Međutim, ovu šifru je vrlo lako razbiti pomoću napada "poznati otvoreni 
 tekst", a pogotovo pomoću napada "odabrani otvoreni tekst". 
 To je i razlog zašto ovaj sustav gotovo uopće nije bio u praktičnoj 
@@ -148,10 +149,10 @@ uporabi (osim kratko vrijeme  za šifriranje pozivnih signala radio-stanica).
 Nevezano uz Hillovu šifru, spomenimo da je često do uspješnih napada 
 metodom "odabrani otvoreni tekst" dolazilo zbog nespretnosti 
 diplomata koji su uručene im diplomatske note šifrirali u doslovno 
-istom obliku u kojem su im bile uručene. Stoga se u tekst note 
-moglo ubaciti neke dijelove po sugestiji kriptoanalitičara, 
-tj. u njih ubaciti "odabrani otvoreni tekst", te potom presretanjem 
-komunikacije saznati odgovarajući šifrat. 
+istom obliku u kojem su im bile uručene. 
+Stoga se u tekst note mogao, po sugestiji kriptoanalitičara, ubaciti
+određeni tekst, tj. "odabrani otvoreni tekst", te potom presretanjem
+komunikacije saznati odgovarajući šifrat.
 <p>
 Vratimo se Hillovoj šifri. Pretpostavimo da je kriptoanalitičar 
 odredio vrijednost <i>m</i>, te pretpostavimo da ima barem <i>m</i> 
@@ -225,7 +226,7 @@ Kod nas je det <i>X</i> mod 26 = 425 mod 26 = 9, pa je
 <tr><td align=center>-6</td><td align=center>25</td></tr>
 </table></td><td> = </td>
 <td><table cellpadding=5 cellspacing=0 frame=vsides rules=none>
-<tr><td align center>25</td><td align=center>0</td></tr>
+<tr><td align "center">25</td><td align=center>0</td></tr>
 <tr><td align=center>8</td><td align=center>23</td></tr>
 </table></td><td>,</td>
 </tr></table>
@@ -238,11 +239,11 @@ pa je
 <tr><td align=center>8</td><td align=center>23</td></tr>
 </table></td>
 <td><table cellpadding=5 cellspacing=0 frame=vsides rules=none>
-<tr><td align center>19</td><td align=center>7</td></tr>
+<tr><td align "center">19</td><td align=center>7</td></tr>
 <tr><td align=center>22</td><td align=center>9</td></tr>
 </table></td><td> = </td>
 <td><table cellpadding=5 cellspacing=0 frame=vsides rules=none>
-<tr><td align center>7</td><td align=center>19</td></tr>
+<tr><td align "center">7</td><td align=center>19</td></tr>
 <tr><td align=center>8</td><td align=center>3</td></tr>
 </table></td><td>.</td>
 </tr></table>   
@@ -260,7 +261,7 @@ Provjerimo to na trećem paru:
 velik, možemo probati s <i>m</i> = 2, 3, ..., dok ne nađemo ključ. 
 Ako pretpostavljena vrijednost od <i>m</i> nije točna, onda 
 <i>m</i> &times; <i>m</i> 
-matrica dobivena na gore opisani način neće biti u skladu s 
+matrica dobivena gore opisanim postupkom neće biti u skladu s 
 daljnjim parovima otvoreni tekst - šifrat.  
 
 <p>

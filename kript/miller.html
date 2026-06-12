@@ -75,7 +75,7 @@ cijeli broj takav da je (<i>b</i>,<i>n</i>) = 1. Ako vrijedi
 &equiv; 1 (mod <i>n</i>), ili 
 postoji <i>r</i>, 0 &le;  
 <i>r</i> < <i>s</i>, takav da je 
-<i>b</i><sup>2<sup><sup><img src="symbols/supr.gif" alt="r" ALIGN=TOP></sup></sup><i>t</i></sup>  
+<i>b</i><sup>2<sup><i>r</i></sup><i>t</i></sup> 
 &equiv; -1 (mod <i>n</i>),
 &nbsp; &nbsp; &nbsp; (***)
 </p>
@@ -95,7 +95,10 @@ ali <i>n</i> nije spsp(2) jer
 je 2<sup>280</sup> &equiv;  
 1 (mod 561), 
 a 2<sup>140</sup> &equiv;  
-67 (mod 561).
+67 (mod 561). 
+Za spsp(2) trebala bi se u nizu
+2<sup>35</sup>, 2<sup>70</sup>, 2<sup>140</sup>, 2<sup>280</sup>
+modulo 561 pojaviti vrijednost -1 ili bi prvi član morao biti 1.
 <p><br>
 
 <table align=center border=1 width="95%" cellpadding=15> 
@@ -119,7 +122,7 @@ epsp(<i>b</i>).
 &equiv;  
 <img src="slike/lagnbig.gif" alt="(b/n)" ALIGN=TOP>
 &equiv;  
-&plusmn;1 mod (<i>n</i>), 
+&plusmn;1 (mod <i>n</i>), 
 </p>
 pa je <i>n</i> spsp(<i>b</i>).
 <p>
@@ -144,7 +147,7 @@ alt="(b/n)=b^((n-1)/2) (mod n)" ALIGN=TOP> </p>
 
 <b>Teorem 4.4:</b> Neka je <i>n</i> neparan složen broj. Tada
 je <i>n</i> jaki pseudoprosti broj u bazi <i>b</i> za najviše 
-25% baza <i>b</i>, 0 &lt; <i>b</i> &lt; <i>n</i>. 
+25% baza <i>b</i>, 0 &lt; <i>b</i> &lt; <i>n</i>.
 
 </font></td></tr></table>
 <p> 
@@ -154,7 +157,7 @@ je <i>n</i> jaki pseudoprosti broj u bazi <i>b</i> za najviše
 <b>1. slučaj:</b> <i>n</i> nije kvadratno slobodan <br>
 
 Neka je <i>n</i> = <i>p</i><sup>2</sup><i>q</i>, gdje je <i>p</i> 
-prost. Ako je <i>n</i> spsp(<i>b</i>), onda
+prost, a <i>q</i> prirodan broj. Ako je <i>n</i> spsp(<i>b</i>), onda
 je <i>n</i> i psp(<i>b</i>). Pretpostavimo da je 
 <i>b</i><sup><i>n</i> -1</sup> 
 &equiv; 1 (mod <i>n</i>). 
@@ -248,23 +251,23 @@ ocjenu za broj baza <i>b</i> takvih da je <i>n</i> spsp(<i>b</i>):
 <p><br><br>
 
 <h3 align=center>Miller-Rabinov test prostosti:</h3>
-Neka je <i>n</i> neparan broj za kojeg želimo ustanoviti da li je prost 
+Neka je <i>n</i> neparan broj za kojeg želimo ustanoviti je li prost 
 ili složen. Neka je <i>n</i> - 1 = 
-2<sup><i>s</i></sup> <sup><b>.</b></sup> <i>t</i>, gdje je <i>t</i>  neparan broj . Na slučajan način izaberemo <i>b</i>, 
-<nobr>0 &lt; <i>b</i> &lt; <i>n</i>.</nobr> Izračunamo <i>b</i><sup><i>t</i></sup> 
-mod <i>n</i>. Ako dobijemo 
-&plusmn;1, zaključujemo 
-da je <i>n</i> prošao test (***), te biramo sljedeći <i>b</i>. 
-U protivnom, uzastopno kvadriramo <i>b</i><sup><i>t</i></sup> modulo 
-<i>n</i> sve dok ne dobijemo rezultat -1. Ako dobijemo -1, onda je 
-<i>n</i> prošao test (***). Ako nikad ne dobijemo -1, tj. ako dobijemo 
-da je <nobr><i>b</i><sup>2<sup><sup><img src="symbols/supr.gif" alt="r" ALIGN=TOP><img src="symbols/supplus.gif" alt="+" ALIGN=TOP><img src="symbols/sup1.gif" alt="1" ALIGN=TOP></sup></sup><i>t</i></sup> 
-&equiv; 1 (mod <i>n</i>),</nobr> 
-ali <nobr><i>b</i><sup>2<sup><sup><img src="symbols/supr.gif" alt="r" ALIGN=TOP></sup></sup><i>t</i></sup> 
-&#8802; -1 (mod <i>n</i>),</nobr> 
-onda znamo da je sigurno <i>n</i> složen. Ako <i>n</i> prođe test (***)
-za <i>k</i> različitih <i>b</i>-ova, onda je vjerojatnost da je 
-<i>n</i> složen <nobr>&le; 1/4<sup><i>k</i></sup>.</nobr> 
+2<sup><i>s</i></sup> <sup><b>.</b></sup> <i>t</i>, gdje je <i>t</i>  neparan broj. Na slučajan način izaberemo <i>b</i>, 
+<nobr>0 &lt; <i>b</i> &lt; <i>n</i>.</nobr> 
+Najprije izračunamo <i>g</i> = (<i>b</i>,<i>n</i>). Ako je 
+<i>g</i> &gt; 1, tada je <i>n</i> složen i test staje. 
+Izračunamo <i>x</i> = <i>b</i><sup><i>t</i></sup> mod <i>n</i>.
+Ako je <i>x</i> &equiv; 1 ili <i>x</i> &equiv; -1 (mod <i>n</i>),
+onda je <i>n</i> prošao test (***) za bazu <i>b</i>. Inače uzastopno
+kvadriramo <i>x</i> modulo <i>n</i>, najviše <i>s</i>-1 puta.
+Ako se u nekom koraku dobije -1, onda je <i>n</i> prošao test (***) za
+bazu <i>b</i>. Ako se prije toga dobije 1, ili ako se nakon svih
+kvadriranja ne dobije -1, onda je <i>n</i> sigurno složen. 
+Ako je <i>n</i> složen, vjerojatnost da prođe test (***) za jednu slučajno
+odabranu bazu najviše je 1/4. Stoga je vjerojatnost da složen broj
+<i>n</i> prođe <i>k</i> nezavisno odabranih testova najviše
+<nobr>1/4<sup><i>k</i></sup></nobr>.
 
 <p>
 

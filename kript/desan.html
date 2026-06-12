@@ -39,9 +39,10 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 U ovom poglavlju opisat ćemo tri napada na DES: diferencijalnu 
 kriptoanalizu, linearnu kriptoanalizu i EFF-ov DES Cracker. 
-Iako prva dva napada nisu dovela do razbijanja DES-a, njihova je 
-važnost u tome što su primjenjivi na bilo koji simetrični 
-blokovni kriptosustav. Tako su kod većine mogućih nasljednika DES-a 
+Iako prva dva napada nisu praktično razbila puni DES učinkovitije od
+iscrpne pretrage ključeva, njihova je važnost u tome što su primjenjivi
+na široku klasu simetričnih blokovnih kriptosustava. 
+Tako su kod većine mogućih nasljednika DES-a 
 operacije i broj rundi odabrani upravo tako da bi dobiveni 
 kriptosustav bio što otporniji na diferencijalnu i linearnu 
 kriptoanalizu. 
@@ -54,15 +55,15 @@ No, po svemu sudeći, ta je metoda bila poznata konstruktorima DES-a
 već 1974. godine, te su je imali u vidu kod dizajna S-kutija i 
 permutacije P. Metoda spada u napade &quot;odabrani otvoreni tekst&quot;. 
 <p>
-Prikazat ćemo kako ova metoda može biti primjenjena na DES s <i>n</i> 
+Prikazat ćemo kako ova metoda može biti primijenjena na DES s <i>n</i> 
 rundi (n &le; 16). 
 Slijedeći [Stinson: <i>Cryptography. Theory and Practice</i>; Poglavlje 3.6, 1. izdanje], 
 metodu ćemo potom ilustrirati prikazom napada na DES s 3 runde.
 U tu svrhu možemo ignorirati inicijalnu permutaciju IP i njezin inverz 
-(oni nemaju nikakav efekt na kriptoanalizu). 
+(oni nemaju bitan utjecaj na ovu kriptoanalizu). 
 Stoga ćemo <nobr><i>L</i><sub>0</sub><i>R</i><sub>0</sub></nobr> uzeti za otvoreni tekst, a 
 <nobr><i>L</i><sub><i>n</i></sub><i>R</i><sub><i>n</i></sub></nobr> za šifrat u DES-u s 
-<i>n</i> rundi. Osnovna ideja diferencijane kriptoanalize 
+<i>n</i> rundi. Osnovna ideja diferencijalne kriptoanalize 
 jest usporedba XOR-a od dva otvorena teksta sa XOR-om od 
 odgovarajuća dva šifrata. Općenito, promatrat ćemo dva otvorena 
 teksta <nobr><i>L</i><sub>0</sub><i>R</i><sub>0</sub></nobr> i 
@@ -78,7 +79,7 @@ vrijednošću <nobr><i>L</i>'<sub>0</sub><i>R</i>'<sub>0</sub> =
 <tr><td bgcolor="FFFFCC">
 <font face="Arial,Helvetica,sans-serif">
 
-<b>Definicija: </b> Neka je S<sub><i>j</i></sub> neka S-kutija 
+<b>Definicija 2.1: </b> Neka je S<sub><i>j</i></sub> neka S-kutija 
 (1 &le; <i>j</i> 
 &le; 8), te neka je 
 (<i>B</i><sub><i>j</i></sub>, <i>B</i>*<sub><i>j</i></sub>) 
@@ -118,7 +119,7 @@ output XOR. Činjenica da ovih 64 output XOR-ova nije uniformno
 distribuirano predstavlja osnovu za kriptoanalitički napad.  
 <p>
 
-<b>Primjer 4: </b> Promotrimo prvu S-kutiju S<sub>1</sub> i 
+<b>Primjer 2.3: </b> Promotrimo prvu S-kutiju S<sub>1</sub> i 
 input XOR 110100. Imamo
 <p align=center>
 &Delta;(110100) = 
@@ -146,7 +147,7 @@ distribuciju:
 </font></pre>
 
 <p>
-U Primjeru 4 pojavilo se samo 8 od mogućih 16 output XOR-ova i to 
+U Primjeru 2.3 pojavilo se samo 8 od mogućih 16 output XOR-ova i to 
 s vrlo različitim frekvencijama. 
 Općenito, u prosjeku se pojavljuje 75-80% mogućih XOR-ova.
 
@@ -155,7 +156,7 @@ Općenito, u prosjeku se pojavljuje 75-80% mogućih XOR-ova.
 <tr><td bgcolor="FFFFCC">
 <font face="Arial,Helvetica,sans-serif">
 
-<b>Definicija: </b> Za <i>j</i> &isin; {1, 2, ... , 8}, 
+<b>Definicija 2.2: </b> Za <i>j</i> &isin; {1, 2, ... , 8}, 
 6-bitni niz <i>B</i>'<sub><i>j</i></sub> i 4-bitni niz <i>C</i>'<sub><i>j</i></sub> 
 definiramo 
 <p align=center> 
@@ -175,9 +176,11 @@ N<sub><i>j</i></sub> (B'<sub><i>j</i></sub>, C'<sub><i>j</i></sub>) =
 <p>
 
 Dakle, N<sub><i>j</i></sub>(<i>B</i>'<sub><i>j</i></sub>, <i>C</i>'<sub><i>j</i></sub>) 
-je broj parova čiji je input XOR jednak <i>B</i>'<sub><i>j</i></sub>, 
+je broj mogućih ulaznih vrijednosti <i>B</i><sub><i>j</i></sub>, odnosno uređenih parova
+(<i>B</i><sub><i>j</i></sub>, <i>B</i><sub><i>j</i></sub> &oplus; <i>B'</i><sub><i>j</i></sub>), 
+čiji je input XOR jednak <i>B</i>'<sub><i>j</i></sub>, 
 a output XOR je jednak <i>C</i>'<sub><i>j</i></sub>. 
-Distribucije iz Primjera 4 su upravo vrijednosti 
+Distribucije iz Primjera 2.3 su upravo vrijednosti 
 N<sub>1</sub>(110100, <i>C</i>'<sub>1</sub>), 
 <i>C</i>'<sub>1</sub> 
 &isin;  
@@ -214,7 +217,7 @@ pa input XOR ne ovisi o međuključu <i>J</i>. Zapišimo <i>B</i>, <i>E</i>, <i>
 <tr><td bgcolor="FFFFCC">
 <font face="Arial,Helvetica,sans-serif">
 
-<b>Definicija: </b> Neka su <i>E</i><sub><i>j</i></sub> i 
+<b>Definicija 2.3: </b> Neka su <i>E</i><sub><i>j</i></sub> i 
 <i>E</i>*<sub><i>j</i></sub> 6-bitni nizovi, a 
 <i>C</i>'<sub><i>j</i></sub> 4-bitni niz. Definiramo 
 <p align=center> 
@@ -233,7 +236,7 @@ gdje je
 </font></td></tr></table>
 <p>
 
-<b>Primjer 5: </b> Neka je <i>E</i><sub>1</sub> = 000001, 
+<b>Primjer 2.4: </b> Neka je <i>E</i><sub>1</sub> = 000001, 
 <i>E</i>*<sub>1</sub> = 110101, <i>C</i>'<sub>1</sub> = 1101.
 Budući da je 
 <nobr>N<sub>1</sub>(110100, 1101) = 8,</nobr> skup 
@@ -251,7 +254,7 @@ test<sub>1</sub>(000001, 110101, 1101) =
 <font face="Arial,Helvetica,sans-serif">
 
 
-<b>Tvrdnja 1: </b> <em>Neka je</em> <i>C</i>'<sub><i>j</i></sub> = 
+<b>Tvrdnja 2.1: </b> <em>Neka je</em> <i>C</i>'<sub><i>j</i></sub> = 
 S<sub><i>j</i></sub> (<i>B</i><sub><i>j</i></sub>) 
 &oplus; 
 S<sub><i>j</i></sub> (<i>B</i>*<sub><i>j</i></sub>). 
@@ -284,8 +287,8 @@ test<sub><i>j</i></sub> (<i>E</i><sub><i>j</i></sub>,
 <i>E</i>*<sub><i>j</i></sub>, <i>C</i>'<sub><i>j</i></sub>).
 <p><br>
 
-Tvrdnja 1 nam daje nekoliko mogućnosti za <i>J</i><sub><i>j</i></sub>. 
-Primjenom Tvrdnja 1 na nekoliko različitih trojki 
+Tvrdnja 2.1 nam daje moguće vrijednosti šest bitova međuključa <i>J</i><sub><i>j</i></sub>. 
+Primjenom Tvrdnje 2.1 na nekoliko različitih trojki 
 <i>E</i><sub><i>j</i></sub>, 
 <i>E</i>*<sub><i>j</i></sub>, <i>C</i>'<sub><i>j</i></sub>, 
 možemo odrediti <i>J</i><sub><i>j</i></sub>. Jasno, ovdje je 
@@ -300,7 +303,7 @@ Pokažimo sada kako se ove ideje mogu primijeniti u napadu
 otvorenih tekstova 
 <i>L</i><sub>0</sub><i>R</i><sub>0</sub>, 
 <i>L*</i><sub>0</sub><i>R*</i><sub>0</sub> 
-koje smo odabrali tako da je 
+odabranih tako da je 
 <i>R</i><sub>0</sub> = <i>R</i>*<sub>0</sub>, 
 tj. <nobr><i>R'</i><sub>0</sub> = 00...0,</nobr> te odgovarajućih šifrata 
 <i>L</i><sub>3</sub><i>R</i><sub>3</sub>, 
@@ -386,9 +389,11 @@ Primjenom ovog algoritma na nekoliko različitih inputa možemo
 odrediti međuključ <i>K</i><sub>3</sub>, što nam daje 48 bitova 
 ključa <i>K</i>. Preostalih 8 bitova možemo pronaći tako da 
 testiramo svih 2<sup>8</sup> = 256 mogućnosti. 
+Ovdje govorimo o efektivnim bitovima ključa; paritetni bitovi se zatim
+jednoznačno određuju.
 <p>
 
-<b>Primjer 6: </b> Pretpostavimo da imamo sljedeća tri para 
+<b>Primjer 2.5: </b> Pretpostavimo da imamo sljedeća tri para 
 otvorenih tekstova i šifrata (zapisanih heksadecimalno) 
 šifriranih istim ključem (otvoreni tekstovi su odabrani tako da 
 zadovoljavaju uvjet <i>R</i><sub>0</sub> = 
@@ -429,7 +434,7 @@ a za treći
 </pre>
 Sada za svaki <i>J</i><sub><i>j</i></sub>, <i>j</i> = 1, 2, ... , 8, 
 konstruiramo brojač koji broji za koliko parova <i>J</i><sub><i>j</i></sub> 
-zadovoljava uvjet iz Tvrdnje 1. Na primjer, u slučaju prvog para i 
+zadovoljava uvjet iz Tvrdnje 2.1. Na primjer, u slučaju prvog para i 
 brojača za <i>J</i><sub>1</sub> imamo 
 <i>E</i>'<sub>1</sub> = 101111, <i>C</i>'<sub>1</sub> = 1001. Nadalje je 
 <p align=center>
@@ -479,7 +484,7 @@ U našem napadu na DES s 3 runde pošli smo od zahtjeva da je
 <tr><td bgcolor="FFFFCC">
 <font face="Arial,Helvetica,sans-serif">
 
-<b>Definicija 4: </b> Neka je <i>n</i> prirodan broj. 
+<b>Definicija 2.4: </b> Neka je <i>n</i> prirodan broj. 
 <em>n-rundna karakteristika</em> je niz oblika 
 <p align=center>
 <i>L'</i><sub>0</sub>, <i>R'</i><sub>0</sub>, 
@@ -512,7 +517,7 @@ neka su <i>L</i><sub><i>i</i> -1</sub>,
 <i>R</i><sub><i>i</i></sub>, 
 <i>L</i>*<sub><i>i</i></sub>, 
 <i>R</i>*<sub><i>i</i></sub> dobiveni primjenom 
-jedne rudne DES-a. Tada je vjerojatnost da je  
+jedne runde DES-a. Tada je vjerojatnost da je  
 <i>L</i><sub><i>i</i></sub> 
 &oplus; 
 <i>L</i>*<sub><i>i</i></sub> =  
@@ -527,7 +532,7 @@ jedne rudne DES-a. Tada je vjerojatnost da je
 
 U našem primjeru mi smo koristili 1-rundnu karakteristiku 
 <p align=center>
-<i>L'</i><sub>0</sub> = prozvoljno, 
+<i>L'</i><sub>0</sub> = proizvoljno, 
 <i>R'</i><sub>0</sub> = 00000000<sub>16</sub>,  
 <i>L'</i><sub>1</sub> = <i>R'</i><sub>0</sub>,  
 <i>R'</i><sub>1</sub> = <i>L'</i><sub>0</sub>, 
@@ -545,7 +550,7 @@ Jedna druga 1-rundna karakteristika je
 Biham i Shamir su pronašli 13-rundnu karakteristiku pomoću koje 
 se može razbiti DES (pronaći 48 bitova ključa) uz poznavanje 
 šifrata za 2<sup>47</sup> odabranih otvorenih tekstova. 
-Ukoliko nemamo mogućnosti koristiti napad "odabrani otvoreni tekst" 
+Ako nemamo mogućnosti koristiti napad "odabrani otvoreni tekst" 
 već samo "poznati otvoreni tekst", onda iz većeg broja parova 
 otvoreni tekst-šifrat moramo odabrati one korisne. Možda je 
 zanimljivo napomenuti da je procijenjeno da time broj potrebnih 
@@ -561,8 +566,7 @@ overline"><i>K</i></span></sub>(<span style="text-decoration:
 overline"><i>x</i></span>) = 
 <span style="text-decoration: 
 overline"><i>e</i></span><sub><i>K</i></sub>(<i>x</i>), gdje  
-<span style="text-decoration: overline">&nbsp;&nbsp;</span> 
-označava komplement, pa se <i>K</i> i 
+crta označava bitovni komplement, pa se <i>K</i> i 
 <span style="text-decoration: overline"><i>K</i></span> 
 mogu testirati istovremeno.
 <p>
@@ -575,11 +579,14 @@ objašnjenje zašto DES ima upravo 16 rundi.
 <p><br><br>
 
 <em>Linearnu kriptoanalizu</em> je uveo japanski kriptolog 
-<font color=009900>Mitsuru Matsui</font> 1993. godine i čini se da ova metoda 
-nije bila poznata tvorcima DES-a. 
+<font color=009900>Mitsuru Matsui</font> 1993. godine. 
+Za razliku od diferencijalne kriptoanalize, nema jasnih pokazatelja
+da je ova metoda bila poznata tvorcima DES-a.
 Ideja se sastoji u tome da iako bitovi ključa nisu linearne funkcije 
 otvorenog teksta i šifrata, neki se bitovi ključa mogu dobro 
 aproksimirati linearnom funkcijom. 
+Preciznije, neke linearne kombinacije bitova otvorenog teksta, šifrata i ključa
+vrijede s vjerojatnošću različitom od 1/2. 
 <p>
 Označimo bitove otvorenog teksta s 
 P[1], P[2], ... , šifrata s C[1], C[2], ... , te ključa s 
@@ -689,17 +696,17 @@ No, ni diferencijalna ni linearna kriptoanaliza nisu razbile DES,
 već su tu učinili brzi i jeftini čipovi. Naime, pokazalo se da je u 
 praksi lakše napraviti napad &quot;grubom silom&quot; s 2<sup>55</sup> 
 DES operacija, nego primijeniti napad linearnom kriptoanalizom 
-koji zahtjeva 2<sup>43</sup> poznatih parova otvoreni tekst-šifrat. 
+koji zahtijeva 2<sup>43</sup> poznatih parova otvoreni tekst-šifrat. 
 <p>
 U srpnju 1998., koristeći čipove i osobno računalo, Electronic 
-Frontier Foundation je napravio "DES Cracker". Koštao je 
-$250000, a za njegovu izradu je utrošeno godinu dana. DES Cracker 
-je razbio poruku šifriranu DES-om za 56 sati. Sagrađen je od 
+Frontier Foundation je napravila "DES Cracker". Koštao je 
+$250000, a za njegovu izradu je utrošeno godinu dana. 
+DES Cracker je pronašao ključ za jednu DES-om šifriranu poruku za 56 sati. Sagrađen je od 
 1536 čipova koji mogu testirati 88 milijardi ključeva po sekundi. 
 Inače, u samoj konstrukciji ovog stroja nema ništa osobito novo. 
-Sličnih prijedloga bilo je i ranije, no EFF je prvi to sproveo u 
+Sličnih prijedloga bilo je i ranije, no EFF je prvi to proveo u 
 djelo i tek nakon izrade DES Crackera moglo se definitivno 
-ustvrditi da se DES nije siguran kriptosustav.    
+ustvrditi da DES s 56-bitnim ključem više nije siguran za praktičnu uporabu.    
 
 <p>
 

@@ -43,7 +43,8 @@ kako naći neki faktor broja <i>n</i> za kojeg znamo da je složen.
 To se u općem slučaju smatra vrlo teškim problemom i na tome se zapravo 
 zasniva RSA kriptosustav. 
 <p>
-Metode faktorizacije možemo podijeliti na opće i specijalne. Kod općih metoda očekivani broj operacija ovisi samo o veličini broja <i>n</i>, 
+Metode faktorizacije možemo podijeliti na opće i specijalne. 
+Kod općih metoda složenost ovisi prvenstveno o veličini broja <i>n</i>, 
 dok kod specijalnih ovisi također i o svojstvima faktora od <i>n</i>. 
 Kod ocjene sigurnosti kriptosustava zasnovanih na faktorizaciji 
 možemo se usredotočiti na opće metode. 
@@ -56,11 +57,17 @@ Tada za svaki višekratnik <i>m</i> od <i>p</i> - 1 vrijedi
 računanju broja <i>d</i> = (<i>a<sup>m</sup></i> - 1, <i>n</i>). 
 Obično se uzima <i>a</i> = 2. Ako je 1 &lt; <i>d</i> &lt; <i>n</i>, onda smo 
 našli netrivijalni faktor od <i>n</i>. 
+Ako je <i>d</i> = 1, pokušaj nije uspio, a ako je <i>d</i> = <i>n</i>,
+treba pokušati s drugim izborom parametara, primjerice s drugom bazom
+<i>a</i> ili drugom granicom <i>B</i>. 
 No, pitanje je kako naći višekratnik od <i>p</i>-1 kad ne znamo <i>p</i>. 
 To možemo efikasno
 napraviti u slučaju kada broj <i>p</i>-1 ima samo male proste faktore. Za prirodan broj
-kažemo da je <i>B</i>-gladak ako su mu svi prosti faktori &le; <i>B</i>. Pretpostavimo dodatno
-da su sve potencije prostih brojeva, koje dijele <i>p</i>-1, manje ili jednake B. Tada
+kažemo da je <i>B</i>-gladak ako su mu svi prosti faktori &le; <i>B</i>. 
+Pretpostavimo dodatno da za svaki prost broj <i>l</i> koji dijeli
+<i>p</i>-1 najveća potencija <i>l</i><sup><i>e</i></sup> koja dijeli
+<i>p</i>-1 nije veća od <i>B</i>.
+Tada
 za <i>m</i> možemo uzeti najmanji zajednički višekratnik brojeva 1, 2, ... , <i>B</i>. 
 Za ovakav 
 <i>m</i>, broj operacija za računanje <i>a<sup>m</sup></i> - 1 
@@ -91,10 +98,12 @@ koristio grupe <i>E</i>(<b>Z</b><sub><i>p</i></sub>)
 Zato ako za neku krivulju ne dobijemo faktorizaciju jer red od 
 <i>E</i>(<b>Z</b><sub><i>p</i></sub>) ima veliki prosti faktor, 
 onda možemo uzeti neku drugu krivulju i s njom ponoviti postupak. 
-Na taj način je dobivena jedna od najefikasnijih poznatih metoda 
-faktorizacije. Očekivani broj operacija je 
+Na taj je način dobivena jedna od najefikasnijih poznatih 
+metoda faktorizacije, osobito pogodna za pronalaženje relativno malih
+prostih faktora velikog broja. Očekivani broj operacija za pronalaženje
+faktora <i>p</i> je 
 <p align=center>
-exp(O((log <i>n</i>)<sup>1/2</sup> (log log <i>n</i>)<sup>1/2</sup>)) 
+exp(O((log <i>p</i>)<sup>1/2</sup> (log log <i>p</i>)<sup>1/2</sup>)) 
 </p>
 (dakle, to je subeksponencijalni algoritam). 
 <p>

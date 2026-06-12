@@ -36,8 +36,9 @@ body {font-family: Arial,Helvetica,sans-serif;}
 <h2 align=center style="color: rgb(128,0,0)">2.2. Opis algoritma DES-a</h2>
 
 
-DES šifrira otvoreni tekst duljine 64 bita, koristeći ključ 
-<i>K</i> duljine 56 bitova. Tako se dobiva šifrat koji ponovo 
+DES šifrira blok otvorenog teksta duljine 64 bita. Ključ se zapisuje
+kao niz od 64 bita, ali 8 bitova služi za provjeru pariteta, pa je
+efektivna duljina ključa 56 bitova. Tako se dobiva šifrat koji ponovno 
 ima 64 bita. Algoritam se sastoji od 3 etape: 
 <ol>
 <li>Za dani otvoreni tekst <i>x</i>, permutiranjem pomoću 
@@ -76,6 +77,10 @@ Uočimo inverzni poredak od <i>L</i><sub>16</sub> i
 
 <img src="slike/round_DES.gif" alt="DES runda">
 
+Inicijalna permutacija IP i njezin inverz nemaju bitnu kriptografsku
+ulogu; one su uglavnom posljedica načina na koji se DES izvorno
+implementirao u hardveru.
+
 <p>
 Funkcija <i>f</i> za prvi argument ima niz bitova <i>A</i> duljine 
 32, a za drugi argument ima niz bitova <i>J</i> duljine 48. 
@@ -95,7 +100,7 @@ zapišemo kao spoj od osam 6-bitnih nizova
 <p align=center>
 <i>B</i> = <i>B</i><sub>1</sub><i>B</i><sub>2</sub><i>B</i><sub>3</sub><i>B</i><sub>4</sub><i>B</i><sub>5</sub><i>B</i><sub>6</sub><i>B</i><sub>7</sub><i>B</i><sub>8</sub>. </p>
 
-<li>Sljedeći korak koristi 8 tzv. 
+<li>Sljedeći korak koristi osam tzv. 
 <a href="slike/s-box.pdf" target="_blank"><em>S-kutija</em></a>  
 (supstitucijskih kutija) S<sub>1</sub>, ... , 
 S<sub>8</sub>. Svaki S<sub><i>i</i></sub> je fiksna 
@@ -152,7 +157,7 @@ LS<sub><i>i</i></sub> (<i>D</i><sub><i>i</i> -1</sub>), <br>
 <i>K</i><sub><i>i</i></sub> = PC2(<i>C</i><sub><i>i</i></sub> <i>D</i><sub><i>i</i></sub>). </p>
 
 LS<sub><i>i</i></sub> predstavlja ciklički pomak ulijevo za 1 ili 2 
-pozicije, u ovisnosti od <i>i</i>. Ako je <i>i</i> = 1, 2, 9 ili 16, 
+pozicije, ovisno o vrijednosti indeksa <i>i</i>. Ako je <i>i</i> = 1, 2, 9 ili 16, 
 onda je pomak za jednu poziciju, a inače je pomak za dvije pozicije. 
 <a href="tablice/destablice.html#PC2" target="_blank">PC2</a> je još jedna fiksna permutacija.
 </ol>
@@ -185,10 +190,10 @@ No, iz zadnje runde šifriranja znamo da vrijedi
 Zato je <nobr><i>R</i><sub>16</sub> 
 &oplus; <i>f</i>(<i>L</i><sub>16</sub>,<i>K</i><sub>16</sub>) = 
 <i>L</i><sub>15</sub>.</nobr>  
-Znači, nakon jedne runde
+Dakle, nakon jedne runde
 dešifriranja dobivamo <nobr><i>R</i><sub>15</sub><i>L</i><sub>15</sub>.</nobr> 
 Nastavljajući taj postupak,
-nakon svake sljedeće rudne dešifriranja dobivat ćemo redom:
+nakon svake sljedeće runde dešifriranja dobivat ćemo redom:
 <nobr><i>R</i><sub>14</sub><i>L</i><sub>14</sub>,</nobr> 
 <nobr><i>R</i><sub>13</sub><i>L</i><sub>13</sub></nobr> ..., 
 <nobr><i>R</i><sub>1</sub><i>L</i><sub>1</sub></nobr> i nakon zadnje runde

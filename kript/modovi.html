@@ -44,17 +44,17 @@ Godine 1992. proizveden je čip s 50000 tranzistora koji može šifrirati
 10<sup>9</sup> bita (tj. 16 milijuna blokova) po sekundi (čip je koštao 
 300 dolara). 
 <p>
-Jedna važna primjena DES-a je u bankarskim transakcijama. Tako se, 
+Jedna od važnih povijesnih primjena DES-a bila je u bankarskim transakcijama. Tako se, 
 između ostalog, DES koristio za šifriranje PIN-ova (personal 
 identification numbers), te transakcija preko bankomata. 
-DES je također do nedavno bio u širokoj uporabi u civilnim 
-satelitskim komunikacijama. 
+DES je dugo bio u uporabi i u nekim civilnim satelitskim komunikacijama. 
 <p><br>
 Mi smo do sada opisali kako radi DES na jednom bloku od 64 bita. 
 U realnim situacijama, u kojima su poruke znatno duže, poznata  
-su 4 <em>načina djelovanja</em> (modes of operation) DES-a. Ti 
-<em>modovi</em> pokrivaju sve moguće primjene DES-a, a također su 
-primjenjivi na bilo koju simetričnu blokovnu šifru. 
+su 4 <em>načina djelovanja</em> (modes of operation) DES-a: 
+ECB, CBC, CFB i OFB. 
+Ti se modovi mogu primijeniti i na druge simetrične blokovne šifre. 
+Kasnije su uvedeni i drugi modovi, među kojima je posebno važan CTR.
 <p>
 Najjednostavniji mod je ECB (Electronic Codebook) u kojem se svaki 
 blok otvorenog teksta šifrira s istim ključem. Dakle, poruka se 
@@ -65,7 +65,9 @@ isti ključ.
 <img src="slike/ecbmode.gif" alt="ecb mode">
 </p>
 
-ECB mod je idealan za kratke poruke. 
+ECB mod je najjednostavniji, ali se u pravilu ne preporučuje za 
+šifriranje duljih poruka. Može biti prihvatljiv samo u vrlo ograničenim
+situacijama, primjerice za šifriranje jednog slučajnog bloka podataka.
 Kod dugih poruka sigurnost ECB moda se 
 smanjuje, budući da identični blokovi u otvorenom tekstu daju 
 identične šifrate. 
@@ -73,16 +75,19 @@ identične šifrate.
 Da bi povećali sigurnost, želimo postići da identičnim blokovima u 
 otvorenom tekstu odgovaraju različiti šifrati. Relativno jednostavan 
 način da se to postigne je korištenje CBC (Cipher Block Chaining) moda. 
-Na trenutni blok otvorenog teksta se primjeni operacija XOR sa 
+Na trenutni blok otvorenog teksta se primijeni operacija XOR sa 
 šifratom prethodnog bloka, a tek potom se šifrira pomoću ključa 
 <i>K</i>. 
 Dakle, <nobr><i>y<sub>i</sub></i> = 
 <i>e<sub>K</sub></i>(<i>y</i><sub><i>i</i> -1</sub> 
 &oplus;  
 <i>x<sub>i</sub></i>)</nobr> za <nobr><i>i</i> &ge; 1.</nobr>   
-Na startu uzimamo da je <i>y</i><sub>0</sub> = IV, gdje je IV 
-tzv. inicijalizirajući vektor, koji mora biti poznat i primaocu i 
-pošiljaocu. To se može postići npr. tako da ga se pošalje ECB modom. 
+Na početku uzimamo <i>y</i><sub>0</sub> = IV, gdje je IV 
+inicijalizacijski vektor. On mora biti poznat i pošiljatelju i
+primatelju; ne mora biti tajan, pa se obično šalje zajedno sa
+šifratom. Važno je da se za isti ključ ne ponavlja, a za CBC se
+u pravilu zahtijeva da bude nepredvidljiv.
+
 Za dešifriranje koristimo relaciju 
 <nobr><i>x<sub>i</sub></i> = 
 <i>y</i><sub><i>i</i> -1</sub> 
@@ -104,7 +109,7 @@ Najčešće je <i>j</i> = 1 ili <i>j</i> = 8. Ako je <i>j</i> = 8,
 to znači da se šifrira slovo po slovo (jednom slovu odgovara 8 
 bitova po ASCII standardu). 
 <p>
-U šifriranje krećemo šifriranjem 64 bitnog inicijalizirajućeg 
+U šifriranje krećemo šifriranjem 64-bitnog inicijalizirajućeg 
 vektora IV. Na <i>j</i> najlijevijih bitova 
 izlaznog podatka primijenimo 
 XOR sa <i>x</i><sub>1</sub> i tako dobijemo <i>y</i><sub>1</sub>. 
@@ -117,8 +122,8 @@ sve dok se sve jedinice otvorenog teksta ne šifriraju.
 </p>
 
 Kod dešifriranja se koristi ista shema, osim što se na 
-odgovarajući šifrat primjeni XOR s izlaznim podatkom funkcije šifriranja 
-<i>e<sub>K</sub></i> da bi se dobio otvoreni tekst. Uočimo da se ponovo 
+odgovarajući šifrat primijeni XOR s izlaznim podatkom funkcije šifriranja 
+<i>e<sub>K</sub></i> da bi se dobio otvoreni tekst. Uočimo da se ponovno 
 koristi funkcija <i>e<sub>K</sub></i>, a ne <i>d<sub>K</sub></i>. 
 Naime, ovdje je funkcija 
 šifriranja zapravo XOR, a on je sam sebi inverz.
@@ -137,9 +142,13 @@ u idućem koraku šalje odmah nakon primjene <i>e<sub>K</sub></i>
 u prethodnom koraku (prije primjene XOR-a). Jedna od prednosti 
 OFB moda je da se greške u transmisiji ne propagiraju. Npr. 
 greška u <i>y</i><sub>1</sub> utječe samo na <i>x</i><sub>1</sub>. 
-Ovaj mod se često koristi u šifriranje poruka sa satelita. 
-No, ovo svojstvo može biti i nedostatak. Stoga se modovi CBC i CFB 
-koriste za ustanovljavanje vjerodostojnosti poruke. 
+Ovaj mod se često koristio u šifriranje poruka sa satelita. 
+No, ovo svojstvo može biti i nedostatak. 
+Sami modovi CBC i CFB ne osiguravaju automatski vjerodostojnost
+odnosno integritet poruke. Za to se koriste dodatni mehanizmi, poput
+MAC-a; primjerice, iz CBC konstrukcije može se izvesti CBC-MAC uz
+odgovarajuće uvjete.
+
    
 <p align=center>
 <img src="slike/ofbmode.gif" alt="ofb mode">
@@ -147,14 +156,14 @@ koriste za ustanovljavanje vjerodostojnosti poruke.
 <p>
 
 Pored ova četiri (klasična) načina djelovanja, u posljednje je vrijeme sve
-popularniji CTR (Counter) mod. U njemu se koristi niz brojača (countera)
+popularniji CTR (Counter) mod. U njemu se koristi niz brojača (engl. counters)
 <nobr><i>c</i><sub>1</sub>, <i>c</i><sub>2</sub>, ... .</nobr> 
 Niz blokova šifrata dobiva se po sljedećem pravilu:
 <p align=center>
  <i>y<sub>i</sub></i> = <i>x<sub>i</sub></i> 
 &oplus; <i>e<sub>K</sub></i>(<i>c<sub>i</sub></i>). 
 </p>
-Brojači moraju biti u parovima različiti. Obično se to postiže tako da se brojaču 
+Brojači koji se koriste s istim ključem moraju biti u parovima različiti. Obično se to postiže tako da se brojaču 
 <i>c</i><sub>1</sub>
 pridruži neka inicijalna vrijednost, a potom se ostali brojači povećavaju za 1: 
 <nobr><i>c<sub>i</sub></i> = <i>c</i><sub>1</sub> + (<i>i</i> - 1)</nobr> 
@@ -164,11 +173,11 @@ kod DES-a je <i>b</i> = 64).
 
 Za razliku od prethodna tri &quot;ulančana&quot; (chaining) moda, 
 u CTR modu se šifriranje (i dešifriranje)
-može lako paralelizirati. Kod ulančanih modusa je to bio problem, jer je
+može lako paralelizirati. Kod ulančanih modova je to bio problem, jer je
 algoritam morao završiti obradu jednog bloka, da bi prešao na naredni. To pokazuje
-još jednu prednost CTR modusa, a to je mogućnost dešifriranja samo jednog određenog bloka,
-što može biti interesanstno za neke aplikacije. Slično kao kod CFB i OFB modusa,
-i ovdje se u dešifiranju ponovo koristi funkcija <i>e<sub>K</sub></i> 
+još jednu prednost CTR moda, a to je mogućnost dešifriranja samo jednog određenog bloka,
+što može biti zanimljivo za neke primjene. Slično kao kod CFB i OFB modova,
+i ovdje se u dešifriranju ponovno koristi funkcija <i>e<sub>K</sub></i> 
 (a ne <i>d<sub>K</sub></i>). Ovo nije neka
 posebna prednost kod DES-a, ali može biti relevantno kod blokovnih kriptosustava
 kod kojih algoritam dešifriranja nije doslovno isti kao algoritam šifriranja

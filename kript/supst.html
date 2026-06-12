@@ -47,8 +47,8 @@ nalazila tri mjesta dalje od njih u alfabetu
 <nobr>(A &#8614; D,</nobr> 
 <nobr>B &#8614; E,</nobr> itd.). 
 Pretpostavljamo da se alfabet ciklički nastavlja, tj. da nakon zadnjeg 
-slova Z, ponovo dolaze A, B, C. 
-Ako bi smo upotrijebili današnji engleski alfabet od 26 slova, onda 
+slova Z ponovno dolaze A, B, C. 
+Ako bismo upotrijebili današnji engleski alfabet od 26 slova, onda 
 bi poznata Cezarova izreka 
 <p align=center><font color=990000>VENI VIDI 
 VICI</font> </p>bila šifrirana ovako: 
@@ -71,13 +71,13 @@ DJ, DZ, LJ, NJ, S, Z.
 <p>
 Danas se Cezarovom šifrom nazivaju i šifre (tj. kriptosustavi) istog oblika s 
 pomakom različitim od 3. Da bismo Cezarovu šifru precizno definirali u smislu Definicije 1.1, 
-uvest ćemo prirodnu korespodenciju između slova alfabeta (A - Z) i cijelih brojeva 
+uvest ćemo prirodnu korespondenciju između slova alfabeta (A - Z) i cijelih brojeva 
 (0 - 25). 
 <p>
 Skup {0,1,2,...,25} označavat ćemo sa <b>Z</b><sub>26</sub> i pretpostavljat ćemo 
 da su na njemu definirane operacije zbrajanja, oduzimanja i množenja na isti način kao 
 u skupu cijelih brojeva, ali tako da se rezultat (ukoliko nije iz skupa 
-<nobr>{0,1,2,...,25}</nobr>) na kraju zamijeni s njegovih ostatkom pri 
+<nobr>{0,1,2,...,25}</nobr>) na kraju zamijeni s njegovim ostatkom pri 
 dijeljenju s 26. Koristit ćemo oznake <nobr><i>a</i> +<sub>26</sub> <i>b</i></nobr> ili 
 <nobr>(<i>a</i> + <i>b</i>) mod 26,</nobr> te analogno za oduzimanje i množenje. 
 Skup <b>Z</b><sub>26</sub>, uz operacije <nobr>+<sub>26</sub></nobr> i 
@@ -124,7 +124,7 @@ U Cezarovoj šifri su osnovni elementi (simboli) otvorenog teksta slova
 (odnosno njihovi numerički ekvivalenti), a ključ <i>K</i> određuje 
 za koliko mjesta udesno ćemo pomicati slova pri šifriranju.  
 Očito je <i>d<sub>K</sub></i>(<i>e<sub>K</sub></i>(<i>x</i>)) = 
-<i>x</i>, kao što se zahtjeva u definiciji 
+<i>x</i>, kao što se zahtijeva u definiciji 
 kriptosustava. Za <i>K</i> = 3 dobiva se originalna Cezarova šifra. 
 Postoje naznake da je Cezarov nećak, prvi rimski car August, 
 koristio najjednostavniju verziju ove šifre, pomičući slova samo za 
@@ -205,7 +205,7 @@ Ovdje <i>a</i><sup>-1</sup> označava multiplikativni inverz broja
 Budući da broj 26 nije prost, nemaju svi elementi iz <b>Z</b><sub>26</sub> 
 multiplikativni inverz, već ih imaju upravo brojevi koji su relativno prosti s 26, 
 tj. za koje 
-vrijedi da je najveći zajednički djelitelje od <i>a</i> i 26 jednak 1 
+vrijedi da je najveći zajednički djelitelj od <i>a</i> i 26 jednak 1 
 (to pišemo: (<i>a</i>, 26) = 1). 
 Prikažimo te brojeve zajedno s njihovim inverzima: 
 <p>
@@ -258,6 +258,7 @@ Imamo:
  25 <b>&middot;</b> 7 + 3 &equiv; 22 (mod 26), 
  0 <b>&middot;</b> 7 + 3 &equiv; 3 (mod 26), 
   3 <b>&middot;</b> 7 + 3 &equiv; 24 (mod 26), 
+0 <b>&middot;</b> 7 + 3 &equiv; 3 (mod 26),
  17 <b>&middot;</b> 7 + 3 &equiv; 18 (mod 26), 
 </font></pre>
 </center>
@@ -274,7 +275,7 @@ OZWHRYEZCVWFCTPCUWRCFPYHWI
 Imamo &phi;(26) 
 <b>&middot;</b> 26 = 12 
 <b>&middot;</b> 26 = 312 mogućih ključeva. 
-To je još uvijek premalo, pa bi uz pomoć računala sigurno 
+To je još uvijek premalo, pa bismo uz pomoć računala sigurno 
 mogli primijeniti "grubu silu", kao u Primjeru 1.1. 
 <p>
 No, postoji i elegantniji način ukoliko znamo kojim je jezikom 
@@ -307,7 +308,7 @@ Dakle, dobili smo da je
 <nobr><i>e<sub>K</sub></i>(<i>x</i>) = (9<i>x</i> + 2) mod 26.</nobr> 
 Tada je <nobr><i>d<sub>K</sub></i>(<i>y</i>) = 3(<i>y</i> - 2) mod 26.</nobr>   
 Primijenimo li funkciju <i>d<sub>K</sub></i> na naš šifrat, dobivamo 
-otvoreni tekst (s umetnutim razmacima i "kvačicama"): 
+otvoreni tekst (s umetnutim razmacima i dijakritičkim znakovima ("kvačicama")): 
 <p align=center><font color=990000>
 KRIPTOGRAFIJA ZNAČI TAJNOPIS.
 </font></p>
@@ -343,7 +344,8 @@ Ovdje imamo čak 26! &asymp; 4
 <b>&middot;</b> 10<sup>26</sup> mogućih ključeva, 
 tako da je napad ispitivanjem svih mogućih ključeva 
 praktički nemoguć, čak i uz pomoć računala. 
-Međutim, supstitucijsku šifru je moguće lako dekriptirati 
+Kao što ćemo vidjeti, velik prostor ključeva sam po sebi ne jamči sigurnost šifre. 
+Supstitucijsku šifru je moguće lako dekriptirati 
 koristeći statistička svojstva jezika na kojem je pisan 
 otvoreni tekst. Osnovna metoda je <em>analiza frekvencije slova</em>. 
 Broji se pojavljivanje svakog slova u šifratu, te se distribucija 
@@ -365,7 +367,11 @@ Njegova zapažanja su objavljena u odjeljku posvećenom kriptologiji u velikoj
 enciklopediji u četrnaest svezaka čiji je autor <font color=009900>Qalqashandi</font>. 
 Odjeljak ima naslov "O skrivanju tajnih poruka u pismima". Nedavno pronađeni 
 rukopisi sugeriraju međutim da su arapski lingvisti tu metodu poznavali 
-možda i pet stoljeća ranije. Čini se da su u europskoj kriptografiji 
+možda i pet stoljeća ranije. 
+Najstariji poznati sačuvani opis te metode obično se
+pripisuje arapskom učenjaku <font color=009900>al-Kindiju</font>
+iz 9. stoljeća, autoru spisa o dešifriranju kriptografskih poruka.
+Čini se da su u europskoj kriptografiji 
 metodu analize frekvencija u kriptoanalizi prvi počeli koristiti 
 talijanski kriptografi u 15. stoljeću. Naime, poznato je da su svoje 
 poruke šifrirali na način da su najfrekventnija slova zamjenjivali 
@@ -377,7 +383,7 @@ Naime, mnoge su tadašnje talijanske kneževine imale ljude plaćene za razbijan
 šifriranih poruka (jedan od najpoznatijih je venecijanski "tajnik za šifre" 
 <font color=009900>Giovanni Soro</font>), i taj se posao često prenosio 
 unutar obitelji. Ovakvu situaciju u kojoj praktički istovremeno 
-do otkrića značajnih za kriptografiju dođu znastvenici koji žele što prije 
+do otkrića značajnih za kriptografiju dođu znanstvenici koji žele što prije 
 objaviti svoje rezultate i dobiti za njih priznanje, te ljudi iz 
 obavještajnih ili komercijalnih institucija koji ne žele ili ne smiju 
 odmah objaviti svoje rezultate, susrećemo često u povijesti kriptografije 
@@ -665,7 +671,7 @@ Najfrekventniji bigrami u hrvatskom jeziku su:
 JE (2.7 %), NA (1.5 %), RA (1.5 %), ST, AN, NI, KO, OS, TI, IJ, NO, 
 EN, PR (1.0 %). 
 </p>
-Ovdje je važno uočiti na je JE najfrekventniji bigram, iako J nije 
+Ovdje je važno uočiti da je JE najfrekventniji bigram, iako J nije 
 među najfrekventnijim slovima. Više od pola pojavljivanja slova J 
 otpada na bigram JE. Druga zanimljivost je da su svi 
 najfrekventniji bigrami oblika suglasnik-samoglasnik ili 
@@ -810,7 +816,7 @@ no i bez toga nismo imali puno problema.
 
 <br><p>
 
-Možemo zaključiti da je usprkos velikom prostoru ključeva, supstitucijska šifra 
+Možemo zaključiti da je usprkos velikom prostoru ključeva, jednostavna monoalfabetska supstitucijska šifra  
 vrlo laka za kriptoanalizu. To je bilo poznato već početkom 
 15. stoljeća, kada je u Italiji počela uporaba <em>homofona</em>, 
 tj. šifriranje najfrekventnijih slova s više različitih simbola. 

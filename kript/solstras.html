@@ -86,7 +86,7 @@ epsp(<i>b</i>)).
 
 Kvadriranjem relacije (**) dobivamo <i>b</i><sup><i>n</i> -1</sup> 
 &equiv; 1 (mod <i>n</i>), 
-tj. relaciju (*). To znači da je svaki epsp(<i>b</i>) ujedno i psp(<i>b</i>). Međutim , obrat ove tvrdnje ne vrijedi.  
+tj. relaciju (*). To znači da je svaki epsp(<i>b</i>) ujedno i psp(<i>b</i>). Međutim, obrat ove tvrdnje ne vrijedi.  
 <p>
 <b>Primjer 4.2:</b> Vidjeli smo u Primjeru 4.1 da je 91 pseudoprost u 
 bazi 3. Međutim, 
@@ -135,7 +135,7 @@ Sljedeći teorem predstavlja osnovu za Solovay-Strassenov test prostosti.
 </font></td></tr></table>
 <p>
 
-Uočimo važnu razliku između Teorema 4.1.3) i 4.2. Naime, kod Eulerovih 
+Uočimo važnu razliku između Teorema 4.1(3) i Teorema 4.2. Naime, kod Eulerovih 
 pseudoprostih brojeva nema analogona Carmichaelovih brojeva, već za 
 svaki složen broj <i>n</i>, relacija (**) nije zadovoljena za barem 
 pola mogućih baza. 
@@ -190,7 +190,8 @@ To znači da za svaki <i>x</i>
 &isin; 
 { 1, ... , 
 <i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP> - 1 } 
-postoji <i>j</i> takav da je 
+relativno prost s
+<i>p</i><sub><i>i</i></sub> postoji <i>j</i> takav da je 
 <i>g<sub>i</sub><sup>j</sup></i> 
 &equiv; <i>x</i> 
 (mod <i>p</i><sub><i>i</i></sub><img src="symbols/supalpha.gif" alt="alpha" ALIGN=TOP><img src="symbols/subi.gif" alt="i" ALIGN=TOP>). 
@@ -362,7 +363,7 @@ Stoga je zaista |<i>P</i><sub><i>n</i></sub>|=
 <p><br>
 
 
-<b>Dokaz Teorema 4.1:</b> Neka je <i>n</i> = 
+<b>Dokaz Teorema 4.2:</b> Neka je <i>n</i> = 
 <img src="slike/palfa2.gif" alt="p_1^a_1...p_r^a_r" ALIGN=TOP>.
 Iz Leme 4.2 slijedi
 
@@ -458,10 +459,13 @@ alt="|P_n|/phi(n) <= 1/2^(r-1)" ALIGN=TOP>
 
 <h3 align=center>Solovay-Strassenov test prostosti:</h3>
 Neka je <i>n</i> neparan broj za kojeg želimo ustanoviti 
-da li je prost ili složen. Odaberimo na slučajan način 
+je li prost ili složen. 
+Odaberimo na slučajan način 
 <i>k</i> brojeva <i>b</i> takvih da je 0 &lt; <i>b</i> &lt; <i>n</i>. 
-Za svaki od tih <i>b</i>-ova izračunamo
-obje strane od (**). Za računanje &nbsp; 
+Za svaki odabrani <i>b</i> najprije izračunamo
+<i>g</i> = (<i>b</i>,<i>n</i>). Ako je <i>g</i> &gt; 1, tada je
+<i>n</i> složen i test staje. Inače izračunamo obje strane relacije (**).
+Za računanje &nbsp; 
 <i>b</i><sup>(<i>n</i>-1)/2</sup> mod <i>n</i> &nbsp;
 treba O(log<sup>3</sup> <i>n</i>) operacija metodom kvadriraj i
 množi. Za
@@ -471,11 +475,11 @@ kvadratni zakon reciprociteta, treba
 O(log<sup>2</sup> <i>n</i>) operacija. 
 Ako ova dva broja nisu kongruentna modulo <i>n</i>, onda
 znamo da je <i>n</i> složen i test staje. Inače uzmemo idući
-<i>b</i>. Ako <i>n</i> prođe test (**) za <i>k</i> različitih 
-<i>b</i>-ova, onda je
-vjerojatnost da je <i>n</i> složen 
-&le;  
-1/2<sup><i>k</i></sup>. 
+<i>b</i>. 
+Ako je <i>n</i> složen, vjerojatnost da prođe jedan slučajno odabrani
+test najviše je 1/2. Stoga je vjerojatnost da složeni <i>n</i>
+prođe <i>k</i> nezavisno odabranih testova najviše
+<nobr>1/2<sup><i>k</i></sup></nobr>.
 Stoga, ako je <i>k</i> dovoljno velik, <i>n</i> proglašavamo 
 "<em>vjerojatno prostim</em>".
 U praksi se uzima <i>k</i> = 50 ili <i>k</i> = 100 
@@ -488,7 +492,11 @@ U praksi se uzima <i>k</i> = 50 ili <i>k</i> = 100
 
 Solovay-Strassenov test je primjer tzv. <em>Monte Carlo
 algoritma</em> koji uvijek daje odgovor, ali on može biti
-netočan. Drugi tip vjerojatnosnog algoritma je <em>Las Vegas
+netočan. 
+Preciznije, Solovay-Strassenov test je Monte Carlo algoritam s jednostranom
+pogreškom: ako odgovori da je broj složen, odgovor je sigurno točan;
+pogreška je moguća samo ako složen broj proglasi vjerojatno prostim.
+Drugi tip vjerojatnosnog algoritma je <em>Las Vegas
 algoritam</em> koji ne daje uvijek odgovor, ali kada ga da, onda je
 odgovor sigurno točan. Primjer takvog algoritma smo vidjeli
 kod faktorizacije RSA modula <i>n</i> ako je poznat tajni eksponent
@@ -505,8 +513,8 @@ koriste u njegovom računanju: <p>
 (<i>a</i>/<i>n</i>) = (<i>b</i>/<i>n</i>) 
 <p>
 &nbsp; &nbsp; (2) &nbsp; 
-(-1/n) = (-1)<sup>(<i>n</i> -1)/2</sup>, &nbsp; 
-(2/n) = (-1)<sup>(<i>n</i><img src="symbols/sup2.gif" alt="2"> -1)/8</sup>  
+(-1/<i>n</i>) = (-1)<sup>(<i>n</i> -1)/2</sup>, &nbsp; 
+(2/<i>n</i>) = (-1)<sup>(<i>n</i><img src="symbols/sup2.gif" alt="2"> -1)/8</sup>  
 <p>
 &nbsp; &nbsp; (3) &nbsp; 
 (<i>ab</i>/<i>n</i>) = (<i>a</i>/<i>n</i>) (<i>b</i>/<i>n</i>) 
@@ -515,7 +523,7 @@ koriste u njegovom računanju: <p>
 (<i>n</i>/<i>m</i>) ako je <i>m</i> 
 &equiv; <i>n</i> 
 &equiv; 3 (mod 4), a (<i>m</i>/<i>n</i>) = (<i>n</i>/<i>m</i>) 
-inače.
+inače, za neparne relativno proste brojeve <i>m</i> i <i>n</i>.
 
 <p>
 

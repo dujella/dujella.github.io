@@ -48,12 +48,17 @@ algoritmi za faktorizaciju trebaju
 <p align=center>
 exp(O((log <i>n</i>)<sup>1/3</sup> (log log <i>n</i>)<sup>2/3</sup>)) 
 </p>
-operacija, tako da su brojevi od preko 300 znamenaka za sada sigurni 
-od ovog napada. Dakle, nije poznat niti jedan polinomijalni 
+operacija, 
+tako da se dovoljno veliki RSA moduli za sada smatraju sigurnima
+od ovog napada. U suvremenim primjenama modul od oko 1024 bita
+više se ne smatra dovoljnim; uobičajena minimalna duljina je 2048
+bitova, a za višu razinu sigurnosti koriste se i veći moduli. 
+Dakle, nije poznat niti jedan polinomijalni 
 algoritam za faktorizaciju. Ovdje ipak treba reći da je u nekim 
-slučajevima <i>n</i> puno lakše faktorizirati, pa takve <i>n</i>-ove  treba izbjegavati. Takav je slučaj npr. ako su <i>p</i> i <i>q</i> 
-jako blizu jedan drugoga ili ako <i>p</i> -1 i <i>q</i> -1 imaju 
-samo male proste faktore. 
+slučajevima <i>n</i> puno lakše faktorizirati, pa takve <i>n</i>-ove  treba izbjegavati. 
+Takav je slučaj, na primjer, ako su <i>p</i> i <i>q</i> preblizu
+jedan drugome, što omogućuje Fermatovu faktorizaciju, ili ako
+<i>p</i> - 1 i <i>q</i> - 1 imaju samo male proste faktore.
 <p>
 
 Važno je napomenuti da ako napadač otkrije tajni eksponent <i>d</i>, 
@@ -75,7 +80,7 @@ faktorizirati <i>n</i>.
 <p>
 
 Uvrštavanjem <i>a</i> = -1 vidimo da je <i>m</i> paran. Provjerimo 
-da li <i>m</i>/2 zadovoljava isto svojstvo kao <i>m</i>. Ako postoji 
+je li <i>m</i>/2 zadovoljava isto svojstvo kao <i>m</i>. Ako postoji 
 <i>a</i> za koji nije  <i>a</i><sup><i>m</i>/2</sup>  
 &equiv; 1 (mod <i>n</i>), (<i>a</i>,<i>n</i>) = 1, onda takvih <i>a</i>-ova ima 
 barem 50%. Zaista, svakom broju <i>b</i> koji zadovoljava 
@@ -118,7 +123,7 @@ svaka od četiri mogućnosti nastupa u 25% slučajeva.
 Dakle, za proizvoljan <i>a</i> s vjerojatnošću 50% imamo da je 
 <i>a</i><sup><i>m</i>/2</sup> - 1 djeljiv s jednim od brojeva <i>p</i> 
 i <i>q</i>, a nije djeljiv s drugim. Uzimajući slučajno nekoliko 
-desetaka <i>a</i>-va, možemo s vrlo velikom vjerojatnošću očekivati 
+desetaka <i>a</i>-ova, možemo s vrlo velikom vjerojatnošću očekivati 
 da ćemo pronaći <i>a</i> s gornjim svojstvom. Recimo da je 
 <i>a</i><sup><i>m</i>/2</sup> - 1 djeljiv s <i>p</i>, a nije s <i>q</i>. Tada je (<i>n</i>, <i>a</i><sup><i>m</i>/2</sup> - 1) = 
 <i>p</i> i mi smo uspjeli faktorizirati <i>n</i>. 
@@ -130,7 +135,7 @@ i to iz klase
 onda je odgovor sigurno točan. U slučaju da algoritam ne da odgovor, možemo mu dati novu
 nezavisnu šansu za nalaženje odgovora. Na taj se način vjerojatnost uspjeha algoritma
 povećava s količinom raspoloživog vremena.
-Druga klasa vjerojatnosnih algoritma su
+Druga klasa vjerojatnosnih algoritama su
 <em>Monte Carlo algoritmi</em> koji uvijek daju odgovor, ali on može biti netočan. 
 Primjer takvog algoritma
 je Miller-Rabinov test za testiranje prostosti. 
@@ -151,7 +156,7 @@ A bi pomoću tog algoritma te njegovih eksponenata
 <i>e<sub>A</sub></i> i <i>d<sub>A</sub></i> mogao faktorizirati 
 <i>n</i>. Nakon toga bi A lako, poznavajući faktore od <i>n</i> i javni 
 ključ <i>e<sub>B</sub></i>, mogao izračunati tajni ključ <i>d<sub>B</sub></i> bilo kojeg drugog korisnika. <br>
-Ova primjedba pokazuje da jedan RSA modul ne bi smjelo koristiti 
+Ova primjedba pokazuje da isti RSA modul ne bi smjelo koristiti 
 više korisnika. 
 <p><br>
 
@@ -195,7 +200,7 @@ Međutim, mi ne znamo &phi;(<i>n</i>).
 Stoga ćemo &phi;(<i>n</i>) 
 zamijeniti s <i>n</i>. Iz <nobr>&phi;(<i>n</i>) 
 = <i>n</i> - <i>p</i> - <i>q</i> + 1<nobr> i <nobr><i>p</i> + <i>q</i> - 1
-&lt; 3 &radic;<i>n</i><nobr> slijedi 
+&lt; 3 &radic;<i>n</i></nobr> slijedi 
 <nobr>|<i>n</i> - &phi;(<i>n</i>)| 
 &lt; 3 &radic;<i>n</i>.</nobr> 
 Zamijenimo &phi;(<i>n</i>) 
@@ -207,7 +212,7 @@ s <i>n</i>, pa dobivamo:
 </pre> 
 Sada je <i>k</i>&phi;(<i>n</i>) = <i>ed</i> - 1 < <i>ed</i>, pa iz <i>e</i> &lt; 
 &phi;(<i>n</i>), 
-što je zadovoljeno u standardnoj verziji RSA kriptosustava, slijedi 
+što se u standardnoj definiciji RSA obično zahtijeva, slijedi 
 <i>k</i> &lt; <i>d</i> &lt; 1/3 <i>n</i><sup>0.25</sup>, te dobivamo 
 <pre>
 
@@ -252,9 +257,9 @@ Odavde odmah slijedi da je <i>q</i><sub><i>k</i></sub>
 &ge;  
 <i>F</i><sub><i>k</i></sub>, gdje je <i>F</i><sub><i>k</i></sub> 
 <i>k</i>-ti <em>Fibonaccijev broj</em>. To znači da nazivnici 
-konvergenti rastu eksponencijano. <br>
-U našem slučaju to povlači da ima O(log <i>n</i>) konvergenti 
-od <i>e</i>/<i>n</i>. Jedna od njih je <i>k</i>/<i>d</i>. 
+konvergenti rastu eksponencijalno. <br>
+U našem slučaju to povlači da ima O(log <i>n</i>) konvergenti broja <i>e</i>/<i>n</i>. 
+Jedna od njih je <i>k</i>/<i>d</i>. 
 Dakle, izračunamo sve konvergente od <i>e</i>/<i>n</i> i 
 testiramo koja od njih zadovoljava 
 (<i>x</i><sup><i>e</i></sup>)<sup><i>d</i></sup> 
@@ -284,7 +289,7 @@ i <nobr>(<i>q</i> - <i>p</i>)/2</nobr> možemo lako dobiti i faktorizaciju modul
 modul <i>n</i> = 7978886869909, javni eksponent <i>e</i> = 
 3594320245477, te da je poznato da tajni eksponent <i>d</i> 
 zadovoljava <i>d</i> &lt; 1/3 <i>n</i><sup>0.25</sup> &lt; 561. 
-Da bi primijenili Wienerov napad, računamo razvoj  
+Da bismo primijenili Wienerov napad, računamo razvoj  
 broja <i>e</i> / <i>n</i> u verižni razlomak. Dobivamo: 
 <p align=center>
 [0, 2, 4, 1, 1, 4, 1, 2, 31, 21, 1, 3, 1, ... ]. </p>
@@ -310,14 +315,16 @@ tajni eksponent <i>d</i> = 313, a dobili smo i faktore od <i>n</i>: to su
 <p><br>
 Postoje i nešto jači rezultati od Teorema 1. <font color=009900>Dujella</font> 
 je primjenom rezultata o karakterizaciji dobrih racionalnih aproksimacija 
-pomoću vezižnih razlomaka Wienerov napad proširio do <i>d</i> 
+pomoću verižnih razlomaka Wienerov napad proširio do <i>d</i> 
 &le; 2<sup>30</sup><i>n</i><sup>0.25</sup>, dok su  
 <font color=009900>Boneh</font> i <font color=009900>Durfee</font> 
 pomoću LLL-algoritma proširili Wienerov napad do slučaja kada je <i>d</i> 
 &le; <i>n</i><sup>0.292</sup>. 
-Savjet je da se
-izbjegava slučaj kada je <i>d</i> &lt; &radic;<i>n</i> jer je poznato da su svi ovi gore spomenuti
-napadi sasvim neprimjenjivi ako je <i>d</i> &gt; &radic;<i>n</i>. Zaključujemo da ideja korištenja malog
+U praksi se zato izbjegavaju premale vrijednosti tajnog eksponenta
+<i>d</i>. Dovoljno velik <i>d</i>, primjerice reda barem &radic;<i>n</i>,
+stavlja ove napade malim tajnim eksponentom izvan njihova poznatog
+područja primjenjivosti.
+Zaključujemo da ideja korištenja malog
 eksponenta <i>d</i> za ubrzavanje dešifriranja nije dobra. 
 <p><br>
 
@@ -350,16 +357,17 @@ Eksponenti <i>d<sub>p</sub></i> i <i>d<sub>q</sub></i> se nazivaju CRT-eksponent
 Vidjeli smo da eksponent za dešifriranje <i>d</i> ne bi smio biti manji od <i>n</i><sup>0.292</sup>.
 S druge strane, čini se da nema prepreka da CRT-eksponenti budu znatno manji,
 a da to ne naruši sigurnost kriptosustava. Stoga se u situacijama kad se želi
-minimizirati trošak dešifriranja preporueuje korištenje ove verzije kriptosustava RSA,
+minimizirati trošak dešifriranja preporučuje korištenje ove verzije kriptosustava RSA,
 koja se naziva <em>rebalansirani RSA</em>, 
 u kojoj se najprije izaberu mali CRT-eksponenti <i>d<sub>p</sub></i> i <i>d<sub>q</sub></i>, a zatim,
-s pomoću Kineskog teorema o ostatcima, izračuna odgovarajući eksponent za šifriranje <i>e</i>.
+s pomoću Kineskog teorema o ostatcima, izračuna odgovarajući eksponent za šifriranje <i>e</i>. 
+
 
 <p><br>
 
 
 Također postoje i napadi na RSA uz pretpostavku da je eksponent 
-<i>e</i> mali, pa bi i to trebalo izbjegavati. U ranijim 
+<i>e</i> vrlo mali, pa bi i to trebalo izbjegavati. U ranijim 
 implementacijama RSA kriptosustava, često se uzimalo 
 <i>e</i> = 3, da bi se minimiziralo vrijeme potrebno za 
 šifriranje. Pokazat ćemo zašto taj izbor za <i>e</i> nije dobar. 
@@ -443,23 +451,30 @@ To znači da je <i>x</i> = 1860867 i
 <p><br>
 
 Upravo opisani napad može se izbjeći tako da se porukama prije 
-šifriranja doda neki "slučajni dodatak". Na taj način, nikad 
+šifriranja doda neki "slučajni dodatak". 
+U suvremenim shemama to se radi propisanim slučajnim popunjavanjem
+(engl. randomized padding), primjerice OAEP-om za RSA šifriranje.
+Na taj način, nikad 
 nećemo različitim primateljima slati potpuno identične poruke. 
 No, postoje napadi koji pokazuju da ni u tom slučaju  
 RSA kriptosustav s vrlo malim eksponentom <i>e</i> nije siguran. 
 Može se preporučiti uporaba eksponenta <i>e</i> = 65537, 
-koji je dovoljno velik da bi onemogućio sve poznate napade na 
-RSA s malim eksponentom, a ima prednost da je šifriranje s njim 
+koji je dovoljno velik da izbjegne tipične probleme vrlo malih eksponenata,
+a dovoljno malen da šifriranje i provjera potpisa ostanu brzi. 
+Primijetimo da je šifriranje s njim 
 vrlo brzo jer ima malo "jedinica" u binarnom zapisu. Naime, 
 65537 = 2<sup>16</sup> + 1.  
 <p><br>
 
-Možemo zaključiti da i nakon više od dva desetljeća intenzivnog 
-proučavanja, još uvijek nije pronađena metoda koja bi razbila 
-RSA kriptosustav. Svi poznati napadi na RSA zapravo samo 
+Možemo zaključiti da ni nakon gotovo pet desetljeća intenzivnog
+proučavanja nije pronađena klasična metoda koja bi, uz korektan izbor
+parametara i pravilnu implementaciju, praktično razbila RSA.
+Svi poznati napadi na RSA zapravo samo 
 pokazuju na što treba paziti i što treba izbjegavati kod 
 izbora parametara i implementacije RSA. Za sada se uz korektnu 
 implementaciju RSA može smatrati sigurnim kriptosustavom. 
+Naravno, ovo se odnosi na klasična računala; dovoljno velika kvantna
+računala i Shorov algoritam promijenili bi sigurnosnu sliku RSA. 
 
 <p>
 

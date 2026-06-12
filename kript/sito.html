@@ -50,7 +50,7 @@ gdje je <i>P</i> broj odabran na neki optimalan način.
 Skup <i>S</i> u kojem tražimo 
 <font face="Brush Script MT,Script,Times New Roman">B</font>-brojeve 
 (to su oni koji su djeljivi samo s prostim brojevima iz 
-<font face="Brush Script MT,Script,Times New Roman">B</font> bit će isti kao u
+<font face="Brush Script MT,Script,Times New Roman">B</font>) bit će isti kao u
 Fermatovoj faktorizaciji, tj.
 <p align=center>
 <i>S</i> = {<i>t</i><sup>2</sup> - <i>n</i> : 
@@ -65,10 +65,10 @@ za neki prikladno odabrani <i>A</i>.
 
 Glavna ideja ove metode je da umjesto da za svaki 
 <i>s</i> &isin; <i>S</i> 
-djeljeći ga s prostim brojevima 
+dijeljeći ga s prostim brojevima 
 <i>p</i> &isin; 
 <font face="Brush Script MT,Script,Times New Roman">B</font> provjeravamo
-da li je <font face="Brush Script MT,Script,Times New Roman">B</font>-broj, 
+je li <font face="Brush Script MT,Script,Times New Roman">B</font>-broj, 
 mi uzimamo jedan po jedan <i>p</i> 
 &isin;  
 <font face="Brush Script MT,Script,Times New Roman">B</font> i ispitujemo 
@@ -93,7 +93,7 @@ Funkcija <i>L</i>(<i>n</i>) ima red veličine
 između polinoma u log <i>n</i> i polinoma u <i>n</i>. Za 
 <i>n</i> = 10<sup>6</sup> je
 <i>L</i>(<i>n</i>) &asymp; 400; 
-za <i>n</i> = 10<sup>200</sup> je <i>L</i>(<i>n</i>) = 
+za <i>n</i> = 10<sup>200</sup> je <i>L</i>(<i>n</i>) &asymp;  
 10<sup>23</sup>. <p>
 
 <b>2.</b> Za <i>t</i> = 
@@ -105,7 +105,7 @@ napravimo listu brojeva <i>t</i><sup>2</sup> - <i>n</i>
 
 <b>3.</b> Za svaki prost broj <i>p</i> 
 &le; <i>P</i>, 
-provjerimo da li je (<i>n</i>/<i>p</i>) = 1. Ako nije, 
+provjerimo je li (<i>n</i>/<i>p</i>) = 1. Ako nije, 
 izbacimo <i>p</i> iz faktorske baze. <p>
 
 <b>4.</b> Za neparan prost broj <i>p</i> takav da je 
@@ -142,7 +142,7 @@ vrijednosti od <i>t</i><sup>2</sup> - <i>n</i> kod kojih
 <i>p</i>|(<i>t</i> - <i>t</i><sub>1</sub>); promijenimo 1 u 2 
 kod onih kod kojih 
 <i>p</i><sup>2</sup>|(<i>t</i> - <i>t</i><sub>1</sub>); 
-promijenimo 2 u 3 ako <i>p</i><sub>3</sub>|(<i>t</i> - 
+promijenimo 2 u 3 ako <i>p</i><sup>3</sup>|(<i>t</i> - 
 <i>t</i><sub>1</sub>), itd. sve do 
 <i>p</i><sup>&beta;</sup>. 
 Potom napravimo sve isto s <i>t</i><sub>2</sub> 
@@ -176,12 +176,13 @@ odbacimo sve <i>t</i><sup>2</sup> - <i>n</i>,
 osim onih koji su postali jednaki 1 nakon
 dijeljenja sa svim potencijama prostih brojeva 
 <i>p</i> &le; <i>P</i>. 
-Dobit ćemo tako tablicu kao u Primjeru 4.5, u kojoj će stupac koji 
-odgovara <i>b</i><sub><i>i</i></sub> imati vrijednosti elemenata 
-<i>t</i><sup>2</sup> - <i>n</i> iz <i>S</i> koji su 
-<font face="Brush Script MT,Script,Times New Roman">B</font>-brojevi, 
-a ostali stupci će odgovarati vrijednostima <i>p</i> 
-&isin; <i>P</i> za koje je (<i>n</i>/<i>p</i>) = 1. <p>
+Dobit ćemo tako tablicu kao u Primjeru 4.5, u kojoj retci odgovaraju
+onim vrijednostima <i>t</i> za koje je <i>t</i><sup>2</sup>-<i>n</i>
+<font face="Brush Script MT,Script,Times New Roman">B</font>-broj,
+a stupci prostim brojevima iz faktorske baze, 
+tj. prostim brojevima <i>p</i> &le; <i>P</i> za koje je
+(<i>n</i>/<i>p</i>) = 1.
+ <p>
 
 <b>9.</b> Ostatak postupka je isti kao kod Fermatove
 faktorizacije.
@@ -364,12 +365,16 @@ odakle dobivamo netrivijalni faktor (647853 - 496179,
 
 <p><br>
 
-Očekivani broj operacija metodom kvadratnog sita je 
-
+Očekivani broj operacija metodom kvadratnog sita heuristički je oblika
+<p align=center>
 <p align=center><img src="slike/fba1.gif" alt="O(exp())" ALIGN=TOP> </p>
-
-dakle, isto kao kod metode eliptičkih krivulja. Spomenimo da
-je 1996. godine metodom kvadratnog sita faktoriziran tzv. RSA-129.
+</p>
+To je isti oblik izraza kao kod ECM-a, ali s važnom razlikom:
+kvadratno sito je opća metoda i složenost ovisi o veličini broja
+<i>n</i>, dok kod ECM-a složenost ovisi prvenstveno o veličini
+faktora koji se traži. 
+Spomenimo da
+je 1994. godine metodom kvadratnog sita faktoriziran tzv. RSA-129.
 To je broj od 129 znamenaka koji je produkt dva prosta broja od 64
 i 65 znamenaka.
 
@@ -388,7 +393,7 @@ gdje je <i>c</i> =
 Metodu je prvi put upotrijebio 
 <font color=009900>Pollard</font> 1990. godine za faktorizaciju 
 Fermatovog broja 
-2<sup>2</sup><sup><sup><img src="symbols/sup9.gif" alt="9" ALIGN=TOP></sup></sup> + 1. 
+2<sup>2</sup><sup><img src="symbols/sup9.gif" alt="9" ALIGN=TOP></sup> + 1. 
 Ovom su metodom faktorizirani brojevi
 iz natječaja <i>RSA Factoring Challenge</i>:
 RSA-130 (1996. godine), RSA-140, RSA-155 (oba 1999.),
@@ -398,7 +403,7 @@ Npr. broj RSA-200 ima 200 znamenaka, dok broj RSA-640 ima 640 bitova (193 znamen
 Brojevi su dizajnirani tako da slijede pravila za odabir modula
 u RSA algoritmu, te uspjesi u njihovoj faktorizaciji daju dobru
 informaciju o tome koliko velik RSA modul bi trebalo birati da bi
-nam komunikacija bila sigurna (danas, ali i u skoroj budućnosti).
+nam komunikacija bila sigurna (danas, ali i u bliskoj budućnosti).
 Broj RSA-640 je u studenom 2005. godine faktorizirala grupa
 njemačkih istraživača (<font color=009900>Bahr</font>, <font color=009900>Boehm</font>, 
 <font color=009900>Franke</font>, <font color=009900>Kleinjung</font>). Evo tog broja i
@@ -415,7 +420,7 @@ njegove faktorizacije:
 
 </font></p>
 
-Broj RSA-240 (795 bitova) je u studenom 2019. faktorizirala grupa francuskih istraživača 
+Broj RSA-240 (795 bitova) je u studenom 2019. faktorizirala grupa međunarodnih istraživača 
 (<font color=009900>Boudot</font>, <font color=009900>Gaudry</font>, <font color=009900>Guillevic</font>, 
 <font color=009900>Heninger</font>, <font color=009900>Thom&eacute;</font>, <font color=009900>Zimmermann</font>). 
 Evo i tog broja i njegove faktorizacije: 
@@ -427,6 +432,11 @@ Evo i tog broja i njegove faktorizacije:
 &times;  244624208838318150567813139024002896653802092578931401452041221336558477095178155258218897735030590669041302045908071447.
 
 </font></p>
+
+Nedugo zatim, u veljači 2020., ista je grupa faktorizirala i RSA-250,
+broj od 250 decimalnih znamenaka, odnosno 829 bitova. Račun je izveden
+metodom sita polja brojeva uz pomoć softvera CADO-NFS. Prema javno
+dostupnim podacima, RSA-260 još nije faktoriziran.
 
 <p>
 

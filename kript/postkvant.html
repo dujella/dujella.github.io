@@ -41,9 +41,12 @@ ako bi se uspjelo konstruirati efikasna kvantna računala.
 Za razliku od klasičnih računala kod kojih je osnovna jedinica
 informacije jedan bit (koji može biti 0 ili 1), kvantna računala 
 koriste ideje iz kvantne mehanike, te je kod njih osnovna jedinica informacije - qubit -
-nosi puno više informacija. Takva računala još nisu praktično realizirana u obliku koji bi
+može biti u superpoziciji stanja 0 i 1. 
+Upravo ta svojstva omogućuju neke algoritme
+koji nemaju poznate klasične analogone jednake učinkovitosti.
+Takva računala još nisu praktično realizirana u obliku koji bi
 bio konkurencija klasičnim računalima, ali takva realizacija nije isključena u skoroj budućnosti.
-Stoga se u posljednjih 20-tak godina radi i na algoritmima specijalno dizajniranim baš za takva računala.  
+Stoga se u posljednjih nekoliko desetljeća radi i na algoritmima specijalno dizajniranim baš za takva računala.  
 <p>
 
 Od poznatih algoritama za kvantna računala, dva su vrlo relevantna za kriptoanalizu:
@@ -55,31 +58,39 @@ ključ da se zadrži sadašnja razina sigurnosti).
 Shorov algoritam koristi činjenicu da kvantne metode
 omogućavaju vrlo brzo računanje perioda periodičnih funkcija. 
 To daje polinomijalne kvantne algoritme
-za probleme faktorizacije i diskretnog algoritma. To znači da bi efektivna konstrukcija dovoljno 
+za probleme faktorizacije i diskretnog logaritma. To znači da bi efektivna konstrukcija dovoljno 
 snažnih kvantnih računala učinila neupotrebljivim kriptosustave javnog ključa zasnovane na faktorizaciji
 (RSA, Rabin) i problemu diskretnog logaritma (ElGamal, ECC).
 <p>
 
 Grana kriptografije koja se bavi dizajniranjem i analizom kriptosustava koji bi bili 
 otporni i na napade koje bi realizirala kvantna računala naziva se 
-post-kvantna kriptografija. Post-kvantna kriptografija je poseban zamah dobila 
-raspisivanjem natječaja za post-kvantne kriptografske standarde, koji je NIST raspisao 2017. godine. 
-Na natječaj se javilo 59 prijedloga za kriptosustave s javnim ključem i protokole za razmjenu ključeva, 
-te 23 algoritma za digitalne potpise. Godine 2019. je izabrano ukupno 26 prijedloga koji su prošli u 
-drugu rundu natječaja. U srpnju 2020. lista je dodatno reducirana te je objavljeno 
-7 finalista treće runde natječaja, uz još 8 alternativnih kandidata. 
-Konačan izbor standarda se očekuje do 2024. godine.  
+post-kvantna kriptografija. 
+
+Post-kvantna kriptografija poseban je zamah dobila NIST-ovim
+natječajem za post-kvantne kriptografske standarde, započetim 2016.
+godine. Na natječaj su pristigla 82 prijedloga, od kojih je 69
+zadovoljilo početne uvjete. Nakon više krugova evaluacije, NIST je
+2024. objavio prve post-kvantne standarde: ML-KEM, zasnovan na
+algoritmu CRYSTALS-Kyber, za enkapsulaciju ključa, ML-DSA, zasnovan
+na algoritmu CRYSTALS-Dilithium, za digitalne potpise, te SLH-DSA,
+zasnovan na algoritmu SPHINCS+, za hash-based digitalne potpise.
+Kasnije je NIST nastavio evaluaciju dodatnih kandidata, osobito radi
+kriptografske raznolikosti.
+
 <p>
-Opisat ćemo dva kriptosustava za koja se smatra da bi mogli biti sigurni i u eri 
-kvantnih računala. Oni su nastali dosta prije NIST-ovog natječaja, 
-ali se njihove inačice nalaze među kandidatima koji su se javili na natječaj i prošli u drugu i treću rundu. 
-To su McElieceov kriptosustav i NTRU kriptosustav.  
+Opisat ćemo dvije važne povijesne i konceptualne ideje u
+post-kvantnoj kriptografiji: McElieceov kriptosustav, zasnovan na
+kodovima za ispravljanje pogrešaka, i NTRU, zasnovan na rešetkama.
+Njihove moderne inačice imale su važnu ulogu u NIST-ovu procesu
+standardizacije, iako konačni standardi danas nose druga imena i
+koriste precizno definirane moderne varijante tih ideja.  
 
 <p>
 <br>
 
 U <em>McElieceovom kriptosustavu</em> (<font color="009900">Robert McEliece</font>, 1978) 
-koristi se ideja slična ideja onoj 
+koristi se ideja slična onoj 
 koju smo vidjeli kod Merkle-Hellmanovog kriptosustava. 
 Ovdje je pripadni NP-potpuni problem dekodiranje općih linearnih kodova za ispravljanje
 grešaka. Kao osnova u ovom kriptosustavu koristi
@@ -105,7 +116,7 @@ tj. kao broj koordinata u kojima se <i>x</i> i <i>y</i> razlikuju.
 Neka je <i>C</i> neki linearni [<i>n,k</i>]-kod.
 Definiramo <em>minimalnu udaljenost</em> od <i>C</i> s
 <p align=center> 
-<i>d</i> = <i>d</i>(<i>C</i>) = min {<i>d</i>(<i>x,y</i>) : <i>x</i>, <i>y</i> &in; 
+<i>d</i> = <i>d</i>(<i>C</i>) = min {<i>d</i>(<i>x</i>,<i>y</i>) : <i>x</i>, <i>y</i> &in; 
 <i>C</i>, <i>x</i> &ne; <i>y</i>}. 
 </p>
 Tada za <i>C</i> kažemo da je [<i>n,k,d</i>]-kod.
@@ -130,19 +141,19 @@ Primjer jednog [7,4,3]-koda dan je sljedećom generirajućom matricom:
 <td align=center>0</td><td align=center>0</td>
 <td align=center>1</td><td align=center>0</td>
 <td align=center>0</td><td align=center>1</td>
-<td align=center>1</tr>
+<td align=center>1</td></tr>
 <tr>
 <td align=center>0</td><td align=center>0</td>
 <td align=center>0</td><td align=center>1</td>
 <td align=center>1</td><td align=center>1</td>
-<td align=center>1</tr>
+<td align=center>1</td></tr>
 </table></td>
 </tr></table>   
 <p>
 
 Svrha kodova za ispravljanje grešaka jest da isprave slučajne
 greške koje mogu nastati prilikom prenošenja binarnih
-podataka preko kanala sa "šumom" (engl. chanell with noise). Neka je <i>G</i> generirajuća
+podataka preko kanala sa "šumom" (engl. channel with noise). Neka je <i>G</i> generirajuća
 matrica za [<i>n,k,d</i>]-kod <i>C</i>. Pretpostavimo da je <i>x</i> binarna <i>k</i>-torka
 koju Alice želi prenijeti Bobu preko kanala sa šumom.
 Tada Alice <em>kodira</em> <i>x</i> kao <i>n</i>-torku <i>y</i> = <i>xG</i>, te pošalje
@@ -176,9 +187,9 @@ Slijedi definicija <em><b>McElieceovog kriptosustava</b></em>.
 <font face="Arial,Helvetica,sans-serif">
 
 Neka je <i>G</i> generirajuća matrica za [<i>n,k,d</i>]-kod <i>C</i>. Neka je <i>S</i> invertibilna
-<i>k</i> &times; <i>k</i> matrica nad <b>Z</b><sub>2</sub>, te <i>P</i> <i>n &times; <i>n</i> permutacijska matrica
+<i>k</i> &times; <i>k</i> matrica nad <b>Z</b><sub>2</sub>, te <i>P</i> <i>n</i> &times; <i>n</i> permutacijska matrica
 (u svakom retku i svakom stupcu ima točno jednu jedinicu, a svi ostali elementi su nule).
-Stavimo <i>G</i>'= SGP</i>. Sada definiramo 
+Stavimo <i>G</i>'= <i>SGP</i>. Sada definiramo 
 <font face="Brush Script MT,Script,Times New Roman">P</font> = (<b>Z</b><sub>2</sub>)<sup><i>k</i></sup>, 
 <font face="Brush Script MT,Script,Times New Roman">C</font> = (<b>Z</b><sub>2</sub>)<sup><i>n</i></sup>, 
 <font face="Brush Script MT,Script,Times New Roman">K</font> = 
@@ -216,8 +227,11 @@ odgovarajući šifrat je binarna 1024-torka. Javni ključ je
 524 &times; 1024 binarna matrica. Do danas nije poznat
 niti jedan efikasan napad na McElieceov kriptosustav.
 Važan nedostatak mu je ogromna veličina javnog ključa.
-Jedna njegova inačica je jedan od finalista u trećoj rundi NIST-ovog 
-natječaja za post-kvantne kriptografske standarde. 
+Moderna inačica Classic McEliece bila je među kandidatima u kasnijim
+rundama NIST-ova procesa standardizacije. Nije izabrana kao jedan od
+prvih standarda; NIST je 2025. za dodatnu kodovnu KEM shemu odabrao
+HQC. Ipak, McElieceova ideja ostaje jedan od najvažnijih i najstarijih
+primjera kodovne post-kvantne kriptografije.
 <p>
 
 <b>Primjer 3.6: </b> 
@@ -263,27 +277,27 @@ Za matrice <i>S</i> i <i>P</i> uzmimo:
 <td align=center>0</td><td align=center>0</td>
 <td align=center>0</td><td align=center>0</td>
 <td align=center>1</td><td align=center>0</td>
-<td align=center>0</tr>
+<td align=center>0</td></tr>
 <tr>
 <td align=center>0</td><td align=center>0</td>
 <td align=center>0</td><td align=center>0</td>
 <td align=center>0</td><td align=center>1</td>
-<td align=center>0</tr>
+<td align=center>0</td></tr>
 <tr>
 <td align=center>0</td><td align=center>0</td>
 <td align=center>0</td><td align=center>0</td>
 <td align=center>0</td><td align=center>0</td>
-<td align=center>1</tr>
+<td align=center>1</td></tr>
 <tr>
 <td align=center>0</td><td align=center>1</td>
 <td align=center>0</td><td align=center>0</td>
 <td align=center>0</td><td align=center>0</td>
-<td align=center>0</tr>
+<td align=center>0</td></tr>
 <tr>
 <td align=center>0</td><td align=center>0</td>
 <td align=center>0</td><td align=center>1</td>
 <td align=center>0</td><td align=center>0</td>
-<td align=center>0</tr>
+<td align=center>0</td></tr>
 </table></td>
 </tr></table>  
 <p>
@@ -306,12 +320,12 @@ Sada je Bobov javni ključ
 <td align=center>1</td><td align=center>1</td>
 <td align=center>0</td><td align=center>0</td>
 <td align=center>0</td><td align=center>1</td>
-<td align=center>0</tr>
+<td align=center>0</td></tr>
 <tr>
 <td align=center>1</td><td align=center>0</td>
 <td align=center>1</td><td align=center>0</td>
 <td align=center>1</td><td align=center>0</td>
-<td align=center>0</tr>
+<td align=center>0</td></tr>
 </table></td>
 </tr></table>   
 <p>
@@ -345,7 +359,7 @@ označava <i>C</i><sup>&perp;</sup>). Za našu matricu <i>G</i> je
 <td align=center>0</td><td align=center>1</td>
 <td align=center>1</td><td align=center>1</td>
 <td align=center>0</td><td align=center>0</td>
-<td align=center>1</tr>
+<td align=center>1</td></tr>
 </table></td>
 </tr></table>   
 <p>
@@ -363,7 +377,7 @@ U našem slučaju, računamo sindrom od <i>y</i><sub>1</sub> i dobivamo
 težine 1 sa svojstvom <i>He</i><sub>1</sub><sup>T</sup> = (0,1,0)<sup>T</sup>. 
 Nalazimo da je <i>e</i><sub>1</sub> = (0,0,0,0,0,1,0), pa <i>y</i><sub>1</sub> dekodiramo
 kao <i>x</i><sub>1</sub> = (0,0,1,0,0,1,1). Sada treba naći <i>x</i><sub>0</sub> takav da je 
-<i>x</i><sub>0</sub><i>G</i> = <i>x</i><sub>1</sub>. No, zbog specijalnog oblika od <i>G</i>,
+<i>x</i><sub>0</sub><i>G</i> = <i>x</i><sub>1</sub>. No, zbog specijalnog oblika matrice <i>G</i>,
 <i>x</i><sub>0</sub> čine upravo prve četiri komponente od <i>x</i><sub>1</sub>, 
 tj. <i>x</i><sub>0</sub> = (0,0,1,0). Konačno, otvoreni tekst <i>x</i> 
 dobivamo računajući <i>x</i> = <i>x</i><sub>0</sub><i>S</i><sup>-1</sup> = (1,0,1,1). 
@@ -371,9 +385,8 @@ dobivamo računajući <i>x</i> = <i>x</i><sub>0</sub><i>S</i><sup>-1</sup> = (1,
 <p>
 <br>
 
-Jedan od najzanimljivijih novijih kriptosustava, koji je
-još uvijek predmet intenzivnog proučavanja,
-je <em><b>NTRU kriptosustav</b></em> (od "<i>N</i>th degree TRUncated polynomials"), 
+Jedan od najzanimljivijih kriptosustava zasnovanih na rešetkama jest
+<em><b>NTRU kriptosustav</b></em> (od "<i>N</i>th degree TRUncated polynomials"), 
 koji su 1997. godine predložili
 <font color="009900">Jeffrey Hoffstein</font>, <font color="009900">Jill Pipher</font> i 
 <font color="009900">Joseph Silverman</font>. U ovom se kriptosustavu
@@ -528,28 +541,39 @@ Konačno, Bob izračuna otvoreni tekst
 (opet birajući koeficijente iz sustava najmanjih ostataka po apsolutnoj vrijednosti). 
 <p>
 
+
 Šifriranje i dešifriranje kod NTRU kriptosustava je usporedive brzine kao kod RSA kriptosustava. 
 No, poznato je nekoliko mogućih napada na NTRU koji koriste LLL-algoritam za nalaženje 
-najkraćeg elementa u rešetki. Također, postoje i napadi koji koristi
+najkraćeg elementa u rešetki. Također, postoje i napadi koji koriste
 činjenicu da u NTRU-u postoje šifrati koje je nemoguće dešifrirati
 (postoji vrlo mala vjerojatnost da će neki koeficijent polinoma
 <nobr><i>p</i> <sup><b>.</b></sup> <i>r</i> &#8859; <i>g</i> + <i>f</i> &#8859; <i>m</i></nobr> 
 biti izvan segmenta [-<i>q</i>/2, <i>q</i>/2]).
-Zasad nije sasvim jasno koliko su ti napadi ozbiljna prijetnja za sigurnost ovog kriptosustava. 
+Sigurnost NTRU-a zato snažno ovisi o izboru parametara i točnoj
+varijanti sheme.  
+NTRU i njegove inačice imale su važnu ulogu u NIST-ovu procesu
+standardizacije post-kvantne kriptografije. 
 Dvije inačice NTRU kriptosustava, jedna nastala spajanjem kandidata iz prve runde NTRUEncrypt i 
 NTRU-HRSS-KEM te druga NTRU Prime, bile su među finalistima druge runde NIST-ovog  
-natječaja za post-kvantne kriptografske standarde, te je prva inačica prošla i u treću rundu,  
-dok se druga inačica nalazi među alternativnim kandidatima.  
+natječaja za post-kvantne kriptografske standarde, te je prva inačica prošla i u treću rundu. 
+Ipak, kao prvi standard
+za enkapsulaciju ključa NIST je 2024. izabrao ML-KEM, zasnovan na
+algoritmu CRYSTALS-Kyber, dok je 2025. za dodatnu kodovnu KEM shemu
+izabran HQC.
 <p>
 <br>
 
 Većina predloženih post-kvantnih kriptografskih algoritama su povezani ili s kodovima (poput McElieceovog) 
-ili s rešetkama (poput NTRU). Spomenimo da postoje i post-kvantni algoritmi zasnovani 
-na svojstvima izogenija supersingularnih eliptičkih krivulja, od kojih je najpoznatiji 
-protokol za razmjenu ključeva SIDH (supersingular isogeny Diffie-Hellman key exchange), 
-kojeg su predložili <font color="009900">Luca de Feo</font>, <font color="009900">David Jao</font> i 
-<font color="009900">Jerome Plut</font> 2011. godine. Inačica SIKE (Supersingular Isogeny Key Encapsulation) 
-se nalazi među alternativnim kandidatima u trećoj rundi NIST-ovog natječaja. 
+ili s rešetkama (poput NTRU). 
+Spomenimo da postoje post-kvantni prijedlozi zasnovani na
+izogenijama supersingularnih eliptičkih krivulja, među kojima su
+najpoznatiji SIDH (supersingular isogeny Diffie-Hellman key exchange) 
+i njegova KEM inačica SIKE (Supersingular Isogeny Key Encapsulation). SIDH su predložili
+<font color="009900">Luca de Feo</font>, <font color="009900">David Jao</font> i <font color="009900">Jerome Plut</font> 
+2011. godine. SIKE je bio
+alternativni kandidat u NIST-ovu procesu, ali je 2022. pronađen
+učinkovit klasični napad koji je razbio SIDH/SIKE. Zato se SIKE i
+SIDH danas ne smatraju sigurnima i ne smiju se koristiti.
 
 <p>
 

@@ -36,7 +36,7 @@ body {font-family: Arial,Helvetica,sans-serif;}
 <h2 align=center style="color: rgb(128,0,0)">3.2. RSA kriptosustav</h2>
 
 
-Prvi, a ujedno i najpopularniji i najšire korišteni kriptosustav 
+Prvi, a ujedno i najpopularniji i najčešće korišteni kriptosustav 
 s javnim ključem je RSA kriptosustav koji su izumili 
 <font color=009900>Ron Rivest</font>, 
 <font color=009900>Adi Shamir</font> i 
@@ -131,8 +131,8 @@ Prema tome, zaista je
 <b>Primjer 3.1: </b> Uzmimo <i>p</i> = 3 i <i>q</i> = 11. 
 Tada je <i>n</i> = 33 i &phi;(<i>n</i>) = 20. 
 Eksponent <i>e</i> mora biti relativno prost s 20, pa recimo da je 
-<i>e</i> = 7. Tada je <i>d</i> = 3. Sada je 
-(<i>n</i>, <i>e</i>) = (33, 7) naš javni ključ. Pretpostavimo da nam 
+<i>e</i> = 7. Tada je <i>d</i> = 3. Javni je ključ par (<i>n</i>, <i>e</i>) = (33, 7). 
+Pretpostavimo da nam 
 netko želi poslati poruku <i>x</i> = 
 <font color=990000>17</font>. To znači da treba izračunati 
 <i>e<sub>K</sub></i>(<i>x</i>) = 17<sup>7</sup> mod 33: 
@@ -145,7 +145,7 @@ netko želi poslati poruku <i>x</i> =
 -25 &equiv; 8 (mod 33). 
 </p>
 Dakle, šifrat je <i>y</i> = <i>e<sub>K</sub></i>(<i>x</i>) = 
-<font color=<000099>8</font>. 
+<font color=000099>8</font>. 
 Kad primimo ovaj šifrat, dešifriramo ga pomoću tajnog ključa <i>d</i>: 
 <p align=center> 
 <i>x</i> = <i>d<sub>K</sub></i>(<i>y</i>) = 8<sup>3</sup> = 
@@ -154,6 +154,12 @@ Kad primimo ovaj šifrat, dešifriramo ga pomoću tajnog ključa <i>d</i>:
 (-2) &equiv; 17 (mod 33). 
 </p>
 Dakle, <i>x</i> = <font color=990000>17</font>. 
+<p><br>
+
+U praktičnim primjenama RSA se ne koristi u ovom "sirovom" obliku
+<i>x</i> &mapsto; <i>x</i><sup><i>e</i></sup> mod <i>n</i>. 
+Potrebno je koristiti propisane sheme popunjavanja, npr. OAEP za
+šifriranje, odnosno odgovarajuće sheme potpisa za digitalne potpise.
 <p><br>
 
 Sigurnost RSA leži u pretpostavci da je funkcija 
@@ -173,9 +179,13 @@ pomoću <em>Euklidovog algoritma</em>.
 Opišimo sada postupak kojim korisnik izabire parametre u RSA 
 kriptosustavu malo detaljnije. 
 <ol>
-<li>Izabiremo <u>tajno</u> dva velika prosta broja <i>p</i> i <i>q</i> 
-od oko 150 znamenaka, tako da <i>q</i> ima nekoliko znamenaka 
-više od <i>p</i>. To radimo tako da pomoću nekog generatora 
+<li>Izabiremo <u>tajno</u> dva velika različita prosta broja <i>p</i> i <i>q</i>, 
+tako da su <i>p</i> i <i>q</i> usporedive veličine.  
+U starijoj literaturi često se spominju prosti brojevi od oko 150
+decimalnih znamenaka, ali to danas više nije dovoljno za nove primjene.
+U suvremenim primjenama modul <i>n</i> treba imati barem 2048 bitova,
+a za višu razinu sigurnosti koriste se i veći moduli, npr. 3072 bitova.
+ To radimo tako da pomoću nekog generatora 
 slučajnih brojeva generiramo prirodan broj <i>m</i> s traženim 
 brojem znamenaka, a zatim korištenjem nekog testa za testiranje 
 prostosti (opisat ćemo ih u sljedećem poglavlju) tražimo prvi 
@@ -200,7 +210,10 @@ tj. <nobr>d &equiv;
 <i>e</i><sup>-1</sup> 
 (mod &phi;(<i>n</i>)).</nobr> 
 To se radi pomoću Euklidovog algoritma i za to nam treba 
-O(log<sup>3</sup> <i>n</i>) operacija. <p>
+O(log<sup>3</sup> <i>n</i>) operacija. 
+U praksi se često uzima relativno mali fiksni javni eksponent, najčešće
+<i>e</i> = 65537.
+<p>
 
 <li>Stavimo ključ za šifriranje (<i>n</i>, <i>e</i>) u javni 
 direktorij. 
@@ -231,7 +244,7 @@ a potom primijenimo sljedeći algoritam:
 <i>y</i> = <i>y</i><sup>2</sup> mod <i>n</i> <br>
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
 ako je <i>e<sub>i</sub></i> = 1, onda <i>y</i> = <i>y</i> <b>&middot;</b>  
-<i>x</i> mod n
+<i>x</i> mod <i>n</i>
 
 </font></td></tr></table>
 
@@ -246,10 +259,10 @@ Općenito, za algoritam koji kao ulazne podatke ima prirodne brojeve
 <i>x</i><sub>1</sub>, ... , <i>x</i><sub><i>m</i></sub> s redom 
 <i>k</i><sub>1</sub>, ... , <i>k</i><sub><i>m</i></sub> bitova 
 kažemo da je <em>polinomijalan</em> ako mu je broj operacija 
-<nobr>O(<i>k</i><sub>1</sub><sup><i>d</i><font size=-1>1</font></sup> <b>&middot;</b> ... <b>&middot;</b>  
-<i>k</i><sub><i>m</i></sub><sup><i>d</i><font size=-1><i>m</i></font></sup>),</nobr> tj. 
-<nobr>O((log <i>x</i><sub>1</sub>)<sup><i>d</i><font size=-1>1</font></sup> <b>&middot;</b> ... <b>&middot;</b>  
-log(<i>x</i><sub><i>m</i></sub>)<sup><i>d</i><font size=-1><i>m</i></font></sup>)</nobr> za neke 
+<nobr>O(<i>k</i><sub>1</sub><sup><i>d</i><sub>1</sub></sup> <b>&middot;</b> ... <b>&middot;</b>  
+<i>k</i><sub>1</sub><sup><i>d</i><sub><i>m</i></sub></sup>),</nobr> tj. 
+<nobr>O((log <i>x</i><sub>1</sub>)<sup><i>d</i><sub>1</sub></sup> <b>&middot;</b> ... <b>&middot;</b>  
+log(<i>x</i><sub><i>m</i></sub>)<sup><i>d</i><sub><i>m</i></sub></sup>)</nobr> za neke 
 nenegativne cijele brojeve <i>d</i><sub>1</sub>, ... , <i>d</i><sub><i>m</i></sub>.
 
 <p>

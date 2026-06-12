@@ -37,7 +37,7 @@ body {font-family: Arial,Helvetica,sans-serif;}
 <h2 align=center style="color: rgb(128,0,0)">4.5. Faktorske baze</h2>
 
 
-Ako je <i>n</i> produkt dva bliska broja, onda postoji jednostavna
+Ako je neparan broj <i>n</i> produkt dva bliska broja, onda postoji jednostavna
 metoda, tzv. <em>Fermatova faktorizacija</em>, za faktorizaciju od
 <i>n</i>. Metoda se zasniva na činjenici da je <i>n</i> tada razlika
 kvadrata dva broja, od kojih je jedan jako mali. Naime, ako je
@@ -100,10 +100,11 @@ mod <i>n</i> (apsolutno najmanji ostatak) kao produkt elemenata iz
 Kad dobijemo dovoljno mnogo 
 <font face="Brush Script MT,Script,Times New Roman">B</font>-brojeva
 među tim ostatcima (dovoljno je 
-&pi;(<i>y</i>) + 2), 
+&pi;(<i>y</i>) + 2; budući da faktorska baza uključuje i -1, dimenzija prostora parnosti
+je &pi;(<i>y</i>)+1), 
 pogledajmo odgovarajuće vektore parnosti eksponenata. 
 To su vektori u 
-(<b>Z</b><sub>2</sub>)<sup><font=-1>&pi;(<i>y</i>)+1</font></sup>. 
+(<b>Z</b><sub>2</sub>)<sup>&pi;(<i>y</i>)+1</sup>. 
 Budući da tih vektora ima više od
 dimenzije pripadnog vektorskog prostora, to su oni linearno
 zavisni. Pronađemo njihovu netrivijalnu linearnu kombinaciju
@@ -126,16 +127,15 @@ gdje je <i>b</i><sub><i>i</i></sub><sup>2</sup> mod <i>n</i> =
 Tada je <i>b</i><sup>2</sup> 
 &equiv;  
 <i>c</i><sup>2</sup> mod <i>n</i>. 
+Izračunamo
+(<i>b</i>-<i>c</i>, <i>n</i>) i
+(<i>b</i>+<i>c</i>, <i>n</i>).
 Ako je <i>b</i> &#8802;  
-&plusmn;<i>c</i> (mod <i>n</i>), 
-onda izračunamo (<i>b</i> + <i>c</i>, <i>n</i>) i to je netrivijalni 
-faktor od <i>n</i>.
-Ako je 
-<i>b</i> &equiv; 
-&plusmn;<i>c</i> (mod <i>n</i>), onda odaberemo neki drugi 
-linearno nezavisni podskup ili nađemo još 
-<font face="Brush Script MT,Script,Times New Roman">B</font>-brojeva, pa ponovimo 
-postupak.
+&plusmn;<i>c</i> (mod <i>n</i>), barem jedan
+od njih daje netrivijalni faktor od <i>n</i>. 
+Ako je <i>b</i> &equiv; &plusmn;<i>c</i> (mod <i>n</i>), onda odaberemo neku drugu
+linearnu zavisnost među dobivenim vektorima ili nađemo još
+<font face="Brush Script MT,Script,Times New Roman">B</font>-brojeva, pa ponovimo postupak.
 
 <p><br>
 
@@ -158,8 +158,9 @@ Za takve <i>b</i><sub><i>i</i></sub> napišemo
 i tabeliramo 
 <img src="symbols/alpha.gif" alt="alpha" ALIGN=TOP><sub><i>ij</i></sub>-ove. 
 Nakon što smo uzeli <i>k</i> = 
-1, 2, 3, 4, dobili smo sljedeću tablicu kojoj se elementi 
-<img src="symbols/alpha.gif" alt="alpha" ALIGN=TOP><sub><i>ij</i></sub>-ovi:
+1, 2, 3, 4, dobili smo sljedeću tablicu čiji su elementi 
+eksponenti
+&alpha;<sub><i>ij</i></sub>:
 
 
 <table align=center border=0 cellspacing=10 cellpadding=5> 

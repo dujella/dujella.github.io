@@ -40,8 +40,8 @@ Standard</h2>
 
 
 Godine 1997. National Institute of Standards and Technology (NIST) 
-objavio je natječaj za kriptosustav koji bi trebao kao opće prihvaćeni 
-standard zamijeniti DES. Pobjednik natječaja dobio bi ime 
+objavio je natječaj za kriptosustav koji bi kao općeprihvaćeni standard trebao zamijeniti DES. 
+Pobjednik natječaja dobio bi ime 
 <em>Advanced Encryption Standard</em> (AES). NIST je postavio sljedeće 
 zahtjeve na kriptosustav: 
 <ol>
@@ -71,7 +71,7 @@ Recimo nekoliko riječi o ovih 5 finalista.
 
 MARS (IBM), RC6 (RSA Security Inc.) i TWOFISH (Counterpane Systems) 
 spadaju u Feistelove šifre. Podsjetimo se da je Feistelova šifra 
-blokovna šifra u kojoj u <i>i</i>-toj rundi koriste formule 
+blokovna šifra u kojoj u <i>i</i>-toj rundi koristi formule 
 <i>L<sub>i</sub></i> = <i>R</i><sub><i>i</i> -1</sub>, 
 <i>R</i><sub><i>i</i></sub> = <i>L</i><sub><i>i</i> -1</sub> 
 &oplus; <i>f</i> (<i>R</i><sub><i>i</i> -1</sub>, 
@@ -79,8 +79,8 @@ blokovna šifra u kojoj u <i>i</i>-toj rundi koriste formule
 MARS spada u nebalansirane Feistelove šifre jer se blokovi ne dijele
 na 2, već na 4 dijela. MARS ima 32 runde, RC6 ima 20 rundi, dok TWOFISH 
 ima 16 rundi. Specifičnost kriptosustava RC6 (koji je dosta sličan RC5) 
-su korištenje funkcije <i>f</i>(<i>x</i>) = <i>x</i>(2<i>x</i>+1), 
-koja daje difuziju, te rotacija ovisnih o podacima, koje daju 
+jesu korištenje funkcije <i>f</i>(<i>x</i>) = <i>x</i>(2<i>x</i>+1), 
+koja daje difuziju, te rotacija koje ovise o podacima, koje daju 
 otpornost na diferencijalnu i linearnu kriptoanalizu. 
 Specifičnost TWOFISH-a je da se S-kutije dinamički mijenjaju u 
 ovisnosti o ključu, što komplicira diferencijalnu i linearnu 
@@ -96,8 +96,14 @@ finalista po tome što se u konstrukciji S-kutija koriste
 operacije u konačnom polju GF(2<sup>8</sup>). 
 <p><br>
 
-Konačno, 2.8.2000. objavljeno je da je pobjednik natječaja za AES
+Konačno, 2000. godine objavljeno je da je pobjednik natječaja za AES
 RIJNDAEL (čitaj: rejn dol). 
+Standard AES objavljen je kao FIPS 197
+2001. godine. Godine 2023. FIPS 197 je ažuriran, ali bez tehničkih promjena u samom
+AES algoritmu. 
+Rijndael je u izvornoj specifikaciji dopuštao i druge duljine blokova,
+dok standard AES koristi isključivo blokove duljine 128 bitova i ključeve
+duljine 128, 192 ili 256 bitova. 
 RIJNDAEL su razvili belgijski kriptografi 
 <font color=009900>Joan Daemen</font> i <font color=009900>Vincent 
 Rijmen</font> s Katoličkog sveučilišta Leuven, po kojima je i dobio ime. 
@@ -125,7 +131,7 @@ Elemente od GF(2<sup>8</sup>) možemo prikazati i kao bajtove
 57 u heksadecimalnom zapisu. 
 <p>
 
-<b>Primjer 7: </b> <em>Pomnožiti polinome</em> 
+<b>Primjer 2.6: </b> <em>Pomnožiti polinome</em> 
 <i>x</i><sup>6</sup> + <i>x</i><sup>4</sup> 
 + <i>x</i><sup>2</sup> + <i>x</i> + 1 <em>i</em> 
 <i>x</i><sup>7</sup> + <i>x</i> + 1 <em>iz 
@@ -151,7 +157,7 @@ Heksadecimalno to možemo zapisati kao: 57 <b>&middot;</b> 83 = C1.
 U RIJNDAEL-u se također koriste i operacije na polinomima s 
 koeficijentima iz GF(2<sup>8</sup>) stupnja manjeg od 4. 
 Svaki takav polinom možemo reprezentirati kao 4-bajtni vektor. 
-Zbrajanje takvih polinoma se svodi na zbrajanje koeficijenta uz 
+Zbrajanje takvih polinoma se svodi na zbrajanje koeficijenata uz 
 iste potencije (zbrajanje u GF(2<sup>8</sup>) smo već definirali). 
 Da bi kod množenja dobili kao rezultat polinom stupnja manjeg 
 od 4, moramo produkt reducirati modulo neki polinom četvrtog 
@@ -223,7 +229,7 @@ množenja polinoma
 <i>b</i>(<i>X</i>). 
 <p><br>
 
-<b>Primjer 8: </b> <em>Izračunati</em>: 
+<b>Primjer 2.7: </b> <em>Izračunati</em>: 
 <p align=center>
 (03 <i>X</i><sup>3</sup> + 01 <i>X</i><sup>2</sup> + 01 <i>X</i> + 02) 
 &otimes;  
@@ -268,6 +274,9 @@ Na isti način se izračuna
 tj. polinom <i>b</i>(<i>X</i>) je inverz polinoma 
 <i>a</i>(<i>X</i>) s obzirom na operaciju  
 &otimes;. 
+<p>
+Ovaj račun objašnjava zašto se u inverznoj transformaciji MixColumns
+pojavljuju konstante 0E, 0B, 0D i 09.
 
 <p><br>
 
@@ -277,12 +286,13 @@ polja, koji se reprezentiraju pomoću 4 &times 4 matrice s elementima
 iz GF(2<sup>8</sup>). Tu matricu ćemo zvati aes-blok. 
 Ključ također ima 128 bitova (postoje i 
 varijante sa 192 i 256 bitova). RIJNDAEL ima 10 rundi (uz 128-bitni 
-ključ). Svaka runda se sastoji od 4 operacije: <p>
+ključ). Za ključeve duljine 192 i 256 bitova AES ima 12, odnosno 14 rundi. 
+Svaka runda se sastoji od 4 operacije: <p>
 &nbsp; &nbsp; &nbsp; &nbsp; <b>SubBytes</b><br>
 &nbsp; &nbsp; &nbsp; &nbsp; <b>ShiftRows</b><br>
 &nbsp; &nbsp; &nbsp; &nbsp; <b>MixColumns</b><br>
 &nbsp; &nbsp; &nbsp; &nbsp; <b>AddRoundKey</b><p>
-Prije prve runde vrši se inicijalno dodavanje ključa (AddRoundKey), 
+Prije prve runde provodi se inicijalno dodavanje ključa (AddRoundKey), 
 a u posljednjoj rundi se izostavlja transformacija MixColumns.
 Jedna runda AES-a ilustrirana je na slici (prema [Savard: <i>A Cryptographic Compendium</i>]).
 
@@ -294,9 +304,9 @@ Jedna runda AES-a ilustrirana je na slici (prema [Savard: <i>A Cryptographic Com
 <em>SubBytes</em> je jedini nelinearni dio algoritma. 
 Ova transformacija ima 2 koraka: 
 <ol>
-<li>svaki element aes-bloka (matrice) se zamjeni svojim inverzom u GF(2<sup>8</sup>) 
+<li>svaki element aes-bloka (matrice) se zamijeni svojim inverzom u GF(2<sup>8</sup>) 
 (s time da element 00, jedini koji nema inverz, ostaje nepromijenjen), <p>
-<li>primjeni se fiksna afina transformacija
+<li>primijeni se fiksna afina transformacija
 <p align=center>
 <i>b'</i><sub><i>i</i></sub> = 
 <i>b</i><sub><i>i</i></sub> &oplus;  
@@ -336,13 +346,13 @@ polinomima, rezultat se računa modulo <i>X</i><sup>4</sup> + 1).
 <em>AddRoundKey</em> je XOR aes-bloka s međuključem koji odgovara 
 trenutnoj rundi. 
 <p>
-S-kutije (operacija ByteSub) su dizajnirane tako da bi kriptosustav bio 
+S-kutije (operacija SubBytes) su dizajnirane tako da bi kriptosustav bio 
 što otporniji na diferencijalnu i linearnu kriptoanalizu, dok su 
-ShiftRow i MixColumn zaslužni za difuziju. 
+ShiftRows i MixColumns zaslužni za difuziju. 
 <p>
 U konstrukciji međuključeva se najprije ključ proširi korištenjem 
 XOR-a i cikličkog pomaka. Prošireni ključ se sastoji od 
-44 riječi (4-bajtnih vektora). Međuključevi se biraju iz proširenog 
+44 riječi (4-bajtnih vektora). Međuključevi se dobivaju iz proširenog 
 ključa tako da se prvi međuključ sastoji od prve četiri riječi, 
 drugi od sljedeće četiri, itd. 
 <p>
@@ -354,16 +364,23 @@ XOR s <i>r</i><sub><i>i</i> -4</sub>. Ako je <i>i</i> višekratnik
 od 4, onda prije operacije XOR izvršimo operacije <em>RotWord</em> 
 (rotira riječ jedno mjesto ulijevo, tj. 
 [<i>r</i><sub>0</sub><i>r</i><sub>1</sub><i>r</i><sub>2</sub><i>r</i><sub>3</sub>] promijeni u  [<i>r</i><sub>1</sub><i>r</i><sub>2</sub><i>r</i><sub>3</sub><i>r</i><sub>0</sub>]), <em>SubWord</em> (uzima jedan po jedan bajt iz riječi i 
-na svakog od njih primjeni S-kutiju), te XOR s riječi 
-[02<sup>(<i>i</i> -4)/4</sup>,00,00,00].
+na svakog od njih primijeni S-kutiju), te XOR s riječi 
+[02<sup>(<i>i</i> -4)/4</sup>,00,00,00], gdje se potenciranje računa u
+GF(2<sup>8</sup>).
 <p>
 Dešifriranje se odvija po istom algoritmu kao i šifriranje, 
 osim što se umjesto transformacija   
-ByteSub, ShiftRow i MixColumn koriste njihovi inverzi. 
-Primijetimo da smo u Primjeru 8 dokazali da polinom
+SubBytes, ShiftRows i MixColumns koriste njihovi inverzi. 
+Primijetimo da smo u Primjeru 2.7 dokazali da polinom
 <nobr>03 <i>X</i><sup>3</sup> + 01 <i>X</i><sup>2</sup> + 01 <i>X</i> + 02</nobr> ima inverz
 <nobr>0B <i>X</i><sup>3</sup> + 0D <i>X</i><sup>2</sup> + 09 <i>X</i> + 0E</nobr> 
 (svi ostali dijelovi algoritma za šifriranje su očito invertibilni).
+<p><br>
+
+AES je i danas osnovni široko prihvaćeni standard za simetrično blokovno
+šifriranje. U suvremenim primjenama sigurnost ne ovisi samo o samoj
+blokovnoj šifri, nego i o pravilnom izboru načina djelovanja i zaštiti
+integriteta poruke.
 
 <p>
 

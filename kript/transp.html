@@ -40,7 +40,7 @@ body {font-family: Arial,Helvetica,sans-serif;}
 Svi kriptosustavi koje smo do sada promatrali su uključivali 
 supstituciju: elementi otvorenog teksta zamjenjivani su različitim 
 elementima šifrata. Ideja <em>transpozicijske šifre</em> je da se 
-elementi otvorenog teksta ostave nepromijenjeni, ali da se promjeni 
+elementi otvorenog teksta ostave nepromijenjeni, ali da se promijeni 
 njihov međusobni položaj. Spomenimo da je podjelu šifri na 
 supstitucijske i transpozicijske uveo u 16. stoljeću 
 <font color=009900>Giovanni Porta</font>. Formalna definicija 
@@ -72,8 +72,10 @@ permutacija skupa <nobr>{1, 2, ... , <i>m</i>}.</nobr> Za
 <i>y</i><sub>&pi;<sup><small>-1</small></sup>(<i>m</i>)</sub>).
 </font> </td></tr> </table>  
 <p>
-
-Postavlja se ponovo pitanje praktične realizacije ove opće ideje. 
+Drugim riječima, šifriranje samo premješta položaje slova unutar bloka,
+bez promjene samih slova.
+<p>
+Ponovno se postavlja pitanje praktične realizacije ove opće ideje.  
 U praksi najupotrebljavanija transpozicijska šifra bila je 
 <em>stupčana transpozicija</em>. Kod nje se otvoreni tekst upisuje 
 u pravokutnik po redcima, a zatim se poruka čita po stupcima, ali s promijenjenim 
@@ -86,9 +88,10 @@ no mi ih ovdje nećemo analizirati.)
 <b>Primjer 1.12: </b> <em>Šifrirati otvoreni tekst</em> &nbsp; 
 <font color=990000>KRIPTOGRAFIJA I KRIPTOANALIZA</font>  
 &nbsp; <em>stupčanom transpozicijom s 
-ključem</em> &nbsp; <font color=990099>4 3 1 2 5 7 6</font>. 	  
+ključem</em> &nbsp; <font color=990099>4 3 1 2 5 7 6</font>. 	 
 <p>
 <i>Rješenje</i>. 
+Brojevi iznad stupaca označavaju redoslijed kojim se stupci čitaju. 
 <pre><font size=3> 
      ključ         <font color=990099>4  3  1  2  5  7  6</font>
 
@@ -105,16 +108,17 @@ otvoreni tekst
 
     šifrat         <font color=000099>IFILPIPIRARAKRKNTJTZGIAXOAOA</font>
 </font></pre>
+
 <p>
 
-Prepoznavanje da se radi o transpozicijskoj šifri je 
-vrlo jednostavno jer kod nje slova imaju iste frekvencije 
-kao u otvorenom tekstu. U kriptoanalizi stupčane transpozicije, 
+Prepoznavanje da se možda radi o transpozicijskoj šifri često je
+razmjerno jednostavno, jer kod nje slova imaju iste frekvencije kao
+u otvorenom tekstu. U kriptoanalizi stupčane transpozicije, 
 prvi korak je određivanje dimenzije pravokutnika. To se radi 
-tako da se broj slova u šifratu faktorizira. Ukoliko time 
+tako da se broj slova u šifratu faktorizira. Ako time 
 dobijemo više mogućnosti, upišemo slova šifrata po stupcima u 
 pravokutnike pretpostavljenih dimenzija, te promatramo odnos 
-samoglasnika i suglasnika u svakom retku. Ukoliko je pretpostavka 
+samoglasnika i suglasnika u svakom retku. Ako je pretpostavka 
 o dimenziji točna, taj odnos ne bi smio puno odstupati od 
 njihovog odnosa u jeziku otvorenog teksta (u hrvatskom 43% : 57%). 
 Nakon što odredimo dimenzije, moramo još odrediti poredak stupaca. 
@@ -208,10 +212,12 @@ SU UPORNOST, INTUICIJA I SREĆA.</font><font size=2>
 
 Napomenimo da se sigurnost transpozicijskih šifara može znatno povećati 
 korištenjem više koraka transpozicije. Većina njemačkih šifri tijekom 
-prvog svjetskog rata su bile dvostruke transpozicijske šifre. Ove šifre 
-su vrlo sigurne, ali njihovo dekriptiranje postaje relativno jednostavno 
-ako kriptoanalitičar raspolaže s nekoliko jednako dugih šifrata 
-šifriranih istim ključem. Tada se dva šifrata ispišu jedan ispod drugog 
+prvog svjetskog rata su bile dvostruke transpozicijske šifre. 
+Takve su šifre znatno otpornije od jednostavne stupčane transpozicije,
+ali njihovo dekriptiranje može postati relativno jednostavno ako
+kriptoanalitičar raspolaže s nekoliko jednako dugih šifrata šifriranih
+istim ključem. 
+Tada se dva šifrata ispišu jedan ispod drugog 
 na dugim trakama papira, pa se trake okomito razrežu tako da po dva 
 slova (jedno iz svakog šifrata) dođu na isti papirić. Ti se papirići 
 sada slažu jedan uz drugog, sve dok se gore i dolje ne pojavi nešto nalik na 

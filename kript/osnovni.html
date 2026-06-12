@@ -40,7 +40,11 @@ body {font-family: Arial,Helvetica,sans-serif;}
 
 <em>Kriptografija</em> je znanstvena disciplina koja se bavi 
 proučavanjem metoda za slanje poruka u takvom obliku da ih samo 
-onaj kome su namijenjene može pročitati. Sama riječ 
+onaj kome su namijenjene može pročitati. 
+U suvremenoj kriptografiji
+proučavaju se i drugi sigurnosni ciljevi, poput provjere autentičnosti,
+očuvanja integriteta podataka i digitalnih potpisa.
+Sama riječ 
 kriptografija je grčkog podrijetla i mogla bi se doslovno prevesti kao <em>tajnopis</em>. 
 <p>
 
@@ -111,7 +115,7 @@ ključeva. Dakle, imamo sljedeću formalnu definiciju.
 <font face="Brush Script MT,Script,Times New Roman">D</font>) za koju 
 vrijedi: <br>
 &nbsp; &nbsp; &nbsp; 1) <font face="Brush Script MT,Script,Times New Roman">P</font> 
-je konačan skup svih mogućih osnovnih elementa otvorenog teksta; <br>
+je konačan skup svih mogućih osnovnih elemenata otvorenog teksta; <br>
 &nbsp; &nbsp; &nbsp; 2) <font face="Brush Script MT,Script,Times New Roman">C</font> 
 je konačan skup svih mogućih osnovnih elemenata šifrata; <br>
 &nbsp; &nbsp; &nbsp; 3) <font face="Brush Script MT,Script,Times New Roman">K</font> 
@@ -223,13 +227,12 @@ po Nizozemcu <font color=009900>Augustu Kerckhoffsu</font>
 Naravno, ova pretpostavka u konkretnom slučaju ne mora biti točna, 
 ali mi ne želimo da nam sigurnost kriptosustava 
 leži na "klimavoj" pretpostavci da naš protivnik ne zna koji 
-kriptosustav koristimo. Čak ukoliko kriptoanalitičar treba 
-provjeriti nekoliko mogućih kriptosustava, time se kompleksnost 
-procedure bitno ne mijenja. 
+kriptosustav koristimo. Čak i ako kriptoanalitičar treba provjeriti nekoliko mogućih 
+kriptosustava, to obično ne povećava bitno sigurnost sustava.  
 Dakle, mi pretpostavljamo da tajnost šifre u potpunosti leži u ključu. 
 <p>
 
-Razlikujemo četiri osnovna nivoa kriptoanalitičkih napada. 
+Razlikujemo četiri osnovne razine kriptoanalitičkih napada. 
 
 <p>
 
@@ -253,8 +256,10 @@ ili neki algoritam za dešifriranje poruka šifriranih s tim ključem.
 <b>3. Odabrani otvoreni tekst</b><p>
 
 Kriptoanalitičar ima mogućnost odabira teksta koji će biti 
-šifriran, te može dobiti njegov šifrat. Ovaj napad je 
-jači od prethodnoga, ali je manje realističan. 
+šifriran, te može dobiti njegov šifrat. Ovaj napad je jači od prethodnoga. 
+U nekim situacijama može izgledati
+manje realističan, ali je u suvremenoj kriptografiji često prirodan model,
+osobito kod kriptosustava s javnim ključem. 
 
 <p>
 
@@ -262,9 +267,10 @@ jači od prethodnoga, ali je manje realističan.
 
 Kriptoanalitičar je dobio pristup alatu za dešifriranje, 
 pa može odabrati šifrat, te dobiti odgovarajući otvoreni 
-tekst. Ovaj napad je tipičan kod kriptosustava s javnim 
-ključem. Tu je zadatak kriptoanalitičara otkriti ključ 
-za dešifriranje (tajni ključ).  
+tekst. Ovaj napad je važan osobito kod kriptosustava s javnim ključem. 
+Cilj kriptoanalitičara može biti otkriti ključ za dešifriranje, 
+ali često je dovoljno pronaći način za dešifriranje nekih novih poruka
+ili za dobivanje djelomične informacije o otvorenom tekstu..  
 
 <p>
 
@@ -277,7 +283,7 @@ Ovaj napad ne spada doslovno u kriptoanalizu, ali je vrlo efikasan i
 Naravno, možemo se pitati koliko je realno da će kriptoanalitičar biti u prilici 
 primijeniti 2., 3. ili 4. vrstu napada. Na prvi pogled to izgleda dosta 
 nerealno. Međutim, tu treba imati u vidu činjenicu da je kriptoanalitičar 
-već nekako došao u posjed šifrata koji nije bio njemu namjenjen. 
+već nekako došao u posjed šifrata koji nije bio njemu namijenjen. 
 Dakle, svakako on posjeduje izvjesne sposobnosti koje mu mogu pomoći 
 i oko drugih vrsta kriptoanalitičkih napada. 
 

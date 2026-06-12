@@ -90,7 +90,7 @@ nužno nadopuniti zadnji blok ako broj slova u otvorenom tekstu nije djeljiv s <
 
 <b>Primjer 1.5: </b> Neka je <i>m</i> = 4 i ključna 
 riječ &nbsp; 
-<font color=990099>BROJ</font></tt>. 
+<font color=990099>BROJ</font>. 
 Njezin numerički ekvivalent je ključ  
 <i>K</i> = (1, 17, 14, 9). 
 Pretpostavimo da je otvoreni tekst &nbsp; 
@@ -117,13 +117,16 @@ Primjer 1.5 može se ilustrirati i ovako
 otvoreni tekst    <font color=990000>K R I P T O L O G I J A</font> 
     šifrat        <font color=000099>L I W Y U F Z X H Z X J</font>
 </font></pre>
-Vidimo da se ovdje ključ ponavlja u nedogled pa prema podjeli šifara, 
-s obzirom na način na koji se obrađuje otvoreni tekst, ovu šifru možemo 
-shvatiti kao primjer blokovne šifre. Postoje i druge 
-varijante Vigen&egrave;reove šifre. Jedna takva 
-(čiji je autor zaista Vigen&egrave;re i koja je sigurnija od originalne) 
-je ona s <em>autoključem</em> (engl. autokey), u kojoj otvoreni tekst generira ključ. 
-naime, originalni ključ se koristi samo za šifriranje prvog bloka 
+Vidimo da se ovdje ključ ponavlja periodički. Formalno smo šifru
+definirali na blokovima duljine <i>m</i>, ali se šifriranje zapravo
+provodi slovo po slovo pomoću periodičkog ključnog niza. Zato se
+Vigen&egrave;reova šifra najčešće opisuje kao polialfabetska
+supstitucijska šifra s ponavljajućim ključem.
+Postoje i druge varijante Vigen&egrave;reove šifre. Jedna takva
+(čiji je autor zaista Vigen&egrave;re i koja je sigurnija od varijante
+s ponavljajućim ključem) jest ona s <em>autoključem</em> (engl. autokey), 
+u kojoj otvoreni tekst generira ključ. 
+Naime, originalni ključ se koristi samo za šifriranje prvog bloka 
 od <i>m</i> slova, dok se za šifriranje daljnjih blokova koristi 
 prethodni blok otvorenog teksta. Time ova varijanta spada u protočne šifre. 
 <p>
@@ -132,7 +135,7 @@ prethodni blok otvorenog teksta. Time ova varijanta spada u protočne šifre.
 autoključem</em>. 
 <p>
 U šifriranju ćemo koristiti tzv. 
-<a href="tablice/vigkva.html" target="_blank">Vigen&egrave;reov kvadrat</a> 
+<a href="tablice/vigkva.html" target="_blank">Vigen&egrave;reov kvadrat</a>.  
 Ako npr. slovo K treba šifrirati 
 ključem B, onda pogledamo stupac koji počinje s K i redak koji počinje 
 s B. U presjeku je šifrat L. Dobivamo: 
@@ -166,7 +169,7 @@ je vrlo vjerojatno da oni odgovaraju identičnim segmentima otvorenog
 teksta (podudarnost odsječaka duljine 2 lako može biti i slučajna, 
 dok je kod odsječaka veće duljine to puno manje vjerojatno). 
 <p>
-U Kasiskijevom testu u šifrati tražimo parove identičnih segmenata 
+U Kasiskijevom testu u šifratu tražimo parove identičnih segmenata 
 duljine barem 3, te (ako takvi postoje) zabilježimo udaljenosti između njihovih početnih 
 položaja. Ako na takav način dobijemo udaljenosti 
 <i>d</i><sub>1</sub>, <i>d</i><sub>2</sub>, ... , onda je 
@@ -245,7 +248,7 @@ koji je dobiven Vigen&egrave;reovom šifrom. Rastavimo <i>y</i> na
 <i>z</i><sub><i>m</i></sub></nobr> tako da <i>y</i> napišemo, 
 po stupcima, u matricu dimenzija <i>m</i> 
 &times; (<i>n</i>/<i>m</i>). (Ako <i>m</i> ne dijeli <i>n</i>, možemo 
-nadopuniti <i>y</i> na prozvoljan način ili promatrati "krnju matricu" 
+nadopuniti <i>y</i> na proizvoljan način ili promatrati "krnju matricu" 
 s nepotpunim zadnjim stupcem.)   
 Redci ove matrice su upravo traženi podnizovi 
 <nobr><i>z</i><sub>1</sub>, <i>z</i><sub>2</sub>, ... , 
@@ -259,7 +262,7 @@ Zato bi svi indeksi koincidencije
 I<sub>c</sub>(<i>z</i><sub><i>i</i></sub>) trebali biti 
 približno jednaki 0.064. S druge strane, ako <i>m</i> nije duljina 
 ključne riječi, onda će <i>z</i><sub><i>i</i></sub>-ovi izgledati 
-više-manje slučajni nizovi slova, budući su dobiveni pomacima pomoću različitih 
+više-manje slučajni nizovi slova, budući da su dobiveni pomacima pomoću različitih 
 slova ključa. Primijetimo da za potpuno slučajni niz imamo
 <p align=center>
 I<sub>c</sub> &asymp; 26 
@@ -341,8 +344,8 @@ A, B, C, ... , Z u <i>x</i> i <i>y</i> označimo sa
 <p align=center>
 MI<sub>c</sub> = 
 &sum;<sub><i>i</i></sub>&nbsp   
-<i>f</i><sub><i>i</i></sub><i>f'</i><sub><i>i</i></sub> / 
-<i>n</i><i>n'</i>. 
+<i>f</i><sub><i>i</i></sub><i> f'</i><sub><i>i</i></sub> / 
+(<i>n</i> <i>n'</i>). 
 </p>
 </font></td></tr></table>
 <p>
@@ -486,7 +489,7 @@ Očekujemo da je MI<sub>c</sub>(<i>x</i>, <i>z</i><sub><i>j</i></sub><sup><i>g</
 MI<sub>c</sub>(<i>x</i>, <i>z</i><sub><i>j</i></sub><sup><i>g</i></sup>) < 0.045.
 <p>
 Prema tome, da bismo odredili <i>j</i>-to slovo <i>k<sub>j</sub></i> ključne riječi, 
-postupamo da sljedeći način. Za 
+postupamo na sljedeći način. Za 
 <nobr>0 &le; <i>g</i> &le; 25</nobr> izračunamo 
 <p align=center>
 <i>M<sub>g</sub></i> =   
@@ -525,8 +528,8 @@ pa je <i>k</i><sub>4</sub> = 7;
 pa je <i>k</i><sub>5</sub> = 4.  
 </ul>
 Stoga je ključna riječ &nbsp; 
-<font color=990099>MATHE</font>,   
-a traženi otvoreni tekst glasi: 
+<font color=990099>MATHE</font>,  
+a traženi otvoreni tekst, još uvijek grupiran po pet slova, glasi:  
 <pre><font size="+1" color=990000>
 USPJE HURJE SAVAN JUNEP OZNAT IHSIF ARAMJ ERISE OVIMC ETIRI
 MAPOK AZATE LJIMA REDOM KAKOS UOVDJ ENAVE DENIU PORNO SCUPA

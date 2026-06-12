@@ -53,6 +53,8 @@ da je <i>y</i> šifrat, također jednaka <i>p</i>(<i>x</i>)
 <font face="Brush Script MT,Script,Times New Roman">P</font> i sve <i>y</i> 
 &isin;  
 <font face="Brush Script MT,Script,Times New Roman">C</font>). 
+Drugim riječima, poznavanje šifrata ne mijenja vjerojatnosnu procjenu
+o tome koji je otvoreni tekst poslan.
 <p>
 Poznata realizacija ideje potpune sigurnosti je kriptosustav 
 poznat pod nazivom <em>jednokratna bilježnica</em> (engl. one-time pad). 
@@ -90,7 +92,7 @@ Za <i>K</i> = (<i>k</i><sub>1</sub>, ..., <i>k<sub>n</sub></i>)
 </font> </td></tr> </table>  
 <p>
 Drugim riječima, šifrat se iz otvorenog teksta dobije tako da se na 
-bitovima primjeni operacija "ekskluzivno ili" (XOR): 
+bitovima primijeni operacija "ekskluzivno ili" (XOR): 
 <i>y<sub>i</sub></i> = <i>x<sub>i</sub></i> 
 &oplus;  
 <i>k<sub>i</sub></i>. Uočimo da je postupak dešifriranja 
@@ -100,23 +102,25 @@ identičan postupku šifriranja:
 <i>k<sub>i</sub></i>. Naime, u <b>Z</b><sub>2</sub> zbrajanje i oduzimanje 
 su identične operacije (jer je 1 +<sub>2</sub> 1 = 0). 
 <p>
-Uočimo također da je ovaj kriptosustav lako razbiti napadom 
-"poznati otvoreni tekst", jer sasvim analogno vrijedi i ("neželjena") 
+Uočimo također da se iz jednog poznatog para otvoreni tekst - šifrat
+odmah dobiva korišteni ključ, jer sasvim analogno vrijedi i ("neželjena") 
 relacija  
 <i>k<sub>i</sub></i> = <i>x<sub>i</sub></i> 
 &oplus;  
 <i>y<sub>i</sub></i>. 
 To znači da se sigurnost kod ovog kriptosustava 
-može postići samo ako se svaki ključ koristi samo jednom. 
+može postići samo ako se svaki ključ koristi samo jednom 
+(pritom ključ mora biti potpuno slučajan, mora biti jednako dug kao
+poruka i mora ostati poznat samo pošiljatelju i primatelju). 
 Odatle i dolazi naziv jednokratna bilježnica. 
 Naime, različitim varijantama ovog kriptosustava su se koristili 
 špijuni, koji bi za tu svrhu koristili bilježnicu u kojoj bi se svaki list koristio 
 kao jednokratni ključ. 
 Za praktične primjene veliki problem predstavlja činjenica da je ključ, koji mora biti 
 sigurno prenesen, jednako dug kao i sama poruka. Stoga ovaj 
-kriptosustav nije bio u komercijalnoj uporabi, ali postoje 
-naznake da se koristio u komunikaciji između Moskve i 
-Washingtona tijekom hladnog rata. 
+kriptosustav nije bio u komercijalnoj uporabi, 
+ali postoje naznake da su se sustavi zasnovani na jednokratnoj bilježnici
+koristili u diplomatskoj komunikaciji tijekom hladnog rata.
 
 <p> 
 

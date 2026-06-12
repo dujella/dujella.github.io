@@ -80,7 +80,7 @@ Vrijednost <i>n</i> je javna, a vrijednosti
 Ovdje <i>a</i> = 
 &radic;<i>b</i> mod <i>n</i> 
 znači da je <i>a</i><sup>2</sup> 
-&equiv; <i>b</I> (mod <i>n</i>). 
+&equiv; <i>b</i> (mod <i>n</i>). 
 Uvjet <i>p</i> &equiv; <i>q</i> 
 &equiv; 3 (mod 4)
 se može izostaviti. No, uz ovaj uvjet je dešifriranje jednostavnije i efikasnije. 
@@ -88,13 +88,13 @@ Postoji i varijanta Rabinovog kriptosustava u kojoj se za šifriranje koristi op
 kvadratna funkcija <i>x</i>(<i>x</i> + <i>B</i>), gdje je vrijednost <i>B</i> javna. 
  
 Važno je uočiti da funkcija <i>e</i><sub><i>K</i></sub> nije 
-injekcija. Naime, ako je <i>w</i> neki od 4 druga korijena iz 1  
-modulo n (dobiju se primjenom Kineskog teorema o ostatcima na 
+injekcija. Naime, ako je <i>w</i> neki od četiri kvadratna korijena iz 1  
+modulo <i>n</i>. Ti se korijeni dobiju se primjenom Kineskog teorema o ostatcima na 
 kongruencije <i>x</i> &equiv;  
 &plusmn; 1 (mod <i>p</i>), 
 <i>x</i> &equiv;  
-&plusmn; 1 (mod <i>q</i>), 
-onda imamo: 
+&plusmn; 1 (mod <i>q</i>). 
+Tada imamo: 
 
 <p align= center>
 <i>e</i><sub><i>K</i></sub>(<i>w</i><i>x</i>) &equiv;  
@@ -123,7 +123,7 @@ Rabinovog kriptosustava kojom je eliminirao ovaj nedostatak.
 (<i>n</i>, <i>p</i>, <i>q</i>) = (437, 19, 23)
 </p>
 dešifrirati šifrat <i>y</i> = 35. Poznato je da je otvoreni tekst prirodan broj <i>x</i> &lt; <i>n</i> 
-kojem su zadnja četiri bita u binarnom zapisu medusobno jednaka.
+kojem su zadnja četiri bita u binarnom zapisu međusobno jednaka.
 <p>
 
 Najprije trebamo naći kvadratne korijene od 35 modulo 19 i
@@ -140,7 +140,7 @@ kongruencija:
 <i>x</i> &equiv; &plusmn; 4 (mod 19), &nbsp; &nbsp; 
 <i>x</i> &equiv; &plusmn; 9 (mod 23).
 </p>
-Sustav od dvije linearne konguencije
+Sustav od dvije linearne kongruencije
 <p align=center>
 <i>x</i> &equiv; <i>a</i><sub>1</sub> (mod <i>m</i><sub>1</sub>), &nbsp; &nbsp;
 <i>x</i> &equiv; <i>a</i><sub>2</sub> (mod <i>m</i><sub>2</sub>)
@@ -196,7 +196,7 @@ U originalnom ElGamalovom kriptosustavu je
 dok je &alpha;  
 primitivni korijen modulo <i>p</i>, tj. 
 &alpha; ima svojstvo da je 
-{ &alpha;<sup><i>i</i></sup> : <i>i</i> = 0, 1, ... , <i>p</i> - 1 } 
+{ &alpha;<sup><i>i</i></sup> : <i>i</i> = 0, 1, ... , <i>p</i> - 2 } 
 = <b>Z</b><sub><i>p</i></sub>*. 
 To znači da je u ovom slučaju <i>H</i> = <i>G</i>. 
 Najbolji poznati algoritmi za problem diskretnog logaritma u 
@@ -243,7 +243,7 @@ Za <i>K</i> = (<i>p</i>, &alpha;,
 &isin;  
 <font face="Brush Script MT,Script,Times New Roman">K</font> i tajni slučajni 
 broj <i>k</i> &isin; 
-<b>Z</b><sub><i>p</i> -1</sub> 
+{1,2,...,<i>p</i>-2} 
 definiramo 
 <p align=center>
 <i>e<sub>K</sub></i>(<i>x</i>, <i>k</i>) = (<i>y</i><sub>1</sub>, 
@@ -267,16 +267,22 @@ definiramo
 </font></td></tr></table>
 <p>
 
-Mogli bi reći da se otvoreni tekst <i>x</i> "zamaskira" množeći s 
+Mogli bismo reći da se otvoreni tekst <i>x</i> "zamaskira" množeći s 
 &beta;<sup><i>k</i></sup>. 
 Onaj tko poznaje tajni eksponent <i>a</i> može iz 
 &alpha;<sup><i>k</i></sup> 
 izračunati &beta;<sup><i>k</i></sup> 
 i "ukloniti masku". 
 <p>
-Da bi eksponent <i>a</i> stvarno bio tajan, prost broj <i>p</i> mora biti dovoljno
+Broj <i>k</i> mora se za svako šifriranje birati ponovno i ne smije
+se ponovno upotrijebiti.
+<p>
+Da bismo eksponent <i>a</i> stvarno bio tajan, prost broj <i>p</i> mora biti dovoljno
 velik da bi u <b>Z</b><sub><i>p</i></sub>* problem diskretnog logaritma bio praktički nerješiv. 
-Stoga se danas preporuča korištenje prostih brojeva od oko 1024 bita. Takoder bi
+U starijoj literaturi često su se navodili 1024-bitni prosti brojevi,
+ali za suvremene primjene potrebni su znatno veći parametri. U praksi
+se za klasične grupe danas traže barem 2048-bitni moduli, a za višu
+razinu sigurnosti i veći. Također bi
 red grupe, tj. broj <i>p</i> - 1, trebao imati barem jedan veliki prosti faktor (od
 barem 160 bitova).
 <p>
@@ -287,7 +293,7 @@ barem 160 bitova).
 <p>
 
 Računamo <i>y</i><sub>1</sub><sup><i>a</i></sup> = 17<sup>17</sup> 
-&equiv; 11 (mod 23). Potom nademo inverz
+&equiv; 11 (mod 23). Potom nađemo inverz
 od 11 modulo 23. Dobivamo da je inverz -2 &equiv; 21 (mod 23). 
 Konačno izračunamo 6 <b>&middot;</b> 21 mod 23 i dobivamo otvoreni tekst <i>x</i> = 11. 
 
@@ -326,7 +332,12 @@ exp(O(<i>n</i><sup>1/4 + &epsilon;</sup>))
 </p>
 operacija. Tako se smatra da je za <i>n</i> &gt; 10000 odgovarajući 
 kriptosustav siguran ukoliko 2<sup><i>n</i></sup> - 1 ima barem 
-jedan veliki prosti faktor.
+jedan veliki prosti faktor. 
+Diskretni logaritam u konačnim poljima male karakteristike pokazao se
+osjetljivijim na specijalizirane algoritme nego što se ranije mislilo.
+Zato se takve grupe danas uglavnom ne koriste kao prvi izbor za nove
+kriptosustave; u praksi se prednost daje dobro odabranim podgrupama
+multiplikativnih grupa velikih prostih polja ili eliptičkim krivuljama.
 
 
 <p><br><br>
@@ -359,7 +370,7 @@ uz koju <i>E</i> postaje abelova grupa. Neka su
 Ako je <i>x</i><sub>1</sub> = <i>x</i><sub>2</sub> i 
 <i>y</i><sub>1</sub> = -<i>y</i><sub>2</sub>, onda je 
 po definiciji <i>P</i> + <i>Q</i> = 
-<font face="Brush Script MT,Script,Times New Roman">O</font>. Inače, je 
+<font face="Brush Script MT,Script,Times New Roman">O</font>. Inače je 
 <i>P</i> + <i>Q</i> = (<i>x</i><sub>3</sub>, <i>y</i><sub>3</sub>), 
 gdje je 
 <p align=center>
@@ -396,7 +407,7 @@ kao treću točku presjeka od <i>E</i> i pravca okomitog na os <i>x</i>.
 Kako je polovica elemenata iz <b>Z</b><sub><i>p</i></sub>* 
 jednaka kvadratu nekog elementa iz 
 <b>Z</b><sub><i>p</i></sub>*, za očekivati je da <i>E</i> ima približno 
-<i>p</i> točaka (ako je točka (<i>x</i>, <i>y</i>) u </i>E</i>, 
+<i>p</i> točaka (ako je točka (<i>x</i>, <i>y</i>) u <i>E</i>, 
 onda je također i točka (<i>x</i>, -<i>y</i>) u <i>E</i>). Preciznije, 
 po <em>Hasseovom teoremu</em>, vrijedi: 
 <p align=center>
@@ -417,7 +428,7 @@ dok su otvoreni tekstovi
 i šifrati proizvoljni uređeni parovi elemenata iz polja (a ne nužno parovi koji
 odgovaraju točkama na eliptičkoj krivulji). Kod ovog kriptosustava, šifrirana
 poruka je (samo) 2 puta dulja od originalne poruke, a ne 4 puta, koliko bi bila 
-kod direktnog prevođenja ElGamalovog kriptusustava na grupu eliptičkih krivulja.
+kod direktnog prevođenja ElGamalovog kriptosustava na grupu eliptičkih krivulja.
 <p>
 
 <table align=center border=1 width="95%" cellpadding=15> 
@@ -472,8 +483,8 @@ Za šifrat <i>y</i> = (<i>y</i><sub>0</sub>, <i>y</i><sub>1</sub>, <i>y</i><sub>
 <i>d<sub>K</sub></i>(<i>y</i>) = (<i>y</i><sub>1</sub>(<i>c</i><sub>1</sub>)<sup>-1</sup> mod <i>p</i>, 
 <i>y</i><sub>2</sub>(<i>c</i><sub>2</sub>)<sup>-1</sup> mod <i>p</i>), 
 </p>
-gdje je <i>ay<sub>0</sub></i> = (<i>c</i><sub>1</sub>, 
-<i>c</i><sub>2</sub>).
+gdje se točka <i>a</i><i>y</i><sub>0</sub> računa na krivulji <i>E</i>
+i ima koordinate (<i>c</i><sub>1</sub>, <i>c</i><sub>2</sub>).
 
 </font></td></tr></table>
 <p>
@@ -563,9 +574,9 @@ znamenke broja <i>V</i>. Jasno je da u slučaju superrastućeg niza, u svakom
 koraku u ruksak moramo staviti najveći predmet koji u njega stane.
 Ova činjenica je osnova za Merkle-Hellmanov kriptosustav. 
 Ideja Merkle-Hellmanovog kriptosustava je &quot;zamaskirati&quot; superrastući
-niz tako da izgleda kao sasvim slučajan niz. Onaj kome je poruka namjenjena  
+niz tako da izgleda kao sasvim slučajan niz. Onaj kome je poruka namijenjena  
 zna kako ukloniti masku, pa može pročitati poruku rješavajući
-supperrastući problem ruksaka. Svi drugi moraju rješavati, puno teži, opći
+superrastući problem ruksaka. Svi drugi moraju rješavati, puno teži, opći
 problem ruksaka, pa ne mogu pročitati poruku. &quot;Maskiranje&quot; se provodi
 modularnim množenjem. 
 <p>
@@ -604,8 +615,9 @@ Za <i>K</i> = (<i>v</i>, <i>p</i>, <i>a</i>, <i>t</i>) definiramo
 Za 0 &le; <i>y</i> 
 &le; <i>n</i>(<i>p</i>-1) 
 definiramo <i>z</i> = <i>a</i><sup>-1</sup><i>y</i> mod <i>p</i>, 
-riješimo (superrastući) problem ruksaka za skup 
-{<i>v</i><sub>1</sub>, ... , <i>v</i><sub><i>n</i></sub>, <i>z</i>} 
+riješimo superrastući problem ruksaka za niz
+<i>v</i><sub>1</sub>, ... , <i>v</i><sub><i>n</i></sub>
+i ciljnu vrijednost <i>z</i>  
 i tako dobivamo <nobr><i>d</i><sub><i>K</i></sub>(<i>y</i>) = 
 (<i>x</i><sub>1</sub>, ... , <i>x</i><sub><i>n</i></sub>).</nobr> <br>
 Vrijednost <i>t</i> je javna, dok su vrijednosti 
@@ -638,11 +650,11 @@ Provjera: <i>e<sub>K</sub></i>(<i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>, <i>x<
 
 
 Merkle-Hellmanov kriptosustav je imao jednu vrlo veliku prednost u odnosu
-na ostale kriptosustave s javnim ključem. Naime, šifranje njime je znatno
+na ostale kriptosustave s javnim ključem. Naime, šifriranje njime je znatno
 brže, te je on po brzini bio usporediv s najboljim simetričnim kriptosustavima. 
 No, godine 1982. je uslijedilo razočaranje, kad je <font color="009900">Adi Shamir</font> pronašao
 polinomijalni algoritam za razbijanje Merkle-Hellmanovog kriptosustava.
-Pokazalo se da se ovako jednostavnim maskiranjem vrlo specijanog niza ipak
+Pokazalo se da se ovako jednostavnim maskiranjem vrlo specijalnog niza ipak
 ne dobiva sasvim slučajan niz. U razbijanju se koriste algoritmi za diofantske
 aproksimacije (verižni razlomci i LLL-algoritam).
  

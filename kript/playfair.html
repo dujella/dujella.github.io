@@ -5,7 +5,7 @@
 
 <meta name="author" content="Andrej Dujella">
 <meta name="description" content="Kriptografija - Playfairova sifra">
-<meta name="keywords" content="kriptografija, Plaifairova sifra">
+<meta name="keywords" content="kriptografija, Playfairova sifra">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utb-8">
 
@@ -35,7 +35,7 @@ body {font-family: Arial,Helvetica,sans-serif;}
 <h2 align=center style="color: rgb(128,0,0)">1.4. Playfairova šifra</h2>
 
 
-Jedna ideja za poboljšanje supstitucijskih šifara je uvođenje 
+Jedna ideja za poboljšanje jednostavnih monoalfabetskih supstitucijskih šifara je uvođenje 
 polialfabetskih šifara. Jednu takvu šifru smo vidjeli u prethodnom 
 poglavlju. Druga ideja je uporaba blokova slova kao osnovnih 
 elemenata otvorenog teksta. 
@@ -68,8 +68,8 @@ ako je ključna riječ &nbsp;
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; U   V   W   X   Z  
 </font></pre> 
 Budući da imamo 25 slova, dogovor je da se slova I i J poistovjete. 
-U slučaju da je otvoreni tekst na hrvatskom jeziku, mi ćemo 
-poistovjećivati V i W da bismo izbjegli moguće nesporazume kod dešifriranja. 
+U slučaju da je otvoreni tekst na hrvatskom jeziku,  
+poistovjećivat ćemo V i W da bismo izbjegli moguće nesporazume kod dešifriranja. 
 <p>
 Šifriranje se sada vrši na sljedeći način. Najprije podijelimo otvoreni 
 tekst na blokove od po dva slova. Pritom pazimo da se niti jedan blok 
@@ -82,7 +82,7 @@ ovisno o položaju slova u matrici:
 <ol>
 <li> Slova se nalaze u istom retku. Tada ih zamijenimo sa slovima 
 koja se nalaze za jedno mjesto udesno (ciklički, tj. 
-iza najdesnijeg slova dolazi najljevije slovo iz istog retka). Npr. 
+iza najdesnijeg slova dolazi najlijevije slovo iz istog retka). Npr. 
 EH &#8614; GK, 
 ST &#8614; TN, 
 FP &#8614; PL. 
@@ -93,7 +93,7 @@ OV &#8614; VL,
 KY &#8614; SC, 
 PI &#8614; IE. 
 <li> U protivnom, pogledamo pravokutnik koji određuju ta dva slova, 
-te ih zamijenimo s preostala dva vrha tog pravokutnika. 
+te ih zamijenimo slovima u preostala dva vrha tog pravokutnika. 
 Redoslijed je određen tako da najprije dođe ono slovo koje 
 se nalazi u istom retku kao prvo slovo u polaznom bloku. Npr. 
 OC &#8614; SR, 
@@ -113,18 +113,18 @@ PD &#8614; FI.
 <font color=000099>DB FL NQ OG YL KA</font> </p>
 <p>
 Playfairova šifra ima nekoliko značajnih prednosti pred supstitucijskom šifrom. 
-Budući da je šifra bigramska, gube se u šifratu 
-jednoslovne riječi (npr. "a") koje dosta utječu na frekvencije. 
-Nadalje, bigramsko šifriranje smanjuje na polovicu broj elemenata  
-dostupnih analizi frekvencije. S druge strane, broj bigrama je puno veći 
+Budući da je šifra bigramska, u šifratu se gube izravni tragovi
+jednoslovnih riječi (npr. "a"), koje dosta utječu na frekvencije slova. 
+Nadalje, bigramsko šifriranje smanjuje približno na polovicu broj jedinica šifrata
+dostupnih analizi frekvencija. S druge strane, broj bigrama je puno veći 
 od broja individualnih slova (26 slova - 676 bigrama), dok su 
 frekvencije najfrekventnijih bigrama puno ujednačenije od 
 frekvencija najfrekventnijih slova. 
 <p>
 Iz ovih razloga, Playfairova šifra je dugo vremena smatrana sigurnom. 
 Tako je bila standardna šifra u britanskoj vojsci za vrijeme 
-1. svjetskog rata, a čak je korištena (za šifriranje poruka manje važnosti) 
-i u američkoj vojsci u 2. svjetskom ratu. 
+Prvog svjetskog rata, a čak je korištena (za šifriranje poruka manje važnosti) 
+i u američkoj vojsci u Drugom svjetskom ratu. 
 <p>
 Ipak, kod dugih tekstova ova šifra postaje nesigurna jer se može 
 iskoristiti analiza frekvencija bigrama. 
@@ -152,7 +152,7 @@ Takvi podatci mogu nam pomoći i kod određivanja vrste šifre.
 <em>dobiven Playfairovom šifrom (V = W). Otvoreni tekst je na 
 hrvatskom jeziku.</em>
 <p>
-<i>Rješenje</i>. Ovaj šifrat je prekratak da bi ga dekriptirali samo analizom 
+<i>Rješenje</i>. Ovaj šifrat je prekratak da bismo ga dekriptirali samo analizom 
 frekvencija bigrama. Zato ćemo uvesti dodatnu pretpostavku da nam 
 je poznata jedna riječ koja se pojavljuje u otvorenom tekstu. 
 Dakle, koristit ćemo metodu "<em>vjerojatne riječi</em>". 
@@ -161,9 +161,9 @@ u tome da se napravi lista riječi ili fraza
 za koje pretpostavljamo da ih 
 otvoreni tekst sadrži, te da u šifratu pronađemo segment čija se
 struktura podudara sa strukturom vjerojatne riječi. 
-Recimo da je vjerojatna riječ (fraza) "MATEMATIKA I MATEMATIČARI". Kod 
-rastavljanja na blokove po dva slova, imamo dvije mogućnosti 
-(u ovisnosti o tome gdje se ovaj tekst nalazi unutar poruke): 
+Recimo, ako bi vjerojatna fraza bila "MATEMATIKA I MATEMATIČARI",
+kod rastavljanja na blokove po dva slova imali bismo dvije mogućnosti
+(ovisno o tome počinje li fraza na neparnoj ili parnoj poziciji u poruci):
 <font size="+1">
 <pre>
        <u><span style="background-color: #FFFF00">MA</span></u>  TE  <u><span style="background-color: #FFFF00">MA</span></u>  TI  KA  IM  <u><span style="background-color: #00FF00">AT</span></u>  EM  <u><span style="background-color: #00FF00">AT</span></u>  IČ  AR  I* 
@@ -191,7 +191,7 @@ strukturu ove riječi:
 </pre>
 </font>
 Identičnu strukturu uočavamo u 4. retku šifrata i krećemo s 
-pretpostavkom da je LS AB PJ OL PJ šifrat of MI NI ST AR ST. 
+pretpostavkom da je LS AB PJ OL PJ šifrat od MI NI ST AR ST. 
 To je u skladu s analizom frekvencija bigrama: 
 <p align=center>
 OJ (4), PJ, AF, IE, ET, VI (3), 
@@ -257,6 +257,8 @@ da je pronalazač te šifre, ona je u žargonu
 Ministarstva rata dobila naziv Playfairova
 šifra i taj <font color=DDDD33>x</font> joj <font color=DDDD33>x</font> je naziv ostao do danas <font color=DDDD33>x</font>.
 </font></pre>
+Ovdje su žutom bojom označena umetnuta slova X koja se izbacuju
+pri čitanju otvorenog teksta.
 
 <p>
 
