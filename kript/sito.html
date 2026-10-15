@@ -380,8 +380,8 @@ i 65 znamenaka.
 
 <p><br>
 
-Trenutno najbolja poznata metoda faktorizacije je <em>metoda
-sita polja brojeva</em> (number field sieve) koja kombinira ideje iz
+Najbolja danas poznata opća klasična metoda faktorizacije velikih cijelih brojeva je
+<em>metoda sita polja brojeva</em> (number field sieve) koja kombinira ideje iz
 metode kvadratnog sita i algebarsku teoriju brojeva. Kod ove
 metode je očekivani broj operacija
 
@@ -435,8 +435,17 @@ Evo i tog broja i njegove faktorizacije:
 
 Nedugo zatim, u veljači 2020., ista je grupa faktorizirala i RSA-250,
 broj od 250 decimalnih znamenaka, odnosno 829 bitova. Račun je izveden
-metodom sita polja brojeva uz pomoć softvera CADO-NFS. Prema javno
-dostupnim podacima, RSA-260 još nije faktoriziran.
+metodom sita polja brojeva uz pomoć softvera CADO-NFS. 
+<p>
+Godine 2026. faktorizirani su i RSA-260 i RSA-896. RSA-260, broj s
+260 decimalnih znamenaka odnosno 862 bita, faktorizirao je Eric Lu
+koristeći GPU-implementaciju metode sita polja brojeva zasnovanu na
+modificiranom CADO-NFS-u. Ubrzo zatim Stephen A. Weis objavio je
+faktorizaciju RSA-896, broja s 270 decimalnih znamenaka odnosno
+896 bitova, također koristeći GPU-prilagodbu CADO-NFS-a. Oba rezultata
+predstavljaju važne računske rekorde, ali ne donose novu asimptotski
+bržu metodu faktorizacije i ne ugrožavaju RSA-2048.
+</p>
 
 <p>
 

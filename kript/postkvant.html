@@ -40,8 +40,8 @@ Važno je pitanje što bi se dogodilo sa sigurnošću RSA kriptosustava
 ako bi se uspjelo konstruirati efikasna kvantna računala. 
 Za razliku od klasičnih računala kod kojih je osnovna jedinica
 informacije jedan bit (koji može biti 0 ili 1), kvantna računala 
-koriste ideje iz kvantne mehanike, te je kod njih osnovna jedinica informacije - qubit -
-može biti u superpoziciji stanja 0 i 1. 
+koriste ideje iz kvantne mehanike, te kod njih osnovna jedinica informacije nije bit nego qubit,
+koji može biti u superpoziciji stanja 0 i 1.  
 Upravo ta svojstva omogućuju neke algoritme
 koji nemaju poznate klasične analogone jednake učinkovitosti.
 Takva računala još nisu praktično realizirana u obliku koji bi
@@ -74,9 +74,17 @@ zadovoljilo početne uvjete. Nakon više krugova evaluacije, NIST je
 2024. objavio prve post-kvantne standarde: ML-KEM, zasnovan na
 algoritmu CRYSTALS-Kyber, za enkapsulaciju ključa, ML-DSA, zasnovan
 na algoritmu CRYSTALS-Dilithium, za digitalne potpise, te SLH-DSA,
-zasnovan na algoritmu SPHINCS+, za hash-based digitalne potpise.
-Kasnije je NIST nastavio evaluaciju dodatnih kandidata, osobito radi
-kriptografske raznolikosti.
+zasnovan na algoritmu SPHINCS+, za hash-based digitalne potpise. 
+Dodatno, NIST je ranije izabrao i FALCON, algoritam za digitalne
+potpise zasnovan na rešetkama; standard za njega još je u razvoju
+i trebao bi biti objavljen kao FIPS 206 pod nazivom FN-DSA.
+Paralelno s time NIST nastavlja evaluaciju dodatnih digitalnih
+potpisnih shema, radi kriptografske raznolikosti. Taj je proces još
+u tijeku; primjerice, 2026. godine objavljen je nastavak evaluacije
+dodatnih kandidata, dok je kandidat HAWK povučen nakon objavljene
+ranjivosti. To ne utječe na već finalizirane standarde ML-KEM,
+ML-DSA i SLH-DSA.
+
 
 <p>
 Opisat ćemo dvije važne povijesne i konceptualne ideje u
